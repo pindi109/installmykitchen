@@ -1,0 +1,78 @@
+{
+  "perUnit": {
+    "small": {
+      "low": 120,
+      "high": 180
+    },
+    "medium": {
+      "low": 180,
+      "high": 260
+    },
+    "large": {
+      "low": 260,
+      "high": 380
+    },
+    "premium": {
+      "low": 380,
+      "high": 600
+    }
+  },
+  "labourDay": 350,
+  "surveyFee": 195,
+  "smallKitchen": {
+    "units": "8–12",
+    "days": "3–4",
+    "totalLow": 1800,
+    "totalHigh": 2800
+  },
+  "mediumKitchen": {
+    "units": "13–20",
+    "days": "4–6",
+    "totalLow": 2800,
+    "totalHigh": 4200
+  },
+  "largeKitchen": {
+    "units": "21+",
+    "days": "6–10",
+    "totalLow": 4200,
+    "totalHigh": 7500
+  },
+  "modifiers": {
+    "wren": {
+      "multiplier": 1.0
+    },
+    "howdens": {
+      "multiplier": 1.05
+    },
+    "magnet": {
+      "multiplier": 1.0
+    },
+    "magnet-trade": {
+      "multiplier": 1.0
+    },
+    "benchmarx": {
+      "multiplier": 1.0
+    },
+    "bq": {
+      "multiplier": 1.05
+    },
+    "wickes": {
+      "multiplier": 1.05
+    },
+    "ikea": {
+      "multiplier": 1.15
+    },
+    "diy-kitchens": {
+      "multiplier": 1.0
+    },
+    "kutchenhaus": {
+      "multiplier": 1.15
+    },
+    "symphony": {
+      "multiplier": 1.1
+    },
+    "masterclass": {
+      "multiplier": 1.3
+    }
+  }
+}

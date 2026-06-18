@@ -1,0 +1,736 @@
+---
+import Base from "../../layouts/Base.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import StickyMobileCTA from "../../components/StickyMobileCTA.astro";
+import Breadcrumbs from "../../components/Breadcrumbs.astro";
+import AnswerBlock from "../../components/AnswerBlock.astro";
+import KeyTakeaway from "../../components/KeyTakeaway.astro";
+import FAQ from "../../components/FAQ.astro";
+import InternalLinks from "../../components/InternalLinks.astro";
+import CTA from "../../components/CTA.astro";
+
+// ─────────────────────────────────────────────────────────────────────────────
+// SERVICE DATA  (defined inside getStaticPaths to avoid Astro hoisting issues)
+// ─────────────────────────────────────────────────────────────────────────────
+
+interface ServiceData {
+  slug: string;
+  name: string;
+  description: string;
+  title: string;
+  meta: string;
+  takeaways: string[];
+  body: string;
+  faqs: { q: string; a: string }[];
+  related: { label: string; href: string; description: string }[];
+}
+
+export const getStaticPaths = () => {
+  const services: ServiceData[] = [
+  // ── 1. Cabinet Assembly & Installation ────────────────────────────────────
+  {
+    slug: "cabinet-installation",
+    name: "Cabinet Assembly & Installation",
+    description:
+      "We assemble and fit all kitchen cabinets including base units, wall units, larder units, corner units and tall units. All cabinets are levelled, secured and adjusted to perfect alignment.",
+    title: "Cabinet Assembly & Installation Coventry | Install My Kitchen",
+    meta:
+      "Professional kitchen cabinet assembly and installation in Coventry and Warwickshire. Base, wall, larder and tall units levelled and secured to a high standard.",
+    takeaways: [
+      "All unit types fitted — base, wall, larder, corner and tall cabinets",
+      "Every cabinet is levelled, plumbed and securely fixed to the wall or floor",
+      "Corner units and carousels are assembled and adjusted before fitting",
+      "Final alignment check carried out before worktops and doors are installed",
+    ],
+    body: `
+<h2>What Cabinet Installation Involves</h2>
+<p>Cabinet assembly and installation is the backbone of any kitchen project. Before a single worktop is measured or a door is hung, the carcasses must be built, positioned and fixed correctly. Get this stage wrong and every subsequent stage suffers — doors won't align, worktops won't sit flat and gaps will appear where there should be none.</p>
+<p>At Install My Kitchen we work methodically through the installation plan, starting from a datum point and building out across the room. Each cabinet is assembled to the manufacturer's specification, placed in position and carefully levelled both front-to-back and side-to-side using adjustable legs or packers. Wall units are fixed directly into solid masonry or stud work using the correct fixings for the substrate — we never leave wall units on inadequate fixings regardless of how hidden they might be.</p>
+
+<h2>Base Units, Wall Units and Tall Units</h2>
+<p>Base units form the foundation of the layout and must be perfectly level for worktops to sit correctly. We check the floor across the full run and account for any variation before fixing anything in place. Wall units are positioned to the correct height, checked for level across the row, and fixed at the correct centres. Tall units — larder cabinets, pantry towers and housing units for integrated appliances — require particular care because they are the tallest elements in the room and any lean becomes immediately visible.</p>
+<p>Corner units present their own challenges. Whether the design uses a standard blind corner, a Le Mans carousel or a magic corner system, we assemble and fit each type correctly, ensuring the internal mechanisms operate smoothly before the run of cabinets is closed off around them.</p>
+
+<h2>Preparing Your Room</h2>
+<p>For the installation to run smoothly, the room should be clear of furniture and flooring that will be replaced. If you are having new flooring laid as part of the project, let us know in advance as this affects the height at which cabinets are set. Walls should be free of old units and fixings, and any plastering or painting behind the cabinets should be complete before installation day.</p>
+<p>At the pre-installation survey we confirm all of this with you and produce a clear list of preparation tasks so that nothing is left to chance on installation day.</p>
+
+<h2>Alignment and Quality Checks</h2>
+<p>Once all cabinets are in position we carry out a thorough alignment check across every run. Gaps between units are checked, drawer runners are tested and any adjustment needed to the leg levellers is made at this stage, before the worktops go on. This care at the carcass stage means the rest of the installation proceeds quickly and cleanly.</p>
+<p>We work with kitchens from all major UK retailers including Wren, Howdens, Magnet, IKEA, B&Q, Wickes and Benchmarx — and we are entirely independent, so we have no preference for any brand.</p>
+    `.trim(),
+    faqs: [
+      {
+        q: "Can you assemble cabinets that arrive flat-packed?",
+        a: "Yes — flat-pack assembly is a standard part of the service. We build every cabinet from the box before fitting, checking for missing or damaged parts as we go.",
+      },
+      {
+        q: "What if the walls or floor aren't level?",
+        a: "Most rooms have some variation. We use adjustable legs and packers to account for uneven floors, and we scribe filler panels to uneven walls so the finished run looks clean regardless of what the room throws at us.",
+      },
+      {
+        q: "Do you fix wall units into plasterboard?",
+        a: "We fix into studs, noggins or solid masonry wherever possible. Where the only option is plasterboard, we use the correct cavity fixings rated for the load — we never use standard screws into plasterboard for wall units.",
+      },
+      {
+        q: "How long does cabinet installation take for an average kitchen?",
+        a: "A standard kitchen of 10–15 units typically takes one full day for carcass installation alone. Larger or more complex layouts, including islands and peninsulas, may require two days for this stage.",
+      },
+    ],
+    related: [
+      {
+        label: "Worktop Supply & Fitting",
+        href: "/services/worktop-fitting/",
+        description: "Laminate and solid surface worktops cut and fitted once cabinets are in place.",
+      },
+      {
+        label: "Door, Drawer & Panel Fitting",
+        href: "/services/door-fitting/",
+        description: "All doors, drawer fronts and decorative panels fitted after carcasses are secured.",
+      },
+      {
+        label: "Trims, Plinths & Cornices",
+        href: "/services/trims-and-plinths/",
+        description: "Finishing trims that complete the look once cabinets and worktops are installed.",
+      },
+    ],
+  },
+
+  // ── 2. Worktop Supply & Fitting ───────────────────────────────────────────
+  {
+    slug: "worktop-fitting",
+    name: "Worktop Supply & Fitting",
+    description:
+      "We supply and fit laminate worktops and co-ordinate installation of solid surfaces. All joints, cutouts for sinks and hobs, and end-panels are finished to a high standard.",
+    title: "Worktop Supply & Fitting Coventry | Install My Kitchen",
+    meta:
+      "Worktop supply and fitting in Coventry and Warwickshire. Laminate worktops supplied and fitted; solid surface co-ordinated. Precise sink and hob cutouts as standard.",
+    takeaways: [
+      "Laminate worktops supplied and fitted; solid surface co-ordinated with specialist fabricators",
+      "All sink cutouts, hob cutouts and drainage grooves made to template",
+      "Joints are routed and bonded for a tight, durable finish",
+      "End panels, up-stands and edge trims fitted to complete the installation",
+    ],
+    body: `
+<h2>The Importance of Getting Worktops Right</h2>
+<p>The worktop is one of the most used surfaces in any home, and it is one of the most visible. A poorly fitted worktop — one with a visible joint gap, a sink cutout that isn't flush, or an end that hasn't been scribed to the wall — is impossible to overlook. We take worktop fitting seriously because a well-fitted worktop makes the whole kitchen look considered and complete.</p>
+<p>We supply laminate worktops from leading UK manufacturers in a wide range of finishes, thicknesses and edge profiles. For solid surfaces — quartz, granite and Corian — we work with specialist fabricators who template and cut on their premises, and we co-ordinate installation to ensure the work is sequenced correctly around the rest of the project.</p>
+
+<h2>Measuring, Cutting and Jointing</h2>
+<p>Every worktop run is measured accurately before cutting. On L-shaped or U-shaped layouts, joints are routed using a precision jig to create a tight mitre or butt joint that is bonded with the correct adhesive and clamped while curing. Once set, the joint is sanded flush so that it is barely visible in most finishes.</p>
+<p>Overhangs, scribes to walls and end panels are all accounted for at the measurement stage. We cut to length on-site using fine-tooth blades to avoid chipping, and we always work from the underside of laminate worktops to keep the face finish clean.</p>
+
+<h2>Sink and Hob Cutouts</h2>
+<p>Cutouts for sinks and hobs are made to template, either using the template supplied with the appliance or by creating one from the unit itself. The cutout edges are sealed with proprietary waterproof sealant to protect the core material from moisture, and the sink or hob is then dropped in and secured according to its fixing type — undermount, inset or flush.</p>
+<p>We always confirm appliance specifications before cutting. A cutout that is even a few millimetres out can mean the appliance does not sit correctly or the clips do not engage properly, so we measure twice and cut once.</p>
+
+<h2>Finishing Details</h2>
+<p>Once worktops are in place, end panels are fitted where runs terminate against an appliance or an open end. Up-stands or tile-height covers are fitted at the wall junction if specified. Exposed edges are trimmed to the correct profile. The result is a worktop installation that looks intentional from every angle.</p>
+    `.trim(),
+    faqs: [
+      {
+        q: "Can you supply worktops from a specific range or colour?",
+        a: "We carry a wide range of laminate worktops and can source from multiple suppliers. Bring your kitchen plan to the survey and we will match the specification as closely as possible.",
+      },
+      {
+        q: "Who fits quartz or granite worktops?",
+        a: "Stone and quartz worktops are templated and cut by specialist fabricators off-site. We co-ordinate this stage and ensure the cabinets are ready for templating, then we oversee installation and make good any fixings or sealant work around the finished surface.",
+      },
+      {
+        q: "How are worktop joints sealed?",
+        a: "Laminate worktop joints are bonded with the correct colour-matched jointing compound and clamped for the recommended cure time. The top surface is then sanded flush. We also apply a bead of flexible sealant along the back edge of the worktop where it meets the wall.",
+      },
+      {
+        q: "Can you fit worktops I have already purchased?",
+        a: "Yes. If you have bought your own worktops — from your kitchen retailer or elsewhere — we can cut and fit them. We will need the full dimensions and appliance specifications in advance so we can plan the cutouts correctly.",
+      },
+    ],
+    related: [
+      {
+        label: "Cabinet Assembly & Installation",
+        href: "/services/cabinet-installation/",
+        description: "Carcasses are installed and levelled before worktops are measured and cut.",
+      },
+      {
+        label: "Appliance & Sink Installation",
+        href: "/services/appliance-installation/",
+        description: "Sink bowls and hobs are fitted into the cutouts made during worktop installation.",
+      },
+      {
+        label: "Trims, Plinths & Cornices",
+        href: "/services/trims-and-plinths/",
+        description: "Up-stands and edge trims complement the finished worktop installation.",
+      },
+    ],
+  },
+
+  // ── 3. Appliance & Sink Installation ──────────────────────────────────────
+  {
+    slug: "appliance-installation",
+    name: "Appliance & Sink Installation",
+    description:
+      "We fit all built-in kitchen appliances including ovens, hobs, dishwashers, extractor fans and sink bowls. Hardwired appliances require a qualified electrician; plumbed appliances require a plumber.",
+    title: "Appliance & Sink Installation Coventry | Install My Kitchen",
+    meta:
+      "Built-in appliance and sink installation in Coventry and Warwickshire. Ovens, hobs, dishwashers, extractors and sinks fitted correctly. Electrician and plumber co-ordination advised.",
+    takeaways: [
+      "All built-in appliances fitted and positioned to manufacturer guidelines",
+      "Hardwired appliances require a qualified electrician — we advise on sequencing",
+      "Plumbed appliances (dishwashers, sinks) require a qualified plumber",
+      "Extractor fans and hood fixings checked for correct alignment to the hob below",
+    ],
+    body: `
+<h2>Fitting Built-In Kitchen Appliances</h2>
+<p>Modern kitchens are packed with integrated appliances, and fitting them correctly is more involved than simply sliding them into a housing. Each appliance has its own fixing method, clearance requirements and — in many cases — electrical or plumbing connections that must be made by qualified trades. Our role is to position and secure every appliance correctly so that the qualified trades can make the final connections safely and efficiently.</p>
+<p>We fit ovens, single and double, into their housings and secure them with the correct fixing screws. We position hobs in their worktop cutouts and secure the retaining clips. We hang extractor fans and hoods at the correct height above the hob, fix them to the wall or ceiling as required and connect the ducting or recirculation kit. We position dishwashers, washing machines and fridge-freezers into their allocated spaces and adjust the legs so that the appliance sits level and the door aligns with the cabinet doors around it.</p>
+
+<h2>Working With Electricians and Plumbers</h2>
+<p>Hardwired appliances — ovens, hobs, extractor fans with integrated lighting — must be connected by a qualified electrician. Plumbed appliances — dishwashers, sinks, hot water taps — must be connected by a qualified plumber. This is not a limitation but a straightforward fact of building regulations and appliance warranties.</p>
+<p>We are entirely comfortable working alongside your trades. At the survey stage we discuss the sequencing: typically the first fix electrics and plumbing happen before cabinets go in, appliances are positioned by us during the main installation, and the second fix connections are made by your trades once everything is in its final position. We are happy to speak directly with your electrician or plumber to make sure everyone knows what is expected of them and when.</p>
+<p>If you have not yet arranged your trades, we can advise on what you will need and when. Booking your electrician and plumber early — ideally before your installation date is confirmed — helps avoid delays.</p>
+
+<h2>Sink Installation</h2>
+<p>Sink bowls are fitted into the worktop cutout, sealed with the appropriate silicone and secured with their retaining clips. Waste fittings and overflow connections are assembled and handed over ready for your plumber to connect to the existing waste. We fit the tap if it is a through-worktop type; the water supply connections are for your plumber.</p>
+
+<h2>Extractor Fans and Hoods</h2>
+<p>Extractor fans are fixed at the correct height above the cooking surface in line with the manufacturer's specification — typically 650–750 mm for gas and 450–600 mm for electric, but always confirmed against the appliance manual. Ducting runs are planned at the survey stage. Where ducting to an external wall is not possible, a recirculation kit is fitted instead.</p>
+    `.trim(),
+    faqs: [
+      {
+        q: "Do I need an electrician for an integrated oven?",
+        a: "Yes. Integrated ovens are hardwired appliances and must be connected by a Part P registered electrician. We position and secure the oven in its housing; your electrician makes the final connection.",
+      },
+      {
+        q: "Can you fit a gas hob?",
+        a: "We can position a gas hob in its worktop cutout and secure the retaining clips. The gas connection must be made by a Gas Safe registered engineer. We strongly recommend arranging this in advance of installation day.",
+      },
+      {
+        q: "Will my dishwasher door align with my cabinet doors?",
+        a: "Yes — adjusting the integrated panel on a dishwasher door so that it aligns with the surrounding cabinet doors is part of our installation. We adjust hinge positions and door panel fixings until the alignment is correct.",
+      },
+      {
+        q: "What if an appliance is damaged in the box?",
+        a: "We check appliances as we unbox them and will flag any damage to you immediately. Damaged appliances are a matter between you and your retailer — we can assist with photographs and documentation if needed, but the claim is yours to make.",
+      },
+    ],
+    related: [
+      {
+        label: "Worktop Supply & Fitting",
+        href: "/services/worktop-fitting/",
+        description: "Sink and hob cutouts are made during the worktop fitting stage.",
+      },
+      {
+        label: "Cabinet Assembly & Installation",
+        href: "/services/cabinet-installation/",
+        description: "Appliance housings and integrated spaces are built during cabinet installation.",
+      },
+      {
+        label: "Snagging & Final Adjustments",
+        href: "/services/snagging/",
+        description: "Appliance alignment and door adjustment are checked at the final snagging stage.",
+      },
+    ],
+  },
+
+  // ── 4. Door, Drawer & Panel Fitting ───────────────────────────────────────
+  {
+    slug: "door-fitting",
+    name: "Door, Drawer & Panel Fitting",
+    description:
+      "We fit all kitchen doors, drawers, decorative panels, end panels and glass inserts. Hinges are adjusted for perfect alignment; soft-close mechanisms are calibrated.",
+    title: "Kitchen Door & Drawer Fitting Coventry | Install My Kitchen",
+    meta:
+      "Kitchen door, drawer and panel fitting in Coventry and Warwickshire. All hinges adjusted for perfect alignment. Soft-close mechanisms calibrated. Decorative panels fitted.",
+    takeaways: [
+      "All cabinet doors and drawer fronts fitted and precisely aligned",
+      "Soft-close hinges and drawer runners calibrated at installation",
+      "Decorative panels, end panels and glass inserts fitted to specification",
+      "Final alignment walkthrough carried out across every door and drawer in the kitchen",
+    ],
+    body: `
+<h2>Why Door and Drawer Fitting Matters</h2>
+<p>A kitchen can have every component fitted correctly and still look wrong if the doors are even slightly out of alignment. Gaps that vary by a millimetre from one door to the next, doors that don't sit flush with each other, drawer fronts that aren't perfectly level — these details are the first thing anyone notices when they look at a kitchen. Getting door and drawer fitting right is one of the most visible parts of the whole installation.</p>
+<p>Modern kitchen hinges have three-way adjustment: height, depth and side-to-side. Getting each of these three dimensions right on every door across an entire kitchen is a precise, time-consuming job. We do not rush it. We work across the run, setting each door in sequence and checking that every gap is consistent before moving on.</p>
+
+<h2>Door Fitting</h2>
+<p>Doors are hung on the hinges that come pre-installed on the cabinet carcass. The hinge mounting plate is screwed to the inside of the door at the correct position — usually set by the manufacturer's jig template. The door is then clicked onto the hinge and adjusted until the gap to the adjacent door, the worktop and the plinth is even. Tall unit doors in particular require careful adjustment because any angle from true becomes magnified over the height of the door.</p>
+<p>Where doors are fitted to corner units — including those with internal carousel mechanisms — we ensure the door opens fully without catching adjacent doors or cabinets. On units with glass inserts, the glass panel is secured with the appropriate retaining beads and checked for rattle before the door is hung.</p>
+
+<h2>Drawer Fronts</h2>
+<p>Drawer fronts are fitted using adjustment brackets or screws through the drawer box face. The front is positioned by eye and temporarily secured, then adjusted until the reveal is even on all sides and the front sits flush with the adjacent doors. The soft-close mechanism on the drawer runner is set to the correct tension so the drawer closes fully without slamming.</p>
+<p>On kitchens with pan drawers — the large, heavy drawers used for pots and pans — the runner tension and the front alignment are both critical. A heavy pan drawer with a misaligned front will throw off the look of the entire base run.</p>
+
+<h2>Decorative and End Panels</h2>
+<p>Decorative panels are fitted to the exposed sides of wall and base units, the visible faces of island units and the sides of tall units. They are cut to size and scribed to the wall or floor where necessary so that they sit flush without visible gaps. End panels complete the look of a run and give the kitchen a furniture-like quality rather than a built-up-box appearance.</p>
+    `.trim(),
+    faqs: [
+      {
+        q: "How do you get all the doors perfectly aligned?",
+        a: "Modern concealed hinges have three-way adjustment. We work across each run methodically, setting height, depth and side-to-side position until the gap is even at top, bottom and both sides of every door before moving on.",
+      },
+      {
+        q: "What if a door or drawer front arrives damaged?",
+        a: "We flag damaged parts to you as soon as we unpack them. Most retailers will supply replacements, which we can fit on a return visit once they arrive — usually with no additional fitting charge if the visit can be combined with snagging.",
+      },
+      {
+        q: "Can soft-close hinges be fitted to doors that don't have them?",
+        a: "Yes, in most cases. Most modern concealed hinges accept a soft-close clip that can be added independently of the hinge itself. We carry a selection of soft-close dampers and can add them to compatible hinges during the installation.",
+      },
+      {
+        q: "How long does door fitting take?",
+        a: "For an average kitchen of 15–20 doors and drawers, allow half a day for fitting and adjustment. The alignment work takes time to do properly, and we do not cut corners on it.",
+      },
+    ],
+    related: [
+      {
+        label: "Cabinet Assembly & Installation",
+        href: "/services/cabinet-installation/",
+        description: "Carcasses must be perfectly levelled before doors are hung.",
+      },
+      {
+        label: "Handle & Ironmongery Fitting",
+        href: "/services/handles-and-ironmongery/",
+        description: "Handles are fitted after doors and drawers are aligned.",
+      },
+      {
+        label: "Snagging & Final Adjustments",
+        href: "/services/snagging/",
+        description: "Door and drawer alignment is checked again at the final snagging walkthrough.",
+      },
+    ],
+  },
+
+  // ── 5. Trims, Plinths & Cornices ──────────────────────────────────────────
+  {
+    slug: "trims-and-plinths",
+    name: "Trims, Plinths & Cornices",
+    description:
+      "We fit all finishing trims including plinths, cornices, pelmets, light pelmets, fillers, cover panels and glazing bead. These details make the difference between a good finish and a professional one.",
+    title: "Kitchen Trims, Plinths & Cornices Coventry | Install My Kitchen",
+    meta:
+      "Kitchen trim fitting in Coventry and Warwickshire. Plinths, cornices, pelmets, fillers and cover panels fitted precisely. The finishing details that define a professional installation.",
+    takeaways: [
+      "Plinths cut and clipped to a clean fit at floor level with no visible gaps",
+      "Cornices and pelmets mitred at corners for a crisp, furniture-quality finish",
+      "Filler panels scribed to walls to eliminate gaps between cabinets and the room",
+      "Light pelmets and glazing bead fitted where specified in the kitchen design",
+    ],
+    body: `
+<h2>Why Trims and Finishing Details Matter</h2>
+<p>Trims and finishing details are the final stage of any kitchen installation, but they are far from an afterthought. The plinth hides the adjustable legs and gives the base run a solid, furniture-like base. The cornice and pelmet at the top of wall units give the installation a ceiling-height presence. Filler panels between cabinets and walls or between units that don't quite span the space eliminate the gaps that make a kitchen look unfinished. Every one of these details requires careful measurement, accurate cutting and precise fitting.</p>
+<p>A kitchen that has been installed competently but with poorly fitted trims will always look as if something is not quite right. A kitchen where the trims have been fitted meticulously looks like a piece of furniture built into the room. That difference is entirely down to the quality of this final stage.</p>
+
+<h2>Plinth Fitting</h2>
+<p>Plinths are the kickboard panels that run at floor level below the base units. They are clipped to the adjustable leg brackets and cut to length at each end. At corners they are mitred or butt-jointed depending on the design. Against an appliance they are cut to leave the required clearance. On an uneven floor, the plinth bottom edge is scribed to follow the floor profile so there are no visible gaps beneath it.</p>
+<p>Getting the plinth level and tight to the floor along its full length makes a significant difference to the overall look of the base run, particularly on longer runs.</p>
+
+<h2>Cornices and Pelmets</h2>
+<p>Cornices run along the top of wall units and, in most designs, across the top of tall units too. They are fixed to the top of the cabinet carcass or to a fixing strip and mitred at all internal and external corners. Mitring cornice accurately — particularly on a corner that is not a true 90 degrees — requires careful measurement and test fitting before the joint is finalised.</p>
+<p>Pelmets run along the underside of wall units. They serve a practical purpose — concealing under-cabinet lighting wiring — as well as a decorative one. Light pelmets are a deeper version of the standard pelmet, with a channel routed to hold the LED strip light behind. We fit both types and ensure the lighting channel is aligned correctly where specified.</p>
+
+<h2>Fillers and Cover Panels</h2>
+<p>Filler panels fill the gap between the last cabinet in a run and the adjacent wall. They are scribed to the exact profile of the wall surface so that the joint appears clean and intentional. This is one of the more demanding cutting tasks in a kitchen installation because walls are rarely perfectly straight or plumb. Cover panels serve a similar purpose on tall units, bridging the gap between the unit top and the ceiling or between the unit and an adjacent wall.</p>
+    `.trim(),
+    faqs: [
+      {
+        q: "What are the legs on base units for, and why are they hidden?",
+        a: "Adjustable legs allow the cabinets to be levelled precisely regardless of the floor surface. The plinth clips over them and hides them from view, giving the base run a clean, solid appearance at floor level.",
+      },
+      {
+        q: "Do cornices need to be the same brand as the kitchen units?",
+        a: "Ideally yes, as they are designed to match the door finish and profile. Most retailers supply matching cornice with the kitchen order. If yours didn't arrive or was damaged, we can advise on sourcing a replacement.",
+      },
+      {
+        q: "Can you scribe a filler panel to a very uneven wall?",
+        a: "Yes. Scribing is a standard fitting technique. We use a scribing tool to transfer the wall profile onto the panel and then cut along the line with a jigsaw, test-fitting and refining until the joint is clean.",
+      },
+      {
+        q: "What is a light pelmet and do I need one?",
+        a: "A light pelmet is a deeper pelmet with a channel for under-cabinet LED strip lighting. You need one if your kitchen design includes under-cabinet lighting — without it the strip light and its wiring would be visible beneath the wall unit.",
+      },
+    ],
+    related: [
+      {
+        label: "Cabinet Assembly & Installation",
+        href: "/services/cabinet-installation/",
+        description: "Trims and plinths are fitted after all cabinets are in their final positions.",
+      },
+      {
+        label: "Door, Drawer & Panel Fitting",
+        href: "/services/door-fitting/",
+        description: "End panels and decorative panels are fitted alongside doors and drawers.",
+      },
+      {
+        label: "Snagging & Final Adjustments",
+        href: "/services/snagging/",
+        description: "Trim gaps and plinth alignment are checked at the final snagging stage.",
+      },
+    ],
+  },
+
+  // ── 6. Handle & Ironmongery Fitting ───────────────────────────────────────
+  {
+    slug: "handles-and-ironmongery",
+    name: "Handle & Ironmongery Fitting",
+    description:
+      "We fit all handles, knobs, bar pulls and integrated handle profiles. Template jigs are used for consistent positioning across all doors and drawers.",
+    title: "Kitchen Handle & Ironmongery Fitting Coventry | Install My Kitchen",
+    meta:
+      "Kitchen handle and ironmongery fitting in Coventry and Warwickshire. Handles, knobs and bar pulls fitted with template jigs for consistent positioning across all doors and drawers.",
+    takeaways: [
+      "Template jigs used to ensure identical handle positioning across all doors and drawers",
+      "Handles drilled and fixed from the rear of doors wherever possible to keep faces clean",
+      "Integrated handle profiles and J-pull channels fitted accurately",
+      "All ironmongery — including soft-close clips and drawer buffers — set and tested",
+    ],
+    body: `
+<h2>The Detail That Ties Everything Together</h2>
+<p>Handles are one of the most touched parts of any kitchen and — along with the door fronts themselves — one of the most visually prominent details. A handle that is 5 mm too high, or that sits at a slightly different height on an adjacent door, will be noticed every time someone opens the cabinet. Getting every handle in exactly the same position across all doors and drawers requires the right approach: a template jig.</p>
+<p>A template jig is a drilling guide made for the specific handle fixings specified in the kitchen design. It clamps to the corner of the door or drawer front and locates the drill position precisely every time. Whether we are fitting 12 doors or 40, every handle ends up in exactly the same relative position on its door. The result is a kitchen where the handles form a consistent visual rhythm across the room.</p>
+
+<h2>Handle Types and Fixing Methods</h2>
+<p>Bar pulls — long horizontal or vertical handles — are the most common kitchen handle type. They are fixed with two bolts that pass through the door from front to back. Getting both holes at exactly the right centres and perfectly level is critical; a bar pull that tilts even slightly is immediately obvious.</p>
+<p>Knobs are fixed with a single central bolt and require just one hole, but the positioning still needs to be consistent across all doors. Cup pulls, bridge handles and bow handles each have their own fixing arrangements, all of which we accommodate.</p>
+<p>Integrated handle profiles — routed channels or J-pull extrusions that sit along the top or bottom edge of a door — require a different approach. These are measured and cut to length, mitred at corners where required, and fixed with screws from the rear of the door face. The result is a handleless kitchen aesthetic that looks very clean and contemporary.</p>
+
+<h2>Soft-Close and Drawer Ironmongery</h2>
+<p>Handle fitting often happens alongside the final calibration of soft-close mechanisms. We check every soft-close hinge and drawer runner, adjusting the damper tension so that doors and drawers close firmly and silently without bouncing back or slamming. Door buffers — the small rubber or plastic stops that prevent a door from hitting the cabinet side — are checked and replaced if worn or missing.</p>
+<p>This ironmongery check takes only a short time but makes a significant difference to the daily experience of using the kitchen. A kitchen where every door and drawer closes with the same quiet, firm action feels well made and professionally installed.</p>
+    `.trim(),
+    faqs: [
+      {
+        q: "Can you match the handle position to handles already fitted on other cabinets?",
+        a: "Yes. If there are existing handles in the room that we need to match, we measure the existing position and set the jig accordingly. Consistency with an existing installation is straightforward to achieve.",
+      },
+      {
+        q: "What if a door cracks when drilling for a handle?",
+        a: "We use the correct drill bit and technique for the door material. MDF and foil-wrapped doors require a sharp bit and a backing board to prevent breakout on the rear face. If a door is damaged during drilling we will advise you immediately and document it for a replacement claim with the supplier.",
+      },
+      {
+        q: "Do you fit integrated aluminium handle profiles?",
+        a: "Yes. Aluminium J-pull profiles are cut to length with a mitre saw, ends are de-burred and the profile is fixed with screws from the rear. We confirm the exact length and fixing pattern with you before cutting.",
+      },
+      {
+        q: "How long does handle fitting take?",
+        a: "For an average kitchen of 20 doors and drawers, handle fitting including jig setup and soft-close calibration typically takes two to three hours.",
+      },
+    ],
+    related: [
+      {
+        label: "Door, Drawer & Panel Fitting",
+        href: "/services/door-fitting/",
+        description: "Handles are fitted once doors and drawers are aligned and secured.",
+      },
+      {
+        label: "Snagging & Final Adjustments",
+        href: "/services/snagging/",
+        description: "Handle alignment and soft-close function are checked at the final snagging stage.",
+      },
+      {
+        label: "Cabinet Assembly & Installation",
+        href: "/services/cabinet-installation/",
+        description: "The foundation of the installation that every subsequent stage builds upon.",
+      },
+    ],
+  },
+
+  // ── 7. Snagging & Final Adjustments ───────────────────────────────────────
+  {
+    slug: "snagging",
+    name: "Snagging & Final Adjustments",
+    description:
+      "Snagging is the final stage of kitchen installation — checking every element, adjusting alignments, ensuring soft-close functions correctly, sealing gaps and resolving any issues before handover.",
+    title: "Kitchen Snagging & Final Adjustments Coventry | Install My Kitchen",
+    meta:
+      "Kitchen snagging and final adjustments in Coventry and Warwickshire. Every door, drawer, trim and seal checked and corrected before handover. No issues left outstanding.",
+    takeaways: [
+      "Systematic walkthrough of every door, drawer, trim and appliance before handover",
+      "All alignment adjustments made until every gap and reveal is consistent",
+      "Soft-close function checked and calibrated on all hinges and drawer runners",
+      "Silicone sealant applied to all worktop-to-wall and sink-to-worktop junctions",
+    ],
+    body: `
+<h2>What Snagging Means in a Kitchen Installation</h2>
+<p>Snagging is not an admission that something has gone wrong — it is a structured quality control process that every professional installation includes. Even on a well-run job, the process of installing dozens of components, one after another, means that some adjustments will be needed once everything is in place. Doors that were adjusted correctly early in the day can need a minor correction after the worktops go on and the room settles. A plinth that was cut cleanly may need a small gap filled once the floor flex is accounted for. Snagging is the stage where all of this is found and resolved.</p>
+<p>We carry out a full snagging walkthrough at the end of every installation. We work through the kitchen systematically, checking every door, every drawer, every trim, every seal and every exposed edge against a consistent standard. Nothing is handed over until we are satisfied that the kitchen meets the quality level we expect.</p>
+
+<h2>What We Check</h2>
+<p>The snagging walkthrough covers alignment across all doors and drawers — checking that reveals are even at top, bottom and both sides, that doors are flush with each other and that drawer fronts are level. Any door or drawer that has shifted out of adjustment is corrected on the spot using the hinge or runner adjustment mechanism.</p>
+<p>Soft-close function is checked on every hinge and every drawer runner. A soft-close mechanism that is not set correctly will either fail to catch the door at the end of its travel or will be too stiff and prevent the door from closing under its own weight. We set each one until it closes correctly.</p>
+<p>Trims and plinths are checked for gaps and secure fixing. Cornices and pelmets are checked for tight mitre joints. Filler panels are checked against the wall surface for any gaps. Worktop joints are checked for level across the joint line.</p>
+
+<h2>Sealing and Finishing</h2>
+<p>At the end of the snagging stage we apply silicone sealant to all junctions between the worktop and the wall (or up-stand), around the sink bowl and anywhere else where moisture could track between surfaces. We use a neutral-cure silicone in a matched or neutral colour and tool the bead cleanly for a professional finish.</p>
+<p>Any obvious waste — packaging, offcuts, fixings — is collected and removed from the site. We leave the kitchen clean and ready for your plumber and electrician to complete their second-fix connections.</p>
+
+<h2>Handover</h2>
+<p>Before we leave, we walk through the kitchen with you, pointing out what has been done and how to adjust doors and drawers if they need a minor tweak in future. We also note any items that are outstanding — perhaps a replacement door that is on order, or a worktop joint that the stone fabricator needs to finish — and confirm the plan for completing them.</p>
+    `.trim(),
+    faqs: [
+      {
+        q: "Is snagging included in the installation price?",
+        a: "Yes. The snagging walkthrough at the end of the installation is included as standard. It is not an optional extra — it is part of how we work.",
+      },
+      {
+        q: "What if I notice an issue after you have left?",
+        a: "Any issue that arises directly from our installation work will be addressed as a priority. Contact us as soon as you notice it and we will arrange a return visit to resolve it.",
+      },
+      {
+        q: "Can I book a standalone snagging visit if someone else fitted my kitchen?",
+        a: "Yes. If you have had a kitchen installed by another fitter and are not satisfied with the quality, we can carry out a standalone snagging visit to assess and correct the issues. This is quoted separately based on the scope of work.",
+      },
+      {
+        q: "How long does the snagging walkthrough take?",
+        a: "For a standard kitchen, the snagging stage typically takes two to three hours. Larger kitchens with islands, peninsulas or a high door count will take longer. We factor this time into the installation schedule rather than rushing it at the end of the day.",
+      },
+    ],
+    related: [
+      {
+        label: "Door, Drawer & Panel Fitting",
+        href: "/services/door-fitting/",
+        description: "Door and drawer alignment is set during fitting and confirmed at snagging.",
+      },
+      {
+        label: "Trims, Plinths & Cornices",
+        href: "/services/trims-and-plinths/",
+        description: "Trim gaps and fixings are checked during the snagging walkthrough.",
+      },
+      {
+        label: "Handle & Ironmongery Fitting",
+        href: "/services/handles-and-ironmongery/",
+        description: "Soft-close calibration and handle alignment are confirmed at snagging.",
+      },
+    ],
+  },
+
+  // ── 8. Flooring & Tiling ──────────────────────────────────────────────────
+  {
+    slug: "flooring-tiling",
+    name: "Flooring & Tiling (Optional)",
+    description:
+      "We offer kitchen flooring and tiling as an optional service. This includes laying porcelain and ceramic floor tiles, LVT, laminate flooring and wall tiles. This service is quoted separately and subject to availability.",
+    title: "Kitchen Flooring & Tiling Coventry | Install My Kitchen",
+    meta:
+      "Optional kitchen flooring and tiling service in Coventry and Warwickshire. Porcelain, ceramic, LVT and laminate flooring. Wall tiles. Quoted separately. Subject to availability.",
+    takeaways: [
+      "Optional service — quoted separately from the main kitchen installation",
+      "Porcelain and ceramic floor tiles, LVT and laminate flooring all available",
+      "Wall tiles fitted to splashback areas, full height or specified sections",
+      "Subject to availability — confirm at the survey stage to secure this service",
+    ],
+    body: `
+<h2>Flooring and Tiling as Part of Your Kitchen Project</h2>
+<p>Having one team handle both the kitchen installation and the flooring means better co-ordination, a single point of contact and — in most cases — a smoother project overall. When we lay the flooring before the cabinets go in, the base units sit on top of it and the plinth drops down to floor level as designed. When we tile the splashback after the worktops are fitted, we can cut accurately to the worktop edge and wall unit soffit without relying on another contractor to co-ordinate with the rest of the installation.</p>
+<p>This is an optional service and is subject to availability. If you would like flooring or tiling included in your project, raise it at the survey stage — we can assess the scope and include it in your quote.</p>
+
+<h2>Floor Tiles — Porcelain and Ceramic</h2>
+<p>Porcelain and ceramic floor tiles are the most popular choice for kitchen floors, and with good reason. They are durable, easy to clean and available in an enormous range of sizes, finishes and patterns. We lay both standard ceramic tiles and the larger-format porcelain tiles that have become popular in recent years.</p>
+<p>Preparation is key to a successful tiled floor. The subfloor must be level to within the manufacturer's tolerance — typically 3 mm over 3 m — and any flexible boards must be overlaid with a suitable tile backer or uncoupling membrane. We assess the subfloor condition at the survey and advise on any preparation needed. Adhesive specification, grout joint width and tile layout are all confirmed with you before we start.</p>
+
+<h2>LVT and Laminate Flooring</h2>
+<p>Luxury vinyl tile and laminate flooring are both popular in kitchens because they are warm underfoot, easy to maintain and available in a wide range of wood and stone effects. LVT is fully waterproof and can be laid in any direction; laminate needs an expansion gap and is not suitable directly in front of a dishwasher or sink unless a waterproof grade is specified.</p>
+<p>Both products are laid as floating floors on top of the existing subfloor, with the appropriate underlay for comfort and sound reduction. We cut around door architraves and fit the required expansion profiles at doorways and changes of floor level.</p>
+
+<h2>Wall Tiles and Splashbacks</h2>
+<p>Wall tiling in a kitchen is most commonly done in the splashback area — the section of wall between the worktop and the bottom of the wall units. We also tile full-height feature walls, chimney breast sections and utility walls where specified. Tiles are set out from a level datum with consistent joint widths and grouted in the specified colour. Cut edges at the perimeter are finished with the appropriate trim profile or left as a clean scribed edge where the design calls for it.</p>
+<p>If you are considering a patterned tile or a book-matched large-format tile, let us know at the survey stage so we can allow additional time for the set-out planning.</p>
+    `.trim(),
+    faqs: [
+      {
+        q: "Does flooring go in before or after the kitchen cabinets?",
+        a: "It depends on the flooring type and the design. In most cases we recommend laying floor tiles before the cabinets, with the plinth dropping to floor level. LVT and laminate are often laid after cabinets, running under the plinth. We confirm the correct sequence at the survey.",
+      },
+      {
+        q: "Can you tile the full height of a kitchen wall?",
+        a: "Yes, subject to the wall being in a suitable condition. Full-height wall tiling requires a flat, stable substrate. Where this is not present we can advise on preparation options.",
+      },
+      {
+        q: "What if I want underfloor heating under the tiles?",
+        a: "Electric underfloor heating mats are a relatively straightforward addition before tiling. The mat must be installed and electrically connected before the floor adhesive goes down. We can include this in the scope if arranged in advance.",
+      },
+      {
+        q: "Why is this service subject to availability?",
+        a: "Flooring and tiling require additional time and specialist materials beyond the standard kitchen installation. We schedule this work separately to ensure quality is maintained. Confirming it at the survey stage allows us to plan accordingly.",
+      },
+    ],
+    related: [
+      {
+        label: "Cabinet Assembly & Installation",
+        href: "/services/cabinet-installation/",
+        description: "Flooring sequence is planned around cabinet installation to ensure correct plinth height.",
+      },
+      {
+        label: "Trims, Plinths & Cornices",
+        href: "/services/trims-and-plinths/",
+        description: "Plinths are fitted to the finished floor level after flooring is complete.",
+      },
+      {
+        label: "Snagging & Final Adjustments",
+        href: "/services/snagging/",
+        description: "Tile grouting, expansion joints and floor finish are checked at snagging.",
+      },
+    ],
+  },
+  ];
+
+  return services.map((s) => ({
+    params: { service: s.slug },
+    props: { service: s },
+  }));
+};
+
+// ─────────────────────────────────────────────────────────────────────────────
+// Page props
+// ─────────────────────────────────────────────────────────────────────────────
+
+interface Props {
+  service: ServiceData;
+}
+
+const { service } = Astro.props;
+---
+
+<Base
+  title={service.title}
+  description={service.meta}
+  canonical={`https://www.installmykitchen.co.uk/services/${service.slug}/`}
+>
+  <!-- Header -->
+  <Header slot="header" />
+
+  <!-- ══════════════════════════════ PAGE HEADER ══════════════════ -->
+  <section class="page-header" aria-label="Page header">
+    <div class="container">
+      <Breadcrumbs
+        items={[
+          { label: "Home", href: "/" },
+          { label: "Services", href: "/services/" },
+          { label: service.name, href: `/services/${service.slug}/` },
+        ]}
+      />
+      <h1 class="page-h1">{service.name} — Professional Kitchen Installation Service</h1>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════ MAIN CONTENT ════════════════ -->
+  <section class="section" style="background: #fff;" aria-label={service.name}>
+    <div class="container content-grid">
+
+      <div class="content-main">
+        <AnswerBlock answer={service.description} />
+
+        <KeyTakeaway points={service.takeaways} />
+
+        <!-- Body copy -->
+        <div class="prose" set:html={service.body} />
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════ FAQ ═══════════ -->
+  <section class="section" style="background: var(--bg-light);" aria-labelledby={`faq-heading-${service.slug}`}>
+    <div class="container">
+      <div class="max-w-3xl mx-auto">
+        <h2 id={`faq-heading-${service.slug}`} class="faq-heading">
+          {service.name} — Frequently Asked Questions
+        </h2>
+        <FAQ items={service.faqs} schemaId={`${service.slug}-faq`} />
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════ INTERNAL LINKS ══════ -->
+  <section class="section" style="background: #fff;" aria-label="Related services">
+    <div class="container">
+      <InternalLinks
+        heading="Related Services"
+        links={[
+          ...service.related,
+          { label: "All Kitchen Services", href: "/services/", description: "View the full range of installation services we offer." },
+          { label: "Book a Pre-Installation Survey", href: "/survey/", description: "Every installation starts with a survey — book yours today." },
+        ]}
+      />
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════ DARK CTA ═══════════ -->
+  <CTA
+    dark={true}
+    heading={`Book a Survey to Discuss Your ${service.name} Requirements`}
+    subtext="Every installation starts with a pre-installation survey. We visit your home, check your kitchen plan and provide a clear, itemised quote — no hidden extras."
+    primaryLabel="Book a Survey"
+    primaryHref="/survey/"
+    secondaryLabel="View All Services"
+    secondaryHref="/services/"
+  />
+
+  <!-- Footer -->
+  <Footer slot="footer" />
+  <StickyMobileCTA slot="sticky-cta" />
+</Base>
+
+<style>
+  /* ── Page header ── */
+  .page-header {
+    background: var(--hero-gradient);
+    padding: 3rem 0 3.5rem;
+  }
+
+  .page-h1 {
+    font-size: clamp(1.5rem, 2.8vw, 2.25rem);
+    font-weight: 800;
+    color: #fff;
+    letter-spacing: -0.02em;
+    margin-top: 0.75rem;
+    margin-bottom: 0;
+    max-width: 42rem;
+    line-height: 1.25;
+  }
+
+  /* ── Content grid ── */
+  .content-grid {
+    max-width: 52rem;
+    margin-inline: auto;
+  }
+
+  .content-main {
+    width: 100%;
+  }
+
+  /* ── Prose body copy ── */
+  .prose {
+    color: var(--text);
+    font-size: 1rem;
+    line-height: 1.75;
+  }
+
+  .prose :global(h2) {
+    font-size: clamp(1.2rem, 2.2vw, 1.5rem);
+    font-weight: 700;
+    color: var(--charcoal);
+    margin-top: 2.25rem;
+    margin-bottom: 0.75rem;
+    letter-spacing: -0.01em;
+    line-height: 1.3;
+  }
+
+  .prose :global(p) {
+    margin-bottom: 1.25rem;
+    color: var(--text-soft);
+  }
+
+  .prose :global(p:last-child) {
+    margin-bottom: 0;
+  }
+
+  /* ── FAQ heading ── */
+  .faq-heading {
+    font-size: clamp(1.2rem, 2.2vw, 1.625rem);
+    font-weight: 700;
+    color: var(--charcoal);
+    margin-bottom: 1.75rem;
+    text-align: center;
+  }
+</style>

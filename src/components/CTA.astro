@@ -1,0 +1,244 @@
+---
+export interface Props {
+  heading: string;
+  subtext: string;
+  primaryLabel: string;
+  primaryHref: string;
+  secondaryLabel?: string;
+  secondaryHref?: string;
+  dark?: boolean;
+}
+
+const {
+  heading,
+  subtext,
+  primaryLabel,
+  primaryHref,
+  secondaryLabel,
+  secondaryHref,
+  dark = false,
+} = Astro.props;
+---
+
+<section
+  class:list={["cta-section", { "cta-dark": dark, "cta-light": !dark }]}
+  aria-label={heading}
+>
+  <div class="container">
+    <div class="cta-inner">
+
+      <!-- Decorative background shape — dark mode only -->
+      {dark && (
+        <div class="cta-decoration" aria-hidden="true">
+          <div class="cta-deco-ring cta-deco-ring--1"></div>
+          <div class="cta-deco-ring cta-deco-ring--2"></div>
+        </div>
+      )}
+
+      <!-- Text -->
+      <div class="cta-text">
+        <h2 class:list={["cta-heading", { "text-white": dark, "cta-heading--light": !dark }]}>
+          {heading}
+        </h2>
+        <p class:list={["cta-subtext", { "text-white/75": dark, "text-gray-500": !dark }]}>
+          {subtext}
+        </p>
+      </div>
+
+      <!-- Buttons -->
+      <div class="cta-buttons">
+        {/* Primary button */}
+        {dark ? (
+          <a href={primaryHref} class="btn-primary cta-btn">
+            {primaryLabel}
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <line x1="5" y1="12" x2="19" y2="12"/>
+              <polyline points="12 5 19 12 12 19"/>
+            </svg>
+          </a>
+        ) : (
+          <a href={primaryHref} class="btn-primary cta-btn">
+            {primaryLabel}
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <line x1="5" y1="12" x2="19" y2="12"/>
+              <polyline points="12 5 19 12 12 19"/>
+            </svg>
+          </a>
+        )}
+
+        {/* Secondary button (optional) */}
+        {secondaryLabel && secondaryHref && (
+          dark ? (
+            <a href={secondaryHref} class="cta-btn cta-btn--secondary-dark">
+              {secondaryLabel}
+            </a>
+          ) : (
+            <a href={secondaryHref} class="cta-btn cta-btn--secondary-light">
+              {secondaryLabel}
+            </a>
+          )
+        )}
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<style>
+  /* ── Base section layout ── */
+  .cta-section {
+    position: relative;
+    overflow: hidden;
+    padding: 5rem 0;
+  }
+
+  @media (min-width: 768px) {
+    .cta-section {
+      padding: 6.5rem 0;
+    }
+  }
+
+  /* ── Dark variant ── */
+  .cta-dark {
+    background: var(--hero-gradient);
+  }
+
+  /* ── Light variant ── */
+  .cta-light {
+    background: #fff;
+    border-top: 1px solid #F3F4F6;
+    border-bottom: 1px solid #F3F4F6;
+  }
+
+  /* ── Inner layout ── */
+  .cta-inner {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 2rem;
+    z-index: 1;
+  }
+
+  @media (min-width: 768px) {
+    .cta-inner {
+      gap: 2.25rem;
+    }
+  }
+
+  /* ── Text block ── */
+  .cta-text {
+    display: flex;
+    flex-direction: column;
+    gap: 0.875rem;
+    max-width: 44rem;
+  }
+
+  .cta-heading {
+    font-size: clamp(1.5rem, 3vw, 2.25rem);
+    font-weight: 800;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+  }
+
+  .cta-heading--light {
+    color: var(--charcoal);
+  }
+
+  .cta-subtext {
+    font-size: 1.0625rem;
+    line-height: 1.65;
+    max-width: 38rem;
+    margin: 0 auto;
+  }
+
+  /* ── Button row ── */
+  .cta-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.875rem;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .cta-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.8125rem 1.75rem;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    font-weight: 700;
+    text-decoration: none;
+    transition: transform 0.2s, box-shadow 0.2s, background 0.2s, opacity 0.2s;
+    white-space: nowrap;
+  }
+
+  .cta-btn:hover {
+    transform: translateY(-2px);
+  }
+
+  /* Dark secondary: white outline */
+  .cta-btn--secondary-dark {
+    border: 2px solid rgba(255, 255, 255, 0.55);
+    color: #fff;
+    background: transparent;
+  }
+
+  .cta-btn--secondary-dark:hover {
+    border-color: #fff;
+    background: rgba(255, 255, 255, 0.08);
+  }
+
+  .cta-btn--secondary-dark:focus-visible {
+    outline: 2px solid #fff;
+    outline-offset: 2px;
+  }
+
+  /* Light secondary: gold outline */
+  .cta-btn--secondary-light {
+    border: 2px solid var(--gold);
+    color: #92670e;
+    background: transparent;
+    font-weight: 700;
+  }
+
+  .cta-btn--secondary-light:hover {
+    background: rgba(212, 160, 23, 0.07);
+  }
+
+  .cta-btn--secondary-light:focus-visible {
+    outline: 2px solid var(--gold);
+    outline-offset: 2px;
+  }
+
+  /* ── Decorative rings (dark mode only) ── */
+  .cta-decoration {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .cta-deco-ring {
+    position: absolute;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  .cta-deco-ring--1 {
+    width: 28rem;
+    height: 28rem;
+    top: -10rem;
+    right: -8rem;
+  }
+
+  .cta-deco-ring--2 {
+    width: 18rem;
+    height: 18rem;
+    bottom: -6rem;
+    left: -5rem;
+  }
+</style>

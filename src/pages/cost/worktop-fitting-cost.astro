@@ -1,0 +1,269 @@
+---
+import Base from "../../layouts/Base.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import StickyMobileCTA from "../../components/StickyMobileCTA.astro";
+import Breadcrumbs from "../../components/Breadcrumbs.astro";
+import AnswerBlock from "../../components/AnswerBlock.astro";
+import KeyTakeaway from "../../components/KeyTakeaway.astro";
+import FAQ from "../../components/FAQ.astro";
+import InternalLinks from "../../components/InternalLinks.astro";
+import CTA from "../../components/CTA.astro";
+
+const title = "Worktop Fitting Cost 2025 | Install My Kitchen Coventry";
+const metaDescription =
+  "Worktop fitting costs vary by material. Laminate is most affordable; stone needs templating. Fitting is included in our kitchen installation quote in Coventry.";
+const canonical = "https://www.installmykitchen.co.uk/cost/worktop-fitting-cost/";
+
+const takeawayPoints = [
+  "Laminate worktop fitting is included as standard in our kitchen installation quote — no separate charge.",
+  "Stone worktops (quartz, granite, solid surface) require specialist templating and fabrication by a stone supplier — this is a separate cost arranged with them directly.",
+  "Standalone worktop fitting — replacing a worktop without a full kitchen installation — is also available from Install My Kitchen.",
+  "The number of joints, cutouts, and the accessibility of the run all affect how long worktop fitting takes.",
+];
+
+const faqs = [
+  {
+    q: "Is worktop fitting included in a kitchen installation quote?",
+    a: "Yes. Fitting a laminate worktop — including all cuts, joins, sink cutout, and hob cutout where applicable — is included as standard in our kitchen installation quote. There is no separate charge for worktop fitting as part of a full kitchen installation.",
+  },
+  {
+    q: "How much does stone worktop fitting cost?",
+    a: "Stone worktop costs vary significantly depending on the material (quartz, granite, marble, solid surface), the linear metreage, the number of cutouts, and the fabricator. The stone supplier supplies and fits the worktop; they are separate from our kitchen installation service. We co-ordinate closely with your stone supplier to ensure the template and fitting visits align with the installation programme.",
+  },
+  {
+    q: "Can you replace just the worktop without fitting a new kitchen?",
+    a: "Yes. We offer standalone worktop replacement — removing the existing worktop and fitting a new one — as a separate service. This is particularly useful when the existing kitchen units are in good condition but the worktop has become worn or damaged. Please contact us to discuss your requirements.",
+  },
+  {
+    q: "What is a worktop template and why is it needed for stone?",
+    a: "A worktop template is a precise cardboard or digital pattern of the exact worktop run, taken after the base units are level and in position. The stone fabricator uses the template to cut the worktop to the exact shape of your kitchen, including any cutouts for the sink and hob, any angled cuts, and any curves. Because stone cannot be adjusted on site, the template must be accurate. Templating is usually done on day 1–2 of the kitchen installation, with the finished worktop returned for fitting 5–7 working days later.",
+  },
+];
+
+const internalLinks = [
+  {
+    label: "Kitchen Fitting Labour Cost",
+    href: "/cost/labour-cost/",
+    description: "Day rates and what affects total labour cost",
+  },
+  {
+    label: "Appliance Fitting Cost",
+    href: "/cost/appliance-fitting-cost/",
+    description: "Costs for fitting ovens, hobs, dishwashers and more",
+  },
+  {
+    label: "Kitchen Installation Cost Guide",
+    href: "/costs/",
+    description: "Full breakdown of installation costs and typical ranges",
+  },
+  {
+    label: "Book a Survey",
+    href: "/survey/",
+    description: "Get a fixed-price quote with our £195 pre-installation survey",
+  },
+  {
+    label: "Our Services",
+    href: "/services/",
+    description: "Everything we fit and how we work",
+  },
+  {
+    label: "Contact Us",
+    href: "/contact/",
+    description: "Get in touch with Install My Kitchen",
+  },
+];
+---
+
+<Base title={title} description={metaDescription} canonical={canonical}>
+  <Header slot="header" />
+
+  <div class="container py-6">
+    <Breadcrumbs
+      items={[
+        { label: "Cost Guide", href: "/costs/" },
+        { label: "Worktop Fitting Cost", href: canonical },
+      ]}
+    />
+  </div>
+
+  <!-- Hero -->
+  <section class="section" style="background: var(--bg-light);">
+    <div class="container">
+      <div class="max-w-3xl">
+        <h1
+          class="text-4xl md:text-5xl font-extrabold mb-5 leading-tight"
+          style="color: var(--navy);"
+        >
+          Worktop Fitting Cost — What Does Worktop Installation Cost?
+        </h1>
+        <AnswerBlock
+          answer="Worktop fitting costs vary by material and complexity. Laminate worktops are the most affordable; stone (quartz, granite) requires templating. As part of a full kitchen installation, worktop fitting is included in our quote. Standalone worktop fitting is also available."
+        />
+        <KeyTakeaway points={takeawayPoints} />
+      </div>
+    </div>
+  </section>
+
+  <!-- Types of worktops -->
+  <section class="section">
+    <div class="container">
+      <div class="max-w-3xl fade-up">
+        <h2 class="text-3xl font-bold mb-6" style="color: var(--navy);">
+          Types of Kitchen Worktop and How They Affect Fitting Cost
+        </h2>
+        <p class="leading-relaxed mb-6" style="color: var(--text-soft);">
+          The material you choose for your worktop is the single biggest factor in fitting cost. Different materials require different skills, tools, and processes. Here is a summary of the main worktop types and what is involved in fitting each one.
+        </p>
+
+        <ul class="space-y-4 list-none p-0 m-0">
+          {[
+            {
+              type: "Laminate (post-formed and square-edge)",
+              detail:
+                "Laminate is the most common worktop type in UK kitchen installations. It is supplied in standard lengths and cut to size on site using a circular saw or jigsaw. Joins are made with worktop connectors and finished with edging strips or silicon sealant. Cutouts for sinks and hobs are made with a jigsaw. Laminate fitting is included as standard in our kitchen installation quote with no additional charge.",
+            },
+            {
+              type: "Solid wood and real wood",
+              detail:
+                "Solid wood worktops are cut and fitted on site in the same way as laminate, but require more care around expansion gaps, end-grain sealing, and fixing methods that allow for seasonal movement. Fitting solid wood is included in our standard installation rate. We recommend oiling the worktop before installation to protect it during the fitting process.",
+            },
+            {
+              type: "Quartz and engineered stone",
+              detail:
+                "Quartz is one of the most popular premium worktop choices. It cannot be cut or modified on site — any cutout or joint must be made in the fabricator's workshop. This means a template must be taken after the base units are in position. The stone supplier templates, fabricates, and fits the worktop; this is separate from our installation service. We co-ordinate with your supplier to schedule the template visit at the right point in the programme.",
+            },
+            {
+              type: "Granite",
+              detail:
+                "Granite follows the same process as quartz: template, fabricate, fit. The weight and fragility of a polished granite slab means specialist lifting equipment is often needed for large sections. All of this is managed by your stone supplier. Lead times after templating are typically 5–10 working days depending on the supplier.",
+            },
+            {
+              type: "Solid surface (Corian, Staron, Hi-Macs)",
+              detail:
+                "Solid surface materials are cut and joined by specialist fabricators. Joins in solid surface can be made virtually invisible through heat-welding and sanding. Like stone, solid surface worktops require templating and return-visit fitting by the supplier.",
+            },
+            {
+              type: "Compact laminate (Dekton, Fenix, Neolith)",
+              detail:
+                "Ultra-compact surfaces are extremely hard and brittle and require diamond tooling for any cutting. All fabrication is done off-site by the supplier following templating. These materials are growing in popularity due to their exceptional durability and contemporary aesthetic.",
+            },
+          ].map(({ type, detail }) => (
+            <li class="p-5 rounded-xl border" style="border-color: #E5E7EB; background: #fff;">
+              <p class="font-semibold mb-1" style="color: var(--charcoal);">{type}</p>
+              <p class="text-sm leading-relaxed" style="color: var(--text-soft);">{detail}</p>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cost factors -->
+  <section class="section" style="background: var(--bg-light);">
+    <div class="container">
+      <div class="max-w-3xl fade-up">
+        <h2 class="text-3xl font-bold mb-6" style="color: var(--navy);">
+          Factors That Affect Worktop Fitting Cost
+        </h2>
+        <p class="leading-relaxed mb-4" style="color: var(--text-soft);">
+          Even within a single material type, fitting costs vary based on the complexity of the job. The following factors affect how long worktop fitting takes and, for stone, what the fabricator will charge.
+        </p>
+        <p class="leading-relaxed mb-4" style="color: var(--text-soft);">
+          <strong style="color: var(--charcoal);">Linear metreage.</strong> More worktop to fit means more time. A small galley kitchen may have 3–4 linear metres of worktop; a large L-shaped kitchen with a breakfast bar may have 8–10 metres. Stone suppliers charge per linear or square metre, so a longer run costs more in material and fabrication.
+        </p>
+        <p class="leading-relaxed mb-4" style="color: var(--text-soft);">
+          <strong style="color: var(--charcoal);">Number of joints.</strong> Worktops are supplied in standard lengths (typically 3m). A long run requires a join, and each join adds fitting time and, for stone, additional fabrication cost. A mitre join at a corner is more time-consuming than a straight butt joint.
+        </p>
+        <p class="leading-relaxed mb-4" style="color: var(--text-soft);">
+          <strong style="color: var(--charcoal);">Cutouts.</strong> Each cutout for a sink or hob adds time. An undermount sink requires a precise cutout with rounded corners and a polished edge; this is always done by the stone fabricator. An inset stainless steel sink in a laminate worktop is cut on site. A 4-burner gas hob requires a larger and more precisely dimensioned cutout than a 2-ring ceramic hob.
+        </p>
+        <p class="leading-relaxed mb-4" style="color: var(--text-soft);">
+          <strong style="color: var(--charcoal);">End profiles and upstands.</strong> A square-cut end treated with edging tape is the simplest finish. A bullnosed edge, a pencil-rounded edge, or a shaped profile adds machining time and cost. Upstands (the upright strip running between the worktop and the wall or splashback) require cutting and fitting, particularly at internal corners where the two sections must be scribed together accurately.
+        </p>
+        <p class="leading-relaxed" style="color: var(--text-soft);">
+          <strong style="color: var(--charcoal);">Accessibility.</strong> A worktop section against a single straight wall is straightforward to fit. A section running into a deep corner alcove or over a peninsula that requires the fitter to work from one end only takes considerably more time to position, fix, and finish.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Templating process -->
+  <section class="section">
+    <div class="container">
+      <div class="max-w-3xl fade-up">
+        <h2 class="text-3xl font-bold mb-4" style="color: var(--navy);">
+          The Stone Worktop Templating Process
+        </h2>
+        <p class="leading-relaxed mb-4" style="color: var(--text-soft);">
+          If you have chosen a quartz, granite, or solid surface worktop, understanding the templating process will help you plan your installation programme more accurately.
+        </p>
+        <p class="leading-relaxed mb-4" style="color: var(--text-soft);">
+          The template cannot be taken until all base units are in their final level position. This typically means the template visit is scheduled for the end of day 1 or during day 2 of the kitchen installation, once the base run is complete and levelled. Attempting to template before the units are level will result in a worktop that does not fit correctly.
+        </p>
+        <p class="leading-relaxed mb-4" style="color: var(--text-soft);">
+          On the template day, the stone supplier's templater visits the site and takes a precise pattern of the entire worktop run. Modern templaters use digital laser measurement systems (Proliner) that produce a highly accurate digital file which is sent directly to the CNC cutting machine at the fabricator's workshop. Traditional cardboard templating is also still used and, in skilled hands, produces equally accurate results.
+        </p>
+        <p class="leading-relaxed mb-4" style="color: var(--text-soft);">
+          Fabrication typically takes 5–10 working days after the template, depending on the supplier's current order book. The finished worktop is delivered and fitted by the stone supplier's own fitting team. Our fitters then complete the final silicon sealing around the perimeter, cut and fit any upstand sections, and ensure everything is properly finished.
+        </p>
+        <p class="leading-relaxed" style="color: var(--text-soft);">
+          When planning your kitchen project, build the stone fabrication lead time into your programme. If the base units go in on day 2, the template is taken on day 2 or 3, and the stone returns 7–8 working days later — your kitchen will be without a worktop for approximately two weeks. Many customers plan around this by using the kitchen on a temporary basis during this period. We will advise you on how to manage the programme at the pre-installation survey.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Joints and cutouts detail -->
+  <section class="section" style="background: var(--bg-light);">
+    <div class="container">
+      <div class="max-w-3xl fade-up">
+        <h2 class="text-3xl font-bold mb-4" style="color: var(--navy);">
+          Joints, Cutouts, and Getting a Clean Finish
+        </h2>
+        <p class="leading-relaxed mb-4" style="color: var(--text-soft);">
+          The quality of a worktop installation is most visible at the joins and cutouts. A well-cut, tightly fitted laminate join should be barely visible with an even sealant line. A poorly cut join will be immediately obvious and cannot be disguised. We take care at every joint.
+        </p>
+        <p class="leading-relaxed mb-4" style="color: var(--text-soft);">
+          For laminate, corner joins are typically made with a worktop jig that produces a mitre angle between two sections meeting at 90 degrees. The two sections are drawn together with draw bolts and sealed with silicone. A well-made mitre join is strong, tight, and waterproof.
+        </p>
+        <p class="leading-relaxed" style="color: var(--text-soft);">
+          Sink and hob cutouts in laminate are made with a jigsaw using a template. The cut edge is sealed before the sink is dropped in to prevent moisture ingress into the worktop substrate. For undermount sinks in laminate (less common but possible), a router is used to create a rebated edge so the sink sits flush or below the worktop surface.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section">
+    <div class="container">
+      <div class="max-w-3xl fade-up">
+        <h2 class="text-3xl font-bold mb-8" style="color: var(--navy);">
+          Frequently Asked Questions
+        </h2>
+        <FAQ items={faqs} schemaId="faq-worktop-fitting-cost" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Internal Links -->
+  <section class="section" style="background: var(--bg-light);">
+    <div class="container fade-up">
+      <InternalLinks links={internalLinks} heading="Related Pages" />
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <CTA
+    heading="Get a Quote for Your Worktop Fitting"
+    subtext="Whether you need a full kitchen installation or a standalone worktop replacement, we can help. Book a pre-installation survey for £195 — credited back in full when you proceed."
+    primaryLabel="Book Your Survey"
+    primaryHref="/survey/"
+    secondaryLabel="Call 07399 651836"
+    secondaryHref="tel:07399651836"
+    dark={true}
+  />
+
+  <Footer slot="footer" />
+  <StickyMobileCTA slot="sticky-cta" />
+</Base>

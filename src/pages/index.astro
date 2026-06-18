@@ -1,0 +1,705 @@
+---
+import Base from "../layouts/Base.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import StickyMobileCTA from "../components/StickyMobileCTA.astro";
+import SupplierLogos from "../components/SupplierLogos.astro";
+import ProcessSteps from "../components/ProcessSteps.astro";
+import EnquiryForm from "../components/EnquiryForm.astro";
+import FAQ from "../components/FAQ.astro";
+import CTA from "../components/CTA.astro";
+
+const localBusinessSchema = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "@id": "https://www.installmykitchen.co.uk/#business",
+  name: "Install My Kitchen",
+  url: "https://www.installmykitchen.co.uk",
+  telephone: "+447399651836",
+  email: "info@installmykitchen.co.uk",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "242 Hollyfast Road",
+    addressLocality: "Coundon",
+    addressRegion: "Coventry",
+    postalCode: "CV6 2AH",
+    addressCountry: "GB",
+  },
+  areaServed: [
+    "Coventry",
+    "Rugby",
+    "Nuneaton",
+    "Leamington Spa",
+    "Kenilworth",
+    "Warwick",
+    "Stratford-upon-Avon",
+    "Bedworth",
+    "Hinckley",
+    "Atherstone",
+    "Coleshill",
+    "Solihull",
+    "Meriden",
+    "Balsall Common",
+    "Tile Hill",
+    "Canley",
+    "Coundon",
+    "Binley",
+    "Willenhall",
+    "Brandon",
+    "Ryton-on-Dunsmore",
+    "Brinklow",
+    "Southam",
+    "Daventry",
+    "Bulkington",
+  ],
+  priceRange: "££",
+  openingHoursSpecification: [
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+      opens: "08:00",
+      closes: "18:00",
+    },
+  ],
+};
+
+const faqItems = [
+  {
+    q: "Do you only install kitchens you supply?",
+    a: "No — we install kitchens purchased from any retailer, including Wren, Howdens, Magnet, IKEA, Wickes, B&Q, Benchmarx and many more. We are completely independent.",
+  },
+  {
+    q: "What areas do you cover?",
+    a: "We cover Coventry and the wider Warwickshire area, including Rugby, Nuneaton, Leamington Spa, Kenilworth, Warwick, Stratford-upon-Avon, Bedworth and surrounding towns.",
+  },
+  {
+    q: "What does the £195 survey fee include?",
+    a: "Our pre-installation survey includes a visit to your home to take precise measurements, review your kitchen plan against the actual room, discuss appliance positions, check services, and identify any potential issues before we start. The £195 fee is credited in full against your installation balance when you confirm your booking date.",
+  },
+  {
+    q: "How long does a kitchen installation take?",
+    a: "A typical kitchen installation takes between two and five days depending on the size of the kitchen and the scope of work. We will give you a realistic timeline as part of your written quote.",
+  },
+  {
+    q: "Do you handle appliance installation?",
+    a: "Yes — we fit integrated and freestanding appliances including ovens, hobs, dishwashers, washing machines and fridges as part of the installation. We will confirm what's included in your quote before work begins.",
+  },
+  {
+    q: "Do I need to arrange my own plumber and electrician?",
+    a: "Yes. Due to high demand we recommend you arrange your own qualified electricians, plumbers and gas engineers before the installation date. We handle all the cabinetry, worktops, appliances and fittings.",
+  },
+];
+
+const areas = [
+  { name: "Coventry", slug: "coventry" },
+  { name: "Rugby", slug: "rugby" },
+  { name: "Nuneaton", slug: "nuneaton" },
+  { name: "Leamington Spa", slug: "leamington-spa" },
+  { name: "Kenilworth", slug: "kenilworth" },
+  { name: "Warwick", slug: "warwick" },
+  { name: "Bedworth", slug: "bedworth" },
+  { name: "Stratford-upon-Avon", slug: "stratford-upon-avon" },
+];
+---
+
+<Base
+  title="Kitchen Installation Coventry & Warwickshire | Install My Kitchen"
+  description="Expert independent kitchen installation across Coventry and Warwickshire. We fit kitchens from Wren, Howdens, IKEA and more. Survey from £195."
+  canonical="https://www.installmykitchen.co.uk/"
+>
+  <!-- Schema -->
+  <script slot="schema" type="application/ld+json" set:html={JSON.stringify(localBusinessSchema)} />
+
+  <!-- Header -->
+  <Header slot="header" />
+
+  <!-- ═══════════════════════════════════════════════════ HERO ═══ -->
+  <section aria-label="Hero" class="hero-split">
+    <!-- Left gradient panel -->
+    <div class="hero-left">
+      <div class="hero-content">
+        <p class="hero-eyebrow">Independent Kitchen Installation · Coventry &amp; Warwickshire</p>
+        <h1 class="hero-h1">Already Bought Your Kitchen? <span style="color: var(--teal-bright)">We'll Install It.</span></h1>
+        <p class="hero-sub">
+          Expert independent installation for kitchens purchased from Wren, Howdens, Magnet,
+          IKEA, Wickes and more across Coventry and Warwickshire.
+        </p>
+        <div class="hero-buttons">
+          <a href="/survey/" class="btn-primary hero-btn">
+            Book a Survey — £195
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <line x1="5" y1="12" x2="19" y2="12"/>
+              <polyline points="12 5 19 12 12 19"/>
+            </svg>
+          </a>
+          <a href="/guides/" class="btn-secondary hero-btn-sec">
+            Get an Installation Guide
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right image panel -->
+    <div class="hero-right" aria-hidden="true">
+      <img
+        src="/assets/hero-placeholder.webp"
+        alt="Kitchen installation in progress"
+        class="hero-img"
+        width="800"
+        height="600"
+        loading="eager"
+      />
+      <!-- Logo overlay -->
+      <div class="hero-logo-overlay">
+        <img src="/assets/logo.png" alt="Install My Kitchen" class="hero-logo-large" width="200" height="auto" loading="eager" />
+      </div>
+      <!-- Floating survey credit card -->
+      <div class="hero-card">
+        <div class="hero-card-icon" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 6L9 17l-5-5"/>
+          </svg>
+        </div>
+        <div>
+          <p class="hero-card-title">Survey Fee Credited</p>
+          <p class="hero-card-desc">Survey Fee £195 — Credited Back on Booking</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════ BENEFIT STRIP ═══ -->
+  <section class="section-sm" style="background: var(--bg-light);" aria-label="Key benefits">
+    <div class="container">
+      <ul class="benefit-strip" role="list">
+        <li class="benefit-item" role="listitem">
+          <span class="benefit-icon" aria-hidden="true">
+            <!-- Checkmark in circle -->
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="9 12 11 14 15 10"/></svg>
+          </span>
+          <span class="benefit-label">Independent &amp; Retailer Neutral</span>
+        </li>
+        <li class="benefit-item" role="listitem">
+          <span class="benefit-icon" aria-hidden="true">
+            <!-- Clock -->
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </span>
+          <span class="benefit-label">Fast Slots Available</span>
+        </li>
+        <li class="benefit-item" role="listitem">
+          <span class="benefit-icon" aria-hidden="true">
+            <!-- Clipboard -->
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/><line x1="9" y1="12" x2="15" y2="12"/><line x1="9" y1="16" x2="13" y2="16"/></svg>
+          </span>
+          <span class="benefit-label">Survey Before Installation</span>
+        </li>
+        <li class="benefit-item" role="listitem">
+          <span class="benefit-icon" aria-hidden="true">
+            <!-- Star -->
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          </span>
+          <span class="benefit-label">Experienced Specialists</span>
+        </li>
+        <li class="benefit-item" role="listitem">
+          <span class="benefit-icon" aria-hidden="true">
+            <!-- Map pin -->
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </span>
+          <span class="benefit-label">Coventry &amp; Warwickshire</span>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ═════════════════════════════════════ SUPPLIER LOGOS ════════ -->
+  <SupplierLogos heading="We Install Kitchens From All Major Suppliers" />
+
+  <!-- ══════════════════════════════════════ "A BETTER WAY" ══════ -->
+  <section class="section" style="background: var(--bg-light);" aria-labelledby="better-way-heading">
+    <div class="container">
+      <div class="split-grid">
+        <!-- Left: copy -->
+        <div class="split-left fade-up">
+          <h2 id="better-way-heading" class="text-2xl md:text-3xl lg:text-4xl font-bold mb-6" style="color: var(--charcoal);">
+            A Better Way to Get Your Kitchen Installed
+          </h2>
+          <ul class="better-list" role="list">
+            <li class="better-item" role="listitem">
+              <span class="better-tick" aria-hidden="true">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              </span>
+              <span>
+                <strong>Truly independent</strong> — we're not employed by any retailer, so you get honest advice and quality work that's in your interest, not theirs.
+              </span>
+            </li>
+            <li class="better-item" role="listitem">
+              <span class="better-tick" aria-hidden="true">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              </span>
+              <span>
+                <strong>Survey protects you</strong> — we visit before we quote, checking your room against the plan so there are no surprises on installation day.
+              </span>
+            </li>
+            <li class="better-item" role="listitem">
+              <span class="better-tick" aria-hidden="true">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              </span>
+              <span>
+                <strong>End-to-end fitting</strong> — we handle everything from cabinet assembly to worktop fitting, appliance integration, doors, handles, and final snagging.
+              </span>
+            </li>
+          </ul>
+          <a href="/survey/" class="btn-primary mt-8 inline-flex items-center gap-2">
+            Book Your Survey
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <line x1="5" y1="12" x2="19" y2="12"/>
+              <polyline points="12 5 19 12 12 19"/>
+            </svg>
+          </a>
+        </div>
+
+        <!-- Right: enquiry form -->
+        <div class="split-right fade-up">
+          <EnquiryForm formTitle="Get a Free Quote" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════ URGENCY BAND ══════════ -->
+  <section class="urgency-band" aria-label="Installation slots filling fast">
+    <div class="container urgency-inner">
+      <p class="urgency-text">
+        Installation Slots Are Filling Fast —
+        <span class="urgency-highlight">Coventry &amp; Warwickshire's Premier Independent Kitchen Fitter</span>
+      </p>
+      <a href="/contact/" class="btn-white urgency-btn">
+        Check Available Dates →
+      </a>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════ PROCESS STEPS ══════ -->
+  <ProcessSteps />
+
+  <!-- ═══════════════════════════════════════════ AREAS ══════════ -->
+  <section class="section" style="background: var(--bg-light);" aria-labelledby="areas-heading">
+    <div class="container">
+      <h2 id="areas-heading" class="text-center text-2xl md:text-3xl font-bold mb-3" style="color: var(--charcoal);">
+        Areas We Cover
+      </h2>
+      <p class="text-center text-sm mb-10 max-w-xl mx-auto" style="color: var(--text-soft);">
+        Based in Coventry, we travel across the wider Warwickshire area for all installations.
+      </p>
+      <ul class="areas-grid" role="list">
+        {areas.map((area) => (
+          <li role="listitem">
+            <a href={`/areas/${area.slug}/`} class="area-card">
+              <span class="area-name">{area.name}</span>
+              <svg class="area-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <line x1="5" y1="12" x2="19" y2="12"/>
+                <polyline points="12 5 19 12 12 19"/>
+              </svg>
+            </a>
+          </li>
+        ))}
+      </ul>
+      <div class="text-center mt-8">
+        <a href="/areas/" class="font-semibold" style="color: var(--teal);">View all 25 areas we cover →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════ FAQ ═══════════ -->
+  <section class="section" style="background: #fff;" aria-labelledby="faq-heading">
+    <div class="container">
+      <div class="max-w-3xl mx-auto">
+        <h2 id="faq-heading" class="text-2xl md:text-3xl font-bold mb-2 text-center" style="color: var(--charcoal);">
+          Frequently Asked Questions
+        </h2>
+        <p class="text-center text-sm mb-10" style="color: var(--text-soft);">
+          Everything you need to know about our kitchen installation service.
+        </p>
+        <FAQ items={faqItems} schemaId="homepage-faq" />
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════ DARK CTA ════════════ -->
+  <CTA
+    dark={true}
+    heading="Ready to Get Your Kitchen Installed?"
+    subtext="Book your pre-installation survey today. The £195 fee is credited back when you confirm your installation date."
+    primaryLabel="Book a Survey — £195"
+    primaryHref="/survey/"
+    secondaryLabel="Call 07399 651836"
+    secondaryHref="tel:07399651836"
+  />
+
+  <!-- Footer -->
+  <Footer slot="footer" />
+  <StickyMobileCTA slot="sticky-cta" />
+</Base>
+
+<style>
+  /* ── Hero ── */
+  .hero-split {
+    display: grid;
+    grid-template-columns: 1fr;
+    min-height: 580px;
+  }
+
+  @media (min-width: 1024px) {
+    .hero-split {
+      grid-template-columns: 1fr 1fr;
+      min-height: 640px;
+    }
+  }
+
+  .hero-left {
+    background: var(--hero-gradient);
+    display: flex;
+    align-items: center;
+    padding: 4rem 1.5rem;
+  }
+
+  @media (min-width: 768px) {
+    .hero-left {
+      padding: 5rem 3rem;
+    }
+  }
+
+  .hero-content {
+    max-width: 560px;
+    margin: 0 auto;
+  }
+
+  @media (min-width: 1024px) {
+    .hero-content {
+      margin: 0 0 0 auto;
+      padding-right: 3rem;
+    }
+  }
+
+  .hero-eyebrow {
+    font-size: 0.8125rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--gold);
+    margin-bottom: 1rem;
+  }
+
+  .hero-h1 {
+    font-size: clamp(1.875rem, 4vw, 3rem);
+    font-weight: 800;
+    color: #fff;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    margin-bottom: 1.25rem;
+  }
+
+  .hero-sub {
+    font-size: 1.0625rem;
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.65;
+    margin-bottom: 2rem;
+  }
+
+  .hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.875rem;
+    align-items: center;
+  }
+
+  .hero-btn {
+    white-space: nowrap;
+  }
+
+  .hero-btn-sec {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: transparent;
+    color: var(--gold);
+    padding: 0.875rem 2rem;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1rem;
+    border: 2px solid var(--gold);
+    transition: background var(--t), transform var(--t);
+    white-space: nowrap;
+  }
+
+  .hero-btn-sec:hover {
+    background: rgba(212, 160, 23, 0.12);
+    transform: translateY(-2px);
+  }
+
+  /* Right panel */
+  .hero-right {
+    position: relative;
+    overflow: hidden;
+    min-height: 320px;
+  }
+
+  @media (max-width: 1023px) {
+    .hero-right {
+      display: none;
+    }
+  }
+
+  .hero-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  /* Logo overlay in hero right panel */
+  .hero-logo-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+  }
+
+  .hero-logo-large {
+    width: 200px;
+    height: auto;
+    display: block;
+    filter: drop-shadow(0 4px 24px rgba(0,0,0,0.35));
+  }
+
+  /* Floating card */
+  .hero-card {
+    position: absolute;
+    bottom: 2rem;
+    left: 2rem;
+    background: #fff;
+    border: 2px solid var(--gold);
+    border-radius: 1rem;
+    padding: 1rem 1.25rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.875rem;
+    max-width: 280px;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+  }
+
+  .hero-card-icon {
+    width: 2.25rem;
+    height: 2.25rem;
+    border-radius: 50%;
+    background: var(--teal);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .hero-card-title {
+    font-weight: 700;
+    font-size: 0.9375rem;
+    color: var(--charcoal);
+    margin-bottom: 0.25rem;
+  }
+
+  .hero-card-desc {
+    font-size: 0.8125rem;
+    color: var(--text-soft);
+    line-height: 1.5;
+  }
+
+  /* ── Benefit strip ── */
+  .benefit-strip {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem 2.5rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .benefit-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    text-align: center;
+  }
+
+  @media (min-width: 768px) {
+    .benefit-item {
+      flex-direction: row;
+      text-align: left;
+    }
+  }
+
+  .benefit-icon {
+    width: 2.75rem;
+    height: 2.75rem;
+    border-radius: 50%;
+    background: rgba(15, 118, 110, 0.1);
+    color: var(--teal);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .benefit-label {
+    font-size: 0.9375rem;
+    font-weight: 600;
+    color: var(--charcoal);
+    white-space: nowrap;
+  }
+
+  /* ── "A Better Way" split ── */
+  .split-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  @media (min-width: 1024px) {
+    .split-grid {
+      grid-template-columns: 1fr 1fr;
+      align-items: start;
+    }
+  }
+
+  .better-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  .better-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.875rem;
+    font-size: 0.9375rem;
+    line-height: 1.65;
+    color: var(--text-soft);
+  }
+
+  .better-tick {
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+    background: var(--teal);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 0.15rem;
+  }
+
+  /* ── Urgency band ── */
+  .urgency-band {
+    background: #92670e;
+    padding: 2rem 0;
+  }
+
+  .urgency-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.25rem;
+    text-align: center;
+  }
+
+  @media (min-width: 768px) {
+    .urgency-inner {
+      flex-direction: row;
+      justify-content: space-between;
+      text-align: left;
+    }
+  }
+
+  .urgency-text {
+    font-size: 1.0625rem;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.4;
+  }
+
+  .urgency-highlight {
+    color: rgba(255, 255, 255, 0.85);
+    font-weight: 400;
+  }
+
+  .urgency-btn {
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  /* ── Areas ── */
+  .areas-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.875rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  @media (min-width: 640px) {
+    .areas-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .areas-grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  .area-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.875rem 1rem;
+    border-radius: 0.75rem;
+    border: 1.5px solid var(--border);
+    background: #fff;
+    text-decoration: none;
+    transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
+  }
+
+  .area-card:hover {
+    border-color: var(--teal);
+    box-shadow: 0 4px 14px rgba(15, 118, 110, 0.1);
+    transform: translateY(-2px);
+  }
+
+  .area-name {
+    font-size: 0.9375rem;
+    font-weight: 600;
+    color: var(--charcoal);
+  }
+
+  .area-arrow {
+    color: var(--teal);
+    opacity: 0.5;
+    transition: opacity 0.2s, transform 0.2s;
+  }
+
+  .area-card:hover .area-arrow {
+    opacity: 1;
+    transform: translateX(3px);
+  }
+</style>

@@ -1,0 +1,370 @@
+---
+import Base from "../layouts/Base.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import StickyMobileCTA from "../components/StickyMobileCTA.astro";
+import Breadcrumbs from "../components/Breadcrumbs.astro";
+import AnswerBlock from "../components/AnswerBlock.astro";
+import KeyTakeaway from "../components/KeyTakeaway.astro";
+import EnquiryForm from "../components/EnquiryForm.astro";
+import FAQ from "../components/FAQ.astro";
+import CTA from "../components/CTA.astro";
+
+const keyTakeaways = [
+  "Identifies room vs plan discrepancies before work begins — no surprises on the day",
+  "Checks services, structural elements and access that affect installation feasibility",
+  "Results in a sharper, fully itemised installation quote",
+  "Survey fee of £195 is credited back against your installation balance on booking",
+  "Recommended for all kitchen installations, regardless of retailer",
+];
+
+const surveyCovers = [
+  {
+    heading: "Plan vs Room Check",
+    body: "We compare your kitchen designer's plan with the actual room dimensions and layout. Even small discrepancies — walls out of square, ceiling heights that vary, unexpected pipes — can affect cabinet fitting. We find these before work starts.",
+  },
+  {
+    heading: "Services & Utilities",
+    body: "We identify the location of existing plumbing, electrical sockets and gas connections, and confirm where appliances will be positioned. This helps you brief your own qualified plumber, electrician and gas engineer accurately.",
+  },
+  {
+    heading: "Levels & Structural Condition",
+    body: "Floors are rarely perfectly level. We assess the floor plane and note any significant gradients that will need packing or adjustment during fitting. We also check the condition of walls where units will be fixed.",
+  },
+  {
+    heading: "Access & Logistics",
+    body: "We assess access routes into the kitchen and note anything that may affect delivery day — narrow corridors, staircases, door widths — and factor this into our planning.",
+  },
+  {
+    heading: "Appliance & Sink Positions",
+    body: "We confirm the planned positions for all integrated and freestanding appliances and the sink, cross-referencing with the available service connections.",
+  },
+  {
+    heading: "Risk & Scope Identification",
+    body: "If there are factors that may add complexity or cost — such as a chimney breast, uneven alcoves, or an unusually large room — we flag these and factor them into your quote transparently.",
+  },
+];
+
+const faqItems = [
+  {
+    q: "Is a survey compulsory?",
+    a: "We strongly recommend a survey for every installation. It protects you by identifying issues before work begins and gives us the information we need to provide an accurate, itemised quote. It is not technically compulsory, but without one we cannot guarantee the accuracy of our pricing.",
+  },
+  {
+    q: "How long does the survey take?",
+    a: "A typical survey visit takes between 45 minutes and 90 minutes depending on the size of the kitchen and how much discussion is needed. We will let you know our estimated visit time when we book.",
+  },
+  {
+    q: "What should I have ready for the survey?",
+    a: "It helps to have your kitchen retailer's plan or designer drawings available, along with any appliance specifications. If you have already had your kitchen delivered, we can also assess the boxes and note any delivery issues.",
+  },
+  {
+    q: "When is the £195 survey fee credited back?",
+    a: "The £195 survey fee is credited against your installation balance when you confirm your installation date with a booking deposit. If you decide not to proceed after the survey, the fee is not refundable — it covers the specialist time spent on your survey and report.",
+  },
+  {
+    q: "Can I get a quote without a survey?",
+    a: "We can provide a broad estimate based on a description of your kitchen, but our full written quote requires a survey visit. This protects both you and us from misunderstandings about scope and pricing.",
+  },
+  {
+    q: "How quickly can you arrange a survey?",
+    a: "Survey slots are typically available within one to two weeks. Contact us or fill in the form on this page and we will confirm available dates promptly.",
+  },
+];
+---
+
+<Base
+  title="Kitchen Survey & Quote Coventry | Install My Kitchen"
+  description="Book a pre-installation kitchen survey in Coventry and Warwickshire. £195 fee credited back on booking. We check plans, room dimensions and services before we quote."
+  canonical="https://www.installmykitchen.co.uk/survey/"
+>
+  <!-- Header -->
+  <Header slot="header" />
+
+  <!-- ══════════════════════════════ PAGE HEADER ══════════════════ -->
+  <section class="page-header" aria-label="Page header">
+    <div class="container">
+      <Breadcrumbs items={[{ label: "Survey & Quote", href: "/survey/" }]} />
+      <h1 class="page-h1">Kitchen Survey &amp; Quote — Coventry &amp; Warwickshire</h1>
+      <p class="page-sub">A pre-installation survey protects your project. We check the room, review your plans, and give you a clear, itemised quote before any work begins.</p>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════ MAIN CONTENT ════════════════ -->
+  <section class="section" style="background: #fff;" aria-labelledby="survey-intro">
+    <div class="container">
+      <div class="content-grid">
+
+        <!-- Main column -->
+        <div class="content-main">
+
+          <AnswerBlock answer="A pre-installation survey is a specialist visit to your home where we check your kitchen plan against the actual room, identify any potential issues and confirm the scope of work. The £195 survey fee is credited in full against your installation balance when you confirm your booking date." />
+
+          <KeyTakeaway points={keyTakeaways} />
+
+          <h2 id="survey-intro" class="section-h2">Why a Survey Matters</h2>
+          <p class="body-copy">
+            Kitchen plans produced by retailers are drawn from the measurements you or a store designer provided. They are a starting point — not a guarantee that everything will fit perfectly in practice. Walls bow, floors slope, ceilings vary in height, and pipes are not always where you expect them to be.
+          </p>
+          <p class="body-copy">
+            A pre-installation survey is our way of catching these realities early, so that your installation day is focused on delivering a great result rather than dealing with surprises. It also means your written quote reflects exactly what the job involves — no hidden extras, no scope creep.
+          </p>
+
+          <!-- What the survey covers -->
+          <h2 class="section-h2">What the Survey Covers</h2>
+          <ul class="survey-covers-list" role="list">
+            {surveyCovers.map((item) => (
+              <li class="survey-cover-item" role="listitem">
+                <div class="cover-icon" aria-hidden="true">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                </div>
+                <div>
+                  <strong class="cover-heading">{item.heading}</strong>
+                  <p class="cover-body">{item.body}</p>
+                </div>
+              </li>
+            ))}
+          </ul>
+
+          <!-- Pricing -->
+          <h2 class="section-h2">Survey Pricing</h2>
+          <div class="pricing-box">
+            <div class="pricing-main">
+              <p class="pricing-amount">£195</p>
+              <p class="pricing-label">Pre-Installation Survey</p>
+              <p class="pricing-sub">Fully credited against your installation balance when you confirm your booking date.</p>
+            </div>
+            <ul class="pricing-includes" role="list">
+              <li role="listitem">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                Room vs plan check
+              </li>
+              <li role="listitem">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                Services & utilities review
+              </li>
+              <li role="listitem">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                Full written, itemised quote
+              </li>
+              <li role="listitem">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                Risk & scope identification
+              </li>
+              <li role="listitem">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                Credited back on booking
+              </li>
+            </ul>
+          </div>
+
+          <!-- FAQ -->
+          <h2 class="section-h2 mt-10 mb-6">Survey Questions Answered</h2>
+          <FAQ items={faqItems} schemaId="survey-faq" />
+
+        </div>
+
+        <!-- Sidebar: form -->
+        <aside class="content-sidebar">
+          <div class="form-sticky">
+            <EnquiryForm formTitle="Book Your Survey" showSurveyOption={true} />
+          </div>
+        </aside>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════ DARK CTA ═══════════ -->
+  <CTA
+    dark={true}
+    heading="Book Your Survey Today"
+    subtext="Slots fill quickly across Coventry and Warwickshire. Fill in the form or call us to check availability."
+    primaryLabel="Book a Survey — £195"
+    primaryHref="/contact/"
+    secondaryLabel="Call 07399 651836"
+    secondaryHref="tel:07399651836"
+  />
+
+  <!-- Footer -->
+  <Footer slot="footer" />
+  <StickyMobileCTA slot="sticky-cta" />
+</Base>
+
+<style>
+  /* Page header */
+  .page-header {
+    background: var(--hero-gradient);
+    padding: 3rem 0 3.5rem;
+  }
+
+  .page-h1 {
+    font-size: clamp(1.625rem, 3vw, 2.5rem);
+    font-weight: 800;
+    color: #fff;
+    letter-spacing: -0.02em;
+    margin-top: 0.75rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .page-sub {
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 1.0625rem;
+    line-height: 1.6;
+    max-width: 560px;
+  }
+
+  /* Content layout */
+  .content-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    align-items: start;
+  }
+
+  @media (min-width: 1024px) {
+    .content-grid {
+      grid-template-columns: 1fr 400px;
+    }
+  }
+
+  .form-sticky {
+    position: sticky;
+    top: 6rem;
+  }
+
+  /* Body text */
+  .section-h2 {
+    font-size: 1.375rem;
+    font-weight: 700;
+    color: var(--charcoal);
+    margin-top: 2rem;
+    margin-bottom: 0.875rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--teal);
+    display: inline-block;
+  }
+
+  .body-copy {
+    font-size: 0.9375rem;
+    line-height: 1.75;
+    color: var(--text-soft);
+    margin-bottom: 1rem;
+  }
+
+  /* Survey covers list */
+  .survey-covers-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  .survey-cover-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.875rem;
+  }
+
+  .cover-icon {
+    width: 1.625rem;
+    height: 1.625rem;
+    border-radius: 50%;
+    background: var(--teal);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 0.1rem;
+  }
+
+  .cover-heading {
+    display: block;
+    font-size: 0.9375rem;
+    font-weight: 700;
+    color: var(--charcoal);
+    margin-bottom: 0.3rem;
+  }
+
+  .cover-body {
+    font-size: 0.875rem;
+    line-height: 1.65;
+    color: var(--text-soft);
+    margin: 0;
+  }
+
+  /* Pricing box */
+  .pricing-box {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    background: var(--bg-light);
+    border: 1.5px solid var(--border);
+    border-radius: 1.25rem;
+    padding: 1.75rem;
+    margin-bottom: 2rem;
+  }
+
+  @media (min-width: 640px) {
+    .pricing-box {
+      flex-direction: row;
+      align-items: center;
+    }
+  }
+
+  .pricing-main {
+    flex-shrink: 0;
+    text-align: center;
+    background: var(--teal);
+    color: #fff;
+    border-radius: 1rem;
+    padding: 1.25rem 2rem;
+  }
+
+  .pricing-amount {
+    font-size: 2.5rem;
+    font-weight: 800;
+    line-height: 1;
+  }
+
+  .pricing-label {
+    font-size: 0.875rem;
+    font-weight: 600;
+    opacity: 0.9;
+    margin-top: 0.375rem;
+  }
+
+  .pricing-sub {
+    font-size: 0.75rem;
+    opacity: 0.75;
+    margin-top: 0.375rem;
+    max-width: 160px;
+    line-height: 1.5;
+  }
+
+  .pricing-includes {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.625rem;
+  }
+
+  .pricing-includes li {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9375rem;
+    color: var(--charcoal);
+    font-weight: 500;
+  }
+
+  .pricing-includes li svg {
+    color: var(--teal);
+    flex-shrink: 0;
+  }
+</style>

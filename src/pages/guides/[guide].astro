@@ -1,0 +1,908 @@
+---
+import Base from "../../layouts/Base.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import StickyMobileCTA from "../../components/StickyMobileCTA.astro";
+import Breadcrumbs from "../../components/Breadcrumbs.astro";
+import AnswerBlock from "../../components/AnswerBlock.astro";
+import KeyTakeaway from "../../components/KeyTakeaway.astro";
+import FAQ from "../../components/FAQ.astro";
+import InternalLinks from "../../components/InternalLinks.astro";
+import CTA from "../../components/CTA.astro";
+
+// DECISION: All guide data is hardcoded inline as specified — no JSON imports.
+// DECISION: Article JSON-LD is output into slot="schema" in Base.astro head.
+// DECISION: Meta descriptions are 140–160 chars per guide; checked individually below.
+
+export function getStaticPaths() {
+  return [
+    // ─── Guide 1 ─────────────────────────────────────────────────────────────
+    {
+      params: { guide: "how-to-prepare-for-kitchen-installation" },
+      props: {
+        slug: "how-to-prepare-for-kitchen-installation",
+        title: "How to Prepare for Kitchen Installation — A Complete Checklist",
+        metaDescription:
+          "A complete preparation checklist for kitchen installation — booking trades, confirming deliveries, protecting your home and what to expect on day one.",
+        intro:
+          "Proper preparation before your kitchen installation starts prevents delays, protects your home and helps the process run smoothly. Here is everything you need to do in the weeks and days before your installation team arrives.",
+        takeaways: [
+          "Book your plumber, electrician and any gas engineer well in advance — good trades are busy.",
+          "Check every item in your delivery against the order before installation day.",
+          "Clear the room completely and protect floors and adjacent rooms from dust and damage.",
+          "Confirm worktop templating has taken place before installation day, not after.",
+        ],
+        faqs: [
+          {
+            q: "How far in advance should I book a plumber for a kitchen installation?",
+            a: "Ideally four to six weeks before installation. Good local plumbers are often booked up, and last-minute availability is not guaranteed. Confirm the booking once you have a firm installation date.",
+          },
+          {
+            q: "Do I need to empty all the cupboards before the fitters arrive?",
+            a: "Yes. The entire room should be cleared before day one. Fitters cannot work safely or efficiently around furniture, crockery or appliances. Arrange temporary storage or move items to another room.",
+          },
+          {
+            q: "What happens if my kitchen delivery is incomplete?",
+            a: "Contact your retailer immediately. Most retailers will despatch missing items, but lead times can be days or weeks. Always check your delivery at least a week before installation so there is time to resolve shortfalls.",
+          },
+          {
+            q: "Can I stay in my home during kitchen installation?",
+            a: "Yes, most homeowners do. You will be without a working kitchen for the duration, typically three to six days for a medium kitchen. Plan for temporary cooking arrangements such as a microwave, kettle and fridge in another room.",
+          },
+        ],
+        body: `
+<h2>Why Preparation Matters</h2>
+<p>Kitchen installation involves multiple trades, large deliveries and precise sequencing. When homeowners prepare thoroughly, installations proceed on schedule and on budget. When they do not, delays cascade — a missing unit can halt work for days, an unbooked plumber can add a week to the timeline, and an unprotected floor can mean unexpected repair costs. The good news is that most problems are entirely avoidable with some advance planning.</p>
+
+<h2>Six Weeks Before: Book Your Tradespeople</h2>
+<p>Before anything else, secure your supporting trades. A kitchen installation almost always requires a plumber for the sink, dishwasher and washing machine connections, and an electrician for lighting, sockets and any hardwired appliances. If you have a gas hob or range cooker, you will also need a Gas Safe registered engineer for the gas connection.</p>
+<p>Do not assume these bookings can be made at short notice. Qualified local tradespeople — particularly Gas Safe engineers — are often booked several weeks in advance. Contact them as soon as you have a confirmed installation date and brief them on the scope of work. Give them the installation start date, the expected completion date for the main fit, and the date they will be needed for second-fix connections.</p>
+<p>Also confirm that your electrician holds Part P certification for domestic electrical work, and that any gas work will be carried out by a Gas Safe registered engineer. Your fitter can recommend trusted local trades if you do not already have contacts.</p>
+
+<h2>Four Weeks Before: Confirm Your Delivery</h2>
+<p>Contact your kitchen retailer to confirm the delivery date and what will be delivered. Ask for a full picking list and cross-reference it against your original order. At this stage, any discrepancies — missing units, incorrect sizes, substituted items — can still be resolved before installation begins.</p>
+<p>Confirm where the delivery will be made and ensure there is adequate access for a large lorry. Clear the garage, hallway or spare room where units will be stored. Deliveries are typically made by two-person teams but they will not carry items to upper floors or through tight spaces without prior arrangement.</p>
+
+<h2>Two Weeks Before: Check Your Order in Detail</h2>
+<p>Once your kitchen has been delivered, set aside two to three hours to check every single item. Open each box and verify the contents against the picking list. Check that unit sizes match the plan, that doors and drawer fronts are undamaged, and that all accessories — hinges, handles, legs, end panels — are present.</p>
+<p>Photograph any damage or missing items immediately and report them to the retailer. Two weeks gives you enough time to receive replacement parts before installation begins. Do not leave this check until the day before — retailers cannot always despatch items overnight.</p>
+<p>Also confirm at this stage that your worktop order is in hand and that a templating visit has been scheduled. For stone worktops (quartz, granite) templating must happen after units are installed but before worktops are cut, so confirm the templating appointment with your worktop supplier.</p>
+
+<h2>One Week Before: Prepare the Space</h2>
+<p>Clear the kitchen completely. Remove all food, crockery, appliances and furniture. Take down curtains or blinds if they are in the way of wall units. If there is an existing kitchen to strip out, your fitter will usually do this on day one, but ensure the room is otherwise empty.</p>
+<p>Protect adjacent rooms and hallways. Dust and debris travel further than you expect during a kitchen installation. Use dust sheets or temporary plastic barriers across doorways. Protect wooden floors in the hall and living room with cardboard or hardboard sheets — delivery trolleys and unit bases can cause scuffs and dents.</p>
+<p>If you have pets, arrange for them to be kept away from the work area throughout the installation. Open doors, power tools and unfamiliar tradespeople are stressful for animals and create safety risks on site.</p>
+
+<h2>The Day Before: Final Checks</h2>
+<p>Confirm the start time with your fitter and ensure the property will be accessible. Locate your water and gas stopcocks so you can turn them off quickly if needed. Most fitters will turn off the water supply themselves on day one, but you should know where the stopcock is in case of emergency.</p>
+<p>Set up a temporary kitchen area in another room. A microwave, kettle, toaster and a small fridge will see you through the installation period. Stock up on easy-to-prepare food and paper plates if preferred.</p>
+<p>Move any vehicles that block the driveway or delivery access. Your fitter may need to bring tools and materials close to the property entrance.</p>
+
+<h2>What to Expect on Day One</h2>
+<p>On the first day your installation team will typically begin with the strip-out of the existing kitchen — removing old units, worktops and appliances. They will assess the walls, floor and services before beginning the new installation. This is also when they will turn off the water supply to the kitchen.</p>
+<p>Expect noise, dust and restricted access to the kitchen throughout the installation. Plan your day accordingly. If you work from home, consider whether you need a quieter space. If you have young children, the site will not be safe for unsupervised play.</p>
+<p>Be available to make decisions if questions arise — for example, the position of a socket or the handling of an unexpected structural issue. A responsive homeowner keeps the job moving. If you cannot be present during the day, leave a contact number and ensure someone authorised to make decisions is reachable.</p>
+
+<h2>The Worktop Templating Stage</h2>
+<p>For laminate worktops, cutting typically takes place on site. For solid surfaces — quartz, granite or engineered stone — a templating visit is required after the base units are installed. The templating company will take precise measurements to cut the worktop to fit. Allow one to three working days between templating and worktop delivery, depending on the supplier.</p>
+<p>During this window, your kitchen will be partially complete with no worktops. Plan for this gap and ensure your fitter and worktop supplier have each other's contact details to co-ordinate timing.</p>
+
+<h2>A Final Note on Communication</h2>
+<p>The single most effective thing you can do to ensure a smooth installation is communicate clearly with every party involved — your fitter, your retailer, your trades and your worktop supplier. Keep a shared note of all dates, contact numbers and outstanding tasks. When everyone knows the plan, the plan is far more likely to run on time.</p>
+        `,
+      },
+    },
+
+    // ─── Guide 2 ─────────────────────────────────────────────────────────────
+    {
+      params: { guide: "how-to-choose-a-kitchen-fitter" },
+      props: {
+        slug: "how-to-choose-a-kitchen-fitter",
+        title: "How to Choose a Kitchen Fitter — What to Look For",
+        metaDescription:
+          "How to find a reliable kitchen fitter — the survey process, what a good quote covers, workmanship warranties, questions to ask and red flags to avoid.",
+        intro:
+          "Choosing the right kitchen fitter is as important as choosing the kitchen itself. Here is how to find a reliable, experienced fitter for your home.",
+        takeaways: [
+          "Never accept a quote from anyone who has not visited and surveyed your room in person.",
+          "Ask specifically about experience with your retailer's units — fitting methods vary between brands.",
+          "A written workmanship warranty (minimum 12 months) is a sign of a professional, confident fitter.",
+          "Communication during the process matters as much as technical skill — trust your instincts.",
+        ],
+        faqs: [
+          {
+            q: "Should I get more than one quote for kitchen fitting?",
+            a: "Yes. We recommend getting two or three quotes so you can compare what is included. The cheapest quote is not always the best — compare the scope of work, warranty terms and the fitter's experience with your retailer's units.",
+          },
+          {
+            q: "What is the difference between an independent fitter and a retailer-supplied installer?",
+            a: "A retailer-supplied installer is usually a subcontractor appointed by the retailer. An independent fitter works directly for you. Independent fitters often have more flexibility, more experience across multiple brands and a clearer accountability to you as the client.",
+          },
+          {
+            q: "How do I check that a kitchen fitter is qualified?",
+            a: "For general fitting, there is no single mandatory qualification. However, any electrical work should be done by a Part P registered electrician, and any gas work by a Gas Safe registered engineer. Ask for evidence of these registrations if they form part of the quoted scope.",
+          },
+          {
+            q: "What should a kitchen fitting quote include?",
+            a: "A thorough quote should specify: assembly and installation of all units, fitting and levelling, appliance installation (or co-ordination with trades), snagging, and waste removal. Confirm whether worktop fitting is included or quoted separately.",
+          },
+        ],
+        body: `
+<h2>Why the Choice of Fitter Matters So Much</h2>
+<p>A kitchen can be designed well, manufactured to a high standard and delivered on time — and still look poor if the fitting is substandard. Doors that do not align, drawers that catch, units that rock on an unlevel floor, or worktop joints with visible gaps are all fitting problems, not product problems. The fitter is ultimately responsible for the finished result, and choosing the right one is worth investing time in.</p>
+
+<h2>Look for Experience with Your Retailer's Units</h2>
+<p>Not all kitchen units are constructed the same way. Wren, Howdens, Magnet, IKEA, B&Q, Wickes and independent manufacturers each use different cabinet systems, fixing methods and tolerances. A fitter who has worked extensively with one brand may be unfamiliar with the quirks of another.</p>
+<p>When speaking to prospective fitters, ask directly: how much experience do you have fitting kitchens from [your retailer]? A fitter who answers confidently with specific details — explaining, for example, how they handle IKEA's METOD rail system or Howdens' rigid construction — is demonstrating genuine familiarity. Vague answers are a warning sign.</p>
+
+<h2>The Survey is Non-Negotiable</h2>
+<p>Any fitter who is willing to quote for your kitchen without first visiting your home should be ruled out immediately. A proper pre-installation survey involves the fitter attending your property, measuring the room, checking the walls for level and plumb, examining the existing services (plumbing, gas, electrics), reviewing the kitchen plan and identifying any potential problems before a single unit is ordered or delivered.</p>
+<p>The survey is where experience shows. A skilled fitter will spot issues that you and your retailer's designer may have missed — a structural wall in the wrong place, a gas pipe that complicates the layout, a floor that drops significantly from one end to the other. These are problems that are far cheaper to solve before installation than during it.</p>
+<p>At Install My Kitchen we charge £195 for our survey, which is credited back in full when you proceed with the installation. This arrangement is common among professional independent fitters and ensures both parties are committed to a serious conversation.</p>
+
+<h2>What Should Be Included in the Quote</h2>
+<p>When you receive a quote, read it carefully. A professional quote should specify exactly what is included. Look for: assembly and installation of all base, wall and tower units; levelling and scribing; fitting of doors, drawer fronts and handles; installation of built-in appliances (or clear statement of which appliances are excluded); worktop fitting (or a note that this is quoted separately); and waste removal at the end of the job.</p>
+<p>Vague quotes that simply say "supply and fit kitchen" without detail are a risk. If something is not explicitly included, assume it is not covered, and clarify in writing before you sign anything.</p>
+<p>Also confirm whether the fitter will co-ordinate with your plumber, electrician and worktop supplier, or whether you need to manage that yourself. The answer will tell you something about how the job will be run.</p>
+
+<h2>Workmanship Warranty</h2>
+<p>A confident, professional fitter will offer a written workmanship warranty. This is a guarantee that if something they fitted develops a fault due to poor fitting — a hinge worked loose, a unit not fixed properly to the wall — they will return and fix it at no charge within the warranty period. Twelve months is a reasonable minimum; some fitters offer two years.</p>
+<p>Note that the warranty covers fitting, not the products themselves. Product faults are a matter between you and your retailer. Clarify this distinction so there are no disputes later about what falls within the fitter's responsibility.</p>
+
+<h2>Communication and Transparency</h2>
+<p>The installation process spans multiple days and involves decisions and changes. A good fitter communicates clearly before, during and after the job. They explain what they are doing and why, flag problems as they arise rather than hiding them, and give you realistic timelines rather than optimistic ones designed to win the job.</p>
+<p>Pay attention to how a fitter communicates during the quoting stage. Do they answer questions clearly? Do they respond to messages promptly? Do they explain their process? These behaviours during the sales process are usually a reliable indicator of how they will behave on site.</p>
+
+<h2>Questions to Ask a Prospective Fitter</h2>
+<p>Here are specific questions worth asking before committing to a fitter:</p>
+<ul>
+  <li>How many kitchens have you fitted from [my retailer]?</li>
+  <li>Will you personally be on site for the whole job, or will you use subcontractors?</li>
+  <li>What does your workmanship warranty cover and for how long?</li>
+  <li>How do you handle problems that arise during installation — for example, a damaged unit or a missing part?</li>
+  <li>Will you co-ordinate with my plumber and electrician, or do I need to manage that?</li>
+  <li>What happens if the job takes longer than estimated?</li>
+</ul>
+
+<h2>Red Flags to Watch For</h2>
+<p>Be cautious if a fitter: quotes without visiting the property; offers a price that seems significantly lower than others without being able to explain why; is unable to provide examples of previous work or customer references; asks for a large upfront payment before any work begins; cannot confirm whether they carry public liability insurance; or is evasive about what the quote does and does not include.</p>
+<p>Choosing well at this stage will save you significant stress and money later. A kitchen fitting is not a commodity purchase — it is a skilled trade job that will affect your home for a decade or more.</p>
+        `,
+      },
+    },
+
+    // ─── Guide 3 ─────────────────────────────────────────────────────────────
+    {
+      params: { guide: "kitchen-installation-survey-guide" },
+      props: {
+        slug: "kitchen-installation-survey-guide",
+        title: "The Kitchen Installation Survey — Why It Matters and What to Expect",
+        metaDescription:
+          "Everything you need to know about the pre-installation kitchen survey — what the surveyor checks, what can go wrong without one, and how to prepare.",
+        intro:
+          "A pre-installation survey is the most important step before your kitchen is fitted. Here is everything you need to know about the survey process.",
+        takeaways: [
+          "The survey identifies problems before installation — when they are cheap to fix, not after.",
+          "The surveyor checks room dimensions against the kitchen plan, services, wall conditions and access.",
+          "No reputable independent fitter should quote without surveying the room first.",
+          "A survey fee credited back on booking is standard practice and a mark of a professional operation.",
+        ],
+        faqs: [
+          {
+            q: "How long does a kitchen installation survey take?",
+            a: "A thorough survey typically takes 45 minutes to one and a half hours, depending on the complexity of the kitchen. Larger kitchens with multiple appliances, unusual layouts or known structural issues may take longer.",
+          },
+          {
+            q: "What should I have ready for the surveyor?",
+            a: "Have your kitchen plan (from the retailer), the full product list, and any drawings or measurements you have. If you know of any existing issues — a floor that is not level, a wall that is not square — mention them at the start. The more information the surveyor has, the more accurate and useful the survey will be.",
+          },
+          {
+            q: "Can the survey identify every problem before installation?",
+            a: "A survey significantly reduces the risk of surprises, but it cannot guarantee that no issues will arise during the job. Hidden structural elements, concealed pipes or cables, and problems revealed only when the old kitchen is removed can all emerge during installation. A good fitter will communicate these clearly and discuss solutions as they arise.",
+          },
+          {
+            q: "Is the survey fee refundable if I decide not to proceed?",
+            a: "Survey fees are generally non-refundable if you decide not to proceed — they cover the surveyor's time, travel and expertise. However, many independent fitters, including Install My Kitchen, credit the full fee against the installation cost if you do proceed.",
+          },
+        ],
+        body: `
+<h2>What a Pre-Installation Survey Is</h2>
+<p>A kitchen installation survey is a visit by an experienced fitter or surveyor to your home before any installation work begins. Its purpose is to identify discrepancies between the kitchen design and the actual room, assess the condition of services and structure, and plan the installation to avoid problems. It is, in short, the professional foundation that allows the installation itself to proceed efficiently.</p>
+<p>The survey is distinct from the design consultation you may have had with your kitchen retailer. Retailers design kitchens based on measurements provided by the customer. Those measurements may be broadly accurate, but they rarely capture all the detail an experienced fitter needs — the exact position of a gas pipe, the degree to which a floor slopes, whether a wall is hollow or solid. The survey fills that gap.</p>
+
+<h2>What the Surveyor Checks: Room vs Plan</h2>
+<p>The first task is to compare the kitchen plan with the actual room. The surveyor will re-measure the space and check it against the retailer's design drawing. Discrepancies are common and often minor — a wall a centimetre shorter than recorded, a window slightly out of position. But they can also be significant enough to require adjustments to the plan before units are ordered.</p>
+<p>The surveyor will check that all specified units will fit, that there is clearance for doors and drawers to open without obstruction, and that the layout allows safe and practical use. They will also confirm that appliance spaces match the appliance dimensions — a common source of error when customers specify appliances after the initial design.</p>
+
+<h2>What the Surveyor Checks: Services</h2>
+<p>Services — plumbing, gas and electrical — must be in the right positions for the kitchen to work as planned. The surveyor will locate the existing supply and waste connections, note their positions relative to the planned sink, dishwasher and appliances, and identify what first-fix work is required before the installation begins.</p>
+<p>For gas, the surveyor will check the position of the existing gas supply relative to the planned hob or range cooker, and confirm whether a Gas Safe engineer will be required to move or extend the supply before installation day. For electrics, they will assess the existing circuit capacity and the position of sockets, and flag any work required by a Part P electrician.</p>
+
+<h2>What the Surveyor Checks: Walls, Floor and Access</h2>
+<p>Wall conditions matter significantly for kitchen installation. The surveyor will check whether walls are level and plumb, identify any areas of significant movement or unevenness that will need to be addressed, and assess whether walls are suitable for fixing wall units safely. A hollow plasterboard wall without adequate backing requires different fixings from a solid brick wall.</p>
+<p>The floor level is equally important. Most homes have some floor variation — a drop from one end of the kitchen to the other is common. The surveyor will measure this and note how it will be managed with adjustable legs and plinths.</p>
+<p>Access is often overlooked. The surveyor will assess how units will be brought into the property and whether there are any restricted doorways, staircases or tight corners that could cause problems on delivery or installation day.</p>
+
+<h2>What Can Go Wrong Without a Survey</h2>
+<p>Without a survey, problems are discovered during the installation itself — at the worst possible time. Units arrive that do not fit. The gas supply is in the wrong position and a Gas Safe engineer must be booked at short notice. A wall that was assumed solid turns out to be plasterboard, requiring the fitter to stop and source appropriate fixings. A floor variation means the plinth line is uneven and the whole base unit run needs re-levelling.</p>
+<p>Every one of these problems causes delays. In a tightly sequenced installation, a day's delay on base units means a day's delay on worktop templating, which means a day's delay on worktop delivery. A week-long installation can easily become a two-week installation, with all the associated disruption and cost.</p>
+
+<h2>How the Survey Fee Works</h2>
+<p>Most professional independent fitters charge a survey fee. This is reasonable — a thorough survey takes an experienced person one to two hours on site plus travel time and report preparation. A fee also ensures that both parties are genuinely committed to the project: it filters out speculative enquiries and ensures the surveyor's time is used on serious jobs.</p>
+<p>At Install My Kitchen, we charge £195 for the survey, which is credited back in full when you proceed with the installation. This means that, in effect, the survey costs you nothing if you go ahead — you are paying for the surveyor's time only if you decide not to proceed, which is a fair arrangement for both parties.</p>
+
+<h2>How to Prepare for Your Survey Visit</h2>
+<p>Have your kitchen plan printed or available on a device. If you have a product list from your retailer, bring that too. Make a note of any concerns you already have — an unusual wall, a sloping floor, an existing pipe you are unsure about — and raise them at the start of the visit.</p>
+<p>Clear reasonable access to the kitchen and ensure all areas that need to be measured or assessed are accessible. If your existing kitchen is in place, this is fine — the surveyor is experienced at working around existing furniture.</p>
+
+<h2>Questions to Ask Your Surveyor</h2>
+<p>A survey visit is an opportunity to ask questions. Useful ones include: Are there any issues with the current plan that you would recommend changing? What first-fix work needs to be done before the installation begins? Are there any aspects of this installation that are likely to take longer or be more complex than usual? What is your process if a problem is discovered during the installation itself?</p>
+<p>The answers will give you a clear sense of the fitter's experience and the level of care they bring to the project. A surveyor who answers these questions clearly and thoroughly is demonstrating exactly the kind of professionalism you want on site.</p>
+        `,
+      },
+    },
+
+    // ─── Guide 4 ─────────────────────────────────────────────────────────────
+    {
+      params: { guide: "working-with-wren-howdens-magnet" },
+      props: {
+        slug: "working-with-wren-howdens-magnet",
+        title: "Working with Wren, Howdens & Magnet — What Independent Fitters Need to Know",
+        metaDescription:
+          "Bought a kitchen from Wren, Howdens, Magnet or another major retailer? Here is what to expect when using an independent fitter — deliveries, rigid units and more.",
+        intro:
+          "If you have purchased a kitchen from Wren, Howdens, Magnet or another major retailer, here is what to expect when using an independent fitter.",
+        takeaways: [
+          "Check your full delivery against the picking list before installation begins — not on the day itself.",
+          "Rigid-construction kitchens (Howdens, most Wren ranges) are heavier and install differently from flat-pack.",
+          "The retailer is responsible for product quality; the fitter is responsible for the installation.",
+          "An independent fitter has no commercial relationship with the retailer and works solely in your interest.",
+        ],
+        faqs: [
+          {
+            q: "Can I use my own fitter if I bought a kitchen from Wren?",
+            a: "Yes. Wren kitchens can be installed by any competent independent fitter. Wren offers its own installation service, but you are under no obligation to use it. Using an independent fitter means you choose who works in your home and can negotiate directly on price and scope.",
+          },
+          {
+            q: "Is Howdens trade-only, or can homeowners use an independent fitter?",
+            a: "Howdens sells to trade accounts, so homeowners typically access Howdens kitchens through a builder or fitter who holds a trade account. If your independent fitter has a Howdens account, they can procure and fit the kitchen on your behalf.",
+          },
+          {
+            q: "What if parts are missing from my Magnet delivery?",
+            a: "Contact Magnet directly as soon as you discover any missing items — ideally before installation begins. Magnet, like most retailers, has a parts replacement process, but delivery times for replacement items vary. Missing hinges or handles can usually be resolved within days; missing units may take longer.",
+          },
+          {
+            q: "Who is responsible if a unit is damaged during installation?",
+            a: "If the unit was delivered damaged, the retailer is responsible. If the unit was damaged during fitting, the fitter is responsible. Photograph all units on delivery and flag any damage to the retailer immediately. This makes responsibility clear and avoids disputes later.",
+          },
+        ],
+        body: `
+<h2>The Retailer's Role and the Fitter's Role</h2>
+<p>When you buy a kitchen from a major retailer and use an independent fitter, there are two distinct relationships to understand. The retailer is responsible for the design, the product quality, the accuracy of the order and the delivery. The fitter is responsible for the installation — assembly, levelling, fixing, fitting and finishing. These responsibilities do not overlap, and understanding where one ends and the other begins will save you significant frustration if something goes wrong.</p>
+<p>An independent fitter has no commercial relationship with any retailer and no financial incentive to overlook product problems. They will tell you if a unit is poorly made, if a design choice will cause a practical problem, or if the delivery is incomplete. This impartiality is one of the strongest arguments for using an independent fitter regardless of where you bought your kitchen.</p>
+
+<!-- DECISION: Affiliation disclaimer included here as specified in the brief. -->
+<p><em>Disclaimer: Install My Kitchen is an independent fitting company with no commercial affiliation to Wren, Howdens, Magnet, IKEA or any other kitchen retailer. We work across all major brands and our assessment of any retailer's products and processes is based solely on our fitting experience.</em></p>
+
+<h2>Checking Your Delivery</h2>
+<p>The single most important thing you can do before installation begins is to check your delivery thoroughly. This means opening every box, checking every unit and accessory against the picking list, and photographing anything that is damaged or missing.</p>
+<p>This check should happen at least a week before installation — ideally as soon as the delivery arrives. Retailers can usually despatch replacement parts for missing items such as hinges, legs or handles within a few days. Missing units, however, can take considerably longer. Finding a missing base unit the day before installation day is a serious problem; finding it three weeks earlier is a manageable inconvenience.</p>
+<p>When checking, pay particular attention to: end panels and fillers (often missed in the picking process); internal accessories such as drawer inserts, pull-outs and magic corners; handles (which are easily confused between sizes); and plinths (which are often cut to length on site but must be present in sufficient quantity).</p>
+
+<h2>Rigid vs Flat-Pack: Understanding the Difference</h2>
+<p>There are two main cabinet construction methods used by UK kitchen retailers: rigid (also called framed or carcass) and flat-pack (also called RTA — ready to assemble).</p>
+<p>Rigid kitchens arrive pre-assembled — the carcass is a solid box that is installed as a unit. Howdens, most Wren ranges and some Magnet ranges are rigid construction. Rigid units are heavier and more time-consuming to move into the property, but they are faster to install once in position and generally have a more solid feel in use.</p>
+<p>Flat-pack kitchens — including all IKEA kitchens and some retailer budget ranges — are supplied as panels that must be assembled on site. This adds time to the installation (assembling flat-pack is typically slower than placing rigid units) and requires the fitter to be methodical about panel order and cabinet squareness. The end result, when fitted well, is indistinguishable from rigid construction.</p>
+
+<h2>What the Retailer Provides and What the Fitter Does</h2>
+<p>Understanding this split helps you manage the project. The retailer provides: the kitchen units, doors and drawer fronts; handles (usually, though sometimes these are a separate purchase); internal accessories as ordered; the kitchen plan and design; delivery to your property; and after-sales support for product defects.</p>
+<p>The independent fitter provides: assembly of flat-pack units where applicable; positioning, levelling and fixing of all units; fitting of doors, drawer fronts and handles; adjustment and alignment; installation of appliances (within their scope — some appliance connections require separate trades); management of the installation sequence; snagging and finishing.</p>
+<p>Worktops are often a separate supply and fit — either from the retailer, a specialist worktop supplier, or procured independently. Confirm the arrangement in advance.</p>
+
+<h2>Retailer Installation Teams vs Independent Fitters</h2>
+<p>Most major retailers offer their own installation service. These teams are typically subcontractors appointed by the retailer and managed through the retailer's booking system. There are situations where using the retailer's team is advantageous — particularly if the retailer is offering a package deal that includes installation at a reduced price.</p>
+<p>However, there are also reasons to prefer an independent fitter. You choose who you work with. You can verify their experience and references independently. They have no incentive to minimise problems that reflect badly on the retailer. And if something goes wrong, you have a direct relationship with the person responsible rather than dealing with a retailer's customer service department as an intermediary.</p>
+<p>The right choice depends on the specific offer from the retailer and the quality of independent fitter you can find locally. Get quotes for both and compare them on scope, warranty and price before deciding.</p>
+
+<h2>Handling Problems During Installation</h2>
+<p>Even with thorough preparation, problems arise. A unit may be the wrong size. A door may have a production defect. An accessory may not fit as planned. When this happens, the fitter's role is to identify the problem clearly, communicate it to you promptly and help you resolve it with the retailer.</p>
+<p>Keep a record of all communications with your retailer during the installation. If a unit needs to be replaced, get confirmation in writing of the expected delivery date. Your fitter may be able to work around the missing element temporarily, but confirm this with them in advance rather than assuming.</p>
+        `,
+      },
+    },
+
+    // ─── Guide 5 ─────────────────────────────────────────────────────────────
+    {
+      params: { guide: "kitchen-worktop-guide" },
+      props: {
+        slug: "kitchen-worktop-guide",
+        title: "Kitchen Worktop Guide — Types, Costs and Fitting",
+        metaDescription:
+          "Laminate, solid wood, quartz, granite or compact laminate — a plain-English guide to kitchen worktop types, costs and the fitting process for UK homeowners.",
+        intro:
+          "Choosing the right worktop is one of the most important decisions in a kitchen project. Here is a guide to materials, costs and the fitting process.",
+        takeaways: [
+          "Laminate is the most affordable option and suits the majority of households — modern ranges are convincing.",
+          "Stone worktops (quartz, granite) require professional templating after units are installed before cutting.",
+          "Solid wood worktops are warm and repairable but require regular oiling and careful care around water.",
+          "Compact laminate (Dekton, Silestone Hybriq) offers stone aesthetics at lower weight and sometimes lower cost.",
+        ],
+        faqs: [
+          {
+            q: "How long does worktop templating take?",
+            a: "Templating itself typically takes one to two hours. The time between templating and delivery depends on the supplier and material — most stone suppliers deliver within three to seven working days of templating, though busy periods can extend this.",
+          },
+          {
+            q: "Can laminate worktops be fitted by the kitchen fitter?",
+            a: "Yes. Laminate worktops are cut and fitted on site by the kitchen fitter as part of the installation. They do not require a separate templating visit or specialist supplier delivery. This makes them the fastest option to install.",
+          },
+          {
+            q: "How do I protect a solid wood worktop?",
+            a: "Solid wood worktops should be oiled before installation and regularly thereafter — typically every three to six months, or whenever the wood looks dry. Avoid leaving standing water on the surface and do not place very hot pans directly on the wood. With proper care, a solid wood worktop will last decades and can be sanded back to remove scratches or stains.",
+          },
+          {
+            q: "Do I need to use the same company for worktop supply and templating?",
+            a: "Usually yes — stone worktop suppliers typically supply, template and install as a single service. Buying the stone slab elsewhere and expecting a different company to template and cut it is unusual and may not be possible with all suppliers. Confirm the arrangement in advance.",
+          },
+        ],
+        body: `
+<h2>Why the Worktop Decision Matters</h2>
+<p>The worktop covers more visible surface area than almost any other element of the kitchen. It must be practical — resistant to heat, scratches and moisture to the degree your household demands — and it must suit the aesthetic of the kitchen. It also varies more in cost than any other element: a laminate worktop for a medium kitchen might cost £200; a granite worktop for the same kitchen could cost £2,000 or more. Understanding the options properly is worthwhile before committing.</p>
+
+<h2>Laminate Worktops</h2>
+<p>Laminate is a composite material — a high-density chipboard core with a decorative surface layer bonded under pressure. Modern laminate ranges have improved considerably and are available in convincing stone, timber and metallic effects. They are the most popular choice for UK kitchen installations and suit the vast majority of households.</p>
+<p>The main advantages of laminate are cost, ease of fitting and availability. Laminate worktops are cut on site by the kitchen fitter, which means there is no delay for templating or specialist delivery. They are available from kitchen retailers and timber merchants in standard lengths, and most retailers offer a range of profiles including square edge, bullnose and post-formed.</p>
+<p>The limitations are durability under sustained heat and moisture. A hot pan placed directly on laminate will cause irreparable damage. Prolonged water exposure at joints — particularly around the sink — can cause swelling. A well-fitted laminate worktop with appropriate joint sealant and sensible use will last many years, but it is less forgiving than stone in high-demand kitchens.</p>
+<p>Cost range: approximately £50 to £150 per linear metre supplied, plus fitting.</p>
+
+<h2>Solid Wood Worktops</h2>
+<p>Solid wood brings warmth and a natural aesthetic that laminate cannot replicate. Oak, beech, walnut and iroko are the most popular species in UK kitchens. Unlike stone or laminate, solid wood can be repaired — scratches and burns can be sanded back, stains lifted and the surface re-oiled to restore it.</p>
+<p>The fitting process for solid wood is similar to laminate — the worktop is supplied in standard lengths and cut on site. However, solid wood requires proper oiling before and after installation, and the fitter must allow for seasonal movement in the wood when fixing it to the units below. Solid wood must not be fitted too tightly in enclosed areas without room to expand.</p>
+<p>Maintenance is the key consideration. Solid wood must be oiled every three to six months and must not be left with standing water on the surface. In a household with children, heavy cooking or limited time for maintenance, laminate or stone may be more practical.</p>
+<p>Cost range: approximately £80 to £200 per linear metre supplied, plus fitting.</p>
+
+<h2>Quartz Worktops</h2>
+<p>Engineered quartz is manufactured from ground quartz bound with polymer resins, giving a consistent colour and pattern throughout the material. It is the most popular stone option in UK kitchens and is available in hundreds of colourways from white and grey to bold blues and greens.</p>
+<p>Quartz is highly resistant to scratches and staining. It does not require sealing and is hygienic in use. The main limitations are resistance to sustained heat — very hot pans can cause thermal shock and cracking — and the need for professional templating, supply and installation by a specialist stone fabricator.</p>
+<p>The templating process works as follows: after the base units are installed, the stone supplier visits to measure precisely. The worktops are then fabricated in the supplier's workshop and delivered and fitted, typically three to seven working days after templating. During this window, your kitchen will be complete except for the worktops — plan accordingly.</p>
+<p>Cost range: approximately £250 to £600 per linear metre supplied and fitted, depending on the supplier, colour and complexity of the cutouts.</p>
+
+<h2>Granite Worktops</h2>
+<p>Natural granite is quarried stone, with unique patterns and veining in each slab. It is extremely durable, heat resistant and — when properly sealed — resistant to staining. It has a premium feel and adds significant value to a property.</p>
+<p>The fitting process is the same as quartz: template, fabricate, deliver and fit. Granite is heavier than engineered quartz and requires robust unit construction to support it. Confirm with your fitter that the base units are appropriate for the weight of the stone being specified.</p>
+<p>Natural granite requires periodic sealing (typically once a year) to maintain its stain resistance. Some darker granites are more porous than others and may require more frequent treatment.</p>
+<p>Cost range: approximately £200 to £700 per linear metre supplied and fitted, with significant variation depending on the origin and rarity of the stone.</p>
+
+<h2>Compact Laminate (Dekton, Silestone Hybriq, Fenix)</h2>
+<p>Compact laminate is a high-performance material made from compressed layers of impregnated paper and resin under very high pressure, producing an extremely dense and hard surface. Brands such as Dekton, Silestone Hybriq and Fenix fall into this category.</p>
+<p>These materials offer excellent resistance to heat, UV, scratch and impact. They can be used as outdoor kitchen worktops as well as indoor. They are available in large format slabs and can achieve very thin profiles (as thin as 8mm) for a contemporary look. They require professional templating and fitting, as with natural stone.</p>
+<p>Cost range: approximately £250 to £600 per linear metre supplied and fitted.</p>
+
+<h2>How We Work with Worktop Suppliers</h2>
+<p>At Install My Kitchen, we co-ordinate the worktop templating visit with the stone supplier as part of the installation timeline. We confirm the state of the base units with the supplier before the templating appointment, provide access during the visit, and plan the installation so the kitchen is as complete as possible before templating takes place. This minimises the gap between templating and the worktops being fitted and handed over to you.</p>
+        `,
+      },
+    },
+
+    // ─── Guide 6 ─────────────────────────────────────────────────────────────
+    {
+      params: { guide: "kitchen-appliance-installation-guide" },
+      props: {
+        slug: "kitchen-appliance-installation-guide",
+        title: "Kitchen Appliance Installation Guide — What You Need to Know",
+        metaDescription:
+          "Built-in kitchen appliances — ovens, hobs, extractors, dishwashers — need careful installation. Here is what to know about trades, timing and the fitting sequence.",
+        intro:
+          "Built-in kitchen appliances require careful installation. Here is how to ensure your appliances are fitted correctly and safely.",
+        takeaways: [
+          "Hardwired appliances (ovens, hobs) must be connected by a Part P registered electrician — not the kitchen fitter.",
+          "Dishwashers and washing machines require a plumber for water supply and waste connections.",
+          "Extractor hoods should be installed before wall units above them are finally fixed in position.",
+          "Plan appliance installation as part of the overall fitting sequence — not as an afterthought.",
+        ],
+        faqs: [
+          {
+            q: "Can the kitchen fitter connect my oven?",
+            a: "It depends. Plug-in ovens (those with a standard 13-amp plug) can be connected by the kitchen fitter. Hardwired double ovens and range cookers require connection by a Part P registered electrician. Confirm the connection type for your specific appliance before installation day.",
+          },
+          {
+            q: "When should the extractor hood be installed?",
+            a: "The extractor should ideally be installed during the wall unit stage, before the units directly above it are finally fixed. This allows ducting to be routed and fixed without having to work around completed cabinetry. If you are fitting a recirculating extractor (no external duct), timing is more flexible.",
+          },
+          {
+            q: "Do integrated fridge-freezers require special installation?",
+            a: "Yes. Integrated fridge-freezers are fitted behind a cabinet door using a door-on-door or hinge-on-hinge mechanism. The housing unit dimensions must exactly match the appliance dimensions, and the door alignment must be carefully set. This is part of the fitter's scope, but it takes more time than a standard cabinet.",
+          },
+          {
+            q: "Who is responsible if an appliance is damaged during installation?",
+            a: "If the appliance was delivered damaged, the retailer or supplier is responsible. If it was damaged during installation, the fitter is responsible. Document the condition of all appliances before they are positioned and keep records of any damage found on delivery.",
+          },
+        ],
+        body: `
+<h2>Built-In Appliances: An Overview</h2>
+<p>Modern kitchens typically include a range of built-in appliances — ovens, hobs, extractor hoods, dishwashers, integrated fridges and freezers, washing machines and wine coolers. Each of these appliances has specific installation requirements, and several require work by qualified tradespeople that falls outside the scope of the kitchen fitter. Understanding which appliances need what — and when — is essential for planning a smooth installation.</p>
+
+<h2>Types of Built-In Appliances</h2>
+<p>Built-in appliances fall into two broad categories: those that slot into a housing unit (built-under ovens, integrated dishwashers, integrated fridge-freezers, wine coolers) and those that are integrated into the worktop or wall unit area (hobs, extractor hoods). Each has different installation requirements and fits at a different stage of the overall sequence.</p>
+<p>Appliances also differ by connection type: electrical (requiring a certified electrician if hardwired), plumbed (requiring a plumber), or simply plug-in (which the kitchen fitter can handle).</p>
+
+<h2>Ovens and Range Cookers</h2>
+<p>Single built-under ovens are usually connected via a 13-amp plug if they are under 3kW and may be plugged in by the fitter once the housing unit is in position. Double ovens and larger single ovens are typically hardwired and must be connected by a Part P registered electrician. Range cookers are always hardwired — and if gas-fuelled, also require a Gas Safe registered engineer for the gas connection.</p>
+<p>The oven housing unit must be at the correct height in the tower or tall unit run. The fitter will position and fix the oven, but the electrical connection should be scheduled with your electrician for the second-fix stage, once the unit is in place.</p>
+
+<h2>Hobs</h2>
+<p>Electric hobs (induction and ceramic) are hardwired and require a dedicated 32-amp or 45-amp circuit installed by a Part P electrician. This circuit must be in place as part of the first-fix electrical work, before units are installed. Gas hobs require a Gas Safe engineer to connect the gas supply.</p>
+<p>The hob is fitted into a cut-out in the worktop. For laminate worktops, the cut-out is made on site by the fitter. For stone worktops, the hob cut-out is templated and cut by the stone fabricator before delivery. Confirm the hob dimensions with your worktop supplier before templating.</p>
+
+<h2>Extractor Hoods</h2>
+<p>Extractor hoods come in ducted (external vent) or recirculating (filter) configurations. Ducted extractors must be connected to an external vent — either through the wall or up through the ceiling and out through the roof. The ducting route should be agreed before installation begins.</p>
+<p>The extractor should be installed during the wall unit stage so that ducting can be positioned and hidden behind cabinetry. Installing the extractor after wall units are fully fixed makes ducting awkward and may require revisiting units that are already in place.</p>
+<p>Electrically, most extractors are 13-amp plug-in appliances and can be connected by the fitter. Confirm this for your specific model before assuming.</p>
+
+<h2>Dishwashers and Washing Machines</h2>
+<p>Dishwashers and washing machines require a water supply, a hot or cold fill connection and a waste connection. These connections must be made by a plumber. The first-fix work — running the supply and waste pipes to the appliance location — should be completed before units are installed. Second-fix connections (actually connecting the appliance to the pipes) are made once the appliance is in its housing unit, typically near the end of the installation.</p>
+<p>Integrated dishwashers are fitted with a full-height door panel that matches the kitchen door style. The door is hung on the dishwasher using a door-on-door kit, and careful alignment with adjacent doors is part of the fitter's snagging process.</p>
+
+<h2>Integrated Fridge-Freezers</h2>
+<p>Integrated fridge-freezers require a housing unit that matches the appliance dimensions exactly. The appliance is fitted into the unit and connected via a door mechanism — either door-on-door or hinge-on-hinge — that transfers the door from the cabinet to the appliance as you open and close it. This mechanism must be carefully calibrated to allow the fridge door to open fully without obstruction.</p>
+<p>A freestanding fridge-freezer placed in an integrated housing is not a substitute — the appliance must be specifically designed as an integrated model, with the correct dimensions and hinge arrangement for the mechanism to work.</p>
+
+<h2>How We Co-Ordinate Appliance Installation</h2>
+<p>At Install My Kitchen we sequence appliance installation to align with each appliance's position in the fitting process. Extractors are fitted during the wall unit stage. Oven housings are prepared during the tower unit stage with connections scheduled with the electrician. Hobs are co-ordinated with the worktop — either cut on site for laminate or confirmed with the stone supplier for stone worktops. Dishwasher and fridge connections are scheduled with the plumber for the second-fix stage. This sequencing prevents work having to be undone and redone, and keeps the installation on schedule.</p>
+        `,
+      },
+    },
+
+    // ─── Guide 7 ─────────────────────────────────────────────────────────────
+    {
+      params: { guide: "kitchen-plumbing-electrical-guide" },
+      props: {
+        slug: "kitchen-plumbing-electrical-guide",
+        title: "Plumbing and Electrical Preparation for Kitchen Installation",
+        metaDescription:
+          "First fix, second fix and Gas Safe — when to arrange your plumber, electrician and gas engineer for a kitchen installation and what each stage involves.",
+        intro:
+          "Getting your plumbing, electrical and gas work done at the right time is critical to a smooth kitchen installation. Here is what you need to arrange and when.",
+        takeaways: [
+          "First-fix work (running pipes and cables to position) must be done before units are installed.",
+          "Second-fix connections are made after the kitchen is in — book trades for this phase too.",
+          "All notifiable electrical work in a kitchen must be done by a Part P registered electrician.",
+          "Any gas work must be carried out by a Gas Safe registered engineer — no exceptions.",
+        ],
+        faqs: [
+          {
+            q: "What is the difference between first fix and second fix in plumbing?",
+            a: "First fix is the work done before units and finishes are in place — running pipes to the correct positions, boxing in where necessary and capping off. Second fix is the final connection work done after the kitchen is installed — fitting the sink, connecting the dishwasher, installing taps and waste fittings.",
+          },
+          {
+            q: "How do I find a qualified electrician for kitchen work?",
+            a: "Look for an electrician registered under a competent person scheme such as NICEIC, NAPIT or ELECSA. These electricians are able to self-certify their work as compliant with Part P of the Building Regulations, which covers domestic electrical installation.",
+          },
+          {
+            q: "What electrical work typically needs to be done before kitchen installation?",
+            a: "First-fix electrical work typically includes: installing new or extended circuits for the hob (usually a dedicated 32-amp or 45-amp circuit), oven, extractor and any additional sockets; running cables to the correct positions and terminating at back-boxes; and installing any under-unit lighting cable runs if planned.",
+          },
+          {
+            q: "Do I need Building Regulations approval for kitchen plumbing?",
+            a: "Most kitchen plumbing work (replacing like for like, moving a sink within the same run) does not require Building Regulations approval. However, adding a new soil connection or making significant changes to drainage may require notification. Your plumber will advise on whether any notification is needed for your specific work.",
+          },
+        ],
+        body: `
+<h2>Why Trades Co-ordination Matters</h2>
+<p>A kitchen installation involves at least four parties: the kitchen fitter, the plumber, the electrician and (where applicable) the gas engineer. Each has a role at a specific stage of the project, and if they are not co-ordinated, the whole installation can stall. A first-fix electrician who has not run cables to the right position before units are installed means that cables will have to be run after units are in — harder to route, harder to conceal and more disruptive. A plumber who is not booked for second fix means the sink cannot be commissioned before the fitter hands over.</p>
+<p>Understanding the two-stage model — first fix and second fix — gives you a framework for co-ordinating all your trades effectively.</p>
+
+<h2>First Fix: Before the Kitchen Goes In</h2>
+<p>First fix refers to all the trade work that must be completed before the kitchen units are installed. For plumbing, this means: running hot and cold water supplies to the positions required by the kitchen plan (under the sink, at the dishwasher position, at the washing machine position if applicable); installing waste pipes from those positions to the drain; and capping off all supplies so the water can be turned back on while the kitchen is being fitted.</p>
+<p>For electrics, first-fix work includes: installing a dedicated circuit for the hob (typically 32-amp for an induction hob, 45-amp for a dual-fuel range); running a circuit for a hardwired oven if required; installing additional socket circuits to the kitchen if the existing provision is inadequate; running cable to the extractor hood position; and installing back-boxes at all final socket positions. All cables are run to position and terminated, but not yet connected to the appliances — that is second fix.</p>
+<p>For gas, first-fix work involves the Gas Safe engineer extending or moving the gas supply to the position required for the hob or range cooker, and capping it off. The final connection to the appliance is made at second fix.</p>
+
+<h2>When to Book First-Fix Trades</h2>
+<p>First-fix work should be completed at least a week before the kitchen installation is due to begin. This provides a buffer in case the trades need to return to resolve a problem, and ensures that the fitter arrives to a room where all services are in the right position.</p>
+<p>Book your first-fix plumber and electrician when you have a confirmed installation date. Give them the kitchen plan and a clear brief on what is required. If you have a Gas Safe engineer for the gas supply, book them at the same time — gas engineers are often in high demand and short notice availability is not guaranteed.</p>
+
+<h2>Second Fix: After the Kitchen is Installed</h2>
+<p>Second fix refers to the final trade connections made once the kitchen is in place. For plumbing: connecting the sink to the water supply and waste; connecting the dishwasher to its supply and waste; connecting the washing machine; fitting taps and waste assemblies; and commissioning all connections to confirm there are no leaks.</p>
+<p>For electrics: connecting the hob to its dedicated circuit; connecting and commissioning the oven; connecting the extractor; installing switch and socket faceplates; installing under-unit lighting; and issuing the electrical installation certificate for any notifiable work. For gas: making the final connection from the gas supply to the hob or range cooker and commissioning the appliance.</p>
+<p>Second-fix work typically takes place on the penultimate or final day of the kitchen installation. Confirm the date with your trades well in advance — as with first fix, good tradespeople are often booked several weeks ahead.</p>
+
+<h2>Part P Electrical Work</h2>
+<p>Part P of the Building Regulations covers electrical installation in domestic dwellings in England. Most electrical work in a kitchen falls within the scope of Part P and must either be carried out by a registered competent person (who self-certifies their own work) or notified to and inspected by the local authority building control department.</p>
+<p>In practice, this means using an electrician registered with a government-authorised scheme such as NICEIC, NAPIT or ELECSA. These electricians can self-certify, meaning they issue an electrical installation certificate directly to you without requiring a building control inspection. Keep this certificate — it will be required when you sell the property.</p>
+
+<h2>Gas Safe Registration</h2>
+<p>In the UK, all work on gas appliances and gas supplies must be carried out by a Gas Safe registered engineer. This is a legal requirement, not a recommendation. An unregistered person carrying out gas work is committing a criminal offence, and any subsequent gas-related incident may not be covered by your home insurance.</p>
+<p>Check Gas Safe registration at the Gas Safe Register website (gassaferegister.co.uk) before booking any gas engineer. You can check an individual engineer's registration card on the day they attend. A legitimate Gas Safe engineer will carry their card and show it willingly.</p>
+
+<h2>Why We Recommend Independent Tradespeople</h2>
+<p>At Install My Kitchen, we work with a trusted network of independent plumbers and electricians in Coventry and Warwickshire. We recommend independent tradespeople because they are accountable directly to you as the homeowner, they are not in a commercial relationship with the kitchen retailer, and their work on your installation is their professional responsibility.</p>
+<p>We do not act as a main contractor managing all trades on your behalf, but we co-ordinate the first-fix and second-fix stages with your chosen trades to ensure the installation runs smoothly and on schedule. If you need recommendations for local trades, we are happy to assist.</p>
+        `,
+      },
+    },
+
+    // ─── Guide 8 ─────────────────────────────────────────────────────────────
+    {
+      params: { guide: "ikea-kitchen-installation-guide" },
+      props: {
+        slug: "ikea-kitchen-installation-guide",
+        title: "IKEA Kitchen Installation Guide — What to Expect",
+        metaDescription:
+          "IKEA METOD kitchens can be installed by an independent fitter. Here is a guide to the flat-pack assembly process, delivery checks and common installation pitfalls.",
+        intro:
+          "IKEA kitchens are one of the most popular choices in the UK and can be installed by an independent fitter. Here is what you need to know about the process.",
+        takeaways: [
+          "IKEA METOD is a flat-pack system — all units are assembled on site, which adds time versus rigid construction.",
+          "Check your IKEA delivery carefully — missing parts can be ordered individually, but this takes time.",
+          "Corner units, pull-outs, carousels and deep drawers take significantly longer to fit and adjust than basic carcasses.",
+          "An experienced independent fitter is fully capable of fitting an IKEA kitchen to an excellent standard.",
+        ],
+        faqs: [
+          {
+            q: "How long does it take to fit an IKEA kitchen?",
+            a: "A medium IKEA kitchen (around 10 to 15 units) typically takes four to six working days for an experienced fitter. IKEA flat-pack assembly adds time compared to rigid units. Kitchens with complex layouts, many corner units or pull-out systems may take longer.",
+          },
+          {
+            q: "What is the difference between IKEA METOD and older IKEA kitchen systems?",
+            a: "METOD is the current IKEA kitchen system, introduced in the UK in 2013. It replaced the earlier AKURUM system. METOD uses a wall-rail fixing system for wall units (rather than individual wall fixings) and a slightly different carcass construction. All current IKEA kitchens in the UK use the METOD system.",
+          },
+          {
+            q: "Can I get replacement parts for an IKEA kitchen?",
+            a: "Yes. IKEA sells spare parts for METOD through its website and stores, including individual hinges, drawer runners, legs, rails and fixings. Major components such as unit carcasses can also be ordered. Lead times vary — in-store items are available immediately; special orders may take a week or more.",
+          },
+          {
+            q: "Does IKEA offer its own installation service?",
+            a: "Yes, IKEA offers an installation service through third-party contractors. As with other retailers, you are not obliged to use it. Many homeowners choose an independent fitter for reasons of preference, cost or availability.",
+          },
+        ],
+        body: `
+<h2>Why IKEA Kitchens Are Popular</h2>
+<p>IKEA kitchens — sold under the METOD system — offer good design variety at an accessible price point. The modular system allows considerable flexibility in layout and configuration, and the range of door styles (sold separately under names such as AXSTAD, VOXTORP, BODBYN and KUNGSBACKA) covers everything from contemporary gloss to traditional Shaker. IKEA also sells a comprehensive range of accessories, internal organisers, sinks and taps that integrate with the METOD carcass.</p>
+<p>The flat-pack format means the entire kitchen can be delivered in boxes and assembled on site. This has practical advantages — boxes can be carried through a narrow hallway or up a staircase — but it adds time to the installation compared with pre-assembled rigid units.</p>
+
+<!-- DECISION: Affiliation disclaimer included as specified, matching the pattern in guide 4. -->
+<p><em>Disclaimer: Install My Kitchen is an independent fitting company with no commercial affiliation to IKEA. Our knowledge of the METOD system is based entirely on our practical installation experience.</em></p>
+
+<h2>The IKEA METOD System</h2>
+<p>METOD carcasses come in standard widths (20cm to 80cm) and heights (40cm to 80cm for base units; 40cm to 100cm for wall units; 140cm to 220cm for tall units). Each carcass is flat-packed with pre-drilled holes and cam-lock fittings for assembly. The carcass material is a melamine-faced particleboard, which is robust when properly assembled but requires careful handling during the build.</p>
+<p>Wall units in the METOD system are hung from a continuous wall rail, rather than being individually fixed to the wall. The rail is fixed first, and units then hook onto it and are adjusted for height and level. This is a well-engineered system that allows fine adjustment without re-drilling, but the rail must be fixed correctly to a solid wall or into adequate backing in a hollow wall.</p>
+<p>Drawer fronts and door panels are sold separately and clip onto standard runners and hinges. The separation of carcass and front allows considerable flexibility in updating the kitchen's appearance without replacing the structure.</p>
+
+<h2>The Assembly Process</h2>
+<p>IKEA unit assembly is the most time-consuming aspect of an IKEA kitchen installation compared to a rigid-construction kitchen. Each carcass must be assembled from the flat pack before it can be positioned and levelled. For a kitchen of 15 carcasses, this assembly stage alone takes a significant portion of the first day.</p>
+<p>An experienced fitter will develop an efficient assembly sequence — building similar units in batches, pre-fitting hinges before positioning, and staging assembled units in an order that minimises handling. A fitter unfamiliar with IKEA's system will take considerably longer and may make assembly errors that need to be undone and redone.</p>
+<p>When comparing quotes for IKEA kitchen fitting, be cautious of very low prices — they may not account properly for the time IKEA assembly requires.</p>
+
+<h2>What Takes Longer: Corner Units, Pull-Outs and Deep Drawers</h2>
+<p>Standard base and wall carcasses, once assembled, fit in a broadly predictable time. However, certain IKEA units are significantly more time-consuming. Corner base units (especially those with UTRUSTA or MAXIMERA carousel mechanisms) require careful fitting and adjustment of the mechanism. SEKTION-style pull-out inserts for base units must be fitted and aligned carefully. Deep drawer units with MAXIMERA drawer boxes require precise adjustment of each drawer front for level and gap consistency.</p>
+<p>When planning the timeline for an IKEA kitchen installation, account for these elements. A kitchen with six corner units and multiple pull-out base units will take meaningfully longer than one with the same number of standard carcasses.</p>
+
+<h2>Checking Your IKEA Delivery</h2>
+<p>IKEA deliveries for a full kitchen can comprise many boxes. Check each box against your picking list (the document IKEA provides listing every item in your order) as soon as the delivery arrives. Common missing or incorrect items include: door and drawer fronts (which can look similar but come in different sizes); individual hardware packs (hinges, screws, cam locks); specific accessory kits such as drawer inserts; and plinths.</p>
+<p>Missing parts can be ordered directly from IKEA's website or obtained from a store. Most standard hardware items are available relatively quickly. Missing carcasses or fronts may take longer. Raise any issues as soon as possible — do not wait until installation day.</p>
+
+<h2>Typical Timeline for an IKEA Kitchen</h2>
+<p>For a medium kitchen of 12 to 18 carcasses with a standard layout, expect four to six working days for an experienced fitter. Day one will typically cover delivery check, assembly of base carcasses and initial positioning. Days two and three cover wall units, tall units and any specialist units. Days three to four cover worktops (cut on site for laminate, or the start of the stone templating wait). Days four to six cover doors, drawer fronts, handles, plinths, appliances and snagging. Second-fix plumbing and electrical work by the relevant trades completes the installation.</p>
+<p>If you have a worktop templating and delivery gap (typical for stone worktops), the overall project may span ten to fourteen working days from start to full completion, with the kitchen usable towards the end of this period.</p>
+        `,
+      },
+    },
+
+    // ─── Guide 9 ─────────────────────────────────────────────────────────────
+    {
+      params: { guide: "kitchen-installation-timeline" },
+      props: {
+        slug: "kitchen-installation-timeline",
+        title: "Kitchen Installation Timeline — Day by Day",
+        metaDescription:
+          "A day-by-day guide to what happens during a typical kitchen installation — strip-out, units, worktops, appliances, snagging and second-fix trades.",
+        intro:
+          "Understanding what happens each day of your kitchen installation helps you plan and know what to expect. Here is a typical timeline for a medium kitchen.",
+        takeaways: [
+          "A medium kitchen (12–18 units) typically takes five to seven working days for the main installation.",
+          "Stone worktop templating and delivery adds a further three to seven working days before final completion.",
+          "Day one is often the most disruptive — strip-out, delivery check and the first units going in.",
+          "Second-fix plumbing and electrical work usually happens on the final or penultimate day.",
+        ],
+        faqs: [
+          {
+            q: "How long does a kitchen installation take for a small kitchen?",
+            a: "A small kitchen — up to eight or ten units — can often be completed by an experienced fitter in three to four working days, excluding stone worktop delivery time. This assumes the preparation work (first-fix plumbing and electrics) has been completed in advance.",
+          },
+          {
+            q: "What causes delays during kitchen installation?",
+            a: "Common causes of delay include: missing or damaged units discovered during the check; first-fix plumbing or electrical work that was not completed before the fitter arrived; stone worktop delivery delays; unexpected structural discoveries (pipes or cables in unexpected positions, walls that are not square); and appliance compatibility issues discovered on site.",
+          },
+          {
+            q: "Can the kitchen be used before the installation is complete?",
+            a: "A basic level of functionality — running water at the sink, a working hob — is usually achievable before the installation is fully snagged. However, you should not consider the kitchen fully usable until all snagging is complete, all appliances are commissioned and the fitter has handed over.",
+          },
+          {
+            q: "What happens if the fitter discovers a problem they cannot resolve immediately?",
+            a: "A professional fitter will communicate the problem to you as soon as it is discovered, explain the options and, where relevant, pause work in a way that minimises disruption until the issue is resolved. Examples include waiting for a replacement unit, pausing for a Gas Safe engineer to attend, or ordering a specific fixing for an unusual wall type.",
+          },
+        ],
+        body: `
+<h2>Before Day One: Preparation Phase</h2>
+<p>The timeline for any kitchen installation begins not when the fitter arrives, but when first-fix work is completed. By the time the installation team arrives on day one, the following should already be in place: the kitchen delivery has arrived and been checked; all first-fix plumbing and electrical work is complete; the room is fully cleared; and floor and access protection is in place. If any of these elements are missing, day one will not proceed as planned.</p>
+
+<h2>Day One: Delivery Check, Strip-Out and First Units</h2>
+<p>The first day of the installation is typically the most disruptive. It begins with a final delivery check if one has not been done in advance. The existing kitchen is then stripped out — units are removed, old worktops are taken off, and appliances are disconnected. This generates a significant amount of waste and dust, and the room will be uninhabitable during this phase.</p>
+<p>Once the room is cleared, the fitter begins the new installation. On day one, the focus is typically on base units — establishing a level datum line, positioning the first unit and working outwards. In a well-prepared room with a level floor and square walls, a good fitter can have a substantial run of base units in position by the end of day one. In a room with complications — a floor that drops five centimetres from one end to the other, or walls that are significantly out of plumb — day one may be spent almost entirely on levelling and shimming the first few units.</p>
+
+<h2>Days Two to Three: Carcasses and Wall Units</h2>
+<p>With base units progressing, days two and three typically see the completion of the base unit run, the installation of tall units (if present — larder units, oven housings, fridge-freezer housings) and the installation of wall units.</p>
+<p>Wall units require fixing to the wall at the correct height and with consistent alignment. In the METOD (IKEA) system this means fixing a wall rail first. In rigid and other flat-pack systems, units are fixed individually. Wall unit installation is slower than base unit installation on a per-unit basis, partly because working at height is inherently more careful work and partly because the fixing points must be precisely located in solid material.</p>
+<p>By the end of day three in a medium kitchen, most of the carcass structure should be in place. At this point the kitchen begins to look like a kitchen, even without doors, worktops or appliances.</p>
+
+<h2>Days Three to Four: Worktop Templating or Fitting</h2>
+<p>For laminate worktops, fitting takes place once the base units are in position. The fitter measures, cuts and fits the worktops on site, including cutouts for the sink and hob. This is typically completed within a day for a medium kitchen.</p>
+<p>For stone worktops (quartz, granite, compact laminate), the templating visit is scheduled for this stage. The stone fabricator visits, takes precise measurements of the base unit run, and takes a template. The worktops are then fabricated in the workshop and delivered, typically three to seven working days later. During this gap, the kitchen will be complete except for the worktops. The fitter may leave at this point and return when the worktops are delivered.</p>
+
+<h2>Days Four to Five: Doors, Drawers, Handles and Appliances</h2>
+<p>With worktops in place (or when the fitter returns after stone worktop delivery), the focus shifts to fitting and aligning doors, drawer fronts and handles. This stage takes more time than it may appear — each door must be individually hung and adjusted for gap consistency, level and closure. Drawer fronts must be aligned with adjacent doors. Integrated appliance doors must be aligned with freestanding cabinet doors. Handles must be fitted at consistent heights and with consistent gaps.</p>
+<p>Appliances that fall within the fitter's scope — slot-in appliances, extractors, integrated fridge-freezers — are positioned and fixed during this stage. The extractor hood installation, if ducted, is usually completed before or alongside wall unit fitting to allow the ducting to be routed.</p>
+
+<h2>Days Five to Six: Second Fix, Final Adjustments and Snagging</h2>
+<p>The penultimate and final days of the installation are for second-fix trade work and snagging. Your plumber returns to connect the sink, dishwasher and any other plumbed appliances. Your electrician returns to connect the hob, oven, extractor and any hardwired sockets. Your gas engineer, if applicable, makes the final gas connection to the hob or range cooker and commissions the appliance.</p>
+<p>The fitter carries out a detailed snagging check — reviewing every door and drawer for alignment, checking all plinths are fitted squarely, confirming that all appliances open and close correctly, and applying silicone sealant at the junction between worktop and wall. Any minor issues identified during snagging are resolved before the fitter hands over the kitchen.</p>
+
+<h2>What Can Delay Each Stage</h2>
+<p>Strip-out and day one can be delayed by: a delivery that has not been checked and is found to have missing units; first-fix work that was not completed; access or parking problems. Wall unit installation can be delayed by: hollow walls without adequate backing; walls that are significantly out of plumb. Worktop stages can be delayed by: stone fabricator lead times; template measurement errors. Snagging and second fix can be delayed by: unavailability of trades; appliances that do not commission correctly. Planning for these contingencies — booking trades in advance, checking deliveries early, having a small buffer in the overall programme — significantly reduces the likelihood of a significant overrun.</p>
+        `,
+      },
+    },
+
+    // ─── Guide 10 ────────────────────────────────────────────────────────────
+    {
+      params: { guide: "kitchen-snagging-guide" },
+      props: {
+        slug: "kitchen-snagging-guide",
+        title: "Kitchen Snagging — What It Is and What to Check",
+        metaDescription:
+          "What kitchen snagging involves, what to check after installation, how to create a snagging list and who is responsible for fixing defects.",
+        intro:
+          "Snagging is the process of identifying and fixing minor defects after kitchen installation. Here is what to look for and how to handle it.",
+        takeaways: [
+          "Snagging should be done methodically — work through the kitchen section by section before sign-off.",
+          "Common items include door alignment, drawer runners, plinths, silicone seals and handle positions.",
+          "Distinguish between fitting defects (fitter's responsibility) and product defects (retailer's responsibility).",
+          "Minor snagging items identified at handover are normal — a good fitter will resolve them promptly.",
+        ],
+        faqs: [
+          {
+            q: "How do I create a snagging list?",
+            a: "Walk through the kitchen systematically and note every item that is not right — use a notepad or your phone. For each item, note where it is (e.g. 'third drawer from the left on the base run'), what the problem is ('drawer front sits 3mm lower than adjacent drawer front') and, if possible, a photograph. Send the list to your fitter and agree a date for the snagging visit.",
+          },
+          {
+            q: "How long after installation should I wait before snagging?",
+            a: "Most snagging is done at the end of the installation as part of the handover process. However, it is worth living with the kitchen for one to two weeks before doing a final snagging check — daily use reveals issues that are not obvious during a walkthrough inspection.",
+          },
+          {
+            q: "Who fixes a defective appliance found during snagging?",
+            a: "If the appliance has a manufacturing defect, the retailer or appliance manufacturer is responsible under the Consumer Rights Act 2015. If the appliance was installed incorrectly, the fitter is responsible. In practice, the fitter should help you identify the nature of the defect and liaise with the relevant party if needed.",
+          },
+          {
+            q: "What should I do if my fitter is unresponsive about snagging items?",
+            a: "Put your snagging list in writing (email is best) and set a reasonable deadline for response. If the fitter does not respond, follow up in writing again. If they remain unresponsive, contact your local Trading Standards office or, if you paid by credit card, consider a Section 75 claim against the card provider.",
+          },
+        ],
+        body: `
+<h2>What Snagging Is</h2>
+<p>Snagging is the process of reviewing a completed installation for minor defects and ensuring they are put right before final sign-off. The term is borrowed from the house-building industry, where snagging lists are a standard part of the new-home handover process. In kitchen installation, snagging covers everything from a door that sits slightly out of alignment to a silicone bead that has been applied unevenly, or a plinth that does not sit flush with the floor.</p>
+<p>Snagging items are, by definition, minor. They do not affect the structural integrity or safety of the kitchen. However, they are visible, and a kitchen that has not been properly snagged will have a less polished finish than one that has. A professional fitter views snagging as a normal and important part of the installation process, not as a sign that something has gone wrong.</p>
+
+<h2>Common Snagging Items</h2>
+<p>Door alignment is the most common snagging category. Individual doors must be hung with consistent gaps at top, bottom and sides. When the kitchen is complete, stand back and look at the door run from a slight angle — misalignment is often more visible this way than when looking straight on. Adjustment is made at the hinges, which on modern kitchen units allow three-dimensional movement (horizontal, vertical and depth).</p>
+<p>Drawer fronts must be aligned with each other and with adjacent doors. Most drawer units use a separate front fixing that allows fine adjustment after the drawer is installed. Check that all drawer fronts are at the same height, that vertical gaps are consistent and that horizontal gaps match those of adjacent doors.</p>
+<p>Drawer runners deserve individual attention. Open and close each drawer fully several times and check that it moves smoothly and returns to the closed position fully. A soft-close mechanism that does not engage, or a drawer that feels stiff or catches, indicates a problem with the runner adjustment or fitting.</p>
+<p>Plinths (kick-boards) should sit flush to the floor and flush to adjacent plinths with no visible gaps. Where plinths are cut around uneven floors, the cut should be clean and the gap minimised. Check that all plinth clips are engaged and that plinths do not flex or rattle.</p>
+<p>Handles should be fitted at consistent heights and angles across the entire kitchen. For horizontal bar handles on drawer fronts, all handles should be at the same height from the bottom of the front. For vertical handles on doors, all handles should be at the same distance from the edge and at the same height. Even a few millimetres of inconsistency is visible across a large door run.</p>
+<p>Silicone seals at the junction between the worktop and walls, and around the sink, should be neat, continuous and correctly tooled. A poorly applied silicone bead is both unsightly and, in the case of the sink or worktop-wall junction, a potential source of water ingress. Check that the silicone is fully adhered and that there are no gaps or air bubbles.</p>
+<p>Appliance functions should be tested during snagging. Open and close integrated appliance doors. Test dishwasher door springs. Check that extractor speeds are operational. Confirm that the oven and hob heat correctly (this can be done simply at snagging — a full cooking test comes with daily use).</p>
+
+<h2>How to Create a Snagging List</h2>
+<p>A snagging list is most effective when it is specific and systematic. Work through the kitchen in a logical sequence — for example, starting at one end of the base unit run and working along to the other end, then moving to wall units, then tall units, then appliances and finally the finishing details (plinths, silicone, lighting). For each item, note the specific location, the nature of the problem and, where possible, a photograph.</p>
+<p>The more precise your description, the easier it is for the fitter to address efficiently. "Third base unit door from the left on the window wall — bottom left corner sits 4mm proud of adjacent door" is more useful than "some doors are misaligned". Share the list in writing — email or a messaging app with a written record — so there is no ambiguity about what was raised and when.</p>
+
+<h2>Fitting Defects vs Product Defects</h2>
+<p>It is important to distinguish between two categories of defect: those caused by the fitting (the fitter's responsibility) and those caused by the product (the retailer's or manufacturer's responsibility).</p>
+<p>A fitting defect is something the fitter can correct — a door that was not correctly adjusted, a plinth that was cut inaccurately, a silicone bead that was applied carelessly. A product defect is a fault in the manufactured item — a door with a chip in the paint from the factory, a drawer box with a cracked runner, a unit carcass with a delaminating surface. Product defects are a matter between you and your retailer.</p>
+<p>In practice, fitters will often help identify whether an issue is a fitting problem or a product problem, and may assist with communication to the retailer. However, they are not responsible for defects in products they did not manufacture.</p>
+
+<h2>How We Handle Snagging at Install My Kitchen</h2>
+<p>We carry out a snagging check as a standard part of every kitchen installation handover. Before we hand over, we walk through the kitchen systematically, identify any items that need attention and resolve them on the same day where possible. Items that require a return visit — for example, a replacement door that has been ordered from the retailer — are scheduled promptly and completed as soon as the relevant part is available.</p>
+<p>We provide a 12-month workmanship warranty on all installations. If a fitting-related issue becomes apparent after handover within this period — a hinge that was not correctly torqued, a unit that has moved because a fixing point was inadequate — we will return and rectify it at no charge.</p>
+
+<h2>Living With the Kitchen: Post-Snagging Use</h2>
+<p>It is worth revisiting the kitchen after one to two weeks of normal use. Doors that felt fine during a walkthrough may reveal an issue once they are being opened and closed forty times a day. Drawer runners that sounded smooth during snagging may develop a slight catch under full loading. A second brief snagging check after the first week of use — noting anything that has emerged — gives your fitter a comprehensive picture and ensures the kitchen reaches its full potential.</p>
+        `,
+      },
+    },
+  ];
+}
+
+const guide = Astro.props;
+const { slug, title, metaDescription, intro, takeaways, faqs, body } = guide;
+
+const canonical = `https://www.installmykitchen.co.uk/guides/${slug}/`;
+const pageTitle = `${title} | Install My Kitchen`;
+
+// Article JSON-LD
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  headline: title,
+  description: metaDescription,
+  author: {
+    "@type": "Organization",
+    name: "Install My Kitchen",
+    url: "https://www.installmykitchen.co.uk",
+  },
+  publisher: {
+    "@type": "Organization",
+    name: "Install My Kitchen",
+    url: "https://www.installmykitchen.co.uk",
+    logo: {
+      "@type": "ImageObject",
+      url: "https://www.installmykitchen.co.uk/favicon.png",
+    },
+  },
+  mainEntityOfPage: {
+    "@type": "WebPage",
+    "@id": canonical,
+  },
+  url: canonical,
+};
+---
+
+<Base
+  title={pageTitle}
+  description={metaDescription}
+  canonical={canonical}
+>
+  <!-- Article JSON-LD in head -->
+  <script slot="schema" type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+
+  <Header slot="header" />
+
+  <!-- Breadcrumb -->
+  <div class="container py-6">
+    <Breadcrumbs
+      items={[
+        { label: "Guides", href: "/guides/" },
+        { label: title, href: `/guides/${slug}/` },
+      ]}
+    />
+  </div>
+
+  <!-- Article -->
+  <section class="section">
+    <div class="container">
+      <div class="max-w-3xl mx-auto">
+
+        <!-- H1 -->
+        <h1
+          class="text-3xl md:text-4xl font-extrabold mb-6 leading-tight"
+          style="color: var(--navy);"
+        >
+          {title}
+        </h1>
+
+        <!-- Quick Answer -->
+        <AnswerBlock answer={intro} />
+
+        <!-- Key Takeaways -->
+        <KeyTakeaway points={takeaways} />
+
+        <!-- Body article content -->
+        <!-- DECISION: Body is rendered via set:html so that H2 subheadings and lists -->
+        <!-- within the hardcoded HTML strings render correctly as structured markup. -->
+        <div
+          class="prose-guide fade-up"
+          set:html={body}
+        />
+
+        <!-- FAQ accordion -->
+        <div class="mt-12 mb-8 fade-up">
+          <h2
+            class="text-2xl font-bold mb-6"
+            style="color: var(--navy);"
+          >
+            Frequently Asked Questions
+          </h2>
+          <FAQ items={faqs} />
+        </div>
+
+        <!-- Internal Links -->
+        <div class="mt-10 fade-up">
+          <InternalLinks
+            heading="Related Pages"
+            links={[
+              {
+                label: "Book a Survey",
+                href: "/survey/",
+                description: "£195 pre-installation survey, credited back on booking.",
+              },
+              {
+                label: "Our Services",
+                href: "/services/",
+                description: "Full kitchen installation across Coventry and Warwickshire.",
+              },
+              {
+                label: "Installation Costs",
+                href: "/costs/",
+                description: "Transparent pricing and cost guides for kitchen fitting.",
+              },
+              {
+                label: "Contact Us",
+                href: "/contact/",
+                description: "Get in touch to discuss your kitchen project.",
+              },
+            ]}
+          />
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <CTA
+    heading="Ready to Get Your Kitchen Installed?"
+    subtext="Book a pre-installation survey from £195 — credited back in full when you proceed. Covering Coventry, Warwickshire and surrounding areas."
+    primaryLabel="Book Your Survey"
+    primaryHref="/survey/"
+    secondaryLabel="Call 07399 651836"
+    secondaryHref="tel:07399651836"
+    dark={true}
+  />
+
+  <Footer slot="footer" />
+  <StickyMobileCTA slot="sticky-cta" />
+</Base>
+
+<style>
+  /* ── Prose styles for the guide body HTML ── */
+  /* DECISION: Using scoped .prose-guide class rather than Tailwind @prose plugin  */
+  /* to avoid introducing @tailwindcss/typography dependency not present in project. */
+  .prose-guide :global(h2) {
+    font-size: 1.375rem;
+    font-weight: 700;
+    color: var(--navy);
+    margin-top: 2rem;
+    margin-bottom: 0.875rem;
+    line-height: 1.3;
+  }
+
+  .prose-guide :global(p) {
+    font-size: 1rem;
+    line-height: 1.75;
+    color: var(--charcoal);
+    margin-bottom: 1.125rem;
+  }
+
+  .prose-guide :global(ul) {
+    list-style: disc;
+    padding-left: 1.5rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .prose-guide :global(li) {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--charcoal);
+    margin-bottom: 0.375rem;
+  }
+
+  .prose-guide :global(em) {
+    font-style: italic;
+    color: var(--text-soft);
+    font-size: 0.9375rem;
+  }
+
+  .prose-guide :global(strong) {
+    font-weight: 700;
+    color: var(--charcoal);
+  }
+</style>

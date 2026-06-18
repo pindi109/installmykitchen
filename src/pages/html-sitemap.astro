@@ -1,0 +1,293 @@
+---
+import Base from "../layouts/Base.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import Breadcrumbs from "../components/Breadcrumbs.astro";
+
+const title = "Site Map | Install My Kitchen";
+const description = "Complete site map for Install My Kitchen. Browse all pages including area guides, retailer pages, kitchen style guides, cost information, and answers.";
+const canonical = "https://www.installmykitchen.co.uk/html-sitemap/";
+
+const areaSlugs = [
+  { slug: "coventry", name: "Coventry" },
+  { slug: "canley", name: "Canley" },
+  { slug: "tile-hill", name: "Tile Hill" },
+  { slug: "earlsdon", name: "Earlsdon" },
+  { slug: "allesley", name: "Allesley" },
+  { slug: "binley", name: "Binley" },
+  { slug: "wyken", name: "Wyken" },
+  { slug: "walsgrave", name: "Walsgrave" },
+  { slug: "finham", name: "Finham" },
+  { slug: "stivichall", name: "Stivichall" },
+  { slug: "coundon", name: "Coundon" },
+  { slug: "radford", name: "Radford" },
+  { slug: "rugby", name: "Rugby" },
+  { slug: "nuneaton", name: "Nuneaton" },
+  { slug: "bedworth", name: "Bedworth" },
+  { slug: "hinckley", name: "Hinckley" },
+  { slug: "leamington-spa", name: "Leamington Spa" },
+  { slug: "kenilworth", name: "Kenilworth" },
+  { slug: "warwick", name: "Warwick" },
+  { slug: "balsall-common", name: "Balsall Common" },
+  { slug: "meriden", name: "Meriden" },
+  { slug: "solihull", name: "Solihull" },
+  { slug: "stratford-upon-avon", name: "Stratford-upon-Avon" },
+  { slug: "southam", name: "Southam" },
+  { slug: "atherstone", name: "Atherstone" },
+];
+
+const retailerSlugs = [
+  { slug: "wren", name: "Wren Kitchens" },
+  { slug: "howdens", name: "Howdens Joinery" },
+  { slug: "magnet", name: "Magnet Kitchens" },
+  { slug: "magnet-trade", name: "Magnet Trade" },
+  { slug: "benchmarx", name: "Benchmarx Kitchens" },
+  { slug: "bq", name: "B&Q Kitchens" },
+  { slug: "wickes", name: "Wickes Kitchens" },
+  { slug: "ikea", name: "IKEA Kitchens" },
+  { slug: "diy-kitchens", name: "DIY Kitchens" },
+  { slug: "kutchenhaus", name: "Kutchenhaus" },
+  { slug: "symphony", name: "Symphony Kitchens" },
+  { slug: "masterclass", name: "Masterclass Kitchens" },
+];
+
+const styleSlugs = [
+  { slug: "shaker", name: "Shaker Kitchen Installation" },
+  { slug: "handleless", name: "Handleless Kitchen Installation" },
+  { slug: "modern", name: "Modern Kitchen Installation" },
+  { slug: "traditional", name: "Traditional Kitchen Installation" },
+  { slug: "contemporary", name: "Contemporary Kitchen Installation" },
+  { slug: "german", name: "German Kitchen Installation" },
+  { slug: "painted", name: "Painted Kitchen Installation" },
+  { slug: "solid-wood", name: "Solid Wood Kitchen Installation" },
+  { slug: "in-frame", name: "In-Frame Kitchen Installation" },
+  { slug: "luxury", name: "Luxury Kitchen Installation" },
+];
+
+const costGuides = [
+  { href: "/costs/", name: "Kitchen Installation Cost Guide" },
+  { href: "/cost/small-kitchen-cost/", name: "Small Kitchen Installation Cost" },
+  { href: "/cost/medium-kitchen-cost/", name: "Medium Kitchen Installation Cost" },
+  { href: "/cost/large-kitchen-cost/", name: "Large Kitchen Installation Cost" },
+  { href: "/cost/wren-cost/", name: "Wren Kitchen Installation Cost" },
+  { href: "/cost/howdens-cost/", name: "Howdens Kitchen Installation Cost" },
+  { href: "/cost/magnet-cost/", name: "Magnet Kitchen Installation Cost" },
+  { href: "/cost/ikea-cost/", name: "IKEA Kitchen Installation Cost" },
+  { href: "/cost/wickes-cost/", name: "Wickes Kitchen Installation Cost" },
+  { href: "/cost/bq-cost/", name: "B&Q Kitchen Installation Cost" },
+  { href: "/cost/benchmarx-cost/", name: "Benchmarx Kitchen Installation Cost" },
+  { href: "/cost/diy-kitchens-cost/", name: "DIY Kitchens Installation Cost" },
+  { href: "/cost/kutchenhaus-cost/", name: "Kutchenhaus Installation Cost" },
+  { href: "/cost/symphony-cost/", name: "Symphony Kitchen Installation Cost" },
+  { href: "/cost/masterclass-cost/", name: "Masterclass Kitchen Installation Cost" },
+  { href: "/cost/magnet-trade-cost/", name: "Magnet Trade Installation Cost" },
+];
+
+const questionSlugs = [
+  { slug: "how-much-does-kitchen-installation-cost", name: "How much does kitchen installation cost?" },
+  { slug: "how-long-does-kitchen-installation-take", name: "How long does kitchen installation take?" },
+  { slug: "what-is-included-in-kitchen-installation", name: "What is included in kitchen installation?" },
+  { slug: "do-i-need-a-plumber-for-kitchen-installation", name: "Do I need a plumber for kitchen installation?" },
+  { slug: "what-is-a-dry-fit-kitchen", name: "What is a dry fit kitchen?" },
+  { slug: "how-to-prepare-for-kitchen-installation", name: "How to prepare for kitchen installation?" },
+  { slug: "can-you-fit-a-wren-kitchen", name: "Can you fit a Wren kitchen?" },
+  { slug: "can-you-fit-an-ikea-kitchen", name: "Can you fit an IKEA kitchen?" },
+  { slug: "can-you-fit-a-howdens-kitchen", name: "Can you fit a Howdens kitchen?" },
+  { slug: "can-you-fit-a-magnet-kitchen", name: "Can you fit a Magnet kitchen?" },
+  { slug: "do-you-remove-old-kitchen", name: "Do you remove the old kitchen?" },
+  { slug: "how-much-is-the-survey", name: "How much is the survey?" },
+  { slug: "do-you-need-to-be-home-during-installation", name: "Do you need to be home during installation?" },
+  { slug: "what-is-a-kitchen-fitter", name: "What is a kitchen fitter?" },
+  { slug: "how-to-choose-a-kitchen-fitter", name: "How to choose a kitchen fitter?" },
+  { slug: "what-is-rigid-vs-flat-pack-kitchen", name: "What is the difference between rigid and flat-pack kitchens?" },
+  { slug: "how-many-units-in-a-small-kitchen", name: "How many units are in a small kitchen?" },
+  { slug: "what-worktops-do-you-supply", name: "What worktops do you supply?" },
+  { slug: "do-you-tile-after-kitchen-installation", name: "Do you tile after kitchen installation?" },
+  { slug: "can-you-fit-a-kitchen-in-a-listed-building", name: "Can you fit a kitchen in a listed building?" },
+  { slug: "what-is-kitchen-snagging", name: "What is kitchen snagging?" },
+  { slug: "how-much-does-worktop-fitting-cost", name: "How much does worktop fitting cost?" },
+  { slug: "what-is-kitchen-kickboard", name: "What is a kitchen kickboard?" },
+  { slug: "how-to-level-kitchen-units", name: "How to level kitchen units?" },
+  { slug: "what-is-a-kitchen-survey", name: "What is a kitchen survey?" },
+];
+---
+
+<Base
+  title={title}
+  description={description}
+  canonical={canonical}
+>
+  <meta slot="schema" name="robots" content="noindex, follow" />
+
+  <Header slot="header" />
+
+  <div class="container py-6">
+    <Breadcrumbs
+      items={[
+        { label: "HTML Sitemap", href: "/html-sitemap/" },
+      ]}
+    />
+  </div>
+
+  <section class="section" style="background: var(--bg-light);">
+    <div class="container">
+      <div class="max-w-3xl">
+        <h1 class="text-4xl font-extrabold mb-4 leading-tight" style="color: var(--navy);">
+          Site Map
+        </h1>
+        <p class="text-lg leading-relaxed" style="color: var(--text-soft);">
+          A complete listing of all pages on Install My Kitchen, organised by section.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="max-w-4xl">
+
+        <!-- Core Pages -->
+        <div class="mb-12 fade-up">
+          <h2 class="text-2xl font-bold mb-5 pb-2 border-b" style="color: var(--navy); border-color: var(--teal);">
+            Core Pages
+          </h2>
+          <ul class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+            {[
+              { href: "/", name: "Home" },
+              { href: "/about/", name: "About Us" },
+              { href: "/services/", name: "Our Services" },
+              { href: "/survey/", name: "Book a Survey" },
+              { href: "/contact/", name: "Contact" },
+              { href: "/areas/", name: "Areas We Cover" },
+              { href: "/retailers/", name: "Kitchen Retailers" },
+              { href: "/premium/", name: "Premium Kitchen Installation" },
+              { href: "/costs/", name: "Installation Costs" },
+              { href: "/answers/", name: "Questions & Answers" },
+              { href: "/privacy/", name: "Privacy Policy" },
+              { href: "/terms/", name: "Terms & Conditions" },
+            ].map((page) => (
+              <li>
+                <a
+                  href={page.href}
+                  class="flex items-center gap-2 py-1.5 hover:underline text-sm font-medium"
+                  style="color: var(--teal);"
+                >
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+                  {page.name}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <!-- Areas -->
+        <div class="mb-12 fade-up">
+          <h2 class="text-2xl font-bold mb-5 pb-2 border-b" style="color: var(--navy); border-color: var(--teal);">
+            Areas We Cover
+          </h2>
+          <ul class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2">
+            {areaSlugs.map((area) => (
+              <li>
+                <a
+                  href={`/areas/${area.slug}/`}
+                  class="flex items-center gap-2 py-1.5 hover:underline text-sm"
+                  style="color: var(--teal);"
+                >
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+                  Kitchen Installation in {area.name}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <!-- Retailers -->
+        <div class="mb-12 fade-up">
+          <h2 class="text-2xl font-bold mb-5 pb-2 border-b" style="color: var(--navy); border-color: var(--teal);">
+            Kitchen Retailers
+          </h2>
+          <ul class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+            {retailerSlugs.map((retailer) => (
+              <li>
+                <a
+                  href={`/retailers/${retailer.slug}/`}
+                  class="flex items-center gap-2 py-1.5 hover:underline text-sm"
+                  style="color: var(--teal);"
+                >
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+                  {retailer.name} Kitchen Installation
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <!-- Kitchen Styles -->
+        <div class="mb-12 fade-up">
+          <h2 class="text-2xl font-bold mb-5 pb-2 border-b" style="color: var(--navy); border-color: var(--teal);">
+            Kitchen Styles
+          </h2>
+          <ul class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+            {styleSlugs.map((style) => (
+              <li>
+                <a
+                  href={`/styles/${style.slug}/`}
+                  class="flex items-center gap-2 py-1.5 hover:underline text-sm"
+                  style="color: var(--teal);"
+                >
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+                  {style.name}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <!-- Cost Guides -->
+        <div class="mb-12 fade-up">
+          <h2 class="text-2xl font-bold mb-5 pb-2 border-b" style="color: var(--navy); border-color: var(--teal);">
+            Cost Guides
+          </h2>
+          <ul class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+            {costGuides.map((guide) => (
+              <li>
+                <a
+                  href={guide.href}
+                  class="flex items-center gap-2 py-1.5 hover:underline text-sm"
+                  style="color: var(--teal);"
+                >
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+                  {guide.name}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <!-- Questions & Answers -->
+        <div class="mb-12 fade-up">
+          <h2 class="text-2xl font-bold mb-5 pb-2 border-b" style="color: var(--navy); border-color: var(--teal);">
+            Questions &amp; Answers
+          </h2>
+          <ul class="grid grid-cols-1 gap-2">
+            {questionSlugs.map((q) => (
+              <li>
+                <a
+                  href={`/answers/${q.slug}/`}
+                  class="flex items-start gap-2 py-1.5 hover:underline text-sm"
+                  style="color: var(--teal);"
+                >
+                  <svg class="mt-0.5 flex-shrink-0" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+                  {q.name}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+</Base>

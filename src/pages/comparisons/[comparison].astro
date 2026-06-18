@@ -1,0 +1,742 @@
+---
+import Base from "../../layouts/Base.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import StickyMobileCTA from "../../components/StickyMobileCTA.astro";
+import Breadcrumbs from "../../components/Breadcrumbs.astro";
+import AnswerBlock from "../../components/AnswerBlock.astro";
+import KeyTakeaway from "../../components/KeyTakeaway.astro";
+import FAQ from "../../components/FAQ.astro";
+import InternalLinks from "../../components/InternalLinks.astro";
+import CTA from "../../components/CTA.astro";
+
+export function getStaticPaths() {
+  return [
+    // ── 1. Wren vs Howdens ─────────────────────────────────────────────────
+    {
+      params: { comparison: "wren-vs-howdens-kitchen-installation" },
+      props: {
+        slug: "wren-vs-howdens-kitchen-installation",
+        title: "Wren vs Howdens Kitchen Installation — Which Is Easier to Fit?",
+        metaTitle: "Wren vs Howdens Kitchen Installation | Install My Kitchen",
+        metaDescription: "Comparing Wren and Howdens kitchen installation. Both supply rigid units but differ in supply route and delivery. Find out which suits independent fitting better.",
+        answer: "Both Wren and Howdens kitchens are straightforward to install, but there are differences. Wren delivers direct to consumers as pre-assembled rigid units; Howdens supplies trade-only and units are also rigid. Both are well-suited to independent installation.",
+        col1Name: "Wren",
+        col2Name: "Howdens",
+        criteria: ["Supply method", "Unit construction", "Delivery process", "Installation complexity", "Cost to fit"],
+        col1Points: ["Consumer retail, easy to order", "Rigid pre-assembled units", "Direct home delivery", "Efficient installation", "Standard fitting rates apply"],
+        col2Points: ["Trade-only, via a tradesperson", "Rigid trade-quality units", "Collected from depot by fitter", "Very efficient installation", "Standard fitting rates apply"],
+        bodyHtml: `
+          <h2 class="text-2xl font-bold mb-4" style="color: var(--navy);">Overview</h2>
+          <p class="mb-4" style="color: var(--text-soft);">Wren Kitchens and Howdens are two of the most popular kitchen suppliers in the UK, but they serve very different markets. Wren is a consumer-facing retailer with showrooms across the country; Howdens is strictly trade-only, supplying exclusively to builders, joiners and kitchen fitters through its depot network. Understanding how each operates helps you make a more informed decision — both about which kitchen to buy and how to arrange installation.</p>
+
+          <h2 class="text-2xl font-bold mb-4 mt-8" style="color: var(--navy);">Supply Route</h2>
+          <p class="mb-4" style="color: var(--text-soft);">The most significant difference between Wren and Howdens is who can buy from them. Wren sells directly to homeowners via its showrooms and website. You can browse, design, and order your kitchen without any trade involvement. Howdens, by contrast, only sells to account holders — typically builders, joiners, or kitchen fitters. If you want a Howdens kitchen as a homeowner, you need to arrange it through a tradesperson who holds a Howdens account.</p>
+          <p class="mb-4" style="color: var(--text-soft);">This distinction has real practical implications. With Wren, you have direct control over the design process and can attend showroom appointments at your convenience. With Howdens, your fitter typically co-ordinates the design, ordering, and collection on your behalf — which means you are relying on their depot relationship and their familiarity with the Howdens range.</p>
+
+          <h2 class="text-2xl font-bold mb-4 mt-8" style="color: var(--navy);">Unit Construction</h2>
+          <p class="mb-4" style="color: var(--text-soft);">Both Wren and Howdens supply rigid, pre-assembled carcasses. This means units arrive ready to install without requiring on-site box-build assembly. Rigid units are faster to fit than flat-pack alternatives and, when properly manufactured, produce a more consistent result. Both brands have invested significantly in carcass quality and the units from either supplier are well-regarded by experienced fitters.</p>
+          <p class="mb-4" style="color: var(--text-soft);">Howdens kitchens — particularly from the Tewkesbury and Greenwich ranges — are designed specifically for the trade and have a reputation for robust construction. Wren offers a wider price range, from entry-level to premium, and unit quality varies accordingly. It is worth checking the specific range you are ordering rather than assuming all Wren products are equivalent.</p>
+
+          <h2 class="text-2xl font-bold mb-4 mt-8" style="color: var(--navy);">Delivery and Logistics</h2>
+          <p class="mb-4" style="color: var(--text-soft);">Wren delivers directly to your home, typically in a single delivery. This is convenient but requires you to have adequate storage space on site. Wren's delivery teams will usually stack boxes in a specified room, but they do not check individual components or assemble anything. You should plan to check the delivery thoroughly before your installation date.</p>
+          <p class="mb-4" style="color: var(--text-soft);">Howdens kitchens are collected from the local depot by the fitter, usually in their van. This means smaller loads over potentially multiple trips but avoids the need for a bulk storage space in your home. Your fitter will typically have a good relationship with the depot and can raise any issues directly if components are missing or damaged.</p>
+
+          <h2 class="text-2xl font-bold mb-4 mt-8" style="color: var(--navy);">Installation Time and Cost</h2>
+          <p class="mb-4" style="color: var(--text-soft);">Because both brands supply rigid units, installation timelines are broadly similar. A standard kitchen from either Wren or Howdens would typically take three to seven days to install, depending on size, layout complexity, and the scope of associated trades work (plumbing, electrical, plastering). Neither brand imposes specific fitting requirements or accreditation on independent fitters, so you are free to engage whichever installation service you prefer.</p>
+          <p class="mb-4" style="color: var(--text-soft);">Installation costs are also comparable. As a broad guide, professional installation for a Wren or Howdens kitchen in the Coventry and Warwickshire area typically starts from around £1,800 for a simple galley layout and rises to £5,000 or more for large L-shaped or island kitchens with extensive appliance connections. The best way to get an accurate figure is to book a pre-installation survey.</p>
+
+          <h2 class="text-2xl font-bold mb-4 mt-8" style="color: var(--navy);">Which Should You Choose?</h2>
+          <p class="mb-4" style="color: var(--text-soft);">The choice between Wren and Howdens often comes down to your preference for direct involvement in the purchase process. If you want to drive the design yourself and deal directly with the supplier, Wren gives you that. If you are happy to work through a trusted fitter who can source and co-ordinate a Howdens kitchen on your behalf, you may benefit from the trade-quality products and depot proximity that Howdens offers.</p>
+          <p class="mb-4" style="color: var(--text-soft);">From a pure installation standpoint, there is no meaningful difference. Both brands supply rigid units that an experienced independent fitter can install efficiently. The key variable in any kitchen installation is the skill and approach of the fitter, not the brand of the kitchen itself.</p>
+        `,
+        takeaways: [
+          "Both Wren and Howdens supply rigid units — installation complexity and timelines are broadly equivalent.",
+          "Wren sells direct to homeowners; Howdens is trade-only, requiring a fitter with a depot account.",
+          "An independent fitter can install either brand — the quality of the installation depends on the fitter, not the supplier.",
+        ],
+        faqs: [
+          { q: "Can an independent fitter install a Wren kitchen?", a: "Yes. Wren does not require homeowners to use an appointed installer. You can purchase your Wren kitchen and arrange independent installation separately, which often offers more flexibility and competitive pricing." },
+          { q: "Do I need a Howdens account to buy a Howdens kitchen?", a: "Yes. Howdens only sells to trade account holders. As a homeowner, you need to work with a fitter who has a Howdens account and can order on your behalf." },
+          { q: "Is Howdens better quality than Wren?", a: "Both supply rigid units suitable for professional installation. Howdens has a strong trade reputation. Wren offers a wider range at various price points. Quality depends on the specific range selected rather than the brand overall." },
+          { q: "How long does it take to install a Wren or Howdens kitchen?", a: "A standard Wren or Howdens kitchen typically takes three to seven days to install. Larger, more complex layouts with island units or extensive appliance connections may take longer. A pre-installation survey will give you a more accurate timeline." },
+        ],
+      },
+    },
+
+    // ── 2. Magnet vs Wren ──────────────────────────────────────────────────
+    {
+      params: { comparison: "magnet-vs-wren-kitchen-installation" },
+      props: {
+        slug: "magnet-vs-wren-kitchen-installation",
+        title: "Magnet vs Wren Kitchen Installation — What's the Difference?",
+        metaTitle: "Magnet vs Wren Kitchen Installation | Install My Kitchen",
+        metaDescription: "Comparing Magnet and Wren kitchen installation. Both offer rigid units at similar price points. See how they compare on installation time, cost and range.",
+        answer: "Both Magnet and Wren offer quality kitchens that install efficiently. Magnet kitchens are rigid and well-finished; Wren offers a wide range at various price points. Both are suitable for independent installation.",
+        col1Name: "Magnet",
+        col2Name: "Wren",
+        criteria: ["Unit construction", "Range & styles", "Delivery", "Installation time", "Cost range"],
+        col1Points: ["Rigid assembled units", "Mid to premium range", "Home delivery", "3–7 days typical", "Mid-market pricing"],
+        col2Points: ["Rigid assembled units", "Entry to premium range", "Home delivery", "3–8 days typical", "Entry to mid pricing"],
+        bodyHtml: `
+          <h2 class="text-2xl font-bold mb-4" style="color: var(--navy);">Overview</h2>
+          <p class="mb-4" style="color: var(--text-soft);">Magnet and Wren are two of the best-known consumer kitchen retailers in the UK. Both operate showrooms, sell directly to homeowners, and offer a full kitchen design service. From an installation perspective, they share a number of key characteristics — but there are meaningful differences in product positioning, range, and the buying experience that are worth understanding before you commit.</p>
+
+          <h2 class="text-2xl font-bold mb-4 mt-8" style="color: var(--navy);">Unit Construction</h2>
+          <p class="mb-4" style="color: var(--text-soft);">Both Magnet and Wren supply rigid, pre-assembled carcasses. Neither brand requires on-site box-build assembly, which means installation proceeds efficiently regardless of which you choose. Rigid units are the preferred format for professional kitchen fitters — they are more consistent, quicker to fit, and produce a more accurate result than flat-pack alternatives.</p>
+          <p class="mb-4" style="color: var(--text-soft);">Magnet positions itself firmly in the mid-to-premium market and its carcasses reflect this. Construction is typically solid and consistent across the range. Wren spans a wider spectrum, from budget-friendly entry-level options through to its Infinity Plus premium cabinetry. If you are comparing like-for-like quality, make sure you are looking at equivalent ranges rather than comparing a Wren entry unit to a Magnet premium unit.</p>
+
+          <h2 class="text-2xl font-bold mb-4 mt-8" style="color: var(--navy);">Range and Styles</h2>
+          <p class="mb-4" style="color: var(--text-soft);">Wren has a notably wider range of door styles, colours, and finishes than Magnet. This can be an advantage if you have a very specific aesthetic in mind, but can also make the design process more complex. Magnet's more focused range is arguably easier to navigate, and the company's in-store design consultants are well-regarded.</p>
+          <p class="mb-4" style="color: var(--text-soft);">Both retailers offer a design and planning service as part of the purchase process. Magnet tends to be more consultative; Wren's model is often more transactional. Neither approach is inherently better — it comes down to your preference for how involved you want the retailer to be.</p>
+
+          <h2 class="text-2xl font-bold mb-4 mt-8" style="color: var(--navy);">Delivery</h2>
+          <p class="mb-4" style="color: var(--text-soft);">Both Magnet and Wren deliver directly to the installation address. Delivery logistics, lead times, and the level of checking done at the point of delivery are broadly similar. As with any kitchen delivery, we recommend thoroughly checking all components against your order before your installation date and reporting any discrepancies immediately.</p>
+
+          <h2 class="text-2xl font-bold mb-4 mt-8" style="color: var(--navy);">Installation Time and Cost</h2>
+          <p class="mb-4" style="color: var(--text-soft);">Because both brands supply rigid units, installation timelines are very similar. A standard Magnet or Wren kitchen of average size would typically take three to seven days to install. Complex layouts, island units, or extensive appliance connections will add time to either brand.</p>
+          <p class="mb-4" style="color: var(--text-soft);">Installation costs are also comparable. Neither brand mandates use of its own fitting service for the product warranty to be valid. You are entirely free to arrange independent installation for either a Magnet or Wren kitchen, and doing so often results in more competitive pricing and greater scheduling flexibility.</p>
+
+          <h2 class="text-2xl font-bold mb-4 mt-8" style="color: var(--navy);">Which Is Better for Independent Installation?</h2>
+          <p class="mb-4" style="color: var(--text-soft);">Neither Magnet nor Wren presents any particular advantage or disadvantage from a pure installation standpoint. Both supply rigid units with standard fixings and dimensions that any experienced kitchen fitter will be familiar with. The decision between the two should be driven by range preference, budget, and your experience of the buying process — not by installation considerations.</p>
+          <p class="mb-4" style="color: var(--text-soft);">What matters far more than the brand of kitchen is the quality of the installation. A well-fitted Wren kitchen will outlast and outperform a poorly fitted Magnet kitchen of higher intrinsic quality, and vice versa. Invest in a thorough pre-installation survey and choose a fitter with a verifiable track record.</p>
+        `,
+        takeaways: [
+          "Both Magnet and Wren supply rigid units — installation time and complexity are broadly the same.",
+          "Wren has a wider product range; Magnet sits more firmly in the mid-to-premium segment.",
+          "Independent installation is fully compatible with both brands and typically offers better value than retailer-appointed fitting.",
+        ],
+        faqs: [
+          { q: "Can I use an independent fitter for a Magnet kitchen?", a: "Yes. Magnet does not require you to use its own installation service. Your kitchen warranty relates to the product, not who fits it. An independent fitter is a perfectly valid choice." },
+          { q: "Is Magnet more expensive than Wren?", a: "Magnet generally sits in the mid-to-premium price bracket. Wren has a wider range including entry-level options, but its premium lines are comparable to Magnet pricing. Always compare equivalent ranges." },
+          { q: "How long does a Magnet kitchen take to install?", a: "A standard Magnet kitchen typically takes three to seven days to install. The exact timeline depends on kitchen size, layout complexity, and the scope of trades work required." },
+          { q: "Do I need a survey before installing a Magnet or Wren kitchen?", a: "Yes. A pre-installation survey is advisable regardless of which brand you choose. It ensures your kitchen plan matches your actual room dimensions and identifies any issues before installation day." },
+        ],
+      },
+    },
+
+    // ── 3. IKEA vs Wren ────────────────────────────────────────────────────
+    {
+      params: { comparison: "ikea-vs-wren-kitchen-installation" },
+      props: {
+        slug: "ikea-vs-wren-kitchen-installation",
+        title: "IKEA vs Wren Kitchen Installation — Cost & Complexity Compared",
+        metaTitle: "IKEA vs Wren Kitchen Installation — Cost & Complexity | Install My Kitchen",
+        metaDescription: "IKEA flat-pack vs Wren rigid units — comparing installation time, assembly requirements, labour cost and complexity for UK homeowners in 2025.",
+        answer: "IKEA kitchens are flat-pack and require full assembly on-site, typically adding 1–2 days to installation time versus pre-assembled units from Wren. Wren delivers rigid units requiring less assembly. Both are widely installed by independent fitters.",
+        col1Name: "IKEA",
+        col2Name: "Wren",
+        criteria: ["Unit format", "Assembly required", "Installation time", "Cost to fit", "Customisation"],
+        col1Points: ["Flat-pack", "Full assembly on-site", "Adds 1–2 days", "Slightly higher labour cost", "Modular system"],
+        col2Points: ["Rigid assembled", "Minimal assembly", "Standard timeline", "Standard labour cost", "Wide bespoke options"],
+        bodyHtml: `
+          <h2 class="text-2xl font-bold mb-4" style="color: var(--navy);">Overview</h2>
+          <p class="mb-4" style="color: var(--text-soft);">IKEA and Wren represent two very different approaches to kitchen supply. IKEA's METOD system is a modular flat-pack product available from stock in store and online, designed to be affordable and accessible. Wren is a UK-specialist kitchen retailer offering a designed and delivered service, with rigid pre-assembled units across a range of price points. From an installation standpoint, the differences are significant.</p>
+
+          <h2 class="text-2xl font-bold mb-4 mt-8" style="color: var(--navy);">Unit Format: Flat-Pack vs Rigid</h2>
+          <p class="mb-4" style="color: var(--text-soft);">The single biggest installation difference between IKEA and Wren is unit format. IKEA kitchens are flat-pack — every carcass arrives disassembled and must be built on-site before it can be fitted. Wren kitchens are supplied as rigid, pre-assembled carcasses that are ready to position, level, and fix without any preliminary box-building.</p>
+          <p class="mb-4" style="color: var(--text-soft);">This difference is material. Assembling flat-pack IKEA carcasses is not difficult, but it is time-consuming. For a standard 10–15 unit kitchen, the assembly stage alone typically takes a full day. Add to this the time required to fit, level, and finish the units, and an IKEA kitchen installation will generally take one to two days longer than an equivalent Wren installation.</p>
+
+          <h2 class="text-2xl font-bold mb-4 mt-8" style="color: var(--navy);">Installation Time</h2>
+          <p class="mb-4" style="color: var(--text-soft);">A standard Wren kitchen of average size — say, 15–20 rigid units with standard appliance connections — would typically take three to six days to install. The equivalent IKEA kitchen would typically take four to eight days, depending on unit count and complexity. For large kitchens with 25 or more units, the gap can be two days or more.</p>
+          <p class="mb-4" style="color: var(--text-soft);">This has implications for both scheduling and cost. If your fitter charges a day rate, additional installation days translate directly into a higher labour bill. The lower purchase price of an IKEA kitchen can be partially offset by higher installation labour costs — something worth factoring into your total budget comparison.</p>
+
+          <h2 class="text-2xl font-bold mb-4 mt-8" style="color: var(--navy);">Labour Cost</h2>
+          <p class="mb-4" style="color: var(--text-soft);">Most professional kitchen fitters price IKEA installations at a slightly higher rate than equivalent rigid-unit kitchens, reflecting the additional assembly time. As a rule of thumb, expect to add 15–25% to the base installation cost for an IKEA kitchen versus a comparably sized Wren kitchen. This is not a penalty — it simply reflects the additional work involved.</p>
+          <p class="mb-4" style="color: var(--text-soft);">IKEA also has some specific fitting considerations that not all fitters are familiar with. The METOD system uses a proprietary rail-fixing system for wall units that differs from standard kitchen wall unit brackets. The SEKTION system (sold in North America) differs again. Make sure your chosen fitter has specific experience with IKEA METOD before you book.</p>
+
+          <h2 class="text-2xl font-bold mb-4 mt-8" style="color: var(--navy);">Customisation</h2>
+          <p class="mb-4" style="color: var(--text-soft);">Wren's bespoke design service allows for non-standard unit sizes, made-to-measure panels, and a wide range of finishes. IKEA's modular system is, by definition, limited to standard dimensions and configurations. For kitchens with unusual dimensions or complex layouts, Wren's flexibility is a significant advantage. For straightforward rectangular or galley kitchens, IKEA's modular system is more than adequate.</p>
+
+          <h2 class="text-2xl font-bold mb-4 mt-8" style="color: var(--navy);">Overall Value Comparison</h2>
+          <p class="mb-4" style="color: var(--text-soft);">IKEA is typically cheaper to purchase but costs more to install per unit. Wren has a higher purchase price at the mid-range but lower installation labour costs. For a full cost comparison, you need to add the kitchen purchase price, installation labour, worktops, appliances, and any additional trades work. On a total-cost basis, the gap between IKEA and a mid-range Wren kitchen is often smaller than the headline purchase prices suggest.</p>
+        `,
+        takeaways: [
+          "IKEA flat-pack units require on-site assembly, typically adding one to two days to installation versus pre-assembled Wren units.",
+          "IKEA installation labour costs are 15–25% higher than equivalent rigid-unit kitchens to reflect the additional assembly time.",
+          "On a total fitted cost basis, the gap between IKEA and mid-range Wren is often smaller than headline kitchen prices suggest.",
+        ],
+        faqs: [
+          { q: "Can an independent fitter install an IKEA kitchen?", a: "Yes. IKEA does not require use of its own installation service. Many independent fitters are experienced with IKEA METOD kitchens. Confirm your fitter has specific IKEA experience before booking." },
+          { q: "Why does IKEA installation cost more than other kitchens?", a: "IKEA kitchens are flat-pack and require full on-site assembly before fitting. This assembly stage adds time to the installation, which increases labour costs compared to pre-assembled rigid-unit kitchens." },
+          { q: "How long does it take to install an IKEA kitchen?", a: "A standard IKEA METOD kitchen typically takes four to eight days to install, depending on the number of units and layout complexity. This is one to two days longer than an equivalent pre-assembled kitchen." },
+          { q: "Is Wren worth the extra cost over IKEA?", a: "Wren's pre-assembled units reduce installation time and labour cost. Wren also offers a wider range of sizes and finishes. Whether the premium is worthwhile depends on your total budget, kitchen size, and design requirements." },
+        ],
+      },
+    },
+
+    // ── 4. Howdens vs Benchmarx ────────────────────────────────────────────
+    {
+      params: { comparison: "howdens-vs-benchmarx-kitchen-installation" },
+      props: {
+        slug: "howdens-vs-benchmarx-kitchen-installation",
+        title: "Howdens vs Benchmarx Kitchen Installation",
+        metaTitle: "Howdens vs Benchmarx Kitchen Installation | Install My Kitchen",
+        metaDescription: "Both Howdens and Benchmarx are trade-only kitchen suppliers with rigid units. Compare supply route, range, availability and installation ease for UK tradespeople.",
+        answer: "Both Howdens and Benchmarx are trade-only kitchen suppliers. Howdens operates nationwide through local depots; Benchmarx is part of Travis Perkins. Both supply rigid, trade-quality units and are well-suited to independent installation.",
+        col1Name: "Howdens",
+        col2Name: "Benchmarx",
+        criteria: ["Supply route", "Unit quality", "Range", "Availability", "Installation ease"],
+        col1Points: ["Trade account, nationwide depots", "Solid trade-quality construction", "Extensive range of styles", "Over 700 depots UK-wide", "Rigid units, efficient fitting"],
+        col2Points: ["Trade account, Travis Perkins branches", "Solid trade-quality construction", "Focused, practical range", "400+ UK locations", "Rigid units, efficient fitting"],
+        bodyHtml: `
+          <h2 class="text-2xl font-bold mb-4" style="color: var(--navy);">Overview</h2>
+          <p class="mb-4" style="color: var(--text-soft);">Howdens and Benchmarx are both trade-only kitchen suppliers, meaning neither is directly accessible to homeowners. Both operate through branch or depot networks and require a trade account to purchase from. If you are a kitchen fitter or builder sourcing a kitchen for a client, you will likely have encountered both. Here is how they compare from an installation perspective.</p>
+
+          <h2 class="text-2xl font-bold mb-4 mt-8" style="color: var(--navy);">Supply Route and Accounts</h2>
+          <p class="mb-4" style="color: var(--text-soft);">Howdens operates through its own dedicated depot network — over 700 branches across the UK. Account holders collect kitchen components directly from their local depot. Howdens accounts are relatively straightforward to obtain for established tradespeople and small builders. The depot model means your fitter will typically have an ongoing relationship with depot staff, which can be advantageous when chasing replacement components or resolving delivery issues.</p>
+          <p class="mb-4" style="color: var(--text-soft);">Benchmarx is part of the Travis Perkins Group and operates through Travis Perkins merchant branches. This means Benchmarx is co-located with a builders' merchant, which can be convenient for tradespeople who are already using Travis Perkins for other materials. If you already have a Travis Perkins account, opening a Benchmarx account is typically straightforward.</p>
+
+          <h2 class="text-2xl font-bold mb-4 mt-8" style="color: var(--navy);">Product Range</h2>
+          <p class="mb-4" style="color: var(--text-soft);">Howdens has a broad range of kitchen styles, from classic shaker designs to contemporary handleless kitchens, at multiple price points. Its ranges include Tewkesbury, Greenwich, and Burford, among many others. The extensive range gives fitters significant flexibility in matching a client's aesthetic requirements and budget.</p>
+          <p class="mb-4" style="color: var(--text-soft);">Benchmarx has a more focused range, concentrating on practical, well-constructed kitchens at competitive trade prices. The range has expanded in recent years but remains narrower than Howdens. For clients with specific style requirements, Howdens may offer more options; for straightforward projects where value and practicality are the priority, Benchmarx is a strong contender.</p>
+
+          <h2 class="text-2xl font-bold mb-4 mt-8" style="color: var(--navy);">Unit Quality and Construction</h2>
+          <p class="mb-4" style="color: var(--text-soft);">Both Howdens and Benchmarx supply rigid, pre-assembled carcasses. Both are manufactured to trade standards and are robust enough for professional installation. Experienced fitters generally report a high standard of construction from both suppliers, with consistent tolerances that make fitting straightforward.</p>
+          <p class="mb-4" style="color: var(--text-soft);">Howdens is sometimes regarded as the benchmark (no pun intended) for trade kitchen quality, having built its reputation in the sector over many decades. Benchmarx has made significant improvements to its quality standards and is increasingly competitive. For most residential installations, either brand will perform well over the long term.</p>
+
+          <h2 class="text-2xl font-bold mb-4 mt-8" style="color: var(--navy);">Installation Ease</h2>
+          <p class="mb-4" style="color: var(--text-soft);">Both brands supply rigid units with standard UK kitchen dimensions and fixings. Any experienced kitchen fitter will be equally comfortable installing either. Installation timelines are broadly equivalent — a standard kitchen from either Howdens or Benchmarx would take three to seven days depending on size and complexity.</p>
+          <p class="mb-4" style="color: var(--text-soft);">One practical advantage of Howdens is the density of its depot network. With over 700 locations, a replacement component can often be collected the same day if something is found to be damaged or missing on installation morning. Benchmarx's network, while extensive, is somewhat smaller, which can occasionally mean a longer wait for replacement parts.</p>
+
+          <h2 class="text-2xl font-bold mb-4 mt-8" style="color: var(--navy);">Cost</h2>
+          <p class="mb-4" style="color: var(--text-soft);">Both Howdens and Benchmarx offer trade pricing, which is generally more competitive than consumer-facing retailers. Pricing varies by range and account status. Howdens fitters with established accounts and high purchasing volumes often receive preferential pricing that can represent good value for clients. Benchmarx pricing is also competitive and can in some cases undercut Howdens at equivalent specification.</p>
+          <p class="mb-4" style="color: var(--text-soft);">For homeowners sourcing through a fitter, the overall cost will depend on the fitter's trade pricing and mark-up. A transparent fitter will show you the trade price and apply a clear margin, rather than quoting a single opaque supply-and-fit price. Ask your fitter to itemise kitchen supply and installation separately so you can make a fair comparison.</p>
+        `,
+        takeaways: [
+          "Both Howdens and Benchmarx are trade-only suppliers — homeowners access them through a fitter or builder with an account.",
+          "Howdens has a larger depot network and broader range; Benchmarx is competitive on price and is backed by Travis Perkins.",
+          "Installation ease is broadly equivalent for both — rigid units, standard dimensions, and a familiar fitting process.",
+        ],
+        faqs: [
+          { q: "Can a homeowner buy directly from Howdens or Benchmarx?", a: "No. Both are trade-only suppliers. As a homeowner, you need to arrange your kitchen through a fitter or builder who holds an account with the relevant supplier." },
+          { q: "Is Howdens better than Benchmarx?", a: "Both supply quality rigid units for professional installation. Howdens has a wider range and larger depot network. Benchmarx is competitive on price and benefits from the Travis Perkins infrastructure. Your fitter's familiarity with each brand is often the deciding factor." },
+          { q: "What is the advantage of a trade-only kitchen over a consumer kitchen?", a: "Trade kitchens are designed for professional installation at volume. They tend to have consistent tolerances, robust carcass construction, and efficient component logistics. Pricing is often more competitive than consumer retail when accessed through a fitter with an established trade account." },
+          { q: "How do I get a Howdens or Benchmarx kitchen as a homeowner?", a: "You need a fitter or builder with a trade account. Explain that you are interested in a Howdens or Benchmarx kitchen and ask your fitter to arrange the design and ordering on your behalf. A good fitter will be transparent about trade pricing and mark-ups." },
+        ],
+      },
+    },
+
+    // ── 5. Wickes vs B&Q ───────────────────────────────────────────────────
+    {
+      params: { comparison: "wickes-vs-bq-kitchen-installation" },
+      props: {
+        slug: "wickes-vs-bq-kitchen-installation",
+        title: "Wickes vs B&Q Kitchen Installation — Which Is Better Value?",
+        metaTitle: "Wickes vs B&Q Kitchen Installation | Install My Kitchen",
+        metaDescription: "Comparing Wickes and B&Q kitchen installation for UK homeowners. Both offer accessible prices but differ in unit format, range, and overall value. Here's what to know.",
+        answer: "Wickes and B&Q both offer consumer kitchens at accessible price points. Wickes kitchens are typically flat-pack or semi-assembled; B&Q (Cooke & Lewis) kitchens vary by range. Both require experienced independent fitting for best results.",
+        col1Name: "Wickes",
+        col2Name: "B&Q",
+        criteria: ["Price point", "Unit format", "Range", "Installation complexity", "Value for money"],
+        col1Points: ["Budget to mid", "Flat-pack / semi-assembled", "Limited but focused range", "Standard, some assembly required", "Good value at entry level"],
+        col2Points: ["Budget to mid", "Flat-pack / some rigid", "Cooke & Lewis, GoodHome ranges", "Standard, some assembly required", "Competitive at entry level"],
+        bodyHtml: `
+          <h2 class="text-2xl font-bold mb-4" style="color: var(--navy);">Overview</h2>
+          <p class="mb-4" style="color: var(--text-soft);">Wickes and B&Q sit at the accessible end of the UK kitchen market — both DIY and home improvement retailers offering kitchen ranges aimed at homeowners with modest budgets or straightforward replacement projects. Neither competes with the design-led offering of Wren, Magnet, or Howdens, but both fill an important role for homeowners looking for a functional kitchen at a controlled cost.</p>
+
+          <h2 class="text-2xl font-bold mb-4 mt-8" style="color: var(--navy);">Unit Format</h2>
+          <p class="mb-4" style="color: var(--text-soft);">Both Wickes and B&Q supply kitchens in flat-pack or semi-assembled formats. Neither offers the fully pre-assembled rigid carcasses that trade suppliers like Howdens and Benchmarx — or higher-end consumer brands like Wren and Magnet — provide as standard. This means on-site assembly is required, which adds time to the installation and has implications for labour cost.</p>
+          <p class="mb-4" style="color: var(--text-soft);">Semi-assembled units — where some components are pre-fitted at the factory — reduce on-site assembly time compared to fully flat-pack units. Check the specific range you are purchasing to understand what comes pre-assembled and what requires on-site work. This information should be available in the product specification at the point of purchase.</p>
+
+          <h2 class="text-2xl font-bold mb-4 mt-8" style="color: var(--navy);">Range and Styles</h2>
+          <p class="mb-4" style="color: var(--text-soft);">Wickes has a relatively focused kitchen range, concentrating on a limited number of door styles and finishes. This makes the range easy to navigate but limits customisation options for homeowners with specific aesthetic requirements. B&Q sells its kitchens under the Cooke & Lewis and GoodHome brands, offering a slightly wider selection across different price tiers.</p>
+          <p class="mb-4" style="color: var(--text-soft);">Neither Wickes nor B&Q offers the breadth of a specialist kitchen retailer. For homeowners who know exactly what they want and need a straightforward, cost-effective solution, both can work well. For homeowners who want extensive customisation or a kitchen designed around unusual room dimensions, a specialist retailer will offer more flexibility.</p>
+
+          <h2 class="text-2xl font-bold mb-4 mt-8" style="color: var(--navy);">Installation Complexity</h2>
+          <p class="mb-4" style="color: var(--text-soft);">The flat-pack or semi-assembled nature of Wickes and B&Q kitchens adds complexity relative to fully pre-assembled units. However, both brands use broadly standard UK kitchen dimensions and fixings, meaning any experienced kitchen fitter should be able to install either without significant difficulty.</p>
+          <p class="mb-4" style="color: var(--text-soft);">The main risk with budget kitchens from any source is inconsistency in component quality. Flat-pack components occasionally have minor manufacturing tolerances that require adjustment on-site. An experienced fitter will manage this; an inexperienced one may produce a less satisfying result. At the budget end of the market, the quality of the installation matters proportionally more, not less — poor fitting of cheap units is particularly visible.</p>
+
+          <h2 class="text-2xl font-bold mb-4 mt-8" style="color: var(--navy);">Value for Money</h2>
+          <p class="mb-4" style="color: var(--text-soft);">On headline purchase price, both Wickes and B&Q offer competitive entry-level kitchens. However, total fitted cost — kitchen price plus installation labour — is the correct metric to use when comparing value. The additional installation time required for flat-pack units means the cost advantage of a cheaper kitchen is partially offset by higher labour costs.</p>
+          <p class="mb-4" style="color: var(--text-soft);">For straightforward, small-to-medium kitchens where budget is the primary constraint, Wickes and B&Q can represent good value. For larger, more complex kitchens, the total cost gap between budget flat-pack and mid-market rigid-unit kitchens narrows considerably once installation labour is included in the calculation.</p>
+
+          <h2 class="text-2xl font-bold mb-4 mt-8" style="color: var(--navy);">Which Should You Choose?</h2>
+          <p class="mb-4" style="color: var(--text-soft);">If budget is your primary constraint and your kitchen is a straightforward layout without complex design requirements, either Wickes or B&Q can be a sensible choice. If you have a modest additional budget to spend, it is worth comparing the total fitted cost of a mid-range rigid-unit kitchen — the lower installation cost and better long-term durability may make the upgrade worthwhile.</p>
+          <p class="mb-4" style="color: var(--text-soft);">Whichever brand you choose, invest in a thorough pre-installation survey. Accurate measurements and a detailed plan reduce the risk of components not fitting correctly — a risk that is amplified with flat-pack kitchens where flexibility in on-site adjustment is more limited than with bespoke or semi-bespoke rigid units.</p>
+        `,
+        takeaways: [
+          "Both Wickes and B&Q supply flat-pack or semi-assembled units, adding assembly time and slightly higher labour costs versus rigid-unit kitchens.",
+          "Neither brand offers the customisation or quality of trade or specialist retailers, but both can work well for straightforward replacement projects.",
+          "Total fitted cost — kitchen price plus installation — is the correct comparison metric; the headline price gap narrows once labour is included.",
+        ],
+        faqs: [
+          { q: "Can an independent fitter install a Wickes kitchen?", a: "Yes. Wickes does not require use of its own fitting service. An independent fitter experienced with flat-pack or semi-assembled units can install a Wickes kitchen." },
+          { q: "Are B&Q kitchens good quality?", a: "B&Q's Cooke & Lewis and GoodHome ranges are entry-to-mid-market kitchens. Quality is appropriate for the price point. They are best suited to straightforward replacement projects rather than complex bespoke layouts." },
+          { q: "Is a Wickes kitchen cheaper than B&Q?", a: "Prices are broadly comparable across both retailers. The total fitted cost depends on your specific kitchen size, layout, and the installation labour required — always compare total cost rather than kitchen price alone." },
+          { q: "What is the risk of fitting a budget kitchen?", a: "The main risks are component tolerances being less precise than premium products, and limited flexibility for unusual room dimensions. An experienced fitter will manage these risks, but it underlines why skilled installation is especially important with budget kitchens." },
+        ],
+      },
+    },
+
+    // ── 6. Independent Fitter vs Retailer Fitter ───────────────────────────
+    {
+      params: { comparison: "independent-fitter-vs-retailer-fitter" },
+      props: {
+        slug: "independent-fitter-vs-retailer-fitter",
+        title: "Independent Kitchen Fitter vs Retailer Fitter — Which Is Better?",
+        metaTitle: "Independent Kitchen Fitter vs Retailer Fitter | Install My Kitchen",
+        metaDescription: "An independent kitchen fitter works solely for you — no retailer allegiance, flexible scheduling, competitive pricing, and personal accountability. Here's why it matters.",
+        answer: "An independent kitchen fitter works solely for you with no retailer allegiance, often offering more flexible scheduling, competitive pricing, and a personalised service. Retailer fitters are employed by or contracted to the retailer. Most retailers welcome independent fitters.",
+        col1Name: "Independent Fitter",
+        col2Name: "Retailer Fitter",
+        criteria: ["Allegiance", "Scheduling flexibility", "Pricing", "Service", "Accountability"],
+        col1Points: ["Works solely for the homeowner", "Fully flexible — you choose the date", "Competitive, no retail margin", "Personalised, direct relationship", "Directly accountable to you"],
+        col2Points: ["Works for the retailer", "Fixed to retailer's schedule", "Includes retail margin and overhead", "Standardised service model", "Issues go via the retailer"],
+        bodyHtml: `
+          <h2 class="text-2xl font-bold mb-4" style="color: var(--navy);">The Fundamental Difference</h2>
+          <p class="mb-4" style="color: var(--text-soft);">When you book a retailer's fitting service, you are not hiring a fitter — you are buying a package. The retailer takes responsibility for the installation, subcontracts it to a fitter on their books, and acts as an intermediary between you and whoever shows up on your doorstep. The fitter works for the retailer. You are their customer's customer.</p>
+          <p class="mb-4" style="color: var(--text-soft);">When you hire an independent kitchen fitter, you are hiring a professional directly. The fitter works for you. There is no intermediary, no corporate structure between you and the person doing the work, and no divided loyalty. This distinction underpins every practical difference between the two options.</p>
+
+          <h2 class="text-2xl font-bold mb-4 mt-8" style="color: var(--navy);">Allegiance and Objectivity</h2>
+          <p class="mb-4" style="color: var(--text-soft);">A retailer fitter has an implicit incentive to support the retailer's position. If something goes wrong — a damaged component, an error in the kitchen plan, a missing item — a retailer fitter is navigating two relationships simultaneously: their relationship with the retailer who provides their work, and their relationship with you as the homeowner. This creates an inherent conflict of interest that does not exist with an independent fitter.</p>
+          <p class="mb-4" style="color: var(--text-soft);">An independent fitter has no such conflict. Their entire loyalty is to you. If there is a problem with the kitchen — whether it is the retailer's fault, a manufacturing defect, or an error in the design plan — your independent fitter will identify it clearly, document it, and support you in resolving it with the retailer. They have no incentive to minimise the issue or absorb the cost of a retailer's mistake on your behalf.</p>
+
+          <h2 class="text-2xl font-bold mb-4 mt-8" style="color: var(--navy);">Scheduling and Flexibility</h2>
+          <p class="mb-4" style="color: var(--text-soft);">Retailer fitting services operate on the retailer's schedule, which is driven by delivery lead times, fitter availability, and operational capacity. You typically have limited input into when installation takes place and may face significant lead times — particularly in busy periods. If your delivery is delayed or you need to reschedule, you are dependent on the retailer's availability to accommodate you.</p>
+          <p class="mb-4" style="color: var(--text-soft);">An independent fitter works to your schedule. You agree a start date that suits both parties and plan around it directly. If something changes — a delivery delay, a problem with associated trades, a change in your personal circumstances — you resolve it directly with your fitter without going through a customer services department. This flexibility is particularly valuable for complex installations with multiple trades or unusual timeline requirements.</p>
+
+          <h2 class="text-2xl font-bold mb-4 mt-8" style="color: var(--navy);">Pricing</h2>
+          <p class="mb-4" style="color: var(--text-soft);">Retailer fitting packages are priced to cover the cost of the fitter, the retailer's overhead, and a margin. You are, in effect, paying for the convenience of a single-point-of-contact service. This overhead is not inherently unreasonable, but it means you are paying more per day of installation than you would by hiring an independent fitter directly.</p>
+          <p class="mb-4" style="color: var(--text-soft);">Independent fitting is typically more cost-effective. You are paying the fitter's rate directly, without retail overhead applied. For a kitchen that takes five days to install, the difference can be meaningful — often several hundred pounds. Over a larger, more complex installation, the saving can be more significant still.</p>
+
+          <h2 class="text-2xl font-bold mb-4 mt-8" style="color: var(--navy);">Quality and Accountability</h2>
+          <p class="mb-4" style="color: var(--text-soft);">Quality is not automatically higher with either model. There are excellent retailer-appointed fitters and poor ones, just as there are excellent and poor independents. The difference is in accountability. With a retailer fitter, quality issues involve a three-way conversation — you, the retailer, and the fitter. Each party may deflect responsibility to the others.</p>
+          <p class="mb-4" style="color: var(--text-soft);">With an independent fitter, accountability is direct. If the workmanship is not to standard, you raise it with the fitter directly. There is no corporate buffer, no customer services queue, no "we'll look into it" holding response. A good independent fitter takes personal pride in their work precisely because their reputation — not a retailer brand — is what generates future work.</p>
+
+          <h2 class="text-2xl font-bold mb-4 mt-8" style="color: var(--navy);">Why Choose Install My Kitchen</h2>
+          <p class="mb-4" style="color: var(--text-soft);">Install My Kitchen is a specialist independent kitchen fitting service based in Coventry. We install kitchens purchased from any UK retailer — Wren, Howdens, Magnet, IKEA, Wickes, B&Q, and all others. We are not affiliated with, or appointed by, any retailer. Every installation starts with a thorough pre-installation survey, includes strip-out as standard, and ends with a snagging walk-round before we leave your home.</p>
+          <p class="mb-4" style="color: var(--text-soft);">We work directly for you. That is not a marketing phrase — it is the practical basis on which every decision on your installation is made.</p>
+        `,
+        takeaways: [
+          "An independent fitter works solely for the homeowner — no retailer allegiance, no divided loyalty, direct accountability.",
+          "Independent fitting is typically more cost-effective than retailer fitting packages, which include retail overhead and margin.",
+          "Scheduling flexibility, direct communication, and personal accountability make independent fitting the preferred choice for most homeowners.",
+        ],
+        faqs: [
+          { q: "Do I need to use the retailer's fitting service?", a: "No. Most retailers, including Wren, Howdens, Magnet, IKEA, Wickes and B&Q, do not require you to use their fitting service. You can purchase your kitchen and arrange independent installation separately." },
+          { q: "Does using an independent fitter affect my kitchen warranty?", a: "Kitchen warranties from reputable retailers cover the product, not the installation method. Using an independent fitter does not invalidate your kitchen warranty. Check your specific retailer's terms if you are unsure." },
+          { q: "How do I find a good independent kitchen fitter?", a: "Look for a fitter with a clear process — a pre-installation survey, a fixed-price quote, and a documented snagging procedure. Ask for examples of recent work, check that they have relevant experience with your specific kitchen brand, and ensure they carry public liability insurance." },
+          { q: "Is independent fitting always cheaper than retailer fitting?", a: "Generally yes, because you are not paying for retailer overhead. However, the more important consideration is value — an independent fitter who does excellent work at a fair price delivers better value than a cheap fitter who delivers a poor result." },
+        ],
+      },
+    },
+
+    // ── 7. Supply Only vs Supply and Fit ───────────────────────────────────
+    {
+      params: { comparison: "supply-only-vs-supply-and-fit" },
+      props: {
+        slug: "supply-only-vs-supply-and-fit",
+        title: "Supply Only vs Supply and Fit — Which Kitchen Route Is Best?",
+        metaTitle: "Supply Only vs Supply and Fit Kitchen | Install My Kitchen",
+        metaDescription: "Should you buy your kitchen supply-only and hire an independent fitter, or use a supply-and-fit package? Compare cost, control and convenience for UK homeowners.",
+        answer: "Supply-only means buying your kitchen from a retailer and arranging independent installation separately. Supply-and-fit means the retailer supplies and installs. Supply-only typically offers more choice of fitter and can be more cost-effective; supply-and-fit offers a single point of contact.",
+        col1Name: "Supply Only",
+        col2Name: "Supply and Fit",
+        criteria: ["Choice of fitter", "Cost", "Accountability", "Scheduling", "Single point of contact"],
+        col1Points: ["Full choice — hire any fitter", "Typically lower total cost", "Retailer for product, fitter for install", "You control the timeline", "Separate contracts required"],
+        col2Points: ["Retailer-appointed fitter only", "Often higher total cost", "Single contract with retailer", "Retailer controls the schedule", "One contact for all issues"],
+        bodyHtml: `
+          <h2 class="text-2xl font-bold mb-4" style="color: var(--navy);">What Is Supply Only?</h2>
+          <p class="mb-4" style="color: var(--text-soft);">Supply-only means you purchase your kitchen from a retailer — whether a consumer brand like Wren or Magnet, a trade supplier like Howdens or Benchmarx, or an independent kitchen designer — and arrange the installation yourself, through a separately hired kitchen fitter. The retailer's responsibility ends when the kitchen is delivered. The fitter's responsibility begins when they survey the space and agree a quote.</p>
+          <p class="mb-4" style="color: var(--text-soft);">Supply-only is the most common route for homeowners who are working with an independent kitchen fitter. It gives you full control over who installs your kitchen, when installation takes place, and how much you pay for the fitting work.</p>
+
+          <h2 class="text-2xl font-bold mb-4 mt-8" style="color: var(--navy);">What Is Supply and Fit?</h2>
+          <p class="mb-4" style="color: var(--text-soft);">Supply-and-fit means the retailer takes responsibility for both supplying and installing your kitchen as part of a single package. You sign a contract with the retailer, and they arrange for an appointed fitter to carry out the installation. This is the model used by most consumer kitchen retailers when they offer an installation service.</p>
+          <p class="mb-4" style="color: var(--text-soft);">Supply-and-fit is attractive to homeowners who want simplicity — a single contract, a single point of contact, and one party responsible for the entire outcome. In practice, the experience can be more complicated than this suggests, because the retailer and the fitter remain separate parties with potentially different interests.</p>
+
+          <h2 class="text-2xl font-bold mb-4 mt-8" style="color: var(--navy);">Cost Comparison</h2>
+          <p class="mb-4" style="color: var(--text-soft);">Supply-and-fit packages typically cost more than equivalent supply-only kitchen plus independent installation. The retailer adds a margin to the installation element of the package to cover their administration, subcontractor management, and warranty obligations. This overhead is not unreasonable, but it does mean you are paying more per day of installation than you would by hiring an independent fitter directly.</p>
+          <p class="mb-4" style="color: var(--text-soft);">The cost premium varies by retailer and kitchen size. As a rough guide, supply-and-fit packages from consumer retailers may add 20–35% to the installation element compared to independent fitting. Over a large kitchen installation, this can represent a meaningful sum — often £500–£1,500 more than the equivalent supply-only route.</p>
+
+          <h2 class="text-2xl font-bold mb-4 mt-8" style="color: var(--navy);">Choice of Fitter</h2>
+          <p class="mb-4" style="color: var(--text-soft);">With supply-only, you choose your fitter based on your own research, recommendations, and assessment. You can ask for references, check previous work, and interview multiple fitters before deciding. This means you take on the responsibility of vetting the fitter yourself — but it also means you have complete control over who works in your home.</p>
+          <p class="mb-4" style="color: var(--text-soft);">With supply-and-fit, the retailer selects the fitter. You will typically be told who your fitter is close to the installation date, with limited opportunity to check their background or request a change. The retailer's fitter may be excellent — but you have no meaningful ability to verify this before they arrive.</p>
+
+          <h2 class="text-2xl font-bold mb-4 mt-8" style="color: var(--navy);">Scheduling and Flexibility</h2>
+          <p class="mb-4" style="color: var(--text-soft);">Supply-and-fit schedules are set by the retailer, typically linked to the kitchen delivery timeline. You will usually be offered a narrow window of installation dates with limited flexibility. If your delivery is delayed, or if you need to postpone for personal reasons, rescheduling may involve significant delay and administrative friction.</p>
+          <p class="mb-4" style="color: var(--text-soft);">Supply-only gives you full control over timing. You book your fitter independently and schedule installation to suit your circumstances — after associated trades have completed any preparatory work, at a time that minimises disruption to your household. Changes are agreed directly between you and your fitter, without a corporate intermediary.</p>
+
+          <h2 class="text-2xl font-bold mb-4 mt-8" style="color: var(--navy);">Which Route Should You Choose?</h2>
+          <p class="mb-4" style="color: var(--text-soft);">For homeowners who value control, transparency, and cost-effectiveness, supply-only with an independent fitter is generally the better route. You know exactly who is fitting your kitchen, you agree a fixed price before work begins, and you deal directly with the person responsible for the outcome.</p>
+          <p class="mb-4" style="color: var(--text-soft);">Supply-and-fit makes sense if simplicity is your overriding priority and you are comfortable paying a premium for a single-point-of-contact arrangement. It can also be a sensible choice if you are less confident in your ability to source and vet an independent fitter. In all other cases, supply-only with a carefully selected independent fitter will deliver better value and a more personal service.</p>
+        `,
+        takeaways: [
+          "Supply-only gives you full choice of fitter, better cost control, and direct accountability — it is generally the better-value route.",
+          "Supply-and-fit offers a single contract and one point of contact, but typically costs 20–35% more on the installation element.",
+          "A pre-installation survey is essential on either route — it confirms the kitchen plan fits the actual room before delivery day.",
+        ],
+        faqs: [
+          { q: "Can I buy a kitchen supply-only from any retailer?", a: "Yes. Most UK kitchen retailers, including Wren, Magnet, Howdens (via a trade account), IKEA, Wickes and B&Q, will sell you a kitchen without requiring you to use their fitting service." },
+          { q: "Does supply and fit cost more than supply only?", a: "Generally yes. Supply-and-fit packages include a retailer margin on the installation element. Arranging installation independently through a specialist fitter typically delivers a better price for equivalent work." },
+          { q: "Who is responsible if something goes wrong with a supply-only installation?", a: "The retailer is responsible for any product defects. The fitter is responsible for the quality of the installation. Both responsibilities are clear and separate, which is typically easier to navigate than a combined supply-and-fit dispute." },
+          { q: "How do I find an independent kitchen fitter for a supply-only installation?", a: "Ask for referrals from friends, neighbours or your kitchen retailer. Check that the fitter has specific experience with your brand of kitchen, carries public liability insurance, and offers a pre-installation survey before committing to a price." },
+        ],
+      },
+    },
+
+    // ── 8. Fitted Kitchen Cost Comparison ─────────────────────────────────
+    {
+      params: { comparison: "fitted-kitchen-cost-comparison" },
+      props: {
+        slug: "fitted-kitchen-cost-comparison",
+        title: "Fitted Kitchen Cost Comparison — Retailers & Installation 2025",
+        metaTitle: "Fitted Kitchen Cost Comparison 2025 | Install My Kitchen",
+        metaDescription: "Total fitted kitchen cost by retailer tier in 2025 — kitchen price plus installation. From budget flat-pack to premium rigid units. Get a realistic budget for your project.",
+        answer: "The total cost of a fitted kitchen depends on the kitchen price and installation cost. Installation typically adds £1,800–£7,500 to the kitchen price. A survey is the most accurate way to understand your total fitted cost.",
+        col1Name: "Kitchen Tier",
+        col2Name: "Kitchen Price",
+        criteria: ["Budget flat-pack (IKEA, B&Q, Wickes)", "Mid-range rigid (Wren, Magnet entry)", "Mid-premium rigid (Wren premium, Magnet)", "Trade rigid (Howdens, Benchmarx)", "Premium / German (Häcker, Nobilia)"],
+        col1Points: ["Budget flat-pack (IKEA, B&Q, Wickes)", "Mid-range rigid (Wren, Magnet entry)", "Mid-premium rigid (Wren premium, Magnet)", "Trade rigid (Howdens, Benchmarx)", "Premium / German (Häcker, Nobilia)"],
+        col2Points: ["£1,500–£4,500", "£4,000–£9,000", "£8,000–£18,000", "£3,500–£9,000", "£12,000–£40,000+"],
+        bodyHtml: `
+          <h2 class="text-2xl font-bold mb-4" style="color: var(--navy);">How to Budget for a Fitted Kitchen</h2>
+          <p class="mb-4" style="color: var(--text-soft);">A common mistake when budgeting for a kitchen is to focus only on the kitchen purchase price. The total cost of a fitted kitchen has two main components — the kitchen itself (units, doors, worktops, handles) and the installation (labour, strip-out, fitting, appliance connections). Both must be budgeted for to get an accurate picture of what your project will cost.</p>
+          <p class="mb-4" style="color: var(--text-soft);">Installation costs in Coventry and Warwickshire typically range from £1,800 for a simple galley kitchen up to £7,500 or more for a large, complex layout with an island, multiple appliance connections, and extensive associated trades work. These figures are for the fitting work itself — they do not include worktops (if separately supplied), appliances, tiling, or decoration.</p>
+
+          <h2 class="text-2xl font-bold mb-4 mt-8" style="color: var(--navy);">Cost by Retailer Tier</h2>
+          <p class="mb-4" style="color: var(--text-soft);">The table below provides a general indication of kitchen purchase prices by retailer tier. These are typical ranges for a medium-sized kitchen (10–20 units) and include standard units, doors, and handles but not worktops, appliances, or installation. Prices vary significantly based on size, configuration, and specific range selected.</p>
+
+          <div class="overflow-x-auto my-6">
+            <table class="w-full border-collapse text-sm">
+              <thead>
+                <tr style="background: var(--navy); color: #fff;">
+                  <th class="text-left px-4 py-3 font-semibold rounded-tl-lg">Retailer Tier</th>
+                  <th class="text-left px-4 py-3 font-semibold">Kitchen Price (units only)</th>
+                  <th class="text-left px-4 py-3 font-semibold">Installation Cost</th>
+                  <th class="text-left px-4 py-3 font-semibold rounded-tr-lg">Typical Total Fitted</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="border-b" style="border-color: var(--border);">
+                  <td class="px-4 py-3 font-medium" style="color: var(--charcoal);">Budget flat-pack (IKEA, B&Q, Wickes)</td>
+                  <td class="px-4 py-3" style="color: var(--text-soft);">£1,500–£4,500</td>
+                  <td class="px-4 py-3" style="color: var(--text-soft);">£2,200–£4,500</td>
+                  <td class="px-4 py-3 font-semibold" style="color: var(--teal);">£3,700–£9,000</td>
+                </tr>
+                <tr class="border-b" style="border-color: var(--border); background: var(--bg-light);">
+                  <td class="px-4 py-3 font-medium" style="color: var(--charcoal);">Mid-range rigid (Wren entry, Magnet)</td>
+                  <td class="px-4 py-3" style="color: var(--text-soft);">£4,000–£9,000</td>
+                  <td class="px-4 py-3" style="color: var(--text-soft);">£1,800–£4,000</td>
+                  <td class="px-4 py-3 font-semibold" style="color: var(--teal);">£5,800–£13,000</td>
+                </tr>
+                <tr class="border-b" style="border-color: var(--border);">
+                  <td class="px-4 py-3 font-medium" style="color: var(--charcoal);">Mid-premium (Wren premium, Magnet upper)</td>
+                  <td class="px-4 py-3" style="color: var(--text-soft);">£8,000–£18,000</td>
+                  <td class="px-4 py-3" style="color: var(--text-soft);">£2,500–£5,500</td>
+                  <td class="px-4 py-3 font-semibold" style="color: var(--teal);">£10,500–£23,500</td>
+                </tr>
+                <tr class="border-b" style="border-color: var(--border); background: var(--bg-light);">
+                  <td class="px-4 py-3 font-medium" style="color: var(--charcoal);">Trade rigid (Howdens, Benchmarx)</td>
+                  <td class="px-4 py-3" style="color: var(--text-soft);">£3,500–£9,000</td>
+                  <td class="px-4 py-3" style="color: var(--text-soft);">£1,800–£4,000</td>
+                  <td class="px-4 py-3 font-semibold" style="color: var(--teal);">£5,300–£13,000</td>
+                </tr>
+                <tr style="border-color: var(--border);">
+                  <td class="px-4 py-3 font-medium" style="color: var(--charcoal);">Premium / German (Häcker, Nobilia, Schuller)</td>
+                  <td class="px-4 py-3" style="color: var(--text-soft);">£12,000–£40,000+</td>
+                  <td class="px-4 py-3" style="color: var(--text-soft);">£4,000–£7,500+</td>
+                  <td class="px-4 py-3 font-semibold" style="color: var(--teal);">£16,000–£47,500+</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <p class="text-xs mb-6" style="color: var(--text-soft);">All figures are indicative ranges for Coventry and Warwickshire in 2025. Actual costs depend on kitchen size, configuration, and project-specific requirements. Installation figures exclude worktops (if separately supplied), appliances, tiling, and decoration.</p>
+
+          <h2 class="text-2xl font-bold mb-4 mt-8" style="color: var(--navy);">What Drives Installation Cost?</h2>
+          <p class="mb-4" style="color: var(--text-soft);">Installation cost is driven primarily by the number of units, the complexity of the layout, and the scope of associated trades work. Key cost factors include: number of base and wall units; whether an island is included; number of appliance connections (oven, hob, dishwasher, fridge, extractor); worktop complexity (number of joints, material); and whether strip-out of an existing kitchen is required.</p>
+          <p class="mb-4" style="color: var(--text-soft);">Unit format also affects cost — flat-pack kitchens require on-site assembly before fitting, adding time and therefore cost. Pre-assembled rigid units are faster to install and typically result in a lower installation cost per unit.</p>
+
+          <h2 class="text-2xl font-bold mb-4 mt-8" style="color: var(--navy);">Getting an Accurate Quote</h2>
+          <p class="mb-4" style="color: var(--text-soft);">The only reliable way to understand your total fitted cost is through a pre-installation survey. A surveyor visits your home, takes precise measurements, reviews your kitchen plan, and identifies any complications before they arise on installation day. Following the survey, a fixed-price installation quote is provided, allowing you to budget accurately for the complete project.</p>
+          <p class="mb-4" style="color: var(--text-soft);">Install My Kitchen's pre-installation survey costs £195 and is credited back in full when you proceed with the installation. It is the single most effective way to avoid budget surprises on any kitchen project.</p>
+        `,
+        takeaways: [
+          "Total fitted kitchen cost = kitchen price + installation. Installation typically adds £1,800–£7,500 depending on size and complexity.",
+          "Flat-pack kitchens cost more to install per unit than rigid pre-assembled units — the purchase price saving is partially offset by higher labour.",
+          "A pre-installation survey is the only accurate way to establish your total fitted cost before committing to a kitchen purchase.",
+        ],
+        faqs: [
+          { q: "How much does kitchen installation cost in 2025?", a: "Kitchen installation in Coventry and Warwickshire typically costs £1,800–£7,500 depending on kitchen size, layout complexity, and the scope of trades work required. A pre-installation survey provides a fixed-price quote specific to your project." },
+          { q: "Why does installation cost vary so much?", a: "Installation cost is driven by the number of units, layout complexity, appliance connections, worktop complexity, and whether strip-out is required. A large L-shaped kitchen with an island and five appliance connections will cost significantly more to install than a simple galley kitchen." },
+          { q: "Are IKEA kitchens actually cheaper when you include installation?", a: "Not necessarily. IKEA flat-pack units require on-site assembly, which adds time and installation cost. When total fitted cost is compared — kitchen price plus installation — the gap between IKEA and mid-range rigid-unit kitchens is often smaller than headline prices suggest." },
+          { q: "Does worktop cost affect installation cost?", a: "Worktop supply and installation are typically quoted separately. The complexity of the worktop — number of joints, material (laminate, solid wood, quartz, granite), and whether templating is required — adds to the overall project cost. Worktop installation is usually included in an installation quote only if explicitly confirmed." },
+        ],
+      },
+    },
+
+    // ── 9. Professional Fitter vs DIY ──────────────────────────────────────
+    {
+      params: { comparison: "kitchen-fitter-vs-diy-kitchen-installation" },
+      props: {
+        slug: "kitchen-fitter-vs-diy-kitchen-installation",
+        title: "Professional Kitchen Fitter vs DIY — Is It Worth Hiring a Pro?",
+        metaTitle: "Professional Kitchen Fitter vs DIY Installation | Install My Kitchen",
+        metaDescription: "Is DIY kitchen installation worth the risk? Compare professional fitting vs DIY on quality, cost, time, safety and warranty implications for UK homeowners.",
+        answer: "Professional kitchen installation ensures correct levelling, plumbing and appliance connections, avoids costly mistakes, and typically comes with a workmanship warranty. DIY is possible for experienced individuals but mistakes can be expensive to correct.",
+        col1Name: "Professional Fitter",
+        col2Name: "DIY",
+        criteria: ["Levelling accuracy", "Plumbing & electrical", "Worktop templating", "Warranty coverage", "Risk of costly errors"],
+        col1Points: ["Laser levels, professional tools", "Certified connections where required", "Professionally templated and cut", "Workmanship warranty included", "Very low with experienced fitter"],
+        col2Points: ["Relies on personal skill level", "Self-certified (limitations apply)", "Risk of cutting errors", "No warranty on DIY work", "Higher risk without trade experience"],
+        bodyHtml: `
+          <h2 class="text-2xl font-bold mb-4" style="color: var(--navy);">The Appeal of DIY Kitchen Installation</h2>
+          <p class="mb-4" style="color: var(--text-soft);">Kitchen installation is one of those projects that many confident DIYers look at and think: how hard can it be? Assemble some boxes, screw them to the wall, slot the worktop on top. For a straightforward galley kitchen with no island, no complex appliance connections, and walls that are genuinely flat, level, and plumb, a highly experienced DIYer can produce a satisfactory result.</p>
+          <p class="mb-4" style="color: var(--text-soft);">The problem is that most UK kitchens do not have flat, level, plumb walls. Most have at least one wall that wanders, a floor that slopes, a corner that is not square. And it is precisely at these points — where experience, professional tools, and trade knowledge make the difference — that DIY kitchen installations tend to go wrong.</p>
+
+          <h2 class="text-2xl font-bold mb-4 mt-8" style="color: var(--navy);">Levelling and Setting Out</h2>
+          <p class="mb-4" style="color: var(--text-soft);">The first stage of any kitchen installation — establishing datum lines, setting out the layout, and determining how to handle floor and wall variations — is also the most important. Get this right and the rest of the installation follows logically. Get it wrong and every subsequent stage is compromised.</p>
+          <p class="mb-4" style="color: var(--text-soft);">Professional fitters use laser levels as a matter of course. They understand how to handle floors that slope across their length, walls that are more or less than 90 degrees at the corners, and ceiling heights that vary across the room. Managing these variables correctly requires experience and the right tools. DIY attempts using a spirit level and a best-guess approach frequently produce results that are visibly off-level or misaligned, particularly when doors and drawers are hung.</p>
+
+          <h2 class="text-2xl font-bold mb-4 mt-8" style="color: var(--navy);">Plumbing and Electrical Connections</h2>
+          <p class="mb-4" style="color: var(--text-soft);">Kitchen installations involve both plumbing (sink, dishwasher, sometimes fridge or instant hot water tap) and electrical work (oven, hob, extractor, lighting, sockets). Some of this work can be carried out by a confident DIYer under current UK regulations; other work requires a qualified and Part P-registered electrician.</p>
+          <p class="mb-4" style="color: var(--text-soft);">In particular, new circuits and work in zones near water sources must be carried out by a competent person and, in many cases, notified to building control. A professional kitchen fitter either carries the relevant qualifications or works with qualified sub-contractors and co-ordinates the trades efficiently. A DIY installation that bypasses these requirements creates a safety risk and a liability that will need to be resolved before the property is sold.</p>
+
+          <h2 class="text-2xl font-bold mb-4 mt-8" style="color: var(--navy);">Worktop Templating and Cutting</h2>
+          <p class="mb-4" style="color: var(--text-soft);">Worktop templating and cutting is one of the highest-risk stages of a kitchen installation for a DIYer. Stone and engineered stone worktops (quartz, granite) must be templated and cut by specialists — there is no realistic DIY option here. Solid wood, laminate, and Corian worktops can be cut on-site, but the precision required — particularly for mitre joints in corners — demands both specialist tools and experience.</p>
+          <p class="mb-4" style="color: var(--text-soft);">A single poorly cut worktop joint is not only visually poor — it is also a potential ingress point for moisture that will cause the worktop to swell and delaminate over time. Worktop replacement is a significant additional cost. A professional fitter who guarantees their worktop work against defects in workmanship provides an important protection that DIY installation cannot offer.</p>
+
+          <h2 class="text-2xl font-bold mb-4 mt-8" style="color: var(--navy);">Cost of Mistakes</h2>
+          <p class="mb-4" style="color: var(--text-soft);">DIY kitchen installation may save you the installation labour cost, but mistakes are expensive. A miscut worktop may need to be replaced. Units that are not correctly levelled may need to be refitted. Doors and drawers that are misaligned, hinges that are incorrectly positioned, and plinths that are poorly cut all require remedial work that, if carried out by a professional, costs more than the original installation would have done.</p>
+          <p class="mb-4" style="color: var(--text-soft);">The risk is not hypothetical. A significant proportion of professional kitchen fitters carry out remedial work on DIY or poorly executed installations. The cost of putting right a DIY installation that has gone wrong typically far exceeds the cost that was saved by not hiring a professional in the first place.</p>
+
+          <h2 class="text-2xl font-bold mb-4 mt-8" style="color: var(--navy);">When DIY Might Be Appropriate</h2>
+          <p class="mb-4" style="color: var(--text-soft);">There are circumstances where DIY installation is a reasonable option. If you are a tradesperson yourself — a joiner, a builder, or an experienced kitchen fitter — you may be able to install your own kitchen competently. If your kitchen is a simple, small galley layout with no island and only basic appliance connections, the complexity is lower. If you are fitting a budget kitchen and are genuinely prepared to accept a less-than-perfect result, the calculation changes.</p>
+          <p class="mb-4" style="color: var(--text-soft);">For the vast majority of homeowners, particularly those installing a kitchen costing £5,000 or more, professional installation is the sensible choice. The cost of installation is a small fraction of the total project cost — but the quality of the installation determines how the kitchen performs and looks for the next fifteen to twenty years.</p>
+        `,
+        takeaways: [
+          "Professional installation ensures correct levelling, compliant electrical and plumbing connections, and accurate worktop templating — all high-risk areas for DIY.",
+          "Mistakes in DIY kitchen installation are expensive to correct; remedial work typically costs more than the original installation saving.",
+          "For kitchens costing £5,000 or more, professional installation is a small percentage of total project cost but determines long-term quality.",
+        ],
+        faqs: [
+          { q: "Can I legally install my own kitchen in the UK?", a: "The physical fitting work (assembling and fixing units) can be done by a homeowner. However, new electrical circuits and work near water sources must meet Part P building regulations and may need to be carried out by a qualified electrician and notified to building control." },
+          { q: "What tools do I need to install a kitchen myself?", a: "At minimum: a laser level, a drill, a jigsaw, a circular saw, a workbench, and a range of hand tools. Professional fitters carry specialist tools that are costly to buy for a single project, including worktop cutters, biscuit joiners for worktop joints, and fixing jigs." },
+          { q: "How long does it take to install a kitchen yourself?", a: "For an experienced DIYer, a standard kitchen might take one to two weeks spread across evenings and weekends. An experienced professional fitter would complete the same kitchen in three to seven days. The difference is tools, experience, and full-time focus." },
+          { q: "Does DIY kitchen installation affect my kitchen warranty?", a: "Product warranties from reputable retailers cover manufacturing defects regardless of who installs the kitchen. However, some retailers may require evidence of professional installation to honour warranty claims related to installation. Check your specific retailer's terms." },
+        ],
+      },
+    },
+
+    // ── 10. German vs British Kitchen Installation ─────────────────────────
+    {
+      params: { comparison: "german-kitchen-installation-vs-british" },
+      props: {
+        slug: "german-kitchen-installation-vs-british",
+        title: "German Kitchen Installation vs British — What's the Difference?",
+        metaTitle: "German Kitchen Installation vs British | Install My Kitchen",
+        metaDescription: "German kitchens (Häcker, Nobilia, Schuller, Rotpunkt) require tighter tolerances and more precise installation than British-market kitchens. Here's what to expect.",
+        answer: "German kitchens (Häcker, Nobilia, Rotpunkt, Schuller) are precision-engineered to tighter tolerances and typically require more careful installation than British-market kitchens. They demand accurate levels and walls. British kitchens (Howdens, Magnet, Wren) are designed for the UK trade and have more flexibility.",
+        col1Name: "German Kitchen",
+        col2Name: "British Kitchen",
+        criteria: ["Manufacturing tolerances", "Wall/floor preparation required", "Installation complexity", "Time required", "Fitter experience needed"],
+        col1Points: ["Very tight — 1mm or less", "Walls and floor must be true", "Higher — less on-site adjustment", "Longer — 20–30% more time typical", "Specialist German kitchen experience"],
+        col2Points: ["Standard trade tolerances", "Tolerant of typical UK variation", "Standard — good scope for adjustment", "Standard installation timeline", "Experienced kitchen fitter"],
+        bodyHtml: `
+          <h2 class="text-2xl font-bold mb-4" style="color: var(--navy);">What Makes German Kitchens Different?</h2>
+          <p class="mb-4" style="color: var(--text-soft);">German kitchen brands — Häcker, Nobilia, Rotpunkt, Schuller, Nolte, and others — are manufactured to precision engineering standards that reflect the German approach to quality manufacturing. Units are built to tight dimensional tolerances, with consistent carcass construction and door hanging systems that operate with minimal adjustment range. This precision is a strength when walls, floors and ceilings are truly level and plumb. It becomes a challenge when they are not.</p>
+          <p class="mb-4" style="color: var(--text-soft);">British-market kitchens — Howdens, Magnet, Wren, and others — are designed specifically for the realities of UK housing stock: walls that wander, floors that slope, and corners that are rarely perfectly square. British kitchen systems typically have greater on-site adjustment built in, allowing fitters to compensate for room irregularities without compromising the finished appearance.</p>
+
+          <h2 class="text-2xl font-bold mb-4 mt-8" style="color: var(--navy);">Manufacturing Tolerances</h2>
+          <p class="mb-4" style="color: var(--text-soft);">German kitchens are engineered to tolerances of one millimetre or less. This is impressive from a manufacturing standpoint, but it means that any deviation in the installation environment — a wall that is 2–3mm out of plumb, a floor that slopes by a few millimetres across its width — creates visible problems. Units that do not sit perfectly level produce door and drawer alignment issues that cannot be fully corrected through hinge adjustment.</p>
+          <p class="mb-4" style="color: var(--text-soft);">British kitchens are designed with more generous tolerances and greater adjustment range at hinges, drawer runners, and leg levellers. This gives the fitter more options to compensate for imperfect conditions without compromising the result. It does not mean British kitchens are lower quality — it means they are designed for the environment in which they are installed.</p>
+
+          <h2 class="text-2xl font-bold mb-4 mt-8" style="color: var(--navy);">Wall and Floor Preparation</h2>
+          <p class="mb-4" style="color: var(--text-soft);">For a German kitchen installation to achieve the result its engineering demands, the room preparation must be thorough. Walls should be genuinely flat and plumb — not just approximately level. Floors should be levelled, either by grinding down high spots or applying a self-levelling compound. Corners should be checked for squareness and any significant deviation addressed before installation begins.</p>
+          <p class="mb-4" style="color: var(--text-soft);">This preparation stage is sometimes skipped or underestimated, particularly when a homeowner is managing the project themselves. The consequences of installing a German kitchen in a room that has not been properly prepared are visible — doors that run at a slight angle, gaps at the tops of tall units, and handles that are not perfectly aligned. Correcting these issues after installation is difficult and expensive.</p>
+
+          <h2 class="text-2xl font-bold mb-4 mt-8" style="color: var(--navy);">Installation Complexity and Time</h2>
+          <p class="mb-4" style="color: var(--text-soft);">German kitchen installation typically takes 20–30% longer than an equivalent British kitchen installation. The additional time goes on more careful setting out, more precise levelling, and more meticulous alignment of components. German kitchen systems often use proprietary fixing methods and hardware that differ from standard UK kitchen fittings — fitters without specific German kitchen experience can struggle with these differences.</p>
+          <p class="mb-4" style="color: var(--text-soft);">Choosing a fitter with documented experience of the specific brand you are installing is particularly important with German kitchens. A Häcker kitchen, for example, uses a specific wall hanging system and carcass construction that an experienced Häcker fitter will navigate efficiently. A fitter who has only ever installed Wren and Howdens may be technically capable but will work more slowly and may encounter problems that experience would have anticipated.</p>
+
+          <h2 class="text-2xl font-bold mb-4 mt-8" style="color: var(--navy);">Cost Implications</h2>
+          <p class="mb-4" style="color: var(--text-soft);">German kitchen installation costs more than equivalent British kitchen installation, reflecting the additional time, the level of preparation required, and the specialist experience needed. Installation for a German kitchen in the Coventry and Warwickshire area typically starts from £4,000 and can reach £7,500 or more for large, complex installations. This is broadly 20–40% higher than equivalent British kitchen installation, depending on complexity and preparation requirements.</p>
+          <p class="mb-4" style="color: var(--text-soft);">Given that German kitchens typically represent a significant investment — often £12,000–£40,000 or more — the additional installation cost is proportionally small. Attempting to save money on installation by using a fitter without specific German kitchen experience is a false economy that risks a result that does not reflect the quality of the product.</p>
+
+          <h2 class="text-2xl font-bold mb-4 mt-8" style="color: var(--navy);">Which Is Right for You?</h2>
+          <p class="mb-4" style="color: var(--text-soft);">German kitchens are engineered to a very high standard and, when installed correctly in a properly prepared room, produce a precision result that justifies the premium. British kitchens are designed for the realities of UK housing stock and deliver excellent results in a wider range of conditions. Neither is inherently superior — the right choice depends on your budget, your aesthetic requirements, and the condition of your room.</p>
+          <p class="mb-4" style="color: var(--text-soft);">Whatever you choose, invest in a pre-installation survey. For a German kitchen in particular, the survey is essential — it identifies any room preparation required before installation, confirms the plan against actual room dimensions, and ensures your fitter arrives on installation day with a complete understanding of the job ahead.</p>
+        `,
+        takeaways: [
+          "German kitchens are engineered to tighter tolerances than British-market kitchens — room preparation (level walls, true floors) is essential before installation.",
+          "German kitchen installation typically takes 20–30% longer and costs 20–40% more than an equivalent British kitchen installation.",
+          "Always use a fitter with specific experience of the German kitchen brand you are installing — proprietary fixing systems vary significantly between brands.",
+        ],
+        faqs: [
+          { q: "Do German kitchens need special fitters?", a: "Yes. German kitchens use proprietary fixing systems and have tighter engineering tolerances than British-market kitchens. A fitter with specific experience of your brand — Häcker, Nobilia, Schuller, Rotpunkt, or others — will produce a significantly better result than one without this experience." },
+          { q: "Does my room need to be specially prepared for a German kitchen?", a: "More so than for a British kitchen, yes. Walls should be flat and plumb, floors level, and corners checked for squareness. A pre-installation survey will identify any preparation required and is particularly important for German kitchen projects." },
+          { q: "Why does German kitchen installation cost more?", a: "German kitchen installation takes longer due to tighter tolerances, more careful setting out, and specialist handling of proprietary fixing systems. The installation cost reflects this additional time and the experience required." },
+          { q: "Can any kitchen fitter install a German kitchen?", a: "Technically yes, but practically speaking a fitter without specific German kitchen experience will work more slowly, may encounter problems that an experienced fitter would anticipate, and is more likely to produce alignment issues that cannot be fully corrected after installation." },
+        ],
+      },
+    },
+  ];
+}
+
+// ── Page rendering ────────────────────────────────────────────────────────────
+
+const {
+  slug,
+  title,
+  metaTitle,
+  metaDescription,
+  answer,
+  col1Name,
+  col2Name,
+  criteria,
+  col1Points,
+  col2Points,
+  bodyHtml,
+  takeaways,
+  faqs,
+} = Astro.props;
+
+const canonical = `https://www.installmykitchen.co.uk/comparisons/${slug}/`;
+
+// Truncate display title to ≤65 chars for <title>
+const displayTitle = metaTitle.length <= 65 ? metaTitle : metaTitle.substring(0, 62) + "...";
+
+const internalLinks = [
+  { label: "Kitchen Installation Costs", href: "/costs/", description: "Detailed cost breakdown for Coventry & Warwickshire" },
+  { label: "Pre-Installation Survey", href: "/survey/", description: "How our £195 survey saves you money" },
+  { label: "Retailers We Install", href: "/retailers/", description: "Every major UK kitchen retailer covered" },
+  { label: "Our Services", href: "/services/", description: "Full scope of kitchen installation services" },
+];
+
+// BreadcrumbList JSON-LD
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://www.installmykitchen.co.uk/" },
+    { "@type": "ListItem", position: 2, name: "Comparisons", item: "https://www.installmykitchen.co.uk/comparisons/" },
+    { "@type": "ListItem", position: 3, name: title, item: canonical },
+  ],
+};
+---
+
+<Base
+  title={displayTitle}
+  description={metaDescription}
+  canonical={canonical}
+>
+  <script slot="schema" type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+
+  <Header slot="header" />
+
+  <!-- Page header -->
+  <section class="page-header" aria-label="Page header">
+    <div class="container">
+      <Breadcrumbs
+        items={[
+          { label: "Comparisons", href: "/comparisons/" },
+          { label: title, href: `/comparisons/${slug}/` },
+        ]}
+      />
+      <h1 class="page-h1">{title}</h1>
+    </div>
+  </section>
+
+  <!-- Main content -->
+  <section class="section" style="background: #fff;">
+    <div class="container">
+      <div class="max-w-3xl">
+
+        <!-- Quick answer -->
+        <AnswerBlock answer={answer} />
+
+        <!-- Comparison table -->
+        {criteria && criteria.length > 0 && (
+          <div class="comparison-table-wrap my-8 fade-up">
+            <h2 class="text-xl font-bold mb-4" style="color: var(--navy);">At a Glance</h2>
+            <div class="overflow-x-auto rounded-xl border" style="border-color: var(--border);">
+              <table class="w-full border-collapse text-sm">
+                <thead>
+                  <tr style="background: var(--navy); color: #fff;">
+                    <th class="text-left px-4 py-3 font-semibold w-1/3">Feature</th>
+                    <th class="text-left px-4 py-3 font-semibold w-1/3">{col1Name}</th>
+                    <th class="text-left px-4 py-3 font-semibold w-1/3">{col2Name}</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {criteria.map((criterion: string, i: number) => (
+                    <tr
+                      class="border-b"
+                      style={`border-color: var(--border); ${i % 2 === 1 ? "background: var(--bg-light);" : ""}`}
+                    >
+                      <td class="px-4 py-3 font-medium" style="color: var(--charcoal);">{criterion}</td>
+                      <td class="px-4 py-3" style="color: var(--text-soft);">{col1Points[i] ?? "—"}</td>
+                      <td class="px-4 py-3" style="color: var(--text-soft);">{col2Points[i] ?? "—"}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        )}
+
+        <!-- Body content -->
+        <div class="body-content fade-up" set:html={bodyHtml} />
+
+        <!-- Key Takeaways -->
+        <div class="mt-8 fade-up">
+          <KeyTakeaway points={takeaways} />
+        </div>
+
+        <!-- FAQ -->
+        <section class="mt-10 fade-up" aria-labelledby="faq-heading">
+          <h2 id="faq-heading" class="text-2xl font-bold mb-6" style="color: var(--navy);">
+            Frequently Asked Questions
+          </h2>
+          <FAQ items={faqs} schemaId={`faq-comparison-${slug}`} />
+        </section>
+
+        <!-- Internal Links -->
+        <div class="mt-10 fade-up">
+          <InternalLinks links={internalLinks} heading="Related Pages" />
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <CTA
+    dark={true}
+    heading="Ready to Book Your Kitchen Installation Survey?"
+    subtext="A pre-installation survey gives you a fixed-price quote before you commit. £195, credited back in full when you proceed."
+    primaryLabel="Book Your Survey — £195"
+    primaryHref="/survey/"
+    secondaryLabel="Call 07399 651836"
+    secondaryHref="tel:07399651836"
+  />
+
+  <Footer slot="footer" />
+  <StickyMobileCTA slot="sticky-cta" />
+</Base>
+
+<style>
+  .page-header {
+    background: var(--hero-gradient);
+    padding: 3rem 0 3.5rem;
+  }
+
+  .page-h1 {
+    font-size: clamp(1.5rem, 2.75vw, 2.25rem);
+    font-weight: 800;
+    color: #fff;
+    letter-spacing: -0.02em;
+    margin-top: 0.75rem;
+    margin-bottom: 0.5rem;
+    max-width: 720px;
+  }
+
+  .body-content {
+    line-height: 1.75;
+  }
+
+  .body-content p {
+    margin-bottom: 1rem;
+  }
+</style>

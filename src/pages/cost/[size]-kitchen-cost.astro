@@ -1,0 +1,400 @@
+---
+import Base from "../../layouts/Base.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import StickyMobileCTA from "../../components/StickyMobileCTA.astro";
+import Breadcrumbs from "../../components/Breadcrumbs.astro";
+import AnswerBlock from "../../components/AnswerBlock.astro";
+import KeyTakeaway from "../../components/KeyTakeaway.astro";
+import FAQ from "../../components/FAQ.astro";
+import InternalLinks from "../../components/InternalLinks.astro";
+import CTA from "../../components/CTA.astro";
+
+export function getStaticPaths() {
+  return [
+    {
+      params: { size: "small" },
+      props: {
+        label: "Small",
+        units: "8–12",
+        days: "3–4",
+        low: 1800,
+        high: 2800,
+        description:
+          "A small kitchen with 8–12 units is common in terraced houses, flats and smaller semis across Coventry and Warwickshire.",
+        faqs: [
+          {
+            q: "How much does a small kitchen installation cost?",
+            a: "A small kitchen with 8–12 units typically costs between £1,800 and £2,800 to install in Coventry and Warwickshire. This is a labour-only figure and does not include the cost of the kitchen units, worktops, or appliances.",
+          },
+          {
+            q: "How long does it take to fit a small kitchen?",
+            a: "Most small kitchens take 3–4 days to install. The exact duration depends on the layout complexity, the number of appliances, and the condition of the existing kitchen space.",
+          },
+          {
+            q: "Does the installation cost include removing the old kitchen?",
+            a: "Strip-out of the existing kitchen is included in our standard installation quote. We remove the old units, dispose of them responsibly, and prepare the space ready for the new installation.",
+          },
+          {
+            q: "Is a £195 survey worth it for a small kitchen?",
+            a: "Yes. The survey fee is credited back in full against your installation balance when you confirm your booking and pay your deposit. For a small kitchen, the survey protects you against unexpected costs and ensures your fixed-price quote covers everything specific to your room.",
+          },
+          {
+            q: "What is not included in the installation price?",
+            a: "The labour-only installation quote does not include the kitchen units themselves, worktops, appliances, tiling, plastering, electrical work, or plumbing. We can advise on trades you may need alongside the installation.",
+          },
+        ],
+      },
+    },
+    {
+      params: { size: "medium" },
+      props: {
+        label: "Medium",
+        units: "13–20",
+        days: "4–6",
+        low: 2800,
+        high: 4200,
+        description:
+          "A medium kitchen with 13–20 units suits larger semis and detached houses. This is the most common kitchen size we install.",
+        faqs: [
+          {
+            q: "How much does a medium kitchen installation cost?",
+            a: "A medium kitchen with 13–20 units typically costs between £2,800 and £4,200 to install in Coventry and Warwickshire. This is a labour-only figure and does not include the cost of the kitchen units, worktops, or appliances.",
+          },
+          {
+            q: "How long does it take to fit a medium kitchen?",
+            a: "Most medium kitchens take 4–6 days to install. A straightforward L-shaped or linear layout will sit towards the lower end of that range; a complex layout with an island or full-height cabinetry may take closer to 6 days.",
+          },
+          {
+            q: "Why is my quote higher than the typical range?",
+            a: "Quoted costs can exceed the typical range if your kitchen includes features that add fitting time: a stone worktop (which requires a separate template visit), complex cornering solutions, a large number of integrated appliances, or a room with significantly uneven floors or walls. These are all identified at the pre-installation survey.",
+          },
+          {
+            q: "Can you give me a firm price before the survey?",
+            a: "We are happy to provide a ballpark estimate over the phone, but our fixed-price quote is issued only after the pre-installation survey. The survey allows us to assess every factor that affects cost, so you receive a quote you can rely on rather than an approximation.",
+          },
+          {
+            q: "What happens if extra work is needed once the old kitchen is removed?",
+            a: "Any additional work identified during strip-out — such as remedial wall preparation or unexpected plumbing issues — is discussed with you before proceeding. We do not undertake extra chargeable work without your approval.",
+          },
+        ],
+      },
+    },
+    {
+      params: { size: "large" },
+      props: {
+        label: "Large",
+        units: "21+",
+        days: "6–10",
+        low: 4200,
+        high: 7500,
+        description:
+          "A large kitchen with 21 or more units is typical in larger detached homes, open-plan extensions and barn conversions.",
+        faqs: [
+          {
+            q: "How much does a large kitchen installation cost?",
+            a: "A large kitchen with 21 or more units typically costs between £4,200 and £7,500 to install in Coventry and Warwickshire. This is a labour-only figure. Complex large kitchens with islands, extensive stone worktops, or multiple appliance connections may fall above this range.",
+          },
+          {
+            q: "How long does a large kitchen installation take?",
+            a: "Large kitchens generally take 6–10 days depending on layout complexity, the number of units, and whether stone worktops require a separate template visit on a different day.",
+          },
+          {
+            q: "Is stone worktop fitting included in the large kitchen price?",
+            a: "Fitting a stone worktop — quartz, granite, or solid surface — requires specialist templating and fabrication by a stone supplier. This is separate from our installation quote. We co-ordinate closely with your stone supplier to ensure the template visit and fitting dates align with the overall installation programme.",
+          },
+          {
+            q: "Can you install a kitchen with an island?",
+            a: "Yes. Islands are a common feature in larger kitchens. An island adds fitting time, and this is reflected in the quoted number of days. We assess the island fully at the pre-installation survey and include it in your fixed-price quote.",
+          },
+          {
+            q: "Do I need to arrange an electrician and plumber separately?",
+            a: "Yes. Electrical and plumbing connections are carried out by your own electrician and plumber. We work around their visits and can advise on the sequence of trades to ensure everything runs efficiently. We are happy to recommend local tradespeople if needed.",
+          },
+        ],
+      },
+    },
+  ];
+}
+
+const { label, units, days, low, high, description, faqs } = Astro.props;
+const size = Astro.params.size as string;
+
+const slug = `${size}-kitchen-cost`;
+const canonical = `https://www.installmykitchen.co.uk/cost/${slug}/`;
+
+const title = `${label} Kitchen Installation Cost UK 2025 | Install My Kitchen`;
+const metaDescriptions: Record<string, string> = {
+  small:
+    "How much does a small kitchen (8–12 units) cost to install? Typical ranges, what affects price, and how to get a fixed-price quote in Coventry.",
+  medium:
+    "How much does a medium kitchen (13–20 units) cost to install? Typical cost ranges, what affects price, and how to get a fixed quote in Coventry.",
+  large:
+    "How much does a large kitchen (21+ units) cost to install? Typical ranges, what affects price, and how to get a fixed-price quote in Coventry.",
+};
+const metaDescription = metaDescriptions[size] ?? `How much does a ${label.toLowerCase()} kitchen (${units} units) cost to install? Typical ranges, what affects price, and how to get a fixed-price quote in Coventry.`;
+
+const takeawayPoints = [
+  `A ${label.toLowerCase()} kitchen (${units} units) typically costs £${low.toLocaleString("en-GB")}–£${high.toLocaleString("en-GB")} to install (labour only).`,
+  `Installation takes ${days} working days depending on layout complexity and number of appliances.`,
+  `Our day rate is approximately £350 — all prices include VAT and strip-out of the old kitchen.`,
+  `A pre-installation survey (£195, credited back on booking) provides a fixed-price quote specific to your room.`,
+];
+
+const internalLinks = [
+  {
+    label: "Kitchen Installation Cost Guide",
+    href: "/costs/",
+    description: "Full breakdown of installation costs and typical ranges",
+  },
+  {
+    label: "Book a Survey",
+    href: "/survey/",
+    description: "Get a fixed-price quote with our £195 pre-installation survey",
+  },
+  {
+    label: "Our Services",
+    href: "/services/",
+    description: "Everything we fit and how we work",
+  },
+  {
+    label: "Contact Us",
+    href: "/contact/",
+    description: "Get in touch with Install My Kitchen",
+  },
+];
+---
+
+<Base title={title} description={metaDescription} canonical={canonical}>
+  <Header slot="header" />
+
+  <div class="container py-6">
+    <Breadcrumbs
+      items={[
+        { label: "Cost Guide", href: "/costs/" },
+        { label: `${label} Kitchen Cost`, href: canonical },
+      ]}
+    />
+  </div>
+
+  <!-- Hero -->
+  <section class="section" style="background: var(--bg-light);">
+    <div class="container">
+      <div class="max-w-3xl">
+        <h1
+          class="text-4xl md:text-5xl font-extrabold mb-5 leading-tight"
+          style="color: var(--navy);"
+        >
+          {label} Kitchen Installation Cost — How Much Does It Cost?
+        </h1>
+        <AnswerBlock
+          answer={`A ${label.toLowerCase()} kitchen (${units} units) typically costs £${low.toLocaleString("en-GB")}–£${high.toLocaleString("en-GB")} to install in Coventry and Warwickshire, taking ${days} days. Book a survey for an accurate quote for your specific kitchen.`}
+        />
+        <KeyTakeaway points={takeawayPoints} />
+      </div>
+    </div>
+  </section>
+
+  <!-- Cost breakdown box -->
+  <section class="section">
+    <div class="container">
+      <div class="max-w-3xl fade-up">
+        <h2 class="text-3xl font-bold mb-6" style="color: var(--navy);">
+          {label} Kitchen Cost at a Glance
+        </h2>
+        <p class="leading-relaxed mb-6" style="color: var(--text-soft);">
+          {description} The figures below summarise the typical cost parameters for a {label.toLowerCase()} kitchen installation. All figures are for labour only and include VAT.
+        </p>
+
+        <div
+          class="rounded-xl border overflow-hidden mb-4"
+          style="border-color: #E5E7EB;"
+        >
+          <table class="w-full text-sm" style="border-collapse: collapse;">
+            <thead>
+              <tr style="background: var(--navy); color: #fff;">
+                <th class="px-5 py-4 text-left font-semibold">Parameter</th>
+                <th class="px-5 py-4 text-left font-semibold">Typical Value</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="border-bottom: 1px solid #E5E7EB; background: #fff;">
+                <td class="px-5 py-4 font-semibold" style="color: var(--charcoal);">Number of units</td>
+                <td class="px-5 py-4" style="color: var(--text-soft);">{units}</td>
+              </tr>
+              <tr style="border-bottom: 1px solid #E5E7EB; background: #F9FAFB;">
+                <td class="px-5 py-4 font-semibold" style="color: var(--charcoal);">Installation days</td>
+                <td class="px-5 py-4" style="color: var(--text-soft);">{days} days</td>
+              </tr>
+              <tr style="border-bottom: 1px solid #E5E7EB; background: #fff;">
+                <td class="px-5 py-4 font-semibold" style="color: var(--charcoal);">Typical total cost (labour only)</td>
+                <td class="px-5 py-4 font-semibold" style="color: var(--teal);">£{low.toLocaleString("en-GB")}–£{high.toLocaleString("en-GB")}</td>
+              </tr>
+              <tr style="background: #F9FAFB;">
+                <td class="px-5 py-4 font-semibold" style="color: var(--charcoal);">Approximate daily labour rate</td>
+                <td class="px-5 py-4" style="color: var(--text-soft);">£350 per day (inc. VAT)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p class="text-xs" style="color: var(--text-soft);">
+          Figures are typical ranges for installation labour only in Coventry and Warwickshire. They do not include the cost of kitchen units, worktops, appliances, tiling, electrical work, or plumbing. A fixed-price quote is provided following your pre-installation survey.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- What affects price -->
+  <section class="section" style="background: var(--bg-light);">
+    <div class="container">
+      <div class="max-w-3xl fade-up">
+        <h2 class="text-3xl font-bold mb-6" style="color: var(--navy);">
+          What Affects the Cost of a {label} Kitchen Installation?
+        </h2>
+        <p class="leading-relaxed mb-6" style="color: var(--text-soft);">
+          Installation cost is primarily driven by time on site. The more units, the more complex the layout, and the more challenging the room, the longer the installation takes. Here are the main factors we consider when pricing a {label.toLowerCase()} kitchen.
+        </p>
+
+        <ul class="space-y-4 list-none p-0 m-0">
+          {[
+            {
+              factor: "Number of units",
+              detail:
+                `A ${label.toLowerCase()} kitchen runs to ${units} units. More units means more assembly, more levelling, more fixing, and more worktop to cut and finish. Our day rate of approximately £350 reflects a fair and transparent basis for calculating cost.`,
+            },
+            {
+              factor: "Layout shape",
+              detail:
+                "A simple linear or L-shaped layout is quicker to install than a U-shape or one with an island. Corner units, tall housings, and peninsulas each add fitting time and are assessed individually at the pre-installation survey.",
+            },
+            {
+              factor: "Worktop material",
+              detail:
+                "Laminate worktops are cut and fitted directly by our team. Stone worktops — quartz, granite, or solid surface — require a template taken by the stone supplier and then a return visit for fitting. This adds a day to the overall programme and is a separate cost arranged with the stone supplier.",
+            },
+            {
+              factor: "Appliance connections",
+              detail:
+                "Positioning and fitting integrated appliances — ovens, microwaves, dishwashers, fridges, extractors — is included in our installation rate. Electrical and plumbing connections are made by your electrician and plumber.",
+            },
+            {
+              factor: "Condition of the existing room",
+              detail:
+                "Unlevel floors, out-of-plumb walls, and uneven ceilings all require scribing, packing, and adjustment work. We identify these issues at the pre-installation survey so there are no surprises during the installation itself.",
+            },
+            {
+              factor: "Strip-out of the old kitchen",
+              detail:
+                "Removing the existing kitchen is included in our standard installation quote. We take down the old units, disconnect appliances (leaving final disconnection of services to your relevant trade), and remove the waste from site.",
+            },
+          ].map(({ factor, detail }) => (
+            <li class="p-5 rounded-xl border" style="border-color: #E5E7EB; background: #fff;">
+              <p class="font-semibold mb-1" style="color: var(--charcoal);">{factor}</p>
+              <p class="text-sm leading-relaxed" style="color: var(--text-soft);">{detail}</p>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- What's included in the quote -->
+  <section class="section">
+    <div class="container">
+      <div class="max-w-3xl fade-up">
+        <h2 class="text-3xl font-bold mb-6" style="color: var(--navy);">
+          What Is Included in Our Installation Quote?
+        </h2>
+        <p class="leading-relaxed mb-4" style="color: var(--text-soft);">
+          Our installation quote covers everything involved in physically fitting your {label.toLowerCase()} kitchen. There are no hidden add-ons once your fixed price has been agreed following the survey.
+        </p>
+        <p class="leading-relaxed mb-4" style="color: var(--text-soft);">
+          Included in the quote: strip-out of the existing kitchen and removal of waste from site; assembly of all cabinet carcasses; fitting of all base, wall, and tall units; levelling, scribing, and packing to achieve a professional finish against imperfect walls and floors; fitting of doors, drawers, and internal fittings; fitting of laminate worktops including all cuts, joins, and finishing; fitting of the sink bowl and taps into the worktop (connection to supply and waste by your plumber); fitting of all integrated appliances into the cabinet apertures (connection to electricity and plumbing by the relevant trades); and a full handover with adjustment of all doors and drawers.
+        </p>
+        <p class="leading-relaxed" style="color: var(--text-soft);">
+          Not included: the kitchen itself; stone worktops (template and fabrication by stone supplier); electrical and plumbing connections; tiling, plastering, or flooring; and any structural work that may be required. We are transparent about what falls outside our scope and can advise on trades you will need to arrange alongside our installation.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why a survey matters -->
+  <section class="section" style="background: var(--bg-light);">
+    <div class="container">
+      <div class="max-w-3xl fade-up">
+        <h2 class="text-3xl font-bold mb-4" style="color: var(--navy);">
+          Why a Pre-Installation Survey Gives You a More Accurate Price
+        </h2>
+        <p class="leading-relaxed mb-4" style="color: var(--text-soft);">
+          The cost ranges shown on this page are well-researched starting points for a {label.toLowerCase()} kitchen, but your room is unique. A pre-installation survey — which costs £195 and is credited back in full when you confirm your booking — allows us to produce a fixed-price quote based on your actual room, your specific kitchen plan, and any challenges identified during the visit.
+        </p>
+        <p class="leading-relaxed mb-4" style="color: var(--text-soft);">
+          During the survey, our fitter will take full measurements of the room, check floor levels across the entire footprint, assess wall and ceiling conditions, note service positions for the sink, dishwasher, and cooker, and review your kitchen plan against the actual space. Any discrepancies between the plan and the room are flagged before you commit, saving the cost and inconvenience of reordering components after delivery.
+        </p>
+        <p class="leading-relaxed" style="color: var(--text-soft);">
+          The survey is particularly valuable if your {label.toLowerCase()} kitchen includes a stone worktop, an island, or any bespoke elements. The fixed-price quote issued after the survey is the price you pay — there are no additions once work is underway unless you specifically request extra work.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- How to prepare -->
+  <section class="section">
+    <div class="container">
+      <div class="max-w-3xl fade-up">
+        <h2 class="text-3xl font-bold mb-4" style="color: var(--navy);">
+          How to Prepare for Your Kitchen Installation
+        </h2>
+        <p class="leading-relaxed mb-4" style="color: var(--text-soft);">
+          A well-prepared installation runs more smoothly and is less likely to overrun. The following steps help to ensure your project stays on track.
+        </p>
+        <p class="leading-relaxed mb-4" style="color: var(--text-soft);">
+          Confirm delivery of your kitchen before the installation start date. Late or incomplete deliveries are the most common cause of delays on kitchen projects. Check each component against the order when it arrives, and report any missing or damaged items to your supplier immediately — well before the fitter is due.
+        </p>
+        <p class="leading-relaxed mb-4" style="color: var(--text-soft);">
+          Arrange your electrician and plumber in advance. First-fix work — moving or extending cables and pipes — should be completed before the kitchen installation begins. Second-fix work (final connections) takes place once the units and worktops are in position. Agreeing these dates in sequence before the project starts avoids costly delays.
+        </p>
+        <p class="leading-relaxed mb-4" style="color: var(--text-soft);">
+          If you have a stone worktop, ensure your stone supplier has a template date booked within the first two days of the installation. The template is taken once the base units are level and in position. Fabrication typically takes 5–7 working days, so early scheduling prevents a gap in the programme.
+        </p>
+        <p class="leading-relaxed" style="color: var(--text-soft);">
+          Clear the kitchen space before the fitter arrives. Personal items, crockery, and any furniture stored in the kitchen should be moved to another room. The more accessible the space, the quicker the strip-out and the sooner productive installation time can begin.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section" style="background: var(--bg-light);">
+    <div class="container">
+      <div class="max-w-3xl fade-up">
+        <h2 class="text-3xl font-bold mb-8" style="color: var(--navy);">
+          Frequently Asked Questions
+        </h2>
+        <FAQ items={faqs} schemaId={`faq-cost-${size}`} />
+      </div>
+    </div>
+  </section>
+
+  <!-- Internal Links -->
+  <section class="section">
+    <div class="container fade-up">
+      <InternalLinks links={internalLinks} heading="Related Pages" />
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <CTA
+    heading="Book a Survey for an Accurate Quote"
+    subtext={`Get a fixed-price quote for your ${label.toLowerCase()} kitchen. Our £195 pre-installation survey is credited back in full when you confirm your date and pay your deposit. Covering Coventry, Warwickshire, and surrounding areas.`}
+    primaryLabel="Book Your Survey"
+    primaryHref="/survey/"
+    secondaryLabel="Call 07399 651836"
+    secondaryHref="tel:07399651836"
+    dark={true}
+  />
+
+  <Footer slot="footer" />
+  <StickyMobileCTA slot="sticky-cta" />
+</Base>

@@ -1,0 +1,274 @@
+---
+import Base from "../../layouts/Base.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import StickyMobileCTA from "../../components/StickyMobileCTA.astro";
+import Breadcrumbs from "../../components/Breadcrumbs.astro";
+import CTA from "../../components/CTA.astro";
+
+const title = "Kitchen Installation Comparisons | Install My Kitchen";
+const description = "Compare kitchen retailers, fitters, formats and routes side by side. Honest, practical comparisons to help you make the right choice for your kitchen installation.";
+const canonical = "https://www.installmykitchen.co.uk/comparisons/";
+
+const comparisons = [
+  {
+    slug: "wren-vs-howdens-kitchen-installation",
+    title: "Wren vs Howdens Kitchen Installation",
+    description: "Both supply rigid units but differ in supply route — Wren is consumer retail, Howdens is trade-only. Find out which suits independent fitting better.",
+    tags: ["Retailers", "Installation"],
+  },
+  {
+    slug: "magnet-vs-wren-kitchen-installation",
+    title: "Magnet vs Wren Kitchen Installation",
+    description: "Mid-market Magnet versus wide-range Wren — both rigid units, both well-suited to independent fitting. Compare installation differences.",
+    tags: ["Retailers", "Installation"],
+  },
+  {
+    slug: "ikea-vs-wren-kitchen-installation",
+    title: "IKEA vs Wren Kitchen Installation",
+    description: "Flat-pack IKEA versus pre-assembled Wren. IKEA assembly adds 1–2 days to fitting time. Compare cost, complexity and timelines.",
+    tags: ["Retailers", "Cost"],
+  },
+  {
+    slug: "howdens-vs-benchmarx-kitchen-installation",
+    title: "Howdens vs Benchmarx Kitchen Installation",
+    description: "Both are trade-only suppliers with rigid units. Howdens uses its own depot network; Benchmarx operates through Travis Perkins. Compare both.",
+    tags: ["Retailers", "Trade"],
+  },
+  {
+    slug: "wickes-vs-bq-kitchen-installation",
+    title: "Wickes vs B&Q Kitchen Installation",
+    description: "Accessible consumer kitchens at similar price points. Both need experienced independent fitting. Compare range, format and value.",
+    tags: ["Retailers", "Cost"],
+  },
+  {
+    slug: "independent-fitter-vs-retailer-fitter",
+    title: "Independent Fitter vs Retailer Fitter",
+    description: "An independent fitter works for you alone with no retailer allegiance. Compare flexibility, pricing, service and accountability.",
+    tags: ["Fitters", "Advice"],
+  },
+  {
+    slug: "supply-only-vs-supply-and-fit",
+    title: "Supply Only vs Supply and Fit",
+    description: "Buy from a retailer and hire your own fitter, or let the retailer supply and install? Compare cost, control and convenience.",
+    tags: ["Planning", "Advice"],
+  },
+  {
+    slug: "fitted-kitchen-cost-comparison",
+    title: "Fitted Kitchen Cost Comparison 2025",
+    description: "Total fitted kitchen costs by retailer tier, including installation. From budget flat-pack to premium rigid units — what should you budget?",
+    tags: ["Cost", "Planning"],
+  },
+  {
+    slug: "kitchen-fitter-vs-diy-kitchen-installation",
+    title: "Professional Fitter vs DIY Installation",
+    description: "DIY is possible for confident individuals, but mistakes are costly. Compare the real risks, costs and benefits of hiring a professional.",
+    tags: ["DIY", "Advice"],
+  },
+  {
+    slug: "german-kitchen-installation-vs-british",
+    title: "German Kitchen vs British Kitchen Installation",
+    description: "German kitchens (Häcker, Nobilia, Schuller) demand tighter tolerances than British brands. Compare installation requirements and complexity.",
+    tags: ["German", "Premium"],
+  },
+];
+
+const tagColours: Record<string, string> = {
+  Retailers: "bg-teal-50 text-teal-700",
+  Installation: "bg-slate-100 text-slate-600",
+  Cost: "bg-amber-50 text-amber-700",
+  Trade: "bg-blue-50 text-blue-700",
+  Fitters: "bg-emerald-50 text-emerald-700",
+  Advice: "bg-purple-50 text-purple-700",
+  Planning: "bg-orange-50 text-orange-700",
+  DIY: "bg-red-50 text-red-700",
+  German: "bg-gray-100 text-gray-700",
+  Premium: "bg-yellow-50 text-yellow-700",
+};
+---
+
+<Base
+  title={title}
+  description={description}
+  canonical={canonical}
+>
+  <Header slot="header" />
+
+  <!-- Page header -->
+  <section class="page-header" aria-label="Page header">
+    <div class="container">
+      <Breadcrumbs items={[{ label: "Comparisons", href: "/comparisons/" }]} />
+      <h1 class="page-h1">Kitchen Installation Comparisons — Make the Right Choice</h1>
+      <p class="page-sub">Side-by-side comparisons of retailers, fitters, formats and installation routes. No fluff — just the information you need to choose well.</p>
+    </div>
+  </section>
+
+  <!-- Comparison grid -->
+  <section class="section" style="background: #fff;" aria-labelledby="comparisons-heading">
+    <div class="container">
+      <h2 id="comparisons-heading" class="sr-only">All comparisons</h2>
+      <ul class="comparisons-grid" role="list" aria-label="Kitchen installation comparisons">
+        {comparisons.map((item) => (
+          <li role="listitem">
+            <a href={`/comparisons/${item.slug}/`} class="comparison-card">
+              <div class="comparison-card-body">
+                <p class="comparison-card-title">{item.title}</p>
+                <p class="comparison-card-desc">{item.description}</p>
+                <div class="comparison-card-tags" aria-hidden="true">
+                  {item.tags.map((tag) => (
+                    <span class={`comparison-tag ${tagColours[tag] ?? "bg-gray-100 text-gray-600"}`}>
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              </div>
+              <span class="comparison-card-cta" aria-hidden="true">
+                Read comparison
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="5" y1="12" x2="19" y2="12"/>
+                  <polyline points="12 5 19 12 12 19"/>
+                </svg>
+              </span>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <CTA
+    dark={true}
+    heading="Ready to Book Your Kitchen Installation?"
+    subtext="Whichever retailer you've chosen, our pre-installation survey gives you a fixed-price quote before you commit to a penny."
+    primaryLabel="Book a Survey — £195"
+    primaryHref="/survey/"
+    secondaryLabel="Call 07399 651836"
+    secondaryHref="tel:07399651836"
+  />
+
+  <Footer slot="footer" />
+  <StickyMobileCTA slot="sticky-cta" />
+</Base>
+
+<style>
+  .page-header {
+    background: var(--hero-gradient);
+    padding: 3rem 0 3.5rem;
+  }
+
+  .page-h1 {
+    font-size: clamp(1.625rem, 3vw, 2.5rem);
+    font-weight: 800;
+    color: #fff;
+    letter-spacing: -0.02em;
+    margin-top: 0.75rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .page-sub {
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 1.0625rem;
+    line-height: 1.6;
+    max-width: 560px;
+  }
+
+  .comparisons-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  @media (min-width: 640px) {
+    .comparisons-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .comparisons-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .comparison-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1.25rem;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    border: 1.5px solid var(--border);
+    background: #fff;
+    text-decoration: none;
+    transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
+    height: 100%;
+  }
+
+  .comparison-card:hover {
+    border-color: var(--teal);
+    box-shadow: 0 6px 24px rgba(15, 118, 110, 0.1);
+    transform: translateY(-2px);
+  }
+
+  .comparison-card:focus-visible {
+    outline: 2px solid var(--teal);
+    outline-offset: 2px;
+  }
+
+  .comparison-card-body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    flex: 1;
+  }
+
+  .comparison-card-title {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--charcoal);
+    line-height: 1.35;
+    margin: 0;
+  }
+
+  .comparison-card-desc {
+    font-size: 0.875rem;
+    color: var(--text-soft);
+    line-height: 1.6;
+    margin: 0;
+    flex: 1;
+  }
+
+  .comparison-card-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.375rem;
+    margin-top: 0.5rem;
+  }
+
+  .comparison-tag {
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0.2rem 0.625rem;
+    border-radius: 50px;
+    letter-spacing: 0.02em;
+  }
+
+  .comparison-card-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.375rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--teal);
+    transition: gap 0.15s, color 0.15s;
+  }
+
+  .comparison-card:hover .comparison-card-cta {
+    gap: 0.625rem;
+    color: var(--teal-bright);
+  }
+</style>

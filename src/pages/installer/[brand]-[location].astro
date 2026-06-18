@@ -1,0 +1,308 @@
+---
+import Base from "../../layouts/Base.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import StickyMobileCTA from "../../components/StickyMobileCTA.astro";
+import Breadcrumbs from "../../components/Breadcrumbs.astro";
+import AnswerBlock from "../../components/AnswerBlock.astro";
+import FAQ from "../../components/FAQ.astro";
+import SupplierLogos from "../../components/SupplierLogos.astro";
+import InternalLinks from "../../components/InternalLinks.astro";
+import CTA from "../../components/CTA.astro";
+
+import retailersData from "../../data/retailers.json";
+import locationsData from "../../data/locations.json";
+import faqsData from "../../data/faqs.json";
+
+const PRIORITY_LOCATION_SLUGS = [
+  "coventry",
+  "canley",
+  "tile-hill",
+  "earlsdon",
+  "allesley",
+  "rugby",
+  "nuneaton",
+  "bedworth",
+  "leamington-spa",
+  "kenilworth",
+  "warwick",
+  "solihull",
+  "stratford-upon-avon",
+  "southam",
+  "hinckley",
+];
+
+export function getStaticPaths() {
+  const PRIORITY_LOCATION_SLUGS = [
+    "coventry",
+    "canley",
+    "tile-hill",
+    "earlsdon",
+    "allesley",
+    "rugby",
+    "nuneaton",
+    "bedworth",
+    "leamington-spa",
+    "kenilworth",
+    "warwick",
+    "solihull",
+    "stratford-upon-avon",
+    "southam",
+    "hinckley",
+  ];
+
+  const priorityLocations = PRIORITY_LOCATION_SLUGS
+    .map((slug) => locationsData.find((l) => l.slug === slug))
+    .filter(Boolean) as typeof locationsData;
+
+  const paths: { params: { brand: string; location: string }; props: { retailer: typeof retailersData[0]; location: typeof locationsData[0]; retailerIndex: number; locationIndex: number } }[] = [];
+
+  retailersData.forEach((retailer, retailerIndex) => {
+    priorityLocations.forEach((location, locationIndex) => {
+      paths.push({
+        params: { brand: retailer.slug, location: location.slug },
+        props: { retailer, location, retailerIndex, locationIndex },
+      });
+    });
+  });
+
+  return paths;
+}
+
+const { retailer, location, retailerIndex, locationIndex } = Astro.props;
+const { displayName, slug: brandSlug, description: retailerDescription, installNote } = retailer;
+const { name: locationName, slug: locationSlug, county, description: locationDescription, nearby } = location;
+
+const canonical = `https://www.installmykitchen.co.uk/installer/${brandSlug}-${locationSlug}/`;
+
+// Title ≤60 chars
+const rawTitle = `${displayName} Kitchen Installer in ${locationName} | Install My Kitchen`;
+const title = rawTitle.length <= 60
+  ? rawTitle
+  : `${displayName} Installer ${locationName} | Install My Kitchen`;
+
+// Meta 140-160 chars
+const metaDescription = `Independent ${displayName} kitchen installation in ${locationName}, ${county}. Expert fitters, not affiliated with ${displayName}. Free survey available — fixed-price quotes guaranteed.`;
+
+// FAQ — offset by both retailer and location index for variety
+const allFaqs = [
+  ...faqsData.general,
+  ...faqsData.retailers,
+  ...faqsData.costs,
+  ...faqsData.survey,
+];
+const faqOffset = (retailerIndex * 3 + locationIndex * 2) % allFaqs.length;
+const faqItems = [
+  allFaqs[faqOffset % allFaqs.length],
+  allFaqs[(faqOffset + 1) % allFaqs.length],
+  allFaqs[(faqOffset + 2) % allFaqs.length],
+  allFaqs[(faqOffset + 3) % allFaqs.length],
+];
+
+// Nearby combos — pick 2 nearby areas paired with same retailer
+const nearbyAreaSlugs = (nearby as string[]).slice(0, 2);
+const nearbyComboLinks = nearbyAreaSlugs.map((nearbySlug) => {
+  const nearbyLoc = locationsData.find((l) => l.slug === nearbySlug);
+  return nearbyLoc
+    ? {
+        label: `${displayName} Installation in ${nearbyLoc.name}`,
+        href: `/installer/${brandSlug}-${nearbySlug}/`,
+        description: `${nearbyLoc.county} — independent ${displayName} fitting`,
+      }
+    : null;
+}).filter(Boolean) as { label: string; href: string; description: string }[];
+
+// Internal links
+const internalLinks = [
+  {
+    label: `${displayName} Kitchen Installation`,
+    href: `/retailers/${brandSlug}/`,
+    description: `All about fitting ${displayName} kitchens`,
+  },
+  {
+    label: `Kitchen Installation in ${locationName}`,
+    href: `/areas/${locationSlug}/`,
+    description: `Our full service in ${locationName}`,
+  },
+  ...nearbyComboLinks,
+];
+
+// BreadcrumbList JSON-LD
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://www.installmykitchen.co.uk/" },
+    { "@type": "ListItem", position: 2, name: "Areas", item: "https://www.installmykitchen.co.uk/areas/" },
+    { "@type": "ListItem", position: 3, name: locationName, item: `https://www.installmykitchen.co.uk/areas/${locationSlug}/` },
+    { "@type": "ListItem", position: 4, name: `${displayName} Installation`, item: canonical },
+  ],
+};
+
+// Service JSON-LD
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  name: `${displayName} Kitchen Installation in ${locationName}`,
+  provider: {
+    "@type": "LocalBusiness",
+    name: "Install My Kitchen",
+    url: "https://www.installmykitchen.co.uk",
+    telephone: "07399651836",
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: "242 Hollyfast Road, Coundon",
+      addressLocality: "Coventry",
+      postalCode: "CV6 2AH",
+      addressCountry: "GB",
+    },
+  },
+  areaServed: {
+    "@type": "Place",
+    name: locationName,
+  },
+  description: `Independent installation service for ${displayName} kitchens in ${locationName}, ${county}. Install My Kitchen is not affiliated with ${displayName}.`,
+  serviceType: "Kitchen Installation",
+};
+---
+
+<Base
+  title={title}
+  description={metaDescription}
+  canonical={canonical}
+>
+  <script slot="schema" type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+  <script slot="schema" type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
+
+  <Header slot="header" />
+
+  <div class="container py-6">
+    <Breadcrumbs
+      items={[
+        { label: "Areas", href: "/areas/" },
+        { label: locationName, href: `/areas/${locationSlug}/` },
+        { label: `${displayName} Installation`, href: canonical },
+      ]}
+    />
+  </div>
+
+  <!-- Hero -->
+  <section class="section" style="background: var(--bg-light);">
+    <div class="container">
+      <div class="max-w-3xl">
+        <h1 class="text-4xl md:text-5xl font-extrabold mb-5 leading-tight" style="color: var(--navy);">
+          {displayName} Kitchen Installation in {locationName}
+        </h1>
+        <AnswerBlock
+          answer={`Install My Kitchen provides independent ${displayName} kitchen installation across ${locationName}. We fit kitchens purchased from ${displayName} — we are not affiliated with them.`}
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 1: About this retailer + location -->
+  <section class="section">
+    <div class="container">
+      <div class="max-w-3xl fade-up">
+        <h2 class="text-3xl font-bold mb-4" style="color: var(--navy);">
+          Fitting {displayName} Kitchens in {locationName}
+        </h2>
+        <p class="text-lg leading-relaxed mb-4" style="color: var(--text-soft);">
+          {retailerDescription}
+        </p>
+        <p class="leading-relaxed mb-4" style="color: var(--text-soft);">
+          {locationDescription}
+        </p>
+        <p class="leading-relaxed" style="color: var(--text-soft);">
+          Install My Kitchen is a fully independent fitting service. We install {displayName} kitchens throughout {locationName} and the wider {county} area, working solely for you rather than the retailer. Our impartial approach means you receive honest, technical advice throughout your project without any pressure to spend more than you need to.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 2: Delivery & logistics -->
+  <section class="section" style="background: var(--bg-light);">
+    <div class="container">
+      <div class="max-w-3xl fade-up">
+        <h2 class="text-3xl font-bold mb-4" style="color: var(--navy);">
+          What to Expect: {displayName} Installation in {locationName}
+        </h2>
+        <p class="leading-relaxed mb-4" style="color: var(--text-soft);">
+          {installNote}
+        </p>
+        <p class="leading-relaxed mb-4" style="color: var(--text-soft);">
+          Every {displayName} kitchen installation we carry out in {locationName} begins with a pre-installation survey at your home. One of our experienced fitters visits to take detailed measurements, check your {displayName} kitchen plan against the actual room dimensions, and identify any issues — such as out-of-plumb walls, awkward pipework, or ceiling height variations — before they become costly problems on installation day.
+        </p>
+        <p class="leading-relaxed" style="color: var(--text-soft);">
+          On the day itself, we begin with a full strip-out of your existing kitchen before carrying out a dry fit of all new carcasses to confirm the layout before anything is permanently fixed. Every door, drawer, hinge, and fitting is carefully adjusted and our lead fitter carries out a thorough snagging walk-round with you before the job is signed off.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 3: Why independent fitting matters -->
+  <section class="section">
+    <div class="container">
+      <div class="max-w-3xl fade-up">
+        <h2 class="text-3xl font-bold mb-4" style="color: var(--navy);">
+          Why Choose an Independent Fitter for Your {displayName} Kitchen?
+        </h2>
+        <p class="leading-relaxed mb-4" style="color: var(--text-soft);">
+          Many homeowners in {locationName} choose to separate the supply of their kitchen from the installation, and for good reason. An independent fitter like Install My Kitchen works solely to your brief, without any commercial incentive to upsell you on additional products or upgrades. You receive a fixed-price installation quote based on the actual work involved — not a package tied to a retailer's margin.
+        </p>
+        <p class="leading-relaxed mb-4" style="color: var(--text-soft);">
+          Our fitters are experienced across the full {displayName} product range and understand the specific requirements of fitting their cabinetry to a professional standard. Whether your {displayName} kitchen is a straightforward galley layout or a complex multi-run design with an island and tall housing units, we have the expertise to deliver an excellent result.
+        </p>
+        <p class="leading-relaxed" style="color: var(--text-soft);">
+          We cover {locationName} as part of our broader service area across Coventry, Warwickshire, and the surrounding region. Our local knowledge of {locationName}'s property types — and the layout characteristics they typically present — means we can plan and execute your installation efficiently, minimising disruption to your household.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Supplier Logos -->
+  <section class="section" style="background: var(--bg-light);">
+    <div class="container">
+      <p class="text-sm mb-6" style="color: var(--text-soft);">
+        Install My Kitchen is not affiliated with any kitchen retailer. Logos shown for identification purposes only.
+      </p>
+      <SupplierLogos />
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section">
+    <div class="container">
+      <div class="max-w-3xl fade-up">
+        <h2 class="text-3xl font-bold mb-8" style="color: var(--navy);">
+          Frequently Asked Questions
+        </h2>
+        <FAQ items={faqItems} schemaId={`faq-installer-${brandSlug}-${locationSlug}`} />
+      </div>
+    </div>
+  </section>
+
+  <!-- Internal Links -->
+  <section class="section" style="background: var(--bg-light);">
+    <div class="container fade-up">
+      <InternalLinks
+        links={internalLinks}
+        heading="Related Pages"
+      />
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <CTA
+    heading={`Book Your ${displayName} Installation Survey in ${locationName}`}
+    subtext={`Our £195 pre-installation survey gives you a fixed-price quote for your ${displayName} kitchen in ${locationName}. The fee is credited back in full when you proceed.`}
+    primaryLabel="Book Your Survey"
+    primaryHref="/survey/"
+    secondaryLabel="Call 07399 651836"
+    secondaryHref="tel:07399651836"
+    dark={true}
+  />
+
+  <Footer slot="footer" />
+  <StickyMobileCTA slot="sticky-cta" />
+</Base>

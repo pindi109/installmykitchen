@@ -1,0 +1,294 @@
+---
+import Base from "../../layouts/Base.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import StickyMobileCTA from "../../components/StickyMobileCTA.astro";
+import Breadcrumbs from "../../components/Breadcrumbs.astro";
+import CTA from "../../components/CTA.astro";
+
+const title = "Kitchen Installation Questions Answered | Install My Kitchen";
+const description = "Find clear answers to all your kitchen installation questions — costs, timescales, what's included, retailer fitting and more.";
+const canonical = "https://www.installmykitchen.co.uk/answers/";
+
+const questions = [
+  {
+    slug: "how-much-does-kitchen-installation-cost",
+    title: "How Much Does Kitchen Installation Cost?",
+    description: "UK cost ranges for small, medium and large kitchens, what affects your final quote, and why a survey is the only way to get an accurate price.",
+  },
+  {
+    slug: "how-long-does-kitchen-installation-take",
+    title: "How Long Does Kitchen Installation Take?",
+    description: "Day-by-day timescales for kitchens of every size, and the key factors that can extend or shorten your installation timeline.",
+  },
+  {
+    slug: "do-i-need-a-survey-before-kitchen-installation",
+    title: "Do I Need a Survey Before Kitchen Installation?",
+    description: "Why a pre-installation survey protects you, what our surveyors check, and how the £195 fee is credited back on booking.",
+  },
+  {
+    slug: "what-is-a-dry-fit-kitchen",
+    title: "What Is a Dry Fit Kitchen?",
+    description: "What a dry fit (or trial fit) involves, when it is used, and how it prevents costly problems during permanent installation.",
+  },
+  {
+    slug: "can-you-fit-an-ikea-kitchen",
+    title: "Can You Fit an IKEA Kitchen?",
+    description: "Yes — we install IKEA kitchens across Coventry and Warwickshire. What to expect with flat-pack assembly and why it takes a little longer.",
+  },
+  {
+    slug: "can-you-fit-a-wren-kitchen",
+    title: "Can You Fit a Wren Kitchen?",
+    description: "Yes — we independently install Wren kitchens. Wren delivers fully assembled, making installation efficient. We are not affiliated with Wren.",
+  },
+  {
+    slug: "can-you-fit-a-howdens-kitchen",
+    title: "Can You Fit a Howdens Kitchen?",
+    description: "Yes — we install Howdens kitchens from trade supply. What to expect with trade-quality units and our independent approach.",
+  },
+  {
+    slug: "can-you-fit-a-magnet-kitchen",
+    title: "Can You Fit a Magnet Kitchen?",
+    description: "Yes — we independently install Magnet kitchens. Well-built units typically supplied ready-assembled or in large sections.",
+  },
+  {
+    slug: "what-is-included-in-kitchen-installation",
+    title: "What Is Included in Kitchen Installation?",
+    description: "Everything covered in our installation service — cabinets, worktops, doors, appliances, sinks, plinths, cornices, and more.",
+  },
+  {
+    slug: "do-i-need-a-plumber-for-kitchen-installation",
+    title: "Do I Need a Plumber for Kitchen Installation?",
+    description: "Yes — first and second-fix plumbing requires a qualified plumber. How to co-ordinate your trades so installation day runs smoothly.",
+  },
+  {
+    slug: "how-do-i-prepare-for-kitchen-installation",
+    title: "How Do I Prepare for Kitchen Installation?",
+    description: "A practical checklist covering delivery, first-fix services, room clearance, and worktop measurements before installation day.",
+  },
+  {
+    slug: "what-is-kitchen-installation-cost-per-unit",
+    title: "What Is Kitchen Installation Cost Per Unit?",
+    description: "Typical per-unit costs of £120–£280, what makes individual units cost more, and how a survey gives you an accurate figure.",
+  },
+  {
+    slug: "how-much-is-kitchen-labour-per-day",
+    title: "How Much Is Kitchen Fitting Labour Per Day?",
+    description: "Day rates for kitchen fitters in Coventry and Warwickshire — typically £300–£400 — and what influences how many days your job takes.",
+  },
+  {
+    slug: "kitchen-installer-near-me-coventry",
+    title: "Kitchen Installer Near Me — Coventry & Warwickshire",
+    description: "Where Install My Kitchen is based, the areas we cover, and how to get in touch or book a survey.",
+  },
+  {
+    slug: "kitchen-fitter-coventry",
+    title: "Kitchen Fitter Coventry | Install My Kitchen",
+    description: "Specialist independent kitchen fitting across all Coventry postcodes and Warwickshire from all major retailers.",
+  },
+  {
+    slug: "how-to-find-a-kitchen-fitter",
+    title: "How to Find a Reliable Kitchen Fitter",
+    description: "What to check, questions to ask, and red flags to avoid when choosing an independent fitter for your kitchen installation.",
+  },
+  {
+    slug: "independent-kitchen-installer-vs-retailer-fitter",
+    title: "Independent Kitchen Installer vs Retailer Fitter — Which Is Better?",
+    description: "An honest comparison of independent installers and retailer-appointed teams — costs, flexibility, loyalty, and what most retailers actually prefer.",
+  },
+  {
+    slug: "kitchen-installation-coventry-cost",
+    title: "Kitchen Installation Cost in Coventry — 2025 Guide",
+    description: "Coventry-specific cost guide covering small, medium and large kitchens, what drives prices up, and how to get a fixed quote.",
+  },
+  {
+    slug: "what-size-kitchen-can-you-fit",
+    title: "What Size Kitchen Can You Fit?",
+    description: "From 6-unit galley kitchens to large open-plan kitchens with 30+ units. How we handle every layout including extensions.",
+  },
+  {
+    slug: "do-you-fit-worktops",
+    title: "Do You Fit Worktops?",
+    description: "Yes — laminate, solid wood, quartz, granite and compact laminate. How templating works for stone and what we supply directly.",
+  },
+  {
+    slug: "can-you-fit-appliances",
+    title: "Can You Fit Appliances?",
+    description: "Yes — ovens, hobs, dishwashers, washing machines, extractors and fridges. What requires a separate electrician and why.",
+  },
+  {
+    slug: "what-happens-during-kitchen-survey",
+    title: "What Happens During a Kitchen Installation Survey?",
+    description: "Exactly what our surveyor checks in your home — dimensions, services, appliance positions, risks — and how the fixed quote is produced.",
+  },
+  {
+    slug: "kitchen-installation-warwickshire",
+    title: "Kitchen Installation Warwickshire | Install My Kitchen",
+    description: "Coverage across Rugby, Nuneaton, Leamington Spa, Kenilworth, Warwick, Stratford-upon-Avon and all Warwickshire areas.",
+  },
+  {
+    slug: "shaker-kitchen-installation-coventry",
+    title: "Shaker Kitchen Installation Coventry",
+    description: "Shaker kitchen installation from Wren, Howdens, Magnet, IKEA and all major retailers across Coventry and Warwickshire.",
+  },
+  {
+    slug: "how-to-book-kitchen-installation",
+    title: "How to Book Kitchen Installation",
+    description: "Step-by-step from survey to installation date — the booking process, deposit, and how to secure your slot.",
+  },
+];
+---
+
+<Base
+  title={title}
+  description={description}
+  canonical={canonical}
+>
+  <Header slot="header" />
+
+  <div class="container py-6">
+    <Breadcrumbs
+      items={[
+        { label: "Questions & Answers", href: "/answers/" },
+      ]}
+    />
+  </div>
+
+  <!-- Hero -->
+  <section class="section" style="background: var(--bg-light);">
+    <div class="container">
+      <div class="max-w-3xl">
+        <h1 class="text-4xl md:text-5xl font-extrabold mb-5 leading-tight" style="color: var(--navy);">
+          Kitchen Installation Questions &amp; Answers
+        </h1>
+        <p class="text-lg leading-relaxed" style="color: var(--text-soft);">
+          Clear, straightforward answers to the questions homeowners ask most before booking a kitchen installation. No jargon, no fluff — just practical information from an experienced independent fitting team based in Coventry.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Questions grid -->
+  <section class="section">
+    <div class="container">
+      <div class="question-grid">
+        {questions.map((q) => (
+          <a href={`/answers/${q.slug}/`} class="question-card">
+            <div class="question-card-body">
+              <h2 class="question-card-title">{q.title}</h2>
+              <p class="question-card-desc">{q.description}</p>
+            </div>
+            <span class="question-card-arrow" aria-hidden="true">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"/>
+                <polyline points="12 5 19 12 12 19"/>
+              </svg>
+            </span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <CTA
+    heading="Ready to Book Your Kitchen Installation?"
+    subtext="Book a £195 pre-installation survey and get a fixed-price quote for your kitchen. The survey fee is credited back in full when you proceed."
+    primaryLabel="Book Your Survey"
+    primaryHref="/survey/"
+    secondaryLabel="Call 07399 651836"
+    secondaryHref="tel:07399651836"
+    dark={true}
+  />
+
+  <Footer slot="footer" />
+  <StickyMobileCTA slot="sticky-cta" />
+</Base>
+
+<style>
+  .question-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  @media (min-width: 640px) {
+    .question-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .question-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .question-card {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 1.25rem 1.25rem 1.25rem 1.5rem;
+    border-radius: 0.75rem;
+    border: 1.5px solid #E5E7EB;
+    background: #fff;
+    text-decoration: none;
+    transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
+  }
+
+  .question-card:hover {
+    border-color: var(--teal);
+    box-shadow: 0 4px 18px rgba(15, 118, 110, 0.12);
+    transform: translateY(-2px);
+  }
+
+  .question-card:focus-visible {
+    outline: 2px solid var(--teal);
+    outline-offset: 2px;
+  }
+
+  .question-card-body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.375rem;
+    min-width: 0;
+  }
+
+  .question-card-title {
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1.35;
+    color: var(--navy);
+    margin: 0;
+    transition: color 0.15s;
+  }
+
+  .question-card:hover .question-card-title {
+    color: var(--teal);
+  }
+
+  .question-card-desc {
+    font-size: 0.875rem;
+    line-height: 1.55;
+    color: var(--text-soft);
+    margin: 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .question-card-arrow {
+    flex-shrink: 0;
+    color: var(--teal);
+    opacity: 0.4;
+    margin-top: 0.2rem;
+    transition: opacity 0.2s, transform 0.2s;
+  }
+
+  .question-card:hover .question-card-arrow {
+    opacity: 1;
+    transform: translateX(3px);
+  }
+</style>

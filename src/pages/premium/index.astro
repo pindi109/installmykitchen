@@ -1,0 +1,145 @@
+---
+import Base from "../../layouts/Base.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import StickyMobileCTA from "../../components/StickyMobileCTA.astro";
+import Breadcrumbs from "../../components/Breadcrumbs.astro";
+import AnswerBlock from "../../components/AnswerBlock.astro";
+import SupplierLogos from "../../components/SupplierLogos.astro";
+import CTA from "../../components/CTA.astro";
+
+import premiumData from "../../data/premium.json";
+
+const canonical = "https://www.installmykitchen.co.uk/premium/";
+const title = "Premium Kitchen Installation — Mereway, Häcker, Nobilia & More";
+const metaDescription = "Expert installation for premium & luxury kitchen brands including Mereway, Häcker, Nobilia, Neptune, deVOL & more. Independent fitting across Coventry & Warwickshire.";
+---
+
+<Base
+  title={title}
+  description={metaDescription}
+  canonical={canonical}
+>
+  <Header slot="header" />
+
+  <div class="container py-6">
+    <Breadcrumbs
+      items={[
+        { label: "Premium Kitchens", href: "/premium/" },
+      ]}
+    />
+  </div>
+
+  <!-- Hero -->
+  <section class="section" style="background: var(--bg-light);">
+    <div class="container">
+      <div class="max-w-3xl">
+        <h1 class="text-4xl md:text-5xl font-extrabold mb-5 leading-tight" style="color: var(--navy);">
+          Premium Kitchen Installation — Mereway, Häcker, Nobilia &amp; More
+        </h1>
+        <AnswerBlock
+          answer="Install My Kitchen provides specialist independent installation for premium and luxury kitchen brands across Coventry and Warwickshire. Whether your kitchen is German-engineered, British handcrafted, or bespoke in-frame, our experienced team has the skills to fit it to the standard it deserves."
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- Intro content -->
+  <section class="section">
+    <div class="container">
+      <div class="max-w-3xl fade-up">
+        <h2 class="text-3xl font-bold mb-4" style="color: var(--navy);">
+          Why Premium Kitchens Require Specialist Installation
+        </h2>
+        <p class="text-lg leading-relaxed mb-4" style="color: var(--text-soft);">
+          Premium kitchen brands operate to engineering tolerances that leave no room for imprecise fitting. German manufacturers such as Häcker, Nobilia, and Rotpunkt produce carcasses machined to fractions of a millimetre, and achieving the characteristic flush, gap-free finish of these kitchens requires a fitter with specific experience of the product's system and fixings.
+        </p>
+        <p class="leading-relaxed mb-4" style="color: var(--text-soft);">
+          British handcrafted brands — including Mereway, Tom Howley, Harvey Jones, and Neptune — present a different set of demands. Their painted and in-frame cabinetry requires careful scribing to irregular walls, precise hinge alignment for large painted doors, and an understanding of how solid timber behaves in a domestic environment. Rushing any of these steps risks visible imperfections that undermine thousands of pounds of investment.
+        </p>
+        <p class="leading-relaxed" style="color: var(--text-soft);">
+          Bespoke manufacturers such as Smallbone of Devizes, deVOL, and John Lewis of Hungerford typically involve close collaboration between the client, the kitchen designer, and the installation team throughout the project. Our surveyors are comfortable working within these multi-party arrangements and will co-ordinate with your designer and the manufacturer's delivery team to ensure the project proceeds smoothly.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Premium brand grid -->
+  <section class="section" style="background: var(--bg-light);">
+    <div class="container">
+      <div class="fade-up">
+        <h2 class="text-3xl font-bold mb-4" style="color: var(--navy);">
+          Premium Brands We Install
+        </h2>
+        <p class="text-lg leading-relaxed mb-10 max-w-2xl" style="color: var(--text-soft);">
+          We have experience fitting the following premium and luxury kitchen brands, among others. If your brand is not listed, please get in touch — we are likely able to help.
+        </p>
+        <ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 list-none p-0 m-0">
+          {premiumData.map((brand) => (
+            <li class="p-6 rounded-xl border" style="border-color: #E5E7EB; background: #fff; border-top: 4px solid var(--gold);">
+              <h3 class="text-lg font-bold mb-3" style="color: var(--navy);">{brand.name}</h3>
+              <p class="text-sm leading-relaxed" style="color: var(--text-soft);">{brand.description}</p>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Survey importance -->
+  <section class="section">
+    <div class="container">
+      <div class="max-w-3xl fade-up">
+        <h2 class="text-3xl font-bold mb-4" style="color: var(--navy);">
+          The Importance of the Survey for Premium Projects
+        </h2>
+        <p class="leading-relaxed mb-4" style="color: var(--text-soft);">
+          For premium and luxury kitchen projects, the pre-installation survey is not merely advisable — it is essential. A kitchen worth £20,000 or more cannot be installed on the basis of approximate measurements. Our surveyors visit your home with laser measuring equipment to take a complete dimensional record of the space, assess the condition of the walls, floor, and ceiling, and review the manufacturer's drawings against the reality of the room.
+        </p>
+        <p class="leading-relaxed mb-4" style="color: var(--text-soft);">
+          At this stage we identify any modifications required before the kitchen arrives — whether that is remedial plastering to bring walls into plumb, re-routing of pipework to suit the new layout, or adjustments to the kitchen plan itself. Catching these issues before delivery avoids the cost and delay of corrective work after installation has begun.
+        </p>
+        <p class="leading-relaxed" style="color: var(--text-soft);">
+          Our survey fee is £195, credited back in full when you proceed with the installation. For a premium project, this investment is returned many times over in avoided complications and a better finished result.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Precision & process -->
+  <section class="section" style="background: var(--bg-light);">
+    <div class="container">
+      <div class="max-w-3xl fade-up">
+        <h2 class="text-3xl font-bold mb-4" style="color: var(--navy);">
+          Precision Installation for Handmade &amp; German Kitchens
+        </h2>
+        <p class="leading-relaxed mb-4" style="color: var(--text-soft);">
+          German-engineered kitchens are characterised by their consistent precision: every carcass is machined to the same dimensions, every drawer runs on the same hardware, and every fitting is designed to align perfectly. Achieving this in the real world of domestic properties — where floors are rarely perfectly level and walls are rarely perfectly straight — requires skilled use of packing, scribing, and levelling techniques that come only with experience.
+        </p>
+        <p class="leading-relaxed mb-4" style="color: var(--text-soft);">
+          Handmade British kitchens, particularly those with painted or in-frame construction, demand a different kind of precision. Large painted doors are susceptible to movement if the cabinet structure is not perfectly level from the outset. In-frame doors must sit within their frame with consistent, even gaps on all sides — a standard that requires careful adjustment during installation and a snagging process that checks every door and drawer before sign-off.
+        </p>
+        <p class="leading-relaxed" style="color: var(--text-soft);">
+          We do not rush premium projects. Our lead fitters allocate the time needed to deliver the standard these kitchens require, and we remain on site until every detail is correct.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Supplier Logos -->
+  <SupplierLogos heading="We Also Install All Standard Retail Brands" />
+
+  <!-- CTA -->
+  <CTA
+    heading="Book a Survey for Your Premium Kitchen"
+    subtext="Our detailed pre-installation survey ensures your premium kitchen is measured and planned to the standard it deserves. Survey fee £195, credited back on booking."
+    primaryLabel="Book Your Survey"
+    primaryHref="/survey/"
+    secondaryLabel="Call 07399 651836"
+    secondaryHref="tel:07399651836"
+    dark={true}
+  />
+
+  <Footer slot="footer" />
+  <StickyMobileCTA slot="sticky-cta" />
+</Base>

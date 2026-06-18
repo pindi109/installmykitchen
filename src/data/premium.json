@@ -1,0 +1,62 @@
+[
+  {
+    "slug": "mereway",
+    "name": "Mereway Kitchens",
+    "description": "Mereway is a British manufacturer producing handcrafted in-frame and painted shaker kitchens from their Northamptonshire factory, supplying independent retailers with a premium product that combines traditional craftsmanship with modern finishing techniques."
+  },
+  {
+    "slug": "hacker",
+    "name": "Häcker Kitchens",
+    "description": "Häcker is a German family-owned kitchen manufacturer renowned for precision engineering, a comprehensive range of handleless and contemporary designs, and industry-leading sustainability credentials including FSC certification and carbon-neutral production."
+  },
+  {
+    "slug": "nobilia",
+    "name": "Nobilia",
+    "description": "Nobilia is Europe's largest kitchen manufacturer, producing over 3,000 kitchens per day in their German factories with a relentless focus on quality control, innovative storage solutions, and an extensive range of finishes from gloss lacquer to authentic timber veneers."
+  },
+  {
+    "slug": "rotpunkt",
+    "name": "Rotpunkt",
+    "description": "Rotpunkt is a premium German kitchen brand distinguished by their zero-formaldehyde 'Green Zero' carcass construction, exceptional soft-close hardware throughout, and a refined collection of handleless and framed door designs with a strong environmental ethos."
+  },
+  {
+    "slug": "pronorm",
+    "name": "Pronorm",
+    "description": "Pronorm is a high-end German kitchen manufacturer offering a collection of beautifully crafted contemporary and handleless kitchens, available in an extensive palette of lacquer, wood, and glass finishes with a well-earned reputation for superior build quality and detailing."
+  },
+  {
+    "slug": "smallbone",
+    "name": "Smallbone of Devizes",
+    "description": "Smallbone of Devizes is one of Britain's most prestigious bespoke kitchen makers, handcrafting in-frame and painted kitchens at their Wiltshire workshops for clients who demand an entirely personalised design and an heirloom-quality finish."
+  },
+  {
+    "slug": "tom-howley",
+    "name": "Tom Howley",
+    "description": "Tom Howley is a British bespoke kitchen company celebrated for their beautifully proportioned painted shaker and in-frame designs, combining traditional cabinetmaking techniques with a refined contemporary sensibility to create timeless kitchens for discerning clients."
+  },
+  {
+    "slug": "harvey-jones",
+    "name": "Harvey Jones",
+    "description": "Harvey Jones is a British kitchen designer and manufacturer known for their extensive palette of hand-painted finishes, solid timber door options, and a design-led approach that creates characterful, individual kitchens with a strong sense of personal style."
+  },
+  {
+    "slug": "neptune",
+    "name": "Neptune",
+    "description": "Neptune is a British lifestyle and kitchen brand producing beautifully crafted painted shaker and in-frame kitchens with a distinctly refined country aesthetic, complemented by a carefully curated collection of furniture, lighting, and homewares."
+  },
+  {
+    "slug": "devol",
+    "name": "deVOL Kitchens",
+    "description": "deVOL is a Leicestershire-based bespoke kitchen company famous for their Real Shaker and Classic English kitchens, blending characterful handmade cabinetry, period-appropriate hardware, and a deeply considered design philosophy that has established them as one of the most influential kitchen brands in the world."
+  },
+  {
+    "slug": "john-lewis",
+    "name": "John Lewis of Hungerford",
+    "description": "John Lewis of Hungerford (unrelated to the department store) is a British hand-built kitchen company specialising in shaker and painted cabinetry crafted from solid timber in their Berkshire workshops, offering a genuinely bespoke service with a focus on quality materials and understated elegance."
+  },
+  {
+    "slug": "homebase",
+    "name": "Homebase Kitchens",
+    "description": "Homebase offers an accessible range of kitchen cabinetry at competitive prices through their UK-wide stores, providing a practical entry-level option for homeowners seeking a full kitchen replacement without the premium pricing associated with specialist kitchen retailers."
+  }
+]

@@ -1,0 +1,122 @@
+[
+  {
+    "slug": "shaker",
+    "name": "Shaker",
+    "description": "Shaker kitchens are defined by their clean-lined, recessed-panel door fronts, drawing on a timeless American craft tradition that translates beautifully into the British home. They sit equally well in period cottages and modern extensions, making them the most versatile and consistently popular kitchen style in the UK.",
+    "features": [
+      "Recessed centre-panel door profile",
+      "Available painted or in natural wood finishes",
+      "Suits both traditional and contemporary interiors",
+      "Wide range of colour options across all retailers"
+    ],
+    "popular": true
+  },
+  {
+    "slug": "handleless",
+    "name": "Handleless",
+    "description": "Handleless kitchens achieve their sleek, uninterrupted look through the use of integrated J-pull channels or push-to-open mechanisms in place of traditional handles. They are a staple of modern open-plan living spaces and pair naturally with high-gloss, matt lacquer, or textured slab door fronts.",
+    "features": [
+      "Integrated J-pull or push-to-open mechanisms",
+      "Clean, uninterrupted door fronts",
+      "Ideal for open-plan kitchen-diners",
+      "Low maintenance with no handle hardware to clean"
+    ],
+    "popular": true
+  },
+  {
+    "slug": "modern",
+    "name": "Modern",
+    "description": "Modern kitchens prioritise clean lines, functional layouts, and a pared-back aesthetic that focuses attention on materials and finishes rather than decorative detail. They typically feature slab doors, integrated appliances, and a restricted colour palette of whites, greys, and neutral tones.",
+    "features": [
+      "Flat slab door fronts with minimal detailing",
+      "Integrated appliances for a seamless look",
+      "Neutral colour palettes in gloss or matt finishes",
+      "Emphasis on ergonomic layout and storage efficiency"
+    ],
+    "popular": true
+  },
+  {
+    "slug": "traditional",
+    "name": "Traditional",
+    "description": "Traditional kitchens celebrate classic British design, featuring raised or recessed panel doors, ornate cornicing, and decorative handles that evoke the charm of a well-established country home. They work particularly well in older properties and are most commonly specified in cream, sage green, and navy blue finishes.",
+    "features": [
+      "Raised or recessed panel door profiles",
+      "Decorative cornicing and plinth detailing",
+      "Classic ceramic or cup-pull hardware",
+      "Suits Victorian, Edwardian, and period properties"
+    ],
+    "popular": false
+  },
+  {
+    "slug": "contemporary",
+    "name": "Contemporary",
+    "description": "Contemporary kitchens blend modern functionality with warmer materials and softer lines than a strictly minimalist approach, often mixing handleless uppers with shaker lowers or combining timber accents with painted cabinets. This style bridges the gap between ultra-modern and traditional, appealing to homeowners who want a current look without sacrificing warmth.",
+    "features": [
+      "Mix of materials such as timber, stone, and lacquer",
+      "Flexible layouts combining different door profiles",
+      "Warmer tones including sage, navy, and warm white",
+      "Suits new-build and extended properties"
+    ],
+    "popular": true
+  },
+  {
+    "slug": "german",
+    "name": "German",
+    "description": "German kitchens are manufactured to exacting engineering tolerances and typically feature precision-fit carcasses, soft-close hardware throughout, and advanced internal storage systems. Brands such as Häcker, Nobia, and Rotpunkt set the benchmark for quality in this segment, offering handleless and contemporary styles built to last decades.",
+    "features": [
+      "Precision-engineered rigid carcasses",
+      "Comprehensive soft-close and full-extension drawer hardware",
+      "Advanced internal organisation systems",
+      "Long manufacturer warranties typically 10–25 years"
+    ],
+    "popular": false
+  },
+  {
+    "slug": "painted",
+    "name": "Painted",
+    "description": "Painted kitchens offer limitless colour flexibility, with door fronts available either factory-sprayed to a specific RAL or Farrow & Ball shade or hand-painted on site to match any interior palette. They are a perennial favourite in period homes and bring a bespoke quality to any renovation project.",
+    "features": [
+      "Factory or on-site paint finish in any colour",
+      "Pairs beautifully with natural stone worktops",
+      "Popular in shaker and in-frame profiles",
+      "Easily refreshed with a repaint over time"
+    ],
+    "popular": true
+  },
+  {
+    "slug": "solid-wood",
+    "name": "Solid Wood",
+    "description": "Solid wood kitchens use real timber for door fronts and sometimes carcasses, bringing natural warmth, grain variation, and a sense of craftsmanship that no laminate or foil wrap can replicate. Oak, walnut, and ash are the most popular species, and these kitchens are designed to improve with age as the wood develops its natural patina.",
+    "features": [
+      "Real timber door fronts with natural grain variation",
+      "Ages and improves with proper care and maintenance",
+      "Available in oak, walnut, ash, and other species",
+      "Can be sanded and refinished if damaged"
+    ],
+    "popular": false
+  },
+  {
+    "slug": "in-frame",
+    "name": "In-Frame",
+    "description": "In-frame kitchens are characterised by doors and drawers that sit within a solid timber face-frame attached to the front of the carcass, replicating the construction method of traditional British furniture makers. This style is considered the pinnacle of traditional cabinetry and is most associated with high-end bespoke and semi-bespoke kitchen companies.",
+    "features": [
+      "Doors sit within a solid timber face-frame",
+      "Considered the benchmark of traditional craftsmanship",
+      "Available in painted or natural wood finishes",
+      "Popular with Farrow & Ball and heritage colour palettes"
+    ],
+    "popular": false
+  },
+  {
+    "slug": "luxury",
+    "name": "Luxury",
+    "description": "Luxury kitchens occupy the top tier of the market, combining premium materials such as marble, solid brass hardware, and hand-painted or veneered cabinetry with bespoke sizing and a fully personalised design service. Brands in this category include Neptune, DeVOL, and Smallbone of Devizes, and these projects typically involve close collaboration between client, designer, and installer over several months.",
+    "features": [
+      "Bespoke or semi-bespoke sizing and configuration",
+      "Premium materials including stone, brass, and solid timber",
+      "Personalised design and project management service",
+      "Long lead times with meticulous on-site installation"
+    ],
+    "popular": false
+  }
+]

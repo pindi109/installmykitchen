@@ -1,0 +1,110 @@
+[
+  {
+    "slug": "wren",
+    "name": "wren",
+    "displayName": "Wren Kitchens",
+    "description": "Wren Kitchens offers a vast range of styles from affordable modern handleless designs through to traditional shaker units, all manufactured in their East Yorkshire factory with a focus on rigid cabinet construction. Their product line covers every budget tier, making them one of the most popular choices for UK homeowners undertaking a full kitchen replacement.",
+    "installNote": "Wren kitchens are delivered flat-packed directly to your home on a scheduled delivery date, so it is important to have adequate storage space available before the installation begins.",
+    "logoText": "Wren",
+    "color": "#c8102e"
+  },
+  {
+    "slug": "howdens",
+    "name": "howdens",
+    "displayName": "Howdens Joinery",
+    "description": "Howdens Joinery is a trade-only supplier offering a broad range of cabinetry from the entry-level Clerkenwell range to the premium Greenwich and Tewkesbury collections, all built to a consistent rigid-cabinet standard. Their trade model means you benefit from our direct account relationship, ensuring accurate ordering and swift resolution of any product issues.",
+    "installNote": "As a trade-only supplier, Howdens kitchens are ordered and collected by our fitting team directly from the local depot, eliminating the need for a separate customer delivery and reducing the risk of damage in transit.",
+    "logoText": "Howdens",
+    "color": "#003087"
+  },
+  {
+    "slug": "magnet",
+    "name": "magnet",
+    "displayName": "Magnet Kitchens",
+    "description": "Magnet is one of the UK's longest-established kitchen retailers, offering a wide range of rigid-built cabinetry across traditional, contemporary, and handleless styles available through their nationwide showroom network. Their kitchen ranges are well-regarded for sturdy construction and a comprehensive choice of finishes, door profiles, and complementary accessories.",
+    "installNote": "Magnet kitchens are typically delivered directly from their depot to your home, and we recommend confirming the delivery schedule with your local Magnet store well in advance to align with our installation booking.",
+    "logoText": "Magnet",
+    "color": "#e30613"
+  },
+  {
+    "slug": "magnet-trade",
+    "name": "magnet-trade",
+    "displayName": "Magnet Trade",
+    "description": "Magnet Trade is the professional trade arm of Magnet, supplying cabinetry directly to fitters and builders at trade pricing through dedicated trade counters within Magnet showrooms. The trade range mirrors the full retail collection, giving clients access to the same high-quality product while benefiting from the efficiency and cost savings of the trade supply chain.",
+    "installNote": "When supplying through Magnet Trade, our team orders and collects directly from the trade counter, which typically allows for more flexible scheduling and faster resolution of any missing or damaged items.",
+    "logoText": "Magnet Trade",
+    "color": "#c8102e"
+  },
+  {
+    "slug": "benchmarx",
+    "name": "benchmarx",
+    "displayName": "Benchmarx Kitchens",
+    "description": "Benchmarx is a trade-focused kitchen supplier operating alongside Travis Perkins builders' merchants, offering a competitively priced range of rigid cabinetry in both contemporary and traditional styles. Their trade supply model and close integration with a builders' merchant network make them a practical choice for projects where speed and value are the primary considerations.",
+    "installNote": "Benchmarx kitchens are ordered through our trade account and collected from the local branch, making them particularly well-suited to projects with tight timelines where waiting for a retail delivery is not practical.",
+    "logoText": "Benchmarx",
+    "color": "#00529b"
+  },
+  {
+    "slug": "bq",
+    "name": "bq",
+    "displayName": "B&Q Kitchens",
+    "description": "B&Q offers a selection of kitchen ranges through their Cooke & Lewis and GoodHome brands, available in store and online, covering basic flat-pack and semi-rigid formats at accessible price points. Their widespread availability and frequent promotional pricing make them a popular first port of call for budget-conscious buyers, though professional fitting is strongly recommended to achieve a quality result.",
+    "installNote": "B&Q kitchens are typically self-purchased by the client prior to installation; please ensure all boxes are checked for completeness and damage upon delivery, as sourcing replacement parts from store can add time to the installation schedule.",
+    "logoText": "B&Q",
+    "color": "#007dc6"
+  },
+  {
+    "slug": "wickes",
+    "name": "wickes",
+    "displayName": "Wickes Kitchens",
+    "description": "Wickes offers a focused range of kitchen cabinetry across shaker, slab, and painted finishes, sold through their DIY and trade stores at competitive prices. Their product offering is backed by a design and supply service, making them a convenient choice for homeowners who want a straightforward purchasing process with reliable availability.",
+    "installNote": "Wickes kitchens are supplied flat-packed and should be delivered to site before installation commences; we recommend reviewing the delivery lead time carefully, as some ranges require additional factory order time.",
+    "logoText": "Wickes",
+    "color": "#00a046"
+  },
+  {
+    "slug": "ikea",
+    "name": "ikea",
+    "displayName": "IKEA Kitchens",
+    "description": "IKEA's SEKTION and METOD kitchen systems are among the most widely sold in the world, offering a modular flat-pack format with a broad selection of door fronts, worktop options, and interior fittings at highly competitive prices. The system's flexibility and strong resale familiarity make it a popular choice, though the flat-pack assembly process requires experienced fitters to achieve a professional finish.",
+    "installNote": "IKEA kitchens require full assembly from flat-pack, which adds time to the installation compared to pre-built carcasses; our IKEA-experienced fitters build the carcasses on site and allow for this in their scheduling.",
+    "logoText": "IKEA",
+    "color": "#0058a3"
+  },
+  {
+    "slug": "diy-kitchens",
+    "name": "diy-kitchens",
+    "displayName": "DIY Kitchens",
+    "description": "DIY Kitchens is a direct-to-consumer online retailer based in West Yorkshire, offering rigid-built cabinetry at trade-level prices by selling directly to homeowners and tradespeople without a showroom network. Their reputation for excellent value, sturdy construction, and responsive customer service has made them a strong favourite among cost-conscious homeowners seeking a quality product.",
+    "installNote": "DIY Kitchens ship their rigid carcasses on a specified delivery date direct to your home; please ensure suitable access and storage space are available, as deliveries are typically palletised and require a clear unloading area.",
+    "logoText": "DIY Kitchens",
+    "color": "#e8621a"
+  },
+  {
+    "slug": "kutchenhaus",
+    "name": "kutchenhaus",
+    "displayName": "Kutchenhaus",
+    "description": "Kutchenhaus is a UK-based kitchen retailer specialising in German-manufactured cabinetry, offering handleless, shaker, and contemporary ranges with an emphasis on precision engineering and high-quality finishes. Their products bridge the gap between mass-market and bespoke, giving clients access to German build quality through a UK showroom experience.",
+    "installNote": "Kutchenhaus kitchens are ordered through the showroom and delivered direct to site; lead times can be longer than domestic retailers due to the German manufacturing process, so early ordering is advisable.",
+    "logoText": "Kutchenhaus",
+    "color": "#1a1a1a"
+  },
+  {
+    "slug": "symphony",
+    "name": "symphony",
+    "displayName": "Symphony Kitchens",
+    "description": "Symphony is one of the UK's leading kitchen manufacturers, supplying a wide network of independent retailers and kitchen specialists with a broad range of cabinetry styles from traditional in-frame to sleek handleless designs. Built in their Yorkshire factory, Symphony units are known for robust construction and a comprehensive range of finishes and accessories.",
+    "installNote": "Symphony kitchens are supplied through independent retailers and delivered to site prior to installation; our team will co-ordinate delivery timing with your chosen retailer to ensure the kitchen arrives before installation day.",
+    "logoText": "Symphony",
+    "color": "#5c2d8e"
+  },
+  {
+    "slug": "masterclass",
+    "name": "masterclass",
+    "displayName": "Masterclass Kitchens",
+    "description": "Masterclass Kitchens is a premium British manufacturer producing hand-built, rigid cabinetry across traditional, contemporary, and in-frame collections, supplied exclusively through a network of independent kitchen specialists. Their kitchens are renowned for exceptional craftsmanship and a comprehensive finishing programme, making them a leading choice for high-specification renovations.",
+    "installNote": "Masterclass kitchens are delivered directly from the manufacturer via your chosen independent retailer; our team works closely with the retailer to confirm delivery schedules and ensure all components are on site before installation begins.",
+    "logoText": "Masterclass",
+    "color": "#2c3e50"
+  }
+]

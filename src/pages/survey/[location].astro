@@ -1,0 +1,545 @@
+---
+import Base from "../../layouts/Base.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import StickyMobileCTA from "../../components/StickyMobileCTA.astro";
+import Breadcrumbs from "../../components/Breadcrumbs.astro";
+import AnswerBlock from "../../components/AnswerBlock.astro";
+import KeyTakeaway from "../../components/KeyTakeaway.astro";
+import FAQ from "../../components/FAQ.astro";
+import InternalLinks from "../../components/InternalLinks.astro";
+import EnquiryForm from "../../components/EnquiryForm.astro";
+import CTA from "../../components/CTA.astro";
+
+import locationsData from "../../data/locations.json";
+
+export function getStaticPaths() {
+  return locationsData.map((location) => ({
+    params: { location: location.slug },
+    props: { location },
+  }));
+}
+
+const { location } = Astro.props;
+const { name, slug, county, description, nearby } = location;
+
+// Index of this location in the array — used for FAQ variant selection
+const locationIndex = locationsData.findIndex((l) => l.slug === slug);
+
+// ── Title (≤68 chars) ──────────────────────────────────────────────────────
+// Full form: "Kitchen Installation Survey {name} — £195 | Install My Kitchen"
+// Short form used when full is >68 chars: "Kitchen Survey {name} — £195 | IMK"
+const titleFull = `Kitchen Installation Survey ${name} — £195 | Install My Kitchen`;
+const title = titleFull.length <= 68
+  ? titleFull
+  : `Kitchen Survey ${name} — £195 | IMK`;
+
+// ── Meta description (140–160 chars) ──────────────────────────────────────
+const metaDescription = `Book a pre-installation kitchen survey in ${name}, ${county}. The £195 fee is credited back on booking. We check your plans, room dimensions and services before we quote.`;
+
+const canonical = `https://www.installmykitchen.co.uk/survey/${slug}/`;
+
+// ── KeyTakeaway points ─────────────────────────────────────────────────────
+const takeawayPoints = [
+  `The survey takes place at your ${name} home — we check your actual room against your kitchen plan.`,
+  `Survey fee of £195 is credited in full against your installation balance when you confirm your date and pay your deposit.`,
+  `We cover ${name} and the surrounding ${county} area with survey slots typically available within one to two weeks.`,
+  `Our written survey report forms the basis of your fixed-price installation quote — no hidden extras on the day.`,
+];
+
+// ── Housing style context by county ───────────────────────────────────────
+type HousingStyleMap = Record<string, string>;
+
+const housingStyleMap: HousingStyleMap = {
+  "West Midlands": "terraced, semi-detached, and post-war detached properties",
+  "Warwickshire": "Victorian terraces, 1930s semis, and larger detached family homes",
+  "Leicestershire": "semi-detached and detached properties ranging from post-war builds to modern estates",
+};
+const housingStyle = housingStyleMap[county] ?? "a varied mix of terraced, semi-detached, and detached properties";
+
+// ── Survey covers ──────────────────────────────────────────────────────────
+const surveyCovers = [
+  { heading: "Room vs Plan Check", body: `We compare your kitchen designer's plan with the actual room dimensions in your ${name} home. Walls out of square, ceiling variations, and unexpected structural elements are identified before work begins.` },
+  { heading: "Service Positions", body: "We confirm the location of existing plumbing, electrical sockets, and gas connections, and establish where new appliance connections will be positioned." },
+  { heading: "Levels & Floor Assessment", body: "Floors are rarely perfectly level. We measure the floor plane and note any gradients that will require packing or adjustment during cabinet installation." },
+  { heading: "Wall Condition", body: "We check the condition and construction of walls where units and tall cabinets will be fixed, identifying any areas that may need remedial work before fitting." },
+  { heading: "Access Routes", body: "We assess all access routes into the kitchen — corridors, doorways, staircases — and flag anything that could affect delivery or installation logistics." },
+  { heading: "Appliance Positions", body: "All integrated and freestanding appliance positions are confirmed and cross-referenced with the available service connections to ensure the plan is achievable." },
+  { heading: "Risk & Scope Identification", body: "Potential complications such as chimney breasts, uneven alcoves, or non-standard ceiling heights are flagged and factored transparently into your installation quote." },
+  { heading: "Accurate Quote Preparation", body: "Everything observed during the survey feeds directly into your written, itemised quote — so the price you are given accurately reflects the full scope of the work." },
+];
+
+// ── FAQ items — vary by locationIndex % 2 ─────────────────────────────────
+type FAQItem = { q: string; a: string };
+
+const faqItemsEven: FAQItem[] = [
+  {
+    q: `How much does a kitchen survey cost in ${name}?`,
+    a: `The pre-installation survey is £195. This fee is credited in full against your installation balance when you confirm your installation date by paying your booking deposit. The only time the fee is not credited back is if you choose not to proceed after the survey.`,
+  },
+  {
+    q: "What happens during the survey?",
+    a: `One of our experienced fitters visits your ${name} home to compare your kitchen retailer's plan with the actual room. We take detailed measurements, check service positions, assess wall and floor conditions, confirm appliance locations, and identify anything that could affect the installation. You receive a written survey report and a fully itemised installation quote.`,
+  },
+  {
+    q: `How soon can I get a survey booked in ${name}?`,
+    a: `Survey slots in ${name} and the surrounding ${county} area are typically available within one to two weeks of enquiry. Contact us via the form on this page or call 07399 651836 and we will confirm available dates promptly.`,
+  },
+  {
+    q: "Is the survey fee refundable?",
+    a: "The £195 survey fee is credited against your installation balance — not refunded in cash. If you confirm your installation date and pay your deposit, the full £195 is deducted from your total. If you decide not to proceed after the survey, the fee covers the specialist time spent on your survey visit and report and is not returned.",
+  },
+];
+
+const faqItemsOdd: FAQItem[] = [
+  {
+    q: "Why do I need a kitchen survey?",
+    a: `Kitchen plans from retailers are based on measurements you or a store designer provided — they are a starting point, not a guarantee everything will fit perfectly. A survey lets us identify discrepancies, structural issues, and service positions before installation day, so there are no surprises and your quote is accurate.`,
+  },
+  {
+    q: "How long does the survey take?",
+    a: `A typical survey visit takes between 45 minutes and 90 minutes, depending on kitchen size and how much discussion is needed. We will advise an estimated visit time when we confirm your appointment.`,
+  },
+  {
+    q: `Will you survey my ${name} home before giving a quote?`,
+    a: `Yes — we require a survey visit before issuing a full written installation quote. A survey visit to a ${name} property is booked directly via this page or by calling 07399 651836. We can provide a broad indicative estimate beforehand, but our fixed-price quote is issued after the survey only.`,
+  },
+  {
+    q: "What if my kitchen doesn't match the plan?",
+    a: "This is precisely what the survey is designed to find. If dimensions are wrong, services are in unexpected positions, or there are structural elements the plan does not account for, we identify these during the survey and either advise you to update the plan with your retailer or adjust our installation approach accordingly — before work begins.",
+  },
+];
+
+const faqItems: FAQItem[] = locationIndex % 2 === 0 ? faqItemsEven : faqItemsOdd;
+
+// ── Nearby links ───────────────────────────────────────────────────────────
+// First 3 entries from nearby array
+const nearbyLinks = (nearby as string[]).slice(0, 3).map((nearbySlug) => {
+  const nearbyLocation = locationsData.find((l) => l.slug === nearbySlug);
+  return nearbyLocation
+    ? {
+        label: `Kitchen Survey in ${nearbyLocation.name}`,
+        href: `/survey/${nearbySlug}/`,
+        description: `${nearbyLocation.county} — pre-installation survey service`,
+      }
+    : null;
+}).filter(Boolean) as { label: string; href: string; description: string }[];
+
+// Add the corresponding /areas/{slug}/ link
+const allLinks = [
+  ...nearbyLinks,
+  {
+    label: `Kitchen Installation in ${name}`,
+    href: `/areas/${slug}/`,
+    description: `Full installation service for ${name} and ${county}`,
+  },
+];
+
+// ── Service JSON-LD ────────────────────────────────────────────────────────
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  name: `Kitchen Installation Survey in ${name}`,
+  description: `Pre-installation kitchen survey service covering ${name} and the surrounding ${county} area. The £195 survey fee is credited against the installation balance on booking.`,
+  provider: {
+    "@type": "LocalBusiness",
+    name: "Install My Kitchen",
+    url: "https://www.installmykitchen.co.uk",
+    telephone: "07399651836",
+    email: "info@installmykitchen.co.uk",
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: "242 Hollyfast Road, Coundon",
+      addressLocality: "Coventry",
+      postalCode: "CV6 2AH",
+      addressCountry: "GB",
+    },
+  },
+  areaServed: {
+    "@type": "Place",
+    name: `${name}, ${county}`,
+  },
+  serviceType: "Kitchen Survey",
+  offers: {
+    "@type": "Offer",
+    price: "195",
+    priceCurrency: "GBP",
+    description: "Pre-installation survey fee — credited in full against installation balance on booking",
+  },
+};
+---
+
+<Base
+  title={title}
+  description={metaDescription}
+  canonical={canonical}
+>
+  <script slot="schema" type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
+
+  <Header slot="header" />
+
+  <!-- ══════════════════════════════ PAGE HEADER ══════════════════════════ -->
+  <section class="page-header" aria-label="Page header">
+    <div class="container">
+      <Breadcrumbs
+        items={[
+          { label: "Survey & Quote", href: "/survey/" },
+          { label: name, href: `/survey/${slug}/` },
+        ]}
+      />
+      <h1 class="page-h1">Kitchen Installation Survey in {name} — £195 (Credited Back)</h1>
+      <p class="page-sub">
+        A specialist pre-installation survey at your {name} home. We check your plans, the room, and all service positions — then issue a fixed-price quote with no surprises on installation day.
+      </p>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════ MAIN CONTENT ═════════════════════════ -->
+  <section class="section content-section" aria-label="Survey information">
+    <div class="container">
+      <div class="content-grid">
+
+        <!-- ── Main column ── -->
+        <div class="content-main">
+
+          <!-- Quick Answer -->
+          <AnswerBlock
+            answer={`Install My Kitchen offers a pre-installation survey across ${name} and surrounding ${county} areas. The survey costs £195 and is credited in full against your installation balance when you confirm your date and pay your deposit.`}
+          />
+
+          <!-- Key Takeaways -->
+          <KeyTakeaway points={takeawayPoints} />
+
+          <!-- Why a Survey Matters in {name} -->
+          <h2 class="section-h2">Why a Survey Matters in {name}</h2>
+          <p class="body-copy">
+            {description} The range of {housingStyle} found across {name} means that no two kitchen projects are identical. Ceiling heights vary between periods of construction, older properties may have walls that are not perfectly square, and plumbing or gas connections are not always in the positions a designer's plan assumes. A pre-installation survey is our way of catching these realities before work begins.
+          </p>
+          <p class="body-copy">
+            Carrying out a survey means the written quote we issue is based on what is actually in your kitchen, not what the retailer's plan suggests. This protects you from unexpected cost increases mid-project and gives our fitting team the information they need to plan the installation properly. Across {name}, we regularly find small discrepancies between plans and rooms that, left unaddressed, would cause problems on installation day — the survey ensures none of those issues reach you.
+          </p>
+
+          <!-- What the Survey Covers -->
+          <h2 class="section-h2">What the Survey Covers</h2>
+          <ul class="survey-covers-list" role="list">
+            {surveyCovers.map((item) => (
+              <li class="survey-cover-item" role="listitem">
+                <div class="cover-icon" aria-hidden="true">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                </div>
+                <div>
+                  <strong class="cover-heading">{item.heading}</strong>
+                  <p class="cover-body">{item.body}</p>
+                </div>
+              </li>
+            ))}
+          </ul>
+
+          <!-- The Survey Fee — £195 Credited Back -->
+          <h2 class="section-h2">The Survey Fee — £195 Credited Back</h2>
+          <div class="credit-box">
+            <div class="credit-amount" aria-label="Survey fee: £195">
+              <span class="credit-price">£195</span>
+              <span class="credit-label">Pre-Installation Survey</span>
+            </div>
+            <div class="credit-detail">
+              <p class="credit-copy">
+                The £195 survey fee is charged at the time of booking your survey appointment. It covers the specialist time spent visiting your {name} home, measuring the room, reviewing your kitchen plan, and preparing your written survey report and installation quote.
+              </p>
+              <p class="credit-copy">
+                The credit is applied when you confirm your installation date by paying your booking deposit. At that point, the full £195 is deducted from your installation balance — so the survey costs you nothing if you proceed. If you decide not to go ahead after the survey, the fee is not returned, as it covers the time already invested in your project.
+              </p>
+              <ul class="credit-includes" role="list">
+                <li role="listitem">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                  Room vs plan check at your {name} property
+                </li>
+                <li role="listitem">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                  Services, levels, wall condition &amp; access assessment
+                </li>
+                <li role="listitem">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                  Written survey report and fully itemised installation quote
+                </li>
+                <li role="listitem">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                  £195 credited in full against your installation balance on booking
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Enquiry Form (inline, within main column) -->
+          <div class="form-inline-block">
+            <EnquiryForm formTitle={`Book Your Survey in ${name}`} showSurveyOption={true} />
+          </div>
+
+          <!-- Nearby Areas & Internal Links -->
+          <div class="links-block">
+            <InternalLinks
+              links={allLinks}
+              heading={`Nearby Survey Areas &amp; Related Pages`}
+            />
+          </div>
+
+          <!-- FAQ -->
+          <h2 class="section-h2 faq-heading">Frequently Asked Questions</h2>
+          <FAQ items={faqItems} schemaId={`faq-survey-${slug}`} />
+
+        </div>
+
+        <!-- ── Sidebar (sticky form — desktop only) ── -->
+        <aside class="content-sidebar" aria-label="Quick enquiry">
+          <div class="form-sticky">
+            <EnquiryForm formTitle={`Book Your Survey in ${name}`} showSurveyOption={true} />
+          </div>
+        </aside>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════ DARK CTA ═════════════════════════════ -->
+  <CTA
+    dark={true}
+    heading={`Book Your Kitchen Survey in ${name}`}
+    subtext={`Survey slots across ${name} and ${county} fill quickly. Secure yours today — £195 credited back in full when you confirm your installation.`}
+    primaryLabel="Book Your Survey — £195"
+    primaryHref="/contact/"
+    secondaryLabel="Call 07399 651836"
+    secondaryHref="tel:07399651836"
+  />
+
+  <Footer slot="footer" />
+  <StickyMobileCTA slot="sticky-cta" />
+</Base>
+
+<style>
+  /* ── Page header ── */
+  .page-header {
+    background: var(--hero-gradient);
+    padding: 3rem 0 3.5rem;
+  }
+
+  .page-h1 {
+    font-size: clamp(1.5rem, 3vw, 2.375rem);
+    font-weight: 800;
+    color: #fff;
+    letter-spacing: -0.02em;
+    margin-top: 0.75rem;
+    margin-bottom: 0.75rem;
+    line-height: 1.2;
+  }
+
+  .page-sub {
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 1.0625rem;
+    line-height: 1.6;
+    max-width: 580px;
+  }
+
+  /* ── Content layout ── */
+  .content-section {
+    background: #fff;
+  }
+
+  .content-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    align-items: start;
+  }
+
+  @media (min-width: 1024px) {
+    .content-grid {
+      grid-template-columns: 1fr 400px;
+    }
+  }
+
+  /* Hide inline form on desktop (sidebar form is shown instead) */
+  .form-inline-block {
+    display: block;
+  }
+
+  /* Hide sidebar on mobile */
+  .content-sidebar {
+    display: none;
+  }
+
+  @media (min-width: 1024px) {
+    .form-inline-block {
+      display: none;
+    }
+    .content-sidebar {
+      display: block;
+    }
+  }
+
+  .form-sticky {
+    position: sticky;
+    top: 6rem;
+  }
+
+  /* ── Typography ── */
+  .section-h2 {
+    font-size: 1.375rem;
+    font-weight: 700;
+    color: var(--charcoal);
+    margin-top: 2.25rem;
+    margin-bottom: 0.875rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--teal);
+    display: inline-block;
+  }
+
+  .faq-heading {
+    margin-top: 2.75rem;
+  }
+
+  .body-copy {
+    font-size: 0.9375rem;
+    line-height: 1.75;
+    color: var(--text-soft);
+    margin-bottom: 1rem;
+  }
+
+  /* ── Survey covers list ── */
+  .survey-covers-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  .survey-cover-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.875rem;
+  }
+
+  .cover-icon {
+    width: 1.625rem;
+    height: 1.625rem;
+    border-radius: 50%;
+    background: var(--teal);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 0.1rem;
+  }
+
+  .cover-heading {
+    display: block;
+    font-size: 0.9375rem;
+    font-weight: 700;
+    color: var(--charcoal);
+    margin-bottom: 0.3rem;
+  }
+
+  .cover-body {
+    font-size: 0.875rem;
+    line-height: 1.65;
+    color: var(--text-soft);
+    margin: 0;
+  }
+
+  /* ── Credit box ── */
+  .credit-box {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    background: var(--bg-light, #F9FAFB);
+    border: 1.5px solid var(--border, #E5E7EB);
+    border-radius: 1.25rem;
+    padding: 1.75rem;
+    margin-bottom: 2rem;
+  }
+
+  @media (min-width: 640px) {
+    .credit-box {
+      flex-direction: row;
+      align-items: flex-start;
+    }
+  }
+
+  .credit-amount {
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: var(--teal);
+    color: #fff;
+    border-radius: 1rem;
+    padding: 1.25rem 2rem;
+    min-width: 140px;
+  }
+
+  .credit-price {
+    font-size: 2.5rem;
+    font-weight: 800;
+    line-height: 1;
+  }
+
+  .credit-label {
+    font-size: 0.8125rem;
+    font-weight: 600;
+    opacity: 0.9;
+    margin-top: 0.375rem;
+    text-align: center;
+  }
+
+  .credit-detail {
+    flex: 1;
+  }
+
+  .credit-copy {
+    font-size: 0.9375rem;
+    line-height: 1.7;
+    color: var(--text-soft);
+    margin-bottom: 0.875rem;
+  }
+
+  .credit-copy:last-of-type {
+    margin-bottom: 1rem;
+  }
+
+  .credit-includes {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .credit-includes li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+    font-size: 0.875rem;
+    color: var(--charcoal);
+    font-weight: 500;
+    line-height: 1.5;
+  }
+
+  .credit-includes li svg {
+    color: var(--teal);
+    flex-shrink: 0;
+    margin-top: 0.2rem;
+  }
+
+  /* ── Links block ── */
+  .links-block {
+    margin-top: 2.5rem;
+    margin-bottom: 0.5rem;
+  }
+</style>

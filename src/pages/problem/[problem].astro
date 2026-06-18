@@ -1,0 +1,700 @@
+---
+import Base from "../../layouts/Base.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import StickyMobileCTA from "../../components/StickyMobileCTA.astro";
+import Breadcrumbs from "../../components/Breadcrumbs.astro";
+import AnswerBlock from "../../components/AnswerBlock.astro";
+import KeyTakeaway from "../../components/KeyTakeaway.astro";
+import FAQ from "../../components/FAQ.astro";
+import InternalLinks from "../../components/InternalLinks.astro";
+import CTA from "../../components/CTA.astro";
+
+interface ProblemData {
+  slug: string;
+  title: string;
+  metaTitle: string;
+  metaDescription: string;
+  problem: string;
+  solution: string;
+  answerBlock: string;
+  takeaways: string[];
+  problemExpansion: [string, string];
+  solutionExpansion: [string, string];
+  surveyParagraph: string;
+  faqs: { q: string; a: string }[];
+}
+
+export function getStaticPaths() {
+  const problems: ProblemData[] = [
+    {
+      slug: "kitchen-units-not-level",
+      title: "Kitchen Units Not Level — How to Fix It",
+      metaTitle: "Kitchen Units Not Level — How to Fix It | Install My Kitchen",
+      metaDescription:
+        "Unlevel kitchen units cause misaligned doors, drawers and worktops. Learn why it happens and how professional installation prevents it from day one.",
+      problem:
+        "Unlevel kitchen units cause alignment issues with doors, drawers and worktops — and can even affect appliance function. This is one of the most common problems in DIY or rushed kitchen installations.",
+      solution:
+        "Professional installation uses spirit levels and packing at every stage. Our survey identifies uneven floors and walls before installation begins, ensuring units are installed level and plumb from the outset.",
+      answerBlock:
+        "Unlevel kitchen units are corrected by using a spirit level and adjustable leg plinths at every cabinet. A pre-installation survey identifies floor and wall variations beforehand, so units are installed level and plumb from the start — preventing door, drawer and worktop alignment problems.",
+      takeaways: [
+        "Unlevel units are the root cause of the majority of kitchen door and drawer alignment faults.",
+        "Adjustable cabinet legs and packing pieces allow precise levelling even on significantly uneven floors.",
+        "A pre-installation survey maps floor and wall levels before ordering, preventing problems rather than correcting them.",
+      ],
+      problemExpansion: [
+        "Kitchen floors are rarely perfectly flat, particularly in older properties where boards have settled or concrete has been laid unevenly. Even a variation of a few millimetres across the run of base units is enough to cause cascading alignment problems — doors will hang at different heights, drawer fronts will fail to sit flush, and the worktop will rock or require excessive packing at the joint. In properties built before the 1980s, substantial floor variation is the norm rather than the exception.",
+        "Wall straightness is an equally common source of problems. Units fixed to a wall that bows outward will lean forward, making it impossible to achieve a consistent reveal between door faces. In kitchens with a tall unit run — larder units or full-height appliance housings — even a small deviation from plumb becomes visually obvious once doors are hung. The problem compounds if the floor and wall deviations run in opposing directions, as no amount of hinge adjustment will compensate for a unit that is simultaneously off-level and off-plumb.",
+      ],
+      solutionExpansion: [
+        "Adjustable cabinet legs are the primary tool for levelling base units. A good quality leg allows adjustment across a range of 100–150 mm, which is sufficient for most domestic floor variations. The fitter works from one end of the run to the other, establishing a datum level and working each unit up or down until the top of the carcass sits perfectly in plane. Once the run is level, the legs are locked and the plinth clips fitted — the plinth concealing any variation between the leg height and the floor.",
+        "For tall and wall units, horizontal alignment battens and wall plugs of varying lengths allow the fitter to bring units off a wall that is not perfectly flat. Shims and packing pieces are used at fixing points to ensure the unit face plane is consistent throughout the run. The investment in time at this stage pays dividends throughout the rest of the installation — when units are truly level and plumb, door hanging is straightforward, worktop scribing is predictable, and the finished kitchen looks the way it was designed to look.",
+      ],
+      surveyParagraph:
+        "Our £195 pre-installation survey includes a thorough assessment of floor levels and wall straightness across the entire kitchen footprint. We use a long spirit level and, where needed, a laser level to map variations before installation begins. This means your fitter arrives on day one with a complete picture of the room — floor packing requirements are calculated in advance, and the risk of discovering a major level problem mid-installation is eliminated. The survey cost is credited back in full when you proceed to installation.",
+      faqs: [
+        {
+          q: "How much floor variation can adjustable legs compensate for?",
+          a: "Standard adjustable cabinet legs compensate for floor variations of up to 150 mm, which covers the vast majority of domestic kitchens. In more extreme cases, a raised timber platform or additional packing is used beneath the base units before legs are fitted.",
+        },
+        {
+          q: "Can I fix unlevel units after the kitchen has already been installed?",
+          a: "It is possible to re-level units after installation, but it requires removing the plinth, decanting the cabinet contents, and adjusting the legs — and in some cases the worktop may need to be lifted or re-cut. It is significantly more straightforward to get levelling right during the original installation.",
+        },
+        {
+          q: "Will an uneven floor affect my worktop?",
+          a: "Yes. If base units are not level, the worktop will rock at its joints, gaps will appear at the wall, and scribing to the wall profile becomes much harder. A level base unit run is the foundation for a correctly fitted worktop.",
+        },
+      ],
+    },
+    {
+      slug: "kitchen-gaps-between-units-and-wall",
+      title: "Gaps Between Kitchen Units and Wall — Causes and Solutions",
+      metaTitle: "Gaps Between Units and Wall — Causes & Solutions | Install My Kitchen",
+      metaDescription:
+        "Gaps between kitchen units and walls are common in UK homes with uneven plasterwork. Learn how filler panels and scribing eliminate them for a clean finish.",
+      problem:
+        "Gaps between units and walls are common where walls are out of plumb, uneven or where filler panels haven't been correctly scribed.",
+      solution:
+        "Scribing filler panels to the exact wall profile eliminates gaps cleanly. Our installation includes all filler panels, scribed and fitted to the wall contour.",
+      answerBlock:
+        "Gaps between kitchen units and walls are closed using scribed filler panels — strips of matching material cut to follow the exact contour of the wall surface. This technique accommodates any degree of wall unevenness and produces a clean, gap-free finish without requiring any remedial plastering.",
+      takeaways: [
+        "Gaps against walls almost always result from the wall being out of plumb or uneven — not from the unit being incorrectly positioned.",
+        "Scribing is the correct solution: the filler panel is scribed to match the wall profile exactly, then cut with a jigsaw.",
+        "Our installation price includes all necessary filler panels, scribed and fitted — no extras for this common requirement.",
+      ],
+      problemExpansion: [
+        "In most UK homes — particularly those built before the 1990s — walls are not perfectly flat or plumb. Plasterwork applied by hand varies by up to 10–15 mm across a single wall, and in some properties the variation is far greater, particularly in chimney breast alcoves or around window reveals. When a base or wall unit is fitted flush against such a wall, a gap opens wherever the wall recedes — an untidy result that is both visually poor and a trap for moisture and debris.",
+        "The problem is most visible at the end of a run of base units, where the final unit abuts the wall at ninety degrees, and at the top of wall units, where the gap between the carcass and the ceiling is often filled with a cornice or pelmet that cannot follow a complex wall profile. Without careful scribing, these transition points look unfinished, regardless of the quality of the units themselves.",
+      ],
+      solutionExpansion: [
+        "Scribing is the process of transferring the exact wall contour onto a filler panel and cutting to match. The filler — typically a strip of carcass material or matching door material — is held against the wall and a compass or scriber is run along the wall surface, drawing a line on the panel that mirrors every dip and bump. The panel is then cut along this line and fitted, pressing tightly against the wall and leaving no gap.",
+        "Beyond filler panels, coving and cornice can also be scribed to follow a ceiling that is not perfectly flat. Worktop end panels are scribed to the wall before being fitted, and tall larder units often require scribing at both sides and the top. Experienced fitters treat scribing as a routine part of the job — it is one of the clearest differentiators between a professional installation and a rushed one. The result is a kitchen that looks as though it was built into the room, rather than placed inside it.",
+      ],
+      surveyParagraph:
+        "During our £195 pre-installation survey, the fitter assesses the straightness and plumb of each wall that units will be fixed to or abut. Where walls are significantly uneven, the survey notes the maximum gap that will need to be filled, and the installation quote includes the cost of all filler panels required. There are no surprises on installation day — the fitter arrives prepared to scribe every panel that needs it.",
+      faqs: [
+        {
+          q: "Do I need to get the walls replastered before kitchen installation?",
+          a: "Not as a rule. Standard wall variations can be handled through scribing and packing without replastering. We would only advise replastering if walls were severely damaged, heavily textured, or if you were having a full refurbishment that included decoration anyway.",
+        },
+        {
+          q: "Are filler panels included in the kitchen unit price from the retailer?",
+          a: "Sometimes — many retailers include standard filler panels as part of the kitchen design. However, they may not be the correct width or material to scribe neatly to your particular walls. We can advise at survey stage whether the panels supplied are suitable.",
+        },
+        {
+          q: "What happens at corners where two walls meet at an angle that is not 90 degrees?",
+          a: "Internal corners that are not square are handled using scribed filler panels on one or both sides, or by adjusting the position of the corner unit within the run. Our survey measures internal angles at every corner so the fitter knows what to expect before starting.",
+        },
+      ],
+    },
+    {
+      slug: "kitchen-doors-not-aligned",
+      title: "Kitchen Doors Not Aligned — Why It Happens and How to Fix It",
+      metaTitle: "Kitchen Doors Not Aligned — Why It Happens & How to Fix It | Install My Kitchen",
+      metaDescription:
+        "Kitchen doors at different heights, sticking out unevenly or swinging open are a common installation snag. Learn what causes misalignment and how it is corrected.",
+      problem:
+        "Kitchen doors that don't align — sticking out at different heights, gaps at the top or bottom, doors that swing open — are a common snag after installation.",
+      solution:
+        "Door alignment is adjusted through hinge settings (height, depth, torsion). Our installation includes full alignment checks and hinge adjustments as part of the snagging process.",
+      answerBlock:
+        "Kitchen door misalignment is corrected through the three adjustment screws on each concealed hinge: height, depth and torsion. A properly installed kitchen has all doors checked and set before handover. If hinges are already set correctly but doors still misalign, the root cause is usually unlevel carcasses — not the hinges.",
+      takeaways: [
+        "Modern concealed hinges have three adjustment axes — height, depth and side-to-side — which together allow full door alignment.",
+        "Doors that swing open on their own indicate incorrect torsion adjustment or a carcass that is not plumb.",
+        "Full door alignment is included as part of our snagging process — no charge for adjustments within the standard installation.",
+      ],
+      problemExpansion: [
+        "Concealed hinges are straightforward to adjust once you understand the three screws. The most common alignment faults seen after DIY or rushed installation are: doors at different heights within the same unit (height adjustment not set), doors sitting proud of or recessed behind the face of adjacent units (depth adjustment not set), and doors that drift open after closing (torsion adjustment not set, or the carcass is leaning forward). In most cases, all three can be corrected in minutes per door — but only if the underlying carcass is correctly positioned.",
+        "The complication arises when doors are misaligned because the carcass itself is not level, not plumb, or not square. In this case, adjusting the hinges moves the door but cannot make it appear correctly aligned relative to its neighbours, because the problem is structural rather than cosmetic. A fitter who does not identify this distinction will spend time adjusting hinges without improving the result, leading to frustration on both sides. The correct approach is to re-level the carcass first, then set the hinges.",
+      ],
+      solutionExpansion: [
+        "Once carcasses are correctly installed, door hanging is methodical. The hinge plates are fitted to the door and the mounting plates to the carcass as per the manufacturer's template. The doors are hung and the height adjustment screw is used to bring the bottom edge of every door in a row to the same height — typically using the lowest door as the datum. The depth screw then brings all door faces into the same plane, and the side-to-side (torsion) screw squares each door within its opening and closes any gap at top or bottom.",
+        "The final check is with all doors closed: the reveals between doors should be consistent, the top and bottom lines of door faces should be level across the run, and no door should swing open when released from closed. Soft-close mechanisms are checked for correct closing speed — too fast and the door bounces; too slow and it stalls. Integrated appliance doors that use a handle-less profile require additional care, as the face alignment must be set to within a millimetre to look correct. All of this is covered in our standard snagging process.",
+      ],
+      surveyParagraph:
+        "Our £195 pre-installation survey assesses the plumb of walls and the level of floors across the kitchen run, which are the underlying factors that determine how straightforward door alignment will be. Kitchens in rooms with significant deviation from true are flagged at survey stage so the fitter can plan accordingly — and so you are not surprised by additional time required on installation day.",
+      faqs: [
+        {
+          q: "Why do my kitchen doors keep swinging open?",
+          a: "Doors that swing open on their own are usually caused by one of two things: the torsion screw on the hinge has not been set, allowing the door to hang slightly out of vertical; or the carcass itself is not perfectly plumb, meaning gravity pulls the door open. Both are correctable — the hinge adjustment is straightforward, and a leaning carcass can be packed back to plumb.",
+        },
+        {
+          q: "How long does hinge adjustment take on a full kitchen?",
+          a: "For a typical kitchen of 15–20 doors, a thorough hinge adjustment and alignment check takes one to two hours. This is included as part of our standard installation snagging process and is not charged separately.",
+        },
+        {
+          q: "My doors were aligned when first fitted but have moved over time — why?",
+          a: "Hinges can work loose over time, particularly if the screws were not driven fully into solid carcass material. If the mounting plate screws have pulled out slightly, re-drilling and filling with a wooden dowel before refitting gives a secure hold. This is a normal maintenance task, not a sign of a poor quality kitchen.",
+        },
+      ],
+    },
+    {
+      slug: "kitchen-worktop-joint-problems",
+      title: "Kitchen Worktop Joint Problems — Gaps, Swelling and Leaks",
+      metaTitle: "Kitchen Worktop Joint Problems — Gaps, Swelling & Leaks | Install My Kitchen",
+      metaDescription:
+        "Poorly fitted worktop joints allow moisture in, causing swelling and delamination. Learn how correct jointing technique prevents this common and costly problem.",
+      problem:
+        "Worktop joints that are poorly fitted allow moisture ingress, causing swelling and delamination — particularly with laminate worktops near the sink.",
+      solution:
+        "Correct worktop jointing requires precisely cut mitre joints (or butt joints on short runs), correctly sealed with silicone and jointing bolts pulled tight. Stone worktops are templated for perfect fit.",
+      answerBlock:
+        "Worktop joint problems — gaps, swelling and leaks — are caused by poor cutting, insufficient jointing bolts, or missing silicone sealant. A correctly made joint uses a router-cut mitre or straight butt joint, sealed on all surfaces with silicone before assembly, pulled tight with jointing bolts and left to cure. No gap should be visible from above.",
+      takeaways: [
+        "Laminate worktops swell rapidly when moisture penetrates an unsealed joint — the damage is often irreversible within weeks.",
+        "Jointing bolts (also called worktop connectors) must be spaced at no more than 300 mm intervals and pulled as tight as the laminate will permit.",
+        "All cut edges — including the underside of the joint — must be sealed with silicone before assembly, not just the top seam.",
+      ],
+      problemExpansion: [
+        "Laminate worktops are manufactured from a moisture-sensitive chipboard or MDF core with a thin decorative surface bonded under pressure. The factory-bonded surfaces are water resistant, but any exposed cut edge is immediately vulnerable to moisture ingress. A worktop joint that is not perfectly tight, fully sealed and kept under compression by adequate jointing bolts will allow water — from condensation, cooking steam, or the occasional spill — to penetrate the core. The chipboard swells, the laminate lifts, and within a short time the joint is visibly delaminated and structurally compromised. This damage cannot be reversed; the worktop must be replaced.",
+        "The joint configuration matters too. Mitre joints — where both pieces are cut at 45 degrees to meet at a corner — are more complex to cut accurately than straight butt joints, but they are structurally stronger at the corner and, when well made, look superior. Straight butt joints are appropriate where the run of worktop meets a wall and the joint is not under the same mechanical stress. In either case, a router is the correct tool: a hand-cut joint with a jigsaw will always have micro-gaps that allow moisture in.",
+      ],
+      solutionExpansion: [
+        "Our fitters use a router and straight-edge jig to cut all worktop joints. The mating surfaces are cleaned, then silicone is applied to all faces of both pieces before assembly — not just the top surface. The pieces are brought together, the jointing bolts are inserted from below and tightened progressively, and any excess silicone that squeezes out from the top seam is removed while still wet with a damp cloth. The joint is then left to cure for a minimum of 24 hours before the worktop is put into use.",
+        "For stone worktops — granite, quartz or solid surface — the process is different. Stone does not absorb moisture in the same way as laminate, but a poor joint in stone is immediately visible as a gap or step. Our practice for stone is to arrange templating by the stone fabricator before any cutting is done: the fabricator produces a digital or physical template of the exact worktop layout, and the stone is cut to this template in the workshop. The result is a joint that fits with sub-millimetre accuracy. The seam is filled with a colour-matched resin adhesive and polished flush.",
+      ],
+      surveyParagraph:
+        "During our £195 pre-installation survey, the fitter assesses the worktop layout, identifies the number and type of joints required, and notes the position of any joint that will be near a water source. Where a joint falls close to the sink or hob, the survey flags this so additional care can be taken during installation. For stone worktops, the survey provides the measurements needed for the templating appointment.",
+      faqs: [
+        {
+          q: "Can a swollen laminate worktop joint be repaired?",
+          a: "Once the chipboard core has swollen, the damage is permanent. The affected section of worktop — at minimum the entire piece between two cuts — must be replaced. This is significantly more expensive and disruptive than getting the joint right at installation. If swelling is minor and recent, drying the joint out and resealing it may slow the damage, but the worktop will always remain weaker at that point.",
+        },
+        {
+          q: "How many jointing bolts should a worktop joint have?",
+          a: "As a general rule, jointing bolts should be spaced at no more than 300 mm along the length of the joint, with at least two per joint regardless of length. A typical 600 mm run of worktop in an L-shaped kitchen will have two or three bolts per joint. The bolts must be tightened evenly to avoid pulling one edge up while the other remains low.",
+        },
+        {
+          q: "Should silicone be applied to the top or the underside of the joint?",
+          a: "Both. Silicone should be applied to all mating surfaces — the vertical face of the joint, the underside, and, after assembly, a small bead run along the top seam before it is smoothed flush. Applying silicone only to the top seam after assembly is insufficient: water can still enter from the underside and from the vertical face.",
+        },
+      ],
+    },
+    {
+      slug: "kitchen-plinth-fitting-problems",
+      title: "Kitchen Plinth Fitting Problems — Gaps, Buckling and Uneven Floors",
+      metaTitle: "Kitchen Plinth Fitting Problems — Gaps, Buckling & Uneven Floors | Install My Kitchen",
+      metaDescription:
+        "Kitchen plinths that gap at the floor or buckle after fitting are a common finishing issue. Learn the correct fitting methods for a flush, professional result.",
+      problem:
+        "Plinths that don't sit flush against an uneven floor, or buckle after fitting, are a finishing issue that affects the overall appearance of the kitchen.",
+      solution:
+        "Plinths can be scribed to follow the floor contour or fitted with adjustable plinth clips that accommodate floor variation. Our installation includes all plinth fitting and adjustment.",
+      answerBlock:
+        "Kitchen plinth problems — gaps at the floor, buckling, or plinths that pop off — are caused by uneven floors and incorrect clip installation. Correct solutions include scribing the plinth to follow the floor profile exactly, or using adjustable plinth clips that can be set to follow floor variations of up to 15 mm without cutting.",
+      takeaways: [
+        "Uneven floors are the primary cause of plinth gaps — the fix is scribing or adjustable clips, not forcing the plinth flat.",
+        "Plinth clips must be fitted to the leg positions, not at random intervals, for a stable and removable fit.",
+        "Scribed plinths are cut to follow the floor exactly — this technique is the most reliable for floors with significant variation.",
+      ],
+      problemExpansion: [
+        "Plinths sit at the bottom of base unit runs, concealing the adjustable legs and closing the gap between the floor and the underside of the cabinets. On a perfectly flat floor, fitting plinths is straightforward. In reality, UK domestic floors — particularly in older properties — are rarely flat, and the plinth must accommodate whatever variation exists. A plinth simply pushed against an uneven floor will touch at its highest points and gap at its lowest, creating an untidy appearance and a path for dust and debris to accumulate beneath the units.",
+        "Buckling is a different problem and typically results from the plinth being fitted to clips that are not positioned correctly, or from the plinth material absorbing moisture and expanding slightly. Laminate plinth material is particularly susceptible: a small expansion in length will bow the face of the plinth outward if the clips do not allow any movement. In kitchens with underfloor heating, the thermal cycling of the floor can cause periodic expansion and contraction that loosens plinths over time if they are not correctly clipped.",
+      ],
+      solutionExpansion: [
+        "The scribing method involves holding the plinth against the units in its installed position, then running a compass or scriber along the floor surface to transfer the floor contour onto the plinth face. The plinth is then cut along this scribed line with a jigsaw. When re-fitted, the cut edge follows the floor exactly and no gap is visible. The cut edge is typically hidden by the slight shadow at the junction with the floor, and if necessary a flexible silicone bead can be run along the base of the plinth to close any remaining gap.",
+        "Adjustable plinth clips are an alternative that avoids cutting. Each clip has a lower section that fixes to the adjustable leg and an upper section that grips the plinth. The lower section can be raised or lowered by a few millimetres to follow the floor contour. For floor variations of up to about 15 mm, this method produces a plinth that sits flush without scribing. For greater variation, scribing is more reliable. Our fitters assess the floor at the start of installation and choose the appropriate method for each run of units.",
+      ],
+      surveyParagraph:
+        "Our £195 pre-installation survey measures floor levels across the entire kitchen footprint. Where floors are significantly uneven — more than 5 mm variation across a single run — the survey notes this and the installation quote accounts for additional scribing time. This means plinth fitting is never a last-minute improvisation: the fitter arrives prepared with the correct approach already planned.",
+      faqs: [
+        {
+          q: "Can plinths be removed after fitting for access to plumbing?",
+          a: "Yes — correctly fitted plinths should always be removable. Plinth clips are designed to allow the plinth to be pulled forward and removed without tools. If a plinth has been glued or nailed, access to the space beneath units for future plumbing or electrical work becomes very difficult. We always fit plinths with clips to allow easy removal.",
+        },
+        {
+          q: "What if my floor is tiled and the plinth does not sit flush against the tiles?",
+          a: "A tiled floor is often slightly uneven at tile joints, and the transition between tile and wall can create a bump at the ends of the plinth run. Scribing to a tiled floor uses the same compass technique as scribing to a plain floor — the scribed line follows the tile surface profile. The plinth clip position may need to be adjusted to bring the plinth up to the tile level.",
+        },
+        {
+          q: "My plinth keeps popping off — what is the cause?",
+          a: "Plinth clips that repeatedly release usually indicate one of three things: the clips are not positioned at the leg locations (so the leg pushes the clip forward slightly when the plinth is pressed on), the plinth is slightly too long and bowing against the end wall, or the clip is the wrong type for the leg. Checking clip position against leg position resolves the first two issues; the third requires replacing the clips with the correct specification.",
+        },
+      ],
+    },
+    {
+      slug: "kitchen-delivery-missing-parts",
+      title: "Kitchen Delivery Missing Parts — What to Do",
+      metaTitle: "Kitchen Delivery Missing Parts — What to Do | Install My Kitchen",
+      metaDescription:
+        "Missing kitchen components on delivery day can halt an installation for days or weeks. Learn how a pre-installation survey prevents this common and costly delay.",
+      problem:
+        "Missing components on delivery day are a common delay trigger. A missing door, incorrect unit size or absent hardware can halt an installation.",
+      solution:
+        "Our pre-installation survey checks your delivery against your order specification so missing parts are identified before installation day, not during it.",
+      answerBlock:
+        "Missing kitchen delivery parts should be checked against the order specification as soon as the delivery arrives — ideally during a pre-installation survey visit. Components are counted, compared to the plan, and any shortfall is reported to the retailer immediately, giving the maximum possible lead time before the installation date.",
+      takeaways: [
+        "Retailer delivery errors are more common than most homeowners expect — checking the delivery is not optional, it is essential.",
+        "Missing parts reported to the retailer on delivery day may still take 5–15 working days to be redelivered, depending on the supplier.",
+        "A pre-installation survey includes a delivery check service, meaning missing items are caught before the fitter arrives on day one.",
+      ],
+      problemExpansion: [
+        "Kitchen deliveries are large, complex consignments — a typical kitchen comprises 20–50 individual line items including carcasses, doors, drawer fronts, panels, hardware packs, plinths, cornices and integrated appliances. Retailer warehouse picking errors are not uncommon, and the volume of a kitchen delivery makes it easy for a single missing item to go unnoticed until it is needed during installation. A missing base unit at the start of the run halts all subsequent work; a missing cornice or pelmet is less critical but still leaves the installation incomplete.",
+        "The problem is compounded by lead times. Retailers typically require 3–5 working days to process a replacement order, and delivery may be a further 2–5 days on top of that. If the missing item is discovered on installation day, the fitter may be able to work around it for a day, but a significant gap in the delivery can mean cancelling or rescheduling the installation entirely — with associated cost and inconvenience. The window between delivery and installation is rarely more than a few days, which is why a systematic check immediately after delivery is so important.",
+      ],
+      solutionExpansion: [
+        "A systematic delivery check compares every item in the delivery against the order specification, line by line. Carcasses are checked for correct size, configuration (base, wall, tall) and colour. Doors and drawer fronts are counted and matched against the door schedule. Hardware packs are opened and the contents verified — it is common for hinge packs to contain the wrong hinge size, or for soft-close inserts to be absent. Plinths and panels are measured to confirm they match the specified lengths and finishes.",
+        "Where an item is incorrect or missing, a clear written record is made immediately — including photographs of the delivery note and the items received. This is submitted to the retailer's trade or customer services team with a request for urgent replacement. Retailers who have been given clear documentation of the error will typically process replacements faster than those who receive a vague complaint. Our survey service includes a delivery check appointment approximately one week before the installation date — timed to allow the maximum window for replacement orders to be processed and delivered.",
+      ],
+      surveyParagraph:
+        "Our £195 pre-installation survey includes a delivery check service: once your kitchen has been delivered, we schedule a visit to check the delivery against your order specification. Items that are missing, incorrect or damaged are documented and reported to your retailer, with a copy to you. This service routinely saves installation delays and is one of the most practically valuable parts of the survey process.",
+      faqs: [
+        {
+          q: "What should I do if I find missing parts on delivery day?",
+          a: "Photograph the delivery note and the contents immediately, and make a written list of everything that appears to be missing or incorrect. Contact the retailer's customer services or trade team the same day — delivery day reports are taken more seriously than reports made days later. Keep the packaging for any damaged items as the retailer will likely ask for it.",
+        },
+        {
+          q: "How long does it take to get missing kitchen parts replaced?",
+          a: "Lead times vary by retailer and by the item. Standard carcasses and doors from major retailers such as Howdens or Wren can sometimes be provided from branch stock the next day. Bespoke or non-stock items can take two to four weeks. German kitchen components from specialist suppliers can take four to eight weeks. This is why identifying missing items as early as possible is essential.",
+        },
+        {
+          q: "Can the kitchen be partially installed if parts are missing?",
+          a: "In some cases, yes. If the missing item is at the end of a run or is a finishing item such as cornice or plinth, installation can proceed and the missing item fitted later. If the missing item is at the start of a run, or is an appliance housing that other units depend on, it is often necessary to wait. Your fitter can advise on the best approach once the full list of missing items is known.",
+        },
+      ],
+    },
+    {
+      slug: "kitchen-extractor-installation-problems",
+      title: "Kitchen Extractor Fan Installation Problems",
+      metaTitle: "Kitchen Extractor Fan Installation Problems | Install My Kitchen",
+      metaDescription:
+        "Extractor installation involves ducting, electrical connection and integration with wall or ceiling units. Learn how to avoid the most common problems and risks.",
+      problem:
+        "Extractor fan installation involves ducting (where possible) or recirculation, electrical connection, and integration with wall or ceiling units. Getting this wrong creates noise, inefficiency or a fire risk.",
+      solution:
+        "We co-ordinate extractor installation with your electrician. Ducting routes are checked during the survey. We fit the extractor housing and canopy; hardwired connections are made by your electrician.",
+      answerBlock:
+        "Kitchen extractor fan problems — excessive noise, poor extraction and fire risk — typically result from incorrect ducting, insufficient duct diameter, or a recirculation installation where ducting was possible. A pre-installation survey checks the ducting route and confirms whether extraction or recirculation is the correct specification for your kitchen layout.",
+      takeaways: [
+        "Ducted extraction is always preferable to recirculation where an external wall or roof void is accessible — recirculation filters grease but cannot remove moisture.",
+        "Duct diameter and length directly affect extraction efficiency — undersized or overly long ducts reduce airflow significantly.",
+        "Extractor fan electrical connections must be made by a qualified electrician — Part P of the Building Regulations applies.",
+      ],
+      problemExpansion: [
+        "Extractor fans are one of the most technically involved elements of a kitchen installation. A ducted extractor requires a continuous duct run from the fan housing to an external termination point — typically through an external wall or into a roof void. The duct must be as short and straight as possible, with each 90-degree bend reducing effective airflow by the equivalent of approximately one metre of straight duct. If the duct run is too long, too convoluted, or of insufficient diameter for the fan's rated airflow, the extractor will operate noisily, fail to clear cooking odours effectively, and may overheat.",
+        "Recirculation installations filter air through activated carbon filters and return it to the kitchen. They are quieter and simpler to install, but they cannot remove moisture — which is the primary cause of condensation damage in kitchens. In properties where ducting to an external wall is genuinely impractical, recirculation is the only option, and the filters must be changed regularly (typically every 3–6 months) to maintain effectiveness. Problems arise when recirculation is specified as a cost-saving measure on kitchens where ducting was in fact possible — or when the carbon filters are not maintained.",
+      ],
+      solutionExpansion: [
+        "The correct approach begins at survey stage. The surveyor identifies the most practical ducting route — usually the shortest path to an external wall or directly upward into a roof void — and confirms the diameter required for the specified extractor model. Duct runs exceeding 3 metres or incorporating more than two 90-degree bends should be checked against the manufacturer's airflow specifications, and a more powerful motor may be required to compensate for the resistance. Where no practical ducting route exists, recirculation is specified and the customer informed of the filter maintenance requirement.",
+        "On installation day, we fit the extractor housing, canopy and duct, and co-ordinate the electrical connection with the client's electrician. The electrical supply for a hardwired extractor fan must be a dedicated spur from the consumer unit, switched by a cooker switch or a separate isolator, and the work must comply with Part P of the Building Regulations — which means it must be either carried out by a registered electrician or notified to the local building control authority. We do not carry out electrical connections ourselves, but we work alongside your electrician to ensure the installation is co-ordinated and the duct and housing are ready for connection when the electrician arrives.",
+      ],
+      surveyParagraph:
+        "Our £195 pre-installation survey includes a review of the proposed extractor position and the available ducting route. We check the proximity to the nearest external wall, the likely route through wall or ceiling voids, and any obstacles such as joists or existing pipework. This information is included in the installation specification, so your electrician and our fitter can work to a co-ordinated plan rather than making decisions on the day.",
+      faqs: [
+        {
+          q: "Can a kitchen extractor fan be installed directly above a hob without a canopy unit?",
+          a: "Canopy-free integrated extractors that mount flush with the ceiling or inside a unit above the hob are available, but they require a duct connection to the unit above and sufficient clearance from the hob surface. Most manufacturers specify a minimum height above the hob for each model — this is typically 650 mm for gas hobs and 450 mm for electric. Always follow the manufacturer's installation requirements.",
+        },
+        {
+          q: "My extractor fan is very noisy — what causes this?",
+          a: "Noise from a running extractor fan is usually caused by one of three things: the fan is working against excessive duct resistance (too long, too small a diameter, or too many bends); the fan motor is worn or bearing-damaged; or the duct is vibrating against a nearby surface. Checking the duct run for obstructions and kinks is the first step. If the fan is new and noisy from the outset, a duct resistance problem is the most likely cause.",
+        },
+        {
+          q: "Does a kitchen extractor fan need building regulations approval?",
+          a: "The electrical connection to a hardwired extractor fan falls under Part P of the Building Regulations and must be carried out by a registered electrician (or notified to building control). The mechanical installation of the duct and housing does not require building regulations approval in most cases, but external wall penetrations in listed buildings or conservation areas may require planning permission — check with your local authority if in doubt.",
+        },
+      ],
+    },
+    {
+      slug: "kitchen-corner-unit-problems",
+      title: "Kitchen Corner Unit Problems — Carousels, Magic Corners and Access",
+      metaTitle: "Kitchen Corner Unit Problems — Carousels, Magic Corners & Access | Install My Kitchen",
+      metaDescription:
+        "Corner kitchen units with carousels or magic corners are complex to install correctly. Learn what causes problems and how precise fitting ensures smooth operation.",
+      problem:
+        "Corner units — whether fitted with a carousel, a magic corner, or a simple fixed shelf — are among the most complex units to install correctly, requiring precise positioning and adjustment.",
+      solution:
+        "Corner units require careful measurement and adjustment. Our installation includes full carousel and magic corner fitting, with adjustment for smooth operation.",
+      answerBlock:
+        "Kitchen corner unit problems — carousels that bind, magic corners that stick, or doors that conflict — are almost always caused by incorrect positioning of the corner unit itself, insufficient clearance for the mechanism, or misaligned adjacent units. Correct installation requires precise measurement of the corner unit position relative to both wall runs before any fixings are made.",
+      takeaways: [
+        "The corner unit position determines the alignment of both adjacent runs — it must be positioned first, before any other base units are fitted.",
+        "Carousels and magic corner mechanisms require specific clearances that must be checked against the manufacturer's installation instructions before fitting.",
+        "Magic corner baskets that stick are almost always caused by the doors being misaligned, not the basket mechanism itself.",
+      ],
+      problemExpansion: [
+        "Corner base units are structurally the most demanding units in a kitchen. They anchor two perpendicular runs of base units and, because both runs reference the corner unit position, any error in the corner placement cascades along both walls. A corner unit that is positioned even 10 mm too close to the wall will prevent the adjacent units from fitting correctly — the gap filler or end panel will be too narrow, and in some cases the last unit in the run will not fit at all. Getting the corner unit position right is the single most important measurement task in a base unit installation.",
+        "Carousel mechanisms — rotating half-round or full-round shelves that spin on a central spindle — are relatively straightforward to install but require the door(s) to open to the correct angle for the carousel to clear the door frame. Magic corner mechanisms, where a basket assembly is linked to the door so that opening the door pulls the basket out into the room, are considerably more complex. The basket arm length, the hinge position, and the door hang angle must all be within the manufacturer's tolerances for the mechanism to operate smoothly. If the corner unit is slightly off-square to the adjacent unit, the magic corner basket will bind or catch the door frame.",
+      ],
+      solutionExpansion: [
+        "Our fitters establish the corner unit position using the kitchen plan and dry-fitting the adjacent units before making any fixings. The corner unit is positioned, levelled, and checked for square to both walls before the first screw is driven. Once the corner unit is fixed, the remaining base units on both walls are run out from it, maintaining consistent gaps between units and ensuring that end panels and filler pieces fall within the available space.",
+        "Carousel fitting requires the central spindle to be correctly positioned within the unit before the unit is fixed to the wall, as the spindle fixing plate is usually inaccessible once the adjacent units are in place. Magic corner mechanisms are fitted according to the manufacturer's template, with the basket arm adjusted for length and the door checked for alignment before final tightening. The finished mechanism should open the basket fully with the door moving through its full arc, and close without the basket catching or binding. This is checked several times before the installation is signed off.",
+      ],
+      surveyParagraph:
+        "Our £195 pre-installation survey pays particular attention to corner unit positions. The surveyor confirms the available space in each corner, checks whether the planned corner unit will fit given the actual wall dimensions (which may differ from the designer's plan), and identifies any pipework or sockets that might interfere with the corner unit position. This prevents the most common and frustrating corner unit problem: discovering on installation day that the unit does not fit as planned.",
+      faqs: [
+        {
+          q: "Why does my magic corner basket stick when I try to open it?",
+          a: "Magic corner baskets that stick are usually caused by the door being out of alignment — specifically, if the door sits too close to the door frame, the basket arm catches on the frame as it extends. Adjusting the door hinge depth to move the door away from the frame by 1–2 mm usually resolves the issue. If the basket itself is bent or the arm pivot is damaged, the arm assembly may need to be replaced.",
+        },
+        {
+          q: "Can a corner unit be added to an existing kitchen if there is not one already?",
+          a: "Adding a corner unit to an existing kitchen is a significant undertaking — both adjacent runs of base units must be moved to accommodate the corner unit, and the worktop across the corner must be replaced. It is more practical to replace the worktop and reposition the existing units than to try to insert a corner unit without disturbing anything else. This is a job for a professional fitter, not a DIY modification.",
+        },
+        {
+          q: "Are carousels or magic corners better for corner storage?",
+          a: "Magic corners generally provide better access to the full depth of the corner than carousels, as the basket pulls completely out of the unit and into the open kitchen. Carousels use the full circular footprint of the corner but require the user to reach into the unit to the back. The right choice depends on budget, kitchen size and personal preference — both work well when correctly installed.",
+        },
+      ],
+    },
+    {
+      slug: "kitchen-sink-installation-problems",
+      title: "Kitchen Sink Installation Problems — Leaks, Alignment and Drainage",
+      metaTitle: "Kitchen Sink Installation Problems — Leaks, Alignment & Drainage | Install My Kitchen",
+      metaDescription:
+        "Incorrectly fitted sinks leak at the seal, drain poorly or sit unevenly in the worktop. Learn what causes sink installation problems and how they are prevented.",
+      problem:
+        "An incorrectly fitted sink can leak at the seal, not drain properly, or sit unevenly in the worktop cutout.",
+      solution:
+        "We cut all worktop apertures for sinks and hobs with precision. Sink clips are fitted per manufacturer specification. Plumbing connections are made by a qualified plumber as second-fix.",
+      answerBlock:
+        "Kitchen sink problems — leaks, poor drainage and uneven sitting — are almost always caused by an imprecise worktop cutout, incorrect clip tension, or an inadequate seal between the sink and worktop. A correctly installed sink sits level in a precisely cut aperture, is clipped uniformly, and is sealed with a continuous bead of silicone that is compressed by the clips before it cures.",
+      takeaways: [
+        "The worktop cutout must be precisely sized — too large and the sink drops, too small and it will not seat correctly against the underside of the worktop.",
+        "Sink clips must be tightened evenly and progressively around the perimeter — over-tightening one side causes the sink to tilt.",
+        "Drainage installation is second-fix plumbing work and must be carried out by, or co-ordinated with, a qualified plumber.",
+      ],
+      problemExpansion: [
+        "A kitchen sink is subjected to significant mechanical stress during daily use — the weight of dishes, pans and water bearing down on a single suspended point. If the worktop aperture is not the correct size, the sink will either drop through (too large) or fail to seat flat against the underside of the worktop (too small). In either case, the seal between sink and worktop will be compromised, and water will eventually find its way between the two surfaces and into the unit below. With a laminate worktop, even a small and intermittent water leak is sufficient to begin the process of core swelling described elsewhere on this site.",
+        "Drainage problems in sinks are usually not an installation issue in the conventional sense — they result from inadequate trap depth, incorrect waste alignment, or a blocked trap rather than from the sink fitting itself. However, poor initial installation of the waste outlet — using insufficient thread sealant, cross-threading the waste fitting, or failing to bed the waste on the correct washer — can result in a slow drip beneath the sink that is not noticed until significant damage has occurred. This is another reason why plumbing connections should be made by, or checked by, a qualified plumber.",
+      ],
+      solutionExpansion: [
+        "The worktop aperture for a sink is cut using a jigsaw with a fine-tooth blade, working from a template or from the dimensions provided in the sink manufacturer's installation instructions. The cut line is marked precisely, and the cut is made slightly inside the marked line — the fit is then refined with a file or belt sander until the sink seats correctly. For undermount sinks, which are bonded to the underside of the worktop, the cut must be made from below and the edges routed smooth, as the cut edge is visible from above.",
+        "Sink clips are inserted into the channel around the underside rim of the sink and tightened in a sequence that progresses evenly around the perimeter — alternating sides, much like tightening wheel nuts on a car. Each clip is tightened by hand first, then with a screwdriver, and the sequence is repeated until all clips are uniformly tight and the sink rim is in full contact with the silicone bead beneath it. The excess silicone that squeezes out from the top seam is removed while still wet, and the seal is left to cure for 24 hours before the sink is put into use.",
+      ],
+      surveyParagraph:
+        "Our £195 pre-installation survey confirms the sink position, the worktop material, and the plumbing supply and waste positions. Where existing supply and waste connections are in positions that conflict with the planned sink location, the survey flags this and we advise on the cost of having a plumber reposition the connections before installation day. Plumbing is always second-fix — fitted after units and worktops are in place — and the survey ensures our fitter and your plumber are working to a co-ordinated plan.",
+      faqs: [
+        {
+          q: "Why is there water in the unit under my sink?",
+          a: "Water under a sink is most commonly caused by one of three sources: a leak at the waste outlet (the plastic fitting where the waste pipe connects to the sink bowl), a leak at the tap connection (the flexible hoses connecting the tap to the water supply), or a failure of the seal between the sink rim and the worktop. Each has a distinct location — waste outlet drips appear at the base of the waste fitting, tap connection drips at the supply fittings, and rim seal failures appear as damp around the inside edge of the sink cutout.",
+        },
+        {
+          q: "Can any type of sink be installed in any type of worktop?",
+          a: "Not always. Undermount sinks require a worktop material that can be routed cleanly and will not absorb water at the cut edge — they are appropriate for stone, solid surface and thick laminate but not standard 38 mm laminate. Inset sinks (which sit on top of the worktop in a cutout) can be fitted in any worktop material. Belfast and farmhouse sinks require a modified base unit to support the weight and accommodate the apron front.",
+        },
+        {
+          q: "Who installs the sink taps — the fitter or the plumber?",
+          a: "In most cases, the fitter installs the sink and the tap body (the tap itself is inserted through the tap hole and the back nut tightened from below), and the plumber connects the flexible supply hoses to the water supply. This is the most efficient approach as the fitter has the sink accessible before it is lowered into the worktop cutout, making tap installation straightforward. The plumber's work is second-fix and typically follows the worktop installation by one to two days.",
+        },
+      ],
+    },
+    {
+      slug: "retailer-installation-service-vs-independent",
+      title: "Retailer Installation vs Independent — Why We Recommend Independent",
+      metaTitle: "Retailer Installation vs Independent — Why Choose Independent | Install My Kitchen",
+      metaDescription:
+        "Retailer kitchen installation services are not always the best choice. An independent fitter works for you alone. Learn the key differences before you decide.",
+      problem:
+        "Many homeowners book the retailer's own installation service without considering alternatives. Retailer fitters are not always more qualified and schedules are often less flexible.",
+      solution:
+        "An independent kitchen fitter works exclusively for you — not the retailer. Scheduling is flexible, pricing is often competitive, and our only goal is a perfect fit for you. We cover all major retailers.",
+      answerBlock:
+        "An independent kitchen fitter works for you, not the retailer. This means no divided loyalties, full accountability to you as the client, and the flexibility to work at a pace and schedule that suits your project. Independent fitters cover all major UK kitchen retailers and are not less qualified than retailer-employed or retailer-contracted fitters.",
+      takeaways: [
+        "Retailer installation services sub-contract the work in most cases — the fitter is not a retailer employee and may not carry the retailer's full service guarantee.",
+        "An independent fitter's only obligation is to you — there is no pressure to finish quickly to meet a retailer's scheduling targets.",
+        "Independent fitters are often more flexible on scheduling, snagging visits and aftercare than retailer installation services.",
+      ],
+      problemExpansion: [
+        "Most major kitchen retailers do not directly employ the fitters who carry out their installation service. Instead, they contract with regional fitting companies or individual self-employed fitters who work to a fixed schedule and a fixed day rate set by the retailer. The fitter's loyalty — and their financial incentive — is to complete the installation in the contracted number of days and move on to the next job. This is not a criticism of individual fitters, many of whom do excellent work; it is simply a structural characteristic of the retailer installation model.",
+        "The practical consequences for homeowners can include: installations that are completed under time pressure, with snagging issues deferred to a follow-up visit that may be weeks away; limited flexibility on scheduling if the homeowner's circumstances change; and a complaints process that involves navigating the retailer's customer services rather than dealing directly with the person who did the work. In some cases, the retailer's installation guarantee is provided by a third-party warranty company rather than by the retailer itself, adding another layer of process to any dispute.",
+      ],
+      solutionExpansion: [
+        "As an independent kitchen fitter, Install My Kitchen works directly for you. We are not contracted to any retailer, we have no scheduling targets to meet, and our reputation depends entirely on the quality of the finished installation — not on the number of jobs completed per week. When you book our service, you receive a fixed price for a defined scope of work, and we do not consider the job complete until you are satisfied with the result.",
+        "We cover all major UK kitchen retailers — Wren, Howdens, Magnet, IKEA, Wickes, B&Q, Benchmarx, DIY Kitchens and others — as well as German and premium British brands. Our pre-installation survey is independent of the retailer, which means we assess your kitchen plan objectively and flag any issues with the design or specification before ordering begins. Retailers' own designers and sales staff have an incentive to close the sale; we have an incentive to ensure the installation goes smoothly. These interests are not always the same.",
+      ],
+      surveyParagraph:
+        "Our £195 pre-installation survey is a genuinely independent assessment of your kitchen project. We review the kitchen plan with you, identify any specification issues that might cause problems during installation, check the site conditions, and provide a fixed-price installation quote that covers everything. The survey cost is credited back when you proceed, and there is no obligation to proceed if the quote does not suit. If you have already booked retailer installation and have concerns about the process, we are happy to advise — call us on 07399 651836.",
+      faqs: [
+        {
+          q: "Is an independent fitter covered by the retailer's installation guarantee?",
+          a: "No — retailer installation guarantees apply only to installations carried out by the retailer's own installation service. An independent fitter provides their own workmanship guarantee. At Install My Kitchen, all our installations are covered by our own workmanship guarantee, and we carry full public liability insurance. The kitchen product guarantee (covering unit quality, door finishes, hardware) is provided by the retailer regardless of who installs it.",
+        },
+        {
+          q: "Are independent kitchen fitters qualified?",
+          a: "Qualification requirements for kitchen fitting are not standardised in the UK — there is no single qualification that all fitters must hold. Both retailer-contracted and independent fitters vary in experience and skill. When assessing any fitter, ask for examples of completed work, references, evidence of public liability insurance, and whether they carry out pre-installation surveys. These are more meaningful indicators of capability than a particular certification.",
+        },
+        {
+          q: "Can an independent fitter void the retailer's product guarantee?",
+          a: "No. Retailer product guarantees cover the quality of the units, doors and hardware — not the installation. A retailer cannot void a product guarantee on the basis that an independent fitter carried out the installation. If a door delaminates or a hinge fails within the guarantee period, the retailer is responsible for the replacement regardless of who installed the kitchen. If you encounter a retailer suggesting otherwise, this is incorrect and should be challenged.",
+        },
+      ],
+    },
+  ];
+
+  return problems.map((p) => ({
+    params: { problem: p.slug },
+    props: { data: p },
+  }));
+}
+
+const { data } = Astro.props;
+
+const {
+  slug,
+  title,
+  metaTitle,
+  metaDescription,
+  problem,
+  solution,
+  answerBlock,
+  takeaways,
+  problemExpansion,
+  solutionExpansion,
+  surveyParagraph,
+  faqs,
+} = data;
+
+const canonical = `https://www.installmykitchen.co.uk/problem/${slug}/`;
+
+const internalLinks = [
+  {
+    label: "Book a Pre-Installation Survey",
+    href: "/survey/",
+    description: "£195 — credited back on installation booking.",
+  },
+  {
+    label: "Our Kitchen Installation Services",
+    href: "/services/",
+    description: "Everything we fit, from units to worktops and appliances.",
+  },
+  {
+    label: "Kitchen Installation Guides",
+    href: "/guides/",
+    description: "Practical guides covering planning, fitting and more.",
+  },
+];
+
+const pageSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  headline: title,
+  description: metaDescription,
+  url: canonical,
+  publisher: {
+    "@type": "LocalBusiness",
+    name: "Install My Kitchen",
+    url: "https://www.installmykitchen.co.uk",
+    telephone: "07399651836",
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: "242 Hollyfast Road, Coundon",
+      addressLocality: "Coventry",
+      postalCode: "CV6 2AH",
+      addressCountry: "GB",
+    },
+  },
+};
+---
+
+<Base title={metaTitle} description={metaDescription} canonical={canonical}>
+  <script slot="schema" type="application/ld+json" set:html={JSON.stringify(pageSchema)} />
+
+  <Header slot="header" />
+
+  <!-- Breadcrumbs -->
+  <div class="container py-4">
+    <Breadcrumbs
+      items={[
+        { label: "Common Problems", href: "/problem/" },
+        { label: title, href: `/problem/${slug}/` },
+      ]}
+    />
+  </div>
+
+  <!-- Hero / Intro -->
+  <section class="problem-hero" aria-label="Page introduction">
+    <div class="container">
+      <div class="max-w-3xl">
+        <h1 class="problem-h1">{title}</h1>
+        <AnswerBlock answer={answerBlock} />
+        <KeyTakeaway points={takeaways} />
+      </div>
+    </div>
+  </section>
+
+  <!-- The Problem -->
+  <section class="section" aria-labelledby="problem-heading">
+    <div class="container">
+      <div class="prose-section fade-up">
+        <h2 id="problem-heading" class="section-h2">The Problem</h2>
+        <p class="lead-para">{problem}</p>
+        <p class="body-para">{problemExpansion[0]}</p>
+        <p class="body-para">{problemExpansion[1]}</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- The Solution -->
+  <section class="section section-alt" aria-labelledby="solution-heading">
+    <div class="container">
+      <div class="prose-section fade-up">
+        <h2 id="solution-heading" class="section-h2">The Solution</h2>
+        <p class="lead-para">{solution}</p>
+        <p class="body-para">{solutionExpansion[0]}</p>
+        <p class="body-para">{solutionExpansion[1]}</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- How a Survey Prevents This -->
+  <section class="section" aria-labelledby="survey-heading">
+    <div class="container">
+      <div class="prose-section fade-up">
+        <h2 id="survey-heading" class="section-h2">How a Survey Prevents This</h2>
+        <p class="body-para">{surveyParagraph}</p>
+        <p class="body-para survey-cta-para">
+          To book your pre-installation survey, call Install My Kitchen on{" "}
+          <a href="tel:07399651836" class="inline-link">07399 651836</a> or visit our{" "}
+          <a href="/survey/" class="inline-link">survey page</a>. We cover Coventry, the West Midlands and the surrounding area — survey appointments are typically available within two weeks.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section section-alt" aria-labelledby="faq-heading">
+    <div class="container">
+      <div class="max-w-3xl fade-up">
+        <h2 id="faq-heading" class="section-h2">Frequently Asked Questions</h2>
+        <FAQ items={faqs} schemaId={`faq-problem-${slug}`} />
+      </div>
+    </div>
+  </section>
+
+  <!-- Internal Links -->
+  <section class="section" aria-label="Related pages">
+    <div class="container">
+      <div class="fade-up">
+        <InternalLinks links={internalLinks} heading="Explore More" />
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <CTA
+    dark={true}
+    heading="Book a Survey to Avoid Installation Problems"
+    subtext="Our £195 pre-installation survey identifies issues before they happen — fixing floors, walls, deliveries and specification before your fitter arrives. Credited back in full when you proceed."
+    primaryLabel="Book a Survey — £195"
+    primaryHref="/survey/"
+    secondaryLabel="Call 07399 651836"
+    secondaryHref="tel:07399651836"
+  />
+
+  <Footer slot="footer" />
+  <StickyMobileCTA slot="sticky-cta" />
+</Base>
+
+<style>
+  /* ── Hero ── */
+  .problem-hero {
+    background: var(--hero-gradient);
+    padding: 3rem 0 3.5rem;
+  }
+
+  .problem-h1 {
+    font-size: clamp(1.625rem, 3vw, 2.5rem);
+    font-weight: 800;
+    color: #fff;
+    letter-spacing: -0.02em;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+  }
+
+  /* ── Section alternates ── */
+  .section {
+    padding: 3.5rem 0;
+  }
+
+  @media (min-width: 768px) {
+    .section {
+      padding: 4.5rem 0;
+    }
+  }
+
+  .section-alt {
+    background: var(--bg-light);
+  }
+
+  /* ── Prose ── */
+  .prose-section {
+    max-width: 48rem;
+  }
+
+  .section-h2 {
+    font-size: clamp(1.375rem, 2.5vw, 2rem);
+    font-weight: 800;
+    color: var(--navy);
+    letter-spacing: -0.02em;
+    margin-bottom: 1.25rem;
+    line-height: 1.25;
+  }
+
+  .lead-para {
+    font-size: 1.0625rem;
+    line-height: 1.7;
+    color: var(--charcoal);
+    font-weight: 500;
+    margin-bottom: 1.25rem;
+    padding: 1rem 1.25rem;
+    border-left: 4px solid var(--teal);
+    background: rgba(15, 118, 110, 0.04);
+    border-radius: 0 0.5rem 0.5rem 0;
+  }
+
+  .body-para {
+    font-size: 1rem;
+    line-height: 1.75;
+    color: var(--text-soft);
+    margin-bottom: 1rem;
+  }
+
+  .body-para:last-child {
+    margin-bottom: 0;
+  }
+
+  .survey-cta-para {
+    margin-top: 1.25rem;
+  }
+
+  .inline-link {
+    color: var(--teal);
+    font-weight: 600;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(15, 118, 110, 0.3);
+    transition: border-color 0.15s, color 0.15s;
+  }
+
+  .inline-link:hover {
+    color: var(--teal-bright, var(--teal));
+    border-bottom-color: var(--teal);
+  }
+</style>

@@ -1,0 +1,357 @@
+---
+import Base from "../layouts/Base.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import StickyMobileCTA from "../components/StickyMobileCTA.astro";
+import Breadcrumbs from "../components/Breadcrumbs.astro";
+import AnswerBlock from "../components/AnswerBlock.astro";
+import KeyTakeaway from "../components/KeyTakeaway.astro";
+import CTA from "../components/CTA.astro";
+
+const personSchema = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Pindi Sahota",
+  jobTitle: "Kitchen Installation Specialist",
+  worksFor: {
+    "@type": "LocalBusiness",
+    name: "Install My Kitchen",
+    url: "https://www.installmykitchen.co.uk",
+  },
+};
+
+const keyTakeaways = [
+  "Independent from all retailers — we install kitchens purchased anywhere",
+  "Based in Coventry, covering Warwickshire and the surrounding area",
+  "Pre-installation survey as standard — no surprises on the day",
+  "Transparent, itemised quotes with no hidden extras",
+];
+
+const areas = [
+  { name: "Coventry", slug: "coventry" },
+  { name: "Rugby", slug: "rugby" },
+  { name: "Nuneaton", slug: "nuneaton" },
+  { name: "Leamington Spa", slug: "leamington-spa" },
+  { name: "Kenilworth", slug: "kenilworth" },
+  { name: "Warwick", slug: "warwick" },
+  { name: "Bedworth", slug: "bedworth" },
+  { name: "Stratford-upon-Avon", slug: "stratford-upon-avon" },
+  { name: "Coleshill", slug: "coleshill" },
+  { name: "Atherstone", slug: "atherstone" },
+];
+---
+
+<Base
+  title="About Install My Kitchen | Coventry Kitchen Fitter"
+  description="Learn about Install My Kitchen — an independent kitchen installation service based in Coventry, fitting kitchens from all major retailers across Warwickshire."
+  canonical="https://www.installmykitchen.co.uk/about/"
+>
+  <!-- Schema -->
+  <script slot="schema" type="application/ld+json" set:html={JSON.stringify(personSchema)} />
+
+  <!-- Header -->
+  <Header slot="header" />
+
+  <!-- ══════════════════════════════ PAGE HEADER ══════════════════ -->
+  <section class="page-header" aria-label="Page header">
+    <div class="container">
+      <Breadcrumbs items={[{ label: "About", href: "/about/" }]} />
+      <h1 class="page-h1">About Install My Kitchen</h1>
+      <p class="page-sub">An independent kitchen installation service serving Coventry and Warwickshire.</p>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════ MAIN CONTENT ════════════════ -->
+  <section class="section" style="background: #fff;">
+    <div class="container">
+      <div class="content-grid">
+
+        <!-- Main column -->
+        <div class="content-main">
+
+          <AnswerBlock answer="Install My Kitchen is an independent kitchen installation service based in Coventry, fitting kitchens supplied by Wren, Howdens, Magnet, IKEA and all major retailers across Coventry and Warwickshire." />
+
+          <KeyTakeaway points={keyTakeaways} />
+
+          <!-- About the business -->
+          <h2 class="section-h2">Who We Are</h2>
+          <p class="body-copy">
+            Install My Kitchen was founded with one purpose: to provide homeowners with a reliable, skilled and genuinely independent kitchen installation service. We work with you — not for a retailer — which means the advice you receive and the standard of work we deliver are entirely focused on your home and your satisfaction.
+          </p>
+          <p class="body-copy">
+            Unlike installation teams affiliated with specific kitchen retailers, we are free to work with any supplier you choose. Whether you've purchased from Wren, Howdens, Magnet, IKEA, Wickes or any other source, we have the experience and expertise to fit it properly.
+          </p>
+
+          <!-- About Pindi Sahota -->
+          <h2 class="section-h2" id="pindi-sahota">Meet Pindi Sahota</h2>
+          <p class="body-copy">
+            Pindi Sahota is the kitchen installation specialist behind Install My Kitchen. With hands-on experience fitting kitchens of all sizes and layouts across Coventry and Warwickshire, Pindi brings a methodical approach and an eye for detail to every project. From single-wall galley kitchens to large open-plan installations, every job receives the same level of care and precision.
+          </p>
+          <p class="body-copy">
+            Pindi's approach is straightforward: visit the home before giving a quote, take proper measurements, talk through the plan, and identify anything that could cause issues before work starts. This pre-installation survey process means that on installation day, the focus is entirely on delivering a first-class result rather than firefighting avoidable problems.
+          </p>
+          <p class="body-copy">
+            Quality and communication sit at the heart of everything Install My Kitchen does. Customers receive clear, itemised quotes with no hidden extras, realistic timelines, and a specialist who is reachable throughout the process.
+          </p>
+
+          <!-- What we do -->
+          <h2 class="section-h2">What We Do</h2>
+          <p class="body-copy">
+            Install My Kitchen handles the full scope of kitchen fitting work, including:
+          </p>
+          <ul class="service-list" role="list">
+            <li role="listitem">Cabinet and unit assembly and installation</li>
+            <li role="listitem">Worktop supply and fitting (solid wood, laminate, and composite)</li>
+            <li role="listitem">Appliance and sink installation</li>
+            <li role="listitem">Door, drawer and hinge fitting and adjustment</li>
+            <li role="listitem">Handles, knobs and ironmongery</li>
+            <li role="listitem">Final snagging and handover</li>
+            <li role="listitem">Flooring and tiling (where requested)</li>
+          </ul>
+          <p class="body-copy">
+            For plumbing, electrical and gas connections, we recommend customers arrange their own qualified tradespeople. We are happy to advise on the sequencing and timing of specialist trades so that your installation runs smoothly.
+          </p>
+
+          <!-- Areas -->
+          <h2 class="section-h2">Areas Covered</h2>
+          <p class="body-copy mb-4">We are based in Coventry and cover the wider Warwickshire area, including:</p>
+          <ul class="areas-list" role="list">
+            {areas.map((area) => (
+              <li role="listitem">
+                <a href={`/areas/${area.slug}/`} class="area-link">{area.name}</a>
+              </li>
+            ))}
+          </ul>
+          <p class="body-copy mt-4">
+            <a href="/areas/" style="color: var(--teal);">View all areas we cover →</a>
+          </p>
+
+        </div>
+
+        <!-- Sidebar -->
+        <aside class="content-sidebar">
+          <div class="sidebar-card">
+            <h3 class="sidebar-heading">Get in Touch</h3>
+            <p class="sidebar-body">Ready to book a survey or ask a question? We're here to help.</p>
+            <address class="sidebar-nap not-italic">
+              <p>
+                <strong>Install My Kitchen</strong><br />
+                242 Hollyfast Road, Coundon<br />
+                Coventry, CV6 2AH
+              </p>
+              <p>
+                <a href="tel:07399651836" class="sidebar-link">07399 651836</a>
+              </p>
+              <p>
+                <a href="mailto:info@installmykitchen.co.uk" class="sidebar-link">info@installmykitchen.co.uk</a>
+              </p>
+            </address>
+            <a href="/survey/" class="btn-primary sidebar-btn">
+              Book a Survey — £195
+            </a>
+          </div>
+
+          <div class="sidebar-card sidebar-links-card">
+            <h3 class="sidebar-heading">Explore</h3>
+            <ul class="sidebar-nav" role="list">
+              <li><a href="/services/" class="sidebar-nav-link">Our Services</a></li>
+              <li><a href="/retailers/" class="sidebar-nav-link">Retailers We Fit</a></li>
+              <li><a href="/areas/" class="sidebar-nav-link">Areas We Cover</a></li>
+              <li><a href="/cost-guide/" class="sidebar-nav-link">Cost Guide</a></li>
+              <li><a href="/contact/" class="sidebar-nav-link">Contact Us</a></li>
+            </ul>
+          </div>
+        </aside>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════ DARK CTA ═══════════ -->
+  <CTA
+    dark={true}
+    heading="Book Your Survey Today"
+    subtext="Let's visit your home, check the room, and give you a clear quote. The £195 survey fee is credited back on booking."
+    primaryLabel="Book a Survey — £195"
+    primaryHref="/survey/"
+    secondaryLabel="Contact Us"
+    secondaryHref="/contact/"
+  />
+
+  <!-- Footer -->
+  <Footer slot="footer" />
+  <StickyMobileCTA slot="sticky-cta" />
+</Base>
+
+<style>
+  /* Page header */
+  .page-header {
+    background: var(--hero-gradient);
+    padding: 3rem 0 3.5rem;
+  }
+
+  .page-h1 {
+    font-size: clamp(1.75rem, 3.5vw, 2.75rem);
+    font-weight: 800;
+    color: #fff;
+    letter-spacing: -0.02em;
+    margin-top: 0.75rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .page-sub {
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 1.0625rem;
+    line-height: 1.6;
+    max-width: 540px;
+  }
+
+  /* Content layout */
+  .content-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  @media (min-width: 1024px) {
+    .content-grid {
+      grid-template-columns: 1fr 340px;
+      align-items: start;
+    }
+  }
+
+  /* Body copy */
+  .section-h2 {
+    font-size: 1.375rem;
+    font-weight: 700;
+    color: var(--charcoal);
+    margin-top: 2rem;
+    margin-bottom: 0.875rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--teal);
+    display: inline-block;
+  }
+
+  .body-copy {
+    font-size: 0.9375rem;
+    line-height: 1.75;
+    color: var(--text-soft);
+    margin-bottom: 1rem;
+  }
+
+  .service-list,
+  .areas-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .service-list li,
+  .areas-list li {
+    font-size: 0.9375rem;
+    color: var(--text-soft);
+    padding-left: 1.375rem;
+    position: relative;
+  }
+
+  .service-list li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--teal);
+    font-weight: 700;
+  }
+
+  .area-link {
+    color: var(--teal);
+    font-weight: 600;
+    transition: color 0.15s;
+  }
+
+  .area-link:hover {
+    color: var(--teal-bright);
+  }
+
+  /* Sidebar */
+  .sidebar-card {
+    background: var(--bg-light);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    border: 1.5px solid var(--border);
+  }
+
+  .sidebar-heading {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--charcoal);
+    margin-bottom: 0.75rem;
+  }
+
+  .sidebar-body {
+    font-size: 0.875rem;
+    color: var(--text-soft);
+    line-height: 1.6;
+    margin-bottom: 1rem;
+  }
+
+  .sidebar-nap {
+    font-size: 0.875rem;
+    color: var(--text-soft);
+    line-height: 1.7;
+    margin-bottom: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .sidebar-link {
+    color: var(--teal);
+    font-weight: 600;
+    transition: color 0.15s;
+  }
+
+  .sidebar-link:hover {
+    color: var(--teal-bright);
+  }
+
+  .sidebar-btn {
+    width: 100%;
+    justify-content: center;
+    font-size: 0.9375rem;
+  }
+
+  .sidebar-nav {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.375rem;
+  }
+
+  .sidebar-nav-link {
+    display: flex;
+    align-items: center;
+    font-size: 0.9375rem;
+    font-weight: 500;
+    color: var(--charcoal);
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--border);
+    transition: color 0.15s;
+  }
+
+  .sidebar-nav-link:hover {
+    color: var(--teal);
+  }
+
+  .sidebar-nav-link::after {
+    content: "→";
+    margin-left: auto;
+    color: var(--teal);
+    font-size: 0.875rem;
+  }
+</style>

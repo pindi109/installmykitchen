@@ -1,0 +1,349 @@
+---
+import Base from "../../layouts/Base.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import StickyMobileCTA from "../../components/StickyMobileCTA.astro";
+import Breadcrumbs from "../../components/Breadcrumbs.astro";
+import AnswerBlock from "../../components/AnswerBlock.astro";
+import KeyTakeaway from "../../components/KeyTakeaway.astro";
+import FAQ from "../../components/FAQ.astro";
+import InternalLinks from "../../components/InternalLinks.astro";
+import CTA from "../../components/CTA.astro";
+
+import locationsData from "../../data/locations.json";
+import costsData from "../../data/costs.json";
+
+export function getStaticPaths() {
+  return locationsData.map((location, index) => ({
+    params: { location: location.slug },
+    props: { location, costs: costsData, locationIndex: index },
+  }));
+}
+
+const { location, costs, locationIndex } = Astro.props;
+const { name, slug, county, description, nearby } = location;
+
+// ── Meta ──────────────────────────────────────────────────────────────────────
+
+const canonical = `https://www.installmykitchen.co.uk/kitchen-cost/${slug}/`;
+
+// Title ≤ 65 chars
+const title = `Kitchen Installation Cost ${name} 2025 | Install My Kitchen`;
+
+// Meta description 140–160 chars, cost intent, location-specific
+const metaDescription = `Find out how much kitchen installation costs in ${name} in 2025. Prices from £1,800 for small kitchens to £7,500 for large. Get a fixed quote from Install My Kitchen.`;
+
+// ── Key Takeaways — vary by location index ────────────────────────────────────
+
+const takeawayPoolEven = [
+  `Kitchen installation in ${name} typically costs £1,800–£7,500 depending on kitchen size and complexity.`,
+  `Small kitchens (8–12 units) in ${county} start from around £1,800; large kitchens (21+ units) can reach £7,500.`,
+  `Our £195 pre-installation survey is credited back in full when you go ahead — it locks in a fixed price.`,
+  `We fit kitchens from all major retailers in ${name} including Wren, Howdens, Magnet, IKEA, and Wickes.`,
+];
+
+const takeawayPoolOdd = [
+  `Installation costs in ${name} depend on kitchen size, retailer, and any extra trades such as plumbing or electrical work.`,
+  `A medium kitchen (13–20 units) in the ${county} area typically costs £2,800–£4,200 to install fully.`,
+  `Labour is charged per day — our survey confirms exactly how many days your ${name} project will take.`,
+  `Older properties in ${county} sometimes require additional preparation work, which our survey identifies upfront.`,
+];
+
+const takeawayPoints = locationIndex % 2 === 0 ? takeawayPoolEven : takeawayPoolOdd;
+
+// ── FAQ pools — offset by location index ─────────────────────────────────────
+
+const faqPoolA = [
+  {
+    q: `How much does kitchen installation cost in ${name}?`,
+    a: `Kitchen installation in ${name} typically costs between £1,800 and £7,500 depending on the size of your kitchen. A small kitchen of 8–12 units usually falls in the £1,800–£2,800 range, a medium kitchen (13–20 units) costs £2,800–£4,200, and a large kitchen of 21 or more units can reach £4,200–£7,500. These figures cover labour and fitting only — kitchen units, appliances, and worktops are priced separately.`,
+  },
+  {
+    q: `Does location affect installation cost?`,
+    a: `Location has a relatively small effect on installation cost within the ${county} area. The main cost drivers are kitchen size, the number of appliances being integrated, and whether additional trades such as a plumber or electrician are needed. Our £195 pre-installation survey provides a fixed, itemised quote specific to your ${name} home so you know the exact cost before any work begins.`,
+  },
+  {
+    q: `What's included in the installation price?`,
+    a: `Our kitchen installation price covers all cabinet assembly and fixing, worktop templating and fitting, appliance integration (oven, hob, extractor, dishwasher, fridge-freezer), plinth and cornice fitting, and a full snagging visit. It does not include the supply of units, worktops, or appliances, or work by separate trades such as plumbers, electricians, or plasterers — though we can advise on reliable local tradespeople in ${name}.`,
+  },
+  {
+    q: `How do I get an accurate quote for my ${name} kitchen?`,
+    a: `The most reliable way to get an accurate quote is to book our pre-installation survey, priced at £195 and credited back when you proceed. One of our experienced fitters visits your ${name} home, reviews your kitchen plan, takes precise measurements, and checks for any complications. You receive a fully itemised, fixed-price quote within 48 hours — no estimates, no hidden extras.`,
+  },
+];
+
+const faqPoolB = [
+  {
+    q: `Is kitchen installation more expensive in rural areas?`,
+    a: `Within our service area — which covers ${name} and the wider ${county} region — installation prices are consistent regardless of whether your property is urban or rural. Travel time is factored into our survey process. Any additional costs arising from access or delivery logistics are identified during the survey and included in your fixed quote, so there are no surprises.`,
+  },
+  {
+    q: `What size kitchen do I have?`,
+    a: `Kitchen size is measured by the number of base and wall units. A small kitchen has 8–12 units, a medium kitchen has 13–20 units, and a large kitchen has 21 or more units. If you are unsure, count the individual cabinet carcasses on your kitchen plan — each door or drawer front typically corresponds to one unit. Our surveyor will confirm the unit count when they visit your ${name} home.`,
+  },
+  {
+    q: `How long does kitchen installation take in ${name}?`,
+    a: `Installation time depends on kitchen size. A small kitchen (8–12 units) typically takes 3–4 days; a medium kitchen (13–20 units) takes 4–6 days; and a large kitchen (21+ units) takes 6–10 days. These timescales assume all units, appliances, and worktops are on site before work begins. Our ${name} survey confirms the exact programme for your project.`,
+  },
+  {
+    q: `What is a survey and why does it help with cost?`,
+    a: `A pre-installation survey is a visit by one of our experienced fitters to your ${name} home before any work is ordered or scheduled. During the survey we check measurements, wall conditions, ceiling heights, and existing pipework routes. This lets us give you a fixed, itemised installation quote rather than an estimate — and it means we can flag any complications (such as uneven walls or non-standard appliance spaces) that could affect cost before installation day. The survey fee is £195 and is credited back in full when you proceed.`,
+  },
+];
+
+const faqItems = locationIndex % 2 === 0 ? faqPoolA : faqPoolB;
+
+// ── Nearby & internal links ───────────────────────────────────────────────────
+
+const nearbyLinks = (nearby as string[]).flatMap((nearbySlug) => {
+  const nearbyLocation = locationsData.find((l) => l.slug === nearbySlug);
+  return nearbyLocation
+    ? [
+        {
+          label: `Kitchen Cost in ${nearbyLocation.name}`,
+          href: `/kitchen-cost/${nearbySlug}/`,
+          description: `Installation prices for ${nearbyLocation.county}`,
+        },
+      ]
+    : [];
+});
+
+// Add the areas page for this location
+const areaLink = {
+  label: `Kitchen Installation in ${name}`,
+  href: `/areas/${slug}/`,
+  description: `Our full installation service for ${name}`,
+};
+
+const internalLinks = [...nearbyLinks, areaLink];
+
+// ── Cost table data ───────────────────────────────────────────────────────────
+
+const costRows = [
+  {
+    size: "Small",
+    units: costs.smallKitchen.units,
+    days: costs.smallKitchen.days,
+    cost: `£${costs.smallKitchen.totalLow.toLocaleString("en-GB")}–£${costs.smallKitchen.totalHigh.toLocaleString("en-GB")}`,
+  },
+  {
+    size: "Medium",
+    units: costs.mediumKitchen.units,
+    days: costs.mediumKitchen.days,
+    cost: `£${costs.mediumKitchen.totalLow.toLocaleString("en-GB")}–£${costs.mediumKitchen.totalHigh.toLocaleString("en-GB")}`,
+  },
+  {
+    size: "Large",
+    units: costs.largeKitchen.units,
+    days: costs.largeKitchen.days,
+    cost: `£${costs.largeKitchen.totalLow.toLocaleString("en-GB")}–£${costs.largeKitchen.totalHigh.toLocaleString("en-GB")}`,
+  },
+];
+
+// ── Survey paragraph — varies by county / housing character ──────────────────
+
+const surveyContext: Record<string, string> = {
+  "West Midlands": `${name}'s mix of post-war semis, Victorian terraces, and modern new-builds means kitchen layouts vary considerably — wall thicknesses, ceiling heights, and existing pipework routes can all differ between streets. A survey removes the guesswork.`,
+  "Warwickshire": `Many homes in ${name} and across ${county} were built across several centuries, from Georgian townhouses to recent new-build estates. This variety means hidden complications are more common than in newer housing, making a pre-installation survey particularly valuable.`,
+  "Leicestershire": `${name}'s housing includes a broad range of property types from different eras. Older homes in particular can present non-standard wall finishes or unusual pipework arrangements that are best identified before units are ordered.`,
+};
+
+const surveyContextText =
+  surveyContext[county] ??
+  `Properties in ${name} and the surrounding ${county} area vary widely in age and construction, meaning a survey is the most reliable way to avoid cost surprises.`;
+
+// ── Service JSON-LD ───────────────────────────────────────────────────────────
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  name: `Kitchen Installation Cost in ${name}`,
+  provider: {
+    "@type": "LocalBusiness",
+    name: "Install My Kitchen",
+    url: "https://www.installmykitchen.co.uk",
+    telephone: "07399651836",
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: "242 Hollyfast Road, Coundon",
+      addressLocality: "Coventry",
+      postalCode: "CV6 2AH",
+      addressCountry: "GB",
+    },
+  },
+  areaServed: {
+    "@type": "Place",
+    name: name,
+  },
+  description: `Professional kitchen installation service in ${name}. Fixed-price quotes following a pre-installation survey.`,
+  serviceType: "Kitchen Installation",
+  priceRange: "£1,800 - £7,500",
+  offers: {
+    "@type": "Offer",
+    priceCurrency: "GBP",
+    priceSpecification: {
+      "@type": "PriceSpecification",
+      minPrice: 1800,
+      maxPrice: 7500,
+      priceCurrency: "GBP",
+    },
+  },
+};
+---
+
+<Base
+  title={title}
+  description={metaDescription}
+  canonical={canonical}
+>
+  <script slot="schema" type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
+
+  <Header slot="header" />
+
+  <!-- Breadcrumbs -->
+  <div class="container py-6">
+    <Breadcrumbs
+      items={[
+        { label: "Home", href: "/" },
+        { label: "Cost Guide", href: "/costs/" },
+        { label: name, href: `/kitchen-cost/${slug}/` },
+      ]}
+    />
+  </div>
+
+  <!-- Hero / H1 + Quick Answer -->
+  <section class="section" style="background: var(--bg-light);">
+    <div class="container">
+      <div class="max-w-3xl">
+        <h1 class="text-4xl md:text-5xl font-extrabold mb-5 leading-tight" style="color: var(--navy);">
+          Kitchen Installation Cost in {name} — 2025 Price Guide
+        </h1>
+        <AnswerBlock
+          answer={`Kitchen installation in ${name} typically costs £1,800–£7,500 depending on kitchen size. Small kitchens (8–12 units) start from £1,800; large kitchens (21+ units) can reach £7,500. Book a survey for an accurate quote for your ${name} home.`}
+        />
+        <KeyTakeaway points={takeawayPoints} />
+      </div>
+    </div>
+  </section>
+
+  <!-- Cost table -->
+  <section class="section">
+    <div class="container">
+      <div class="max-w-3xl fade-up">
+        <h2 class="text-3xl font-bold mb-4" style="color: var(--navy);">
+          Kitchen Installation Prices in {name}
+        </h2>
+        <p class="leading-relaxed mb-6" style="color: var(--text-soft);">
+          The table below shows typical installation costs for three kitchen sizes. Prices cover labour and fitting only — units, worktops, and appliances are supplied separately. All figures are based on our standard day rate of £{costs.labourDay} per fitter per day.
+        </p>
+        <div class="overflow-x-auto rounded-xl border border-gray-200 shadow-sm">
+          <table class="w-full text-sm">
+            <thead>
+              <tr class="text-left text-xs font-bold uppercase tracking-wide" style="background: var(--navy); color: #fff;">
+                <th class="px-5 py-4">Kitchen Size</th>
+                <th class="px-5 py-4">Units</th>
+                <th class="px-5 py-4">Days</th>
+                <th class="px-5 py-4">Typical Cost</th>
+              </tr>
+            </thead>
+            <tbody>
+              {costRows.map((row, i) => (
+                <tr
+                  class={i % 2 === 0 ? "bg-white" : "bg-gray-50"}
+                  style="border-top: 1px solid #E5E7EB;"
+                >
+                  <td class="px-5 py-4 font-semibold" style="color: var(--charcoal);">{row.size}</td>
+                  <td class="px-5 py-4" style="color: var(--text-soft);">{row.units}</td>
+                  <td class="px-5 py-4" style="color: var(--text-soft);">{row.days}</td>
+                  <td class="px-5 py-4 font-bold" style="color: var(--teal);">{row.cost}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <p class="text-xs mt-3" style="color: var(--text-soft);">
+          Prices are indicative and based on standard fitting only. Your exact cost is confirmed following a pre-installation survey.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- What affects cost -->
+  <section class="section" style="background: var(--bg-light);">
+    <div class="container">
+      <div class="max-w-3xl fade-up">
+        <h2 class="text-3xl font-bold mb-4" style="color: var(--navy);">
+          What Affects Kitchen Installation Cost in {name}?
+        </h2>
+        <p class="leading-relaxed mb-4" style="color: var(--text-soft);">
+          {description} The most significant cost factor is kitchen size — the number of units directly determines how many days installation takes, and labour is our main variable. A small kitchen (8–12 units) is a 3–4 day project; a large kitchen of 21 or more units will take 6–10 days. The retailer you choose also has a modest effect: some ranges, such as IKEA and premium handmade kitchens, require more time to assemble and fit than standard flat-pack cabinets.
+        </p>
+        <p class="leading-relaxed" style="color: var(--text-soft);">
+          Complexity adds cost too. Integrated appliances, unusual worktop shapes, island units, and extensive cornice or lighting pelmet runs all extend the programme. Older properties in {county} sometimes have out-of-square walls or non-standard ceiling heights that require extra preparation time. We flag every potential complexity during our pre-installation survey, so your quote is fixed and comprehensive — not an estimate that creeps upwards once work begins.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Survey & Quote -->
+  <section class="section">
+    <div class="container">
+      <div class="max-w-3xl fade-up">
+        <h2 class="text-3xl font-bold mb-4" style="color: var(--navy);">
+          Survey &amp; Quote for {name}
+        </h2>
+        <p class="leading-relaxed mb-4" style="color: var(--text-soft);">
+          Every installation we carry out begins with a pre-installation survey priced at £{costs.surveyFee}. That fee is credited back in full when you proceed with the installation — so if you go ahead, the survey costs you nothing extra. During the visit, one of our experienced fitters reviews your kitchen plan, takes precise measurements, and checks the condition of your walls, floor, and existing services. You receive a fully itemised, fixed-price installation quote within 48 hours.
+        </p>
+        <p class="leading-relaxed mb-4" style="color: var(--text-soft);">
+          {surveyContextText} Our surveyor will check wall squareness, ceiling heights, existing pipe and cable runs, and appliance clearances, identifying anything that could affect the installation before a single cabinet is ordered.
+        </p>
+        <p class="leading-relaxed" style="color: var(--text-soft);">
+          To book your survey in {name}, call us on{" "}
+          <a href="tel:07399651836" class="font-semibold" style="color: var(--teal);">07399 651836</a>{" "}
+          or complete the enquiry form on our survey page. Survey appointments are typically available within two weeks, with installation slots following four to eight weeks after that.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Nearby cost guides & area page -->
+  {internalLinks.length > 0 && (
+    <section class="section" style="background: var(--bg-light);">
+      <div class="container">
+        <div class="fade-up">
+          <InternalLinks
+            links={internalLinks}
+            heading="Related Cost Guides &amp; Pages"
+          />
+        </div>
+      </div>
+    </section>
+  )}
+
+  <!-- FAQ -->
+  <section class="section">
+    <div class="container">
+      <div class="max-w-3xl fade-up">
+        <h2 class="text-3xl font-bold mb-8" style="color: var(--navy);">
+          Frequently Asked Questions
+        </h2>
+        <FAQ items={faqItems} schemaId={`faq-cost-${slug}`} />
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <CTA
+    heading={`Get an Accurate Kitchen Installation Quote for ${name}`}
+    subtext={`Book a pre-installation survey for £${costs.surveyFee} — credited back in full when you proceed. Covering ${name} and the wider ${county} area.`}
+    primaryLabel="Book Your Survey"
+    primaryHref="/survey/"
+    secondaryLabel="Call 07399 651836"
+    secondaryHref="tel:07399651836"
+    dark={true}
+  />
+
+  <Footer slot="footer" />
+  <StickyMobileCTA slot="sticky-cta" />
+</Base>

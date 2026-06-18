@@ -1,0 +1,258 @@
+---
+import Base from "../../layouts/Base.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import StickyMobileCTA from "../../components/StickyMobileCTA.astro";
+import Breadcrumbs from "../../components/Breadcrumbs.astro";
+import AnswerBlock from "../../components/AnswerBlock.astro";
+import KeyTakeaway from "../../components/KeyTakeaway.astro";
+import FAQ from "../../components/FAQ.astro";
+import CTA from "../../components/CTA.astro";
+
+import costsData from "../../data/costs.json";
+import faqsData from "../../data/faqs.json";
+
+const canonical = "https://www.installmykitchen.co.uk/costs/";
+const title = "Kitchen Installation Costs Coventry 2025 | Install My Kitchen";
+const metaDescription = "Kitchen installation costs in Coventry & Warwickshire 2025. Typical range £1,800–£7,500+ depending on size. Fixed quotes after £195 survey. No hidden charges.";
+
+const { smallKitchen, mediumKitchen, largeKitchen, labourDay, surveyFee } = costsData;
+
+const takeawayPoints = [
+  `Small kitchens (8–12 units) typically cost £${smallKitchen.totalLow.toLocaleString()}–£${smallKitchen.totalHigh.toLocaleString()} for labour and fitting.`,
+  `Medium kitchens (13–20 units) typically cost £${mediumKitchen.totalLow.toLocaleString()}–£${mediumKitchen.totalHigh.toLocaleString()} for labour and fitting.`,
+  `Our day rate for kitchen installation is £${labourDay} per day, all inclusive of labour and equipment.`,
+  `A pre-installation survey costs £${surveyFee} and is credited back in full when you proceed with us.`,
+  `All prices include VAT at 20% and strip-out of the existing kitchen at no extra charge.`,
+];
+
+// Per-retailer modifier notes — include only where there's a notable difference
+const retailerModifiers = [
+  { name: "IKEA", note: "Flat-pack assembly adds time — typically 15% above standard rates due to on-site carcass building.", modifier: 1.15 },
+  { name: "Kutchenhaus", note: "German precision-fit cabinetry requires additional adjustment time — typically 15% above standard rates.", modifier: 1.15 },
+  { name: "Symphony", note: "Complex fitting requirements add approximately 10% to standard rates.", modifier: 1.10 },
+  { name: "Masterclass", note: "Premium hand-built cabinetry with exacting fit tolerances — typically 30% above standard rates.", modifier: 1.30 },
+  { name: "Howdens", note: "Trade-supplied rigid carcasses — a small premium of 5% applies for co-ordinating trade supply.", modifier: 1.05 },
+  { name: "B&Q / Wickes", note: "Semi-rigid and flat-pack formats attract a 5% adjustment above standard rigid-carcass rates.", modifier: 1.05 },
+];
+
+// 6 cost FAQs
+const faqItems = faqsData.costs.slice(0, 6);
+---
+
+<Base
+  title={title}
+  description={metaDescription}
+  canonical={canonical}
+>
+  <Header slot="header" />
+
+  <div class="container py-6">
+    <Breadcrumbs
+      items={[
+        { label: "Cost Guide", href: "/costs/" },
+      ]}
+    />
+  </div>
+
+  <!-- Hero -->
+  <section class="section" style="background: var(--bg-light);">
+    <div class="container">
+      <div class="max-w-3xl">
+        <h1 class="text-4xl md:text-5xl font-extrabold mb-5 leading-tight" style="color: var(--navy);">
+          Kitchen Installation Costs in Coventry &amp; Warwickshire — 2025 Guide
+        </h1>
+        <AnswerBlock
+          answer={`Kitchen installation in Coventry and Warwickshire typically costs between £${smallKitchen.totalLow.toLocaleString()} and £${largeKitchen.totalHigh.toLocaleString()} for labour and fitting, depending on the size and complexity of the project. These are indicative ranges only — a fixed price is provided following your pre-installation survey.`}
+        />
+        <KeyTakeaway points={takeawayPoints} heading="Cost Guide — Key Points" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Cost table -->
+  <section class="section">
+    <div class="container">
+      <div class="fade-up">
+        <h2 class="text-3xl font-bold mb-4" style="color: var(--navy);">
+          Typical Installation Cost by Kitchen Size
+        </h2>
+        <p class="leading-relaxed mb-8 max-w-2xl" style="color: var(--text-soft);">
+          The table below shows typical installation costs for different kitchen sizes. These are labour and fitting costs only and do not include the kitchen itself, worktops, appliances, plumbing, or electrical work. All prices include VAT.
+        </p>
+        <div class="overflow-x-auto rounded-xl border" style="border-color: #E5E7EB;">
+          <table class="w-full text-sm">
+            <thead>
+              <tr style="background: var(--navy); color: #fff;">
+                <th class="text-left px-5 py-4 font-semibold">Kitchen Size</th>
+                <th class="text-left px-5 py-4 font-semibold">Number of Units</th>
+                <th class="text-left px-5 py-4 font-semibold">Typical Duration</th>
+                <th class="text-left px-5 py-4 font-semibold">Typical Cost Range</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="border-t" style="border-color: #E5E7EB;">
+                <td class="px-5 py-4 font-semibold" style="color: var(--charcoal);">Small</td>
+                <td class="px-5 py-4" style="color: var(--text-soft);">{smallKitchen.units} units</td>
+                <td class="px-5 py-4" style="color: var(--text-soft);">{smallKitchen.days} days</td>
+                <td class="px-5 py-4 font-bold" style="color: var(--teal);">£{smallKitchen.totalLow.toLocaleString()}–£{smallKitchen.totalHigh.toLocaleString()}</td>
+              </tr>
+              <tr class="border-t" style="border-color: #E5E7EB; background: #F9FAFB;">
+                <td class="px-5 py-4 font-semibold" style="color: var(--charcoal);">Medium</td>
+                <td class="px-5 py-4" style="color: var(--text-soft);">{mediumKitchen.units} units</td>
+                <td class="px-5 py-4" style="color: var(--text-soft);">{mediumKitchen.days} days</td>
+                <td class="px-5 py-4 font-bold" style="color: var(--teal);">£{mediumKitchen.totalLow.toLocaleString()}–£{mediumKitchen.totalHigh.toLocaleString()}</td>
+              </tr>
+              <tr class="border-t" style="border-color: #E5E7EB;">
+                <td class="px-5 py-4 font-semibold" style="color: var(--charcoal);">Large</td>
+                <td class="px-5 py-4" style="color: var(--text-soft);">{largeKitchen.units}+ units</td>
+                <td class="px-5 py-4" style="color: var(--text-soft);">{largeKitchen.days} days</td>
+                <td class="px-5 py-4 font-bold" style="color: var(--teal);">£{largeKitchen.totalLow.toLocaleString()}–£{largeKitchen.totalHigh.toLocaleString()}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="mt-4 text-xs italic" style="color: var(--text-soft);">
+          Typical ranges only. Exact pricing is confirmed in your written quote following the pre-installation survey. Prices include VAT at 20%.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Labour day rate -->
+  <section class="section" style="background: var(--bg-light);">
+    <div class="container">
+      <div class="max-w-3xl fade-up">
+        <h2 class="text-3xl font-bold mb-4" style="color: var(--navy);">
+          Labour Day Rate
+        </h2>
+        <p class="leading-relaxed mb-4" style="color: var(--text-soft);">
+          Our standard installation day rate is <strong style="color: var(--charcoal);">£{labourDay} per day</strong>, inclusive of VAT. This rate covers all labour costs for a standard installation team working on your project. The number of days required depends on the size of the kitchen, the complexity of the layout, and the product being fitted — and is estimated during the pre-installation survey.
+        </p>
+        <p class="leading-relaxed mb-4" style="color: var(--text-soft);">
+          In addition to the day rate, certain projects may attract a fixed cost element for items such as worktop templating and fitting, special waste connections, or work in particularly difficult access situations. Any such additions are always itemised separately in your written quote so you can see exactly what you are paying for.
+        </p>
+        <p class="leading-relaxed" style="color: var(--text-soft);">
+          Strip-out of the existing kitchen is included in the day rate at no extra charge, covering removal of all existing cabinets, worktops, plinths, and cornices, as well as disconnection of the existing sink supply.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Survey fee -->
+  <section class="section">
+    <div class="container">
+      <div class="max-w-3xl fade-up">
+        <h2 class="text-3xl font-bold mb-4" style="color: var(--navy);">
+          Survey Fee — £{surveyFee}, Credited Back on Booking
+        </h2>
+        <p class="leading-relaxed mb-4" style="color: var(--text-soft);">
+          Every installation begins with a pre-installation survey, priced at £{surveyFee}. This fee covers the site visit, detailed measurement, and a written installation quote. It is carried out by an experienced fitter — not a salesperson — so you receive genuinely technical advice about your project.
+        </p>
+        <p class="leading-relaxed mb-4" style="color: var(--text-soft);">
+          The survey fee is deducted in full from your final installation invoice when you proceed with us. If you decide not to proceed after the survey, the £{surveyFee} fee covers our time and is non-refundable. We are transparent about this from the outset.
+        </p>
+        <p class="leading-relaxed" style="color: var(--text-soft);">
+          The survey is the single most important step in achieving a successful kitchen installation. It is where we identify issues, confirm measurements, and establish a realistic installation plan. Skipping this step invariably leads to problems on installation day — problems that cost more to resolve than the survey fee itself.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Per-retailer cost modifiers -->
+  <section class="section" style="background: var(--bg-light);">
+    <div class="container">
+      <div class="fade-up">
+        <h2 class="text-3xl font-bold mb-4" style="color: var(--navy);">
+          How Retailer Choice Affects Installation Cost
+        </h2>
+        <p class="leading-relaxed mb-8 max-w-2xl" style="color: var(--text-soft);">
+          Most standard rigid-carcass kitchens are priced at our base day rate. However, certain products require additional time or specialist skills that are reflected in a transparent adjustment to the base rate. The table below shows where these adjustments apply.
+        </p>
+        <div class="overflow-x-auto rounded-xl border max-w-2xl" style="border-color: #E5E7EB;">
+          <table class="w-full text-sm">
+            <thead>
+              <tr style="background: var(--navy); color: #fff;">
+                <th class="text-left px-5 py-4 font-semibold">Retailer / Brand</th>
+                <th class="text-left px-5 py-4 font-semibold">Rate Adjustment</th>
+                <th class="text-left px-5 py-4 font-semibold">Reason</th>
+              </tr>
+            </thead>
+            <tbody>
+              {retailerModifiers.map((item, i) => (
+                <tr class="border-t" style={`border-color: #E5E7EB;${i % 2 === 1 ? " background: #F9FAFB;" : ""}`}>
+                  <td class="px-5 py-4 font-semibold" style="color: var(--charcoal);">{item.name}</td>
+                  <td class="px-5 py-4 font-bold" style="color: var(--teal);">+{Math.round((item.modifier - 1) * 100)}%</td>
+                  <td class="px-5 py-4" style="color: var(--text-soft);">{item.note}</td>
+                </tr>
+              ))}
+              <tr class="border-t" style="border-color: #E5E7EB; background: #F0FDF4;">
+                <td class="px-5 py-4 font-semibold" style="color: var(--charcoal);">All others</td>
+                <td class="px-5 py-4 font-bold" style="color: var(--teal);">Standard rate</td>
+                <td class="px-5 py-4" style="color: var(--text-soft);">Wren, Magnet, Benchmarx, DIY Kitchens and most rigid-carcass formats.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="mt-4 text-xs italic" style="color: var(--text-soft);">
+          Rate adjustments are indicative. Actual adjustments are confirmed in your written quote following the survey.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- What's not included -->
+  <section class="section">
+    <div class="container">
+      <div class="max-w-3xl fade-up">
+        <h2 class="text-3xl font-bold mb-4" style="color: var(--navy);">
+          What Is Not Included in the Installation Quote
+        </h2>
+        <p class="leading-relaxed mb-4" style="color: var(--text-soft);">
+          Our installation quote covers the fitting of all kitchen cabinetry, doors, drawers, worktops (where supplied by us), and integrated appliances. It does not cover the following, which you will need to budget for separately:
+        </p>
+        <ul class="space-y-3 list-none p-0 m-0">
+          {[
+            { item: "The kitchen itself", detail: "Purchased directly from your chosen retailer." },
+            { item: "Plumbing", detail: "Typically £300–£600 for a straightforward kitchen reconnection. You will need an independent plumber." },
+            { item: "Electrical work", detail: "Typically £200–£500 for sockets, lighting, and appliance connections. You will need a Part P-certified electrician." },
+            { item: "Tiling", detail: "Variable depending on the area to be tiled. Typically arranged after the worktops are fitted." },
+            { item: "Appliances", detail: "We will install appliances supplied by you; the cost of the appliances themselves is not included." },
+            { item: "Remedial work", detail: "If strip-out reveals damaged plaster, rotten floorboards, or other structural issues, these will require additional trades." },
+          ].map((row) => (
+            <li class="flex gap-3 items-start">
+              <span class="flex-shrink-0 mt-1 w-1.5 h-1.5 rounded-full" style="background: var(--teal);"></span>
+              <p class="text-sm leading-relaxed" style="color: var(--text-soft);"><strong style="color: var(--charcoal);">{row.item}:</strong> {row.detail}</p>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section" style="background: var(--bg-light);">
+    <div class="container">
+      <div class="max-w-3xl fade-up">
+        <h2 class="text-3xl font-bold mb-8" style="color: var(--navy);">
+          Cost Guide — Frequently Asked Questions
+        </h2>
+        <FAQ items={faqItems} schemaId="faq-costs" />
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <CTA
+    heading="Get a Fixed Price for Your Kitchen Installation"
+    subtext="Book a pre-installation survey for £195 — credited back when you proceed. No estimates, no hidden costs — just a clear, itemised quote."
+    primaryLabel="Book Your Survey"
+    primaryHref="/survey/"
+    secondaryLabel="Call 07399 651836"
+    secondaryHref="tel:07399651836"
+    dark={true}
+  />
+
+  <Footer slot="footer" />
+  <StickyMobileCTA slot="sticky-cta" />
+</Base>

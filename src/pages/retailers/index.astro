@@ -1,0 +1,365 @@
+---
+import Base from "../../layouts/Base.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import StickyMobileCTA from "../../components/StickyMobileCTA.astro";
+import Breadcrumbs from "../../components/Breadcrumbs.astro";
+import AnswerBlock from "../../components/AnswerBlock.astro";
+import SupplierLogos from "../../components/SupplierLogos.astro";
+import FAQ from "../../components/FAQ.astro";
+import CTA from "../../components/CTA.astro";
+
+const retailers = [
+  {
+    name: "Wren Kitchens",
+    slug: "wren",
+    desc: "Independent installation for Wren kitchen purchases across Coventry and Warwickshire.",
+    accent: "#C8102E",
+  },
+  {
+    name: "Howdens",
+    slug: "howdens",
+    desc: "We fit Howdens kitchens sourced through builders and tradespeople.",
+    accent: "#004B87",
+  },
+  {
+    name: "Magnet",
+    slug: "magnet",
+    desc: "Expert independent installation for all Magnet kitchen ranges.",
+    accent: "#E31837",
+  },
+  {
+    name: "IKEA",
+    slug: "ikea",
+    desc: "IKEA SEKTION and METOD kitchen installation specialists.",
+    accent: "#0051BA",
+  },
+  {
+    name: "Wickes",
+    slug: "wickes",
+    desc: "We install all Wickes kitchen ranges independently.",
+    accent: "#009FDF",
+  },
+  {
+    name: "B&Q",
+    slug: "bq",
+    desc: "B&Q Santini and GoodHome kitchen fitting across the region.",
+    accent: "#F07800",
+  },
+  {
+    name: "Benchmarx",
+    slug: "benchmarx",
+    desc: "Independent installation for Benchmarx kitchens and joinery.",
+    accent: "#00539B",
+  },
+  {
+    name: "DIY Kitchens",
+    slug: "diy-kitchens",
+    desc: "We assemble and install flat-pack orders from DIY Kitchens.",
+    accent: "#1A1A1A",
+  },
+  {
+    name: "Kutchenhaus",
+    slug: "kutchenhaus",
+    desc: "Kutchenhaus German-style kitchen installation in Coventry and Warwickshire.",
+    accent: "#6B4C9A",
+  },
+  {
+    name: "Symphony",
+    slug: "symphony",
+    desc: "Expert fitting for Symphony kitchen furniture and accessories.",
+    accent: "#4A4A4A",
+  },
+  {
+    name: "Masterclass",
+    slug: "masterclass",
+    desc: "High-quality independent installation for Masterclass kitchen units.",
+    accent: "#B8962E",
+  },
+  {
+    name: "Nolte",
+    slug: "nolte",
+    desc: "German-engineered Nolte kitchens installed with precision.",
+    accent: "#2C2C2C",
+  },
+];
+
+const premiumBrands = [
+  { name: "Bulthaup", slug: "bulthaup" },
+  { name: "SieMatic", slug: "siematic" },
+  { name: "Poggenpohl", slug: "poggenpohl" },
+  { name: "Leicht", slug: "leicht" },
+  { name: "Schuller", slug: "schuller" },
+  { name: "Rotpunkt", slug: "rotpunkt" },
+];
+
+const faqItems = [
+  {
+    q: "Do you only install kitchens from specific retailers?",
+    a: "No — we are completely independent. We install kitchens purchased from any retailer, whether from our list or not. If you've bought it, we can fit it.",
+  },
+  {
+    q: "Are you an official installer for Wren, Howdens or IKEA?",
+    a: "No. We are an independent installation service and are not affiliated with, endorsed by, or an official partner of any retailer. We install kitchens from all suppliers, including Wren, Howdens, IKEA and more, at the customer's request.",
+  },
+  {
+    q: "My kitchen has already been delivered but not installed — can you help?",
+    a: "Yes — this is exactly the situation we're set up for. Whether your kitchen is sitting in boxes or was installed previously and needs adjustment, get in touch and we'll arrange a survey to assess the work required.",
+  },
+  {
+    q: "What if my kitchen isn't from a retailer on your list?",
+    a: "We fit kitchens from all sources, including independent kitchen designers, online suppliers and trade-only brands. If you're not sure, contact us and we'll confirm we can take on the project.",
+  },
+];
+---
+
+<Base
+  title="We Fit Kitchens From All Major UK Retailers | Install My Kitchen"
+  description="Independent kitchen installation for Wren, Howdens, Magnet, IKEA, Wickes, B&Q and all major UK retailers. Based in Coventry, covering Warwickshire. Not affiliated with any retailer."
+  canonical="https://www.installmykitchen.co.uk/retailers/"
+>
+  <!-- Header -->
+  <Header slot="header" />
+
+  <!-- ══════════════════════════════ PAGE HEADER ══════════════════ -->
+  <section class="page-header" aria-label="Page header">
+    <div class="container">
+      <Breadcrumbs items={[{ label: "Retailers", href: "/retailers/" }]} />
+      <h1 class="page-h1">We Fit Kitchens From All Major UK Retailers</h1>
+      <p class="page-sub">Bought your kitchen anywhere? We install it — independently, across Coventry and Warwickshire.</p>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════ MAIN CONTENT ════════════════ -->
+  <section class="section" style="background: #fff;" aria-labelledby="retailers-heading">
+    <div class="container">
+
+      <AnswerBlock answer="Install My Kitchen is a fully independent kitchen installation service in Coventry. We install kitchens purchased from any UK retailer including Wren, Howdens, Magnet, IKEA, Wickes, B&Q, Benchmarx and all other suppliers. We are not affiliated with any retailer." />
+
+      <h2 id="retailers-heading" class="section-h2 mb-8">Retailer Kitchens We Install</h2>
+      <ul class="retailers-grid" role="list" aria-label="Retailers we install kitchens from">
+        {retailers.map((retailer) => (
+          <li role="listitem">
+            <a
+              href={`/retailers/${retailer.slug}/`}
+              class="retailer-card"
+              style={`--card-accent: ${retailer.accent};`}
+            >
+              <span class="retailer-name">{retailer.name}</span>
+              <span class="retailer-desc">{retailer.desc}</span>
+              <span class="retailer-link-label" aria-hidden="true">
+                View page
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+              </span>
+            </a>
+          </li>
+        ))}
+      </ul>
+
+      <!-- Premium brands -->
+      <div class="premium-section">
+        <h2 class="section-h2 mb-4">Premium &amp; Designer Brands</h2>
+        <p class="premium-intro">
+          We also install kitchens from premium and designer brands. These often have more complex fitting requirements and we are experienced with their specific assembly and installation specifications.
+        </p>
+        <ul class="premium-list" role="list">
+          {premiumBrands.map((brand) => (
+            <li role="listitem">
+              <a href={`/premium/${brand.slug}/`} class="premium-link">
+                {brand.name}
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═════════════════════════════════════ SUPPLIER LOGOS ════════ -->
+  <SupplierLogos heading="All Major Suppliers Covered" />
+
+  <!-- ═══════════════════════════════════════════ FAQ ═══════════ -->
+  <section class="section" style="background: #fff;" aria-labelledby="faq-heading">
+    <div class="container">
+      <div class="max-w-3xl mx-auto">
+        <h2 id="faq-heading" class="text-2xl md:text-3xl font-bold mb-2 text-center" style="color: var(--charcoal);">
+          Retailers FAQ
+        </h2>
+        <p class="text-center text-sm mb-10" style="color: var(--text-soft);">
+          Questions about our independence from retailers and brands.
+        </p>
+        <FAQ items={faqItems} schemaId="retailers-faq" />
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════ DARK CTA ═══════════ -->
+  <CTA
+    dark={true}
+    heading="Ready to Get Your Kitchen Installed?"
+    subtext="Whatever retailer you bought from, we'll fit it. Book a survey and get a clear, itemised quote."
+    primaryLabel="Book a Survey — £195"
+    primaryHref="/survey/"
+    secondaryLabel="View All Areas"
+    secondaryHref="/areas/"
+  />
+
+  <!-- Footer -->
+  <Footer slot="footer" />
+  <StickyMobileCTA slot="sticky-cta" />
+</Base>
+
+<style>
+  /* Page header */
+  .page-header {
+    background: var(--hero-gradient);
+    padding: 3rem 0 3.5rem;
+  }
+
+  .page-h1 {
+    font-size: clamp(1.625rem, 3vw, 2.5rem);
+    font-weight: 800;
+    color: #fff;
+    letter-spacing: -0.02em;
+    margin-top: 0.75rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .page-sub {
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 1.0625rem;
+    line-height: 1.6;
+    max-width: 540px;
+  }
+
+  .section-h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--charcoal);
+  }
+
+  /* Retailers grid */
+  .retailers-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.125rem;
+    list-style: none;
+    padding: 0;
+    margin: 0 0 3rem;
+  }
+
+  @media (min-width: 640px) {
+    .retailers-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .retailers-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .retailer-card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.375rem;
+    padding: 1.25rem;
+    border-radius: 1rem;
+    border: 1.5px solid var(--border);
+    border-left: 4px solid var(--card-accent);
+    background: #fff;
+    text-decoration: none;
+    transition: box-shadow 0.2s, transform 0.2s, border-color 0.2s;
+  }
+
+  .retailer-card:hover {
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    transform: translateY(-2px);
+    border-color: var(--card-accent);
+  }
+
+  .retailer-name {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--charcoal);
+  }
+
+  .retailer-desc {
+    font-size: 0.8125rem;
+    color: var(--text-soft);
+    line-height: 1.5;
+    flex: 1;
+  }
+
+  .retailer-link-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    color: var(--teal);
+    margin-top: 0.5rem;
+    transition: gap 0.15s;
+  }
+
+  .retailer-card:hover .retailer-link-label {
+    gap: 0.5rem;
+  }
+
+  /* Premium section */
+  .premium-section {
+    background: var(--bg-light);
+    border-radius: 1.25rem;
+    border: 1.5px solid var(--border);
+    padding: 1.75rem;
+    margin-bottom: 0;
+  }
+
+  .premium-intro {
+    font-size: 0.9375rem;
+    color: var(--text-soft);
+    line-height: 1.7;
+    margin-bottom: 1.25rem;
+  }
+
+  .premium-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.625rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .premium-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.375rem;
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    border: 1.5px solid var(--border);
+    background: #fff;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--charcoal);
+    transition: border-color 0.2s, background 0.2s, color 0.2s;
+  }
+
+  .premium-link:hover {
+    border-color: var(--teal);
+    background: rgba(15, 118, 110, 0.05);
+    color: var(--teal);
+  }
+
+  .premium-link svg {
+    opacity: 0.5;
+    transition: opacity 0.15s;
+  }
+
+  .premium-link:hover svg {
+    opacity: 1;
+  }
+</style>

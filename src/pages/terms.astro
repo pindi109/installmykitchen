@@ -1,0 +1,141 @@
+---
+import Base from "../layouts/Base.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import StickyMobileCTA from "../components/StickyMobileCTA.astro";
+import Breadcrumbs from "../components/Breadcrumbs.astro";
+
+const canonical = "https://www.installmykitchen.co.uk/terms/";
+const title = "Terms & Conditions | Install My Kitchen";
+const metaDescription = "Terms and conditions for kitchen installation services provided by Install My Kitchen. Covers services, payment, cancellation, and liability.";
+---
+
+<Base
+  title={title}
+  description={metaDescription}
+  canonical={canonical}
+>
+  <!-- Override robots to noindex for policy pages -->
+  <meta slot="schema" name="robots" content="noindex, follow" />
+
+  <Header slot="header" />
+
+  <div class="container py-6">
+    <Breadcrumbs
+      items={[
+        { label: "Terms & Conditions", href: "/terms/" },
+      ]}
+    />
+  </div>
+
+  <section class="section">
+    <div class="container">
+      <div class="max-w-3xl prose-page">
+
+        <h1 class="text-4xl font-extrabold mb-6" style="color: var(--navy);">Terms &amp; Conditions</h1>
+        <p class="text-sm mb-10" style="color: var(--text-soft);">Last updated: June 2025</p>
+
+        <h2 class="text-2xl font-bold mt-8 mb-3" style="color: var(--navy);">1. About Us</h2>
+        <p style="color: var(--text-soft);">
+          These terms and conditions govern the provision of kitchen installation services by Install My Kitchen Ltd, trading as Install My Kitchen, of 242 Hollyfast Road, Coundon, Coventry, CV6 2AH ("we", "us", "our"). By accepting our quotation or proceeding with a survey booking, you ("the client") agree to be bound by these terms.
+        </p>
+
+        <h2 class="text-2xl font-bold mt-8 mb-3" style="color: var(--navy);">2. Our Services</h2>
+        <p style="color: var(--text-soft);">
+          We provide independent kitchen installation services, including but not limited to: stripping out of existing kitchen cabinetry; assembly and fitting of new kitchen carcasses, doors, and drawers; worktop supply and fitting; integrated appliance installation; and all associated scribing, plinth, cornice, and finishing work. Our services do not include plumbing (other than sink and tap connection to existing supplies), electrical works, plastering, tiling, or flooring unless specifically stated in your written quotation.
+        </p>
+        <p class="mt-3" style="color: var(--text-soft);">
+          The precise scope of services for your project is set out in your written quotation, which forms part of the contract between us. Any variation to the agreed scope must be confirmed in writing by us before additional work is undertaken.
+        </p>
+
+        <h2 class="text-2xl font-bold mt-8 mb-3" style="color: var(--navy);">3. Pre-Installation Survey</h2>
+        <p style="color: var(--text-soft);">
+          A pre-installation survey is required before we issue a fixed installation quotation. The survey fee is £195 (inclusive of VAT), payable on booking. This fee is non-refundable if you choose not to proceed with installation following the survey. If you proceed with installation, the survey fee is credited in full against your final invoice.
+        </p>
+        <p class="mt-3" style="color: var(--text-soft);">
+          The survey report and quotation are based on information available at the time of the survey. Where hidden conditions are revealed during installation (for example, structural defects concealed by the existing kitchen), we reserve the right to vary the quotation accordingly after notifying you.
+        </p>
+
+        <h2 class="text-2xl font-bold mt-8 mb-3" style="color: var(--navy);">4. Quotations &amp; Pricing</h2>
+        <p style="color: var(--text-soft);">
+          All quotations are provided in writing and are valid for 30 days from the date of issue. Prices are inclusive of VAT at the current standard rate of 20%. We reserve the right to revise our pricing where there is a significant change in the scope of work or where conditions discovered during installation materially affect the time required.
+        </p>
+        <p class="mt-3" style="color: var(--text-soft);">
+          Where a variation to the original quotation is necessary, we will notify you promptly and obtain your written agreement before proceeding with any additional work. You will not be charged for additional work without your prior approval.
+        </p>
+
+        <h2 class="text-2xl font-bold mt-8 mb-3" style="color: var(--navy);">5. Payment Terms</h2>
+        <p style="color: var(--text-soft);">
+          A deposit of 30% of the total installation fee is required upon confirmation of your installation date. This deposit secures your slot in our schedule and covers initial material costs. The remaining 70% is due upon satisfactory completion of the installation.
+        </p>
+        <p class="mt-3" style="color: var(--text-soft);">
+          Payment may be made by bank transfer, debit card, credit card, or cheque. VAT invoices will be issued upon completion of the installation. Where payment is not made within 14 days of the invoice date, we reserve the right to charge interest at 8% per annum above the Bank of England base rate under the Late Payment of Commercial Debts (Interest) Act 1998.
+        </p>
+
+        <h2 class="text-2xl font-bold mt-8 mb-3" style="color: var(--navy);">6. Cancellation &amp; Rescheduling</h2>
+        <p style="color: var(--text-soft);">
+          If you need to cancel or reschedule your installation, please notify us as soon as possible. The following cancellation terms apply:
+        </p>
+        <ul class="mt-3 space-y-2 list-disc pl-6" style="color: var(--text-soft);">
+          <li><strong>More than 14 days before the installation start date:</strong> No charge beyond the survey fee if applicable. The deposit is refunded in full.</li>
+          <li><strong>7–14 days before the installation start date:</strong> 25% of the total installation fee is retained to cover costs incurred.</li>
+          <li><strong>Less than 7 days before the installation start date:</strong> 50% of the total installation fee is retained.</li>
+          <li><strong>Less than 48 hours' notice or failure to provide access:</strong> The full deposit is forfeited.</li>
+        </ul>
+        <p class="mt-3" style="color: var(--text-soft);">
+          We reserve the right to cancel or reschedule in exceptional circumstances such as illness or equipment failure. In such cases, we will give you as much notice as possible and arrange an alternative date at no additional cost to you.
+        </p>
+
+        <h2 class="text-2xl font-bold mt-8 mb-3" style="color: var(--navy);">7. Client Responsibilities</h2>
+        <p style="color: var(--text-soft);">Before installation begins, you are responsible for:</p>
+        <ul class="mt-3 space-y-2 list-disc pl-6" style="color: var(--text-soft);">
+          <li>Ensuring the kitchen and adjacent areas are cleared and accessible.</li>
+          <li>Confirming that all kitchen components have been received and are complete.</li>
+          <li>Ensuring a responsible adult is available on the first and last day of installation.</li>
+          <li>Having an independent plumber and electrician booked for the required stages of the project.</li>
+          <li>Notifying us of any known structural issues, hazardous materials, or access restrictions.</li>
+        </ul>
+
+        <h2 class="text-2xl font-bold mt-8 mb-3" style="color: var(--navy);">8. Workmanship Warranty</h2>
+        <p style="color: var(--text-soft);">
+          We provide a 12-month workmanship warranty covering defects arising from the installation process, including carcasses becoming unlevel, hinge failures attributable to our fitting, and plinths or cornices coming loose. This warranty does not cover product defects (covered by the manufacturer), damage caused by misuse or third parties, or issues arising from conditions we were not made aware of at the survey stage.
+        </p>
+        <p class="mt-3" style="color: var(--text-soft);">
+          To make a warranty claim, please notify us in writing within the 12-month period. We will arrange a remedial visit within 10 working days of receiving written notification.
+        </p>
+
+        <h2 class="text-2xl font-bold mt-8 mb-3" style="color: var(--navy);">9. Liability</h2>
+        <p style="color: var(--text-soft);">
+          We are fully insured for public liability and employer's liability. In the event of accidental damage to your property caused directly by our team during installation, we will take responsibility and arrange repair or replacement as appropriate.
+        </p>
+        <p class="mt-3" style="color: var(--text-soft);">
+          Our total liability to you in connection with any installation contract shall not exceed the total value of the installation fee paid by you for that project. We shall not be liable for indirect or consequential loss, loss of profit, or loss of enjoyment of your property. Nothing in these terms limits our liability for death or personal injury caused by our negligence, or for fraud or fraudulent misrepresentation.
+        </p>
+
+        <h2 class="text-2xl font-bold mt-8 mb-3" style="color: var(--navy);">10. Disputes</h2>
+        <p style="color: var(--text-soft);">
+          If you are dissatisfied with any aspect of our service, please contact us in writing in the first instance. We aim to resolve complaints within 14 working days. If a dispute cannot be resolved by direct negotiation, both parties agree to attempt resolution through a recognised alternative dispute resolution process before resorting to legal proceedings.
+        </p>
+
+        <h2 class="text-2xl font-bold mt-8 mb-3" style="color: var(--navy);">11. Governing Law</h2>
+        <p style="color: var(--text-soft);">
+          These terms and conditions are governed by and shall be construed in accordance with the law of England and Wales. Any disputes arising under or in connection with these terms shall be subject to the exclusive jurisdiction of the courts of England and Wales.
+        </p>
+
+        <h2 class="text-2xl font-bold mt-8 mb-3" style="color: var(--navy);">12. Contact</h2>
+        <div class="mt-4 p-5 rounded-xl border" style="border-color: #E5E7EB; background: var(--bg-light);">
+          <address class="not-italic text-sm" style="color: var(--text-soft);">
+            Install My Kitchen<br />
+            242 Hollyfast Road, Coundon, Coventry, CV6 2AH<br />
+            <a href="tel:07399651836" style="color: var(--teal);">07399 651836</a><br />
+            <a href="mailto:info@installmykitchen.co.uk" style="color: var(--teal);">info@installmykitchen.co.uk</a>
+          </address>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+  <StickyMobileCTA slot="sticky-cta" />
+</Base>

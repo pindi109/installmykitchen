@@ -1,0 +1,227 @@
+[
+  {
+    "slug": "coventry",
+    "name": "Coventry",
+    "county": "West Midlands",
+    "nearby": ["canley", "earlsdon", "tile-hill", "coundon", "radford"],
+    "description": "Coventry is a vibrant city undergoing significant regeneration, with a strong mix of new-build properties and period homes across its many distinct neighbourhoods. Our kitchen fitting teams operate throughout the city, from city-centre apartments to the larger family homes in the outer suburbs.",
+    "lat": 52.4068,
+    "lng": -1.5197
+  },
+  {
+    "slug": "canley",
+    "name": "Canley",
+    "county": "West Midlands",
+    "nearby": ["coventry", "tile-hill", "earlsdon", "finham", "allesley"],
+    "description": "Canley is a residential suburb on the south-western edge of Coventry, popular with University of Warwick staff and students and home to a range of 1960s and 1970s semi-detached properties. Kitchen upgrades are common here as homeowners modernise these well-built but dated post-war homes.",
+    "lat": 52.4031,
+    "lng": -1.5542
+  },
+  {
+    "slug": "tile-hill",
+    "name": "Tile Hill",
+    "county": "West Midlands",
+    "nearby": ["canley", "allesley", "coventry", "coundon", "balsall-common"],
+    "description": "Tile Hill is an established suburban area in the west of Coventry, characterised by spacious inter-war and post-war housing with generous kitchen layouts. Its proximity to Coventry station and good road links make it a popular choice for families seeking larger homes with room to invest in quality kitchen renovations.",
+    "lat": 52.4097,
+    "lng": -1.5779
+  },
+  {
+    "slug": "earlsdon",
+    "name": "Earlsdon",
+    "county": "West Midlands",
+    "nearby": ["coventry", "canley", "stivichall", "finham", "radford"],
+    "description": "Earlsdon is one of Coventry's most sought-after residential suburbs, known for its charming Edwardian and Victorian terraces and thriving local high street. The character properties here are well-suited to traditional and painted kitchen styles, and our fitters have extensive experience working in these older home layouts.",
+    "lat": 52.3987,
+    "lng": -1.5318
+  },
+  {
+    "slug": "allesley",
+    "name": "Allesley",
+    "county": "West Midlands",
+    "nearby": ["tile-hill", "canley", "meriden", "coventry", "coundon"],
+    "description": "Allesley is a semi-rural village on the western fringes of Coventry, with a mix of older cottages, detached family homes, and select new developments. The larger kitchens typical of detached homes in this area often benefit from bespoke worktop runs and island units.",
+    "lat": 52.4207,
+    "lng": -1.5697
+  },
+  {
+    "slug": "binley",
+    "name": "Binley",
+    "county": "West Midlands",
+    "nearby": ["coventry", "wyken", "walsgrave", "finham", "stivichall"],
+    "description": "Binley is a large residential suburb in the east of Coventry, featuring a broad range of housing from 1930s semis to modern estates built around the former Binley Colliery site. Kitchen refurbishments are popular across the area as the housing stock matures and homeowners invest in improving their properties.",
+    "lat": 52.3987,
+    "lng": -1.4697
+  },
+  {
+    "slug": "wyken",
+    "name": "Wyken",
+    "county": "West Midlands",
+    "nearby": ["binley", "walsgrave", "coventry", "radford", "coundon"],
+    "description": "Wyken is a well-established neighbourhood in north-east Coventry, offering a predominantly residential landscape of semi-detached and terraced homes. Our kitchen installation teams regularly work across Wyken, fitting kitchens from a range of retailers to suit varied budgets.",
+    "lat": 52.4187,
+    "lng": -1.4729
+  },
+  {
+    "slug": "walsgrave",
+    "name": "Walsgrave",
+    "county": "West Midlands",
+    "nearby": ["wyken", "binley", "coventry", "nuneaton", "bedworth"],
+    "description": "Walsgrave is a suburban area in the north-east of Coventry, best known as the location of University Hospital Coventry and Warwickshire and a large retail park. The surrounding residential streets contain a variety of family homes where practical, hardwearing kitchen solutions are most in demand.",
+    "lat": 52.4249,
+    "lng": -1.4529
+  },
+  {
+    "slug": "finham",
+    "name": "Finham",
+    "county": "West Midlands",
+    "nearby": ["stivichall", "canley", "earlsdon", "coventry", "kenilworth"],
+    "description": "Finham is an affluent suburb in the south of Coventry, characterised by large detached houses and a quiet, leafy setting close to the Warwickshire border. This area sees strong demand for premium kitchen installations, with many homeowners opting for high-specification appliances and bespoke cabinetry.",
+    "lat": 52.3797,
+    "lng": -1.5218
+  },
+  {
+    "slug": "stivichall",
+    "name": "Stivichall",
+    "county": "West Midlands",
+    "nearby": ["finham", "earlsdon", "coventry", "binley", "kenilworth"],
+    "description": "Stivichall is a desirable residential area between Coventry city centre and Kenilworth, popular with professionals and families seeking larger Victorian and interwar homes. The spacious kitchens in these properties are well-suited to full replacement projects with quality cabinetry and stone worktops.",
+    "lat": 52.3917,
+    "lng": -1.5058
+  },
+  {
+    "slug": "coundon",
+    "name": "Coundon",
+    "county": "West Midlands",
+    "nearby": ["coventry", "radford", "allesley", "tile-hill", "wyken"],
+    "description": "Coundon is a busy residential suburb in north-west Coventry, with a mixture of terraced streets and larger semis built across several decades of the twentieth century. Our fitters are familiar with the varied kitchen layouts found in Coundon's eclectic housing stock.",
+    "lat": 52.4197,
+    "lng": -1.5379
+  },
+  {
+    "slug": "radford",
+    "name": "Radford",
+    "county": "West Midlands",
+    "nearby": ["coundon", "coventry", "wyken", "earlsdon", "canley"],
+    "description": "Radford is an inner-city suburb of Coventry with a diverse community and a mix of Victorian terraces and council-built properties. Value-for-money kitchen installations are particularly popular here, and our team works closely with homeowners to maximise impact within tighter budgets.",
+    "lat": 52.4147,
+    "lng": -1.5247
+  },
+  {
+    "slug": "rugby",
+    "name": "Rugby",
+    "county": "Warwickshire",
+    "nearby": ["coventry", "southam", "nuneaton", "bedworth", "hinckley"],
+    "description": "Rugby is a market town in north-east Warwickshire with a strong community identity and a broad mix of Victorian terraces, 1930s semis, and modern new-build estates. It is one of the largest towns we serve outside Coventry, and our dedicated Rugby team handles installations across the town and surrounding villages.",
+    "lat": 52.3704,
+    "lng": -1.2641
+  },
+  {
+    "slug": "nuneaton",
+    "name": "Nuneaton",
+    "county": "Warwickshire",
+    "nearby": ["coventry", "bedworth", "hinckley", "atherstone", "walsgrave"],
+    "description": "Nuneaton is a major town in north Warwickshire, home to a large and diverse housing stock ranging from Victorian terraces to substantial modern estates. Our Nuneaton fitters serve the town and its surrounding villages, offering competitive installation packages across all budget levels.",
+    "lat": 52.5238,
+    "lng": -1.4656
+  },
+  {
+    "slug": "bedworth",
+    "name": "Bedworth",
+    "county": "Warwickshire",
+    "nearby": ["nuneaton", "coventry", "walsgrave", "hinckley", "atherstone"],
+    "description": "Bedworth is a historic mining town situated between Coventry and Nuneaton, with a predominantly residential character and a strong sense of community. The town's mix of older and newer housing provides a steady demand for quality kitchen refurbishments at sensible prices.",
+    "lat": 52.4754,
+    "lng": -1.4759
+  },
+  {
+    "slug": "hinckley",
+    "name": "Hinckley",
+    "county": "Leicestershire",
+    "nearby": ["nuneaton", "bedworth", "coventry", "atherstone", "rugby"],
+    "description": "Hinckley is a thriving market town just across the Warwickshire border in Leicestershire, within easy reach of our Coventry base. We regularly fit kitchens across Hinckley and the surrounding villages, offering the same professional service and competitive pricing as across our core operating area.",
+    "lat": 52.5415,
+    "lng": -1.3713
+  },
+  {
+    "slug": "leamington-spa",
+    "name": "Leamington Spa",
+    "county": "Warwickshire",
+    "nearby": ["warwick", "kenilworth", "coventry", "southam", "stratford-upon-avon"],
+    "description": "Royal Leamington Spa is an elegant Regency town renowned for its grand townhouses, tree-lined boulevards, and thriving independent retail scene. The town's impressive period properties and upmarket new developments generate strong demand for premium kitchen installations, particularly shaker and in-frame styles that complement the Georgian and Victorian architecture.",
+    "lat": 52.2852,
+    "lng": -1.5200
+  },
+  {
+    "slug": "kenilworth",
+    "name": "Kenilworth",
+    "county": "Warwickshire",
+    "nearby": ["leamington-spa", "coventry", "warwick", "finham", "balsall-common"],
+    "description": "Kenilworth is one of Warwickshire's most desirable towns, with excellent schools, a historic castle, and a wealth of large detached family homes. Our kitchen installation teams serve Kenilworth and its surrounding villages regularly, with a particular focus on high-specification projects befitting the area's premium property market.",
+    "lat": 52.3415,
+    "lng": -1.5682
+  },
+  {
+    "slug": "warwick",
+    "name": "Warwick",
+    "county": "Warwickshire",
+    "nearby": ["leamington-spa", "kenilworth", "stratford-upon-avon", "coventry", "southam"],
+    "description": "Warwick is a historic county town with a rich architectural heritage, including a wealth of Georgian townhouses and Victorian villas surrounding the world-famous Warwick Castle. Period kitchen renovations in Warwick frequently call for traditional or handpainted cabinetry to suit the character of these older properties.",
+    "lat": 52.2793,
+    "lng": -1.5849
+  },
+  {
+    "slug": "balsall-common",
+    "name": "Balsall Common",
+    "county": "Warwickshire",
+    "nearby": ["kenilworth", "tile-hill", "allesley", "meriden", "solihull"],
+    "description": "Balsall Common is an affluent village in the Solihull Metropolitan Borough, popular with commuters to Birmingham and Coventry who seek large, well-appointed homes in a semi-rural setting. Kitchen projects here tend to be substantial, with many clients opting for German or handleless cabinetry to complement contemporary open-plan extensions.",
+    "lat": 52.3757,
+    "lng": -1.6367
+  },
+  {
+    "slug": "meriden",
+    "name": "Meriden",
+    "county": "West Midlands",
+    "nearby": ["balsall-common", "allesley", "coventry", "solihull", "tile-hill"],
+    "description": "Meriden is a quiet village in the heart of England, traditionally regarded as the geographic centre of the country, with a mix of period cottages and newer detached homes. The village's character properties are well-suited to handcrafted and painted kitchen styles that honour their historic surroundings.",
+    "lat": 52.4327,
+    "lng": -1.6418
+  },
+  {
+    "slug": "solihull",
+    "name": "Solihull",
+    "county": "West Midlands",
+    "nearby": ["balsall-common", "meriden", "kenilworth", "coventry", "allesley"],
+    "description": "Solihull is one of the most prosperous towns in the West Midlands, known for its high-quality housing, excellent schools, and proximity to Birmingham Airport. The town's affluent homeowners frequently invest in luxury kitchen refurbishments, and our team is well-versed in delivering premium installations to the standards expected in this market.",
+    "lat": 52.4126,
+    "lng": -1.7775
+  },
+  {
+    "slug": "stratford-upon-avon",
+    "name": "Stratford-upon-Avon",
+    "county": "Warwickshire",
+    "nearby": ["warwick", "leamington-spa", "kenilworth", "southam", "coventry"],
+    "description": "Stratford-upon-Avon is Shakespeare's birthplace and one of England's most celebrated historic towns, with a fine stock of Tudor, Georgian, and Victorian properties alongside modern residential developments. Kitchen installations in Stratford frequently need to respect the character of older buildings, and our fitters have considerable experience working within listed and conservation area properties.",
+    "lat": 52.1920,
+    "lng": -1.7082
+  },
+  {
+    "slug": "southam",
+    "name": "Southam",
+    "county": "Warwickshire",
+    "nearby": ["leamington-spa", "warwick", "rugby", "coventry", "stratford-upon-avon"],
+    "description": "Southam is a small market town in south Warwickshire with a friendly community and a growing number of new-build estates alongside its older town centre properties. We cover Southam and the surrounding villages as part of our broader south Warwickshire service area.",
+    "lat": 52.2519,
+    "lng": -1.3892
+  },
+  {
+    "slug": "atherstone",
+    "name": "Atherstone",
+    "county": "Warwickshire",
+    "nearby": ["nuneaton", "hinckley", "bedworth", "coventry", "rugby"],
+    "description": "Atherstone is a historic market town in north Warwickshire, known for its traditional Shrove Tuesday ball game and a compact town centre with a variety of Victorian and Edwardian properties. Our north Warwickshire team serves Atherstone and the surrounding villages, offering competitive kitchen installation packages for both older and newer homes.",
+    "lat": 52.5770,
+    "lng": -1.5473
+  }
+]

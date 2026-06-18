@@ -1,0 +1,244 @@
+---
+import Base from "../../layouts/Base.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import StickyMobileCTA from "../../components/StickyMobileCTA.astro";
+import Breadcrumbs from "../../components/Breadcrumbs.astro";
+import AnswerBlock from "../../components/AnswerBlock.astro";
+import FAQ from "../../components/FAQ.astro";
+import SupplierLogos from "../../components/SupplierLogos.astro";
+import InternalLinks from "../../components/InternalLinks.astro";
+import CTA from "../../components/CTA.astro";
+
+import retailersData from "../../data/retailers.json";
+import faqsData from "../../data/faqs.json";
+
+export function getStaticPaths() {
+  return retailersData.map((retailer) => ({
+    params: { retailer: retailer.slug },
+    props: { retailer },
+  }));
+}
+
+const { retailer } = Astro.props;
+const { slug, displayName, description, installNote } = retailer;
+
+const canonical = `https://www.installmykitchen.co.uk/retailers/${slug}/`;
+
+// Title — ≤60 chars, abbreviated where necessary
+const rawTitle = `${displayName} Kitchen Installation | Install My Kitchen`;
+const title = rawTitle.length <= 60 ? rawTitle : `${displayName} Kitchen Fitting | Install My Kitchen`;
+
+// Meta description — 140–160 chars, unique per retailer
+const metaDescription = `Independent ${displayName} kitchen installation across Coventry & Warwickshire. We are not affiliated with ${displayName} — we install kitchens you've purchased from them.`;
+
+// Retailer-specific FAQ — pull from retailers section, first 4
+const faqItems = faqsData.retailers.slice(0, 4);
+
+// Related retailer links — up to 4 other retailers
+const otherRetailers = retailersData
+  .filter((r) => r.slug !== slug)
+  .slice(0, 4)
+  .map((r) => ({
+    label: r.displayName,
+    href: `/retailers/${r.slug}/`,
+    description: `Independent installation for ${r.displayName} kitchens`,
+  }));
+
+// Location links
+const locationLinks = [
+  { label: "Kitchen Installation in Coventry", href: "/areas/coventry/", description: "Our home city — full coverage" },
+  { label: "Kitchen Installation in Leamington Spa", href: "/areas/leamington-spa/", description: "Warwickshire coverage" },
+  { label: "Kitchen Installation in Rugby", href: "/areas/rugby/", description: "North Warwickshire coverage" },
+  { label: "Kitchen Installation in Kenilworth", href: "/areas/kenilworth/", description: "South Warwickshire coverage" },
+];
+
+const internalLinks = [...otherRetailers, ...locationLinks].slice(0, 6);
+
+// BreadcrumbList JSON-LD
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://www.installmykitchen.co.uk/" },
+    { "@type": "ListItem", position: 2, name: "Retailers", item: "https://www.installmykitchen.co.uk/retailers/" },
+    { "@type": "ListItem", position: 3, name: displayName, item: canonical },
+  ],
+};
+
+// Service JSON-LD
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  name: `${displayName} Kitchen Installation`,
+  provider: {
+    "@type": "LocalBusiness",
+    name: "Install My Kitchen",
+    url: "https://www.installmykitchen.co.uk",
+  },
+  areaServed: {
+    "@type": "Place",
+    name: "Coventry and Warwickshire",
+  },
+  description: `Independent installation service for ${displayName} kitchens across Coventry and Warwickshire. Install My Kitchen is not affiliated with ${displayName}.`,
+  serviceType: "Kitchen Installation",
+};
+---
+
+<Base
+  title={title}
+  description={metaDescription}
+  canonical={canonical}
+>
+  <script slot="schema" type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+  <script slot="schema" type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
+
+  <Header slot="header" />
+
+  <div class="container py-6">
+    <Breadcrumbs
+      items={[
+        { label: "Retailers", href: "/retailers/" },
+        { label: displayName, href: `/retailers/${slug}/` },
+      ]}
+    />
+  </div>
+
+  <!-- Hero -->
+  <section class="section" style="background: var(--bg-light);">
+    <div class="container">
+      <div class="max-w-3xl">
+        <h1 class="text-4xl md:text-5xl font-extrabold mb-5 leading-tight" style="color: var(--navy);">
+          {displayName} Kitchen Installation — Independent Fitting Service
+        </h1>
+        <AnswerBlock
+          answer={`Install My Kitchen provides expert independent installation for ${displayName} kitchens across Coventry and Warwickshire. We are not affiliated with ${displayName} — we install kitchens you've purchased from them.`}
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- About this retailer -->
+  <section class="section">
+    <div class="container">
+      <div class="max-w-3xl fade-up">
+        <h2 class="text-3xl font-bold mb-4" style="color: var(--navy);">
+          About {displayName} Kitchens
+        </h2>
+        <p class="text-lg leading-relaxed mb-4" style="color: var(--text-soft);">
+          {description}
+        </p>
+        <p class="leading-relaxed" style="color: var(--text-soft);">
+          Install My Kitchen is entirely independent of {displayName}. We do not sell kitchens; we install them. This means you benefit from impartial advice and a fitter whose sole focus is on achieving the best possible result — not on upselling you a more expensive product range.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Installation logistics -->
+  <section class="section" style="background: var(--bg-light);">
+    <div class="container">
+      <div class="max-w-3xl fade-up">
+        <h2 class="text-3xl font-bold mb-4" style="color: var(--navy);">
+          What to Expect When We Fit Your {displayName} Kitchen
+        </h2>
+        <p class="leading-relaxed mb-4" style="color: var(--text-soft);">
+          {installNote}
+        </p>
+        <p class="leading-relaxed mb-4" style="color: var(--text-soft);">
+          Before installation begins, we carry out a detailed pre-installation survey at your home. Our surveyor takes precise measurements of the kitchen space, reviews your {displayName} plan against the actual room dimensions, and identifies any potential issues — such as out-of-plumb walls, awkward pipework routes, or ceiling height variations — before they become problems on installation day.
+        </p>
+        <p class="leading-relaxed" style="color: var(--text-soft);">
+          On installation day, we begin with a full strip-out of the existing kitchen, included at no extra charge, before carrying out a dry fit of all new carcasses to confirm the layout before anything is permanently fixed. Every door, drawer, hinge, and fitting is adjusted until it is perfectly aligned, and we carry out a full snagging walk-round with you before we consider the job complete.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Our Process -->
+  <section class="section">
+    <div class="container">
+      <div class="max-w-3xl fade-up">
+        <h2 class="text-3xl font-bold mb-6" style="color: var(--navy);">
+          Our Installation Process
+        </h2>
+        <ol class="space-y-5 list-none p-0 m-0">
+          <li class="flex gap-4 items-start">
+            <span class="flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold text-white" style="background: var(--teal);">1</span>
+            <div>
+              <p class="font-semibold mb-1" style="color: var(--charcoal);">Pre-Installation Survey</p>
+              <p class="text-sm leading-relaxed" style="color: var(--text-soft);">A visit to your home to measure, assess, and review your {displayName} plan. We provide a fixed-price installation quote following the survey.</p>
+            </div>
+          </li>
+          <li class="flex gap-4 items-start">
+            <span class="flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold text-white" style="background: var(--teal);">2</span>
+            <div>
+              <p class="font-semibold mb-1" style="color: var(--charcoal);">Kitchen Delivery Co-ordination</p>
+              <p class="text-sm leading-relaxed" style="color: var(--text-soft);">We help you co-ordinate the delivery of your {displayName} kitchen to ensure all components are on site and checked before installation begins.</p>
+            </div>
+          </li>
+          <li class="flex gap-4 items-start">
+            <span class="flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold text-white" style="background: var(--teal);">3</span>
+            <div>
+              <p class="font-semibold mb-1" style="color: var(--charcoal);">Strip-Out &amp; Dry Fit</p>
+              <p class="text-sm leading-relaxed" style="color: var(--text-soft);">We strip out the existing kitchen and carry out a full dry fit of all new carcasses to verify the layout before anything is permanently fixed.</p>
+            </div>
+          </li>
+          <li class="flex gap-4 items-start">
+            <span class="flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold text-white" style="background: var(--teal);">4</span>
+            <div>
+              <p class="font-semibold mb-1" style="color: var(--charcoal);">Fitting &amp; Finishing</p>
+              <p class="text-sm leading-relaxed" style="color: var(--text-soft);">All carcasses are levelled and fixed, worktops templated and fitted, doors and drawers adjusted, and all plinths, cornices, and accessories installed.</p>
+            </div>
+          </li>
+          <li class="flex gap-4 items-start">
+            <span class="flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold text-white" style="background: var(--teal);">5</span>
+            <div>
+              <p class="font-semibold mb-1" style="color: var(--charcoal);">Snagging &amp; Sign-Off</p>
+              <p class="text-sm leading-relaxed" style="color: var(--text-soft);">A final walk-round with you to check every aspect of the finished installation before we consider the job complete.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- Supplier Logos -->
+  <SupplierLogos />
+
+  <!-- FAQ -->
+  <section class="section">
+    <div class="container">
+      <div class="max-w-3xl fade-up">
+        <h2 class="text-3xl font-bold mb-8" style="color: var(--navy);">
+          Frequently Asked Questions
+        </h2>
+        <FAQ items={faqItems} schemaId={`faq-retailer-${slug}`} />
+      </div>
+    </div>
+  </section>
+
+  <!-- Internal Links -->
+  <section class="section" style="background: var(--bg-light);">
+    <div class="container fade-up">
+      <InternalLinks
+        links={internalLinks}
+        heading="Related Pages"
+      />
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <CTA
+    heading={`Book Your ${displayName} Kitchen Installation Survey`}
+    subtext={`Our £195 pre-installation survey gives you a fixed-price quote for your ${displayName} kitchen. Credited back in full when you proceed.`}
+    primaryLabel="Book Your Survey"
+    primaryHref="/survey/"
+    secondaryLabel="Call 07399 651836"
+    secondaryHref="tel:07399651836"
+    dark={true}
+  />
+
+  <Footer slot="footer" />
+  <StickyMobileCTA slot="sticky-cta" />
+</Base>

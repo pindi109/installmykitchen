@@ -1,0 +1,96 @@
+---
+export interface Props {
+  points: string[];
+  heading?: string;
+}
+
+const { points, heading = "Key Takeaways" } = Astro.props;
+---
+
+<div class="takeaway-box" role="note" aria-label="Key takeaways">
+  <!-- Header bar -->
+  <div class="takeaway-header">
+    <!-- Gold bookmark icon -->
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="color: var(--gold); flex-shrink: 0;">
+      <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/>
+    </svg>
+    <span class="takeaway-heading">{heading}</span>
+  </div>
+
+  <!-- Points list -->
+  <ul class="takeaway-list" role="list">
+    {points.map((point) => (
+      <li class="takeaway-item" role="listitem">
+        <!-- Teal tick icon -->
+        <span class="takeaway-tick" aria-hidden="true">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polyline points="20 6 9 17 4 12"/>
+          </svg>
+        </span>
+        <span class="takeaway-text">{point}</span>
+      </li>
+    ))}
+  </ul>
+</div>
+
+<style>
+  .takeaway-box {
+    border: 1.5px solid rgba(212, 160, 23, 0.35);
+    border-top: 4px solid var(--gold);
+    border-radius: 0.625rem;
+    background: rgba(212, 160, 23, 0.04);
+    overflow: hidden;
+    margin-bottom: 1.75rem;
+  }
+
+  .takeaway-header {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.25rem;
+    border-bottom: 1px solid rgba(212, 160, 23, 0.2);
+    background: rgba(212, 160, 23, 0.07);
+  }
+
+  .takeaway-heading {
+    font-size: 0.875rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: #92670e;
+  }
+
+  .takeaway-list {
+    list-style: none;
+    padding: 1rem 1.25rem;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.625rem;
+  }
+
+  .takeaway-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.625rem;
+  }
+
+  .takeaway-tick {
+    width: 1.375rem;
+    height: 1.375rem;
+    border-radius: 50%;
+    background: var(--teal);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 0.1rem;
+  }
+
+  .takeaway-text {
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    color: var(--charcoal);
+  }
+</style>

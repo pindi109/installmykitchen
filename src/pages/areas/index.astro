@@ -1,0 +1,282 @@
+---
+import Base from "../../layouts/Base.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import StickyMobileCTA from "../../components/StickyMobileCTA.astro";
+import Breadcrumbs from "../../components/Breadcrumbs.astro";
+import AnswerBlock from "../../components/AnswerBlock.astro";
+import FAQ from "../../components/FAQ.astro";
+import CTA from "../../components/CTA.astro";
+
+const areas = [
+  { name: "Coventry", slug: "coventry", desc: "City-wide coverage including all CV postcodes." },
+  { name: "Rugby", slug: "rugby", desc: "Rugby town and surrounding villages." },
+  { name: "Nuneaton", slug: "nuneaton", desc: "Nuneaton, Bedworth and surrounding areas." },
+  { name: "Leamington Spa", slug: "leamington-spa", desc: "Royal Leamington Spa and nearby villages." },
+  { name: "Kenilworth", slug: "kenilworth", desc: "Kenilworth town and surrounding areas." },
+  { name: "Warwick", slug: "warwick", desc: "Warwick town and nearby villages." },
+  { name: "Stratford-upon-Avon", slug: "stratford-upon-avon", desc: "Stratford and south Warwickshire." },
+  { name: "Bedworth", slug: "bedworth", desc: "Bedworth and nearby Nuneaton corridor." },
+  { name: "Hinckley", slug: "hinckley", desc: "Hinckley and surrounding Leicestershire border." },
+  { name: "Atherstone", slug: "atherstone", desc: "Atherstone and north Warwickshire." },
+  { name: "Coleshill", slug: "coleshill", desc: "Coleshill and north Solihull border." },
+  { name: "Solihull", slug: "solihull", desc: "Solihull and surrounding areas." },
+  { name: "Meriden", slug: "meriden", desc: "Meriden village and surrounds." },
+  { name: "Balsall Common", slug: "balsall-common", desc: "Balsall Common and Berkswell." },
+  { name: "Tile Hill", slug: "tile-hill", desc: "Tile Hill and west Coventry." },
+  { name: "Canley", slug: "canley", desc: "Canley and south-west Coventry." },
+  { name: "Coundon", slug: "coundon", desc: "Coundon and north-west Coventry." },
+  { name: "Binley", slug: "binley", desc: "Binley and south-east Coventry." },
+  { name: "Willenhall", slug: "willenhall", desc: "Willenhall and east Coventry." },
+  { name: "Brandon", slug: "brandon", desc: "Brandon village and surrounds." },
+  { name: "Ryton-on-Dunsmore", slug: "ryton-on-dunsmore", desc: "Ryton-on-Dunsmore and south Coventry villages." },
+  { name: "Brinklow", slug: "brinklow", desc: "Brinklow and east Warwickshire villages." },
+  { name: "Southam", slug: "southam", desc: "Southam and south Warwickshire." },
+  { name: "Daventry", slug: "daventry", desc: "Daventry and surrounding Northamptonshire border." },
+  { name: "Bulkington", slug: "bulkington", desc: "Bulkington village near Nuneaton." },
+];
+
+const faqItems = [
+  {
+    q: "How far from Coventry do you travel for kitchen installations?",
+    a: "We cover the whole of Coventry and the wider Warwickshire area, including Rugby, Nuneaton, Leamington Spa, Kenilworth, Warwick, Stratford-upon-Avon, Bedworth and many more towns and villages. If you're unsure whether we cover your area, get in touch and we'll confirm.",
+  },
+  {
+    q: "Do you charge a travel fee for installations outside Coventry?",
+    a: "For most of our service area there is no additional travel charge. For locations at the edge of our coverage area, any travel costs will be clearly stated in your written quote before you commit.",
+  },
+  {
+    q: "Can you install a kitchen in a rural village outside of the listed areas?",
+    a: "Quite possibly, yes. If your location isn't listed, please contact us with your postcode and we'll let you know. We serve a wide area across Warwickshire and consider enquiries from the surrounding region.",
+  },
+  {
+    q: "Are your prices the same regardless of location?",
+    a: "Our installation pricing is based on the scope and complexity of the job rather than the location within our service area. Your itemised quote will be the same price whether you're in central Coventry or a Warwickshire village.",
+  },
+];
+---
+
+<Base
+  title="Kitchen Installation Areas | Coventry & Warwickshire"
+  description="Install My Kitchen covers Coventry and 24 areas across Warwickshire including Rugby, Nuneaton, Leamington Spa, Kenilworth, Warwick and more. View all areas."
+  canonical="https://www.installmykitchen.co.uk/areas/"
+>
+  <!-- Header -->
+  <Header slot="header" />
+
+  <!-- ══════════════════════════════ PAGE HEADER ══════════════════ -->
+  <section class="page-header" aria-label="Page header">
+    <div class="container">
+      <Breadcrumbs items={[{ label: "Areas", href: "/areas/" }]} />
+      <h1 class="page-h1">Kitchen Installation Across Coventry &amp; Warwickshire</h1>
+      <p class="page-sub">Based in Coventry, we fit kitchens across the region — from Rugby to Stratford, Nuneaton to Kenilworth.</p>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════ MAIN CONTENT ════════════════ -->
+  <section class="section" style="background: #fff;" aria-labelledby="areas-intro">
+    <div class="container">
+
+      <AnswerBlock answer="Install My Kitchen covers Coventry and 24 areas across Warwickshire and the surrounding region. We carry out pre-installation surveys and kitchen installations across the full area, fitting kitchens purchased from any retailer." />
+
+      <h2 id="areas-intro" class="section-h2 mb-8">All Areas We Cover</h2>
+      <ul class="areas-grid" role="list" aria-label="Service areas">
+        {areas.map((area) => (
+          <li role="listitem">
+            <a href={`/areas/${area.slug}/`} class="area-card">
+              <div class="area-card-body">
+                <span class="area-name">{area.name}</span>
+                <span class="area-desc">{area.desc}</span>
+              </div>
+              <span class="area-arrow" aria-hidden="true">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+              </span>
+            </a>
+          </li>
+        ))}
+      </ul>
+
+      <div class="not-listed-box">
+        <p class="not-listed-text">
+          <strong>Not on the list?</strong> We may still be able to help. Contact us with your postcode and we'll confirm if we cover your area.
+        </p>
+        <a href="/contact/" class="btn-primary not-listed-btn">Check Your Area</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════ FAQ ═══════════ -->
+  <section class="section" style="background: var(--bg-light);" aria-labelledby="faq-heading">
+    <div class="container">
+      <div class="max-w-3xl mx-auto">
+        <h2 id="faq-heading" class="text-2xl md:text-3xl font-bold mb-2 text-center" style="color: var(--charcoal);">
+          Areas FAQ
+        </h2>
+        <p class="text-center text-sm mb-10" style="color: var(--text-soft);">
+          Common questions about our coverage area.
+        </p>
+        <FAQ items={faqItems} schemaId="areas-faq" />
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════ DARK CTA ═══════════ -->
+  <CTA
+    dark={true}
+    heading="Book Your Kitchen Installation"
+    subtext="We cover Coventry, Warwickshire and beyond. Book a survey and get a clear, itemised quote."
+    primaryLabel="Book a Survey — £195"
+    primaryHref="/survey/"
+    secondaryLabel="Contact Us"
+    secondaryHref="/contact/"
+  />
+
+  <!-- Footer -->
+  <Footer slot="footer" />
+  <StickyMobileCTA slot="sticky-cta" />
+</Base>
+
+<style>
+  /* Page header */
+  .page-header {
+    background: var(--hero-gradient);
+    padding: 3rem 0 3.5rem;
+  }
+
+  .page-h1 {
+    font-size: clamp(1.625rem, 3vw, 2.5rem);
+    font-weight: 800;
+    color: #fff;
+    letter-spacing: -0.02em;
+    margin-top: 0.75rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .page-sub {
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 1.0625rem;
+    line-height: 1.6;
+    max-width: 540px;
+  }
+
+  .section-h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--charcoal);
+  }
+
+  /* Areas grid */
+  .areas-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.875rem;
+    list-style: none;
+    padding: 0;
+    margin: 0 0 2.5rem;
+  }
+
+  @media (min-width: 640px) {
+    .areas-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .areas-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .area-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    padding: 1rem 1.125rem;
+    border-radius: 0.875rem;
+    border: 1.5px solid var(--border);
+    background: var(--bg-light);
+    text-decoration: none;
+    transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
+  }
+
+  .area-card:hover {
+    border-color: var(--teal);
+    box-shadow: 0 4px 14px rgba(15, 118, 110, 0.1);
+    transform: translateY(-2px);
+    background: #fff;
+  }
+
+  .area-card-body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    min-width: 0;
+  }
+
+  .area-name {
+    font-size: 0.9375rem;
+    font-weight: 700;
+    color: var(--charcoal);
+    transition: color 0.15s;
+  }
+
+  .area-card:hover .area-name {
+    color: var(--teal);
+  }
+
+  .area-desc {
+    font-size: 0.8125rem;
+    color: var(--text-soft);
+    line-height: 1.4;
+  }
+
+  .area-arrow {
+    color: var(--teal);
+    opacity: 0.4;
+    flex-shrink: 0;
+    transition: opacity 0.2s, transform 0.2s;
+  }
+
+  .area-card:hover .area-arrow {
+    opacity: 1;
+    transform: translateX(3px);
+  }
+
+  /* Not listed box */
+  .not-listed-box {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    background: rgba(15, 118, 110, 0.05);
+    border: 1.5px solid rgba(15, 118, 110, 0.2);
+    border-left: 4px solid var(--teal);
+    border-radius: 0 0.875rem 0.875rem 0;
+    padding: 1.25rem 1.5rem;
+  }
+
+  @media (min-width: 640px) {
+    .not-listed-box {
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
+
+  .not-listed-text {
+    font-size: 0.9375rem;
+    color: var(--text-soft);
+    line-height: 1.6;
+  }
+
+  .not-listed-text strong {
+    color: var(--charcoal);
+  }
+
+  .not-listed-btn {
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+</style>

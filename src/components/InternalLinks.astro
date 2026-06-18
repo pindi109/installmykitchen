@@ -1,0 +1,142 @@
+---
+export interface LinkItem {
+  label: string;
+  href: string;
+  description?: string;
+}
+
+export interface Props {
+  links: LinkItem[];
+  heading?: string;
+}
+
+const { links, heading = "Explore More" } = Astro.props;
+---
+
+<nav aria-label={heading} class="internal-links-section">
+  <h2 class="internal-links-heading">{heading}</h2>
+
+  <ul class="internal-links-grid" role="list">
+    {links.map((link) => (
+      <li role="listitem">
+        <a href={link.href} class="internal-link-card">
+          <div class="internal-link-body">
+            <span class="internal-link-label">{link.label}</span>
+            {link.description && (
+              <span class="internal-link-desc">{link.description}</span>
+            )}
+          </div>
+          <!-- Arrow icon -->
+          <span class="internal-link-arrow" aria-hidden="true">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"/>
+              <polyline points="12 5 19 12 12 19"/>
+            </svg>
+          </span>
+        </a>
+      </li>
+    ))}
+  </ul>
+</nav>
+
+<style>
+  .internal-links-section {
+    margin-bottom: 2rem;
+  }
+
+  .internal-links-heading {
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: var(--charcoal);
+    margin-bottom: 0.875rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--teal);
+    display: inline-block;
+  }
+
+  .internal-links-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.625rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  @media (min-width: 640px) {
+    .internal-links-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .internal-links-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .internal-link-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    padding: 0.875rem 1rem;
+    border-radius: 0.625rem;
+    border: 1.5px solid #E5E7EB;
+    background: #fff;
+    text-decoration: none;
+    transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
+  }
+
+  .internal-link-card:hover {
+    border-color: var(--teal);
+    box-shadow: 0 4px 14px rgba(15, 118, 110, 0.12);
+    transform: translateY(-1px);
+  }
+
+  .internal-link-card:focus-visible {
+    outline: 2px solid var(--teal);
+    outline-offset: 2px;
+  }
+
+  .internal-link-body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    min-width: 0;
+  }
+
+  .internal-link-label {
+    font-size: 0.9375rem;
+    font-weight: 600;
+    color: var(--teal);
+    line-height: 1.3;
+    transition: color 0.15s;
+  }
+
+  .internal-link-card:hover .internal-link-label {
+    color: var(--teal-bright);
+  }
+
+  .internal-link-desc {
+    font-size: 0.8125rem;
+    color: #6B7280;
+    line-height: 1.45;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .internal-link-arrow {
+    flex-shrink: 0;
+    color: var(--teal);
+    opacity: 0.5;
+    transition: opacity 0.2s, transform 0.2s;
+  }
+
+  .internal-link-card:hover .internal-link-arrow {
+    opacity: 1;
+    transform: translateX(3px);
+  }
+</style>

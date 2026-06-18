@@ -1,0 +1,239 @@
+---
+// No props — content is fixed for the InstallMyKitchen process
+const steps = [
+  {
+    number: 1,
+    title: "Book a Survey",
+    description: "We visit your home, take precise measurements, and discuss the scope of your installation.",
+    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>`,
+  },
+  {
+    number: 2,
+    title: "Receive Your Quote",
+    description: "We provide a clear, itemised quote with no hidden extras — you know exactly what you'll pay.",
+    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>`,
+  },
+  {
+    number: 3,
+    title: "Secure Your Date",
+    description: "Confirm with a small deposit to reserve your installation slot in our diary.",
+    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>`,
+  },
+  {
+    number: 4,
+    title: "Professional Installation",
+    description: "Our experienced fitters arrive on time and install your kitchen to the highest standard.",
+    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>`,
+  },
+  {
+    number: 5,
+    title: "Final Checks & Handover",
+    description: "We walk you through everything, address any snags, and leave your kitchen spotless.",
+    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>`,
+  },
+];
+---
+
+<section class="section" style="background: #fff;">
+  <div class="container">
+
+    <!-- Section heading -->
+    <div class="text-center mb-12 md:mb-16">
+      <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold mb-3" style="color: var(--charcoal);">
+        From Survey to a Perfectly Installed Kitchen
+      </h2>
+      <p class="text-base max-w-xl mx-auto" style="color: var(--text-soft);">
+        A straightforward five-step process — transparent pricing, no surprises.
+      </p>
+    </div>
+
+    <!-- Steps -->
+    <ol class="process-list" aria-label="Installation process steps">
+      {steps.map((step, idx) => (
+        <li class="process-step" data-step={step.number}>
+
+          <!-- Connector line (rendered via CSS pseudo-elements) -->
+          <!-- Number + icon stack -->
+          <div class="step-marker" aria-hidden="true">
+            <div class="step-number-circle">
+              <span>{step.number}</span>
+            </div>
+            <!-- Connector line — visible on desktop between steps, hidden on last -->
+            {idx < steps.length - 1 && (
+              <div class="step-connector" aria-hidden="true"></div>
+            )}
+          </div>
+
+          <!-- Content -->
+          <div class="step-content">
+            <div class="step-icon" aria-hidden="true" set:html={step.icon} />
+            <h3 class="step-title">{step.title}</h3>
+            <p class="step-desc">{step.description}</p>
+          </div>
+
+        </li>
+      ))}
+    </ol>
+
+    <!-- CTA nudge -->
+    <div class="text-center mt-12">
+      <a href="/survey/" class="btn-primary inline-flex items-center gap-2">
+        Book Your Survey
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <line x1="5" y1="12" x2="19" y2="12"/>
+          <polyline points="12 5 19 12 12 19"/>
+        </svg>
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<style>
+  /* ── Layout ── */
+  .process-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  @media (min-width: 768px) {
+    .process-list {
+      flex-direction: row;
+      align-items: flex-start;
+      gap: 0;
+    }
+  }
+
+  /* Each step takes equal width on desktop */
+  .process-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative;
+  }
+
+  @media (min-width: 768px) {
+    .process-step {
+      flex: 1;
+    }
+  }
+
+  /* ── Mobile layout: horizontal marker + content side by side ── */
+  @media (max-width: 767px) {
+    .process-step {
+      flex-direction: row;
+      align-items: flex-start;
+      text-align: left;
+      gap: 1rem;
+    }
+
+    .step-marker {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      flex-shrink: 0;
+    }
+
+    .step-connector {
+      width: 2px;
+      flex: 1;
+      min-height: 2rem;
+      background: linear-gradient(to bottom, var(--teal), rgba(15, 118, 110, 0.15));
+      margin-top: 0.5rem;
+    }
+  }
+
+  /* ── Desktop connector line ── */
+  @media (min-width: 768px) {
+    .step-marker {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      width: 100%;
+      margin-bottom: 1.25rem;
+    }
+
+    .step-connector {
+      flex: 1;
+      height: 2px;
+      background: linear-gradient(to right, var(--teal), rgba(15, 118, 110, 0.2));
+    }
+  }
+
+  /* ── Number circle ── */
+  .step-number-circle {
+    width: 2.75rem;
+    height: 2.75rem;
+    border-radius: 50%;
+    background: var(--teal);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 1rem;
+    flex-shrink: 0;
+    box-shadow: 0 4px 12px rgba(15, 118, 110, 0.35);
+    position: relative;
+    z-index: 1;
+  }
+
+  /* ── Step content ── */
+  .step-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  @media (max-width: 767px) {
+    .step-content {
+      align-items: flex-start;
+      padding-bottom: 1rem;
+    }
+  }
+
+  .step-icon {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 0.75rem;
+    background: rgba(15, 118, 110, 0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--teal);
+    margin-bottom: 0.75rem;
+    flex-shrink: 0;
+  }
+
+  @media (min-width: 768px) {
+    .step-icon {
+      margin-bottom: 0.75rem;
+    }
+  }
+
+  .step-title {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--charcoal);
+    margin-bottom: 0.375rem;
+    line-height: 1.3;
+  }
+
+  .step-desc {
+    font-size: 0.875rem;
+    line-height: 1.6;
+    color: var(--text-soft);
+    max-width: 16rem;
+  }
+
+  @media (max-width: 767px) {
+    .step-desc {
+      max-width: none;
+    }
+  }
+</style>
