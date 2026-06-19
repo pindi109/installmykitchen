@@ -42,6 +42,18 @@ const faqs = [
 ---
 
 <Base title={title} description={description} canonical={canonical}>
+  <script type="application/ld+json" slot="schema" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Howdens Kitchen Installation in Earlsdon, Coventry",
+    "description": "Case study: 16-unit Howdens Greenwich Shaker kitchen installation in a 1930s semi-detached property in Earlsdon, Coventry.",
+    "author": { "@type": "Person", "name": "Pindi Sahota", "url": "https://installmykitchen.co.uk/pindi-sahota/" },
+    "publisher": { "@type": "Organization", "name": "Install My Kitchen", "url": "https://installmykitchen.co.uk" },
+    "about": [
+      { "@type": "Thing", "name": "Howdens Kitchen Installation" },
+      { "@type": "Place", "name": "Earlsdon, Coventry" }
+    ]
+  })} />
   <Header slot="header" />
 
   <div class="container py-4">
@@ -137,9 +149,12 @@ const faqs = [
           <InternalLinks
             heading="Related Pages"
             links={[
-              { label: "Howdens Kitchen Installation", href: "/retailers/howdens/", description: "Our independent Howdens fitting service." },
-              { label: "Earlsdon, Coventry", href: "/areas/earlsdon/", description: "Kitchen installation in Earlsdon and CV5." },
-              { label: "Book a Survey", href: "/survey/", description: "£195 pre-installation survey, credited back on booking." },
+              { label: "Howdens Kitchen Installation", href: "/retailers/howdens/", description: "Our independent Howdens fitting service across Coventry and Warwickshire." },
+              { label: "Earlsdon, Coventry", href: "/areas/earlsdon/", description: "Kitchen installation in Earlsdon and the CV5 postcode area." },
+              { label: "Book a Pre-Installation Survey", href: "/survey/", description: "£195 survey with Pindi Sahota, credited back in full when you proceed." },
+              { label: "About Pindi Sahota", href: "/pindi-sahota/", description: "The installer behind every kitchen we fit." },
+              { label: "Kitchen Installation Costs", href: "/costs/", description: "Transparent fixed pricing — what your quote includes." },
+              { label: "All Projects", href: "/projects/", description: "Browse completed kitchen installations across Coventry and Warwickshire." },
             ]}
           />
         </div>

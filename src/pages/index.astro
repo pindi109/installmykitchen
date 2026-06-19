@@ -11,58 +11,72 @@ import CTA from "../components/CTA.astro";
 import TrustStrip from "../components/TrustStrip.astro";
 import WhatHappensNext from "../components/WhatHappensNext.astro";
 
-const localBusinessSchema = {
+const siteSchema = {
   "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "@id": "https://installmykitchen.co.uk/#business",
-  name: "Install My Kitchen",
-  url: "https://installmykitchen.co.uk",
-  telephone: "+447399651836",
-  email: "info@installmykitchen.co.uk",
-  address: {
-    "@type": "PostalAddress",
-    streetAddress: "242 Hollyfast Road",
-    addressLocality: "Coundon",
-    addressRegion: "Coventry",
-    postalCode: "CV6 2AH",
-    addressCountry: "GB",
-  },
-  areaServed: [
-    "Coventry",
-    "Rugby",
-    "Nuneaton",
-    "Leamington Spa",
-    "Kenilworth",
-    "Warwick",
-    "Stratford-upon-Avon",
-    "Bedworth",
-    "Hinckley",
-    "Atherstone",
-    "Coleshill",
-    "Solihull",
-    "Meriden",
-    "Balsall Common",
-    "Tile Hill",
-    "Canley",
-    "Coundon",
-    "Binley",
-    "Willenhall",
-    "Brandon",
-    "Ryton-on-Dunsmore",
-    "Brinklow",
-    "Southam",
-    "Daventry",
-    "Bulkington",
-  ],
-  priceRange: "££",
-  openingHoursSpecification: [
+  "@graph": [
     {
-      "@type": "OpeningHoursSpecification",
-      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
-      opens: "08:00",
-      closes: "18:00",
+      "@type": "LocalBusiness",
+      "@id": "https://installmykitchen.co.uk/#business",
+      "name": "Install My Kitchen",
+      "description": "Independent kitchen installation service covering Coventry and Warwickshire. Founded by Pindi Sahota with 30 years of kitchen fitting experience. Survey-first, fixed-price installation for all major retailers.",
+      "url": "https://installmykitchen.co.uk",
+      "telephone": "+447399651836",
+      "email": "info@installmykitchen.co.uk",
+      "priceRange": "££",
+      "currenciesAccepted": "GBP",
+      "paymentAccepted": "Cash, Bank Transfer",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "242 Hollyfast Road",
+        "addressLocality": "Coundon",
+        "addressRegion": "Coventry",
+        "postalCode": "CV6 2AH",
+        "addressCountry": "GB"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "52.4252",
+        "longitude": "-1.5371"
+      },
+      "openingHoursSpecification": [
+        { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "08:00", "closes": "18:00" },
+        { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "08:00", "closes": "16:00" }
+      ],
+      "founder": {
+        "@type": "Person",
+        "@id": "https://installmykitchen.co.uk/pindi-sahota/",
+        "name": "Pindi Sahota",
+        "jobTitle": "Kitchen Installation Specialist"
+      },
+      "areaServed": ["Coventry","Rugby","Nuneaton","Bedworth","Leamington Spa","Kenilworth","Warwick","Solihull","Stratford-upon-Avon","Southam","Atherstone","Hinckley","Balsall Common","Meriden","Earlsdon","Canley","Tile Hill","Allesley","Finham","Stivichall","Coundon","Radford","Binley","Wyken","Walsgrave"],
+      "knowsAbout": ["Kitchen Installation","Wren Kitchens","Howdens","Magnet Kitchens","IKEA Kitchen Fitting","German Kitchen Installation","In-Frame Kitchen Installation","Shaker Kitchen Fitting","Worktop Fitting","Kitchen Survey Coventry"],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Kitchen Installation Services",
+        "itemListElement": [
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Kitchen Installation Survey", "description": "Pre-installation survey by Pindi Sahota. Fixed-price quote within 24 hours.", "offers": { "@type": "Offer", "price": "195", "priceCurrency": "GBP", "description": "Survey fee credited back against installation balance on booking" } } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Full Kitchen Installation", "description": "Complete kitchen installation including cabinets, worktops, doors, handles, plinths, appliances and snagging.", "areaServed": "Coventry and Warwickshire" } }
+        ]
+      },
+      "sameAs": ["https://installmykitchen.co.uk"]
     },
-  ],
+    {
+      "@type": "WebSite",
+      "@id": "https://installmykitchen.co.uk/#website",
+      "url": "https://installmykitchen.co.uk",
+      "name": "Install My Kitchen",
+      "description": "Independent kitchen installation across Coventry and Warwickshire",
+      "publisher": { "@id": "https://installmykitchen.co.uk/#business" }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://installmykitchen.co.uk/pindi-sahota/",
+      "name": "Pindi Sahota",
+      "jobTitle": "Kitchen Installation Specialist",
+      "description": "30 years of kitchen installation experience. Founder of Install My Kitchen. Based in Coventry.",
+      "worksFor": { "@id": "https://installmykitchen.co.uk/#business" }
+    }
+  ]
 };
 
 const faqItems = [
@@ -111,7 +125,7 @@ const areas = [
   noHero={true}
 >
   <!-- Schema -->
-  <script slot="schema" type="application/ld+json" set:html={JSON.stringify(localBusinessSchema)} />
+  <script slot="schema" type="application/ld+json" set:html={JSON.stringify(siteSchema)} />
 
   <!-- Header -->
   <Header slot="header" />
@@ -221,6 +235,53 @@ const areas = [
 
   <!-- ═════════════════════════════════════ SUPPLIER LOGOS ════════ -->
   <SupplierLogos heading="We Install Kitchens From All Major Suppliers" />
+
+  <!-- ══════════════════════════════════ PINDI SAHOTA ══════════ -->
+  <section style="padding: 80px 0; background: var(--bg-light);">
+    <div class="container">
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; max-width: 1100px; margin: 0 auto;">
+        <div>
+          <p style="color: var(--teal); font-weight: 600; font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.75rem;">Your Installer</p>
+          <h2 style="font-size: clamp(1.75rem, 3vw, 2.5rem); font-weight: 800; color: var(--navy); margin-bottom: 1.25rem; line-height: 1.2;">Pindi Sahota — 30 Years on the Tools</h2>
+          <p style="color: var(--text-soft); line-height: 1.75; margin-bottom: 1rem; font-size: 1.0625rem;">Pindi Sahota founded Install My Kitchen after three decades fitting kitchens across Coventry and Warwickshire. He surveys every project personally, provides a fixed price, and doesn't leave until the job is right.</p>
+          <p style="color: var(--text-soft); line-height: 1.75; margin-bottom: 1.5rem;">Every survey is conducted by Pindi himself — not a salesperson, not a subcontractor. He assesses your room, checks your plans against reality, and provides a fixed installation quote within 24 hours. You deal with Pindi from survey to sign-off.</p>
+          <div style="display: flex; flex-wrap: wrap; gap: 1rem; margin-bottom: 1.5rem;">
+            <div style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.875rem; font-weight: 600; color: var(--charcoal);">
+              <span style="width: 8px; height: 8px; border-radius: 50%; background: var(--teal); display: inline-block;"></span>
+              30 years experience
+            </div>
+            <div style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.875rem; font-weight: 600; color: var(--charcoal);">
+              <span style="width: 8px; height: 8px; border-radius: 50%; background: var(--teal); display: inline-block;"></span>
+              Personal survey every time
+            </div>
+            <div style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.875rem; font-weight: 600; color: var(--charcoal);">
+              <span style="width: 8px; height: 8px; border-radius: 50%; background: var(--teal); display: inline-block;"></span>
+              Fixed price guaranteed
+            </div>
+            <div style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.875rem; font-weight: 600; color: var(--charcoal);">
+              <span style="width: 8px; height: 8px; border-radius: 50%; background: var(--teal); display: inline-block;"></span>
+              All major retailers
+            </div>
+          </div>
+          <a href="/pindi-sahota/" style="display: inline-flex; align-items: center; gap: 0.5rem; color: var(--teal); font-weight: 600; font-size: 0.9375rem;">
+            Meet Pindi →
+          </a>
+        </div>
+        <div class="card" style="padding: 2rem; border-left: 4px solid var(--teal);">
+          <p style="font-size: 1.125rem; color: var(--charcoal); line-height: 1.7; font-style: italic; margin-bottom: 1.25rem;">"The thing that separates a good kitchen installation from an average one is almost always in the detail — the consistency of door gaps, the tightness of a worktop joint, the alignment of a plinth on an uneven floor. These are the details I have spent 30 years refining."</p>
+          <div style="display: flex; align-items: center; gap: 0.75rem;">
+            <div style="width: 48px; height: 48px; border-radius: 50%; background: var(--teal); display: flex; align-items: center; justify-content: center;">
+              <span style="color: white; font-weight: 800; font-size: 1.125rem;">P</span>
+            </div>
+            <div>
+              <div style="font-weight: 700; color: var(--navy);">Pindi Sahota</div>
+              <div style="font-size: 0.8125rem; color: var(--text-soft);">Founder, Install My Kitchen</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- ══════════════════════════════════ WHY CHOOSE US ══════════ -->
   <section class="section" style="background: #fff;" aria-labelledby="why-choose-heading">

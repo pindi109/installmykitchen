@@ -589,6 +589,31 @@ interface Props {
 }
 
 const { service } = Astro.props;
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "@id": `https://installmykitchen.co.uk/services/${service.slug}/#service`,
+  "name": service.name,
+  "description": service.description,
+  "provider": {
+    "@type": "LocalBusiness",
+    "@id": "https://installmykitchen.co.uk/#business",
+    "name": "Install My Kitchen",
+    "telephone": "+447399651836"
+  },
+  "areaServed": {
+    "@type": "State",
+    "name": "Coventry and Warwickshire"
+  },
+  "performer": {
+    "@type": "Person",
+    "name": "Pindi Sahota",
+    "description": "30 years kitchen installation experience"
+  },
+  "url": `https://installmykitchen.co.uk/services/${service.slug}/`,
+  "serviceType": "Kitchen Installation"
+};
 ---
 
 <Base
@@ -596,6 +621,9 @@ const { service } = Astro.props;
   description={service.meta}
   canonical={`https://installmykitchen.co.uk/services/${service.slug}/`}
 >
+  <!-- Service JSON-LD -->
+  <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
+
   <!-- Header -->
   <Header slot="header" />
 
@@ -645,11 +673,17 @@ const { service } = Astro.props;
   <section class="section" style="background: #fff;" aria-label="Related services">
     <div class="container">
       <InternalLinks
-        heading="Related Services"
+        heading="Related Services and Resources"
         links={[
           ...service.related,
-          { label: "All Kitchen Services", href: "/services/", description: "View the full range of installation services we offer." },
-          { label: "Book a Pre-Installation Survey", href: "/survey/", description: "Every installation starts with a survey — book yours today." },
+          { label: "All installation services", href: "/services/", description: "View the full range of kitchen installation services we offer." },
+          { label: "Book a survey — £195 credited back", href: "/survey/", description: "Every installation starts with a pre-installation survey." },
+          { label: "Installation cost guide", href: "/costs/", description: "What does a kitchen installation cost in Coventry and Warwickshire?" },
+          { label: "Pindi Sahota — 30 years experience", href: "/pindi-sahota/", description: "Meet the fitter behind Install My Kitchen." },
+          { label: "Completed kitchen projects", href: "/projects/", description: "Gallery of finished kitchens installed across Coventry and Warwickshire." },
+          { label: "Installation checklist", href: "/checklist/", description: "What to prepare before your kitchen installation day." },
+          { label: "What does a kitchen fitter do?", href: "/questions/what-does-a-kitchen-fitter-actually-do/", description: "A plain-English explanation of everything a professional kitchen fitter covers." },
+          { label: "About Install My Kitchen", href: "/about/", description: "Independent kitchen installation across Coventry and Warwickshire." },
         ]}
       />
     </div>

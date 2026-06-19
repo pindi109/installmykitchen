@@ -115,7 +115,20 @@ const areaLink = {
   description: `Our full installation service for ${name}`,
 };
 
-const internalLinks = [...nearbyLinks, areaLink];
+const semanticLinks = [
+  { label: `Kitchen fitter in ${name}`, href: `/fitter/${slug}/`, description: `Independent kitchen fitter serving ${name}.` },
+  { label: `Kitchen installation in ${name}`, href: `/areas/${slug}/`, description: `Our full installation service for ${name}.` },
+  { label: `Book survey in ${name}`, href: `/survey/${slug}/`, description: `Book a pre-installation survey in ${name}.` },
+  { label: "Full cost guide", href: "/costs/", description: "Complete kitchen installation cost breakdown." },
+  { label: "Small kitchen cost", href: "/cost/small-kitchen-cost/", description: "Installation costs for small kitchens (8–12 units)." },
+  { label: "Medium kitchen cost", href: "/cost/medium-kitchen-cost/", description: "Installation costs for medium kitchens (13–20 units)." },
+  { label: "Large kitchen cost", href: "/cost/large-kitchen-cost/", description: "Installation costs for large kitchens (21+ units)." },
+  { label: "Kitchen fitter day rate", href: "/day-rate/", description: "Our labour day rate explained." },
+  { label: "About your installer", href: "/pindi-sahota/", description: "30 years of kitchen installation experience." },
+  { label: "Get a fixed quote", href: "/survey/", description: "Book your £195 survey — credited back on booking." },
+];
+
+const internalLinks = [...nearbyLinks, areaLink, ...semanticLinks];
 
 // ── Cost table data ───────────────────────────────────────────────────────────
 

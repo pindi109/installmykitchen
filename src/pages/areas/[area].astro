@@ -56,6 +56,56 @@ const nearbyLinks = (nearby as string[]).map((nearbySlug) => {
     : null;
 }).filter(Boolean) as { label: string; href: string; description: string }[];
 
+// Full contextual link set — 10 links for InternalLinks component
+const allAreaLinks: { label: string; href: string; description: string }[] = [
+  {
+    label: `Kitchen fitter in ${name}`,
+    href: `/fitter/${slug}/`,
+    description: `Independent fitting service local to ${name}`,
+  },
+  {
+    label: `Kitchen installation cost in ${name}`,
+    href: `/kitchen-cost/${slug}/`,
+    description: `Itemised cost guide for ${name} installations`,
+  },
+  {
+    label: `Book survey in ${name}`,
+    href: `/survey/${slug}/`,
+    description: `Pre-installation survey — £195, credited back on booking`,
+  },
+  {
+    label: `Retailers we fit in ${name}`,
+    href: `/areas-retailers/${slug}/`,
+    description: `Wren, Howdens, Magnet, IKEA and more across ${name}`,
+  },
+  ...nearbyLinks.slice(0, 3),
+  {
+    label: `About Pindi Sahota — your installer`,
+    href: `/pindi-sahota/`,
+    description: `Meet the independent fitter behind Install My Kitchen`,
+  },
+  {
+    label: `Full installation cost guide`,
+    href: `/costs/`,
+    description: `Everything that affects kitchen fitting prices explained`,
+  },
+  {
+    label: `How our survey works`,
+    href: `/survey/`,
+    description: `What to expect from a pre-installation survey`,
+  },
+  {
+    label: `Completed kitchen projects`,
+    href: `/projects/`,
+    description: `Real installations carried out across the Midlands`,
+  },
+  {
+    label: `Kitchen installation questions answered`,
+    href: `/questions/`,
+    description: `Common questions about fitting, cost, and timescales`,
+  },
+].slice(0, 10);
+
 // LocalBusiness JSON-LD
 const localBusinessSchema = {
   "@context": "https://schema.org",
@@ -194,14 +244,14 @@ const serviceSchema = {
     </div>
   </section>
 
-  <!-- Nearby Areas -->
-  {nearbyLinks.length > 0 && (
+  <!-- Contextual Links — nearby areas, fitter, cost, survey and site pages -->
+  {allAreaLinks.length > 0 && (
     <section class="section" style="background: var(--bg-light);">
       <div class="container">
         <div class="fade-up">
           <InternalLinks
-            links={nearbyLinks}
-            heading={`Nearby Areas We Also Cover`}
+            links={allAreaLinks}
+            heading={`Related Pages for ${name}`}
           />
         </div>
       </div>

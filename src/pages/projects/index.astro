@@ -4,11 +4,12 @@ import Header from "../../components/Header.astro";
 import Footer from "../../components/Footer.astro";
 import StickyMobileCTA from "../../components/StickyMobileCTA.astro";
 import Breadcrumbs from "../../components/Breadcrumbs.astro";
+import InternalLinks from "../../components/InternalLinks.astro";
 import CTA from "../../components/CTA.astro";
 
 const title = "Kitchen Installation Projects — Coventry & Warwickshire | Install My Kitchen";
 const description =
-  "Browse completed kitchen installation projects across Coventry and Warwickshire — Howdens, Wren, IKEA and Magnet installations surveyed, planned and fitted by our team.";
+  "Real kitchen installation projects by Pindi Sahota — Howdens in Earlsdon, Wren in Kenilworth, IKEA in Leamington Spa, Magnet in Solihull. Independent installation across Coventry and Warwickshire.";
 const canonical = "https://installmykitchen.co.uk/projects/";
 
 const projects = [
@@ -19,8 +20,9 @@ const projects = [
     location: "Earlsdon, Coventry (CV5)",
     units: "16 units",
     duration: "5 days",
+    challenge: "Chimney breast scribing and 18mm floor gradient compensation across a U-shaped layout in a 1930s semi.",
     description:
-      "A 16-unit Howdens Greenwich Shaker installation in a 1930s semi-detached property. Included quartz worktop co-ordination, integrated appliances and chimney breast scribing.",
+      "A 16-unit Howdens Greenwich Shaker installation in a 1930s semi-detached property. Included quartz worktop co-ordination, integrated appliances, and precision chimney breast scribing.",
     tags: ["Howdens", "Shaker", "Quartz Worktop"],
   },
   {
@@ -30,6 +32,7 @@ const projects = [
     location: "Kenilworth, Warwickshire (CV8)",
     units: "22 units",
     duration: "7 days",
+    challenge: "Island positioning and Dekton worktop templating co-ordinated across a multi-room open-plan layout.",
     description:
       "A 22-unit handleless L-shaped kitchen with island in a detached Kenilworth property. Siemens integrated appliances and Dekton worktop with specialist templating.",
     tags: ["Wren", "Handleless", "Island", "Dekton"],
@@ -41,8 +44,9 @@ const projects = [
     location: "Royal Leamington Spa (CV31)",
     units: "18 units",
     duration: "6 days",
+    challenge: "Period plasterwork scribing in a Victorian mid-terrace — no square wall across the entire run.",
     description:
-      "An 18-unit IKEA METOD kitchen in a Victorian mid-terrace. Period plasterwork scribing, full flat-pack assembly, quartz worktops and integrated appliances.",
+      "An 18-unit IKEA METOD kitchen in a Victorian mid-terrace. Full flat-pack assembly, period plasterwork scribing, quartz worktops, and integrated appliances throughout.",
     tags: ["IKEA", "METOD", "Period Property", "Quartz Worktop"],
   },
   {
@@ -52,6 +56,7 @@ const projects = [
     location: "Solihull (B91)",
     units: "20 units",
     duration: "6 days",
+    challenge: "Range cooker installation co-ordinated with a Gas Safe engineer and granite worktop templating on a tight programme.",
     description:
       "A 20-unit Magnet Belgravia painted in-frame style kitchen in a 1960s detached property. Granite worktops and a range cooker installation co-ordinated with a Gas Safe engineer.",
     tags: ["Magnet", "Painted Shaker", "Granite", "Range Cooker"],
@@ -82,10 +87,10 @@ const projects = [
           class="text-4xl md:text-5xl font-extrabold mb-5 leading-tight"
           style="color: var(--navy);"
         >
-          Kitchen Installation Projects
+          Kitchen Installation Projects by Pindi Sahota
         </h1>
         <p class="text-lg leading-relaxed" style="color: var(--text-soft);">
-          Every kitchen we install is a project we're proud of. Browse our completed kitchen installations across Coventry and Warwickshire — each one surveyed, planned and fitted by our team.
+          Every kitchen installed by Pindi Sahota and the Install My Kitchen team is a project we're proud of. Each one began with a personal survey, was delivered to a fixed price, and was completed to our exacting standards. Browse completed installations below — real kitchens, real homes, real results.
         </p>
       </div>
     </div>
@@ -98,7 +103,7 @@ const projects = [
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
           {projects.map((project) => (
             <article class="card border border-gray-100 hover:shadow-md transition-shadow duration-200 fade-up">
-              <a href={project.href} class="block p-6 group h-full flex flex-col">
+              <div class="p-6 h-full flex flex-col">
 
                 <!-- Tags -->
                 <div class="flex flex-wrap gap-2 mb-3">
@@ -114,7 +119,7 @@ const projects = [
 
                 <!-- Title -->
                 <h2
-                  class="text-lg font-bold mb-3 group-hover:underline leading-snug"
+                  class="text-lg font-bold mb-3 leading-snug"
                   style="color: var(--navy);"
                 >
                   {project.title}
@@ -134,6 +139,10 @@ const projects = [
                     <dt>Duration</dt>
                     <dd>{project.duration}</dd>
                   </div>
+                  <div class="meta-row">
+                    <dt>Challenge</dt>
+                    <dd>{project.challenge}</dd>
+                  </div>
                 </dl>
 
                 <!-- Description -->
@@ -141,12 +150,14 @@ const projects = [
                   {project.description}
                 </p>
 
-                <!-- Link label -->
-                <span
-                  class="inline-flex items-center gap-1.5 mt-4 text-sm font-semibold"
+                <!-- Read project link -->
+                <a
+                  href={project.href}
+                  class="inline-flex items-center gap-1.5 mt-4 text-sm font-semibold group-hover:underline"
                   style="color: var(--teal);"
+                  aria-label={`Read project: ${project.title}`}
                 >
-                  Read case study
+                  Read project
                   <svg
                     width="14"
                     height="14"
@@ -161,29 +172,42 @@ const projects = [
                     <line x1="5" y1="12" x2="19" y2="12" />
                     <polyline points="12 5 19 12 12 19" />
                   </svg>
-                </span>
-              </a>
+                </a>
+              </div>
             </article>
           ))}
         </div>
 
-        <!-- Photo note -->
-        <div class="photo-note fade-up">
+        <!-- Projects note -->
+        <div class="projects-note fade-up">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="color: var(--teal); flex-shrink: 0; margin-top: 2px;">
             <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
             <circle cx="8.5" cy="8.5" r="1.5"></circle>
             <polyline points="21 15 16 10 5 21"></polyline>
           </svg>
           <p>
-            Project photos are added as we complete installations. <a href="/contact/" style="color: var(--teal); font-weight: 600;">Contact us</a> to discuss your project.
+            New projects added regularly as Pindi completes installations across Coventry and Warwickshire. If you have had a kitchen fitted by us and would like to feature your project, please <a href="/contact/" style="color: var(--teal); font-weight: 600;">get in touch</a>.
           </p>
+        </div>
+
+        <!-- Internal links -->
+        <div class="mt-10 fade-up">
+          <InternalLinks
+            heading="Explore Install My Kitchen"
+            links={[
+              { label: "About Install My Kitchen", href: "/about/", description: "How we work and what sets our fitting service apart." },
+              { label: "About Pindi Sahota", href: "/pindi-sahota/", description: "The installer behind every kitchen we fit." },
+              { label: "Book a Pre-Installation Survey", href: "/survey/", description: "£195 survey credited back in full when you proceed." },
+              { label: "Kitchen Installation Costs", href: "/costs/", description: "Transparent pricing — what a fixed-price quote includes." },
+            ]}
+          />
         </div>
       </div>
     </div>
   </section>
 
   <CTA
-    heading="Ready to Start Your Kitchen Project?"
+    heading="Book Your Kitchen Survey With Pindi"
     subtext="Book a pre-installation survey from £195 — credited back in full when you proceed. Covering Coventry, Warwickshire and surrounding areas."
     primaryLabel="Book Your Survey"
     primaryHref="/survey/"
@@ -213,13 +237,14 @@ const projects = [
     font-weight: 600;
     color: var(--charcoal);
     min-width: 4.5rem;
+    flex-shrink: 0;
   }
 
   .meta-row dd {
     color: var(--text-soft);
   }
 
-  .photo-note {
+  .projects-note {
     display: flex;
     align-items: flex-start;
     gap: 0.75rem;
@@ -233,7 +258,7 @@ const projects = [
     color: var(--text-soft);
   }
 
-  .photo-note p {
+  .projects-note p {
     margin: 0;
   }
 </style>

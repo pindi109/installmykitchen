@@ -6,75 +6,114 @@ import StickyMobileCTA from "../components/StickyMobileCTA.astro";
 import Breadcrumbs from "../components/Breadcrumbs.astro";
 import AnswerBlock from "../components/AnswerBlock.astro";
 import KeyTakeaway from "../components/KeyTakeaway.astro";
+import FAQ from "../components/FAQ.astro";
 import CTA from "../components/CTA.astro";
+import InternalLinks from "../components/InternalLinks.astro";
 
 const personSchema = {
   "@context": "https://schema.org",
   "@type": "Person",
-  name: "Pindi Sahota",
-  jobTitle: "Kitchen Installation Specialist",
-  worksFor: {
+  "name": "Pindi Sahota",
+  "jobTitle": "Kitchen Installation Specialist",
+  "description": "Pindi Sahota has 30 years of kitchen installation experience across Coventry and Warwickshire. Founder of Install My Kitchen, independent kitchen fitter serving all major retailers.",
+  "worksFor": {
     "@type": "LocalBusiness",
-    name: "Install My Kitchen",
-    url: "https://installmykitchen.co.uk",
-    address: {
+    "name": "Install My Kitchen",
+    "url": "https://installmykitchen.co.uk",
+    "address": {
       "@type": "PostalAddress",
-      streetAddress: "242 Hollyfast Road",
-      addressLocality: "Coventry",
-      postalCode: "CV6 2AH",
-    },
+      "streetAddress": "242 Hollyfast Road",
+      "addressLocality": "Coventry",
+      "postalCode": "CV6 2AH",
+      "addressCountry": "GB"
+    }
   },
-  knowsAbout: [
+  "knowsAbout": [
     "Kitchen Installation",
     "Wren Kitchens",
-    "Howdens",
-    "IKEA Kitchen Installation",
-    "Coventry Kitchen Fitting",
-    "Häcker",
-    "Nobilia",
-    "Mereway",
-    "Neptune Kitchens",
+    "Howdens Kitchen Installation",
+    "IKEA Kitchen Fitting",
+    "Magnet Kitchen Installation",
+    "German Kitchen Installation",
+    "Worktop Fitting",
+    "Kitchen Survey",
+    "Coventry Kitchen Fitter",
+    "Warwickshire Kitchen Installation",
+    "In-Frame Kitchen Installation",
+    "Premium Kitchen Fitting",
+    "Häcker Kitchen Installation",
+    "Neptune Kitchen Fitting"
   ],
+  "hasOccupation": {
+    "@type": "Occupation",
+    "name": "Kitchen Fitter",
+    "yearsOfExperience": 30,
+    "occupationLocation": {
+      "@type": "City",
+      "name": "Coventry"
+    }
+  }
 };
 
 const keyTakeaways = [
-  "Independent from all retailers — we install kitchens purchased anywhere",
-  "Based in Coventry, covering Warwickshire and the surrounding area",
-  "Pre-installation survey as standard — no surprises on the day",
-  "Transparent, itemised quotes with no hidden extras",
+  "30 years on the tools — not a franchise, not a call centre, not a subcontracted team",
+  "Every survey conducted personally by Pindi — laser measured, cross-checked against your drawings",
+  "Fixed price guaranteed — the quote does not change unless you change the scope",
+  "Entirely independent — no retailer affiliation, no commission, no allegiance to any brand",
 ];
 
-const areas = [
-  { name: "Coventry", slug: "coventry" },
-  { name: "Rugby", slug: "rugby" },
-  { name: "Nuneaton", slug: "nuneaton" },
-  { name: "Leamington Spa", slug: "leamington-spa" },
-  { name: "Kenilworth", slug: "kenilworth" },
-  { name: "Warwick", slug: "warwick" },
-  { name: "Bedworth", slug: "bedworth" },
-  { name: "Stratford-upon-Avon", slug: "stratford-upon-avon" },
-  { name: "Coleshill", slug: "coleshill" },
-  { name: "Atherstone", slug: "atherstone" },
+const faqItems = [
+  {
+    q: "How long has Pindi been fitting kitchens?",
+    a: "Pindi has been fitting kitchens for 30 years. He began his career in the construction trades and found his specialism in kitchen installation — the point where carpentry precision, plumbing co-ordination, and fine detail all converge. Kitchen installation has been his full-time focus throughout his professional life."
+  },
+  {
+    q: "Does Pindi do every installation himself?",
+    a: "Pindi leads every project and conducts every survey personally. He is present throughout every installation. For larger projects he works alongside a small, trusted team — but Pindi surveys, Pindi oversees, and Pindi signs off. You will not find yourself dealing with someone who was not there on survey day."
+  },
+  {
+    q: "What retailers does Install My Kitchen work with?",
+    a: "Install My Kitchen fits kitchens from all major UK retailers and premium brands. Standard retail includes Wren, Howdens, Magnet, IKEA, Wickes, B&amp;Q, Benchmarx, DIY Kitchens, Symphony and Masterclass. Premium brands include Häcker, Nobilia, Rotpunkt, Pronorm, Mereway, Tom Howley, Harvey Jones, Neptune, deVOL, Smallbone and John Lewis of Hungerford. See the full list in the 'What We Install' section on this page."
+  },
+  {
+    q: "Is Install My Kitchen affiliated with any retailer?",
+    a: "No. Install My Kitchen is entirely independent. We have no commercial relationship, referral agreement or commission arrangement with any kitchen retailer. When Pindi surveys your kitchen, his only consideration is whether the plans work for your home."
+  },
+  {
+    q: "How do I book a survey with Pindi?",
+    a: "Call 07399 651836 or complete the online enquiry form. Survey appointments are typically available within one to two weeks. The survey fee is £195, credited back against your installation on booking."
+  }
+];
+
+const internalLinks = [
+  { label: "Our Services", href: "/services/", description: "Full scope of what the installation covers" },
+  { label: "Retailers We Fit", href: "/retailers/", description: "Every brand we have experience fitting" },
+  { label: "Areas We Cover", href: "/areas/", description: "Coventry, Warwickshire and surrounding areas" },
+  { label: "Cost Guide", href: "/cost-guide/", description: "Transparent pricing and what affects the quote" },
+  { label: "Book a Survey", href: "/survey/", description: "Start with a site visit — fixed-price quote follows" },
+  { label: "Contact Us", href: "/contact/", description: "Get in touch directly with Pindi" },
 ];
 ---
 
 <Base
-  title="About Install My Kitchen | Coventry Kitchen Fitter"
-  description="Learn about Install My Kitchen — an independent kitchen installation service based in Coventry, fitting kitchens from all major retailers across Warwickshire."
+  title="About Pindi Sahota — 30 Years Installing Kitchens | Install My Kitchen"
+  description="Meet Pindi Sahota, founder of Install My Kitchen. 30 years fitting kitchens across Coventry and Warwickshire. Independent, survey-first, fixed-price kitchen installation."
   canonical="https://installmykitchen.co.uk/about/"
 >
-  <!-- Schema -->
+  <!-- Person schema -->
   <script slot="schema" type="application/ld+json" set:html={JSON.stringify(personSchema)} />
 
   <!-- Header -->
   <Header slot="header" />
 
-  <!-- ══════════════════════════════ PAGE HEADER ══════════════════ -->
-  <section class="page-header" aria-label="Page header">
+  <!-- ══════════════════════════════ HERO ════════════════════════ -->
+  <section class="about-hero" aria-label="Page header">
     <div class="container">
       <Breadcrumbs items={[{ label: "About", href: "/about/" }]} />
-      <h1 class="page-h1">About Install My Kitchen</h1>
-      <p class="page-sub">An independent kitchen installation service serving Coventry and Warwickshire.</p>
+      <h1 class="hero-h1">About Pindi Sahota — 30 Years Fitting Kitchens Across Coventry &amp; Warwickshire</h1>
+      <div class="hero-answer">
+        <AnswerBlock answer="Pindi Sahota founded Install My Kitchen after three decades fitting kitchens across Coventry and Warwickshire. In that time he has installed hundreds of kitchens — from compact terraced house galley kitchens in Earlsdon to large open-plan extensions in Kenilworth and Leamington Spa. His philosophy is simple: survey first, fix price, no surprises, and don't leave until the job is right." />
+      </div>
     </div>
   </section>
 
@@ -83,127 +122,206 @@ const areas = [
     <div class="container">
       <div class="content-grid">
 
-        <!-- Main column -->
+        <!-- ── Main column ── -->
         <div class="content-main">
-
-          <AnswerBlock answer="Install My Kitchen is an independent kitchen installation service based in Coventry, fitting kitchens supplied by Wren, Howdens, Magnet, IKEA and all major retailers across Coventry and Warwickshire." />
 
           <KeyTakeaway points={keyTakeaways} />
 
-          <!-- About the business -->
-          <h2 class="section-h2">Who We Are</h2>
+          <!-- Who Is Pindi -->
+          <h2 class="section-h2" id="who-is-pindi">Who Is Pindi Sahota?</h2>
+
           <p class="body-copy">
-            Install My Kitchen was founded with one purpose: to provide homeowners with a reliable, skilled and genuinely independent kitchen installation service. We work with you — not for a retailer — which means the advice you receive and the standard of work we deliver are entirely focused on your home and your satisfaction.
-          </p>
-          <p class="body-copy">
-            Unlike installation teams affiliated with specific kitchen retailers, we are free to work with any supplier you choose. Whether you've purchased from Wren, Howdens, Magnet, IKEA, Wickes or any other source, we have the experience and expertise to fit it properly.
+            Pindi has spent 30 years on the tools. He began his career in the construction trades and found his specialism in kitchen installation — the point where carpentry precision, plumbing co-ordination, and attention to detail all converge. He built Install My Kitchen as a direct response to what he saw in the market: homeowners being rushed through installations by franchise-model fitters with quotas to meet and no personal accountability.
           </p>
 
-          <!-- About Pindi Sahota -->
-          <h2 class="section-h2" id="pindi-sahota">Meet Pindi Sahota</h2>
           <p class="body-copy">
-            Pindi Sahota is the founder and lead fitter of Install My Kitchen. Based in Coventry, he has spent his career in kitchen installation, working across Coventry and Warwickshire for homeowners who want a reliable specialist rather than a retailer-employed fitter. Install My Kitchen was built on that distinction — a business answerable to its customers, not to a showroom.
+            Every survey Pindi conducts personally. He measures your room with laser equipment, cross-checks your designer's drawings against reality, assesses your floor levels and wall conditions, and identifies anything that could cause a problem on installation day. He has seen every issue that an uneven Coventry floor or an out-of-plumb Victorian wall can create — and he plans around them before work begins. Not after.
           </p>
+
           <p class="body-copy">
-            Over the course of his career, Pindi has fitted kitchens supplied by every major UK retailer: Wren, Howdens, Magnet, IKEA, Benchmarx, B&Q, Wickes and more. He has also worked extensively with premium brands including Häcker, Nobilia, Mereway and Neptune. Each of these manufacturers has its own unit system, cabinet depths, hinge tolerances and fitting requirements. Knowing how a Häcker Inframe cabinet behaves differently to a Wren carcass, or understanding the quirks of IKEA's SEKTION system, is the kind of practical knowledge that only comes from fitting a large number of kitchens across a wide range of brands. That experience is what Pindi brings to every project.
+            Pindi does not rush. The thing that separates a good kitchen installation from an average one is almost always in the detail — the consistency of door gaps, the tightness of a worktop joint, the alignment of a plinth on an uneven floor. These are the details that Pindi has spent 30 years refining. They are also the details that are impossible to rush.
           </p>
+
           <p class="body-copy">
-            Pindi's approach is survey-first, fixed-price, no surprises. He believes the pre-installation survey is the most important stage of any kitchen project — it is where problems are found before they become costly. A leaning wall, an out-of-square corner, a structural pipe in the wrong place: these are the details that turn a smooth installation into a difficult one if they are not identified in advance. Pindi takes time to get the details right: door alignment, consistent gap sizes, level plinths, tight worktop joints. None of it happens by accident.
-          </p>
-          <p class="body-copy">
-            Pindi is Coventry-based and serves the community he lives in. His reputation is built one kitchen at a time, and he is personally involved in every survey and takes responsibility for every installation his team carries out. When you book with Install My Kitchen, you deal with Pindi — not a call centre, not a subcontracted team booked at the last minute.
+            Pindi is not employed by any kitchen retailer. He has no commission arrangement, no referral agreement, and no allegiance to any brand. When he surveys your kitchen and reviews your plans, his only question is: does this work for you? He installs kitchens from Wren, Howdens, Magnet, IKEA, Benchmarx, B&amp;Q, Wickes, DIY Kitchens, and premium brands including Häcker, Nobilia, Mereway, Neptune and deVOL. He fits whatever you've bought, to the standard it deserves.
           </p>
 
           <!-- Our Approach -->
-          <h2 class="section-h2">Our Approach</h2>
+          <h2 class="section-h2" id="our-approach">Our Approach</h2>
+
           <div class="approach-grid" role="list" aria-label="Our installation principles">
 
             <div class="approach-card" role="listitem">
-              <h3 class="approach-title">Survey First</h3>
-              <p class="approach-body">We survey every kitchen before quoting. No exceptions. The survey is where we catch the details that determine whether your installation runs to plan — or doesn't.</p>
+              <!-- Icon: clipboard / survey -->
+              <div class="approach-icon" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2"/>
+                  <rect x="9" y="3" width="6" height="4" rx="1" ry="1"/>
+                  <line x1="9" y1="12" x2="15" y2="12"/>
+                  <line x1="9" y1="16" x2="13" y2="16"/>
+                </svg>
+              </div>
+              <h3 class="approach-title">Survey Before Every Job</h3>
+              <p class="approach-body">No exceptions. No quote without a site visit. The survey is where problems are found before they become expensive — and where the fixed price is set.</p>
             </div>
 
             <div class="approach-card" role="listitem">
-              <h3 class="approach-title">Fixed Price</h3>
-              <p class="approach-body">Your quote is fixed. It will not change unless you change the scope. You know what you are paying before we start, and that figure does not move.</p>
+              <!-- Icon: price tag / fixed cost -->
+              <div class="approach-icon" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/>
+                  <line x1="7" y1="7" x2="7.01" y2="7"/>
+                </svg>
+              </div>
+              <h3 class="approach-title">Fixed Price Guaranteed</h3>
+              <p class="approach-body">The quote does not change unless you change the scope. You know the number before we start, and that number does not move.</p>
             </div>
 
             <div class="approach-card" role="listitem">
-              <h3 class="approach-title">Retailer Independent</h3>
-              <p class="approach-body">We are not employed by or affiliated with any kitchen retailer. We work for you. The advice we give is based on what is right for your home, not what is right for a showroom's fitting schedule.</p>
+              <!-- Icon: person / single point of contact -->
+              <div class="approach-icon" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                  <circle cx="12" cy="7" r="4"/>
+                </svg>
+              </div>
+              <h3 class="approach-title">You Deal With Pindi</h3>
+              <p class="approach-body">Not a call centre, not a subcontracted team booked at the last minute. Pindi surveys, Pindi installs, Pindi signs off.</p>
             </div>
 
             <div class="approach-card" role="listitem">
-              <h3 class="approach-title">Local Accountability</h3>
-              <p class="approach-body">We are a Coventry business. Our reputation depends on every kitchen we fit in this community. When something is not right, we put it right — because our next job likely lives on the same street.</p>
+              <!-- Icon: map pin / local -->
+              <div class="approach-icon" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                  <circle cx="12" cy="10" r="3"/>
+                </svg>
+              </div>
+              <h3 class="approach-title">Local and Accountable</h3>
+              <p class="approach-body">Based in Coundon, CV6. This is the community we live and work in. Our reputation is built one kitchen at a time on these streets.</p>
             </div>
 
           </div>
 
           <!-- What We Install -->
-          <h2 class="section-h2">What We Install</h2>
+          <h2 class="section-h2" id="what-we-install">What We Install</h2>
           <p class="body-copy">
-            We fit kitchens supplied from across the market — from high-street retail to trade-only suppliers and premium luxury brands.
+            Install My Kitchen fits kitchens sourced from across the full market — from high-street retail to trade-only suppliers and premium luxury manufacturers. Pindi has hands-on experience with every system listed below.
           </p>
 
-          <h3 class="subsection-h3">Standard retail kitchens</h3>
+          <div class="install-grid">
+
+            <div class="install-category">
+              <h3 class="install-cat-title">
+                <span class="install-cat-icon" aria-hidden="true">
+                  <!-- storefront icon -->
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                    <polyline points="9 22 9 12 15 12 15 22"/>
+                  </svg>
+                </span>
+                Standard Retail
+              </h3>
+              <p class="install-brands">Wren, Howdens, Magnet, Wickes, B&amp;Q, Benchmarx, DIY Kitchens, Symphony, Masterclass, Kutchenhaus</p>
+            </div>
+
+            <div class="install-category">
+              <h3 class="install-cat-title">
+                <span class="install-cat-icon" aria-hidden="true">
+                  <!-- tools / trade icon -->
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+                  </svg>
+                </span>
+                Trade Supply
+              </h3>
+              <p class="install-brands">Howdens Trade, Magnet Trade, Benchmarx</p>
+            </div>
+
+            <div class="install-category install-category--premium">
+              <h3 class="install-cat-title">
+                <span class="install-cat-icon" aria-hidden="true">
+                  <!-- star / premium icon -->
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                  </svg>
+                </span>
+                Premium &amp; Luxury
+              </h3>
+              <p class="install-brands">Häcker, Nobilia, Rotpunkt, Pronorm, Mereway, Tom Howley, Harvey Jones, Neptune, deVOL, Smallbone, John Lewis of Hungerford</p>
+            </div>
+
+          </div>
+
+          <!-- Why 30 Years Matters -->
+          <h2 class="section-h2" id="why-30-years-matters">Why 30 Years Matters</h2>
+
           <p class="body-copy">
-            Wren, Howdens, Magnet, IKEA, Wickes, B&Q, Benchmarx, DIY Kitchens
+            Thirty years of kitchen installation is not a credential to put on a brochure. It is a body of practical knowledge that only exists because it was earned problem by problem, room by room, over a very long time.
           </p>
 
-          <h3 class="subsection-h3">Trade supply kitchens</h3>
           <p class="body-copy">
-            Howdens trade accounts, Benchmarx, Symphony, Masterclass
-          </p>
-
-          <h3 class="subsection-h3">Premium and luxury brands</h3>
-          <p class="body-copy">
-            Häcker, Nobilia, Mereway, Neptune, deVOL, Harvey Jones, Tom Howley, Rotpunkt, Pronorm, Smallbone
+            It means having fitted every type of floor condition — from poured concrete to suspended timber to the notoriously irregular screeded floors that appear throughout Coventry's post-war housing stock. It means knowing, before you open a box, which conditions will slow you down and why.
           </p>
 
           <p class="body-copy">
-            If your kitchen is not listed here, <a href="/contact/" style="color: var(--teal);">get in touch</a> — we are likely able to help. We have fitting experience across a wide range of brands and are transparent if a job falls outside our scope.
+            It means knowing how to scribe an in-frame door to a 30mm out-of-plumb chimney breast without the gap showing. It means knowing that IKEA corner carousels must be positioned before the adjacent carcass is fixed — because after that, there is no access. It means understanding that Häcker's tolerance of 0.5mm gap consistency is not a marketing claim but a genuine demand on the installation process: it requires a level base frame, consistent shimming, and hinge adjustment that takes time.
           </p>
 
-          <!-- What we do -->
-          <h2 class="section-h2">What We Do</h2>
           <p class="body-copy">
-            Install My Kitchen handles the full scope of kitchen fitting work, including:
+            It also means having fitted every major retailer's unit system enough times to know their individual quirks — the way a Wren carcass handles load differently to a Nobilia box, the way Benchmarx fixings differ from Howdens, the way deVOL's handmade frames require a fundamentally different approach to a flatpack run. These are not things you read in a fitting guide. They are things you learn by doing them, repeatedly, over decades.
           </p>
-          <ul class="service-list" role="list">
-            <li role="listitem">Cabinet and unit assembly and installation</li>
-            <li role="listitem">Worktop supply and fitting (solid wood, laminate, and composite)</li>
-            <li role="listitem">Appliance and sink installation</li>
-            <li role="listitem">Door, drawer and hinge fitting and adjustment</li>
-            <li role="listitem">Handles, knobs and ironmongery</li>
-            <li role="listitem">Final snagging and handover</li>
-            <li role="listitem">Flooring and tiling (where requested)</li>
-          </ul>
-          <p class="body-copy">
-            For plumbing, electrical and gas connections, we recommend customers arrange their own qualified tradespeople. We are happy to advise on the sequencing and timing of specialist trades so that your installation runs smoothly.
-          </p>
+
+          <div class="experience-callout" role="note">
+            <p class="experience-callout-text">
+              "The problems that derail a kitchen installation are almost always problems that were visible at survey stage — if you knew what to look for. After 30 years, I know what to look for."
+            </p>
+            <p class="experience-callout-attr">— Pindi Sahota, Founder, Install My Kitchen</p>
+          </div>
 
           <!-- Areas -->
-          <h2 class="section-h2">Areas Covered</h2>
-          <p class="body-copy mb-4">We are based in Coventry and cover the wider Warwickshire area, including:</p>
-          <ul class="areas-list" role="list">
-            {areas.map((area) => (
-              <li role="listitem">
-                <a href={`/areas/${area.slug}/`} class="area-link">{area.name}</a>
-              </li>
-            ))}
-          </ul>
-          <p class="body-copy mt-4">
-            <a href="/areas/" style="color: var(--teal);">View all areas we cover →</a>
+          <h2 class="section-h2" id="areas-covered">Areas Covered</h2>
+          <p class="body-copy">
+            Install My Kitchen is based in Coundon, Coventry and covers Coventry city, the wider Warwickshire area, and parts of Solihull and the West Midlands. Regular working areas include:
           </p>
+
+          <div class="areas-grid" role="list" aria-label="Areas covered">
+            {[
+              { name: "Coventry", slug: "coventry" },
+              { name: "Rugby", slug: "rugby" },
+              { name: "Nuneaton", slug: "nuneaton" },
+              { name: "Leamington Spa", slug: "leamington-spa" },
+              { name: "Kenilworth", slug: "kenilworth" },
+              { name: "Warwick", slug: "warwick" },
+              { name: "Solihull", slug: "solihull" },
+              { name: "Stratford-upon-Avon", slug: "stratford-upon-avon" },
+            ].map((area) => (
+              <a href={`/areas/${area.slug}/`} class="area-pill" role="listitem">{area.name}</a>
+            ))}
+          </div>
+
+          <p class="body-copy mt-4">
+            <a href="/areas/" style="color: var(--teal); font-weight: 600;">View all areas covered &rarr;</a>
+          </p>
+
+          <!-- FAQ -->
+          <h2 class="section-h2" id="faq">Frequently Asked Questions</h2>
+          <FAQ items={faqItems} schemaId="about-faq-schema" />
+
+          <!-- Internal links -->
+          <div style="margin-top: 2.5rem;">
+            <InternalLinks links={internalLinks} heading="Explore Install My Kitchen" />
+          </div>
 
         </div>
 
-        <!-- Sidebar -->
+        <!-- ── Sidebar ── -->
         <aside class="content-sidebar">
+
+          <!-- Contact card -->
           <div class="sidebar-card">
-            <h3 class="sidebar-heading">Get in Touch</h3>
-            <p class="sidebar-body">Ready to book a survey or ask a question? We're here to help.</p>
+            <h3 class="sidebar-heading">Book a Survey With Pindi</h3>
+            <p class="sidebar-body">Pindi conducts every survey personally. Call directly or use the online form — appointments typically within 1–2 weeks.</p>
             <address class="sidebar-nap not-italic">
               <p>
                 <strong>Install My Kitchen</strong><br />
@@ -217,11 +335,53 @@ const areas = [
                 <a href="mailto:info@installmykitchen.co.uk" class="sidebar-link">info@installmykitchen.co.uk</a>
               </p>
             </address>
-            <a href="/survey/" class="btn-primary sidebar-btn">
-              Book a Survey — £195
-            </a>
+            <a href="/survey/" class="btn-primary sidebar-btn">Book a Survey — £195</a>
           </div>
 
+          <!-- Credentials card -->
+          <div class="sidebar-card">
+            <h3 class="sidebar-heading">At a Glance</h3>
+            <ul class="cred-list" role="list">
+              <li class="cred-item" role="listitem">
+                <span class="cred-icon" aria-hidden="true">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                </span>
+                30 years kitchen installation experience
+              </li>
+              <li class="cred-item" role="listitem">
+                <span class="cred-icon" aria-hidden="true">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                </span>
+                BIKBBI recognised
+              </li>
+              <li class="cred-item" role="listitem">
+                <span class="cred-icon" aria-hidden="true">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                </span>
+                Independent — no retailer affiliation
+              </li>
+              <li class="cred-item" role="listitem">
+                <span class="cred-icon" aria-hidden="true">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                </span>
+                Fits all major retailers &amp; premium brands
+              </li>
+              <li class="cred-item" role="listitem">
+                <span class="cred-icon" aria-hidden="true">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                </span>
+                Based in Coundon, Coventry CV6
+              </li>
+              <li class="cred-item" role="listitem">
+                <span class="cred-icon" aria-hidden="true">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                </span>
+                Fixed-price, survey-first on every job
+              </li>
+            </ul>
+          </div>
+
+          <!-- Explore card -->
           <div class="sidebar-card sidebar-links-card">
             <h3 class="sidebar-heading">Explore</h3>
             <ul class="sidebar-nav" role="list">
@@ -232,21 +392,22 @@ const areas = [
               <li><a href="/contact/" class="sidebar-nav-link">Contact Us</a></li>
             </ul>
           </div>
+
         </aside>
 
       </div>
     </div>
   </section>
 
-  <!-- ══════════════════════════════════════ DARK CTA ═══════════ -->
+  <!-- ══════════════════════════════ CTA ════════════════════════ -->
   <CTA
     dark={true}
-    heading="Book Your Survey Today"
-    subtext="Let's visit your home, check the room, and give you a clear quote. The £195 survey fee is credited back on booking."
+    heading="Ready to Book Your Survey?"
+    subtext="Pindi visits your home, checks the room, reviews your plans, and gives you a clear fixed price. The £195 survey fee is credited back against your installation on booking."
     primaryLabel="Book a Survey — £195"
     primaryHref="/survey/"
-    secondaryLabel="Contact Us"
-    secondaryHref="/contact/"
+    secondaryLabel="Call 07399 651836"
+    secondaryHref="tel:07399651836"
   />
 
   <!-- Footer -->
@@ -255,29 +416,28 @@ const areas = [
 </Base>
 
 <style>
-  /* Page header */
-  .page-header {
+  /* ── Hero ─────────────────────────────────────────────────── */
+  .about-hero {
     background: var(--hero-gradient);
     padding: 3rem 0 3.5rem;
   }
 
-  .page-h1 {
-    font-size: clamp(1.75rem, 3.5vw, 2.75rem);
+  .hero-h1 {
+    font-size: clamp(1.6rem, 3.2vw, 2.6rem);
     font-weight: 800;
     color: #fff;
     letter-spacing: -0.02em;
     margin-top: 0.75rem;
-    margin-bottom: 0.75rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+    max-width: 760px;
   }
 
-  .page-sub {
-    color: rgba(255, 255, 255, 0.75);
-    font-size: 1.0625rem;
-    line-height: 1.6;
-    max-width: 540px;
+  .hero-answer {
+    max-width: 720px;
   }
 
-  /* Content layout */
+  /* ── Content layout ─────────────────────────────────────── */
   .content-grid {
     display: grid;
     grid-template-columns: 1fr;
@@ -291,13 +451,13 @@ const areas = [
     }
   }
 
-  /* Body copy */
+  /* ── Typography ─────────────────────────────────────────── */
   .section-h2 {
     font-size: 1.375rem;
     font-weight: 700;
     color: var(--charcoal);
-    margin-top: 2rem;
-    margin-bottom: 0.875rem;
+    margin-top: 2.25rem;
+    margin-bottom: 1rem;
     padding-bottom: 0.5rem;
     border-bottom: 2px solid var(--teal);
     display: inline-block;
@@ -305,48 +465,181 @@ const areas = [
 
   .body-copy {
     font-size: 0.9375rem;
-    line-height: 1.75;
+    line-height: 1.78;
     color: var(--text-soft);
-    margin-bottom: 1rem;
+    margin-bottom: 1.125rem;
   }
 
-  .service-list,
-  .areas-list {
-    list-style: none;
-    padding: 0;
-    margin: 0 0 1rem 0;
+  .mt-4 {
+    margin-top: 1rem;
+  }
+
+  /* ── Our Approach grid ──────────────────────────────────── */
+  .approach-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  @media (min-width: 640px) {
+    .approach-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  .approach-card {
+    background: var(--bg-light);
+    border: 1.5px solid var(--border);
+    border-left: 4px solid var(--teal);
+    border-radius: 0.625rem;
+    padding: 1.25rem 1.375rem;
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
   }
 
-  .service-list li,
-  .areas-list li {
+  .approach-icon {
+    width: 2.25rem;
+    height: 2.25rem;
+    border-radius: 0.5rem;
+    background: rgba(15, 118, 110, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--teal);
+    flex-shrink: 0;
+  }
+
+  .approach-title {
     font-size: 0.9375rem;
-    color: var(--text-soft);
-    padding-left: 1.375rem;
-    position: relative;
-  }
-
-  .service-list li::before {
-    content: "✓";
-    position: absolute;
-    left: 0;
-    color: var(--teal);
     font-weight: 700;
+    color: var(--charcoal);
+    margin: 0;
+    line-height: 1.3;
   }
 
-  .area-link {
+  .approach-body {
+    font-size: 0.875rem;
+    line-height: 1.7;
+    color: var(--text-soft);
+    margin: 0;
+  }
+
+  /* ── What We Install ────────────────────────────────────── */
+  .install-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  @media (min-width: 640px) {
+    .install-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  @media (min-width: 900px) {
+    .install-grid {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+  }
+
+  .install-category {
+    background: var(--bg-light);
+    border: 1.5px solid var(--border);
+    border-radius: 0.75rem;
+    padding: 1.125rem 1.25rem;
+  }
+
+  .install-category--premium {
+    border-color: rgba(212, 160, 23, 0.4);
+    background: rgba(212, 160, 23, 0.03);
+  }
+
+  .install-cat-title {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: var(--charcoal);
+    margin: 0 0 0.625rem 0;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  .install-cat-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     color: var(--teal);
+  }
+
+  .install-category--premium .install-cat-icon {
+    color: #92670e;
+  }
+
+  .install-brands {
+    font-size: 0.875rem;
+    line-height: 1.7;
+    color: var(--text-soft);
+    margin: 0;
+  }
+
+  /* ── Experience callout / pull quote ───────────────────── */
+  .experience-callout {
+    margin: 2rem 0;
+    padding: 1.5rem 1.75rem;
+    background: var(--hero-gradient);
+    border-radius: 0.75rem;
+  }
+
+  .experience-callout-text {
+    font-size: 1.0625rem;
+    font-style: italic;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.92);
+    margin: 0 0 0.625rem 0;
+  }
+
+  .experience-callout-attr {
+    font-size: 0.8125rem;
     font-weight: 600;
-    transition: color 0.15s;
+    color: rgba(255, 255, 255, 0.6);
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
   }
 
-  .area-link:hover {
-    color: var(--teal-bright);
+  /* ── Areas ──────────────────────────────────────────────── */
+  .areas-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.625rem;
+    margin-top: 0.75rem;
+    margin-bottom: 0.5rem;
   }
 
-  /* Sidebar */
+  .area-pill {
+    display: inline-block;
+    padding: 0.375rem 0.875rem;
+    border-radius: 2rem;
+    border: 1.5px solid var(--teal);
+    color: var(--teal);
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background 0.15s, color 0.15s;
+  }
+
+  .area-pill:hover {
+    background: var(--teal);
+    color: #fff;
+  }
+
+  /* ── Sidebar ────────────────────────────────────────────── */
   .sidebar-card {
     background: var(--bg-light);
     border-radius: 1rem;
@@ -365,7 +658,7 @@ const areas = [
   .sidebar-body {
     font-size: 0.875rem;
     color: var(--text-soft);
-    line-height: 1.6;
+    line-height: 1.65;
     margin-bottom: 1rem;
   }
 
@@ -395,6 +688,39 @@ const areas = [
     font-size: 0.9375rem;
   }
 
+  /* Credentials list */
+  .cred-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.625rem;
+  }
+
+  .cred-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.625rem;
+    font-size: 0.875rem;
+    color: var(--text-soft);
+    line-height: 1.5;
+  }
+
+  .cred-icon {
+    width: 1.25rem;
+    height: 1.25rem;
+    border-radius: 50%;
+    background: var(--teal);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 0.05rem;
+  }
+
+  /* Sidebar nav */
   .sidebar-nav {
     list-style: none;
     padding: 0;
@@ -412,6 +738,7 @@ const areas = [
     color: var(--charcoal);
     padding: 0.5rem 0;
     border-bottom: 1px solid var(--border);
+    text-decoration: none;
     transition: color 0.15s;
   }
 
@@ -424,50 +751,5 @@ const areas = [
     margin-left: auto;
     color: var(--teal);
     font-size: 0.875rem;
-  }
-
-  /* Our Approach grid */
-  .approach-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1rem;
-    margin-bottom: 1.5rem;
-  }
-
-  @media (min-width: 640px) {
-    .approach-grid {
-      grid-template-columns: 1fr 1fr;
-    }
-  }
-
-  .approach-card {
-    background: var(--bg-light);
-    border: 1.5px solid var(--border);
-    border-left: 4px solid var(--teal);
-    border-radius: 0.625rem;
-    padding: 1.125rem 1.25rem;
-  }
-
-  .approach-title {
-    font-size: 0.9375rem;
-    font-weight: 700;
-    color: var(--charcoal);
-    margin-bottom: 0.375rem;
-  }
-
-  .approach-body {
-    font-size: 0.875rem;
-    line-height: 1.7;
-    color: var(--text-soft);
-    margin: 0;
-  }
-
-  /* What We Install sub-headings */
-  .subsection-h3 {
-    font-size: 0.9375rem;
-    font-weight: 700;
-    color: var(--charcoal);
-    margin-top: 1.25rem;
-    margin-bottom: 0.25rem;
   }
 </style>

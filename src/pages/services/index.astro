@@ -7,6 +7,7 @@ import Breadcrumbs from "../../components/Breadcrumbs.astro";
 import AnswerBlock from "../../components/AnswerBlock.astro";
 import KeyTakeaway from "../../components/KeyTakeaway.astro";
 import FAQ from "../../components/FAQ.astro";
+import InternalLinks from "../../components/InternalLinks.astro";
 import CTA from "../../components/CTA.astro";
 
 const services = [
@@ -179,6 +180,25 @@ const faqItems = [
         </p>
         <FAQ items={faqItems} schemaId="services-faq" />
       </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════ INTERNAL LINKS ═════ -->
+  <section class="section" style="background: #fff;" aria-label="Related pages">
+    <div class="container">
+      <InternalLinks
+        heading="Explore Further"
+        links={[
+          { label: "Cabinet assembly & installation", href: "/services/cabinet-installation/", description: "Base, wall, larder and tall units levelled, secured and aligned." },
+          { label: "Worktop supply & fitting", href: "/services/worktop-fitting/", description: "Laminate worktops supplied and fitted; solid surface co-ordinated." },
+          { label: "Appliance & sink installation", href: "/services/appliance-installation/", description: "Ovens, hobs, dishwashers, extractors and sinks fitted correctly." },
+          { label: "Snagging & final adjustments", href: "/services/snagging/", description: "Systematic quality walkthrough before every handover." },
+          { label: "Book a survey — £195 credited back", href: "/survey/", description: "Every installation starts with a pre-installation survey." },
+          { label: "Installation cost guide", href: "/costs/", description: "What does a kitchen installation cost in Coventry and Warwickshire?" },
+          { label: "Pindi Sahota — 30 years experience", href: "/pindi-sahota/", description: "Meet the fitter behind Install My Kitchen." },
+          { label: "Completed kitchen projects", href: "/projects/", description: "Gallery of finished kitchens installed across Coventry and Warwickshire." },
+        ]}
+      />
     </div>
   </section>
 

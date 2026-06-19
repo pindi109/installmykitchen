@@ -79,6 +79,19 @@ const faqItems = [
   description="Book a pre-installation kitchen survey in Coventry and Warwickshire. £195 fee credited back on booking. We check plans, room dimensions and services before we quote."
   canonical="https://installmykitchen.co.uk/survey/"
 >
+  <!-- Schema -->
+  <script slot="schema" type="application/ld+json">{JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "@id": "https://installmykitchen.co.uk/survey/#service",
+    "name": "Kitchen Installation Survey",
+    "description": "Pre-installation survey assessing room dimensions, service positions, floor levels, and wall conditions. Provides a fixed installation quote. Conducted personally by Pindi Sahota.",
+    "provider": { "@type": "LocalBusiness", "@id": "https://installmykitchen.co.uk/#business", "name": "Install My Kitchen" },
+    "areaServed": "Coventry and Warwickshire",
+    "offers": { "@type": "Offer", "price": "195", "priceCurrency": "GBP", "description": "£195 survey fee credited back against installation balance on booking confirmation" },
+    "performer": { "@type": "Person", "name": "Pindi Sahota", "description": "30 years kitchen installation experience" }
+  })}</script>
+
   <!-- Header -->
   <Header slot="header" />
 

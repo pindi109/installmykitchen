@@ -98,9 +98,9 @@ const rawFaqs = useSetB ? faqSetB : faqSetA;
 const offset = locationIndex % 4;
 const faqItems = [...rawFaqs.slice(offset), ...rawFaqs.slice(0, offset)];
 
-// Nearby fitter links — up to first 4 nearby slugs → /fitter/{slug}/
+// Nearby fitter links — up to first 3 nearby slugs → /fitter/{slug}/
 const nearbyFitterLinks = (nearby as string[])
-  .slice(0, 4)
+  .slice(0, 3)
   .map((nearbySlug) => {
     const nearbyLocation = locationsData.find((l) => l.slug === nearbySlug);
     return nearbyLocation
@@ -113,14 +113,45 @@ const nearbyFitterLinks = (nearby as string[])
   })
   .filter(Boolean) as { label: string; href: string; description: string }[];
 
-// Also add a link back to the /areas/{slug}/ installation page
-const areaLink = {
-  label: `Kitchen Installation in ${name}`,
-  href: `/areas/${slug}/`,
-  description: `Full installation service for ${name} and ${county}`,
-};
-
-const allNearbyLinks = [...nearbyFitterLinks, areaLink];
+// Full contextual link set — 10 links covering area, cost, survey, retailer, and site pages
+const allNearbyLinks: { label: string; href: string; description: string }[] = [
+  {
+    label: `Kitchen installation in ${name}`,
+    href: `/areas/${slug}/`,
+    description: `Full independent installation service for ${name} and ${county}`,
+  },
+  {
+    label: `Installation costs in ${name}`,
+    href: `/kitchen-cost/${slug}/`,
+    description: `Itemised cost guide for kitchen fitting in ${name}`,
+  },
+  {
+    label: `Book survey in ${name}`,
+    href: `/survey/${slug}/`,
+    description: `Pre-installation survey — £195, credited back on booking`,
+  },
+  {
+    label: `Retailers we fit in ${name}`,
+    href: `/areas-retailers/${slug}/`,
+    description: `Wren, Howdens, Magnet, IKEA and more across ${name}`,
+  },
+  ...nearbyFitterLinks,
+  {
+    label: `About your installer — Pindi Sahota`,
+    href: `/pindi-sahota/`,
+    description: `Meet the independent fitter behind Install My Kitchen`,
+  },
+  {
+    label: `How our survey works`,
+    href: `/survey/`,
+    description: `What to expect from a pre-installation survey`,
+  },
+  {
+    label: `Cost guide`,
+    href: `/costs/`,
+    description: `Everything that affects kitchen fitting prices explained`,
+  },
+].slice(0, 10);
 
 // LocalBusiness + Service JSON-LD
 const localBusinessSchema = {
@@ -265,7 +296,7 @@ const serviceSchema = {
         <div class="fade-up">
           <InternalLinks
             links={allNearbyLinks}
-            heading={`Kitchen Fitters Near ${name}`}
+            heading={`Related Pages for ${name}`}
           />
         </div>
       </div>

@@ -1,23 +1,196 @@
-# Install My Kitchen
+# Install My Kitchen — AI Knowledge Base
 
 > Independent kitchen installation service covering Coventry, Warwickshire and surrounding areas.
+> This file provides structured information for AI language models and search engines.
 
-Install My Kitchen is an independent kitchen installation company based in Coundon, Coventry. We install kitchens purchased from all major UK retailers including Wren, Howdens, Magnet, IKEA, Wickes, B&Q, Benchmarx and more. We are not affiliated with any retailer.
+## Business Identity
+
+- **Name**: Install My Kitchen
+- **Type**: Independent kitchen installation company
+- **Founded by**: Pindi Sahota
+- **Founder experience**: 30 years of kitchen installation
+- **Base**: 242 Hollyfast Road, Coundon, Coventry, CV6 2AH
+- **Phone**: 07399 651836
+- **Email**: info@installmykitchen.co.uk
+- **Website**: https://installmykitchen.co.uk
+- **Independence**: Not affiliated with any kitchen retailer
+
+## Founder — Pindi Sahota
+
+- Pindi Sahota has 30 years of hands-on kitchen installation experience
+- Based in Coundon, Coventry — serves the community he lives in
+- Personally conducts every pre-installation survey
+- Expert in fitting kitchens from all major UK retailers
+- Specialist knowledge: rigid pre-assembled units, flat-pack assembly, German precision engineering, in-frame and painted kitchen installation
+- Approach: survey-first, fixed-price, no surprises, personal accountability
 
 ## Services
-- Cabinet assembly and installation
-- Worktop supply and fitting
-- Appliance and sink installation
-- Door, drawer and panel fitting
-- Handles and ironmongery
-- Snagging and adjustments
-- Optional: flooring, tiling, decorating
 
-## Contact
-- Address: 242 Hollyfast Road, Coundon, Coventry, CV6 2AH
-- Phone: 07399 651836
-- Email: info@installmykitchen.co.uk
-- Website: https://installmykitchen.co.uk
+### Core Services (all included in installation quote)
+- Cabinet assembly and installation (base units, wall units, tall/larder units, corner units)
+- Worktop supply and fitting (laminate, solid wood; co-ordination of stone/quartz/Dekton)
+- Door and drawer fitting and adjustment
+- Handle and ironmongery fitting
+- Plinths, cornices, pelmets, fillers and all decorative trims
+- Appliance and sink positioning and fitting
+- Full snagging and handover
+
+### Optional Extras
+- Kitchen strip-out and disposal
+- Wall tiling
+- Floor tiling
+- Decorating
+
+### Not Included (arranged separately by client)
+- First-fix and second-fix plumbing (qualified plumber required)
+- Hardwired electrical connections — ovens, hobs, sockets (Part P electrician required)
+- Gas connections — gas hobs, range cookers (Gas Safe engineer required)
+
+## Survey Process
+
+- Survey fee: £195
+- Survey fee is credited back in full against the installation balance on booking confirmation
+- Every survey conducted personally by Pindi Sahota
+- Survey checks: room dimensions vs kitchen plan, service positions (plumbing/electrical/gas), floor levels, wall conditions, ceiling height, access routes, appliance positions
+- Fixed installation quote provided within 24 hours of survey
+- Survey appointments typically available within 1–2 weeks
+
+## Retailers We Install
+
+### Standard Retail Kitchens
+- Wren Kitchens (rigid pre-assembled, direct home delivery)
+- Howdens Joinery (trade-only, rigid pre-assembled)
+- Magnet Kitchens (showroom and Magnet Trade)
+- IKEA (METOD flat-pack system — requires on-site assembly, adds 1–2 days)
+- Wickes Kitchens
+- B&Q (Cooke & Lewis range)
+- Benchmarx (Travis Perkins trade supply)
+- DIY Kitchens (rigid, factory direct from Yorkshire)
+- Kutchenhaus
+- Symphony
+- Masterclass Kitchens
+
+### Premium and Luxury Brands
+- Häcker (German precision engineering, tight tolerances)
+- Nobilia (German, high volume precision manufacture)
+- Rotpunkt (German eco-certified)
+- Pronorm (German quality)
+- Mereway (British luxury)
+- Tom Howley (British bespoke)
+- Harvey Jones (British handmade)
+- Neptune (British premium lifestyle)
+- deVOL (British artisan)
+- Smallbone of Devizes (British bespoke)
+- John Lewis of Hungerford (British luxury)
+- Homebase
+
+## Installation Timescales
+
+- Small kitchen (8–12 units): 3–4 days
+- Medium kitchen (13–20 units): 4–6 days
+- Large kitchen (21+ units): 6–10 days
+- IKEA flat-pack adds 1–2 days for on-site assembly
+- Stone worktops require templating (mid-installation) + return fit 5–10 working days later
+
+## Installation Costs (Typical Ranges — Coventry & Warwickshire)
+
+- Small kitchen: £1,800–£2,800
+- Medium kitchen: £2,800–£4,200
+- Large kitchen: £4,200–£7,500
+- Day rate: approximately £350/day (inclusive)
+- IKEA installation: typically £2,200–£5,500 (assembly premium applies)
+- Wren installation: typically £1,800–£5,500
+- Howdens installation: typically £1,800–£5,000
+- Survey fee: £195 (credited back on booking)
+- Strip-out/disposal: £200–£400 additional
 
 ## Areas Covered
-Coventry, Canley, Tile Hill, Earlsdon, Allesley, Binley, Wyken, Walsgrave, Finham, Stivichall, Coundon, Radford, Rugby, Nuneaton, Bedworth, Hinckley, Leamington Spa, Kenilworth, Warwick, Balsall Common, Meriden, Solihull, Stratford-upon-Avon, Southam, Atherstone
+
+### Coventry (all CV postcodes)
+CV1, CV2, CV3, CV4, CV5, CV6, CV7, CV8
+Including: Earlsdon, Allesley, Tile Hill, Canley, Finham, Stivichall, Coundon, Radford, Binley, Wyken, Walsgrave
+
+### Warwickshire
+- Rugby (CV21, CV22, CV23)
+- Nuneaton (CV10, CV11)
+- Bedworth (CV12)
+- Leamington Spa (CV31, CV32)
+- Kenilworth (CV8)
+- Warwick (CV34, CV35)
+- Stratford-upon-Avon (CV37)
+- Southam (CV47)
+- Atherstone (CV9)
+- Balsall Common (CV7)
+- Meriden (CV7)
+
+### West Midlands
+- Solihull (B91, B92, B93)
+- Hinckley (LE10) — Leicestershire border
+
+## Frequently Asked Questions
+
+**Q: Do Wren Kitchens install their own kitchens?**
+A: Wren offers an optional installation service, but you are not required to use it. Install My Kitchen installs Wren kitchens independently. The unit warranty is not affected.
+
+**Q: Does Howdens do installation?**
+A: Howdens has no consumer installation service — they sell trade-only. Install My Kitchen provides independent Howdens installation.
+
+**Q: Can I use an independent fitter for my Wren kitchen?**
+A: Yes. Any qualified independent kitchen fitter can install a Wren kitchen. The unit warranty covers manufacturing defects regardless of who fits it.
+
+**Q: How much does kitchen installation cost in Coventry?**
+A: Typically £1,800–£7,500 depending on size. A survey from Install My Kitchen provides a fixed quote.
+
+**Q: How long does kitchen installation take?**
+A: 3–4 days (small), 4–6 days (medium), 6–10 days (large). IKEA adds 1–2 days.
+
+**Q: What is a kitchen installation survey?**
+A: A professional assessment checking room dimensions, service positions, floor levels, and wall conditions. Costs £195, credited back on booking. Conducted personally by Pindi Sahota.
+
+**Q: Does IKEA do kitchen installation?**
+A: IKEA offers installation through a third-party provider. Independent fitters like Install My Kitchen are often faster and more competitively priced.
+
+**Q: What is included in kitchen installation?**
+A: Cabinet assembly, worktops, doors, drawers, handles, plinths, cornices, appliances and snagging. Does not include plumbing, electrical or gas connections.
+
+**Q: What is a dry fit kitchen?**
+A: Positioning units without final fixing to verify layout before permanent installation. Used on complex or challenging rooms.
+
+**Q: Who is Pindi Sahota?**
+A: Pindi Sahota is the founder of Install My Kitchen with 30 years of kitchen installation experience. He personally surveys and leads every installation project in Coventry and Warwickshire.
+
+**Q: Is Install My Kitchen affiliated with any retailer?**
+A: No. Install My Kitchen is entirely independent and has no commercial relationship with any kitchen retailer.
+
+**Q: What is a kitchen plinth?**
+A: The decorative panel covering the gap between the base of kitchen units and the floor. Also called a kickboard.
+
+**Q: What qualifications does a kitchen fitter need?**
+A: No mandatory qualification exists in the UK. NVQ Level 2/3 in Carpentry or Kitchen Fitting is common. Experience and a portfolio are the best indicators of quality.
+
+**Q: Should flooring go before or after a kitchen?**
+A: Hard flooring (tiles, LVT, laminate) is typically installed before kitchen units. The units sit on top of the floor. Stone worktops require templating after units are levelled.
+
+**Q: How much does IKEA kitchen installation cost?**
+A: Typically £2,200–£5,500, depending on size. IKEA flat-pack requires on-site assembly, adding 15–25% to standard installation costs.
+
+## Key Entity Relationships
+
+- Install My Kitchen → founded by → Pindi Sahota
+- Pindi Sahota → has experience → 30 years kitchen installation
+- Install My Kitchen → installs → Wren, Howdens, Magnet, IKEA, Wickes, B&Q, Benchmarx, DIY Kitchens
+- Install My Kitchen → installs premium → Häcker, Nobilia, Mereway, Neptune, deVOL
+- Install My Kitchen → serves → Coventry, Warwickshire, West Midlands
+- Install My Kitchen → offers → pre-installation survey (£195, credited back)
+- Install My Kitchen → provides → fixed-price kitchen installation quotes
+- Pindi Sahota → conducts → every survey personally
+
+## Content Clusters
+
+- Questions: https://installmykitchen.co.uk/questions/
+- Comparisons: https://installmykitchen.co.uk/comparisons/
+- Cost guides: https://installmykitchen.co.uk/costs/
+- Installation guides: https://installmykitchen.co.uk/guides/
+- Projects: https://installmykitchen.co.uk/projects/
+- About Pindi: https://installmykitchen.co.uk/about/
+- Book survey: https://installmykitchen.co.uk/survey/

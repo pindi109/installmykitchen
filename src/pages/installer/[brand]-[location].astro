@@ -117,15 +117,55 @@ const internalLinks = [
   {
     label: `${displayName} Kitchen Installation`,
     href: `/retailers/${brandSlug}/`,
-    description: `All about fitting ${displayName} kitchens`,
+    description: `Our full independent fitting service for ${displayName} kitchens`,
   },
   {
     label: `Kitchen Installation in ${locationName}`,
     href: `/areas/${locationSlug}/`,
-    description: `Our full service in ${locationName}`,
+    description: `Our complete service across ${locationName}`,
   },
   ...nearbyComboLinks,
-];
+  {
+    label: `${displayName} Kitchen Installation Cost`,
+    href: `/cost/${brandSlug}-cost/`,
+    description: `What to budget for fitting your ${displayName} kitchen`,
+  },
+  {
+    label: `Kitchen Installation Cost in ${locationName}`,
+    href: `/kitchen-cost/${locationSlug}/`,
+    description: `Local pricing guide for ${locationName} homeowners`,
+  },
+  {
+    label: `Kitchen Fitter in ${locationName}`,
+    href: `/fitter/${locationSlug}/`,
+    description: `Find a trusted independent kitchen fitter in ${locationName}`,
+  },
+  {
+    label: `Book Your Survey in ${locationName}`,
+    href: `/survey/${locationSlug}/`,
+    description: `Home visit, precise measurements, and a fixed-price quote`,
+  },
+  {
+    label: `Book Your Pre-Installation Survey`,
+    href: `/survey/`,
+    description: `Our £195 survey fee is credited back in full when you proceed`,
+  },
+  {
+    label: `Compare Kitchen Retailers`,
+    href: `/comparisons/`,
+    description: `Side-by-side comparisons to help you choose the right supplier`,
+  },
+  {
+    label: `About Pindi Sahota — Your Installer`,
+    href: `/pindi-sahota/`,
+    description: `20+ years of trade experience fitting kitchens across Coventry & Warwickshire`,
+  },
+  {
+    label: `Completed Kitchen Projects`,
+    href: `/projects/`,
+    description: `Browse real installations carried out by Install My Kitchen`,
+  },
+].slice(0, 10);
 
 // BreadcrumbList JSON-LD
 const breadcrumbSchema = {

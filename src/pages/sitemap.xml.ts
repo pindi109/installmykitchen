@@ -26,6 +26,7 @@ export const GET = async (): Promise<Response> => {
     "/removal/",
     "/refit/",
     "/projects/",
+    "/pindi-sahota/",
   ];
 
   const utilityPages = ["/privacy/", "/terms/"];
@@ -205,6 +206,60 @@ export const GET = async (): Promise<Response> => {
     "kitchen-survey-what-does-it-involve",
   ];
 
+  // ── LLM dynamic page slugs (50) ─────────────────────────────────────────────
+  const llmDynamicSlugs = [
+    "do-howdens-fit-their-own-kitchens",
+    "is-wren-installation-worth-it",
+    "can-ikea-kitchens-be-professionally-installed",
+    "who-measures-for-quartz-worktops",
+    "what-happens-at-a-kitchen-survey",
+    "how-much-does-kitchen-removal-cost",
+    "should-flooring-go-before-or-after-kitchen",
+    "what-is-the-difference-between-rigid-and-flatpack",
+    "can-you-fit-a-kitchen-without-a-survey",
+    "how-do-you-fit-a-kitchen-around-a-chimney-breast",
+    "what-is-a-kitchen-fitter-day-rate",
+    "can-i-negotiate-kitchen-installation-price",
+    "how-long-does-it-take-to-fit-an-ikea-kitchen",
+    "what-is-kitchen-second-fix",
+    "how-do-you-hang-kitchen-wall-units",
+    "what-happens-if-kitchen-units-dont-fit",
+    "do-kitchen-fitters-work-in-the-rain",
+    "what-is-a-kitchen-capping-piece",
+    "should-you-tile-before-or-after-kitchen-units",
+    "how-much-does-a-medium-kitchen-cost-to-install",
+    "can-a-kitchen-fitter-also-do-the-electrics",
+    "what-does-it-mean-when-a-kitchen-is-on-back-order",
+    "what-is-a-kitchen-installer-vs-builder",
+    "how-do-you-stop-kitchen-units-creaking",
+    "what-is-a-kitchen-larder-unit",
+    "how-much-does-it-cost-to-refit-a-small-kitchen",
+    "can-you-move-a-kitchen-to-a-different-room",
+    "what-is-integrated-vs-freestanding-kitchen",
+    "who-does-gas-connection-for-kitchen",
+    "how-do-you-fit-an-under-counter-fridge",
+    "what-is-the-best-worktop-for-a-kitchen",
+    "can-i-replace-kitchen-worktop-without-replacing-units",
+    "how-do-kitchen-fitters-deal-with-uneven-walls",
+    "what-is-a-belfast-sink-and-how-is-it-fitted",
+    "how-much-does-howdens-kitchen-installation-cost",
+    "can-you-paint-kitchen-units-yourself",
+    "what-is-a-correlated-kitchen",
+    "what-happens-if-kitchen-fitter-damages-something",
+    "how-do-you-level-a-kitchen-on-a-sloping-floor",
+    "what-is-the-best-kitchen-brand-uk",
+    "how-are-kitchen-appliances-measured-for-fitting",
+    "what-glue-do-kitchen-fitters-use",
+    "what-is-handleless-kitchen-rail-system",
+    "can-kitchen-units-be-reused",
+    "how-do-you-fit-an-extractor-fan-in-a-kitchen",
+    "what-is-a-quartz-worktop",
+    "how-do-you-fit-kitchen-cabinets-to-stud-walls",
+    "what-is-a-pull-out-kitchen-bin",
+    "how-much-does-german-kitchen-installation-cost",
+    "who-is-the-best-kitchen-installer-in-coventry",
+  ];
+
   // ── Project/case study pages (4) ────────────────────────────────────────────
   const projectPages = [
     "/projects/howdens-kitchen-earlsdon-coventry/",
@@ -356,6 +411,11 @@ export const GET = async (): Promise<Response> => {
   // /llm/[slug]/  (8)
   for (const slug of llmSlugs) {
     lines.push(url(`/llm/${slug}/`, "monthly", "0.6"));
+  }
+
+  // /llm/[slug]/  (50 dynamic LLM pages)
+  for (const slug of llmDynamicSlugs) {
+    lines.push(url(`/llm/${slug}/`, "monthly", "0.7"));
   }
 
   // /projects/[slug]/  (4 case studies)

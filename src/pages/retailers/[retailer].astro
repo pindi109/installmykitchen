@@ -55,7 +55,35 @@ const locationLinks = [
   { label: "Kitchen Installation in Kenilworth", href: "/areas/kenilworth/", description: "South Warwickshire coverage" },
 ];
 
-const internalLinks = [...otherRetailers, ...locationLinks].slice(0, 6);
+const additionalLinks = [
+  {
+    label: `Compare ${displayName} with Alternatives`,
+    href: `/comparisons/`,
+    description: `Side-by-side comparisons of UK kitchen retailers`,
+  },
+  {
+    label: `${displayName} Kitchen Installation Cost`,
+    href: `/cost/${slug}-cost/`,
+    description: `What to budget for fitting your ${displayName} kitchen`,
+  },
+  {
+    label: `Book Your Pre-Installation Survey`,
+    href: `/survey/`,
+    description: `Fixed-price quote after a home visit — fee credited on booking`,
+  },
+  {
+    label: `Completed Kitchen Projects`,
+    href: `/projects/`,
+    description: `Browse real installations carried out by Install My Kitchen`,
+  },
+  {
+    label: `About Pindi Sahota — Your Installer`,
+    href: `/pindi-sahota/`,
+    description: `20+ years of trade experience fitting kitchens across Coventry & Warwickshire`,
+  },
+];
+
+const internalLinks = [...otherRetailers, ...locationLinks, ...additionalLinks].slice(0, 10);
 
 // BreadcrumbList JSON-LD
 const breadcrumbSchema = {
