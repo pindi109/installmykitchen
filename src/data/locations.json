@@ -8,11 +8,12 @@
     "lat": 52.4068,
     "lng": -1.5197,
     "postcodes": ["CV1", "CV2", "CV3", "CV4", "CV5", "CV6", "CV7", "CV8"],
-    "housingStock": "Coventry's housing is exceptionally varied, spanning Victorian terraces in Earlsdon and Chapelfields, solid post-war semis across Tile Hill and Canley, and 1960s council estates in areas such as Wood End. Newer apartment developments and executive estates have also emerged as part of the city's ongoing regeneration.",
+    "housingStock": "Coventry has a hugely varied housing stock from Victorian terraces in Earlsdon and Chapelfields to post-war semis across Tile Hill and Canley, with newer executive builds around Finham and Stivichall.",
     "localLandmarks": ["Coventry Cathedral", "Belgrade Theatre", "War Memorial Park", "FarGo Village"],
     "typicalKitchenStyles": ["Shaker", "Handleless contemporary", "Painted in-frame"],
-    "travelTime": "0 minutes from our Coundon base",
-    "kitchenNotes": "Coventry's wide range of property ages means our fitters regularly adapt installations to suit everything from narrow Victorian galley kitchens to open-plan ground floors in modern new builds."
+    "travelTime": "based here",
+    "kitchenNotes": "Coventry's wide range of property ages means our fitters regularly adapt installations to suit everything from narrow Victorian galley kitchens to open-plan ground floors in modern new builds.",
+    "localNote": "Kitchens in Coventry's Victorian and Edwardian properties often have uneven floors and out-of-plumb walls requiring careful levelling and scribing."
   },
   {
     "slug": "canley",
@@ -23,11 +24,12 @@
     "lat": 52.4031,
     "lng": -1.5542,
     "postcodes": ["CV4"],
-    "housingStock": "Canley is dominated by 1950s and 1960s council-built semis and terraces, many of which have passed into private ownership and are now being modernised by owner-occupiers. The standard kitchen footprint in these properties is modest but well-proportioned, lending itself well to a full cabinet replacement.",
+    "housingStock": "Canley is predominantly 1950s and 1960s semi-detached and terraced properties, with some later social housing and student accommodation near the University of Warwick.",
     "localLandmarks": ["Canley Gardens", "Sir Frank Whittle Road", "Canley Ford", "University of Warwick campus"],
     "typicalKitchenStyles": ["Shaker", "Slab handleless", "Classic white"],
-    "travelTime": "10 minutes from our Coundon base",
-    "kitchenNotes": "Many Canley kitchens retain their original 1960s layouts, so our surveyors often recommend relocating pipework to maximise storage and create a more practical workflow."
+    "travelTime": "approximately 10 minutes",
+    "kitchenNotes": "Many Canley kitchens retain their original 1960s layouts, so our surveyors often recommend relocating pipework to maximise storage and create a more practical workflow.",
+    "localNote": "Post-war Canley properties typically have straightforward kitchen layouts but may have lower ceiling heights in kitchen extensions."
   },
   {
     "slug": "tile-hill",
@@ -37,12 +39,13 @@
     "description": "Tile Hill is an established suburban area in the west of Coventry, characterised by spacious inter-war and post-war housing with generous kitchen layouts. Its proximity to Coventry station and good road links make it a popular choice for families seeking larger homes with room to invest in quality kitchen renovations.",
     "lat": 52.4097,
     "lng": -1.5779,
-    "postcodes": ["CV4"],
-    "housingStock": "Tile Hill is largely made up of 1950s and 1960s semi-detached houses and terraces, built to generous post-war space standards with dedicated kitchen rooms rather than open-plan layouts. Some later infill development added smaller modern homes, though the character of the area remains firmly mid-twentieth century.",
+    "postcodes": ["CV4", "CV5"],
+    "housingStock": "Tile Hill is a mix of 1950s and 1960s semi-detached properties and some terraced housing, popular with families for its good schools and green spaces.",
     "localLandmarks": ["Tile Hill Wood", "Tile Hill railway station", "Jardine Crescent", "Beechwood Avenue"],
     "typicalKitchenStyles": ["Shaker", "Traditional painted", "Modern slab"],
-    "travelTime": "12 minutes from our Coundon base",
-    "kitchenNotes": "The dedicated kitchen rooms typical of Tile Hill's 1950s semis often have solid external walls ideal for wall-unit fixing, making installations here more straightforward than in more recent open-plan properties."
+    "travelTime": "approximately 12 minutes",
+    "kitchenNotes": "The dedicated kitchen rooms typical of Tile Hill's 1950s semis often have solid external walls ideal for wall-unit fixing, making installations here more straightforward than in more recent open-plan properties.",
+    "localNote": "Tile Hill semis often have galley-style kitchens or rear extensions ideal for kitchen replacements."
   },
   {
     "slug": "earlsdon",
@@ -53,11 +56,12 @@
     "lat": 52.3987,
     "lng": -1.5318,
     "postcodes": ["CV5"],
-    "housingStock": "Earlsdon is characterised by handsome Victorian and Edwardian terraces and bay-fronted semis, many of which have been extended into the rear garden to create larger kitchen-dining spaces. The area is popular with young professionals and young families who invest in quality fitted kitchens to complement the period character of their homes.",
+    "housingStock": "Earlsdon is one of Coventry's most desirable areas, characterised by Victorian and Edwardian terraces and semis with character features, popular with professionals and families.",
     "localLandmarks": ["Albany Road", "Earlsdon Street", "Spencer Park", "St Barbara's Church"],
     "typicalKitchenStyles": ["Painted in-frame", "Shaker", "Handleless with quartz worktops"],
-    "travelTime": "8 minutes from our Coundon base",
-    "kitchenNotes": "Rear extensions are common in Earlsdon's terraces, so our fitters frequently work in kitchen-diners where the new layout bridges old and new building fabric, requiring careful attention to floor levels and wall tie-ins."
+    "travelTime": "approximately 8 minutes",
+    "kitchenNotes": "Rear extensions are common in Earlsdon's terraces, so our fitters frequently work in kitchen-diners where the new layout bridges old and new building fabric, requiring careful attention to floor levels and wall tie-ins.",
+    "localNote": "Earlsdon's Victorian and Edwardian properties often have chimney breasts and alcoves that require careful planning for kitchen layouts."
   },
   {
     "slug": "allesley",
@@ -68,11 +72,12 @@
     "lat": 52.4207,
     "lng": -1.5697,
     "postcodes": ["CV5"],
-    "housingStock": "Allesley has one of the most varied housing profiles of any Coventry suburb, mixing genuine village cottages with substantial inter-war detached homes and a small number of executive new-build properties. The larger plot sizes mean many homes have spacious kitchens or the potential to extend, making the area well-suited to ambitious refurbishment projects.",
+    "housingStock": "Allesley is an affluent village on the western edge of Coventry, with a mix of period village properties, 1930s detached homes, and executive new builds.",
     "localLandmarks": ["Allesley village green", "Allesley Park", "Coundon Court school", "Rainbow Inn"],
     "typicalKitchenStyles": ["Shaker with stone worktops", "Painted in-frame", "German handleless"],
-    "travelTime": "7 minutes from our Coundon base",
-    "kitchenNotes": "Allesley's older cottages and inter-war detached homes often feature uneven floors and non-standard ceiling heights, so our surveyors take particular care with scribing and levelling during the pre-installation visit."
+    "travelTime": "approximately 10 minutes",
+    "kitchenNotes": "Allesley's older cottages and inter-war detached homes often feature uneven floors and non-standard ceiling heights, so our surveyors take particular care with scribing and levelling during the pre-installation visit.",
+    "localNote": "Allesley properties tend to have larger kitchens and are well-suited to premium and handleless kitchen styles."
   },
   {
     "slug": "binley",
@@ -83,11 +88,12 @@
     "lat": 52.3987,
     "lng": -1.4697,
     "postcodes": ["CV3"],
-    "housingStock": "Binley contains a broad mix of post-war semis and terraces alongside modern estates constructed on previously industrial land near the former Binley Colliery. This creates a neighbourhood where older properties with traditional kitchen rooms sit alongside open-plan new builds, and our teams are experienced with both.",
+    "housingStock": "Binley is a suburban area with a mix of post-war semi-detached homes, some terraced properties, and newer housing developments near Binley Business Park.",
     "localLandmarks": ["Binley Woods", "Brandon Road", "Binley Business Park", "Coombe Abbey (nearby)"],
     "typicalKitchenStyles": ["Shaker", "Modern slab", "Classic white gloss"],
-    "travelTime": "18 minutes from our Coundon base",
-    "kitchenNotes": "Newer Binley estates often feature open-plan kitchen-living areas with concrete floors, so our fitters confirm structural suitability for island units and peninsula layouts as part of every survey in this area."
+    "travelTime": "approximately 15 minutes",
+    "kitchenNotes": "Newer Binley estates often feature open-plan kitchen-living areas with concrete floors, so our fitters confirm structural suitability for island units and peninsula layouts as part of every survey in this area.",
+    "localNote": "Binley's mix of housing ages means kitchen layouts vary considerably — a survey is particularly valuable here."
   },
   {
     "slug": "wyken",
@@ -98,11 +104,12 @@
     "lat": 52.4187,
     "lng": -1.4729,
     "postcodes": ["CV2"],
-    "housingStock": "Wyken is a solidly residential area built predominantly in the post-war decades, with streets of semi-detached houses and some terraces arranged around parks and playing fields. The housing is well-maintained and owner-occupied for the most part, with a steady stream of kitchen renovations as properties change hands.",
+    "housingStock": "Wyken is a largely post-war residential area with 1940s and 1950s semi-detached homes, some terraced properties, and established tree-lined streets.",
     "localLandmarks": ["Wyken Pippin pub", "Caludon Castle Park", "Woodway Park", "Clifford Bridge Road"],
     "typicalKitchenStyles": ["Shaker", "Classic white gloss", "Modern slab"],
-    "travelTime": "15 minutes from our Coundon base",
-    "kitchenNotes": "Wyken's post-war semis typically have a separate kitchen and dining room configuration, and many homeowners choose to open these through when refitting, which our team can advise on and accommodate."
+    "travelTime": "approximately 12 minutes",
+    "kitchenNotes": "Wyken's post-war semis typically have a separate kitchen and dining room configuration, and many homeowners choose to open these through when refitting, which our team can advise on and accommodate.",
+    "localNote": "Wyken's post-war semis typically have practical kitchen spaces well-suited to modern fitted kitchen installations."
   },
   {
     "slug": "walsgrave",
@@ -113,11 +120,12 @@
     "lat": 52.4249,
     "lng": -1.4529,
     "postcodes": ["CV2"],
-    "housingStock": "Walsgrave's residential streets consist mainly of 1960s and 1970s semi-detached properties alongside more recent apartment developments and smaller modern estates catering to hospital and university workers. The mix of owner-occupiers and professional renters creates demand for both budget-conscious refits and higher-specification installations.",
+    "housingStock": "Walsgrave is a mixed area near the University Hospital with 1960s and 1970s semis, some newer apartment developments, and residential streets.",
     "localLandmarks": ["University Hospital Coventry & Warwickshire", "Walsgrave reservoir", "Asda Walsgrave", "A46 retail park"],
     "typicalKitchenStyles": ["Modern slab", "Shaker", "Handleless contemporary"],
-    "travelTime": "20 minutes from our Coundon base",
-    "kitchenNotes": "Walsgrave's mix of flats and houses means our fitters are well-practised in working within the access and noise restrictions that come with apartment-block installations, including liaising with building management."
+    "travelTime": "approximately 14 minutes",
+    "kitchenNotes": "Walsgrave's mix of flats and houses means our fitters are well-practised in working within the access and noise restrictions that come with apartment-block installations, including liaising with building management.",
+    "localNote": "Walsgrave properties often have straightforward kitchen configurations but traffic access should be planned for delivery days."
   },
   {
     "slug": "finham",
@@ -128,11 +136,12 @@
     "lat": 52.3797,
     "lng": -1.5218,
     "postcodes": ["CV3"],
-    "housingStock": "Finham is one of south Coventry's most desirable residential pockets, built up mainly between the 1930s and 1970s with detached and large semi-detached houses on generous plots with mature gardens. The spacious, often dual-aspect kitchens in these homes frequently run to thirty or more units and are well-suited to island or peninsula layouts.",
+    "housingStock": "Finham is one of south Coventry's most desirable areas, with predominantly 1930s to 1970s detached and semi-detached properties on generous plots.",
     "localLandmarks": ["Finham Park", "Stoneleigh Road", "Charter Avenue", "Ken Marriott Leisure Centre"],
     "typicalKitchenStyles": ["Painted in-frame", "Shaker with quartz or granite worktops", "German handleless"],
-    "travelTime": "14 minutes from our Coundon base",
-    "kitchenNotes": "Finham's larger detached homes regularly require bespoke tall-cabinet runs and integrated appliance columns, and our survey process specifically accounts for the structural wall construction common in 1930s–1960s properties in this area."
+    "travelTime": "approximately 14 minutes",
+    "kitchenNotes": "Finham's larger detached homes regularly require bespoke tall-cabinet runs and integrated appliance columns, and our survey process specifically accounts for the structural wall construction common in 1930s–1960s properties in this area.",
+    "localNote": "Finham's larger detached properties frequently feature open-plan kitchen-diner extensions ideal for large kitchen installations."
   },
   {
     "slug": "stivichall",
@@ -143,11 +152,12 @@
     "lat": 52.3917,
     "lng": -1.5058,
     "postcodes": ["CV3"],
-    "housingStock": "Stivichall is widely regarded as one of Coventry's premier residential addresses, with tree-lined avenues of large Edwardian and inter-war semi-detached and detached houses. Many properties have original features that owners wish to complement with a high-quality kitchen, and rear extensions to create kitchen-diners have become increasingly common.",
+    "housingStock": "Stivichall is a prestigious south Coventry area with large Edwardian and Victorian semis and detached homes on tree-lined roads, popular with professionals.",
     "localLandmarks": ["Stivichall Common", "Coat of Arms Bridge Road", "Gibbet Hill Road", "Kenilworth Road"],
     "typicalKitchenStyles": ["Painted in-frame", "Shaker with stone worktops", "Classic handleless"],
-    "travelTime": "12 minutes from our Coundon base",
-    "kitchenNotes": "Stivichall's Edwardian properties often have higher-than-standard ceiling heights, which gives scope for full-height cabinetry and larder units — something our fitters plan for specifically during the survey stage."
+    "travelTime": "approximately 15 minutes",
+    "kitchenNotes": "Stivichall's Edwardian properties often have higher-than-standard ceiling heights, which gives scope for full-height cabinetry and larder units — something our fitters plan for specifically during the survey stage.",
+    "localNote": "Stivichall's period properties often feature solid floors and original plasterwork that requires careful assessment at survey stage."
   },
   {
     "slug": "coundon",
@@ -158,11 +168,12 @@
     "lat": 52.4197,
     "lng": -1.5379,
     "postcodes": ["CV6"],
-    "housingStock": "Coundon mixes Victorian and Edwardian terraces near the older streets around Hollyfast Road with inter-war and post-war semis further from the centre, giving the suburb a layered character that reflects its gradual growth through the twentieth century. This variety means our team regularly encounters a wide range of kitchen footprints and construction types within a very short distance.",
+    "housingStock": "Coundon is our home base — a mix of Victorian terraces, 1930s semis, and some newer properties. It is a well-established residential area close to the city centre.",
     "localLandmarks": ["Hollyfast Road", "Coundon Court school", "Barker's Butts Lane", "Charter Avenue"],
     "typicalKitchenStyles": ["Shaker", "Classic white gloss", "Painted in-frame"],
-    "travelTime": "2 minutes from our Coundon base",
-    "kitchenNotes": "As our home base, Coundon is where our fitters are most familiar with the local housing stock, and we can often schedule survey appointments here at shorter notice than in our outer service area."
+    "travelTime": "we are based here",
+    "kitchenNotes": "As our home base, Coundon is where our fitters are most familiar with the local housing stock, and we can often schedule survey appointments here at shorter notice than in our outer service area.",
+    "localNote": "As our home base, we have extensive knowledge of Coundon's housing stock and typical kitchen configurations across the area."
   },
   {
     "slug": "radford",
@@ -173,11 +184,12 @@
     "lat": 52.4147,
     "lng": -1.5247,
     "postcodes": ["CV6"],
-    "housingStock": "Radford's housing is predominantly dense Victorian and Edwardian terracing close to the Foleshill Road corridor, with some mid-twentieth century council housing in the area's wider streets. Kitchens in these terraced properties are typically compact but can be significantly improved by smart storage solutions and a full cabinet replacement.",
+    "housingStock": "Radford is a dense urban residential area close to Coventry city centre, with Victorian and Edwardian terraced housing and some post-war properties.",
     "localLandmarks": ["Radford Road", "Radford Common", "Allesley Old Road", "Foleshill Road"],
     "typicalKitchenStyles": ["Classic white gloss", "Shaker", "Compact contemporary slab"],
-    "travelTime": "5 minutes from our Coundon base",
-    "kitchenNotes": "Compact terrace kitchens in Radford often benefit most from floor-to-ceiling cabinetry and integrated appliances to maximise every centimetre of available space — an approach our surveyors specifically plan for in these properties."
+    "travelTime": "approximately 8 minutes",
+    "kitchenNotes": "Compact terrace kitchens in Radford often benefit most from floor-to-ceiling cabinetry and integrated appliances to maximise every centimetre of available space — an approach our surveyors specifically plan for in these properties.",
+    "localNote": "Radford's terraced properties typically have compact kitchens in rear additions, requiring careful planning and levelling."
   },
   {
     "slug": "rugby",
@@ -188,11 +200,12 @@
     "lat": 52.3704,
     "lng": -1.2641,
     "postcodes": ["CV21", "CV22", "CV23"],
-    "housingStock": "Rugby's older town centre streets are characterised by Victorian and Edwardian terraces and bay-fronted semis, whilst the interwar period added substantial estates of solid three-bedroom houses further from the centre. Modern developments on the town's eastern and southern fringes have brought a significant amount of open-plan new-build housing, creating a very varied landscape for kitchen installers.",
+    "housingStock": "Rugby has a varied housing stock from Victorian and Edwardian terraces and semis in the town centre to 1930s and post-war estates on the periphery, with newer developments around the town.",
     "localLandmarks": ["Rugby School", "Webb Ellis Road", "Rugby Clock Tower", "Lawrence Sheriff Street"],
     "typicalKitchenStyles": ["Shaker", "Modern slab handleless", "Painted in-frame"],
-    "travelTime": "35 minutes from our Coundon base",
-    "kitchenNotes": "Rugby's new-build estates to the east of the town frequently feature integrated appliance spaces and pre-routed plumbing that require careful checking against the kitchen plan before installation day, which our survey process specifically addresses."
+    "travelTime": "approximately 30 minutes",
+    "kitchenNotes": "Rugby's new-build estates to the east of the town frequently feature integrated appliance spaces and pre-routed plumbing that require careful checking against the kitchen plan before installation day, which our survey process specifically addresses.",
+    "localNote": "Rugby's mix of period and modern housing means our survey is particularly useful in confirming kitchen plans against actual room conditions."
   },
   {
     "slug": "nuneaton",
@@ -203,11 +216,12 @@
     "lat": 52.5238,
     "lng": -1.4656,
     "postcodes": ["CV10", "CV11"],
-    "housingStock": "Nuneaton has a substantial stock of Victorian and Edwardian terraces and bay-fronted semis in its older neighbourhoods around the town centre, alongside extensive post-war council and private estates in areas such as Galley Common and Camp Hill. More recent developments on the town's outskirts have added modern open-plan homes to the mix.",
+    "housingStock": "Nuneaton has a mix of Victorian terraced housing in the town, 1930s and post-war semis on the outskirts, and newer developments across the borough.",
     "localLandmarks": ["George Eliot birthplace", "Nuneaton town centre market", "Riversley Park", "Galley Common"],
     "typicalKitchenStyles": ["Shaker", "Classic white gloss", "Modern slab"],
-    "travelTime": "25 minutes from our Coundon base",
-    "kitchenNotes": "Nuneaton's older terraces often retain original chimney breasts in the kitchen position, and our surveyors assess whether these can be built around or need to be removed before the installation quote is finalised."
+    "travelTime": "approximately 20 minutes",
+    "kitchenNotes": "Nuneaton's older terraces often retain original chimney breasts in the kitchen position, and our surveyors assess whether these can be built around or need to be removed before the installation quote is finalised.",
+    "localNote": "Nuneaton's varied housing stock spans all kitchen installation complexity levels — from compact terraced kitchens to larger semi and detached homes."
   },
   {
     "slug": "bedworth",
@@ -218,11 +232,12 @@
     "lat": 52.4754,
     "lng": -1.4759,
     "postcodes": ["CV12"],
-    "housingStock": "Bedworth's housing is predominantly post-war semis and terraces, reflecting the town's expansion during the mid-twentieth century to house workers from the nearby collieries and manufacturing industries. The area has a strong owner-occupier culture and homeowners here regularly invest in kitchen upgrades to modernise properties that were built to functional rather than luxurious standards.",
+    "housingStock": "Bedworth is predominantly a post-war residential town with 1950s and 1960s semi-detached and terraced housing, reflecting its history as a mining community.",
     "localLandmarks": ["Bedworth town centre", "Miners' Welfare Park", "Bulkington Road", "Exhall"],
     "typicalKitchenStyles": ["Shaker", "Classic white gloss", "Modern slab"],
-    "travelTime": "20 minutes from our Coundon base",
-    "kitchenNotes": "Many of Bedworth's post-war semis have had extensions added over the decades, so our surveyors check that the combined original and extended kitchen space is properly accounted for in the unit plan before ordering begins."
+    "travelTime": "approximately 15 minutes",
+    "kitchenNotes": "Many of Bedworth's post-war semis have had extensions added over the decades, so our surveyors check that the combined original and extended kitchen space is properly accounted for in the unit plan before ordering begins.",
+    "localNote": "Bedworth's post-war housing typically features straightforward kitchen configurations at accessible installation price points."
   },
   {
     "slug": "hinckley",
@@ -233,11 +248,12 @@
     "lat": 52.5415,
     "lng": -1.3713,
     "postcodes": ["LE10"],
-    "housingStock": "Hinckley's town centre is surrounded by Victorian terraces and Edwardian semis, whilst the wider town extends to substantial estates of 1930s through to 1980s semi-detached housing and a growing number of modern new-build developments on its southern and western edges. The town's strong manufacturing and business heritage has created a stable owner-occupier population who invest steadily in home improvement.",
+    "housingStock": "Hinckley is a Leicestershire market town with a mix of Victorian terraces in the town centre, inter-war semis and detached homes, and newer executive developments.",
     "localLandmarks": ["Hinckley town centre", "Argents Mead park", "Bosworth Battlefield (nearby)", "Triumph motorcycles heritage site"],
     "typicalKitchenStyles": ["Shaker", "Modern slab", "Classic white gloss"],
-    "travelTime": "40 minutes from our Coundon base",
-    "kitchenNotes": "Hinckley's broader postcode area includes a number of rural villages with period properties, and our team is experienced in the access and delivery logistics these locations can sometimes require."
+    "travelTime": "approximately 25 minutes",
+    "kitchenNotes": "Hinckley's broader postcode area includes a number of rural villages with period properties, and our team is experienced in the access and delivery logistics these locations can sometimes require.",
+    "localNote": "Hinckley sits just over the Leicestershire border and we cover the area regularly — local housing is varied in age and style."
   },
   {
     "slug": "leamington-spa",
@@ -248,11 +264,12 @@
     "lat": 52.2852,
     "lng": -1.5200,
     "postcodes": ["CV31", "CV32"],
-    "housingStock": "Leamington Spa is celebrated for its Regency and early Victorian townhouses with their white stucco facades, tall sash windows, and elegant proportions, many of which have been divided into flats or retained as substantial family homes. Beyond the Regency core, the town has extensive Victorian and Edwardian suburbs alongside more recent private estates, giving kitchen installers access to a very wide range of property types.",
+    "housingStock": "Royal Leamington Spa is renowned for its Regency and Victorian architecture, with substantial white-stucco townhouses, mid-terraces, and Victorian semis throughout the town.",
     "localLandmarks": ["Royal Pump Rooms", "Jephson Gardens", "The Parade", "Grand Union Canal"],
     "typicalKitchenStyles": ["Painted in-frame", "Shaker with marble or quartz worktops", "Classic handleless with integrated appliances"],
-    "travelTime": "30 minutes from our Coundon base",
-    "kitchenNotes": "Leamington's Regency properties often have basement kitchens or ground-floor rooms with unusually high ceilings, requiring careful tall-unit planning and sometimes bespoke filler pieces to achieve a fully fitted result."
+    "travelTime": "approximately 25 minutes",
+    "kitchenNotes": "Leamington's Regency properties often have basement kitchens or ground-floor rooms with unusually high ceilings, requiring careful tall-unit planning and sometimes bespoke filler pieces to achieve a fully fitted result.",
+    "localNote": "Leamington Spa's period properties frequently have uneven original floors and solid stone or brick walls requiring specialist survey and levelling."
   },
   {
     "slug": "kenilworth",
@@ -263,11 +280,12 @@
     "lat": 52.3415,
     "lng": -1.5682,
     "postcodes": ["CV8"],
-    "housingStock": "Kenilworth's housing stock is dominated by substantial detached and large semi-detached houses built across the 1920s to 1970s on generous plots, complemented by a smaller number of Victorian properties near the town centre and select modern executive developments on the town's edges. The consistent quality of the housing underpins strong demand for premium kitchen projects.",
+    "housingStock": "Kenilworth is an affluent commuter town with a mix of 1920s to 1960s detached and semi-detached properties, some Victorian villas, and modern executive new builds.",
     "localLandmarks": ["Kenilworth Castle", "Abbey Fields", "Talisman Square", "Coventry Road"],
     "typicalKitchenStyles": ["Painted in-frame", "Shaker with quartz or granite worktops", "German handleless"],
-    "travelTime": "18 minutes from our Coundon base",
-    "kitchenNotes": "Kenilworth's inter-war detached homes frequently have kitchen spaces large enough to accommodate an island, and our surveyors always assess ceiling height and structural floor type to ensure island unit fixing is both safe and visually balanced."
+    "travelTime": "approximately 20 minutes",
+    "kitchenNotes": "Kenilworth's inter-war detached homes frequently have kitchen spaces large enough to accommodate an island, and our surveyors always assess ceiling height and structural floor type to ensure island unit fixing is both safe and visually balanced.",
+    "localNote": "Kenilworth's affluent housing stock means many clients are investing in premium and handleless kitchen styles requiring precision installation."
   },
   {
     "slug": "warwick",
@@ -278,11 +296,12 @@
     "lat": 52.2793,
     "lng": -1.5849,
     "postcodes": ["CV34", "CV35"],
-    "housingStock": "Warwick's historic centre contains some of the finest Georgian and medieval streetscapes in the Midlands, with timber-framed and stone-built properties sitting alongside elegant Georgian townhouses. The wider town area offers a more typical mix of Victorian villas, inter-war semis, and modern estates, giving kitchen installers a genuinely diverse range of property challenges.",
+    "housingStock": "Warwick is a historic county town with a mix of Georgian and Victorian properties in the town centre, inter-war semis and newer residential estates on the periphery.",
     "localLandmarks": ["Warwick Castle", "St Mary's Church", "Market Square", "Cape Road"],
     "typicalKitchenStyles": ["Painted in-frame", "Shaker", "Traditional handcrafted"],
-    "travelTime": "28 minutes from our Coundon base",
-    "kitchenNotes": "Warwick's older town-centre properties sometimes fall within a conservation area or are listed, and our surveyors will always flag any potential restrictions on structural alterations before the installation quote is issued."
+    "travelTime": "approximately 25 minutes",
+    "kitchenNotes": "Warwick's older town-centre properties sometimes fall within a conservation area or are listed, and our surveyors will always flag any potential restrictions on structural alterations before the installation quote is issued.",
+    "localNote": "Warwick's period properties present similar challenges to Leamington Spa — solid floors, stone walls, and character features that reward careful survey work."
   },
   {
     "slug": "balsall-common",
@@ -293,11 +312,12 @@
     "lat": 52.3757,
     "lng": -1.6367,
     "postcodes": ["CV7"],
-    "housingStock": "Balsall Common is a prosperous commuter village characterised by large detached and executive semi-detached houses, the majority built between the 1960s and 2000s on plots large enough to accommodate kitchen extensions and orangeries. The village attracts professionals who frequently invest in high-specification kitchen renovations as part of broader open-plan remodelling projects.",
+    "housingStock": "Balsall Common is an affluent commuter village between Coventry and Solihull, with predominantly 1960s to 1990s detached and semi-detached homes on generous plots.",
     "localLandmarks": ["Balsall Street", "Heart of England Way", "Berkswell railway station", "Temple Balsall"],
     "typicalKitchenStyles": ["German handleless", "Shaker with quartz worktops", "Painted in-frame with island"],
-    "travelTime": "20 minutes from our Coundon base",
-    "kitchenNotes": "Open-plan kitchen-living extensions are particularly common in Balsall Common, and our survey process always assesses the structural implications of island unit placement and appliance positioning within these larger, more complex spaces."
+    "travelTime": "approximately 20 minutes",
+    "kitchenNotes": "Open-plan kitchen-living extensions are particularly common in Balsall Common, and our survey process always assesses the structural implications of island unit placement and appliance positioning within these larger, more complex spaces.",
+    "localNote": "Balsall Common properties tend to have larger kitchen spaces and frequently feature open-plan kitchen-diner extensions."
   },
   {
     "slug": "meriden",
@@ -308,11 +328,12 @@
     "lat": 52.4327,
     "lng": -1.6418,
     "postcodes": ["CV7"],
-    "housingStock": "Meriden's housing ranges from genuine period village cottages and former farmhouses near the historic village green to more modern detached and semi-detached homes built on the edges of the settlement from the 1960s onwards. The variety of property ages and styles means kitchen projects here require a flexible approach and careful survey work.",
+    "housingStock": "Meriden is a small village claimed to be the centre of England, with a mix of period village properties, 1950s and 1960s semis, and some newer developments.",
     "localLandmarks": ["Meriden village cross (traditional centre of England)", "Meriden village green", "Heart of England cycling route", "Meriden Gap countryside"],
     "typicalKitchenStyles": ["Painted in-frame", "Shaker", "Traditional handcrafted"],
-    "travelTime": "15 minutes from our Coundon base",
-    "kitchenNotes": "Meriden's older cottages frequently have low ceilings and irregular wall surfaces that require careful scribing and adjustment work — something our fitters build additional time into the schedule to handle properly."
+    "travelTime": "approximately 15 minutes",
+    "kitchenNotes": "Meriden's older cottages frequently have low ceilings and irregular wall surfaces that require careful scribing and adjustment work — something our fitters build additional time into the schedule to handle properly.",
+    "localNote": "Meriden village properties vary widely in age and character — our survey is particularly valuable in this area."
   },
   {
     "slug": "solihull",
@@ -323,11 +344,12 @@
     "lat": 52.4126,
     "lng": -1.7775,
     "postcodes": ["B91", "B92", "B93"],
-    "housingStock": "Solihull is defined by its impressive stock of large detached houses, from grand Edwardian and inter-war villas on tree-lined roads in the older parts of town to substantial modern executive homes in areas such as Dorridge and Knowle. The town consistently features among the most desirable places to live in the Midlands, and homeowners here invest accordingly in the quality of their interiors.",
+    "housingStock": "Solihull is one of the most affluent towns in the West Midlands, with a mix of large Edwardian and Victorian properties in the town, interwar semis and bungalows, and modern executive developments.",
     "localLandmarks": ["Touchwood shopping centre", "Malvern Park", "Tudor Grange Park", "Solihull railway station"],
     "typicalKitchenStyles": ["German handleless", "Painted in-frame", "Shaker with stone worktops and integrated appliances"],
-    "travelTime": "30 minutes from our Coundon base",
-    "kitchenNotes": "Solihull's premium property market means our fitters regularly work with high-end cabinetry from brands such as Häcker, Nobilia, and Masterclass, where precise fitting tolerances and careful appliance integration are essential to achieving the expected finish."
+    "travelTime": "approximately 20 minutes",
+    "kitchenNotes": "Solihull's premium property market means our fitters regularly work with high-end cabinetry from brands such as Häcker, Nobilia, and Masterclass, where precise fitting tolerances and careful appliance integration are essential to achieving the expected finish.",
+    "localNote": "Solihull's affluent housing stock attracts investment in premium kitchen brands — we install Mereway, Häcker, Neptune and Wren regularly in this area."
   },
   {
     "slug": "stratford-upon-avon",
@@ -338,11 +360,12 @@
     "lat": 52.1920,
     "lng": -1.7082,
     "postcodes": ["CV37"],
-    "housingStock": "Stratford-upon-Avon's historic centre contains remarkable timber-framed Tudor buildings alongside Georgian townhouses and Victorian villas, whilst the wider town area features more typical inter-war and post-war residential streets and a number of modern new-build estates on its outskirts. The presence of a large international tourist economy means many properties are also used as holiday lets, generating demand for durable, easy-clean kitchen installations.",
+    "housingStock": "Stratford-upon-Avon combines Shakespeare's birthplace heritage with a varied housing stock — Tudor and Georgian properties in the town, Victorian semis, and modern residential estates.",
     "localLandmarks": ["Shakespeare's Birthplace", "Royal Shakespeare Theatre", "River Avon", "Henley Street"],
     "typicalKitchenStyles": ["Painted in-frame", "Traditional shaker", "Classic handcrafted"],
-    "travelTime": "40 minutes from our Coundon base",
-    "kitchenNotes": "Listed buildings and conservation area properties in Stratford may require consent before structural alterations, and our survey process always identifies and flags these requirements so clients can seek the appropriate permissions before installation day."
+    "travelTime": "approximately 35 minutes",
+    "kitchenNotes": "Listed buildings and conservation area properties in Stratford may require consent before structural alterations, and our survey process always identifies and flags these requirements so clients can seek the appropriate permissions before installation day.",
+    "localNote": "Stratford-upon-Avon's mix of period and modern properties means kitchen installation complexity varies considerably across the town."
   },
   {
     "slug": "southam",
@@ -353,11 +376,12 @@
     "lat": 52.2519,
     "lng": -1.3892,
     "postcodes": ["CV47"],
-    "housingStock": "Southam has a traditional market town core of limestone and brick buildings, some dating back several centuries, surrounded by a mix of Victorian and inter-war residential streets and a substantial number of modern new-build estates that have grown the town significantly in recent decades. This blend of old stone properties and contemporary housing creates a wide variety of kitchen installation challenges.",
+    "housingStock": "Southam is a Warwickshire market town with a mix of older stone-built properties in the town centre and post-war and modern housing estates on the outskirts.",
     "localLandmarks": ["Southam town centre", "St James's Church", "Southam College", "Welsh Road"],
     "typicalKitchenStyles": ["Shaker", "Modern slab", "Painted in-frame"],
-    "travelTime": "35 minutes from our Coundon base",
-    "kitchenNotes": "Southam's newer estates are typically built with plasterboard stud walls rather than solid masonry, which our surveyors check and note during the pre-installation visit to ensure wall-unit fixing is appropriate and secure."
+    "travelTime": "approximately 30 minutes",
+    "kitchenNotes": "Southam's newer estates are typically built with plasterboard stud walls rather than solid masonry, which our surveyors check and note during the pre-installation visit to ensure wall-unit fixing is appropriate and secure.",
+    "localNote": "Southam is a growing market town and we cover it regularly for both town centre and new-build kitchen installations."
   },
   {
     "slug": "atherstone",
@@ -368,10 +392,11 @@
     "lat": 52.5770,
     "lng": -1.5473,
     "postcodes": ["CV9"],
-    "housingStock": "Atherstone's town centre is lined with Victorian and Edwardian terraces and bay-fronted semis built during the town's hat-making and coal-mining prosperity, whilst surrounding villages such as Grendon and Baddesley Ensor offer a mix of older cottages and more recent detached and semi-detached housing. The area's affordable property prices attract buyers looking to invest in kitchen improvements as part of broader home upgrades.",
+    "housingStock": "Atherstone is a north Warwickshire market town with Victorian terraces in the town centre, 1930s semis, and some newer residential development.",
     "localLandmarks": ["Atherstone Market", "Long Street", "Merevale Abbey", "Grendon village"],
     "typicalKitchenStyles": ["Shaker", "Classic white gloss", "Modern slab"],
-    "travelTime": "30 minutes from our Coundon base",
-    "kitchenNotes": "Atherstone's Victorian terraces often have chimney breasts on the kitchen wall that were originally used for a range cooker, and our surveyors assess whether these can be retained as a feature or removed to maximise cabinet run length."
+    "travelTime": "approximately 30 minutes",
+    "kitchenNotes": "Atherstone's Victorian terraces often have chimney breasts on the kitchen wall that were originally used for a range cooker, and our surveyors assess whether these can be retained as a feature or removed to maximise cabinet run length.",
+    "localNote": "Atherstone and north Warwickshire are within our regular coverage area — no additional travel charge applies for this location."
   }
 ]
