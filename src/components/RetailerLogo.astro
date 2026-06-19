@@ -1,0 +1,104 @@
+---
+interface Props {
+  slug: string;
+  size?: "sm" | "md" | "lg";
+}
+const { slug, size = "md" } = Astro.props;
+
+const dims = { sm: { w: 110, h: 36 }, md: { w: 150, h: 48 }, lg: { w: 200, h: 64 } };
+const { w, h } = dims[size];
+const r = Math.round(h * 0.22);
+---
+
+{slug === "wren" && (
+  <svg width={w} height={h} viewBox={`0 0 ${w} ${h}`} xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Wren Kitchens">
+    <rect width={w} height={h} rx={r} fill="#003866"/>
+    <text x={w/2} y={h*0.42} font-family="Arial,Helvetica,sans-serif" font-weight="800" font-size={h*0.36} fill="#ffffff" text-anchor="middle" dominant-baseline="middle" letter-spacing="3">WREN</text>
+    <text x={w/2} y={h*0.76} font-family="Arial,Helvetica,sans-serif" font-weight="400" font-size={h*0.2} fill="#a0b8cc" text-anchor="middle" dominant-baseline="middle" letter-spacing="2">KITCHENS</text>
+  </svg>
+)}
+
+{slug === "howdens" && (
+  <svg width={w} height={h} viewBox={`0 0 ${w} ${h}`} xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Howdens">
+    <rect width={w} height={h} rx={r} fill="#004f2d"/>
+    <text x={w/2} y={h*0.56} font-family="Georgia,serif" font-weight="700" font-size={h*0.38} fill="#ffffff" text-anchor="middle" dominant-baseline="middle" letter-spacing="1">howdens</text>
+    <rect x={w*0.18} y={h*0.78} width={w*0.64} height={2} fill="#7fcba0" rx="1"/>
+  </svg>
+)}
+
+{slug === "magnet" && (
+  <svg width={w} height={h} viewBox={`0 0 ${w} ${h}`} xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Magnet Kitchens">
+    <rect width={w} height={h} rx={r} fill="#1a1a1a"/>
+    <text x={w/2} y={h*0.56} font-family="Arial,Helvetica,sans-serif" font-weight="900" font-size={h*0.4} fill="#ffffff" text-anchor="middle" dominant-baseline="middle" letter-spacing="2">MAGNET</text>
+    <rect x={w*0.35} y={h*0.8} width={w*0.3} height={3} fill="#c0392b" rx="1"/>
+  </svg>
+)}
+
+{slug === "magnet-trade" && (
+  <svg width={w} height={h} viewBox={`0 0 ${w} ${h}`} xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Magnet Trade">
+    <rect width={w} height={h} rx={r} fill="#1a1a1a"/>
+    <text x={w/2} y={h*0.38} font-family="Arial,Helvetica,sans-serif" font-weight="900" font-size={h*0.3} fill="#ffffff" text-anchor="middle" dominant-baseline="middle" letter-spacing="2">MAGNET</text>
+    <text x={w/2} y={h*0.72} font-family="Arial,Helvetica,sans-serif" font-weight="400" font-size={h*0.22} fill="#c0392b" text-anchor="middle" dominant-baseline="middle" letter-spacing="3">TRADE</text>
+  </svg>
+)}
+
+{slug === "benchmarx" && (
+  <svg width={w} height={h} viewBox={`0 0 ${w} ${h}`} xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Benchmarx">
+    <rect width={w} height={h} rx={r} fill="#1e3050"/>
+    <text x={w/2} y={h*0.56} font-family="Arial,Helvetica,sans-serif" font-weight="700" font-size={h*0.32} fill="#ffffff" text-anchor="middle" dominant-baseline="middle" letter-spacing="1">benchmarx</text>
+  </svg>
+)}
+
+{slug === "bq" && (
+  <svg width={w} height={h} viewBox={`0 0 ${w} ${h}`} xmlns="http://www.w3.org/2000/svg" role="img" aria-label="B&Q">
+    <rect width={w} height={h} rx={r} fill="#f4a426"/>
+    <text x={w/2} y={h*0.58} font-family="Arial,Helvetica,sans-serif" font-weight="900" font-size={h*0.48} fill="#1a1a1a" text-anchor="middle" dominant-baseline="middle">B&amp;Q</text>
+  </svg>
+)}
+
+{slug === "wickes" && (
+  <svg width={w} height={h} viewBox={`0 0 ${w} ${h}`} xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Wickes">
+    <rect width={w} height={h} rx={r} fill="#006937"/>
+    <text x={w/2} y={h*0.56} font-family="Arial,Helvetica,sans-serif" font-weight="800" font-size={h*0.4} fill="#ffffff" text-anchor="middle" dominant-baseline="middle" letter-spacing="1">wickes</text>
+  </svg>
+)}
+
+{slug === "ikea" && (
+  <svg width={w} height={h} viewBox={`0 0 ${w} ${h}`} xmlns="http://www.w3.org/2000/svg" role="img" aria-label="IKEA">
+    <rect width={w} height={h} rx={r} fill="#003580"/>
+    <rect x={w*0.08} y={h*0.62} width={w*0.84} height={h*0.27} rx={r*0.5} fill="#fbba00"/>
+    <text x={w/2} y={h*0.44} font-family="Arial,Helvetica,sans-serif" font-weight="900" font-size={h*0.38} fill="#fbba00" text-anchor="middle" dominant-baseline="middle" letter-spacing="4">IKEA</text>
+    <text x={w/2} y={h*0.78} font-family="Arial,Helvetica,sans-serif" font-weight="700" font-size={h*0.18} fill="#003580" text-anchor="middle" dominant-baseline="middle" letter-spacing="1">KITCHENS</text>
+  </svg>
+)}
+
+{slug === "diy-kitchens" && (
+  <svg width={w} height={h} viewBox={`0 0 ${w} ${h}`} xmlns="http://www.w3.org/2000/svg" role="img" aria-label="DIY Kitchens">
+    <rect width={w} height={h} rx={r} fill="#2c5364"/>
+    <text x={w/2} y={h*0.38} font-family="Arial,Helvetica,sans-serif" font-weight="800" font-size={h*0.28} fill="#ffffff" text-anchor="middle" dominant-baseline="middle" letter-spacing="3">DIY</text>
+    <text x={w/2} y={h*0.72} font-family="Arial,Helvetica,sans-serif" font-weight="500" font-size={h*0.24} fill="#a8d8ea" text-anchor="middle" dominant-baseline="middle" letter-spacing="1">KITCHENS</text>
+  </svg>
+)}
+
+{slug === "kutchenhaus" && (
+  <svg width={w} height={h} viewBox={`0 0 ${w} ${h}`} xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Kutchenhaus">
+    <rect width={w} height={h} rx={r} fill="#1c1c1c"/>
+    <text x={w/2} y={h*0.56} font-family="Georgia,serif" font-style="italic" font-weight="700" font-size={h*0.3} fill="#c9a84c" text-anchor="middle" dominant-baseline="middle" letter-spacing="1">Kutchenhaus</text>
+  </svg>
+)}
+
+{slug === "symphony" && (
+  <svg width={w} height={h} viewBox={`0 0 ${w} ${h}`} xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Symphony">
+    <rect width={w} height={h} rx={r} fill="#6b2d5e"/>
+    <text x={w/2} y={h*0.56} font-family="Georgia,serif" font-weight="700" font-size={h*0.34} fill="#ffffff" text-anchor="middle" dominant-baseline="middle" letter-spacing="1">Symphony</text>
+  </svg>
+)}
+
+{slug === "masterclass" && (
+  <svg width={w} height={h} viewBox={`0 0 ${w} ${h}`} xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Masterclass Kitchens">
+    <rect width={w} height={h} rx={r} fill="#0d0d1a"/>
+    <text x={w/2} y={h*0.42} font-family="Georgia,serif" font-weight="700" font-size={h*0.28} fill="#c9a84c" text-anchor="middle" dominant-baseline="middle" letter-spacing="2">MASTERCLASS</text>
+    <rect x={w*0.2} y={h*0.6} width={w*0.6} height={1.5} fill="#c9a84c" rx="1"/>
+    <text x={w/2} y={h*0.78} font-family="Arial,Helvetica,sans-serif" font-weight="300" font-size={h*0.18} fill="#888" text-anchor="middle" dominant-baseline="middle" letter-spacing="2">KITCHENS</text>
+  </svg>
+)}

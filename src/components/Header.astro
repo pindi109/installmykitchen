@@ -1,6 +1,5 @@
 ---
-// No props — NAP and nav are static for this single-site component.
-// DECISION: Dropdowns use CSS hover on desktop, JS click on mobile for accessibility.
+import RetailerLogo from "./RetailerLogo.astro";
 ---
 
 <header
@@ -55,18 +54,34 @@
           </svg>
         </button>
         <div
-          class="absolute left-0 top-full mt-1 w-52 rounded-xl shadow-xl border border-white/10 py-1 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50"
-          style="background: #0F172A;"
+          class="absolute left-0 top-full mt-1 rounded-xl shadow-2xl border border-white/10 p-3 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50"
+          style="background: #0F172A; width: 340px;"
           role="menu"
         >
-          <a href="/retailers/wren/" class="block px-4 py-2 text-white/80 hover:text-white hover:bg-white/10 transition-colors" role="menuitem">Wren Kitchens</a>
-          <a href="/retailers/howdens/" class="block px-4 py-2 text-white/80 hover:text-white hover:bg-white/10 transition-colors" role="menuitem">Howdens</a>
-          <a href="/retailers/magnet/" class="block px-4 py-2 text-white/80 hover:text-white hover:bg-white/10 transition-colors" role="menuitem">Magnet</a>
-          <a href="/retailers/ikea/" class="block px-4 py-2 text-white/80 hover:text-white hover:bg-white/10 transition-colors" role="menuitem">IKEA</a>
-          <a href="/retailers/wickes/" class="block px-4 py-2 text-white/80 hover:text-white hover:bg-white/10 transition-colors" role="menuitem">Wickes</a>
-          <a href="/retailers/bq/" class="block px-4 py-2 text-white/80 hover:text-white hover:bg-white/10 transition-colors" role="menuitem">B&Q</a>
-          <div class="border-t border-white/10 mt-1 pt-1">
-            <a href="/retailers/" class="block px-4 py-2 font-semibold hover:bg-white/10 transition-colors" style="color: #14B8A6;" role="menuitem">All Retailers →</a>
+          <div class="grid grid-cols-2 gap-2 mb-2">
+            {[
+              { slug: "wren",        href: "/retailers/wren/" },
+              { slug: "howdens",     href: "/retailers/howdens/" },
+              { slug: "magnet",      href: "/retailers/magnet/" },
+              { slug: "ikea",        href: "/retailers/ikea/" },
+              { slug: "wickes",      href: "/retailers/wickes/" },
+              { slug: "bq",          href: "/retailers/bq/" },
+              { slug: "benchmarx",  href: "/retailers/benchmarx/" },
+              { slug: "diy-kitchens",href: "/retailers/diy-kitchens/" },
+            ].map(r => (
+              <a
+                href={r.href}
+                role="menuitem"
+                class="flex items-center justify-center rounded-lg p-1.5 transition-all duration-150 hover:bg-white/10 hover:-translate-y-0.5"
+              >
+                <RetailerLogo slug={r.slug} size="sm" />
+              </a>
+            ))}
+          </div>
+          <div class="border-t border-white/10 pt-2">
+            <a href="/retailers/" class="block text-center py-1.5 text-sm font-semibold rounded-lg hover:bg-white/10 transition-colors" style="color: #14B8A6;" role="menuitem">
+              All 12 Retailers →
+            </a>
           </div>
         </div>
       </div>
@@ -165,14 +180,24 @@
             <polyline points="6 9 12 15 18 9"/>
           </svg>
         </button>
-        <div id="mobile-retailers-panel" class="hidden pl-4 pb-2 flex flex-col gap-1">
-          <a href="/retailers/wren/" class="text-white/60 hover:text-white py-2 text-base transition-colors">Wren Kitchens</a>
-          <a href="/retailers/howdens/" class="text-white/60 hover:text-white py-2 text-base transition-colors">Howdens</a>
-          <a href="/retailers/magnet/" class="text-white/60 hover:text-white py-2 text-base transition-colors">Magnet</a>
-          <a href="/retailers/ikea/" class="text-white/60 hover:text-white py-2 text-base transition-colors">IKEA</a>
-          <a href="/retailers/wickes/" class="text-white/60 hover:text-white py-2 text-base transition-colors">Wickes</a>
-          <a href="/retailers/bq/" class="text-white/60 hover:text-white py-2 text-base transition-colors">B&Q</a>
-          <a href="/retailers/" class="font-semibold py-2 text-base transition-colors" style="color: #14B8A6;">All Retailers →</a>
+        <div id="mobile-retailers-panel" class="hidden pt-3 pb-2">
+          <div class="grid grid-cols-2 gap-2 mb-3">
+            {[
+              { slug: "wren",         href: "/retailers/wren/" },
+              { slug: "howdens",      href: "/retailers/howdens/" },
+              { slug: "magnet",       href: "/retailers/magnet/" },
+              { slug: "ikea",         href: "/retailers/ikea/" },
+              { slug: "wickes",       href: "/retailers/wickes/" },
+              { slug: "bq",           href: "/retailers/bq/" },
+              { slug: "benchmarx",   href: "/retailers/benchmarx/" },
+              { slug: "diy-kitchens", href: "/retailers/diy-kitchens/" },
+            ].map(r => (
+              <a href={r.href} class="flex items-center justify-center rounded-lg p-1.5 bg-white/5 hover:bg-white/15 transition-colors">
+                <RetailerLogo slug={r.slug} size="sm" />
+              </a>
+            ))}
+          </div>
+          <a href="/retailers/" class="block text-center py-2 font-semibold text-sm rounded-lg bg-white/5 hover:bg-white/10 transition-colors" style="color: #14B8A6;">All 12 Retailers →</a>
         </div>
       </div>
 

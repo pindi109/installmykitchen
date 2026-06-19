@@ -1,32 +1,30 @@
 ---
+import RetailerLogo from "./RetailerLogo.astro";
+
 export interface Props {
   heading?: string;
 }
 
-const {
-  heading = "We Install Kitchens From All Major Suppliers",
-} = Astro.props;
+const { heading = "We Install Kitchens From All Major Suppliers" } = Astro.props;
 
-// Each supplier: name, approximate brand accent colour, text colour override if needed
-const suppliers = [
-  { name: "Wren Kitchens",    short: "Wren",         accent: "#C8102E", text: "#C8102E" },
-  { name: "Howdens",          short: "Howdens",       accent: "#004B87", text: "#004B87" },
-  { name: "Magnet",           short: "Magnet",        accent: "#E31837", text: "#E31837" },
-  { name: "Benchmarx",        short: "Benchmarx",     accent: "#00539B", text: "#00539B" },
-  { name: "IKEA",             short: "IKEA",          accent: "#0051BA", text: "#0051BA" },
-  { name: "B&Q",              short: "B&Q",           accent: "#F07800", text: "#c45e00" },
-  { name: "Wickes",           short: "Wickes",        accent: "#009FDF", text: "#007bb0" },
-  { name: "DIY Kitchens",     short: "DIY Kitchens",  accent: "#1A1A1A", text: "#1A1A1A" },
-  { name: "Kutchenhaus",      short: "Kutchenhaus",   accent: "#6B4C9A", text: "#6B4C9A" },
-  { name: "Symphony",         short: "Symphony",      accent: "#4A4A4A", text: "#4A4A4A" },
-  { name: "Masterclass",      short: "Masterclass",   accent: "#B8962E", text: "#8a6e1c" },
+const retailers = [
+  { slug: "wren",         href: "/retailers/wren/" },
+  { slug: "howdens",      href: "/retailers/howdens/" },
+  { slug: "magnet",       href: "/retailers/magnet/" },
+  { slug: "benchmarx",   href: "/retailers/benchmarx/" },
+  { slug: "ikea",         href: "/retailers/ikea/" },
+  { slug: "bq",           href: "/retailers/bq/" },
+  { slug: "wickes",       href: "/retailers/wickes/" },
+  { slug: "diy-kitchens", href: "/retailers/diy-kitchens/" },
+  { slug: "kutchenhaus",  href: "/retailers/kutchenhaus/" },
+  { slug: "symphony",     href: "/retailers/symphony/" },
+  { slug: "masterclass",  href: "/retailers/masterclass/" },
 ];
 ---
 
 <section class="section" style="background: var(--bg-light);">
   <div class="container">
 
-    <!-- Heading -->
     <h2 class="text-center text-2xl md:text-3xl font-bold mb-3" style="color: var(--charcoal);">
       {heading}
     </h2>
@@ -34,29 +32,24 @@ const suppliers = [
       We work independently of all retailers — you buy, we install.
     </p>
 
-    <!-- Logo grid -->
-    <ul
-      class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3"
-      role="list"
-      aria-label="Supported kitchen suppliers"
-    >
-      {suppliers.map((s) => (
-        <li
-          class="supplier-card"
-          style={`--brand-accent: ${s.accent}; --brand-text: ${s.text};`}
-          role="listitem"
-        >
-          <span class="supplier-name">{s.short}</span>
+    <ul class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4" role="list" aria-label="Supported kitchen suppliers">
+      {retailers.map((r) => (
+        <li role="listitem">
+          <a
+            href={r.href}
+            class="logo-card"
+            aria-label={`We install ${r.slug.replace(/-/g,' ')} kitchens`}
+          >
+            <RetailerLogo slug={r.slug} size="md" />
+          </a>
         </li>
       ))}
     </ul>
 
-    <!-- More suppliers note -->
     <p class="text-center mt-6 text-sm font-medium" style="color: var(--teal);">
       + many more — if you've bought it, we can install it.
     </p>
 
-    <!-- Affiliation disclaimer -->
     <p class="mt-10 pt-8 border-t border-gray-200 text-xs italic leading-relaxed text-center max-w-3xl mx-auto" style="color: #9CA3AF;">
       Install My Kitchen is an independent kitchen installation service and is not affiliated with, endorsed by, or an official partner of Wren, Howdens, Magnet, IKEA, Wickes, B&amp;Q, Benchmarx or any other retailer. We install kitchens purchased from these suppliers.
     </p>
@@ -65,31 +58,20 @@ const suppliers = [
 </section>
 
 <style>
-  .supplier-card {
+  .logo-card {
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 4rem;
-    border-radius: 0.625rem;
+    border-radius: 0.75rem;
     background: #fff;
     border: 1.5px solid #E5E7EB;
-    border-left: 4px solid var(--brand-accent);
-    padding: 0.75rem 0.875rem;
-    transition: box-shadow 0.2s, transform 0.2s, border-color 0.2s;
+    padding: 0.625rem;
+    transition: box-shadow 0.2s, transform 0.2s;
+    overflow: hidden;
   }
-
-  .supplier-card:hover {
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
-    transform: translateY(-2px);
-    border-color: var(--brand-accent);
-  }
-
-  .supplier-name {
-    font-size: 0.875rem;
-    font-weight: 700;
-    text-align: center;
-    line-height: 1.25;
-    color: var(--brand-text);
-    letter-spacing: -0.01em;
+  .logo-card:hover {
+    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+    transform: translateY(-3px);
+    border-color: #d1d5db;
   }
 </style>
