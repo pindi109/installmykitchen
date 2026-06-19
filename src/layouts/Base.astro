@@ -90,16 +90,16 @@ const hasRealHero = !heroSrc.includes("placeholder");
 
     <!-- Page hero image (manifest-driven, skipped on pages with custom heroes) -->
     {!noHero && hasRealHero && (
-      <div class="page-hero-banner" aria-hidden="true">
+      <div style="width:100%;height:clamp(240px,38vw,520px);overflow:hidden;line-height:0;">
         <img
           src={heroSrc}
           alt={heroAlt}
-          width="1280"
-          height="720"
+          width="458"
+          height="256"
           loading="eager"
           fetchpriority="high"
           decoding="async"
-          style="width:100%;height:480px;object-fit:cover;display:block;"
+          style="width:100%;height:100%;object-fit:cover;object-position:center;display:block;"
         />
       </div>
     )}
