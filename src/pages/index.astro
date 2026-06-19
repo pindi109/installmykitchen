@@ -237,9 +237,9 @@ const areas = [
   <SupplierLogos heading="We Install Kitchens From All Major Suppliers" />
 
   <!-- ══════════════════════════════════ PINDI SAHOTA ══════════ -->
-  <section style="padding: 80px 0; background: var(--bg-light);">
+  <section style="padding: 60px 0; background: var(--bg-light);">
     <div class="container">
-      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; max-width: 1100px; margin: 0 auto;">
+      <div class="pindi-grid">
         <div>
           <p style="color: var(--teal); font-weight: 600; font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.75rem;">Your Installer</p>
           <h2 style="font-size: clamp(1.75rem, 3vw, 2.5rem); font-weight: 800; color: var(--navy); margin-bottom: 1.25rem; line-height: 1.2;">Pindi Sahota — 30 Years on the Tools</h2>
@@ -619,6 +619,22 @@ const areas = [
 </Base>
 
 <style>
+  /* ── Pindi section responsive grid ── */
+  .pindi-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  @media (min-width: 768px) {
+    .pindi-grid {
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+  }
+
   /* ── Hero ── */
   .hero-split {
     display: grid;
@@ -723,7 +739,10 @@ const areas = [
 
   @media (max-width: 1023px) {
     .hero-right {
-      display: none;
+      display: block;
+      order: -1;
+      min-height: 260px;
+      max-height: 320px;
     }
   }
 
