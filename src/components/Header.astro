@@ -55,19 +55,23 @@ import RetailerLogo from "./RetailerLogo.astro";
         </button>
         <div
           class="absolute left-0 top-full mt-1 rounded-xl shadow-2xl border border-white/10 p-3 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50"
-          style="background: #0F172A; width: 340px;"
+          style="background: #0F172A; width: 420px;"
           role="menu"
         >
-          <div class="grid grid-cols-2 gap-2 mb-2">
+          <div class="grid grid-cols-3 gap-2 mb-2">
             {[
-              { slug: "wren",        href: "/retailers/wren/" },
-              { slug: "howdens",     href: "/retailers/howdens/" },
-              { slug: "magnet",      href: "/retailers/magnet/" },
-              { slug: "ikea",        href: "/retailers/ikea/" },
-              { slug: "wickes",      href: "/retailers/wickes/" },
-              { slug: "bq",          href: "/retailers/bq/" },
-              { slug: "benchmarx",  href: "/retailers/benchmarx/" },
-              { slug: "diy-kitchens",href: "/retailers/diy-kitchens/" },
+              { slug: "wren",         href: "/retailers/wren/" },
+              { slug: "howdens",      href: "/retailers/howdens/" },
+              { slug: "magnet",       href: "/retailers/magnet/" },
+              { slug: "ikea",         href: "/retailers/ikea/" },
+              { slug: "wickes",       href: "/retailers/wickes/" },
+              { slug: "bq",           href: "/retailers/bq/" },
+              { slug: "benchmarx",   href: "/retailers/benchmarx/" },
+              { slug: "diy-kitchens", href: "/retailers/diy-kitchens/" },
+              { slug: "kutchenhaus",  href: "/retailers/kutchenhaus/" },
+              { slug: "symphony",     href: "/retailers/symphony/" },
+              { slug: "masterclass",  href: "/retailers/masterclass/" },
+              { slug: "magnet-trade", href: "/retailers/magnet-trade/" },
             ].map(r => (
               <a
                 href={r.href}
@@ -191,6 +195,10 @@ import RetailerLogo from "./RetailerLogo.astro";
               { slug: "bq",           href: "/retailers/bq/" },
               { slug: "benchmarx",   href: "/retailers/benchmarx/" },
               { slug: "diy-kitchens", href: "/retailers/diy-kitchens/" },
+              { slug: "kutchenhaus",  href: "/retailers/kutchenhaus/" },
+              { slug: "symphony",     href: "/retailers/symphony/" },
+              { slug: "masterclass",  href: "/retailers/masterclass/" },
+              { slug: "magnet-trade", href: "/retailers/magnet-trade/" },
             ].map(r => (
               <a href={r.href} class="flex items-center justify-center rounded-lg p-1.5 bg-white/5 hover:bg-white/15 transition-colors">
                 <RetailerLogo slug={r.slug} size="sm" />

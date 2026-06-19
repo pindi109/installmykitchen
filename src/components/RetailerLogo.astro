@@ -102,3 +102,92 @@ const r = Math.round(h * 0.22);
     <text x={w/2} y={h*0.78} font-family="Arial,Helvetica,sans-serif" font-weight="300" font-size={h*0.18} fill="#888" text-anchor="middle" dominant-baseline="middle" letter-spacing="2">KITCHENS</text>
   </svg>
 )}
+
+{slug === "mereway" && (
+  <svg width={w} height={h} viewBox={`0 0 ${w} ${h}`} xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Mereway">
+    <rect width={w} height={h} rx={r} fill="#1a3a2a"/>
+    <text x={w/2} y={h*0.56} font-family="Georgia,serif" font-weight="700" font-size={h*0.36} fill="#ffffff" text-anchor="middle" dominant-baseline="middle" letter-spacing="1">Mereway</text>
+  </svg>
+)}
+
+{slug === "hacker" && (
+  <svg width={w} height={h} viewBox={`0 0 ${w} ${h}`} xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Häcker">
+    <rect width={w} height={h} rx={r} fill="#c0392b"/>
+    <text x={w/2} y={h*0.56} font-family="Arial,Helvetica,sans-serif" font-weight="700" font-size={h*0.4} fill="#ffffff" text-anchor="middle" dominant-baseline="middle" letter-spacing="1">häcker</text>
+  </svg>
+)}
+
+{slug === "nobilia" && (
+  <svg width={w} height={h} viewBox={`0 0 ${w} ${h}`} xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Nobilia">
+    <rect width={w} height={h} rx={r} fill="#003366"/>
+    <text x={w/2} y={h*0.56} font-family="Arial,Helvetica,sans-serif" font-weight="700" font-size={h*0.4} fill="#ffffff" text-anchor="middle" dominant-baseline="middle" letter-spacing="1">nobilia</text>
+  </svg>
+)}
+
+{slug === "rotpunkt" && (
+  <svg width={w} height={h} viewBox={`0 0 ${w} ${h}`} xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Rotpunkt">
+    <rect width={w} height={h} rx={r} fill="#2d5016"/>
+    <text x={w/2} y={h*0.56} font-family="Arial,Helvetica,sans-serif" font-weight="600" font-size={h*0.38} fill="#ffffff" text-anchor="middle" dominant-baseline="middle" letter-spacing="1">rotpunkt</text>
+  </svg>
+)}
+
+{slug === "pronorm" && (
+  <svg width={w} height={h} viewBox={`0 0 ${w} ${h}`} xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Pronorm">
+    <rect width={w} height={h} rx={r} fill="#1a1a2e"/>
+    <text x={w/2} y={h*0.48} font-family="Georgia,serif" font-weight="400" font-size={h*0.36} fill="#ffffff" text-anchor="middle" dominant-baseline="middle" letter-spacing="1">Pronorm</text>
+    <rect x={w*0.25} y={h*0.72} width={w*0.5} height={1.5} fill="#c9a84c" rx="1"/>
+  </svg>
+)}
+
+{slug === "smallbone" && (
+  <svg width={w} height={h} viewBox={`0 0 ${w} ${h}`} xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Smallbone">
+    <rect width={w} height={h} rx={r} fill="#f5f0e8"/>
+    <rect stroke="#ddd" stroke-width="1.5" fill="none" rx={r} width={w} height={h}/>
+    <text x={w/2} y={h*0.56} font-family="Georgia,serif" font-weight="700" font-size={h*0.3} fill="#2c2c2c" text-anchor="middle" dominant-baseline="middle" letter-spacing="3">SMALLBONE</text>
+  </svg>
+)}
+
+{slug === "tom-howley" && (
+  <svg width={w} height={h} viewBox={`0 0 ${w} ${h}`} xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Tom Howley">
+    <rect width={w} height={h} rx={r} fill="#2c3e50"/>
+    <text x={w/2} y={h*0.56} font-family="Georgia,serif" font-style="italic" font-weight="700" font-size={h*0.34} fill="#ffffff" text-anchor="middle" dominant-baseline="middle" letter-spacing="1">Tom Howley</text>
+  </svg>
+)}
+
+{slug === "harvey-jones" && (
+  <svg width={w} height={h} viewBox={`0 0 ${w} ${h}`} xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Harvey Jones">
+    <rect width={w} height={h} rx={r} fill="#4a2c17"/>
+    <text x={w/2} y={h*0.56} font-family="Georgia,serif" font-weight="700" font-size={h*0.32} fill="#ffffff" text-anchor="middle" dominant-baseline="middle" letter-spacing="1">Harvey Jones</text>
+  </svg>
+)}
+
+{slug === "neptune" && (
+  <svg width={w} height={h} viewBox={`0 0 ${w} ${h}`} xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Neptune">
+    <rect width={w} height={h} rx={r} fill="#1a3a4a"/>
+    <text x={w/2} y={h*0.56} font-family="Georgia,serif" font-weight="400" font-size={h*0.38} fill="#ffffff" text-anchor="middle" dominant-baseline="middle" letter-spacing="2">neptune</text>
+  </svg>
+)}
+
+{slug === "devol" && (
+  <svg width={w} height={h} viewBox={`0 0 ${w} ${h}`} xmlns="http://www.w3.org/2000/svg" role="img" aria-label="deVOL">
+    <rect width={w} height={h} rx={r} fill="#f8f4ef"/>
+    <rect stroke="#ddd" stroke-width="1.5" fill="none" rx={r} width={w} height={h}/>
+    <text x={w/2} y={h*0.52} font-family="Georgia,serif" font-weight="700" font-size={h*0.38} fill="#3d2b1f" text-anchor="middle" dominant-baseline="middle" letter-spacing="1">deVOL</text>
+    <circle cx={w/2} cy={h*0.78} r={h*0.05} fill="#3d2b1f"/>
+  </svg>
+)}
+
+{slug === "john-lewis" && (
+  <svg width={w} height={h} viewBox={`0 0 ${w} ${h}`} xmlns="http://www.w3.org/2000/svg" role="img" aria-label="John Lewis">
+    <rect width={w} height={h} rx={r} fill="#1a1a1a"/>
+    <text x={w/2} y={h*0.46} font-family="Georgia,serif" font-weight="400" font-size={h*0.32} fill="#ffffff" text-anchor="middle" dominant-baseline="middle" letter-spacing="1">John Lewis</text>
+    <rect x={w*0.25} y={h*0.68} width={w*0.5} height={1.5} fill="#c9a84c" rx="1"/>
+  </svg>
+)}
+
+{slug === "homebase" && (
+  <svg width={w} height={h} viewBox={`0 0 ${w} ${h}`} xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Homebase">
+    <rect width={w} height={h} rx={r} fill="#e8401c"/>
+    <text x={w/2} y={h*0.56} font-family="Arial,Helvetica,sans-serif" font-weight="700" font-size={h*0.38} fill="#ffffff" text-anchor="middle" dominant-baseline="middle" letter-spacing="1">Homebase</text>
+  </svg>
+)}
