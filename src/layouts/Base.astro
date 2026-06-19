@@ -129,7 +129,7 @@ const hasRealHero = !heroSrc.includes("placeholder");
     <!-- WhatsApp floating button — visible on all pages -->
     <WhatsAppButton />
 
-    <!-- Mobile section-snap scroll (swipe up/down snaps to next section) -->
+    <!-- Mobile scroll: one viewport per swipe, snaps to section starts when nearby -->
     <script>
       (function () {
         if (window.innerWidth > 767) return;
@@ -139,44 +139,46 @@ const hasRealHero = !heroSrc.includes("placeholder");
         let startTime = 0;
         let locked = false;
 
-        function sections() {
-          return Array.from(document.querySelectorAll('section, .hero-split')).filter(
-            el => el.offsetHeight > 80
-          );
-        }
-
         function snapTo(direction) {
           if (locked) return;
-          const all = sections();
-          const scrollY = window.scrollY;
 
-          let target = null;
-          if (direction === 'down') {
-            for (const s of all) {
-              if (s.offsetTop > scrollY + 40) { target = s; break; }
-            }
-          } else {
-            for (const s of [...all].reverse()) {
-              if (s.offsetTop < scrollY - 40) { target = s; break; }
+          const vh   = window.innerHeight;
+          const scrollY = window.scrollY;
+          const maxScroll = document.documentElement.scrollHeight - vh;
+
+          // Base target: exactly one viewport up or down
+          let target = direction === 'down'
+            ? Math.min(scrollY + vh, maxScroll)
+            : Math.max(scrollY - vh, 0);
+
+          // Prefer snapping to a section top if one falls within ±30% of target
+          const snap = 0.3 * vh;
+          const sections = Array.from(
+            document.querySelectorAll('section, .hero-split')
+          ).filter(el => el.offsetHeight > 80);
+
+          for (const s of sections) {
+            if (Math.abs(s.offsetTop - target) < snap) {
+              target = s.offsetTop;
+              break;
             }
           }
 
-          if (!target) return;
           locked = true;
-          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-          setTimeout(() => { locked = false; }, 900);
+          window.scrollTo({ top: target, behavior: 'smooth' });
+          setTimeout(() => { locked = false; }, 850);
         }
 
         document.addEventListener('touchstart', (e) => {
-          startY = e.touches[0].clientY;
+          startY    = e.touches[0].clientY;
           startTime = Date.now();
         }, { passive: true });
 
         document.addEventListener('touchend', (e) => {
           const dy = startY - e.changedTouches[0].clientY;
           const dt = Date.now() - startTime;
-          // Only snap on deliberate swipes: ≥60px in ≤400ms
-          if (Math.abs(dy) < 60 || dt > 400) return;
+          // Deliberate swipe: ≥55px in ≤380ms
+          if (Math.abs(dy) < 55 || dt > 380) return;
           snapTo(dy > 0 ? 'down' : 'up');
         }, { passive: true });
       })();
