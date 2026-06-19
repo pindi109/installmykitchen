@@ -17,6 +17,15 @@ export const GET = async (): Promise<Response> => {
     "/answers/",
     "/comparisons/",
     "/html-sitemap/",
+    "/checklist/",
+    "/mistakes/",
+    "/day-rate/",
+    "/near-me/",
+    "/timeline/",
+    "/cost-calculator/",
+    "/removal/",
+    "/refit/",
+    "/projects/",
   ];
 
   const utilityPages = ["/privacy/", "/terms/"];
@@ -128,6 +137,94 @@ export const GET = async (): Promise<Response> => {
     "fitted-kitchen-cost-comparison",
     "kitchen-fitter-vs-diy-kitchen-installation",
     "german-kitchen-installation-vs-british",
+  ];
+
+  // ── Question slugs (50) ─────────────────────────────────────────────────────
+  const questionSlugs = [
+    "do-wren-install-kitchens",
+    "does-howdens-do-installation",
+    "does-magnet-do-installation",
+    "does-ikea-offer-kitchen-installation",
+    "can-i-install-a-kitchen-myself",
+    "what-does-a-kitchen-fitter-actually-do",
+    "is-wren-better-than-howdens",
+    "how-long-does-kitchen-installation-take",
+    "how-much-should-kitchen-fitting-cost",
+    "do-kitchen-fitters-remove-old-kitchen",
+    "do-kitchen-fitters-do-plumbing",
+    "do-kitchen-fitters-do-electrical",
+    "do-you-need-planning-permission-for-new-kitchen",
+    "what-qualifications-does-a-kitchen-fitter-need",
+    "what-is-a-kitchen-survey",
+    "why-use-independent-kitchen-fitter",
+    "how-to-find-kitchen-fitter-near-me",
+    "what-happens-after-kitchen-is-delivered",
+    "what-to-do-if-kitchen-units-damaged",
+    "do-kitchen-fitters-supply-worktops",
+    "is-it-worth-getting-a-kitchen-survey",
+    "how-do-kitchen-fitters-level-units",
+    "what-is-kitchen-snagging",
+    "what-is-a-kitchen-plinth",
+    "what-is-kitchen-carcass",
+    "what-tools-does-a-kitchen-fitter-use",
+    "how-are-stone-worktops-measured",
+    "what-is-soft-close-hinge",
+    "in-frame-vs-shaker-kitchen-installation",
+    "which-kitchen-retailers-allow-independent-fitters",
+    "what-is-supply-and-fit-kitchen",
+    "do-kitchen-fitters-do-tiling",
+    "how-long-does-ikea-kitchen-installation-take",
+    "how-to-prepare-room-for-kitchen-installation",
+    "what-are-kitchen-filler-panels",
+    "what-are-kitchen-cornices",
+    "how-much-does-wren-kitchen-installation-cost",
+    "how-much-does-howdens-kitchen-cost-to-fit",
+    "how-much-does-ikea-kitchen-cost-to-install",
+    "what-is-the-difference-between-kitchen-fitter-and-installer",
+    "how-to-level-kitchen-units-on-uneven-floor",
+    "is-kitchen-installation-expensive",
+    "can-i-use-any-fitter-for-wren-kitchen",
+    "can-i-use-independent-fitter-for-howdens",
+    "what-does-kitchen-installation-include",
+    "how-many-days-to-fit-a-kitchen",
+    "who-is-responsible-if-kitchen-installation-goes-wrong",
+    "do-i-need-to-move-out-during-kitchen-installation",
+    "what-guarantee-does-kitchen-installation-come-with",
+    "how-to-book-kitchen-fitter-coventry",
+  ];
+
+  // ── LLM page slugs (8) ──────────────────────────────────────────────────────
+  const llmSlugs = [
+    "who-installs-howdens-kitchens",
+    "can-i-use-my-own-fitter-for-wren-kitchen",
+    "how-much-to-have-ikea-kitchen-fitted",
+    "do-wren-kitchens-install-themselves",
+    "best-kitchen-fitter-coventry",
+    "how-long-does-wren-kitchen-installation-take",
+    "who-fits-magnet-kitchens-independently",
+    "kitchen-survey-what-does-it-involve",
+  ];
+
+  // ── Project/case study pages (4) ────────────────────────────────────────────
+  const projectPages = [
+    "/projects/howdens-kitchen-earlsdon-coventry/",
+    "/projects/wren-kitchen-kenilworth/",
+    "/projects/ikea-kitchen-leamington-spa/",
+    "/projects/magnet-kitchen-solihull/",
+  ];
+
+  // ── New comparison slugs (10) ────────────────────────────────────────────────
+  const newComparisonSlugs = [
+    "wren-vs-magnet-which-is-better",
+    "ikea-vs-howdens-which-is-better",
+    "magnet-vs-howdens-which-is-better",
+    "benchmarx-vs-howdens-which-is-better",
+    "diy-kitchens-vs-wren",
+    "shaker-vs-handleless-which-is-better",
+    "in-frame-vs-shaker-which-is-better",
+    "local-kitchen-fitter-vs-national-installer",
+    "kitchen-renovation-vs-new-kitchen",
+    "rigid-kitchen-vs-flatpack-which-is-better",
   ];
 
   // ── Problem slugs (10) ───────────────────────────────────────────────────────
@@ -249,6 +346,26 @@ export const GET = async (): Promise<Response> => {
   // /problem/[problem]/  (10)
   for (const slug of problemSlugs) {
     lines.push(url(`/problem/${slug}/`, "monthly", "0.6"));
+  }
+
+  // /questions/[slug]/  (50)
+  for (const slug of questionSlugs) {
+    lines.push(url(`/questions/${slug}/`, "monthly", "0.7"));
+  }
+
+  // /llm/[slug]/  (8)
+  for (const slug of llmSlugs) {
+    lines.push(url(`/llm/${slug}/`, "monthly", "0.6"));
+  }
+
+  // /projects/[slug]/  (4 case studies)
+  for (const page of projectPages) {
+    lines.push(url(page, "monthly", "0.6"));
+  }
+
+  // /comparisons/[slug]/  (10 new comparisons)
+  for (const slug of newComparisonSlugs) {
+    lines.push(url(`/comparisons/${slug}/`, "monthly", "0.6"));
   }
 
   const xml = `<?xml version="1.0" encoding="UTF-8"?>

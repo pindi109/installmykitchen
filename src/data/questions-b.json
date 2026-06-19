@@ -1,0 +1,35 @@
+[
+  {
+    "slug": "should-i-use-ikea-or-a-local-supplier",
+    "title": "Should I use IKEA or a local kitchen supplier?",
+    "metaDescription": "IKEA vs local kitchen suppliers — an honest comparison from a 30-year Coventry kitchen fitter.",
+    "answer": "IKEA kitchens offer good value and are easy to fit. Local suppliers often provide better quality units, better service, and more flexibility. The right choice depends on your budget and how long you plan to stay in the property.",
+    "bodyHtml": "<h2>IKEA pros and cons</h2><p>IKEA's SEKTION and METOD systems are well-designed and widely understood by fitters. Delivery can be slow and assembly is required. Replacement parts are generally available.</p><h2>Local supplier pros and cons</h2><p>Local suppliers offer bespoke sizing, better carcass quality, and professional delivery. They typically cost more but offer better longevity.</p>",
+    "faqs": [
+      { "q": "Can Pindi fit an IKEA kitchen?", "a": "Yes, Pindi has fitted hundreds of IKEA kitchens and is familiar with all current ranges." },
+      { "q": "Which retailer does Pindi recommend?", "a": "Pindi works with homeowners' chosen retailers — Wren, Magnet, Howdens, IKEA, and independents." }
+    ]
+  },
+  {
+    "slug": "what-trades-do-i-need-for-kitchen-installation",
+    "title": "What trades do I need for a kitchen installation?",
+    "metaDescription": "Full list of trades typically needed for a kitchen installation — from a Coventry fitter with 30 years' experience.",
+    "answer": "A typical kitchen installation needs a kitchen fitter, an electrician (Part P registered), and a plumber. Depending on the scope, you may also need a gas engineer, plasterer, tiler, or structural engineer.",
+    "bodyHtml": "<h2>Core trades</h2><p><strong>Kitchen fitter:</strong> units, worktops, doors, plinths, cornices. <strong>Electrician:</strong> sockets, lighting, appliance connections. <strong>Plumber:</strong> sink, dishwasher, washing machine connections.</p><h2>Additional trades</h2><p>Gas engineer for hobs/ovens. Plasterer if walls need making good. Tiler for splashbacks and floors. Decorator for painting.</p>",
+    "faqs": [
+      { "q": "Does Pindi manage all the trades?", "a": "Pindi coordinates all trades as part of the fixed-price package, so you have one point of contact." },
+      { "q": "Do I need a structural engineer?", "a": "Only if you're removing load-bearing walls or making significant structural changes." }
+    ]
+  },
+  {
+    "slug": "what-is-a-pre-installation-survey",
+    "title": "What is a pre-installation survey?",
+    "metaDescription": "What's included in Pindi's £195 pre-installation survey and why it's essential before starting a kitchen installation.",
+    "answer": "A pre-installation survey is a detailed on-site check of your kitchen before work begins. It identifies potential issues with plumbing, electrics, walls, and structural elements — and results in a fixed-price quote. It takes approximately 90 minutes.",
+    "bodyHtml": "<h2>What does the survey cover?</h2><p>Dimensions and layout checks. Assessment of existing plumbing and electrical positions. Identification of any structural issues. Advice on appliance positioning and worktop options.</p><h2>Why is it worth £195?</h2><p>The survey prevents costly surprises during installation. The fee is credited back in full when you proceed with the work.</p>",
+    "faqs": [
+      { "q": "Can I get a quote without a survey?", "a": "Pindi can provide a rough range from photos, but a fixed quote requires an on-site survey." },
+      { "q": "How soon can I get a survey?", "a": "Surveys are typically available within 1–2 weeks. Call 07399 651836 to book." }
+    ]
+  }
+]

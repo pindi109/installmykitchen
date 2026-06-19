@@ -208,6 +208,55 @@ const serviceSchema = {
     </section>
   )}
 
+  <!-- Local Area Information Section -->
+  <section class="section-sm" style="background: var(--bg-light);">
+    <div class="container">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <!-- Postcodes -->
+        <div class="card p-6">
+          <h3 class="font-bold text-lg mb-3" style="color: var(--navy);">
+            Postcodes We Cover in {location.name}
+          </h3>
+          <div class="flex flex-wrap gap-2">
+            {location.postcodes?.map((pc: string) => (
+              <span style="background: var(--teal); color: white; padding: 0.25rem 0.75rem; border-radius: 50px; font-size: 0.875rem; font-weight: 600;">
+                {pc}
+              </span>
+            ))}
+          </div>
+          {location.travelTime && (
+            <p class="text-sm mt-3" style="color: var(--text-soft);">
+              Travel time: {location.travelTime}
+            </p>
+          )}
+        </div>
+
+        <!-- Housing Stock -->
+        <div class="card p-6">
+          <h3 class="font-bold text-lg mb-3" style="color: var(--navy);">
+            Housing &amp; Kitchen Types in {location.name}
+          </h3>
+          <p class="text-sm leading-relaxed" style="color: var(--text-soft);">
+            {location.housingStock}
+          </p>
+        </div>
+
+        <!-- Local Installation Note -->
+        <div class="card p-6">
+          <h3 class="font-bold text-lg mb-3" style="color: var(--navy);">
+            Installation in {location.name}
+          </h3>
+          <p class="text-sm leading-relaxed" style="color: var(--text-soft);">
+            {location.localNote}
+          </p>
+          <a href={`/survey/${location.slug}/`} class="btn-primary mt-4" style="font-size:0.875rem; padding: 0.625rem 1.25rem;">
+            Book Survey in {location.name}
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- FAQ -->
   <section class="section">
     <div class="container">
