@@ -1162,7 +1162,7 @@ const {
   faqs,
 } = Astro.props;
 
-const canonical = `https://www.installmykitchen.co.uk/comparisons/${slug}/`;
+const canonical = `https://installmykitchen.co.uk/comparisons/${slug}/`;
 
 // Truncate display title to ≤65 chars for <title>
 const displayTitle = metaTitle.length <= 65 ? metaTitle : metaTitle.substring(0, 62) + "...";
@@ -1179,8 +1179,8 @@ const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Home", item: "https://www.installmykitchen.co.uk/" },
-    { "@type": "ListItem", position: 2, name: "Comparisons", item: "https://www.installmykitchen.co.uk/comparisons/" },
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://installmykitchen.co.uk/" },
+    { "@type": "ListItem", position: 2, name: "Comparisons", item: "https://installmykitchen.co.uk/comparisons/" },
     { "@type": "ListItem", position: 3, name: title, item: canonical },
   ],
 };

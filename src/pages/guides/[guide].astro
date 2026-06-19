@@ -725,7 +725,7 @@ export function getStaticPaths() {
 const guide = Astro.props;
 const { slug, title, metaDescription, intro, takeaways, faqs, body } = guide;
 
-const canonical = `https://www.installmykitchen.co.uk/guides/${slug}/`;
+const canonical = `https://installmykitchen.co.uk/guides/${slug}/`;
 const pageTitle = `${title} | Install My Kitchen`;
 
 // Article JSON-LD
@@ -737,15 +737,15 @@ const articleSchema = {
   author: {
     "@type": "Organization",
     name: "Install My Kitchen",
-    url: "https://www.installmykitchen.co.uk",
+    url: "https://installmykitchen.co.uk",
   },
   publisher: {
     "@type": "Organization",
     name: "Install My Kitchen",
-    url: "https://www.installmykitchen.co.uk",
+    url: "https://installmykitchen.co.uk",
     logo: {
       "@type": "ImageObject",
-      url: "https://www.installmykitchen.co.uk/favicon.png",
+      url: "https://installmykitchen.co.uk/favicon.png",
     },
   },
   mainEntityOfPage: {

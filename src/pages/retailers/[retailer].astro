@@ -25,7 +25,7 @@ export function getStaticPaths() {
 const { retailer } = Astro.props;
 const { slug, displayName, description, installNote } = retailer;
 
-const canonical = `https://www.installmykitchen.co.uk/retailers/${slug}/`;
+const canonical = `https://installmykitchen.co.uk/retailers/${slug}/`;
 
 // Title — ≤60 chars, abbreviated where necessary
 const rawTitle = `${displayName} Kitchen Installation | Install My Kitchen`;
@@ -62,8 +62,8 @@ const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Home", item: "https://www.installmykitchen.co.uk/" },
-    { "@type": "ListItem", position: 2, name: "Retailers", item: "https://www.installmykitchen.co.uk/retailers/" },
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://installmykitchen.co.uk/" },
+    { "@type": "ListItem", position: 2, name: "Retailers", item: "https://installmykitchen.co.uk/retailers/" },
     { "@type": "ListItem", position: 3, name: displayName, item: canonical },
   ],
 };
@@ -76,7 +76,7 @@ const serviceSchema = {
   provider: {
     "@type": "LocalBusiness",
     name: "Install My Kitchen",
-    url: "https://www.installmykitchen.co.uk",
+    url: "https://installmykitchen.co.uk",
   },
   areaServed: {
     "@type": "Place",

@@ -63,7 +63,7 @@ const { style, location, styleIndex, locationIndex } = Astro.props;
 const { name: styleName, slug: styleSlug, description: styleDescription, features } = style;
 const { name: locationName, slug: locationSlug, county, description: locationDescription, nearby } = location;
 
-const canonical = `https://www.installmykitchen.co.uk/styles/${styleSlug}-${locationSlug}/`;
+const canonical = `https://installmykitchen.co.uk/styles/${styleSlug}-${locationSlug}/`;
 
 // Title ≤60 chars
 const rawTitle = `${styleName} Kitchen Installation ${locationName} | Install My Kitchen`;
@@ -116,9 +116,9 @@ const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Home", item: "https://www.installmykitchen.co.uk/" },
-    { "@type": "ListItem", position: 2, name: "Styles", item: "https://www.installmykitchen.co.uk/styles/" },
-    { "@type": "ListItem", position: 3, name: styleName, item: `https://www.installmykitchen.co.uk/styles/${styleSlug}/` },
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://installmykitchen.co.uk/" },
+    { "@type": "ListItem", position: 2, name: "Styles", item: "https://installmykitchen.co.uk/styles/" },
+    { "@type": "ListItem", position: 3, name: styleName, item: `https://installmykitchen.co.uk/styles/${styleSlug}/` },
     { "@type": "ListItem", position: 4, name: locationName, item: canonical },
   ],
 };
@@ -131,7 +131,7 @@ const serviceSchema = {
   provider: {
     "@type": "LocalBusiness",
     name: "Install My Kitchen",
-    url: "https://www.installmykitchen.co.uk",
+    url: "https://installmykitchen.co.uk",
     telephone: "07399651836",
     address: {
       "@type": "PostalAddress",

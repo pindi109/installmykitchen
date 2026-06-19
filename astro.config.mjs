@@ -5,7 +5,7 @@ import tailwindcss from "@tailwindcss/vite";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://www.installmykitchen.co.uk",
+  site: "https://installmykitchen.co.uk",
   trailingSlash: "always",
   output: "static",
   vite: {

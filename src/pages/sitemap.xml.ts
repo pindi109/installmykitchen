@@ -1,5 +1,5 @@
 export const GET = async (): Promise<Response> => {
-  const BASE = "https://www.installmykitchen.co.uk";
+  const BASE = "https://installmykitchen.co.uk";
   const LASTMOD = "2026-06-19";
 
   // ── Static pages ────────────────────────────────────────────────────────────

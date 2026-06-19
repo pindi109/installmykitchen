@@ -23,7 +23,7 @@ export function getStaticPaths() {
 const { retailer, retailerIndex } = Astro.props;
 const { displayName, slug } = retailer;
 
-const canonical = `https://www.installmykitchen.co.uk/cost/${slug}-cost/`;
+const canonical = `https://installmykitchen.co.uk/cost/${slug}-cost/`;
 
 // Title ≤60 chars
 const rawTitle = `${displayName} Kitchen Installation Cost | Install My Kitchen`;
@@ -104,8 +104,8 @@ const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Home", item: "https://www.installmykitchen.co.uk/" },
-    { "@type": "ListItem", position: 2, name: "Cost Guide", item: "https://www.installmykitchen.co.uk/costs/" },
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://installmykitchen.co.uk/" },
+    { "@type": "ListItem", position: 2, name: "Cost Guide", item: "https://installmykitchen.co.uk/costs/" },
     { "@type": "ListItem", position: 3, name: displayName, item: canonical },
   ],
 };
