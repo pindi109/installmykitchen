@@ -129,6 +129,59 @@ const hasRealHero = !heroSrc.includes("placeholder");
     <!-- WhatsApp floating button — visible on all pages -->
     <WhatsAppButton />
 
+    <!-- Mobile section-snap scroll (swipe up/down snaps to next section) -->
+    <script>
+      (function () {
+        if (window.innerWidth > 767) return;
+        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+        let startY = 0;
+        let startTime = 0;
+        let locked = false;
+
+        function sections() {
+          return Array.from(document.querySelectorAll('section, .hero-split')).filter(
+            el => el.offsetHeight > 80
+          );
+        }
+
+        function snapTo(direction) {
+          if (locked) return;
+          const all = sections();
+          const scrollY = window.scrollY;
+
+          let target = null;
+          if (direction === 'down') {
+            for (const s of all) {
+              if (s.offsetTop > scrollY + 40) { target = s; break; }
+            }
+          } else {
+            for (const s of [...all].reverse()) {
+              if (s.offsetTop < scrollY - 40) { target = s; break; }
+            }
+          }
+
+          if (!target) return;
+          locked = true;
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          setTimeout(() => { locked = false; }, 900);
+        }
+
+        document.addEventListener('touchstart', (e) => {
+          startY = e.touches[0].clientY;
+          startTime = Date.now();
+        }, { passive: true });
+
+        document.addEventListener('touchend', (e) => {
+          const dy = startY - e.changedTouches[0].clientY;
+          const dt = Date.now() - startTime;
+          // Only snap on deliberate swipes: ≥60px in ≤400ms
+          if (Math.abs(dy) < 60 || dt > 400) return;
+          snapTo(dy > 0 ? 'down' : 'up');
+        }, { passive: true });
+      })();
+    </script>
+
     <!-- Fade-up animation (IntersectionObserver, respects prefers-reduced-motion) -->
     <script>
       (function () {
