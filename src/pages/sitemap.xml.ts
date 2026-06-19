@@ -1,6 +1,6 @@
 export const GET = async (): Promise<Response> => {
   const BASE = "https://www.installmykitchen.co.uk";
-  const LASTMOD = "2025-06-18";
+  const LASTMOD = "2026-06-19";
 
   // ── Static pages ────────────────────────────────────────────────────────────
   const corePages = [
@@ -13,7 +13,9 @@ export const GET = async (): Promise<Response> => {
     "/retailers/",
     "/premium/",
     "/costs/",
+    "/guides/",
     "/answers/",
+    "/comparisons/",
     "/html-sitemap/",
   ];
 
@@ -78,64 +80,75 @@ export const GET = async (): Promise<Response> => {
     "luxury",
   ];
 
-  // ── Installer location slugs (14) ───────────────────────────────────────────
+  // ── Installer location slugs (15) ───────────────────────────────────────────
   const installerLocations = [
-    "coventry",
-    "rugby",
-    "nuneaton",
-    "bedworth",
-    "leamington-spa",
-    "kenilworth",
-    "warwick",
-    "solihull",
-    "stratford-upon-avon",
-    "hinckley",
-    "atherstone",
-    "southam",
-    "balsall-common",
-    "meriden",
+    "coventry", "canley", "tile-hill", "earlsdon", "allesley",
+    "rugby", "nuneaton", "bedworth", "leamington-spa", "kenilworth",
+    "warwick", "solihull", "stratford-upon-avon", "southam", "hinckley",
   ];
 
-  // ── Style-location slugs (9) ─────────────────────────────────────────────────
+  // ── Style-location slugs (10) ────────────────────────────────────────────────
   const styleLocations = [
-    "coventry",
-    "rugby",
-    "nuneaton",
-    "leamington-spa",
-    "kenilworth",
-    "warwick",
-    "solihull",
-    "bedworth",
-    "hinckley",
+    "coventry", "earlsdon", "kenilworth", "leamington-spa", "warwick",
+    "rugby", "solihull", "nuneaton", "stratford-upon-avon", "hinckley",
   ];
 
-  // ── Question slugs (25) ──────────────────────────────────────────────────────
-  const questionSlugs = [
-    "how-much-does-kitchen-installation-cost",
-    "how-long-does-kitchen-installation-take",
-    "what-is-included-in-kitchen-installation",
-    "do-i-need-a-plumber-for-kitchen-installation",
-    "what-is-a-dry-fit-kitchen",
+  // ── Fitter location slugs (all 25) ──────────────────────────────────────────
+  const fitterLocations = [
+    "coventry", "canley", "tile-hill", "earlsdon", "allesley",
+    "binley", "wyken", "walsgrave", "finham", "stivichall",
+    "coundon", "radford", "rugby", "nuneaton", "bedworth",
+    "hinckley", "leamington-spa", "kenilworth", "warwick", "balsall-common",
+    "meriden", "solihull", "stratford-upon-avon", "southam", "atherstone",
+  ];
+
+  // ── Guide slugs (10) ────────────────────────────────────────────────────────
+  const guideSlugs = [
     "how-to-prepare-for-kitchen-installation",
-    "can-you-fit-a-wren-kitchen",
-    "can-you-fit-an-ikea-kitchen",
-    "can-you-fit-a-howdens-kitchen",
-    "can-you-fit-a-magnet-kitchen",
-    "do-you-remove-old-kitchen",
-    "how-much-is-the-survey",
-    "do-you-need-to-be-home-during-installation",
-    "what-is-a-kitchen-fitter",
     "how-to-choose-a-kitchen-fitter",
-    "what-is-rigid-vs-flat-pack-kitchen",
-    "how-many-units-in-a-small-kitchen",
-    "what-worktops-do-you-supply",
-    "do-you-tile-after-kitchen-installation",
-    "can-you-fit-a-kitchen-in-a-listed-building",
-    "what-is-kitchen-snagging",
-    "how-much-does-worktop-fitting-cost",
-    "what-is-kitchen-kickboard",
-    "how-to-level-kitchen-units",
-    "what-is-a-kitchen-survey",
+    "kitchen-installation-survey-guide",
+    "working-with-wren-howdens-magnet",
+    "kitchen-worktop-guide",
+    "kitchen-appliance-installation-guide",
+    "kitchen-plumbing-electrical-guide",
+    "ikea-kitchen-installation-guide",
+    "kitchen-installation-timeline",
+    "kitchen-snagging-guide",
+  ];
+
+  // ── Comparison slugs (10) ────────────────────────────────────────────────────
+  const comparisonSlugs = [
+    "wren-vs-howdens-kitchen-installation",
+    "magnet-vs-wren-kitchen-installation",
+    "ikea-vs-wren-kitchen-installation",
+    "howdens-vs-benchmarx-kitchen-installation",
+    "wickes-vs-bq-kitchen-installation",
+    "independent-fitter-vs-retailer-fitter",
+    "supply-only-vs-supply-and-fit",
+    "fitted-kitchen-cost-comparison",
+    "kitchen-fitter-vs-diy-kitchen-installation",
+    "german-kitchen-installation-vs-british",
+  ];
+
+  // ── Problem slugs (10) ───────────────────────────────────────────────────────
+  const problemSlugs = [
+    "kitchen-units-not-level",
+    "kitchen-gaps-between-units-and-wall",
+    "kitchen-doors-not-aligned",
+    "kitchen-worktop-joint-problems",
+    "kitchen-plinth-fitting-problems",
+    "kitchen-delivery-missing-parts",
+    "kitchen-extractor-installation-problems",
+    "kitchen-corner-unit-problems",
+    "kitchen-sink-installation-problems",
+    "retailer-installation-service-vs-independent",
+  ];
+
+  // ── Service slugs (8) ────────────────────────────────────────────────────────
+  const serviceSlugs = [
+    "cabinet-installation", "worktop-fitting", "appliance-installation",
+    "door-fitting", "trims-and-plinths", "handles-and-ironmongery",
+    "snagging", "flooring-tiling",
   ];
 
   // ── Helpers ──────────────────────────────────────────────────────────────────
@@ -189,14 +202,53 @@ export const GET = async (): Promise<Response> => {
     lines.push(url(`/cost/${slug}-cost/`, "monthly", "0.6"));
   }
 
-  // /cost/ size pages
+  // /cost/ size + extra static pages
   lines.push(url("/cost/small-kitchen-cost/", "monthly", "0.6"));
   lines.push(url("/cost/medium-kitchen-cost/", "monthly", "0.6"));
   lines.push(url("/cost/large-kitchen-cost/", "monthly", "0.6"));
+  lines.push(url("/cost/labour-cost/", "monthly", "0.6"));
+  lines.push(url("/cost/worktop-fitting-cost/", "monthly", "0.6"));
+  lines.push(url("/cost/appliance-fitting-cost/", "monthly", "0.6"));
+  lines.push(url("/cost/kitchen-survey-cost/", "monthly", "0.6"));
 
-  // /answers/[slug]/  (25)
-  for (const slug of questionSlugs) {
-    lines.push(url(`/answers/${slug}/`, "monthly", "0.5"));
+  // /fitter/[location]/  (25)
+  for (const slug of fitterLocations) {
+    lines.push(url(`/fitter/${slug}/`, "weekly", "0.7"));
+  }
+
+  // /kitchen-cost/[location]/  (25)
+  for (const slug of fitterLocations) {
+    lines.push(url(`/kitchen-cost/${slug}/`, "weekly", "0.7"));
+  }
+
+  // /survey/[location]/  (25)
+  for (const slug of fitterLocations) {
+    lines.push(url(`/survey/${slug}/`, "weekly", "0.7"));
+  }
+
+  // /areas-retailers/[area]/  (25)
+  for (const slug of fitterLocations) {
+    lines.push(url(`/areas-retailers/${slug}/`, "monthly", "0.6"));
+  }
+
+  // /services/[service]/  (8)
+  for (const slug of serviceSlugs) {
+    lines.push(url(`/services/${slug}/`, "monthly", "0.7"));
+  }
+
+  // /guides/[guide]/  (10)
+  for (const slug of guideSlugs) {
+    lines.push(url(`/guides/${slug}/`, "monthly", "0.6"));
+  }
+
+  // /comparisons/[comparison]/  (10)
+  for (const slug of comparisonSlugs) {
+    lines.push(url(`/comparisons/${slug}/`, "monthly", "0.6"));
+  }
+
+  // /problem/[problem]/  (10)
+  for (const slug of problemSlugs) {
+    lines.push(url(`/problem/${slug}/`, "monthly", "0.6"));
   }
 
   const xml = `<?xml version="1.0" encoding="UTF-8"?>
