@@ -16,6 +16,8 @@ export const GET = async (): Promise<Response> => {
     "/guides/",
     "/answers/",
     "/comparisons/",
+    "/questions/",
+    "/llm/",
     "/html-sitemap/",
     "/checklist/",
     "/mistakes/",
@@ -29,7 +31,7 @@ export const GET = async (): Promise<Response> => {
     "/pindi-sahota/",
   ];
 
-  const utilityPages = ["/privacy/", "/terms/"];
+  const utilityPages: string[] = [];
 
   // ── Area slugs (25) ──────────────────────────────────────────────────────────
   const areaSlugs = [

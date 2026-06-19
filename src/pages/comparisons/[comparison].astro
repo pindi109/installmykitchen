@@ -1180,16 +1180,7 @@ const internalLinks = [
   { label: "Howdens kitchen installation", href: "/retailers/howdens/", description: "How Howdens trade supply affects the independent fitting process." },
 ];
 
-// BreadcrumbList JSON-LD
-const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Home", item: "https://installmykitchen.co.uk/" },
-    { "@type": "ListItem", position: 2, name: "Comparisons", item: "https://installmykitchen.co.uk/comparisons/" },
-    { "@type": "ListItem", position: 3, name: title, item: canonical },
-  ],
-};
+// Breadcrumb JSON-LD is emitted once by the Breadcrumbs component below.
 ---
 
 <Base
@@ -1197,8 +1188,6 @@ const breadcrumbSchema = {
   description={metaDescription}
   canonical={canonical}
 >
-  <script slot="schema" type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
-
   <Header slot="header" />
 
   <!-- Page header -->

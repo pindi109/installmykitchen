@@ -19,7 +19,7 @@ const schemaItems = allItems.map((item, idx) => ({
   "@type": "ListItem",
   position: idx + 1,
   name: item.label,
-  item: `${siteUrl}${item.href}`,
+  item: item.href.startsWith("http") ? item.href : `${siteUrl}${item.href}`,
 }));
 
 const schema = {

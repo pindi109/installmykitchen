@@ -20,7 +20,7 @@ const {
   canonical,
   ogTitle,
   ogDescription,
-  ogImage = "https://installmykitchen.co.uk/assets/logo.png",
+  ogImage,
   noHero = false,
 } = Astro.props;
 
@@ -37,6 +37,10 @@ const heroAlt: string =
   (altTagsData as Record<string, string>)[pathSlug] ??
   "Kitchen fitting service West Midlands – Install My Kitchen";
 const hasRealHero = !heroSrc.includes("placeholder");
+const SITE = "https://installmykitchen.co.uk";
+const resolvedOgImage =
+  ogImage ??
+  (hasRealHero ? `${SITE}${heroSrc}` : `${SITE}/assets/logo.png`);
 ---
 
 <!doctype html>
@@ -65,7 +69,7 @@ const hasRealHero = !heroSrc.includes("placeholder");
     <meta property="og:url" content={resolvedCanonical} />
     <meta property="og:title" content={resolvedOgTitle} />
     <meta property="og:description" content={resolvedOgDescription} />
-    <meta property="og:image" content={ogImage} />
+    <meta property="og:image" content={resolvedOgImage} />
     <meta property="og:locale" content="en_GB" />
     <meta property="og:site_name" content="Install My Kitchen" />
 
@@ -73,7 +77,7 @@ const hasRealHero = !heroSrc.includes("placeholder");
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={resolvedOgTitle} />
     <meta name="twitter:description" content={resolvedOgDescription} />
-    <meta name="twitter:image" content={ogImage} />
+    <meta name="twitter:image" content={resolvedOgImage} />
 
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="/favicon.png" />

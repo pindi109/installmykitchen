@@ -111,17 +111,7 @@ const internalLinks = [
   ...nearbyLinks,
 ];
 
-// BreadcrumbList JSON-LD
-const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Home", item: "https://installmykitchen.co.uk/" },
-    { "@type": "ListItem", position: 2, name: "Styles", item: "https://installmykitchen.co.uk/styles/" },
-    { "@type": "ListItem", position: 3, name: styleName, item: `https://installmykitchen.co.uk/styles/${styleSlug}/` },
-    { "@type": "ListItem", position: 4, name: locationName, item: canonical },
-  ],
-};
+// Breadcrumb JSON-LD is emitted once by the Breadcrumbs component below.
 
 // Service JSON-LD
 const serviceSchema = {
@@ -155,7 +145,6 @@ const serviceSchema = {
   description={metaDescription}
   canonical={canonical}
 >
-  <script slot="schema" type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
   <script slot="schema" type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
 
   <Header slot="header" />
