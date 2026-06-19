@@ -171,21 +171,9 @@ const areas = [
         fetchpriority="high"
         decoding="async"
       />
-      <!-- Logo overlay -->
+      <!-- Logo — top left -->
       <div class="hero-logo-overlay">
-        <img src="/assets/logo.png" alt="Install My Kitchen" class="hero-logo-large" width="200" height="auto" loading="eager" />
-      </div>
-      <!-- Floating survey credit card -->
-      <div class="hero-card">
-        <div class="hero-card-icon" aria-hidden="true">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M20 6L9 17l-5-5"/>
-          </svg>
-        </div>
-        <div>
-          <p class="hero-card-title">Survey Fee Credited</p>
-          <p class="hero-card-desc">Survey Fee £195 — Credited Back on Booking</p>
-        </div>
+        <img src="/assets/logo.png" alt="Install My Kitchen" class="hero-logo-large" width="120" height="120" loading="eager" />
       </div>
     </div>
   </section>
@@ -753,34 +741,27 @@ const areas = [
     display: block;
   }
 
-  /* Logo overlay in hero right panel */
+  /* Logo — top-left of hero image */
   .hero-logo-overlay {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    top: 1.25rem;
+    left: 1.25rem;
     pointer-events: none;
   }
 
   .hero-logo-large {
-    width: 200px;
+    width: 120px;
     height: auto;
     display: block;
-    filter: drop-shadow(0 4px 24px rgba(0,0,0,0.35));
+    filter: drop-shadow(0 2px 8px rgba(0,0,0,0.25));
   }
 
-  /* Floating card */
+  /* Floating card (removed — kept for reference) */
   .hero-card {
+    display: none;
     position: absolute;
     bottom: 2rem;
     left: 2rem;
-    background: rgba(255, 255, 255, 0.5);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    border: 2px solid var(--gold);
     border-radius: 1rem;
     padding: 1rem 1.25rem;
     display: flex;
