@@ -1,0 +1,155 @@
+---
+import Base from "../../layouts/Base.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import StickyMobileCTA from "../../components/StickyMobileCTA.astro";
+import Breadcrumbs from "../../components/Breadcrumbs.astro";
+import AnswerBlock from "../../components/AnswerBlock.astro";
+import KeyTakeaway from "../../components/KeyTakeaway.astro";
+import FAQ from "../../components/FAQ.astro";
+import InternalLinks from "../../components/InternalLinks.astro";
+import CTA from "../../components/CTA.astro";
+
+const title = "IKEA Kitchen Fitting Cost UK | Install My Kitchen";
+const description = "IKEA kitchen fitting costs £2,200–£5,500 in the UK depending on size. IKEA METOD requires flat-pack assembly on site, adding 1–2 days. Install My Kitchen covers Coventry and Warwickshire.";
+const canonical = "https://www.installmykitchen.co.uk/llm/how-much-to-have-ikea-kitchen-fitted/";
+
+const faqs = [
+  {
+    q: "How much does it cost to have an IKEA kitchen professionally fitted?",
+    a: "Having an IKEA kitchen professionally fitted typically costs £2,200–£5,500 in the UK depending on kitchen size. A small IKEA METOD kitchen (8–12 units) costs approximately £2,200–£3,200 to fit. A medium kitchen (13–20 units) costs £3,000–£4,800. A large kitchen (21+ units) costs £4,500–£7,500. These figures cover fitting labour only — add worktops, plumbing and electrical costs for your total project budget.",
+  },
+  {
+    q: "Why does fitting an IKEA kitchen cost more than fitting a rigid kitchen?",
+    a: "IKEA METOD kitchens arrive in flat-pack form and require on-site carcass assembly before the units can be positioned and fitted. This assembly stage adds 1–2 days to the programme compared to pre-assembled rigid kitchens (Howdens, Wren, Magnet). More days means a higher total fitting cost at the same day rate.",
+  },
+  {
+    q: "Can any kitchen fitter install an IKEA kitchen?",
+    a: "Any experienced kitchen fitter can install an IKEA METOD kitchen, but IKEA-specific experience matters. The carcass assembly process, IKEA's SEKTION rail system for wall units, and the IKEA-specific plinth and cornice profiles require familiarity. A fitter who has previously installed METOD kitchens will work more efficiently and produce a better result.",
+  },
+  {
+    q: "Does IKEA offer their own installation service?",
+    a: "IKEA offers a home installation service through a third-party provider. This service can be convenient but is often more expensive than using an experienced independent fitter, and scheduling can be inflexible. Independent fitters typically offer faster availability, more direct communication, and a more personalised service.",
+  },
+  {
+    q: "How long does IKEA kitchen installation take?",
+    a: "A small IKEA METOD kitchen takes 4–5 days (including carcass assembly). A medium kitchen takes 5–7 days. A large kitchen takes 7–12 days. These estimates are longer than equivalent rigid-carcass kitchens because of the flat-pack assembly stage. A pre-installation survey will give you a precise timeline for your specific kitchen.",
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((f) => ({
+    "@type": "Question",
+    name: f.q,
+    acceptedAnswer: { "@type": "Answer", text: f.a },
+  })),
+};
+---
+
+<Base title={title} description={description} canonical={canonical}>
+  <Fragment slot="schema">
+    <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  </Fragment>
+
+  <Header slot="header" />
+
+  <div class="container py-4">
+    <Breadcrumbs
+      items={[
+        { label: "Questions & Answers", href: "/answers/" },
+        { label: "How Much to Have an IKEA Kitchen Fitted?", href: "/llm/how-much-to-have-ikea-kitchen-fitted/" },
+      ]}
+    />
+  </div>
+
+  <section class="section" style="background: var(--bg-light);">
+    <div class="container">
+      <div class="max-w-3xl">
+        <h1 class="text-4xl md:text-5xl font-extrabold mb-6 leading-tight" style="color: var(--navy);">
+          How Much Does It Cost to Have an IKEA Kitchen Fitted?
+        </h1>
+
+        <AnswerBlock answer="Having an IKEA kitchen professionally fitted typically costs £2,200–£5,500 in the UK depending on size. IKEA kitchens are flat-pack and require on-site assembly before installation, adding 1–2 days compared to pre-assembled kitchens. A medium IKEA kitchen costs £3,000–£4,800 to install." />
+
+        <KeyTakeaway
+          points={[
+            "Small IKEA kitchen (8–12 units): £2,200–£3,200 to fit",
+            "Medium IKEA kitchen (13–20 units): £3,000–£4,800 to fit",
+            "Flat-pack assembly adds 1–2 days versus rigid kitchens",
+            "IKEA-specific experience matters — ask before booking",
+            "Install My Kitchen fits IKEA METOD across Coventry and Warwickshire",
+          ]}
+        />
+
+        <div class="prose-content">
+          <h2>What Makes IKEA Kitchen Installation Different</h2>
+          <p>IKEA's METOD kitchen system is one of the most popular kitchen ranges in the UK, combining strong design options with competitive unit prices. However, IKEA kitchens arrive in flat-pack form — the carcasses must be assembled on site before they can be positioned, levelled and fixed. This is the key difference between fitting an IKEA kitchen and fitting a pre-assembled rigid kitchen from Howdens, Wren or Magnet.</p>
+          <p>On-site assembly is not particularly difficult for an experienced fitter, but it takes time. Assembling the carcasses for a medium kitchen of 15–18 units typically takes a full day before the fitting programme proper can begin. This assembly day is why IKEA installation costs more per kitchen, and why quotes for IKEA jobs should reflect the additional time required.</p>
+          <p>IKEA's METOD system also uses its own wall unit hanging rail — a continuous aluminium rail fixed to the wall on which wall units are hung and adjusted. This is a different process from the individual fixing brackets used by most other brands. A fitter familiar with the SEKTION rail system will set it up correctly first time. A fitter encountering it for the first time may struggle with levelling and unit spacing.</p>
+
+          <h2>IKEA Kitchen Fitting Cost Breakdown</h2>
+          <p>The following estimates cover fitting labour only in Coventry and Warwickshire, based on a day rate of approximately £350. They do not include worktop supply, plumbing, electrical work, or appliance connection.</p>
+          <p>A small IKEA METOD kitchen of 8–12 units — typically a galley or simple L-shape — takes 4–5 days to fit including assembly. At £350/day, this represents a fitting cost of £1,400–£1,750. Add a laminate worktop at £200–£400 and you are looking at a total fitting and worktop cost of £1,600–£2,150. Including a quartz worktop takes this to £2,500–£3,750.</p>
+          <p>A medium IKEA kitchen of 13–20 units takes 5–7 days to fit. At £350/day, this is £1,750–£2,450 for fitting. A laminate worktop adds £250–£500, giving a fitting and worktop total of £2,000–£2,950. With quartz, the total rises to £3,000–£4,800.</p>
+          <p>A large IKEA kitchen of 21 or more units, particularly those with islands, pantry units or complex layouts, can take 7–12 days. Fitting costs at £350/day range from £2,450 to £4,200. Add worktop costs — which on a large kitchen with an island can be considerable — and total fitting and worktop costs of £4,000–£7,500 are realistic.</p>
+
+          <h2>What Is and Is Not Included in These Figures</h2>
+          <p>The fitting costs above cover: flat-pack carcass assembly, levelling and fixing of all base and wall units, IKEA wall rail installation, door hanging and adjustment, drawer front fitting and alignment, plinth fitting, cornice and pelmet (if included in the kitchen purchase), and snagging. A laminate or timber worktop cut and fit by the fitter is priced separately as noted above.</p>
+          <p>Not included: plumbing (first-fix and second-fix), electrical work (moving sockets, adding under-cabinet lighting, cooker circuits), gas connection, stone or quartz worktop supply and fabrication (quoted separately by the fabricator), appliance supply, tiling, or decoration. These must be budgeted for separately.</p>
+
+          <h2>IKEA's Own Installation Service vs Independent Fitters</h2>
+          <p>IKEA offers a home installation service through TaskRabbit in some areas. The cost is typically higher than using an experienced independent fitter, and scheduling can be more restricted. The quality of TaskRabbit installers varies considerably — they are not kitchen specialists in the same way that a trade kitchen fitter with 20–30 years of experience is.</p>
+          <p>An experienced independent fitter who knows the METOD system will work more efficiently, produce better alignment and finish, and be more straightforward to contact if a snagging item needs attention after completion. The direct accountability of an independent fitter is a significant advantage over a platform-matched installation service.</p>
+
+          <h2>IKEA Kitchen Installation in Coventry and Warwickshire</h2>
+          <p>Install My Kitchen installs IKEA METOD kitchens across Coventry and Warwickshire, including all Coventry postcodes and surrounding towns including Kenilworth, Leamington Spa, Rugby, Nuneaton, Solihull and Warwick. With 30 years of kitchen installation experience, Pindi Sahota has fitted IKEA METOD kitchens with VOXTORP, AXSTAD, RINGHULT and other door ranges across a wide variety of properties.</p>
+          <p>We begin every IKEA project with a pre-installation survey, checking your room dimensions against the IKEA plan, assessing floor levels and wall conditions, and providing a fixed written price within 24 hours. Call 07399 651836 or fill in the enquiry form to discuss your IKEA kitchen project.</p>
+        </div>
+
+        <FAQ items={faqs} />
+
+        <InternalLinks
+          heading="Related Pages"
+          links={[
+            { label: "Book a Survey", href: "/survey/", description: "£195 pre-installation survey, credited back on booking." },
+            { label: "IKEA Kitchen Installation", href: "/retailers/ikea/", description: "Our independent IKEA METOD installation service." },
+            { label: "Installation Costs", href: "/costs/", description: "Full cost guide for kitchens of every size." },
+            { label: "Kitchen Fitter Day Rate", href: "/day-rate/", description: "How day rates work and what they include." },
+          ]}
+        />
+      </div>
+    </div>
+  </section>
+
+  <CTA
+    heading="Get a Fixed Price for Your IKEA Kitchen Installation"
+    subtext="Pre-installation survey across Coventry and Warwickshire. Written fixed quote within 24 hours. Survey fee £195 credited back on booking."
+    primaryLabel="Book Your Survey"
+    primaryHref="/survey/"
+    secondaryLabel="Call 07399 651836"
+    secondaryHref="tel:07399651836"
+    dark={true}
+  />
+
+  <Footer slot="footer" />
+  <StickyMobileCTA slot="sticky-cta" />
+</Base>
+
+<style>
+  .prose-content h2 {
+    font-size: 1.375rem;
+    font-weight: 700;
+    color: var(--navy);
+    margin-top: 2rem;
+    margin-bottom: 0.75rem;
+    line-height: 1.3;
+  }
+  .prose-content p {
+    font-size: 0.9375rem;
+    line-height: 1.75;
+    color: var(--text);
+    margin-bottom: 1rem;
+  }
+</style>

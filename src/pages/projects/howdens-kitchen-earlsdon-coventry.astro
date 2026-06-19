@@ -1,0 +1,224 @@
+---
+import Base from "../../layouts/Base.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import StickyMobileCTA from "../../components/StickyMobileCTA.astro";
+import Breadcrumbs from "../../components/Breadcrumbs.astro";
+import AnswerBlock from "../../components/AnswerBlock.astro";
+import FAQ from "../../components/FAQ.astro";
+import InternalLinks from "../../components/InternalLinks.astro";
+import CTA from "../../components/CTA.astro";
+
+const title = "Howdens Kitchen — Earlsdon Coventry | Install My Kitchen";
+const description = "Howdens Greenwich Shaker kitchen installation in a 1930s semi-detached in Earlsdon, Coventry. 16 units, 5 days, quartz worktop co-ordination and integrated appliances.";
+const canonical = "https://www.installmykitchen.co.uk/projects/howdens-kitchen-earlsdon-coventry/";
+
+const projectMeta = [
+  { label: "Location", value: "Earlsdon, Coventry (CV5)" },
+  { label: "Kitchen", value: "Howdens Greenwich Shaker" },
+  { label: "Units", value: "16" },
+  { label: "Duration", value: "5 days" },
+  { label: "Retailer", value: "Howdens Joinery" },
+];
+
+const faqs = [
+  {
+    q: "Can any fitter install a Howdens kitchen?",
+    a: "Yes. Howdens kitchens can be installed by any qualified, experienced kitchen fitter. Howdens operates a trade-only supply model — your fitter typically holds the Howdens trade account and purchases the units on your behalf. Install My Kitchen holds a Howdens trade account and installs Howdens kitchens across Coventry and Warwickshire.",
+  },
+  {
+    q: "What is the Howdens Greenwich Shaker range?",
+    a: "Howdens Greenwich Shaker is one of Howdens' most popular shaker-style kitchen ranges. It features a traditional five-piece shaker door with clean, contemporary proportions. Available in multiple painted and stained finishes, Greenwich Shaker works well in both period properties and modern homes. It uses Howdens' standard rigid carcass system with Blum hardware throughout.",
+  },
+  {
+    q: "Why did this project require chimney breast scribing?",
+    a: "The 1930s semi-detached property in Earlsdon retained its original chimney breast on the kitchen back wall. The chimney breast projected 250mm into the room at that point, meaning the tall housing unit adjacent to it needed a precisely scribed filler panel to bridge the gap and create a clean visual line between the unit and the chimney breast masonry. This is a common challenge in Coventry's inter-war housing stock.",
+  },
+  {
+    q: "How was the quartz worktop co-ordinated on this project?",
+    a: "The base units were installed and levelled on Day 3. A specialist quartz fabricator was called in on Day 4 to template the worktops — measuring precisely from the installed base units. The quartz was then fabricated over 8 working days. Pindi returned on the day of quartz delivery to fit the worktop and assist the plumber with second-fix sink connection. This two-visit programme is standard for stone worktop projects.",
+  },
+];
+---
+
+<Base title={title} description={description} canonical={canonical}>
+  <Header slot="header" />
+
+  <div class="container py-4">
+    <Breadcrumbs
+      items={[
+        { label: "Projects", href: "/projects/" },
+        { label: "Howdens Kitchen — Earlsdon, Coventry", href: "/projects/howdens-kitchen-earlsdon-coventry/" },
+      ]}
+    />
+  </div>
+
+  <section class="section" style="background: var(--bg-light);">
+    <div class="container">
+      <div class="project-layout">
+
+        <div class="project-main">
+          <h1 class="project-h1">Howdens Kitchen Installation in Earlsdon, Coventry</h1>
+
+          <div class="project-meta">
+            {projectMeta.map((item) => (
+              <div class="meta-item">
+                <span class="meta-label">{item.label}</span>
+                <span class="meta-value">{item.value}</span>
+              </div>
+            ))}
+          </div>
+
+          <AnswerBlock answer="A 16-unit Howdens Greenwich Shaker kitchen installation in a 1930s semi-detached property in Earlsdon, Coventry. The project included pre-installation survey, full cabinet installation, quartz worktop co-ordination, integrated appliances, and sign-off snagging." />
+
+          <h2 class="section-h2">The Brief</h2>
+          <p class="body-copy">
+            The client had purchased a full Howdens Greenwich Shaker kitchen through the Howdens depot in Coventry, with 16 units across a U-shaped layout. The kitchen was replacing a tired 1990s fitted kitchen in a 1930s semi-detached in Earlsdon — one of Coventry's most sought-after areas, characterised by good-quality inter-war housing with original features. The client wanted a clean, classic shaker result with a quartz worktop and integrated appliances throughout.
+          </p>
+          <p class="body-copy">
+            The brief included: full strip-out of the existing kitchen, installation of all 16 Howdens units, coordination with a quartz fabricator for a Bianco Drift quartz worktop, positioning and integration of a Bosch single oven, warming drawer, induction hob, and fully integrated dishwasher, full door and drawer alignment, plinth, cornice and pelmet installation, and a thorough snagging sign-off.
+          </p>
+
+          <h2 class="section-h2">The Survey</h2>
+          <p class="body-copy">
+            The pre-installation survey was carried out by Pindi Sahota approximately two weeks before the installation date. The survey identified three factors that needed planning around before work began.
+          </p>
+          <p class="body-copy">
+            First, the floor had a gradient of 18mm from the back wall to the front of the room — a common feature in 1930s properties where the original floor screeds have settled unevenly over decades. This gradient required careful use of leg adjusters across the base run and a packing strategy at the back wall to maintain a level top datum. Without this adjustment, the worktop would visibly tilt toward the window.
+          </p>
+          <p class="body-copy">
+            Second, the chimney breast on the back wall was 25mm out of plumb — projecting slightly more at ceiling height than at floor level. The tall housing unit adjacent to the chimney breast needed a scribed filler panel to close the gap at the top and create a clean line. This scribing detail was noted at survey stage and factored into both the programme and the fixed price.
+          </p>
+          <p class="body-copy">
+            Third, the existing waste pipe outlet was positioned 200mm to the right of the planned sink base position. The client's plumber was advised of this at survey stage and carried out the pipe relocation during first-fix, two days before installation began.
+          </p>
+
+          <h2 class="section-h2">The Installation — Five-Day Programme</h2>
+          <p class="body-copy">
+            <strong>Day 1:</strong> The existing kitchen was stripped out and the carcasses, doors and panels removed. Floor protection was laid across all access routes. The floor gradient was assessed with a laser level across the full footprint and leg adjustment strategy confirmed. Base run wall marking completed. Primary base run — sink base, three base units, and the corner unit — positioned, levelled and fixed. Leg adjusters set to compensate for the floor gradient.
+          </p>
+          <p class="body-copy">
+            <strong>Day 2:</strong> Secondary base run completed including the pull-out larder unit and the dishwasher housing. All base units checked across their top faces with a straight-edge to confirm a consistent level plane. Tall housing units for the oven, warming drawer and integrated fridge-freezer positioned and fixed. The housing unit adjacent to the chimney breast fitted with the scribed filler panel — measured, transferred to the panel, cut and fitted to close against the chimney breast face cleanly.
+          </p>
+          <p class="body-copy">
+            <strong>Day 3:</strong> All wall units installed using Howdens' wall fixing system. Units hung, levelled, and adjusted for consistent horizontal alignment. Positions of under-cabinet lighting brackets confirmed with the client for the electrician's second-fix visit. Worktop — quartz Bianco Drift — templated by the specialist fabricator in the afternoon. Fabrication lead time of 8 working days begins.
+          </p>
+          <p class="body-copy">
+            <strong>Day 4:</strong> All cabinet doors hung on Blum CLIP top hinges. Initial alignment pass completed. Integrated appliances offered up and positioned in housing units — oven and warming drawer checked for correct dimension fit, dishwasher positioned and levelled. Drawer fronts fitted. Full door and drawer alignment completed — every door checked with a spirit level and by eye for consistent reveals.
+          </p>
+          <p class="body-copy">
+            <strong>Day 5:</strong> Plinths measured, cut and clipped to all base runs. Cornice and pelmet measured, mitre-cut and fixed — the U-shaped layout required three internal and two external corners, all cut and fitted to produce a tight, gap-free profile. Full snagging walkthrough with the client. Two minor alignment items noted — one wall unit door fractionally high, one base unit drawer front with a small misalignment — both adjusted and re-checked on the day. Client sign-off completed.
+          </p>
+
+          <h2 class="section-h2">Return Visit — Quartz Worktop</h2>
+          <p class="body-copy">
+            Eight working days after templating, the Bianco Drift quartz worktops were delivered and fitted by the fabricator. Pindi attended on the same day to assist with fitting the upstand sections and to brief the client's plumber on the second-fix requirements. The plumber connected the undermount sink and the integrated dishwasher that afternoon. The client's electrician completed under-cabinet lighting connection and the hob circuit the following day.
+          </p>
+
+          <h2 class="section-h2">Challenges Encountered</h2>
+          <p class="body-copy">
+            The chimney breast scribing was the most technically involved element of this project. The chimney breast face was not flat — it had a slight curve at ceiling height where the original plaster had been applied in layers over decades. The filler panel needed two scribing passes to achieve a tight fit across the full height without any visible gap.
+          </p>
+          <p class="body-copy">
+            The quartz templating timing also required careful coordination. The fabricator attended on Day 3 (after wall units were installed but before doors were hung), which was slightly earlier in the programme than ideal — templating works best with doors in place to confirm the reveal at the worktop front. In this case, Pindi provided the fabricator with precise confirm measurements for the front edge and the result was accurate.
+          </p>
+
+          <h2 class="section-h2">The Outcome</h2>
+          <p class="body-copy">
+            The finished kitchen is a strong example of what the Howdens Greenwich Shaker range achieves in the right property. The U-shaped layout makes excellent use of the available space. The Bianco Drift quartz provides a clean, contemporary contrast to the painted shaker doors without competing with the period character of the room. Integrated appliances throughout give the kitchen a streamlined, uncluttered appearance.
+          </p>
+          <p class="body-copy">
+            The client was particularly pleased with the chimney breast detail — a feature that many fitters either bodge or suggest hiding. The scribed panel closes cleanly, and the chimney breast reads as a deliberate architectural feature rather than a problem. The door and drawer alignment across the full 16-unit kitchen is consistent and precise, which on a painted shaker style is immediately apparent in the quality of the result.
+          </p>
+
+          <h2 class="section-h2">Project FAQs</h2>
+          <FAQ items={faqs} />
+
+          <InternalLinks
+            heading="Related Pages"
+            links={[
+              { label: "Howdens Kitchen Installation", href: "/retailers/howdens/", description: "Our independent Howdens fitting service." },
+              { label: "Earlsdon, Coventry", href: "/areas/earlsdon/", description: "Kitchen installation in Earlsdon and CV5." },
+              { label: "Book a Survey", href: "/survey/", description: "£195 pre-installation survey, credited back on booking." },
+            ]}
+          />
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <CTA
+    heading="Planning a Howdens Kitchen in Coventry or Warwickshire?"
+    subtext="Book a pre-installation survey and receive a written fixed price within 24 hours. Survey fee £195, credited back on booking."
+    primaryLabel="Book Your Survey"
+    primaryHref="/survey/"
+    secondaryLabel="Call 07399 651836"
+    secondaryHref="tel:07399651836"
+    dark={true}
+  />
+
+  <Footer slot="footer" />
+  <StickyMobileCTA slot="sticky-cta" />
+</Base>
+
+<style>
+  .project-layout {
+    max-width: 52rem;
+  }
+  .project-h1 {
+    font-size: clamp(1.625rem, 3vw, 2.5rem);
+    font-weight: 800;
+    color: var(--navy);
+    letter-spacing: -0.02em;
+    margin-bottom: 1.25rem;
+    line-height: 1.2;
+  }
+  .project-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.625rem;
+    margin-bottom: 1.5rem;
+  }
+  .meta-item {
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    border: 1.5px solid #E5E7EB;
+    border-radius: 0.5rem;
+    padding: 0.625rem 0.875rem;
+    min-width: 7rem;
+  }
+  .meta-label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--teal);
+    margin-bottom: 0.25rem;
+  }
+  .meta-value {
+    font-size: 0.9375rem;
+    font-weight: 600;
+    color: var(--charcoal);
+  }
+  .section-h2 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--charcoal);
+    margin-top: 2rem;
+    margin-bottom: 0.75rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--teal);
+    display: inline-block;
+  }
+  .body-copy {
+    font-size: 0.9375rem;
+    line-height: 1.75;
+    color: var(--text-soft);
+    margin-bottom: 1rem;
+  }
+  .body-copy strong {
+    color: var(--charcoal);
+  }
+</style>

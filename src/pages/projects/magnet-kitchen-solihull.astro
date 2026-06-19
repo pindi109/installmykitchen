@@ -1,0 +1,230 @@
+---
+import Base from "../../layouts/Base.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import StickyMobileCTA from "../../components/StickyMobileCTA.astro";
+import Breadcrumbs from "../../components/Breadcrumbs.astro";
+import AnswerBlock from "../../components/AnswerBlock.astro";
+import FAQ from "../../components/FAQ.astro";
+import InternalLinks from "../../components/InternalLinks.astro";
+import CTA from "../../components/CTA.astro";
+
+const title = "Magnet Kitchen Installation — Solihull | Install My Kitchen";
+const description = "20-unit Magnet Belgravia painted shaker kitchen in a 1960s detached in Solihull. Painted in-frame style doors, granite worktops, and a large range cooker. 6 days.";
+const canonical = "https://www.installmykitchen.co.uk/projects/magnet-kitchen-solihull/";
+
+const projectMeta = [
+  { label: "Location", value: "Solihull (B91)" },
+  { label: "Kitchen", value: "Magnet Belgravia Painted" },
+  { label: "Units", value: "20" },
+  { label: "Duration", value: "6 days" },
+  { label: "Worktop", value: "Granite" },
+];
+
+const faqs = [
+  {
+    q: "Does Install My Kitchen cover Solihull?",
+    a: "Yes. Install My Kitchen is based in Coundon, Coventry (CV6 2AH) and covers Solihull (B91, B92, B93) as part of our standard Warwickshire and West Midlands coverage area. Call 07399 651836 or fill in the enquiry form to check availability for your postcode.",
+  },
+  {
+    q: "Why does a painted shaker kitchen require more precise installation?",
+    a: "Painted shaker doors — particularly in-frame or in-frame style designs like Magnet Belgravia — have very visible door faces with consistent painted reveals. Any misalignment of doors or drawer fronts shows immediately as an uneven gap around the shaker profile. The alignment standard required for a painted shaker kitchen is higher than for a woodgrain or textured finish, where minor variations are less visible.",
+  },
+  {
+    q: "What are the installation requirements for a range cooker?",
+    a: "A range cooker requires a dedicated gap in the base unit run — the gap must be precisely sized to the cooker's declared width (typically 900mm or 1000mm for a domestic range). The units flanking the range must be fixed and level before the cooker position is set. The gas supply (if applicable) must be positioned to avoid the cooker's internal plumbing. The cooker housing is typically a freestanding space rather than a housing unit — the cooker sits in the gap and is connected by a flexible gas connector.",
+  },
+  {
+    q: "How is a granite worktop co-ordinated with a range cooker installation?",
+    a: "Granite worktops are templated after the base units are in place but before the range cooker is positioned permanently. The worktop sections run up to each side of the cooker gap, with a small overhang beyond the unit faces. The range cooker sits slightly forward of the worktop line. On this project, the granite sections were fitted on Day 9 (after fabrication), and the range cooker was connected by the Gas Safe engineer on Day 10.",
+  },
+];
+---
+
+<Base title={title} description={description} canonical={canonical}>
+  <Header slot="header" />
+
+  <div class="container py-4">
+    <Breadcrumbs
+      items={[
+        { label: "Projects", href: "/projects/" },
+        { label: "Magnet Kitchen — Solihull", href: "/projects/magnet-kitchen-solihull/" },
+      ]}
+    />
+  </div>
+
+  <section class="section" style="background: var(--bg-light);">
+    <div class="container">
+      <div class="project-layout">
+
+        <div class="project-main">
+          <h1 class="project-h1">Magnet Kitchen Installation in Solihull</h1>
+
+          <div class="project-meta">
+            {projectMeta.map((item) => (
+              <div class="meta-item">
+                <span class="meta-label">{item.label}</span>
+                <span class="meta-value">{item.value}</span>
+              </div>
+            ))}
+          </div>
+
+          <AnswerBlock answer="A 20-unit Magnet Belgravia painted shaker kitchen in a detached 1960s property in Solihull. The project featured painted in-frame style doors requiring precise alignment, granite worktops, and a large range cooker." />
+
+          <h2 class="section-h2">The Brief</h2>
+          <p class="body-copy">
+            The clients were undertaking a complete kitchen refurbishment in a detached 1960s property in Solihull (B91). The existing kitchen was a 1990s-era fitted kitchen in poor condition — tired units, a dated layout, and a worktop that had been repaired several times. The clients had chosen a Magnet Belgravia Painted kitchen in Ivory — a classic painted shaker design with a consistent, clean aesthetic that works particularly well in detached properties of the mid-century period.
+          </p>
+          <p class="body-copy">
+            The 20-unit specification covered an L-shaped layout with a large range cooker housing gap, tall housing for a larder unit and integrated fridge-freezer, and an extensive run of wall units. The clients had specified a Kashmir White granite worktop throughout and a Rangemaster 1000 Dual Fuel range cooker as the centrepiece of the layout. A full utility room kitchen — four base units and four wall units — was also part of the project scope but was treated as a simple separate programme completed on Day 5.
+          </p>
+
+          <h2 class="section-h2">The Survey</h2>
+          <p class="body-copy">
+            The survey of this 1960s detached property revealed conditions more consistent with a well-maintained modern property than the period properties often encountered in Coventry. The floor was level within 6mm across the full kitchen footprint — workable without significant packing. The walls were plumb within 8mm — acceptable for a standard installation without extensive scribing.
+          </p>
+          <p class="body-copy">
+            The key survey findings related to the range cooker gap and the granite coordination. The Magnet plan showed the range cooker gap positioned midway along the back wall base run. Pindi confirmed this position was achievable but noted that the gas inlet was on the opposite side of the room and a longer gas supply pipe would be needed — the client's Gas Safe engineer was briefed accordingly.
+          </p>
+          <p class="body-copy">
+            The granite worktop lead time was also discussed at survey. The clients had chosen a fabricator who quoted a 10-day lead time from templating. This was factored into the programme: templating on Day 4 of the installation, granite delivery on Day 14, second-fix plumbing and gas on Day 15.
+          </p>
+          <p class="body-copy">
+            The utility room was assessed as a straightforward addition — level floor, plumb walls, eight units, no worktop cut-outs. This was allocated to Day 5 of the main installation programme.
+          </p>
+
+          <h2 class="section-h2">The Installation — Six-Day Programme</h2>
+          <p class="body-copy">
+            <strong>Day 1:</strong> Existing kitchen stripped out. The 1960s kitchen had solid concrete floor under a layer of vinyl — confirmed level and solid. Floor protection laid throughout. Wall datum lines marked. Primary back wall base run started: units positioned, levelled and fixed. Range cooker gap marked precisely at 1000mm, with flanking units on both sides fixed to the same datum. First run complete by end of day.
+          </p>
+          <p class="body-copy">
+            <strong>Day 2:</strong> Return leg of L-shaped base run completed. Larder housing unit and fridge-freezer housing unit positioned and fixed. All base units checked across their top faces. The range cooker gap confirmed at 1002mm — 2mm over the Rangemaster's 1000mm declared width, providing the correct installation clearance. Sink base positioned and waste outlet confirmed.
+          </p>
+          <p class="body-copy">
+            <strong>Day 3:</strong> All wall units installed. The Magnet Belgravia wall units use a standard fixing system — fixing brackets fixed directly to the wall, units hung and adjusted individually. All wall units hung, levelled, and horizontal alignment confirmed. The extent of the wall unit run required additional attention at the return corner — the wall units met at an internal corner, requiring careful adjustment of both runs to achieve a consistent horizontal datum at the junction.
+          </p>
+          <p class="body-copy">
+            <strong>Day 4:</strong> Tall housing units completed — larder unit doors hung, fridge-freezer housing doors fitted and checked. Granite fabricator visited in the afternoon to template all worktop areas. The Kashmir White granite run included a long back wall section, the return leg, and a narrow strip at the range cooker gap. Templating completed in approximately 45 minutes. Fabrication begins — 10 working days.
+          </p>
+          <p class="body-copy">
+            <strong>Day 5:</strong> Utility room installation. Four base units and four wall units in a simple linear run. Utility worktop (solid timber, 40mm) measured, cut, and fitted by end of day. Utility room complete.
+          </p>
+          <p class="body-copy">
+            <strong>Day 6 — Main Kitchen Finish:</strong> All Belgravia Painted doors hung on Blum CLIP top hinges across the 20-unit main kitchen. This is the most time-intensive phase of a painted shaker installation — the Belgravia door is a five-piece shaker with painted MDF, and alignment must be extremely consistent. Full alignment pass completed. Drawer fronts fitted and aligned. Plinths cut, mitred at corner, and clipped. Cornice fitted throughout including at the internal corner. Full snagging walkthrough with the clients. Four minor items noted and addressed on the day. Sign-off completed.
+          </p>
+
+          <h2 class="section-h2">Return Visit — Granite and Second-Fix</h2>
+          <p class="body-copy">
+            Ten working days after templating, the Kashmir White granite sections were delivered and fitted by the fabricator. The granite included a full bullnose edge profile throughout and a 100mm upstand. On this project, Pindi attended for the granite installation to ensure the worktop sections were fitted flush against all cabinet faces and to manage the range cooker gap sections, which required careful measurement to maintain the correct gap on both sides.
+          </p>
+          <p class="body-copy">
+            The plumber completed second-fix — connecting the Belfast sink and the dishwasher — that afternoon. The Gas Safe engineer attended the following morning to connect the Rangemaster 1000 range cooker to the extended gas supply run. The range cooker was positioned in the gap, levelled, and connected. The electrician completed the cooker's electrical connection (dual fuel requires a 13A connection for the electronic ignition and clock) at the same visit.
+          </p>
+
+          <h2 class="section-h2">Challenges Encountered</h2>
+          <p class="body-copy">
+            The alignment of the painted Belgravia doors was the primary technical challenge. Painted MDF shaker doors have very tight tolerances — the factory finish is consistent, which means any variation in the fitting reveals is immediately apparent by comparison. A 2mm error on a painted shaker door in Ivory is much more visible than the same 2mm error on a woodgrain or textured door. Pindi spent approximately three hours on the final alignment pass across the 20-unit kitchen to ensure the results were consistent throughout.
+          </p>
+          <p class="body-copy">
+            The range cooker gap coordination also required careful management. The Rangemaster 1000 Dual Fuel has declared dimensions that require the flanking base units to be fixed before the cooker gap width is finalised. A 2mm variation in the gap width — 998mm or 1002mm — has different implications. Too narrow and the cooker sides are scuffed during installation; too wide and there are visible gaps at the cooker sides. The 1002mm gap achieved was within the Rangemaster's tolerance and produced a clean installation.
+          </p>
+
+          <h2 class="section-h2">The Outcome</h2>
+          <p class="body-copy">
+            The Magnet Belgravia Painted kitchen in Ivory is a strong fit for this 1960s Solihull detached. The painted shaker aesthetic sits naturally with the property's period character — more classical than contemporary, with good proportions and a timeless quality. The Kashmir White granite provides warmth and texture without dominating the scheme.
+          </p>
+          <p class="body-copy">
+            The Rangemaster 1000 Dual Fuel is the visual centrepiece of the kitchen and performs this role well. Flanked by base units with matching Belgravia doors, the range cooker sits in its gap cleanly, with consistent reveals on both sides and a granite strip at worktop height running to each flank. The utility room installation — finished and functional within the same six-day programme — completes a project that covers over 600mm of cabinet installation across two rooms.
+          </p>
+
+          <h2 class="section-h2">Project FAQs</h2>
+          <FAQ items={faqs} />
+
+          <InternalLinks
+            heading="Related Pages"
+            links={[
+              { label: "Magnet Kitchen Installation", href: "/retailers/magnet/", description: "Our independent Magnet fitting service." },
+              { label: "Solihull Kitchen Installation", href: "/areas/solihull/", description: "Kitchen fitting in Solihull and B91/B92/B93." },
+              { label: "Book a Survey", href: "/survey/", description: "£195 pre-installation survey, credited back on booking." },
+            ]}
+          />
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <CTA
+    heading="Planning a Magnet Kitchen in Solihull or Warwickshire?"
+    subtext="Book a pre-installation survey and receive a written fixed price within 24 hours. Survey fee £195, credited back on booking."
+    primaryLabel="Book Your Survey"
+    primaryHref="/survey/"
+    secondaryLabel="Call 07399 651836"
+    secondaryHref="tel:07399651836"
+    dark={true}
+  />
+
+  <Footer slot="footer" />
+  <StickyMobileCTA slot="sticky-cta" />
+</Base>
+
+<style>
+  .project-layout {
+    max-width: 52rem;
+  }
+  .project-h1 {
+    font-size: clamp(1.625rem, 3vw, 2.5rem);
+    font-weight: 800;
+    color: var(--navy);
+    letter-spacing: -0.02em;
+    margin-bottom: 1.25rem;
+    line-height: 1.2;
+  }
+  .project-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.625rem;
+    margin-bottom: 1.5rem;
+  }
+  .meta-item {
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    border: 1.5px solid #E5E7EB;
+    border-radius: 0.5rem;
+    padding: 0.625rem 0.875rem;
+    min-width: 7rem;
+  }
+  .meta-label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--teal);
+    margin-bottom: 0.25rem;
+  }
+  .meta-value {
+    font-size: 0.9375rem;
+    font-weight: 600;
+    color: var(--charcoal);
+  }
+  .section-h2 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--charcoal);
+    margin-top: 2rem;
+    margin-bottom: 0.75rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--teal);
+    display: inline-block;
+  }
+  .body-copy {
+    font-size: 0.9375rem;
+    line-height: 1.75;
+    color: var(--text-soft);
+    margin-bottom: 1rem;
+  }
+  .body-copy strong {
+    color: var(--charcoal);
+  }
+</style>

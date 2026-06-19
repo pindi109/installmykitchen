@@ -1,0 +1,230 @@
+---
+import Base from "../../layouts/Base.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import StickyMobileCTA from "../../components/StickyMobileCTA.astro";
+import Breadcrumbs from "../../components/Breadcrumbs.astro";
+import AnswerBlock from "../../components/AnswerBlock.astro";
+import FAQ from "../../components/FAQ.astro";
+import InternalLinks from "../../components/InternalLinks.astro";
+import CTA from "../../components/CTA.astro";
+
+const title = "Wren Kitchen Installation — Kenilworth | Install My Kitchen";
+const description = "22-unit Wren Infinity Plus handleless kitchen in Kenilworth. L-shaped layout with island, Siemens appliances, Dekton worktop. 7-day installation by Install My Kitchen.";
+const canonical = "https://www.installmykitchen.co.uk/projects/wren-kitchen-kenilworth/";
+
+const projectMeta = [
+  { label: "Location", value: "Kenilworth (CV8)" },
+  { label: "Kitchen", value: "Wren Infinity Plus Handleless" },
+  { label: "Units", value: "22" },
+  { label: "Duration", value: "7 days" },
+  { label: "Worktop", value: "Dekton" },
+];
+
+const faqs = [
+  {
+    q: "How does a handleless Wren kitchen affect installation time?",
+    a: "Handleless kitchens require more precise door and drawer alignment than handled styles. In a handleless design, the door face is the only visual element — any misalignment of 2–3mm is immediately visible, especially on a long run or across an island. On this project, the alignment phase took an additional half day compared to an equivalent handled kitchen. The extra time is essential for a high-quality result.",
+  },
+  {
+    q: "What is Dekton worktop and why does it have a long lead time?",
+    a: "Dekton is an ultra-compact surface manufactured by Cosentino, used in kitchens for its hardness, heat resistance, and scratch resistance. It is templated on site after base units are installed, then cut and finished by a specialist fabricator. Dekton has a fabrication lead time of 10–14 working days — slightly longer than standard quartz. This lead time must be planned into the installation programme, particularly when coordinating with second-fix plumbing.",
+  },
+  {
+    q: "How is an island positioned during kitchen installation?",
+    a: "Island positioning is one of the most critical decisions in a kitchen installation. The island must be in the correct position relative to all surrounding elements — providing adequate clearance on all sides (minimum 900mm for circulation, 1200mm where appliances open onto the island), correctly aligned with the main kitchen run, and perfectly level in both directions. On this project, the island position was confirmed against the Wren plan at survey stage and marked on the floor before any units were positioned.",
+  },
+  {
+    q: "Does Install My Kitchen cover Kenilworth?",
+    a: "Yes. Install My Kitchen is based in Coundon, Coventry (CV6 2AH) and covers the full Warwickshire area including Kenilworth (CV8), Royal Leamington Spa, Warwick, Rugby, Nuneaton, Solihull, and Stratford-upon-Avon. Call 07399 651836 to check availability in your area.",
+  },
+];
+---
+
+<Base title={title} description={description} canonical={canonical}>
+  <Header slot="header" />
+
+  <div class="container py-4">
+    <Breadcrumbs
+      items={[
+        { label: "Projects", href: "/projects/" },
+        { label: "Wren Kitchen — Kenilworth", href: "/projects/wren-kitchen-kenilworth/" },
+      ]}
+    />
+  </div>
+
+  <section class="section" style="background: var(--bg-light);">
+    <div class="container">
+      <div class="project-layout">
+
+        <div class="project-main">
+          <h1 class="project-h1">Wren Kitchen Installation in Kenilworth</h1>
+
+          <div class="project-meta">
+            {projectMeta.map((item) => (
+              <div class="meta-item">
+                <span class="meta-label">{item.label}</span>
+                <span class="meta-value">{item.value}</span>
+              </div>
+            ))}
+          </div>
+
+          <AnswerBlock answer="A 22-unit Wren Infinity Plus handleless kitchen in a detached property in Kenilworth. The project featured an L-shaped layout with island, integrated Siemens appliances, and Dekton worktop requiring specialist templating." />
+
+          <h2 class="section-h2">The Brief</h2>
+          <p class="body-copy">
+            The clients were undertaking a full kitchen renovation in a detached four-bedroom property in Kenilworth, Warwickshire. They had designed a 22-unit Wren Infinity Plus handleless kitchen in Nordic White — Wren's most popular handleless finish — with an L-shaped perimeter layout and a central island providing additional preparation space and casual seating for two.
+          </p>
+          <p class="body-copy">
+            The specification included: full Infinity Plus handleless cabinets, integrated Siemens oven and warming drawer, Siemens induction hob, fully integrated Siemens dishwasher, integrated American fridge-freezer, and a Dekton Entzo worktop on both the perimeter run and the island. The project required careful coordination between the installation programme, the Dekton fabricator's visit, and the plumber and electrician for second-fix.
+          </p>
+
+          <h2 class="section-h2">The Survey</h2>
+          <p class="body-copy">
+            The pre-installation survey identified the kitchen as a well-proportioned modern room — a rear extension built in 2018 with level floors and plumb walls — but with several planning requirements that needed confirming before work began.
+          </p>
+          <p class="body-copy">
+            The island position was the most critical survey finding. The clients' Wren plan showed the island 1,050mm from the perimeter base run — adequate for circulation but leaving minimal margin for appliance door clearance. The fridge-freezer, positioned in a tall housing at the end of the L, would open across the front of the island. At survey, Pindi confirmed the clearance was workable but recommended the island be positioned 100mm further from the fridge-freezer housing to give comfortable door clearance. The clients agreed, and the Wren designer updated the plan accordingly before delivery.
+          </p>
+          <p class="body-copy">
+            The Dekton worktop lead time was also confirmed at survey. Dekton fabrication requires 10–14 working days from templating. This meant the worktop templating visit was planned for Day 4 (after all base units were installed and level), with the Dekton delivery and fit expected on Day 18 from the start of installation. The plumber was briefed to attend for second-fix on Day 19.
+          </p>
+
+          <h2 class="section-h2">The Installation — Seven-Day Programme</h2>
+          <p class="body-copy">
+            <strong>Day 1:</strong> Existing kitchen stripped out. Floor level confirmed as consistently level across the full footprint — maximum variation 4mm, within acceptable tolerance. Base run marking completed. Primary L-shaped base run started — long run along the back wall positioned, levelled and fixed. Corner unit installed and checked for square.
+          </p>
+          <p class="body-copy">
+            <strong>Day 2:</strong> Return leg of L-shaped base run completed. All base unit leg adjusters set to produce a consistent level top face. Sink base positioned and waste outlet drop confirmed with plumber drawings. All base units on the perimeter checked and signed off level.
+          </p>
+          <p class="body-copy">
+            <strong>Day 3:</strong> Island base units positioned. Island position confirmed against Wren plan with the updated clearance measurement. Island units levelled — this required levelling in two directions simultaneously, which is more involved than a wall-fixed run. Island base complete and checked. Tall housing units for oven stack and fridge-freezer positioned and fixed.
+          </p>
+          <p class="body-copy">
+            <strong>Day 4:</strong> All wall units installed — fixing positions marked, plugged and drilled, wall units hung and adjusted. Dekton fabricator visited in the afternoon to template all worktop areas — perimeter run and island — from the installed base units. Fabrication lead time of 12 working days begins.
+          </p>
+          <p class="body-copy">
+            <strong>Day 5:</strong> All Infinity Plus handleless doors hung. This is the most time-intensive phase of a handleless installation — each door is set to correct height, correct reveal, and consistent depth. Initial alignment pass completed across the full kitchen. Drawer fronts fitted and initial alignment completed.
+          </p>
+          <p class="body-copy">
+            <strong>Day 6:</strong> Full door and drawer alignment — final pass. Handleless doors require more careful alignment than handled styles because the profile reveals must be identical across the full kitchen for the design to read correctly. Pindi worked systematically from left to right across all three runs, adjusting and checking until the alignment was consistent. Integrated appliance doors (dishwasher, fridge-freezer) aligned with adjacent cabinet doors.
+          </p>
+          <p class="body-copy">
+            <strong>Day 7:</strong> Plinths cut and fitted — perimeter runs and island (four-sided plinth on island). Cornice and pelmet fitted — the L-shaped layout required two external corners and one return. End panels and filler strips. Full snagging walkthrough with the clients. Three minor alignment items addressed on the day. Sign-off completed.
+          </p>
+
+          <h2 class="section-h2">The Return Visit — Dekton Worktop</h2>
+          <p class="body-copy">
+            Twelve working days after templating, the Dekton Entzo worktops were delivered and fitted by the specialist fabricator. The Dekton slabs — 20mm thickness in the Entzo concrete-effect finish — were fitted across the full perimeter run and as a waterfall end panel on the island. Pindi attended on the day to oversee the fit and to manage the integration of the sink into the Dekton.
+          </p>
+          <p class="body-copy">
+            The plumber completed second-fix — connecting the sink and the integrated dishwasher — that afternoon. The electrician attended the following morning to connect the induction hob circuit and the under-cabinet lighting. The kitchen was fully operational within 14 working days of the initial installation programme.
+          </p>
+
+          <h2 class="section-h2">Challenges Encountered</h2>
+          <p class="body-copy">
+            The island alignment was the most complex element of the installation. Positioning a free-standing island unit requires setting out in two dimensions simultaneously — the island must be square to the perimeter run, correctly positioned front-to-back, and perfectly level in both directions. Any error is amplified visually because the island reads from all four sides. The island required approximately an hour of careful setting out before fixing.
+          </p>
+          <p class="body-copy">
+            The Dekton lead time of 12 working days (slightly shorter than the estimated maximum of 14) was well within the planned window. However, coordinating the plumber's second-fix visit with the Dekton delivery required two schedule changes — the plumber's first proposed second-fix date was before Dekton delivery, and the revised date then needed to be confirmed after the actual Dekton delivery was confirmed. This coordination is straightforward when managed proactively and is a standard part of any stone worktop project.
+          </p>
+
+          <h2 class="section-h2">The Outcome</h2>
+          <p class="body-copy">
+            The Wren Infinity Plus in Nordic White reads as a genuinely premium kitchen in a well-proportioned space. The handleless design, when aligned correctly, creates a clean continuous horizontal line across the full width of the kitchen that is visually very striking. The Dekton Entzo worktop — with its concrete-effect grey tones — provides strong contrast with the white cabinetry without being visually dominant.
+          </p>
+          <p class="body-copy">
+            The island functions well both as a preparation surface and as a casual seating area. The clearance from the perimeter run is comfortable for two people to work simultaneously, which was the clients' primary brief. The integrated Siemens appliances — all flush-fitted with matching Infinity doors where applicable — complete the uninterrupted handleless aesthetic.
+          </p>
+
+          <h2 class="section-h2">Project FAQs</h2>
+          <FAQ items={faqs} />
+
+          <InternalLinks
+            heading="Related Pages"
+            links={[
+              { label: "Wren Kitchen Installation", href: "/retailers/wren/", description: "Our independent Wren fitting service." },
+              { label: "Kenilworth Kitchen Installation", href: "/areas/kenilworth/", description: "Kitchen fitting in Kenilworth and CV8." },
+              { label: "Book a Survey", href: "/survey/", description: "£195 pre-installation survey, credited back on booking." },
+            ]}
+          />
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <CTA
+    heading="Planning a Wren Kitchen in Kenilworth or Warwickshire?"
+    subtext="Book a pre-installation survey and receive a written fixed price within 24 hours. Survey fee £195, credited back on booking."
+    primaryLabel="Book Your Survey"
+    primaryHref="/survey/"
+    secondaryLabel="Call 07399 651836"
+    secondaryHref="tel:07399651836"
+    dark={true}
+  />
+
+  <Footer slot="footer" />
+  <StickyMobileCTA slot="sticky-cta" />
+</Base>
+
+<style>
+  .project-layout {
+    max-width: 52rem;
+  }
+  .project-h1 {
+    font-size: clamp(1.625rem, 3vw, 2.5rem);
+    font-weight: 800;
+    color: var(--navy);
+    letter-spacing: -0.02em;
+    margin-bottom: 1.25rem;
+    line-height: 1.2;
+  }
+  .project-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.625rem;
+    margin-bottom: 1.5rem;
+  }
+  .meta-item {
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    border: 1.5px solid #E5E7EB;
+    border-radius: 0.5rem;
+    padding: 0.625rem 0.875rem;
+    min-width: 7rem;
+  }
+  .meta-label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--teal);
+    margin-bottom: 0.25rem;
+  }
+  .meta-value {
+    font-size: 0.9375rem;
+    font-weight: 600;
+    color: var(--charcoal);
+  }
+  .section-h2 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--charcoal);
+    margin-top: 2rem;
+    margin-bottom: 0.75rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--teal);
+    display: inline-block;
+  }
+  .body-copy {
+    font-size: 0.9375rem;
+    line-height: 1.75;
+    color: var(--text-soft);
+    margin-bottom: 1rem;
+  }
+  .body-copy strong {
+    color: var(--charcoal);
+  }
+</style>

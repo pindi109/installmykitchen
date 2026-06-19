@@ -1,0 +1,350 @@
+---
+import Base from "../layouts/Base.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import StickyMobileCTA from "../components/StickyMobileCTA.astro";
+import Breadcrumbs from "../components/Breadcrumbs.astro";
+import AnswerBlock from "../components/AnswerBlock.astro";
+import KeyTakeaway from "../components/KeyTakeaway.astro";
+import FAQ from "../components/FAQ.astro";
+import CTA from "../components/CTA.astro";
+
+const title = "10 Kitchen Installation Mistakes to Avoid | Install My Kitchen";
+const description = "The 10 most common kitchen installation mistakes — and how a pre-installation survey prevents all of them. From Coventry's 30-year kitchen fitting expert.";
+const canonical = "https://www.installmykitchen.co.uk/mistakes/";
+
+const keyTakeaways = [
+  "Skipping the survey is the single most costly mistake",
+  "Not checking your delivery costs days of delay",
+  "Booking trades too late causes the most preventable project failures",
+  "Rushing snagging means living with problems for years",
+];
+
+const faqs = [
+  {
+    q: "What is the most common kitchen installation mistake?",
+    a: "After 30 years in the trade, the single most common and most costly mistake Pindi Sahota sees is skipping the pre-installation survey. Homeowners who proceed without a professional survey regularly encounter problems that a 45-minute visit would have identified and planned around — uneven floors, out-of-plumb walls, service positions in the wrong place, and delivery shortages discovered only on fitting day.",
+  },
+  {
+    q: "How do I avoid choosing the wrong kitchen fitter?",
+    a: "Ask for verifiable references from recent completed projects — not just names but actual addresses you could write to or call. Check that the fitter has demonstrable experience with your chosen retailer's units. Confirm they carry public liability insurance. Be very cautious of fitters offering to start immediately with no survey and no written quote. The cheapest day rate is almost never the best value.",
+  },
+  {
+    q: "Why does worktop templating timing matter so much?",
+    a: "Stone and quartz worktops are templated (measured precisely) by the fabricator after the base units are installed and level, but before the appliances go in. The fabricator then takes 7–10 working days to cut and finish the worktop. During this window, you cannot use the kitchen fully. Failure to account for this window in the programme means the overall project takes longer than expected, and can mean a plumber has to make two separate visits rather than one.",
+  },
+  {
+    q: "Can door and drawer alignment really be left until after installation?",
+    a: "No. Adjusting doors and drawers is part of the installation — it should happen during the final phase of fitting, not as an afterthought. Correctly adjusted Blum or similar hardware takes time to set up properly. A fitter who rushes this stage leaves you with doors that are slightly off, drawers that do not close flush, and a kitchen that looks noticeably cheaper than it actually is.",
+  },
+];
+---
+
+<Base title={title} description={description} canonical={canonical}>
+  <Header slot="header" />
+
+  <section class="page-header" aria-label="Page header">
+    <div class="container">
+      <Breadcrumbs items={[{ label: "Kitchen Installation Mistakes", href: "/mistakes/" }]} />
+      <h1 class="page-h1">10 Kitchen Installation Mistakes to Avoid</h1>
+      <p class="page-sub">Thirty years of installations means knowing exactly where projects go wrong — and how to stop it happening.</p>
+    </div>
+  </section>
+
+  <section class="section" style="background: #fff;" aria-label="Mistakes content">
+    <div class="container">
+      <div class="content-main">
+
+        <AnswerBlock answer="After 30 years installing kitchens across Coventry and Warwickshire, Pindi Sahota has seen every mistake there is. These 10 are the most common — and every single one is preventable with proper planning." />
+
+        <KeyTakeaway points={keyTakeaways} />
+
+        <div class="mistakes-list">
+
+          <div class="mistake-item">
+            <div class="mistake-number" aria-hidden="true">1</div>
+            <div class="mistake-content">
+              <h2 class="mistake-title">Skipping the Pre-Installation Survey</h2>
+              <dl class="mistake-detail">
+                <dt>The Mistake</dt>
+                <dd>Proceeding straight from purchase to installation without a professional site visit to check the room against the plan.</dd>
+                <dt>Why It Happens</dt>
+                <dd>Homeowners assume the retailer's design plan is accurate, or feel that a survey is an unnecessary extra cost on top of what they have already spent.</dd>
+                <dt>What Goes Wrong</dt>
+                <dd>The fitter arrives to find that walls are not where the plan says they are, service connections are in the wrong positions, the floor gradient is too steep for the planned layout, or delivery items are missing. Each of these problems causes delay, extra cost, and in some cases a redesign.</dd>
+                <dt>How to Prevent It</dt>
+                <dd>Book a pre-installation survey. At Install My Kitchen the survey fee is £195 and is credited in full against your installation balance when you confirm your fitting date. It is the single most valuable investment you can make in your kitchen project.</dd>
+              </dl>
+            </div>
+          </div>
+
+          <div class="mistake-item">
+            <div class="mistake-number" aria-hidden="true">2</div>
+            <div class="mistake-content">
+              <h2 class="mistake-title">Not Checking the Delivery Against Your Order</h2>
+              <dl class="mistake-detail">
+                <dt>The Mistake</dt>
+                <dd>Accepting delivery of your kitchen without checking every item against the order list, or leaving damaged items unreported until installation day.</dd>
+                <dt>Why It Happens</dt>
+                <dd>Delivery arrives in many boxes and checking is time-consuming. Homeowners trust that the retailer has packed everything correctly.</dd>
+                <dt>What Goes Wrong</dt>
+                <dd>The fitter begins installation and discovers that two cabinet doors are missing, a larder unit was not included, or a worktop panel arrived cracked. Replacement parts typically take five to seven working days. The fitter's time cannot be held during this wait, and rescheduling is often difficult.</dd>
+                <dt>How to Prevent It</dt>
+                <dd>Set aside two to three hours after delivery to check every item against your order list. Photograph every box before opening and every item of damage before anything is moved. Report shortages and damage to the retailer immediately — not on installation morning.</dd>
+              </dl>
+            </div>
+          </div>
+
+          <div class="mistake-item">
+            <div class="mistake-number" aria-hidden="true">3</div>
+            <div class="mistake-content">
+              <h2 class="mistake-title">Booking Trades Too Late</h2>
+              <dl class="mistake-detail">
+                <dt>The Mistake</dt>
+                <dd>Leaving the booking of plumber, electrician and gas engineer until two or three weeks before installation.</dd>
+                <dt>Why It Happens</dt>
+                <dd>Homeowners focus on the kitchen itself and treat the trades as an afterthought, not realising how quickly availability fills up.</dd>
+                <dt>What Goes Wrong</dt>
+                <dd>Good local tradespeople are booked four to six weeks in advance. Booking late either means accepting whoever is available at short notice (who may not be right for the job) or having to push the installation date back by several weeks.</dd>
+                <dt>How to Prevent It</dt>
+                <dd>Book plumber, electrician and gas engineer at the same time you confirm your kitchen order — at least four to six weeks before your planned installation date. Confirm first-fix and second-fix dates with each trade separately.</dd>
+              </dl>
+            </div>
+          </div>
+
+          <div class="mistake-item">
+            <div class="mistake-number" aria-hidden="true">4</div>
+            <div class="mistake-content">
+              <h2 class="mistake-title">Installing on an Unlevel Floor Without Compensation</h2>
+              <dl class="mistake-detail">
+                <dt>The Mistake</dt>
+                <dd>Beginning cabinet installation without assessing and compensating for floor gradient, particularly in older properties.</dd>
+                <dt>Why It Happens</dt>
+                <dd>Floors often look and feel level to the eye but are not. In Victorian and Edwardian terraces common across Coventry, floor gradients of 15–25mm over a kitchen run are not unusual.</dd>
+                <dt>What Goes Wrong</dt>
+                <dd>Base units fitted to an unlevel floor result in cabinets that are not plumb, drawer fronts that appear to slope, and worktops that visibly tilt. These problems cannot be fixed without stripping out and restarting.</dd>
+                <dt>How to Prevent It</dt>
+                <dd>A spirit level and a long straight-edge should be used across the full floor plane before any cabinets are set. Packing should be used under legs or plinths to establish a true level datum. This step adds time but is non-negotiable for quality results.</dd>
+              </dl>
+            </div>
+          </div>
+
+          <div class="mistake-item">
+            <div class="mistake-number" aria-hidden="true">5</div>
+            <div class="mistake-content">
+              <h2 class="mistake-title">Wrong Service Positions</h2>
+              <dl class="mistake-detail">
+                <dt>The Mistake</dt>
+                <dd>First-fix plumbing and electrical work carried out in the wrong positions, requiring remedial work after cabinets are already in place.</dd>
+                <dt>Why It Happens</dt>
+                <dd>Trades work from an early version of the plan, or interpret the plan differently from the fitter. Without a site coordination meeting, assumptions diverge.</dd>
+                <dt>What Goes Wrong</dt>
+                <dd>The waste pipe outlet is 200mm too far to the left, meaning the sink base unit cannot be positioned as planned. Alternatively, a socket is inside a cabinet run rather than outside it. Correcting service positions after units are in place means partially dismantling the installation — expensive and avoidable.</dd>
+                <dt>How to Prevent It</dt>
+                <dd>Ensure your fitter, plumber and electrician all work from the same version of the kitchen plan, and that the plan clearly marks service positions. A pre-installation survey should identify and document all required service positions in writing before any trade attends.</dd>
+              </dl>
+            </div>
+          </div>
+
+          <div class="mistake-item">
+            <div class="mistake-number" aria-hidden="true">6</div>
+            <div class="mistake-content">
+              <h2 class="mistake-title">Stone Worktop Templating Timing Error</h2>
+              <dl class="mistake-detail">
+                <dt>The Mistake</dt>
+                <dd>Failing to plan for the templating and fabrication lead time for stone or quartz worktops.</dd>
+                <dt>Why It Happens</dt>
+                <dd>Homeowners assume worktops arrive with the kitchen delivery. Stone worktops must be measured from the installed base units and then fabricated — a process that typically takes 7–10 working days.</dd>
+                <dt>What Goes Wrong</dt>
+                <dd>The fitter finishes the base cabinets and the templating company visits, but the homeowner has not allowed time in the programme for fabrication. The plumber cannot complete second-fix until the worktop is in. The kitchen is unusable for an extended period, causing significant frustration.</dd>
+                <dt>How to Prevent It</dt>
+                <dd>Plan the worktop fabrication window explicitly into your project programme. The templating company should be booked before installation starts. Factor 7–10 working days from templating to worktop delivery when setting your second-fix plumber date.</dd>
+              </dl>
+            </div>
+          </div>
+
+          <div class="mistake-item">
+            <div class="mistake-number" aria-hidden="true">7</div>
+            <div class="mistake-content">
+              <h2 class="mistake-title">Rushing Door and Drawer Alignment</h2>
+              <dl class="mistake-detail">
+                <dt>The Mistake</dt>
+                <dd>Completing the installation without fully adjusting and aligning all doors and drawer fronts.</dd>
+                <dt>Why It Happens</dt>
+                <dd>Adjustment is time-consuming and easy to defer. Some fitters also underestimate how much Blum hinges need fine-tuning, particularly on handleless kitchens where alignment is extremely visible.</dd>
+                <dt>What Goes Wrong</dt>
+                <dd>You are left with doors at varying heights, drawer fronts that are not parallel, and reveals that are inconsistent across the kitchen. Once the fitter has left, returning to adjust is difficult to schedule and easy to deprioritise — meaning you live with imperfect alignment for years.</dd>
+                <dt>How to Prevent It</dt>
+                <dd>Insist on a full door and drawer alignment check as part of the installation scope. Walk through every door and drawer with the fitter on the final day before sign-off. Allow the fitter adequate time for this — it is not something to rush in the last thirty minutes of a long day.</dd>
+              </dl>
+            </div>
+          </div>
+
+          <div class="mistake-item">
+            <div class="mistake-number" aria-hidden="true">8</div>
+            <div class="mistake-content">
+              <h2 class="mistake-title">Not Protecting Floors and Adjacent Rooms</h2>
+              <dl class="mistake-detail">
+                <dt>The Mistake</dt>
+                <dd>Beginning installation without laying floor protection throughout all access routes and the kitchen itself.</dd>
+                <dt>Why It Happens</dt>
+                <dd>Homeowners forget to buy protection, or assume the fitter will bring their own. Fitters vary — some bring dust sheets, others expect the homeowner to provide them.</dd>
+                <dt>What Goes Wrong</dt>
+                <dd>Heavy units dragged across unprotected hardwood or tiled floors leave marks. Dust from cutting spreads into adjacent rooms, settling on furniture and soft furnishings. Hallway carpets are particularly vulnerable to repeated foot traffic during a long installation.</dd>
+                <dt>How to Prevent It</dt>
+                <dd>Purchase heavy-duty dust sheets before the installation starts and confirm with your fitter who is responsible for laying them. Cover all access routes from the front or back door to the kitchen before any deliveries arrive.</dd>
+              </dl>
+            </div>
+          </div>
+
+          <div class="mistake-item">
+            <div class="mistake-number" aria-hidden="true">9</div>
+            <div class="mistake-content">
+              <h2 class="mistake-title">Signing Off Without Proper Snagging</h2>
+              <dl class="mistake-detail">
+                <dt>The Mistake</dt>
+                <dd>Accepting the completed kitchen without systematically checking every element before the fitter leaves for the final time.</dd>
+                <dt>Why It Happens</dt>
+                <dd>Homeowners are excited about the finished kitchen, tired after a disruptive project, or feel awkward about asking the fitter to fix things. Some fitters take advantage of this and leave before problems are identified.</dd>
+                <dt>What Goes Wrong</dt>
+                <dd>Snagging items — a slightly misaligned door, a plinth gap, a silicone bead that was not finished neatly, a drawer that catches — become your problem once you have signed off. Calling the fitter back after final payment is much more difficult than asking them to attend to something before they leave.</dd>
+                <dt>How to Prevent It</dt>
+                <dd>Allow at least an hour on the final day for a thorough snagging walkthrough with the fitter. Open every door and drawer. Check every joint and seal. Look along the top of wall units. Do not sign off and do not pay the final balance until every snag has been addressed or agreed in writing.</dd>
+              </dl>
+            </div>
+          </div>
+
+          <div class="mistake-item">
+            <div class="mistake-number" aria-hidden="true">10</div>
+            <div class="mistake-content">
+              <h2 class="mistake-title">Choosing the Cheapest Fitter Without Checking Credentials</h2>
+              <dl class="mistake-detail">
+                <dt>The Mistake</dt>
+                <dd>Selecting a kitchen fitter based solely on price, without verifying experience, references or insurance.</dd>
+                <dt>Why It Happens</dt>
+                <dd>Kitchen installation is a significant cost. The temptation to save several hundred pounds on the fitting charge is understandable. An attractive price from someone who seems confident can be persuasive.</dd>
+                <dt>What Goes Wrong</dt>
+                <dd>An inexperienced or uninsured fitter may damage units, produce visible alignment problems, fit worktops incorrectly, or simply walk away mid-installation. Rectification work typically costs more than the saving on the original fitting charge. Without insurance, you have no recourse for property damage.</dd>
+                <dt>How to Prevent It</dt>
+                <dd>Ask every fitter you consider for references from completed projects — not just a testimonial but an actual address you can check. Ask for evidence of public liability insurance. Be suspicious of very low day rates combined with vague answers about experience. A 30-year track record and provable references should matter more than saving £200 on the fitting charge.</dd>
+              </dl>
+            </div>
+          </div>
+
+        </div>
+
+        <h2 class="section-h2">Frequently Asked Questions</h2>
+        <FAQ items={faqs} />
+
+      </div>
+    </div>
+  </section>
+
+  <CTA
+    dark={true}
+    heading="Avoid Every One of These Mistakes"
+    subtext="A pre-installation survey from Install My Kitchen identifies and plans around every one of these problems before work begins. £195, credited back on booking."
+    primaryLabel="Book Your Survey"
+    primaryHref="/survey/"
+    secondaryLabel="Call 07399 651836"
+    secondaryHref="tel:07399651836"
+  />
+
+  <Footer slot="footer" />
+  <StickyMobileCTA slot="sticky-cta" />
+</Base>
+
+<style>
+  .page-header {
+    background: var(--hero-gradient);
+    padding: 3rem 0 3.5rem;
+  }
+  .page-h1 {
+    font-size: clamp(1.625rem, 3vw, 2.5rem);
+    font-weight: 800;
+    color: #fff;
+    letter-spacing: -0.02em;
+    margin-top: 0.75rem;
+    margin-bottom: 0.75rem;
+  }
+  .page-sub {
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 1.0625rem;
+    line-height: 1.6;
+    max-width: 560px;
+  }
+  .content-main {
+    max-width: 52rem;
+  }
+  .section-h2 {
+    font-size: 1.375rem;
+    font-weight: 700;
+    color: var(--charcoal);
+    margin-top: 2.25rem;
+    margin-bottom: 0.875rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--teal);
+    display: inline-block;
+  }
+  .mistakes-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    margin: 1.5rem 0 2.5rem;
+  }
+  .mistake-item {
+    display: flex;
+    gap: 1.25rem;
+    align-items: flex-start;
+    padding: 1.5rem;
+    border: 1.5px solid #E5E7EB;
+    border-radius: 0.75rem;
+    background: #FAFAFA;
+  }
+  .mistake-number {
+    flex-shrink: 0;
+    width: 2.5rem;
+    height: 2.5rem;
+    background: var(--teal);
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.0625rem;
+    font-weight: 800;
+    margin-top: 0.125rem;
+  }
+  .mistake-content {
+    flex: 1;
+    min-width: 0;
+  }
+  .mistake-title {
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: var(--charcoal);
+    margin-bottom: 0.875rem;
+    line-height: 1.3;
+  }
+  .mistake-detail {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 0.375rem 0.875rem;
+    margin: 0;
+  }
+  .mistake-detail dt {
+    font-size: 0.8125rem;
+    font-weight: 700;
+    color: var(--teal);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    padding-top: 0.2rem;
+    white-space: nowrap;
+  }
+  .mistake-detail dd {
+    font-size: 0.9375rem;
+    line-height: 1.65;
+    color: var(--text-soft);
+    margin: 0;
+  }
+</style>

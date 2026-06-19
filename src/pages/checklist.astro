@@ -1,0 +1,210 @@
+---
+import Base from "../layouts/Base.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import StickyMobileCTA from "../components/StickyMobileCTA.astro";
+import Breadcrumbs from "../components/Breadcrumbs.astro";
+import AnswerBlock from "../components/AnswerBlock.astro";
+import KeyTakeaway from "../components/KeyTakeaway.astro";
+import FAQ from "../components/FAQ.astro";
+import InternalLinks from "../components/InternalLinks.astro";
+import CTA from "../components/CTA.astro";
+
+const title = "Kitchen Installation Checklist 2025 | Install My Kitchen";
+const description = "Complete kitchen installation checklist for homeowners. What to do 4 weeks before, 1 week before, the day before, and on installation day.";
+const canonical = "https://www.installmykitchen.co.uk/checklist/";
+
+const keyTakeaways = [
+  "Book plumber, electrician and gas engineer at least 4 weeks before",
+  "Check full delivery against your order before installation day",
+  "Complete all first-fix services before the fitter arrives",
+  "Protect floors in all access routes from day one",
+];
+
+const faqs = [
+  {
+    q: "Do I need to empty the kitchen before the fitter arrives?",
+    a: "Yes. All cupboards, drawers and shelves should be completely cleared before installation day. The fitter needs full access to strip out the old kitchen and begin fitting immediately. Leaving this until the morning of installation causes unnecessary delays.",
+  },
+  {
+    q: "When should I book the plumber and electrician?",
+    a: "Book your plumber, electrician and gas engineer at least four to six weeks before your planned installation date. Good local tradespeople are in high demand, and leaving trades booking until two or three weeks before often results in either delays or having to accept whoever is available rather than whoever is best.",
+  },
+  {
+    q: "What is first-fix plumbing and why does it matter?",
+    a: "First-fix plumbing is the stage where your plumber moves or installs supply pipes and waste runs to the positions required by your new kitchen plan before the units go in. If first-fix work is not completed before your fitter arrives, the installation cannot proceed — units cannot be positioned until services are in the right place.",
+  },
+  {
+    q: "What should I do if my delivery arrives with damaged items?",
+    a: "Photograph every item of damage clearly, note it on the delivery paperwork before the driver leaves, and contact your kitchen retailer immediately. Do not allow installation to begin on cabinets you know are damaged — the fitter cannot be held responsible for units that were damaged before they arrived on site.",
+  },
+];
+---
+
+<Base title={title} description={description} canonical={canonical}>
+  <Header slot="header" />
+
+  <section class="page-header" aria-label="Page header">
+    <div class="container">
+      <Breadcrumbs items={[{ label: "Kitchen Installation Checklist", href: "/checklist/" }]} />
+      <h1 class="page-h1">Kitchen Installation Checklist — Everything You Need to Do</h1>
+      <p class="page-sub">Four phases, from booking trades to installation day — so nothing gets missed.</p>
+    </div>
+  </section>
+
+  <section class="section" style="background: #fff;" aria-label="Checklist content">
+    <div class="container">
+      <div class="content-main">
+
+        <AnswerBlock answer="This complete checklist covers everything homeowners in Coventry and Warwickshire need to prepare for kitchen installation — from booking trades and checking deliveries to protecting your home and arranging temporary facilities." />
+
+        <KeyTakeaway points={keyTakeaways} />
+
+        <h2 class="section-h2">Phase 1: 4–6 Weeks Before Installation</h2>
+        <p class="body-copy">
+          The most important preparation happens in the month before your kitchen arrives. Leave any of these tasks too late and you risk your project stalling before the fitter even steps through the door.
+        </p>
+        <ul class="checklist-list">
+          <li><strong>Book your plumber</strong> — you need a plumber for first-fix (moving supply pipes and waste runs) and second-fix (connecting sink, dishwasher and any other appliances). Book both visits now. Confirm they understand the difference between first-fix and second-fix, and that first-fix must be complete before installation day.</li>
+          <li><strong>Book your electrician</strong> — if any socket positions are moving, or if you are adding under-cabinet lighting, a cooker circuit or an island with power, first-fix electrical work must also be complete before fitting begins. Book now.</li>
+          <li><strong>Book your gas engineer (if applicable)</strong> — if your hob or range cooker runs on gas, a Gas Safe registered engineer must cap off and reposition the gas supply to the correct location before installation. This cannot be left to the day.</li>
+          <li><strong>Confirm your delivery date with the retailer</strong> — check that the scheduled delivery date gives you at least one full clear day before installation begins, so you have time to check the delivery against your order and report any damage or shortages.</li>
+          <li><strong>Arrange skip or clearance if needed</strong> — if you are having the old kitchen stripped out, check whether your fitter includes disposal. If not, arrange a skip or a clearance service independently. Many properties in Coventry require a permit for a skip on the public highway — allow time to apply.</li>
+          <li><strong>Plan your temporary kitchen</strong> — you will be without a kitchen for at least three to ten days depending on your project size. Arrange a microwave, kettle and access to a sink (a bathroom sink works). Order in, or plan simple cold meals. Do not underestimate how disruptive this period is.</li>
+          <li><strong>Notify your neighbours</strong> — deliveries, skips and parking may affect neighbours. A quick note or conversation prevents unnecessary friction on the day.</li>
+        </ul>
+
+        <h2 class="section-h2">Phase 2: 1–2 Weeks Before Installation</h2>
+        <p class="body-copy">
+          As the installation date approaches, your focus shifts from booking to confirming. Assumptions made weeks ago need to be verified.
+        </p>
+        <ul class="checklist-list">
+          <li><strong>Chase all trades to confirm their dates</strong> — do not assume tradespeople who quoted six weeks ago are still available. Call or message each one to confirm the exact date and time they will attend. First-fix must happen before your fitter arrives; second-fix must happen within one to two days after the fitter finishes.</li>
+          <li><strong>Check the delivery is booked and on schedule</strong> — call your retailer to confirm the delivery date and your time window. Ask them to confirm that all items are in stock and ready for despatch. Delivery failures are the single most common cause of installation delays.</li>
+          <li><strong>Empty all cupboards in the kitchen</strong> — start decanting crockery, pots, food and any stored items into another room. Do not leave this until the night before. Box items carefully and label them so re-stocking after completion is straightforward.</li>
+          <li><strong>Buy dust sheets and floor protection</strong> — purchase or hire heavy-duty dust sheets for all access routes. A kitchen installation creates a significant amount of dust and debris; unprotected floors will be marked or damaged. Have these ready before the first delivery arrives.</li>
+          <li><strong>Arrange parking for the fitter</strong> — confirm that the fitter's van can park close to your property. If you live in a permit zone, check whether a visitor permit or temporary suspension is needed. In some Coventry streets, parking is limited and the fitter needs to be within a reasonable distance of the front door.</li>
+          <li><strong>Confirm the survey findings with your fitter</strong> — if a pre-installation survey was carried out, review the findings document with your fitter. Check that any items noted — such as a floor gradient, an out-of-plumb wall or a service position quirk — have been planned for.</li>
+        </ul>
+
+        <h2 class="section-h2">Phase 3: The Day Before Installation</h2>
+        <p class="body-copy">
+          The evening before your installation begins, work through this final preparation list so that day one starts cleanly.
+        </p>
+        <ul class="checklist-list">
+          <li><strong>Confirm the delivery is complete</strong> — if your kitchen was delivered to your home in advance, spend time checking every item against your order. Open boxes and inspect doors, worktops and panels for damage. Photograph everything you find. Report any issues to the retailer this evening — not on installation day morning when the fitter is standing waiting.</li>
+          <li><strong>Photograph existing services</strong> — take clear photographs of where existing plumbing and electrical sockets are positioned in your current kitchen. This record is useful if questions arise during the installation and provides a reference point if anything is disputed later.</li>
+          <li><strong>Lay floor protection in all access routes</strong> — lay dust sheets from the front or back door all the way through to the kitchen. Replace any existing rugs or mats with the dust sheets. Pay particular attention to any carpeted hallways — these are the most vulnerable to damage from repeated foot traffic carrying heavy units.</li>
+          <li><strong>Clear the access route into the kitchen</strong> — remove any furniture, bicycles, coat hooks or other items that narrow the access route. Units are large and awkward; fitters need a clear path.</li>
+          <li><strong>Confirm parking for the next morning</strong> — if parking is competitive on your street, consider moving your own vehicle the night before to secure a good spot for the fitter's van.</li>
+          <li><strong>Locate your stopcock, consumer unit and gas meter</strong> — know exactly where your water stopcock, electricity consumer unit and gas meter are before the morning. The fitter or your plumber may need to isolate services at the start of day one.</li>
+        </ul>
+
+        <h2 class="section-h2">Phase 4: Installation Day</h2>
+        <p class="body-copy">
+          On installation day, your main role is to stay available, keep the site clear, and let the fitter work without unnecessary interruption.
+        </p>
+        <ul class="checklist-list">
+          <li><strong>Turn off water, gas and electricity at the mains as agreed</strong> — your plumber or fitter will advise which services need isolating before they begin. Do this before they arrive if possible. Know where each isolation point is and confirm it is accessible.</li>
+          <li><strong>Keep children and pets out of the work area</strong> — a kitchen installation involves sharp tools, heavy units, off-cuts of worktop and electrical work. For safety, keep children and pets in a separate part of the house or away from the property entirely during the working day.</li>
+          <li><strong>Be contactable throughout the day</strong> — stay in the property or close by. Questions will arise about door handle positions, the direction a drawer opens, or where a light switch should end up. Decisions made without your input may not reflect your preferences. Be available to answer promptly.</li>
+          <li><strong>Do not ask the fitter to make changes to the plan without discussion</strong> — changes requested mid-installation can disrupt the programme significantly. If something occurs to you during the day, raise it at a natural break and discuss the implications before asking the fitter to proceed differently.</li>
+          <li><strong>Prepare food and drinks for the fitter</strong> — kitchen fitters work long hours. Offering tea or coffee at the start of the day and at regular intervals is standard courtesy and creates a positive working atmosphere.</li>
+          <li><strong>Complete snagging properly before sign-off</strong> — at the end of the installation, walk through the kitchen with the fitter and note anything that needs attention. Check every door for alignment, every drawer for smooth operation, every joint for tightness. Do not sign off until you are satisfied. A good fitter will welcome a thorough snagging process.</li>
+        </ul>
+
+        <h2 class="section-h2">Frequently Asked Questions</h2>
+        <FAQ items={faqs} />
+
+        <InternalLinks
+          heading="Related Pages"
+          links={[
+            { label: "Book a Survey", href: "/survey/", description: "£195 pre-installation survey, credited back on booking." },
+            { label: "Kitchen Installation Guides", href: "/guides/", description: "In-depth guides for every stage of your project." },
+            { label: "Our Services", href: "/services/", description: "Full kitchen fitting services across Coventry and Warwickshire." },
+            { label: "Contact Us", href: "/contact/", description: "Book a survey or ask a question." },
+          ]}
+        />
+
+      </div>
+    </div>
+  </section>
+
+  <CTA
+    dark={true}
+    heading="Ready to Plan Your Kitchen Installation?"
+    subtext="Book a pre-installation survey across Coventry and Warwickshire. Fixed price guaranteed. Survey fee of £195 credited back on booking."
+    primaryLabel="Book Your Survey"
+    primaryHref="/survey/"
+    secondaryLabel="Call 07399 651836"
+    secondaryHref="tel:07399651836"
+  />
+
+  <Footer slot="footer" />
+  <StickyMobileCTA slot="sticky-cta" />
+</Base>
+
+<style>
+  .page-header {
+    background: var(--hero-gradient);
+    padding: 3rem 0 3.5rem;
+  }
+  .page-h1 {
+    font-size: clamp(1.625rem, 3vw, 2.5rem);
+    font-weight: 800;
+    color: #fff;
+    letter-spacing: -0.02em;
+    margin-top: 0.75rem;
+    margin-bottom: 0.75rem;
+  }
+  .page-sub {
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 1.0625rem;
+    line-height: 1.6;
+    max-width: 560px;
+  }
+  .content-main {
+    max-width: 52rem;
+  }
+  .section-h2 {
+    font-size: 1.375rem;
+    font-weight: 700;
+    color: var(--charcoal);
+    margin-top: 2.25rem;
+    margin-bottom: 0.875rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--teal);
+    display: inline-block;
+  }
+  .body-copy {
+    font-size: 0.9375rem;
+    line-height: 1.75;
+    color: var(--text-soft);
+    margin-bottom: 1rem;
+  }
+  .checklist-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.875rem;
+  }
+  .checklist-list li {
+    font-size: 0.9375rem;
+    line-height: 1.7;
+    color: var(--text-soft);
+    padding-left: 1.5rem;
+    position: relative;
+  }
+  .checklist-list li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--teal);
+    font-weight: 700;
+  }
+  .checklist-list li strong {
+    color: var(--charcoal);
+  }
+</style>

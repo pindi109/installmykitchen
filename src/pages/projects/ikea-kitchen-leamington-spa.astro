@@ -1,0 +1,222 @@
+---
+import Base from "../../layouts/Base.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import StickyMobileCTA from "../../components/StickyMobileCTA.astro";
+import Breadcrumbs from "../../components/Breadcrumbs.astro";
+import AnswerBlock from "../../components/AnswerBlock.astro";
+import FAQ from "../../components/FAQ.astro";
+import InternalLinks from "../../components/InternalLinks.astro";
+import CTA from "../../components/CTA.astro";
+
+const title = "IKEA Kitchen Installation — Leamington Spa | Install My Kitchen";
+const description = "18-unit IKEA METOD / VOXTORP kitchen installation in a Victorian mid-terrace in Royal Leamington Spa. Walls 40mm out of plumb and uneven stone floor — period property specialist.";
+const canonical = "https://www.installmykitchen.co.uk/projects/ikea-kitchen-leamington-spa/";
+
+const projectMeta = [
+  { label: "Location", value: "Leamington Spa (CV31)" },
+  { label: "Kitchen", value: "IKEA METOD / VOXTORP" },
+  { label: "Units", value: "18" },
+  { label: "Duration", value: "6 days" },
+  { label: "Doors", value: "VOXTORP Matt White" },
+];
+
+const faqs = [
+  {
+    q: "Can IKEA METOD be installed in a Victorian property?",
+    a: "Yes — IKEA METOD works well in Victorian and Edwardian properties, though the installation requires additional care to compensate for out-of-plumb walls, uneven floors, and the irregular shapes common in period kitchens. An experienced fitter who has worked in period properties is essential — the techniques for scribing, packing and accommodating old building fabric are different from those used in modern new-builds.",
+  },
+  {
+    q: "What does it mean when a wall is '40mm out of plumb'?",
+    a: "A wall that is 40mm out of plumb deviates 40mm from true vertical over its height — typically over a 2.4m wall height. This means the top of the wall is 40mm further in (or further out) than the bottom. For kitchen installation, this means any end panel closing against that wall must be scribed — shaped precisely to follow the wall's actual profile — rather than cut square. Scribing requires skill and patience; a poorly scribed panel leaves a visible gap.",
+  },
+  {
+    q: "What is an original stone floor in a Victorian kitchen and why is it challenging?",
+    a: "Many Victorian mid-terraces in Leamington Spa have original stone or quarry tile floors in the kitchen, often laid directly on compacted earth without a screed. Over 150 years these floors settle unevenly, creating gradients and undulations that no amount of leg-adjuster setting can fully compensate for. In this project, the floor had a 35mm gradient from the window end to the back door end. Careful packing was used under the lowest cabinets to establish a level datum without the units rocking on the uneven stone surface.",
+  },
+  {
+    q: "Does IKEA METOD require assembly before installation?",
+    a: "Yes. IKEA METOD carcasses are supplied in flat-pack form and must be assembled on site before they can be positioned and fixed. This assembly stage typically adds one to two days to the installation programme compared to pre-assembled rigid kitchens like Howdens or Wren. For this 18-unit project, Day 1 was dedicated entirely to carcass assembly before the fitting programme began on Day 2.",
+  },
+];
+---
+
+<Base title={title} description={description} canonical={canonical}>
+  <Header slot="header" />
+
+  <div class="container py-4">
+    <Breadcrumbs
+      items={[
+        { label: "Projects", href: "/projects/" },
+        { label: "IKEA Kitchen — Leamington Spa", href: "/projects/ikea-kitchen-leamington-spa/" },
+      ]}
+    />
+  </div>
+
+  <section class="section" style="background: var(--bg-light);">
+    <div class="container">
+      <div class="project-layout">
+
+        <div class="project-main">
+          <h1 class="project-h1">IKEA METOD Kitchen Installation in Leamington Spa</h1>
+
+          <div class="project-meta">
+            {projectMeta.map((item) => (
+              <div class="meta-item">
+                <span class="meta-label">{item.label}</span>
+                <span class="meta-value">{item.value}</span>
+              </div>
+            ))}
+          </div>
+
+          <AnswerBlock answer="An 18-unit IKEA METOD kitchen with VOXTORP matt white doors in a Victorian mid-terrace in Royal Leamington Spa. Period property challenges included walls 40mm out of plumb and an uneven original stone floor under the kitchen tiles." />
+
+          <h2 class="section-h2">The Brief</h2>
+          <p class="body-copy">
+            The client owned a Victorian mid-terrace in Royal Leamington Spa (CV31) — a terraced house built approximately 1885. The kitchen had been refitted at some point in the 1980s with a basic laminate kitchen that was overdue for replacement. The client had purchased an 18-unit IKEA METOD kitchen with VOXTORP matt white doors, planning a galley-style layout with a run on each of the two long walls.
+          </p>
+          <p class="body-copy">
+            The brief included: full strip-out of the existing kitchen (including the existing laminate worktop and an old wall-mounted boiler that was being relocated as part of a separate heating project), flat-pack assembly of all 18 METOD carcasses, installation of base and wall units, IKEA AXSTAD tap fitting, a laminate worktop supplied by IKEA, and full door and drawer alignment. The boiler relocation was managed separately by the client's heating engineer, who completed the work the week before installation.
+          </p>
+
+          <h2 class="section-h2">The Survey</h2>
+          <p class="body-copy">
+            The pre-installation survey of this Victorian property identified three significant challenges — all typical of the period housing stock in Leamington Spa's CV31 area — that required careful planning before installation began.
+          </p>
+          <p class="body-copy">
+            The most significant was the floor condition. The kitchen had ceramic tiles laid over what turned out to be the original stone flags — Victorian quarry tiles that had been retained and tiled over in the 1980s refurbishment. The floor surface had a gradient of 35mm from the window end of the galley to the back door end. Additionally, the floor had a slight cross-gradient of approximately 12mm from one wall to the other at the midpoint of the room. A floor this uneven requires a carefully planned packing and leg-adjuster strategy to achieve a level datum on the base units.
+          </p>
+          <p class="body-copy">
+            The walls were the second major challenge. The back wall — a solid brick original external wall — was 40mm out of plumb over its 2.4m height. The opposite wall, a later partition wall, was 18mm out of plumb. Both walls would require scribed end panels where the kitchen runs terminated against them. The back wall also had a slight bow at mid-height — approximately 12mm in over a 3m run — that would affect the base unit fitting against it.
+          </p>
+          <p class="body-copy">
+            Third, the waste pipe outlet for the existing sink was positioned on the external back wall at the wrong height — 380mm above floor level, which was above the base of the planned sink unit. The client's plumber relocated the waste outlet to 200mm above floor level during first-fix, two days before installation.
+          </p>
+
+          <h2 class="section-h2">The Installation — Six-Day Programme</h2>
+          <p class="body-copy">
+            <strong>Day 1 — Strip Out and Carcass Assembly:</strong> The existing 1980s kitchen was stripped out. The condition of the floor was assessed directly once the old units were removed — the stone flags were confirmed as the base, overlaid with a mortar bed and ceramic tiles. A laser level was set up to establish the level datum across the room. All 18 IKEA METOD carcasses were assembled: base units, wall units, and the tall larder unit. Carcass assembly for 18 units took approximately six hours.
+          </p>
+          <p class="body-copy">
+            <strong>Day 2 — Back Wall Base Run:</strong> The primary base run along the back wall was positioned. Given the 40mm wall bow at mid-height, the units were positioned to maintain a consistent front face rather than pushing tight against the wall — a gap of up to 15mm at mid-run was accepted and planned to be concealed with scribing of the worktop upstand. Leg adjusters were set carefully for the 35mm floor gradient. By end of Day 2, the back wall base run was level and fixed.
+          </p>
+          <p class="body-copy">
+            <strong>Day 3 — Return Wall Base Run and IKEA Rail:</strong> The return wall base run completed, compensating for both the cross-gradient and the 18mm out-of-plumb wall. The IKEA SEKTION wall hanging rail was fixed to both walls — this required particular care on the old brick wall, where fixings needed to be longer than standard and set into mortar rather than into modern plasterboard. All wall rails confirmed level and securely fixed.
+          </p>
+          <p class="body-copy">
+            <strong>Day 4 — Wall Units and Tall Unit:</strong> All wall units hung on the IKEA rails and adjusted for height and consistent horizontal alignment. The tall larder unit positioned at the end of the return run and fixed. Appliance positioning checked — under-counter fridge housing checked against fridge dimensions. IKEA AXSTAD tap fitting checked for connection to existing cold supply.
+          </p>
+          <p class="body-copy">
+            <strong>Day 5 — Worktop and Doors:</strong> IKEA laminate worktop measured, cut and fitted across both runs, including the mitred corner joint. Sink cut-out made. Worktop upstand scribed to follow the bow in the back wall — this was the most technically involved worktop fitting moment of the project. The upstand needed to follow a curved wall surface over a 3m run, requiring a flexible scribing approach. All VOXTORP doors hung and initial alignment completed. Drawer fronts fitted.
+          </p>
+          <p class="body-copy">
+            <strong>Day 6 — Alignment, Finishing and Snagging:</strong> Full door and drawer final alignment. VOXTORP matt white is a clean, contemporary door — alignment on a flat matt surface is very visible. Plinths fitted and cut. Cornice fitted to wall units. End panels on the wall that was 40mm out of plumb: scribed precisely to close against the wall face without gap across the full panel height. Full snagging walkthrough with the client. All items addressed and sign-off completed.
+          </p>
+
+          <h2 class="section-h2">Challenges Encountered</h2>
+          <p class="body-copy">
+            The bowed back wall was the most technically demanding element. In a galley kitchen, both runs of units face each other — so any departure from straight on the back wall is visible in the context of the parallel opposite run. The approach taken — floating the units slightly away from the wall at the bow point and scribing the worktop upstand to follow the curve — produces a clean front face on the units while accommodating the wall's imperfections behind the worktop line.
+          </p>
+          <p class="body-copy">
+            The IKEA wall rail fixing on the old brick wall was also more involved than standard. The original lime mortar between the bricks was softer than the brick itself, and the standard IKEA fixing anchors were not appropriate for this substrate. Longer, heavier fixings were used, set specifically into the brick rather than the mortar joints, to ensure the wall units were securely supported.
+          </p>
+
+          <h2 class="section-h2">The Outcome</h2>
+          <p class="body-copy">
+            The finished kitchen demonstrates that IKEA METOD can produce an excellent result in a period property when the installation is done with care and appropriate technique. The VOXTORP matt white doors — clean and flat — sit comfortably in the Victorian space, providing a contemporary aesthetic without clashing with the period character of the rest of the house.
+          </p>
+          <p class="body-copy">
+            The galley layout makes efficient use of a relatively narrow kitchen footprint. Both runs are level and true — no visible departure from horizontal across either worktop. The scribed end panel against the 40mm out-of-plumb wall is tight and clean. The worktop upstand follows the bowed back wall without any visible gap. The client was particularly pleased with the result given how challenging the starting conditions were.
+          </p>
+
+          <h2 class="section-h2">Project FAQs</h2>
+          <FAQ items={faqs} />
+
+          <InternalLinks
+            heading="Related Pages"
+            links={[
+              { label: "IKEA Kitchen Installation", href: "/retailers/ikea/", description: "Our independent IKEA METOD fitting service." },
+              { label: "Leamington Spa Kitchen Installation", href: "/areas/leamington-spa/", description: "Kitchen fitting in Leamington Spa and CV31/CV32." },
+              { label: "Book a Survey", href: "/survey/", description: "£195 pre-installation survey, credited back on booking." },
+            ]}
+          />
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <CTA
+    heading="Planning an IKEA Kitchen in a Period Property?"
+    subtext="Period property kitchen installation requires specific experience. Book a survey across Coventry and Warwickshire — fixed price guaranteed."
+    primaryLabel="Book Your Survey"
+    primaryHref="/survey/"
+    secondaryLabel="Call 07399 651836"
+    secondaryHref="tel:07399651836"
+    dark={true}
+  />
+
+  <Footer slot="footer" />
+  <StickyMobileCTA slot="sticky-cta" />
+</Base>
+
+<style>
+  .project-layout {
+    max-width: 52rem;
+  }
+  .project-h1 {
+    font-size: clamp(1.625rem, 3vw, 2.5rem);
+    font-weight: 800;
+    color: var(--navy);
+    letter-spacing: -0.02em;
+    margin-bottom: 1.25rem;
+    line-height: 1.2;
+  }
+  .project-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.625rem;
+    margin-bottom: 1.5rem;
+  }
+  .meta-item {
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    border: 1.5px solid #E5E7EB;
+    border-radius: 0.5rem;
+    padding: 0.625rem 0.875rem;
+    min-width: 7rem;
+  }
+  .meta-label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--teal);
+    margin-bottom: 0.25rem;
+  }
+  .meta-value {
+    font-size: 0.9375rem;
+    font-weight: 600;
+    color: var(--charcoal);
+  }
+  .section-h2 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--charcoal);
+    margin-top: 2rem;
+    margin-bottom: 0.75rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--teal);
+    display: inline-block;
+  }
+  .body-copy {
+    font-size: 0.9375rem;
+    line-height: 1.75;
+    color: var(--text-soft);
+    margin-bottom: 1rem;
+  }
+  .body-copy strong {
+    color: var(--charcoal);
+  }
+</style>

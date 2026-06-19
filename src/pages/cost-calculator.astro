@@ -1,0 +1,468 @@
+---
+import Base from "../layouts/Base.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import StickyMobileCTA from "../components/StickyMobileCTA.astro";
+import Breadcrumbs from "../components/Breadcrumbs.astro";
+import AnswerBlock from "../components/AnswerBlock.astro";
+import KeyTakeaway from "../components/KeyTakeaway.astro";
+import FAQ from "../components/FAQ.astro";
+import InternalLinks from "../components/InternalLinks.astro";
+import CTA from "../components/CTA.astro";
+
+const title = "Kitchen Installation Cost Calculator 2025 | Install My Kitchen";
+const description = "Estimate your kitchen installation cost: small from £1,800, medium £2,800–£4,200, large from £4,200. Step-by-step cost guide from Install My Kitchen.";
+const canonical = "https://www.installmykitchen.co.uk/cost-calculator/";
+
+const keyTakeaways = [
+  "Step 1: Count your units",
+  "Step 2: Identify your retailer (affects time and cost)",
+  "Step 3: Multiply units × days × day rate",
+  "Step 4: Add worktops and appliances — then book a survey for accuracy",
+];
+
+const faqs = [
+  {
+    q: "How accurate is this cost estimate?",
+    a: "This guide gives you a realistic ballpark — accurate to within 15–20% for most standard kitchens in Coventry and Warwickshire. The only way to get a precise, fixed price is through a pre-installation survey. At Install My Kitchen, the survey fee is £195 and is credited back against your installation balance when you confirm your booking date.",
+  },
+  {
+    q: "What is not included in the fitting cost?",
+    a: "The fitting cost covers cabinet installation only. It does not include: plumbing (first-fix and second-fix), electrical work (moving sockets, adding circuits), gas connection, worktop supply or fabrication, appliance supply, tiling, plastering or decoration. These trades need to be costed and booked separately.",
+  },
+  {
+    q: "Why does the retailer affect the installation cost?",
+    a: "Different retailers supply units in different states of completion. Rigid-carcass kitchens (Howdens, Wren, Magnet) arrive factory-assembled and can be positioned and fixed directly on site. Flat-pack kitchens (IKEA, Wickes, B&Q) require on-site carcass assembly before positioning, adding 1–2 days to the programme. More days means a higher total fitting cost even at the same day rate.",
+  },
+  {
+    q: "Is the worktop cost included in the day rate?",
+    a: "No. Worktop supply and fitting is priced separately from cabinet installation. A laminate worktop for a medium kitchen typically costs £150–£400 including cutting and fitting. A quartz or granite worktop costs significantly more — typically £800–£2,500 for a medium kitchen depending on stone and profile — and is measured and installed by a specialist fabricator after the cabinets are in place.",
+  },
+];
+---
+
+<Base title={title} description={description} canonical={canonical}>
+  <Header slot="header" />
+
+  <section class="page-header" aria-label="Page header">
+    <div class="container">
+      <Breadcrumbs items={[{ label: "Kitchen Cost Calculator", href: "/cost-calculator/" }]} />
+      <h1 class="page-h1">Kitchen Installation Cost Calculator — Estimate Your Cost</h1>
+      <p class="page-sub">Step-by-step cost estimation guide with worked examples. Book a survey for a fixed price.</p>
+    </div>
+  </section>
+
+  <section class="section" style="background: #fff;" aria-label="Cost calculator content">
+    <div class="container">
+      <div class="content-main">
+
+        <AnswerBlock answer="Use this step-by-step guide to estimate your kitchen installation cost in Coventry and Warwickshire. Small kitchen: £1,800–£2,800. Medium: £2,800–£4,200. Large: £4,200–£7,500. Book a survey for an accurate fixed price." />
+
+        <KeyTakeaway points={keyTakeaways} />
+
+        <div class="caveat-box">
+          <p><strong>Important:</strong> This is a cost estimation guide, not a quote. Every kitchen and every property is different. The only accurate price for your installation is a written fixed quote based on a professional pre-installation survey. This guide gives you a realistic starting point — book a survey to get the actual number.</p>
+        </div>
+
+        <h2 class="section-h2">Step 1 — Count Your Units</h2>
+        <p class="body-copy">
+          Kitchen installations are priced primarily by the number of cabinets, because unit count is the strongest predictor of how long the installation will take. Count your units from your kitchen designer's plan.
+        </p>
+        <p class="body-copy">
+          Include in your count: base units, wall units, tall housing units, larder units, corner units, and base drawer units. Do not count worktop sections or appliances separately — these are costed differently (see Step 4).
+        </p>
+        <div class="size-table">
+          <div class="size-row size-header">
+            <span>Kitchen Size</span>
+            <span>Unit Count</span>
+            <span>Typical Days</span>
+          </div>
+          <div class="size-row">
+            <span>Small</span>
+            <span>8–12 units</span>
+            <span>3–4 days</span>
+          </div>
+          <div class="size-row">
+            <span>Medium</span>
+            <span>13–20 units</span>
+            <span>4–6 days</span>
+          </div>
+          <div class="size-row">
+            <span>Large</span>
+            <span>21+ units</span>
+            <span>6–10 days</span>
+          </div>
+        </div>
+
+        <h2 class="section-h2">Step 2 — Identify Your Retailer</h2>
+        <p class="body-copy">
+          Your kitchen retailer affects the number of installation days, because different retailers supply units in different states of completion:
+        </p>
+        <ul class="prose-list">
+          <li><strong>Rigid carcass (faster)</strong> — Howdens, Wren Kitchens, Magnet, DIY Kitchens. These units arrive factory-assembled. No on-site carcass building required. Use the standard day estimates in Step 1.</li>
+          <li><strong>Flat-pack (add 1–2 days)</strong> — IKEA METOD, Wickes, B&Q. These units require on-site assembly before they can be positioned and fixed. Add 1–2 days to the estimate from Step 1.</li>
+          <li><strong>Bespoke or in-frame</strong> — Bespoke kitchens or in-frame cabinetry may require additional time for scribing, adjustment and finishing. Discuss with your fitter at survey stage.</li>
+        </ul>
+
+        <h2 class="section-h2">Step 3 — Calculate Your Fitting Cost</h2>
+        <p class="body-copy">
+          With your unit count and day estimate established, multiply by the day rate to get your fitting cost estimate:
+        </p>
+        <div class="formula-box">
+          <p class="formula">Days × Day Rate = Estimated Fitting Cost</p>
+          <p class="formula-note">Install My Kitchen day rate: approximately £350/day all-inclusive</p>
+        </div>
+        <p class="body-copy">
+          Use the midpoint of your day range for your estimate. For a medium kitchen, use 5 days. For a small kitchen, use 3.5 days (round up to 4 for safety).
+        </p>
+
+        <h2 class="section-h2">Worked Example — Medium Wren Kitchen (15 Units)</h2>
+        <div class="example-box">
+          <h3 class="example-title">Example: 15-unit Wren Infinity Plus, L-shaped layout, Coventry CV5</h3>
+          <div class="example-steps">
+            <div class="example-step">
+              <span class="step-num">1</span>
+              <div>
+                <strong>Unit count:</strong> 15 units — medium kitchen
+              </div>
+            </div>
+            <div class="example-step">
+              <span class="step-num">2</span>
+              <div>
+                <strong>Retailer:</strong> Wren Kitchens — rigid carcass, standard timeline applies
+              </div>
+            </div>
+            <div class="example-step">
+              <span class="step-num">3</span>
+              <div>
+                <strong>Days estimate:</strong> 5 days (midpoint of 4–6 day range for medium kitchen)
+              </div>
+            </div>
+            <div class="example-step">
+              <span class="step-num">4</span>
+              <div>
+                <strong>Fitting cost:</strong> 5 days × £350/day = <strong>£1,750</strong>
+              </div>
+            </div>
+            <div class="example-step">
+              <span class="step-num">5</span>
+              <div>
+                <strong>Laminate worktop (2.4m run + corner section):</strong> approximately £400 supplied and fitted
+              </div>
+            </div>
+            <div class="example-step">
+              <span class="step-num">6</span>
+              <div>
+                <strong>Appliance connection:</strong> Included in Wren rigid-carcass programme (oven housing, hob, dishwasher positioning) — plumber and electrician billed separately for connections
+              </div>
+            </div>
+          </div>
+          <div class="example-total">
+            <span>Estimated Installation Total</span>
+            <span class="total-amount">~£2,150–£2,400</span>
+          </div>
+          <p class="example-caveat">This example is for guidance only. A pre-installation survey may identify factors that adjust this estimate — floor gradient, walls significantly out of plumb, or delivery complications. A stone worktop would add approximately £900–£1,800 to this total.</p>
+        </div>
+
+        <h2 class="section-h2">Step 4 — Add Worktops and Appliance Connection</h2>
+        <p class="body-copy">
+          Cabinet fitting is only part of your total project cost. Add the following to your fitting estimate:
+        </p>
+        <div class="cost-breakdown">
+          <div class="cost-item">
+            <span class="cost-label">Laminate worktop (medium kitchen)</span>
+            <span class="cost-range">£200–£450</span>
+          </div>
+          <div class="cost-item">
+            <span class="cost-label">Solid timber worktop (medium kitchen)</span>
+            <span class="cost-range">£400–£900</span>
+          </div>
+          <div class="cost-item">
+            <span class="cost-label">Quartz worktop (medium kitchen)</span>
+            <span class="cost-range">£900–£2,000</span>
+          </div>
+          <div class="cost-item">
+            <span class="cost-label">Granite worktop (medium kitchen)</span>
+            <span class="cost-range">£800–£1,800</span>
+          </div>
+          <div class="cost-item">
+            <span class="cost-label">First-fix plumber (move supplies/waste)</span>
+            <span class="cost-range">£200–£500</span>
+          </div>
+          <div class="cost-item">
+            <span class="cost-label">Second-fix plumber (connect sink, dishwasher)</span>
+            <span class="cost-range">£150–£350</span>
+          </div>
+          <div class="cost-item">
+            <span class="cost-label">First-fix electrician (move sockets, add circuits)</span>
+            <span class="cost-range">£200–£600</span>
+          </div>
+          <div class="cost-item">
+            <span class="cost-label">Gas Safe engineer (connect hob/range)</span>
+            <span class="cost-range">£100–£250</span>
+          </div>
+        </div>
+        <p class="body-copy">
+          For a medium kitchen with a quartz worktop and standard trades, your total project cost (excluding appliances and kitchen units themselves) is typically in the range of £3,500–£5,500.
+        </p>
+
+        <h2 class="section-h2">Why a Survey is the Only Way to Get an Accurate Price</h2>
+        <p class="body-copy">
+          This calculator gives you a realistic starting point. But every property is different. A 1930s semi-detached in Earlsdon with a floor gradient of 20mm, a chimney breast on the back wall, and a boiler that needs boxing around takes longer to fit than a 2010s new-build in Kenilworth with perfectly level floors and plumb walls.
+        </p>
+        <p class="body-copy">
+          A pre-installation survey identifies all of these factors before the fitter picks up a single tool. After the survey, you receive a written fixed price — not a range, not an estimate, but the actual number for your kitchen in your home. The survey fee is £195 and is credited in full against your installation balance when you confirm your fitting date.
+        </p>
+
+        <h2 class="section-h2">Frequently Asked Questions</h2>
+        <FAQ items={faqs} />
+
+        <InternalLinks
+          heading="Related Pages"
+          links={[
+            { label: "Full Cost Guide", href: "/costs/", description: "Detailed kitchen installation cost breakdown." },
+            { label: "Book a Survey", href: "/survey/", description: "Get a fixed price for your installation." },
+            { label: "Kitchen Fitter Day Rate", href: "/day-rate/", description: "What day rates mean and how they compare." },
+          ]}
+        />
+
+      </div>
+    </div>
+  </section>
+
+  <CTA
+    dark={true}
+    heading="Get Your Fixed Installation Price"
+    subtext="Stop estimating. Book a pre-installation survey and receive a written fixed quote within 24 hours. £195 credited back on booking."
+    primaryLabel="Book Your Survey"
+    primaryHref="/survey/"
+    secondaryLabel="Call 07399 651836"
+    secondaryHref="tel:07399651836"
+  />
+
+  <Footer slot="footer" />
+  <StickyMobileCTA slot="sticky-cta" />
+</Base>
+
+<style>
+  .page-header {
+    background: var(--hero-gradient);
+    padding: 3rem 0 3.5rem;
+  }
+  .page-h1 {
+    font-size: clamp(1.625rem, 3vw, 2.5rem);
+    font-weight: 800;
+    color: #fff;
+    letter-spacing: -0.02em;
+    margin-top: 0.75rem;
+    margin-bottom: 0.75rem;
+  }
+  .page-sub {
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 1.0625rem;
+    line-height: 1.6;
+    max-width: 560px;
+  }
+  .content-main {
+    max-width: 52rem;
+  }
+  .section-h2 {
+    font-size: 1.375rem;
+    font-weight: 700;
+    color: var(--charcoal);
+    margin-top: 2.25rem;
+    margin-bottom: 0.875rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--teal);
+    display: inline-block;
+  }
+  .body-copy {
+    font-size: 0.9375rem;
+    line-height: 1.75;
+    color: var(--text-soft);
+    margin-bottom: 1rem;
+  }
+  .caveat-box {
+    background: rgba(212, 160, 23, 0.07);
+    border: 1.5px solid rgba(212, 160, 23, 0.3);
+    border-left: 4px solid var(--gold);
+    border-radius: 0 0.5rem 0.5rem 0;
+    padding: 1rem 1.25rem;
+    margin-bottom: 1.75rem;
+    font-size: 0.9375rem;
+    color: var(--charcoal);
+    line-height: 1.65;
+  }
+  .caveat-box strong {
+    color: #92670e;
+  }
+  .size-table {
+    border: 1.5px solid #E5E7EB;
+    border-radius: 0.75rem;
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+  }
+  .size-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border-bottom: 1px solid #E5E7EB;
+  }
+  .size-row:last-child {
+    border-bottom: none;
+  }
+  .size-row span {
+    padding: 0.75rem 1rem;
+    font-size: 0.9375rem;
+    color: var(--text-soft);
+    border-right: 1px solid #E5E7EB;
+  }
+  .size-row span:last-child {
+    border-right: none;
+  }
+  .size-header {
+    background: var(--teal);
+  }
+  .size-header span {
+    color: #fff;
+    font-weight: 700;
+    font-size: 0.875rem;
+  }
+  .prose-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  .prose-list li {
+    font-size: 0.9375rem;
+    line-height: 1.7;
+    color: var(--text-soft);
+    padding-left: 1.5rem;
+    position: relative;
+  }
+  .prose-list li::before {
+    content: "–";
+    position: absolute;
+    left: 0;
+    color: var(--teal);
+    font-weight: 700;
+  }
+  .prose-list li strong {
+    color: var(--charcoal);
+  }
+  .formula-box {
+    background: var(--bg-light);
+    border: 1.5px solid var(--border);
+    border-radius: 0.75rem;
+    padding: 1.25rem 1.5rem;
+    margin-bottom: 1.25rem;
+    text-align: center;
+  }
+  .formula {
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: var(--charcoal);
+    margin: 0 0 0.375rem;
+  }
+  .formula-note {
+    font-size: 0.875rem;
+    color: var(--text-soft);
+    margin: 0;
+  }
+  .example-box {
+    background: var(--bg-light);
+    border: 1.5px solid var(--border);
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+  }
+  .example-title {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--charcoal);
+    margin-bottom: 1.25rem;
+  }
+  .example-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-bottom: 1.25rem;
+  }
+  .example-step {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.875rem;
+    font-size: 0.9375rem;
+    color: var(--text-soft);
+    line-height: 1.6;
+  }
+  .step-num {
+    flex-shrink: 0;
+    width: 1.75rem;
+    height: 1.75rem;
+    background: var(--teal);
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.875rem;
+  }
+  .example-step strong {
+    color: var(--charcoal);
+  }
+  .example-total {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--teal);
+    color: #fff;
+    border-radius: 0.5rem;
+    padding: 1rem 1.25rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+    font-size: 1rem;
+  }
+  .total-amount {
+    font-size: 1.375rem;
+    font-weight: 800;
+  }
+  .example-caveat {
+    font-size: 0.8125rem;
+    color: var(--text-soft);
+    line-height: 1.6;
+    margin: 0;
+    font-style: italic;
+  }
+  .cost-breakdown {
+    border: 1.5px solid #E5E7EB;
+    border-radius: 0.75rem;
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+  }
+  .cost-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid #E5E7EB;
+    gap: 1rem;
+  }
+  .cost-item:last-child {
+    border-bottom: none;
+  }
+  .cost-label {
+    font-size: 0.9375rem;
+    color: var(--charcoal);
+    flex: 1;
+  }
+  .cost-range {
+    font-size: 0.9375rem;
+    font-weight: 700;
+    color: var(--teal);
+    white-space: nowrap;
+  }
+</style>

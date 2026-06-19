@@ -1,0 +1,386 @@
+---
+import Base from "../layouts/Base.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import StickyMobileCTA from "../components/StickyMobileCTA.astro";
+import Breadcrumbs from "../components/Breadcrumbs.astro";
+import AnswerBlock from "../components/AnswerBlock.astro";
+import KeyTakeaway from "../components/KeyTakeaway.astro";
+import FAQ from "../components/FAQ.astro";
+import InternalLinks from "../components/InternalLinks.astro";
+import CTA from "../components/CTA.astro";
+
+const title = "Kitchen Installation Timeline — Day by Day | Install My Kitchen";
+const description = "Day-by-day kitchen installation timeline for small, medium and large kitchens. Plan your project with this complete schedule from Install My Kitchen.";
+const canonical = "https://www.installmykitchen.co.uk/timeline/";
+
+const keyTakeaways = [
+  "Small kitchen (8–12 units): 3–4 days",
+  "Medium kitchen (13–20 units): 4–6 days",
+  "Large kitchen (21+ units): 6–10 days",
+  "Stone worktops add a return visit 5–10 days after templating",
+];
+
+const faqs = [
+  {
+    q: "How long does a kitchen installation take?",
+    a: "A small kitchen of 8–12 units typically takes 3–4 days. A medium kitchen of 13–20 units takes 4–6 days. A large kitchen of 21 or more units takes 6–10 days. These are fitting days only — your full project programme from survey to completion including trades and worktop fabrication is typically 4–8 weeks.",
+  },
+  {
+    q: "What can extend a kitchen installation timeline?",
+    a: "Several factors can extend the fitting programme: an unlevel floor requiring significant packing work; walls significantly out of plumb requiring scribing of multiple end panels; a stone or quartz worktop requiring a separate return visit after the 7–10 day fabrication period; a delivery shortage discovered on installation day; or an unforeseen structural complication such as a chimney breast that was not apparent at survey stage.",
+  },
+  {
+    q: "When does the plumber need to attend during a kitchen installation?",
+    a: "Your plumber needs to attend twice: first-fix before the installation begins (to move supply pipes and waste runs to the correct positions), and second-fix after the worktop is fitted (to connect the sink, dishwasher and any other plumbed appliances). If you have a stone worktop, plan for second-fix approximately 10–12 working days after the base units are fitted, to allow for templating and fabrication.",
+  },
+  {
+    q: "Can the installation timeline be shortened?",
+    a: "The timeline can be shortened by ensuring first-fix work is complete before the fitter arrives, that the delivery has been fully checked and is complete, and that the site is prepared and access is clear. Kitchens with pre-assembled rigid carcasses (Wren, Howdens, Magnet) are faster to fit than flat-pack kitchens (IKEA, Wickes) because no on-site assembly is required before units are positioned.",
+  },
+];
+---
+
+<Base title={title} description={description} canonical={canonical}>
+  <Header slot="header" />
+
+  <section class="page-header" aria-label="Page header">
+    <div class="container">
+      <Breadcrumbs items={[{ label: "Kitchen Installation Timeline", href: "/timeline/" }]} />
+      <h1 class="page-h1">Kitchen Installation Timeline — Day-by-Day Schedule</h1>
+      <p class="page-sub">Small, medium and large kitchen timelines — plus how to build your full project programme including trades.</p>
+    </div>
+  </section>
+
+  <section class="section" style="background: #fff;" aria-label="Timeline content">
+    <div class="container">
+      <div class="content-main">
+
+        <AnswerBlock answer="A small kitchen installation takes 3–4 days; medium 4–6 days; large 6–10 days. This page gives a day-by-day timeline for each size, explains what happens at every stage, and shows how to build your full project programme including trades." />
+
+        <KeyTakeaway points={keyTakeaways} />
+
+        <!-- Small Kitchen Timeline -->
+        <h2 class="section-h2">Small Kitchen Timeline — 3 Days (8–12 Units)</h2>
+        <p class="body-copy">
+          A small kitchen — typically a galley or L-shaped layout with eight to twelve units — can be completed in three days by an experienced fitter. This timeline assumes first-fix plumbing and electrical work is already complete.
+        </p>
+
+        <div class="timeline-days">
+          <div class="timeline-day">
+            <div class="day-label">Day 1</div>
+            <div class="day-content">
+              <h3 class="day-title">Strip Out &amp; Base Units</h3>
+              <p class="day-desc">The morning begins with removal and disposal of the old kitchen (if included in scope). The fitter establishes a level datum across the floor, marks fixing heights on walls, and begins positioning and fixing base units. Leg heights are adjusted to achieve a perfectly level top line across all base units. Corner and end units are fitted and secured. By end of day, the majority of base units are positioned and fixed.</p>
+            </div>
+          </div>
+          <div class="timeline-day">
+            <div class="day-label">Day 2</div>
+            <div class="day-content">
+              <h3 class="day-title">Wall Units, Worktop &amp; Appliances</h3>
+              <p class="day-desc">Remaining base units are completed and checked. Wall unit fixing rails or direct fixing positions are marked and drilled. Wall units are hung, levelled and adjusted. The worktop is measured, cut, joined (if required) and fitted — or, for stone worktops, the templating company is called to measure. Integrated appliances are offered up and positioned. Appliance housing units are checked for correct dimensions.</p>
+            </div>
+          </div>
+          <div class="timeline-day">
+            <div class="day-label">Day 3</div>
+            <div class="day-content">
+              <h3 class="day-title">Doors, Snagging &amp; Finish</h3>
+              <p class="day-desc">All cabinet doors are hung and adjusted using the manufacturer's hinge hardware. Drawer fronts are fitted and aligned. Plinths are cut and clipped. Cornice, pelmet and light pelmet are measured, mitre-cut and fitted. End panels are scribed and fitted where walls are not plumb. A thorough snagging check is completed — every door, every drawer, every joint. The homeowner walks the kitchen with the fitter before sign-off.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Medium Kitchen Timeline -->
+        <h2 class="section-h2">Medium Kitchen Timeline — 5 Days (13–20 Units)</h2>
+        <p class="body-copy">
+          A medium kitchen — typically an L-shaped or U-shaped layout with thirteen to twenty units — is the most common project type. Five days allows for a thorough installation with full adjustment and snagging.
+        </p>
+
+        <div class="timeline-days">
+          <div class="timeline-day">
+            <div class="day-label">Day 1</div>
+            <div class="day-content">
+              <h3 class="day-title">Strip Out &amp; Site Preparation</h3>
+              <p class="day-desc">Old kitchen stripped out. Services confirmed as first-fix complete. Floor level checked across the full kitchen footprint using a long spirit level — any gradient over 5mm noted and packing strategy confirmed. Wall datum lines marked. Base run layout confirmed on floor, with positions adjusted if any delivery variance has been found.</p>
+            </div>
+          </div>
+          <div class="timeline-day">
+            <div class="day-label">Day 2</div>
+            <div class="day-content">
+              <h3 class="day-title">Base Units — First Run</h3>
+              <p class="day-desc">Base units for the primary run are positioned, levelled and fixed. Corner unit is positioned and checked for square. Sink base is positioned with waste outlet drop confirmed. All fixing screws tightened. Leg adjusters checked and set. End panels fitted where the run terminates against an exposed wall. First run base units complete by end of day.</p>
+            </div>
+          </div>
+          <div class="timeline-day">
+            <div class="day-label">Day 3</div>
+            <div class="day-content">
+              <h3 class="day-title">Base Units — Second Run &amp; Wall Units</h3>
+              <p class="day-desc">Remaining base units on second run completed. Wall units begin — fixing positions marked, plugged and drilled, wall unit rail or individual fixings fitted. Wall units hung, levelled and adjusted. All wall units complete by end of day. Worktop template or measurement completed for stone worktops — fabrication lead time begins today.</p>
+            </div>
+          </div>
+          <div class="timeline-day">
+            <div class="day-label">Day 4</div>
+            <div class="day-content">
+              <h3 class="day-title">Worktop, Appliances &amp; Doors</h3>
+              <p class="day-desc">Laminate or solid timber worktop cut, joined and fitted. Sink cut-out made. Hob cut-out made if applicable. All integrated appliance housings checked and adjusted. Cabinet doors hung on all base and wall units. Initial alignment pass made on all doors. Drawer fronts fitted and initial alignment completed.</p>
+            </div>
+          </div>
+          <div class="timeline-day">
+            <div class="day-label">Day 5</div>
+            <div class="day-content">
+              <h3 class="day-title">Finishing &amp; Snagging</h3>
+              <p class="day-desc">Full door and drawer alignment — every door checked with a spirit level and eye-line. Plinths cut, clipped and fitted. Cornice and pelmet measured, mitre-cut and fixed. End panels scribed where required. Any infill strips or filler pieces fitted. Full snagging pass — the fitter works through every item systematically. Final walkthrough with the homeowner. Sign-off when all snagging items are resolved.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Large Kitchen Timeline -->
+        <h2 class="section-h2">Large Kitchen Timeline — 8 Days (21+ Units)</h2>
+        <p class="body-copy">
+          A large kitchen with twenty-one or more units — often featuring an island, tall housing units, or complex layout — requires a longer programme to achieve the same quality of fit and finish as a smaller project.
+        </p>
+
+        <div class="timeline-days">
+          <div class="timeline-day">
+            <div class="day-label">Day 1</div>
+            <div class="day-content">
+              <h3 class="day-title">Strip Out &amp; Full Site Survey</h3>
+              <p class="day-desc">Old kitchen stripped out. Comprehensive floor level assessment taken across all runs, including island position. Structural wall check — any hollow sections, steel lintels or boxing noted. All service positions verified against plan. Delivery check completed — any missing or damaged items identified now, not mid-installation.</p>
+            </div>
+          </div>
+          <div class="timeline-day">
+            <div class="day-label">Day 2</div>
+            <div class="day-content">
+              <h3 class="day-title">Primary Base Run</h3>
+              <p class="day-desc">Primary base run positioned, levelled and fixed. Includes sink base, corner unit and any appliance housing. Level datum established for all subsequent runs. End panels on exposed terminations fitted and scribed where walls are not plumb.</p>
+            </div>
+          </div>
+          <div class="timeline-day">
+            <div class="day-label">Day 3</div>
+            <div class="day-content">
+              <h3 class="day-title">Secondary Base Runs</h3>
+              <p class="day-desc">Remaining base runs on secondary walls completed. All base units levelled across the full kitchen perimeter. Island base units positioned — island position confirmed against the final plan, ensuring clearance on all sides meets minimum requirements. Island positioned and fixed.</p>
+            </div>
+          </div>
+          <div class="timeline-day">
+            <div class="day-label">Day 4</div>
+            <div class="day-content">
+              <h3 class="day-title">Tall and Housing Units</h3>
+              <p class="day-desc">Tall housing units for larder, fridge-freezer and oven stack positioned and fixed. These require careful alignment with adjacent base units and precise setting out for integrated appliance dimensions. Housing unit infill panels fitted where gaps occur.</p>
+            </div>
+          </div>
+          <div class="timeline-day">
+            <div class="day-label">Day 5</div>
+            <div class="day-content">
+              <h3 class="day-title">All Wall Units</h3>
+              <p class="day-desc">Full wall unit installation. Fixing positions marked across all walls. All wall units hung, levelled and inter-unit adjustments made. Island wall units or open shelving units fitted where included in plan.</p>
+            </div>
+          </div>
+          <div class="timeline-day">
+            <div class="day-label">Day 6</div>
+            <div class="day-content">
+              <h3 class="day-title">Worktop &amp; Cut-Outs</h3>
+              <p class="day-desc">Worktop installation. Stone worktop templating company visits (if not already done at end of Day 5). Laminate or timber worktops cut, joined and fitted. Sink and hob cut-outs made. Island worktop fitted — this is often the most complex worktop item on a large kitchen due to the need for perfectly square cuts on all four sides.</p>
+            </div>
+          </div>
+          <div class="timeline-day">
+            <div class="day-label">Day 7</div>
+            <div class="day-content">
+              <h3 class="day-title">All Doors &amp; Drawer Fronts</h3>
+              <p class="day-desc">All cabinet doors hung and initial alignment completed. Drawer fronts fitted. Full first-pass alignment of all doors and drawers. Integrated appliance doors aligned with adjacent cabinet doors for handleless or in-line styles.</p>
+            </div>
+          </div>
+          <div class="timeline-day">
+            <div class="day-label">Day 8</div>
+            <div class="day-content">
+              <h3 class="day-title">Finishing, Snagging &amp; Sign-Off</h3>
+              <p class="day-desc">Plinths — all runs including island — cut and fitted. Cornice and pelmet throughout. End panels and scribing completed. Full door and drawer final alignment — every item checked with spirit level and eye-line. Comprehensive snagging pass. Final walkthrough with the homeowner. Sign-off when all items resolved to satisfaction.</p>
+            </div>
+          </div>
+        </div>
+
+        <h2 class="section-h2">Factors That Extend or Shorten the Timeline</h2>
+        <p class="body-copy">
+          Several site conditions affect how long a kitchen installation takes beyond the unit count:
+        </p>
+        <ul class="prose-list">
+          <li><strong>Floor gradient</strong> — a gradient of more than 15mm across the kitchen floor requires careful packing of leg adjusters and can add half a day to the base unit installation.</li>
+          <li><strong>Walls out of plumb</strong> — the more panels that require scribing to fit tightly against an out-of-plumb wall, the longer the finishing phase takes. Each scribing operation requires careful measurement, marking, cutting and checking before the panel is fixed.</li>
+          <li><strong>Flat-pack vs rigid units</strong> — IKEA METOD and similar flat-pack systems require on-site carcass assembly before units can be positioned. This typically adds 1–2 days compared to pre-assembled rigid units.</li>
+          <li><strong>Stone worktop lead time</strong> — if your worktop is quartz, granite or Dekton, allow 7–10 working days between templating and fitting. During this window, second-fix plumbing and appliance connections cannot be completed.</li>
+          <li><strong>Delivery problems</strong> — a missing door, a damaged panel, or an incorrectly sized unit discovered on installation day can halt part of the programme until a replacement arrives, typically 5–7 working days from the retailer.</li>
+        </ul>
+
+        <h2 class="section-h2">Building Your Full Project Programme</h2>
+        <p class="body-copy">
+          The fitting days listed above cover only the fitter's time on site. Your full project programme — from ordering your kitchen to using it fully — looks like this:
+        </p>
+        <ol class="process-list">
+          <li>Kitchen ordered and delivery date confirmed</li>
+          <li>Pre-installation survey booked and completed (1–2 weeks from ordering)</li>
+          <li>First-fix plumber attends — typically 1–2 days before installation</li>
+          <li>First-fix electrician attends — typically the day before installation</li>
+          <li>Kitchen delivery — at least one full day before installation begins</li>
+          <li>Installation — 3 to 10 days depending on kitchen size</li>
+          <li>Stone worktop templating — on the final day of base unit installation or day after</li>
+          <li>Worktop fabrication lead time — 7–10 working days</li>
+          <li>Worktop fitted by fabricator</li>
+          <li>Second-fix plumber — connects sink, dishwasher and other plumbed appliances</li>
+          <li>Second-fix electrician — connects appliances, checks circuits</li>
+          <li>Gas Safe engineer — connects hob or range cooker (if applicable)</li>
+          <li>Tiling, decorating, flooring — once all trades and worktop are complete</li>
+        </ol>
+        <p class="body-copy">
+          For a medium kitchen with a stone worktop, the realistic total time from survey to fully finished kitchen is typically 6–8 weeks.
+        </p>
+
+        <h2 class="section-h2">Frequently Asked Questions</h2>
+        <FAQ items={faqs} />
+
+        <InternalLinks
+          heading="Related Pages"
+          links={[
+            { label: "Kitchen Installation Checklist", href: "/checklist/", description: "Phase-by-phase checklist for your installation." },
+            { label: "Installation Costs", href: "/costs/", description: "Full cost guide for kitchens of every size." },
+            { label: "Book a Survey", href: "/survey/", description: "£195 pre-installation survey, credited back on booking." },
+            { label: "Contact Us", href: "/contact/", description: "Check availability and book your installation." },
+          ]}
+        />
+
+      </div>
+    </div>
+  </section>
+
+  <CTA
+    dark={true}
+    heading="Plan Your Kitchen Installation With Confidence"
+    subtext="A pre-installation survey gives you a confirmed timeline and fixed price before work begins. Survey fee £195, credited back on booking."
+    primaryLabel="Book Your Survey"
+    primaryHref="/survey/"
+    secondaryLabel="Call 07399 651836"
+    secondaryHref="tel:07399651836"
+  />
+
+  <Footer slot="footer" />
+  <StickyMobileCTA slot="sticky-cta" />
+</Base>
+
+<style>
+  .page-header {
+    background: var(--hero-gradient);
+    padding: 3rem 0 3.5rem;
+  }
+  .page-h1 {
+    font-size: clamp(1.625rem, 3vw, 2.5rem);
+    font-weight: 800;
+    color: #fff;
+    letter-spacing: -0.02em;
+    margin-top: 0.75rem;
+    margin-bottom: 0.75rem;
+  }
+  .page-sub {
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 1.0625rem;
+    line-height: 1.6;
+    max-width: 560px;
+  }
+  .content-main {
+    max-width: 52rem;
+  }
+  .section-h2 {
+    font-size: 1.375rem;
+    font-weight: 700;
+    color: var(--charcoal);
+    margin-top: 2.25rem;
+    margin-bottom: 0.875rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--teal);
+    display: inline-block;
+  }
+  .body-copy {
+    font-size: 0.9375rem;
+    line-height: 1.75;
+    color: var(--text-soft);
+    margin-bottom: 1rem;
+  }
+  .timeline-days {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin-bottom: 2rem;
+    border: 1.5px solid #E5E7EB;
+    border-radius: 0.75rem;
+    overflow: hidden;
+  }
+  .timeline-day {
+    display: grid;
+    grid-template-columns: 5rem 1fr;
+    border-bottom: 1px solid #E5E7EB;
+  }
+  .timeline-day:last-child {
+    border-bottom: none;
+  }
+  .day-label {
+    background: var(--teal);
+    color: #fff;
+    font-weight: 800;
+    font-size: 0.875rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 1rem 0.5rem;
+  }
+  .day-content {
+    padding: 1rem 1.25rem;
+  }
+  .day-title {
+    font-size: 0.9375rem;
+    font-weight: 700;
+    color: var(--charcoal);
+    margin-bottom: 0.375rem;
+  }
+  .day-desc {
+    font-size: 0.875rem;
+    line-height: 1.65;
+    color: var(--text-soft);
+    margin: 0;
+  }
+  .prose-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  .prose-list li {
+    font-size: 0.9375rem;
+    line-height: 1.7;
+    color: var(--text-soft);
+    padding-left: 1.5rem;
+    position: relative;
+  }
+  .prose-list li::before {
+    content: "–";
+    position: absolute;
+    left: 0;
+    color: var(--teal);
+    font-weight: 700;
+  }
+  .prose-list li strong {
+    color: var(--charcoal);
+  }
+  .process-list {
+    padding-left: 1.5rem;
+    margin: 0 0 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .process-list li {
+    font-size: 0.9375rem;
+    line-height: 1.65;
+    color: var(--text-soft);
+  }
+</style>

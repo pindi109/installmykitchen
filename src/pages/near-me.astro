@@ -1,0 +1,303 @@
+---
+import Base from "../layouts/Base.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import StickyMobileCTA from "../components/StickyMobileCTA.astro";
+import Breadcrumbs from "../components/Breadcrumbs.astro";
+import AnswerBlock from "../components/AnswerBlock.astro";
+import KeyTakeaway from "../components/KeyTakeaway.astro";
+import FAQ from "../components/FAQ.astro";
+import EnquiryForm from "../components/EnquiryForm.astro";
+import CTA from "../components/CTA.astro";
+
+const title = "Kitchen Fitter Near Me | Install My Kitchen Coventry";
+const description = "Searching for a kitchen fitter near you? Install My Kitchen is based in Coventry (CV6 2AH) and covers all Coventry postcodes and Warwickshire. Call 07399 651836.";
+const canonical = "https://www.installmykitchen.co.uk/near-me/";
+
+const keyTakeaways = [
+  "Based in CV6 — covering all Coventry postcodes",
+  "Full Warwickshire coverage including Rugby, Leamington Spa, Kenilworth",
+  "Survey within 1–2 weeks in your area",
+  "Independent service — not tied to any retailer",
+];
+
+const faqs = [
+  {
+    q: "What areas does Install My Kitchen cover?",
+    a: "Install My Kitchen covers all Coventry postcodes (CV1–CV7) plus Warwickshire including Kenilworth, Rugby, Nuneaton, Royal Leamington Spa, Warwick, Stratford-upon-Avon, Solihull, and surrounding villages. If you are unsure whether we cover your area, call 07399 651836 for a quick answer.",
+  },
+  {
+    q: "Why does local matter for kitchen installation?",
+    a: "A local kitchen fitter can reach your property quickly for the pre-installation survey, attend promptly if a snagging item needs attention after completion, and build a working relationship with you that is not possible with a national installation company. Local accountability matters — when the fitter lives and works in your area, their reputation depends on every job they do.",
+  },
+  {
+    q: "How quickly can you book a survey?",
+    a: "Survey slots are typically available within one to two weeks across Coventry and Warwickshire. Fill in the enquiry form on this page or call 07399 651836 and we will confirm available survey dates within one working day.",
+  },
+  {
+    q: "Do you install kitchens from any retailer?",
+    a: "Yes. Install My Kitchen installs kitchens from all major retailers including Howdens, Wren, Magnet, IKEA, Wickes, Benchmarx, B&Q, DIY Kitchens and others. We are not tied to any supplier, which means our advice is always independent.",
+  },
+];
+---
+
+<Base title={title} description={description} canonical={canonical}>
+  <Header slot="header" />
+
+  <section class="page-header" aria-label="Page header">
+    <div class="container">
+      <Breadcrumbs items={[{ label: "Kitchen Fitter Near Me", href: "/near-me/" }]} />
+      <h1 class="page-h1">Kitchen Fitter Near Me — Coventry &amp; Warwickshire</h1>
+      <p class="page-sub">Based in Coundon, Coventry (CV6 2AH). Survey slots available within 1–2 weeks across the full area.</p>
+    </div>
+  </section>
+
+  <section class="section" style="background: #fff;" aria-label="Near me content">
+    <div class="container">
+      <div class="content-grid">
+
+        <div class="content-main">
+
+          <AnswerBlock answer="Install My Kitchen is based in Coundon, Coventry (CV6 2AH) and covers all Coventry postcodes plus Rugby, Nuneaton, Leamington Spa, Kenilworth, Warwick, Solihull, Stratford-upon-Avon and surrounding Warwickshire. Call 07399 651836 to book a survey." />
+
+          <KeyTakeaway points={keyTakeaways} />
+
+          <h2 class="section-h2">Why Local Matters for Kitchen Installation</h2>
+          <p class="body-copy">
+            Kitchen installation is not like buying a product online. It is a skilled, physical service that takes place in your home over several days. The person doing the work matters, and so does where they are based.
+          </p>
+          <p class="body-copy">
+            A local kitchen fitter can visit for a survey within days rather than weeks. They can attend promptly if a question arises during the project or if a snagging item needs attention after the installation is complete. They have an established relationship with local trades — plumbers, electricians, gas engineers — and can make credible recommendations based on genuine working experience.
+          </p>
+          <p class="body-copy">
+            Perhaps most importantly, a local fitter's reputation is built entirely within your community. They rely on referrals from neighbours, former customers and local tradespeople. That accountability is a powerful incentive to do every job well — something that national installation companies, operating at scale, cannot replicate.
+          </p>
+
+          <h2 class="section-h2">Our Full Coverage Area</h2>
+          <p class="body-copy">
+            Install My Kitchen is based at 242 Hollyfast Road, Coundon, Coventry, CV6 2AH. From this base, we cover the following areas:
+          </p>
+
+          <div class="coverage-grid">
+            <div class="coverage-section">
+              <h3 class="coverage-heading">All Coventry Postcodes</h3>
+              <ul class="coverage-list">
+                <li>CV1 — City Centre, Hillfields, Gosford Green</li>
+                <li>CV2 — Stoke, Wyken, Binley, Potters Green</li>
+                <li>CV3 — Cheylesmore, Stivichall, Whitley, Willenhall</li>
+                <li>CV4 — Canley, Tile Hill, Westwood Heath, Coventry University</li>
+                <li>CV5 — Earlsdon, Allesley, Chapelfields, Whoberley</li>
+                <li>CV6 — Coundon, Radford, Holbrooks, Foleshill, Longford</li>
+                <li>CV7 — Meriden, Balsall Common, Berkswell, Allesley Village</li>
+              </ul>
+            </div>
+            <div class="coverage-section">
+              <h3 class="coverage-heading">Warwickshire Towns</h3>
+              <ul class="coverage-list">
+                <li>Kenilworth (CV8)</li>
+                <li>Royal Leamington Spa (CV31, CV32)</li>
+                <li>Warwick (CV34)</li>
+                <li>Rugby (CV21, CV22, CV23)</li>
+                <li>Nuneaton (CV10, CV11)</li>
+                <li>Stratford-upon-Avon (CV37)</li>
+                <li>Solihull (B91, B92, B93)</li>
+              </ul>
+            </div>
+          </div>
+
+          <p class="body-copy">
+            If your postcode is not listed above, call us on 07399 651836. We may still be able to cover your area depending on the size of the project and current scheduling.
+          </p>
+
+          <h2 class="section-h2">How to Verify Any Local Fitter</h2>
+          <p class="body-copy">
+            When searching for a kitchen fitter near you — whether it is us or anyone else — apply the same checks:
+          </p>
+          <ul class="prose-list">
+            <li><strong>Ask for verifiable references</strong> — a phone number or postcode for a recent completed project, not just a testimonial on their website.</li>
+            <li><strong>Check they have public liability insurance</strong> — any fitter working in your home should carry insurance. Ask for a certificate and check the expiry date.</li>
+            <li><strong>Ask about experience with your specific retailer</strong> — experience with Howdens does not automatically mean experience with IKEA flat-pack. Ask specifically.</li>
+            <li><strong>Insist on a written, fixed quote after a site visit</strong> — any fitter who will not visit your home before quoting, or who refuses to put a price in writing, is a risk you do not need to take.</li>
+            <li><strong>Check their reviews</strong> — Google, Checkatrade and Trustpilot reviews are a useful starting point, but always supplement with direct references from completed projects.</li>
+          </ul>
+
+          <h2 class="section-h2">Our Process</h2>
+          <p class="body-copy">
+            When you contact Install My Kitchen, here is what happens:
+          </p>
+          <ol class="process-list">
+            <li><strong>Initial call or enquiry</strong> — we discuss your kitchen, your retailer, your approximate size, and your preferred timescale. This takes about ten minutes and is free.</li>
+            <li><strong>Pre-installation survey</strong> — Pindi Sahota visits your home for 45–90 minutes to check the room against your kitchen plan, assess services and floor levels, and identify any factors that will affect the installation. The survey fee is £195, credited back on booking.</li>
+            <li><strong>Fixed written quote</strong> — within 24 hours of the survey, you receive a written, fixed price for your installation. No day-rate surprises.</li>
+            <li><strong>Booking confirmation</strong> — confirm your installation date with a booking deposit. Your survey fee is credited against your balance at this stage.</li>
+            <li><strong>Installation</strong> — Pindi and his team install your kitchen over the agreed programme. You receive a full walkthrough and snagging before sign-off.</li>
+          </ol>
+
+          <h2 class="section-h2">Frequently Asked Questions</h2>
+          <FAQ items={faqs} />
+
+        </div>
+
+        <aside class="content-sidebar">
+          <div class="form-sticky">
+            <EnquiryForm formTitle="Book a Survey Near You" showSurveyOption={true} />
+          </div>
+        </aside>
+
+      </div>
+    </div>
+  </section>
+
+  <CTA
+    dark={true}
+    heading="Your Local Kitchen Fitter in Coventry &amp; Warwickshire"
+    subtext="Survey slots available within 1–2 weeks. Fixed price guaranteed. Call or fill in the form to check your area."
+    primaryLabel="Book a Survey"
+    primaryHref="/survey/"
+    secondaryLabel="Call 07399 651836"
+    secondaryHref="tel:07399651836"
+  />
+
+  <Footer slot="footer" />
+  <StickyMobileCTA slot="sticky-cta" />
+</Base>
+
+<style>
+  .page-header {
+    background: var(--hero-gradient);
+    padding: 3rem 0 3.5rem;
+  }
+  .page-h1 {
+    font-size: clamp(1.625rem, 3vw, 2.5rem);
+    font-weight: 800;
+    color: #fff;
+    letter-spacing: -0.02em;
+    margin-top: 0.75rem;
+    margin-bottom: 0.75rem;
+  }
+  .page-sub {
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 1.0625rem;
+    line-height: 1.6;
+    max-width: 560px;
+  }
+  .content-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    align-items: start;
+  }
+  @media (min-width: 1024px) {
+    .content-grid {
+      grid-template-columns: 1fr 400px;
+    }
+  }
+  .form-sticky {
+    position: sticky;
+    top: 6rem;
+  }
+  .content-main {
+    min-width: 0;
+  }
+  .section-h2 {
+    font-size: 1.375rem;
+    font-weight: 700;
+    color: var(--charcoal);
+    margin-top: 2.25rem;
+    margin-bottom: 0.875rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--teal);
+    display: inline-block;
+  }
+  .body-copy {
+    font-size: 0.9375rem;
+    line-height: 1.75;
+    color: var(--text-soft);
+    margin-bottom: 1rem;
+  }
+  .coverage-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+    margin-bottom: 1.25rem;
+  }
+  @media (min-width: 640px) {
+    .coverage-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  .coverage-section {
+    background: var(--bg-light);
+    border: 1.5px solid var(--border);
+    border-radius: 0.75rem;
+    padding: 1.25rem;
+  }
+  .coverage-heading {
+    font-size: 0.9375rem;
+    font-weight: 700;
+    color: var(--teal);
+    margin-bottom: 0.75rem;
+  }
+  .coverage-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.375rem;
+  }
+  .coverage-list li {
+    font-size: 0.875rem;
+    color: var(--text-soft);
+    line-height: 1.5;
+    padding-left: 1rem;
+    position: relative;
+  }
+  .coverage-list li::before {
+    content: "·";
+    position: absolute;
+    left: 0;
+    color: var(--teal);
+    font-weight: 700;
+  }
+  .prose-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  .prose-list li {
+    font-size: 0.9375rem;
+    line-height: 1.7;
+    color: var(--text-soft);
+    padding-left: 1.5rem;
+    position: relative;
+  }
+  .prose-list li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--teal);
+    font-weight: 700;
+  }
+  .prose-list li strong {
+    color: var(--charcoal);
+  }
+  .process-list {
+    padding-left: 1.25rem;
+    margin: 0 0 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  .process-list li {
+    font-size: 0.9375rem;
+    line-height: 1.7;
+    color: var(--text-soft);
+  }
+  .process-list li strong {
+    color: var(--charcoal);
+  }
+</style>

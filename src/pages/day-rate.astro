@@ -1,0 +1,271 @@
+---
+import Base from "../layouts/Base.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import StickyMobileCTA from "../components/StickyMobileCTA.astro";
+import Breadcrumbs from "../components/Breadcrumbs.astro";
+import AnswerBlock from "../components/AnswerBlock.astro";
+import KeyTakeaway from "../components/KeyTakeaway.astro";
+import FAQ from "../components/FAQ.astro";
+import InternalLinks from "../components/InternalLinks.astro";
+import CTA from "../components/CTA.astro";
+
+const title = "Kitchen Fitter Day Rate 2025 | Install My Kitchen";
+const description = "Kitchen fitter day rates in Coventry and Warwickshire: £300–£450/day. Install My Kitchen charges approximately £350/day all-inclusive. Get a fixed quote.";
+const canonical = "https://www.installmykitchen.co.uk/day-rate/";
+
+const keyTakeaways = [
+  "Day rate range: £300–£450/day in Coventry and Warwickshire",
+  "Install My Kitchen: approximately £350/day all-inclusive",
+  "Small kitchen: 3–4 days; medium: 4–6 days; large: 6–10 days",
+  "Always get a fixed total price — not just a day rate",
+];
+
+const faqs = [
+  {
+    q: "What is a typical kitchen fitter day rate in Coventry?",
+    a: "Kitchen fitter day rates in Coventry and Warwickshire typically range from £300 to £450 per day in 2025. The rate reflects the fitter's experience, the scope of work they include, and whether they are a sole trader or a larger company. Install My Kitchen charges approximately £350 per day, all-inclusive for the agreed installation scope.",
+  },
+  {
+    q: "Is a day rate or a fixed price better for a kitchen installation?",
+    a: "A fixed total price is almost always better for the homeowner. A day rate places the risk of project overrun entirely with you — if the installation takes longer than expected, your bill increases. A fixed price agreed in writing after a proper survey gives you certainty. Ask every fitter you quote to convert their day rate into a fixed total price.",
+  },
+  {
+    q: "What is included in Install My Kitchen's £350/day rate?",
+    a: "Our approximately £350/day all-inclusive rate covers all cabinet installation, levelling, fixing, door and drawer adjustment, plinth fitting, cornice, pelmet and light pelmet installation, and full snagging. It does not include plumbing, electrical work, gas installation, worktop supply, or appliance connection — these are carried out by your own qualified trades.",
+  },
+  {
+    q: "How many days does a kitchen installation take?",
+    a: "A small kitchen of 8–12 units typically takes 3–4 days. A medium kitchen of 13–20 units takes 4–6 days. A large kitchen of 21 or more units takes 6–10 days. These ranges assume standard site conditions — older properties with significant floor gradients or structural complications may add time, which should be flagged during the pre-installation survey.",
+  },
+];
+---
+
+<Base title={title} description={description} canonical={canonical}>
+  <Header slot="header" />
+
+  <section class="page-header" aria-label="Page header">
+    <div class="container">
+      <Breadcrumbs items={[{ label: "Kitchen Fitter Day Rate", href: "/day-rate/" }]} />
+      <h1 class="page-h1">Kitchen Fitter Day Rate — What to Expect in 2025</h1>
+      <p class="page-sub">Day rates in Coventry and Warwickshire range from £300–£450. Here is what that actually means for your project.</p>
+    </div>
+  </section>
+
+  <section class="section" style="background: #fff;" aria-label="Day rate content">
+    <div class="container">
+      <div class="content-main">
+
+        <AnswerBlock answer="Kitchen fitter day rates in Coventry and Warwickshire typically range from £300–£450 per day. Install My Kitchen charges approximately £350 per day, all-inclusive for the agreed installation scope. Most kitchens take 3–10 days." />
+
+        <KeyTakeaway points={keyTakeaways} />
+
+        <h2 class="section-h2">What a Kitchen Fitter Day Rate Includes</h2>
+        <p class="body-copy">
+          A kitchen fitter's day rate should cover their time and expertise for the agreed scope of work — but it is important to clarify exactly what that scope is before you accept any quote. Different fitters include different things.
+        </p>
+        <p class="body-copy">
+          A comprehensive day rate should include: all cabinet assembly where required (flat-pack units), levelling and securing of base and wall units, door hanging, drawer installation, door and drawer alignment using the manufacturer's hardware, plinth cutting and fitting, cornice and pelmet installation, and end-panel scribing. Snagging and a final walk-through should also be part of the scope — not an optional extra.
+        </p>
+        <p class="body-copy">
+          What a kitchen fitter's day rate does not typically include: plumbing (moving or connecting supply pipes and waste), electrical work (moving sockets, adding circuits), gas installation (capping off or repositioning gas supplies), worktop supply or fabrication, appliance connection, or tiling. These are specialist trades and must be booked and paid for separately.
+        </p>
+
+        <h2 class="section-h2">Why Day Rates Vary</h2>
+        <p class="body-copy">
+          A day rate of £300 and a day rate of £450 represent genuinely different propositions — not just different price points. Here is what drives the variation:
+        </p>
+        <ul class="prose-list">
+          <li><strong>Experience</strong> — a fitter with 20–30 years of experience across multiple retailers and property types will price their time at a premium. That premium is justified: an experienced fitter works faster, anticipates problems, and produces better results. The number of days taken often narrows the gap between an experienced fitter and a cheaper one.</li>
+          <li><strong>Scope included</strong> — a lower day rate sometimes reflects a narrower scope. A fitter charging £300/day may exclude scribing, end panels, cornice and snagging. These items then appear as extras at the end of the job. Always agree the scope in writing.</li>
+          <li><strong>Insurance and trading setup</strong> — a fully insured, legitimately trading business costs more to run than a sole trader operating informally. Public liability insurance, business insurance and proper HMRC compliance are costs that responsible fitters pass on in their rates.</li>
+          <li><strong>Retailer familiarity</strong> — fitters with extensive experience fitting a specific retailer's units are faster and produce better results. A Wren specialist will fit a Wren kitchen more efficiently than a general fitter with limited Wren experience.</li>
+        </ul>
+
+        <h2 class="section-h2">Red Flags at Both Ends of the Range</h2>
+        <p class="body-copy">
+          Very low day rates (below £250) should be approached with significant caution. A fitter offering to install your kitchen for £250/day has either very limited experience, is not properly insured, or plans to make the rate work by taking more days than necessary. Any of these outcomes is bad for you.
+        </p>
+        <p class="body-copy">
+          At the other end of the range, a fitter quoting £450/day or more should be able to justify that premium with demonstrable experience, a strong reference history, and a clear written scope. High prices are not inherently problematic — but they do require justification. Ask for references from projects of similar scale and retailer.
+        </p>
+
+        <h2 class="section-h2">How to Calculate Your Total Cost</h2>
+        <p class="body-copy">
+          To estimate your total fitting cost from a day rate, multiply the day rate by the expected number of days. Use these guidelines for the number of days:
+        </p>
+        <div class="rate-table">
+          <div class="rate-row rate-header">
+            <span>Kitchen Size</span>
+            <span>Units</span>
+            <span>Days</span>
+            <span>Example (£350/day)</span>
+          </div>
+          <div class="rate-row">
+            <span>Small</span>
+            <span>8–12 units</span>
+            <span>3–4 days</span>
+            <span>£1,050–£1,400</span>
+          </div>
+          <div class="rate-row">
+            <span>Medium</span>
+            <span>13–20 units</span>
+            <span>4–6 days</span>
+            <span>£1,400–£2,100</span>
+          </div>
+          <div class="rate-row">
+            <span>Large</span>
+            <span>21+ units</span>
+            <span>6–10 days</span>
+            <span>£2,100–£3,500</span>
+          </div>
+        </div>
+        <p class="body-copy">
+          Remember that these figures cover fitting labour only. Add worktop supply and fitting, appliance connection, and any first-fix or second-fix trades to arrive at your full project cost. See our <a href="/costs/" class="text-link">full kitchen installation cost guide</a> for a complete breakdown.
+        </p>
+
+        <h2 class="section-h2">Why a Fixed Price Matters More Than a Day Rate</h2>
+        <p class="body-copy">
+          The fundamental problem with quoting by day rate alone is that it places all of the time risk on the homeowner. If the installation takes longer than expected — because of a delivery issue, a tricky wall, or an unforeseen complication — a day rate quote means your cost increases. A fixed price quote agreed after a professional survey means your cost is certain, regardless of how long the job takes.
+        </p>
+        <p class="body-copy">
+          At Install My Kitchen, we use a pre-installation survey to assess every site before we quote. Because we understand exactly what the installation involves, we can commit to a fixed total price. Our approximately £350/day rate is used internally to build that fixed price — but what we agree with you is a written, fixed total, not an open-ended daily billing arrangement.
+        </p>
+        <p class="body-copy">
+          If a fitter will not commit to a fixed price even after visiting your property and reviewing your plans, consider carefully whether that is the right working arrangement for you.
+        </p>
+
+        <h2 class="section-h2">Frequently Asked Questions</h2>
+        <FAQ items={faqs} />
+
+        <InternalLinks
+          heading="Related Pages"
+          links={[
+            { label: "Full Cost Guide", href: "/costs/", description: "Complete kitchen installation cost breakdown." },
+            { label: "Book a Survey", href: "/survey/", description: "Get a fixed price after a professional site visit." },
+            { label: "Our Services", href: "/services/", description: "What we include in every kitchen installation." },
+          ]}
+        />
+
+      </div>
+    </div>
+  </section>
+
+  <CTA
+    dark={true}
+    heading="Get a Fixed Price — Not Just a Day Rate"
+    subtext="Book a pre-installation survey and receive a written fixed price for your kitchen installation. £195 survey fee credited back on booking."
+    primaryLabel="Book Your Survey"
+    primaryHref="/survey/"
+    secondaryLabel="Call 07399 651836"
+    secondaryHref="tel:07399651836"
+  />
+
+  <Footer slot="footer" />
+  <StickyMobileCTA slot="sticky-cta" />
+</Base>
+
+<style>
+  .page-header {
+    background: var(--hero-gradient);
+    padding: 3rem 0 3.5rem;
+  }
+  .page-h1 {
+    font-size: clamp(1.625rem, 3vw, 2.5rem);
+    font-weight: 800;
+    color: #fff;
+    letter-spacing: -0.02em;
+    margin-top: 0.75rem;
+    margin-bottom: 0.75rem;
+  }
+  .page-sub {
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 1.0625rem;
+    line-height: 1.6;
+    max-width: 560px;
+  }
+  .content-main {
+    max-width: 52rem;
+  }
+  .section-h2 {
+    font-size: 1.375rem;
+    font-weight: 700;
+    color: var(--charcoal);
+    margin-top: 2.25rem;
+    margin-bottom: 0.875rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--teal);
+    display: inline-block;
+  }
+  .body-copy {
+    font-size: 0.9375rem;
+    line-height: 1.75;
+    color: var(--text-soft);
+    margin-bottom: 1rem;
+  }
+  .prose-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  .prose-list li {
+    font-size: 0.9375rem;
+    line-height: 1.7;
+    color: var(--text-soft);
+    padding-left: 1.5rem;
+    position: relative;
+  }
+  .prose-list li::before {
+    content: "–";
+    position: absolute;
+    left: 0;
+    color: var(--teal);
+    font-weight: 700;
+  }
+  .prose-list li strong {
+    color: var(--charcoal);
+  }
+  .rate-table {
+    border: 1.5px solid #E5E7EB;
+    border-radius: 0.75rem;
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+  }
+  .rate-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    border-bottom: 1px solid #E5E7EB;
+  }
+  .rate-row:last-child {
+    border-bottom: none;
+  }
+  .rate-row span {
+    padding: 0.75rem 1rem;
+    font-size: 0.9375rem;
+    color: var(--text-soft);
+    border-right: 1px solid #E5E7EB;
+  }
+  .rate-row span:last-child {
+    border-right: none;
+  }
+  .rate-header {
+    background: var(--teal);
+  }
+  .rate-header span {
+    color: #fff;
+    font-weight: 700;
+    font-size: 0.875rem;
+  }
+  .text-link {
+    color: var(--teal);
+    text-decoration: underline;
+    font-weight: 500;
+  }
+  .text-link:hover {
+    color: var(--charcoal);
+  }
+</style>
