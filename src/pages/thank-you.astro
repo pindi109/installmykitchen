@@ -1,0 +1,47 @@
+---
+import Base from "../layouts/Base.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import StickyMobileCTA from "../components/StickyMobileCTA.astro";
+---
+
+<Base
+  title="Thank You — We'll Be in Touch | Install My Kitchen"
+  description="Thank you for your enquiry. Install My Kitchen will be in touch within one business day."
+  canonical="https://www.installmykitchen.co.uk/thank-you/"
+  noHero={true}
+>
+  <Header slot="header" />
+
+  <section style="min-height:70vh; display:flex; align-items:center; background: var(--bg-light);">
+    <div class="container" style="text-align:center; max-width:600px; padding-top:4rem; padding-bottom:4rem;">
+
+      <!-- Tick icon -->
+      <div style="width:80px;height:80px;border-radius:50%;background:var(--teal);display:flex;align-items:center;justify-content:center;margin:0 auto 2rem;">
+        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M20 6L9 17l-5-5"/>
+        </svg>
+      </div>
+
+      <h1 style="font-size:2rem;font-weight:800;color:var(--navy);margin-bottom:1rem;">
+        Thank You — We'll Be in Touch
+      </h1>
+      <p style="font-size:1.125rem;color:var(--text-soft);line-height:1.7;margin-bottom:0.75rem;">
+        Your enquiry has been received. A member of the Install My Kitchen team will contact you within one business day to discuss your project and arrange a survey appointment.
+      </p>
+      <p style="font-size:1rem;color:var(--text-soft);margin-bottom:2.5rem;">
+        If you need to speak to us sooner, call us on
+        <a href="tel:07399651836" style="color:var(--teal);font-weight:600;">07399 651836</a>
+        (Mon–Sat, 8am–6pm).
+      </p>
+
+      <a href="/" class="btn-primary" style="display:inline-flex;">
+        Back to Home
+      </a>
+
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+  <StickyMobileCTA slot="sticky-cta" />
+</Base>
