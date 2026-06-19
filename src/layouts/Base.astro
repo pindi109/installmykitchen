@@ -2,6 +2,7 @@
 import "../styles/global.css";
 import heroManifest from "../../public/hero-manifest.json";
 import altTagsData from "../data/alt-tags.json";
+import WhatsAppButton from "../components/WhatsAppButton.astro";
 
 export interface Props {
   title: string;
@@ -44,6 +45,16 @@ const hasRealHero = !heroSrc.includes("placeholder");
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="robots" content="index, follow" />
+    <meta name="google-site-verification" content="cOm8XdUM9GO1LeNonfxNnP36DKaiAfq33YtHaCf--h0" />
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-28PG5XP2T5"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-28PG5XP2T5');
+    </script>
 
     <title>{title}</title>
     <meta name="description" content={description} />
@@ -114,6 +125,9 @@ const hasRealHero = !heroSrc.includes("placeholder");
 
     <!-- Sticky mobile CTA -->
     <slot name="sticky-cta" />
+
+    <!-- WhatsApp floating button — visible on all pages -->
+    <WhatsAppButton />
 
     <!-- Fade-up animation (IntersectionObserver, respects prefers-reduced-motion) -->
     <script>
