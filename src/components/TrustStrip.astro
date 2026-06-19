@@ -1,0 +1,169 @@
+---
+// TrustStrip — compact authority/trust bar
+// Props: dark (boolean) — dark=true: navy bg, white text | dark=false: light grey bg, charcoal text
+export interface Props {
+  dark?: boolean;
+}
+
+const { dark = false } = Astro.props;
+
+const items = [
+  {
+    title: "30 Years Experience",
+    description: "Pindi Sahota has 30 years of kitchen installation experience across Coventry and Warwickshire.",
+    icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg>`,
+  },
+  {
+    title: "Fixed Price Guaranteed",
+    description: "Survey first, fixed quote, no surprises on completion.",
+    icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>`,
+  },
+  {
+    title: "All Major Retailers",
+    description: "Wren, Howdens, Magnet, IKEA and all major UK kitchen brands.",
+    icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>`,
+  },
+  {
+    title: "Local & Independent",
+    description: "Based in Coundon, Coventry. Accountable to the community we serve.",
+    icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>`,
+  },
+];
+---
+
+<div class:list={["trust-strip", dark ? "trust-strip--dark" : "trust-strip--light"]} aria-label="Why choose Install My Kitchen">
+  <div class="container">
+    <ul class="trust-grid" role="list">
+      {items.map((item) => (
+        <li class="trust-item">
+          <div class="trust-icon" aria-hidden="true" set:html={item.icon} />
+          <div class="trust-text">
+            <strong class="trust-title">{item.title}</strong>
+            <span class="trust-desc">{item.description}</span>
+          </div>
+        </li>
+      ))}
+    </ul>
+  </div>
+</div>
+
+<style>
+  /* ── Strip wrapper ── */
+  .trust-strip {
+    padding: 1.75rem 0;
+  }
+
+  .trust-strip--light {
+    background: #F3F4F6;
+    border-top: 1px solid #E5E7EB;
+    border-bottom: 1px solid #E5E7EB;
+  }
+
+  .trust-strip--dark {
+    background: var(--navy);
+  }
+
+  /* ── Grid ── */
+  .trust-grid {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  @media (min-width: 640px) {
+    .trust-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.25rem 2rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .trust-grid {
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+    }
+  }
+
+  /* ── Individual item ── */
+  .trust-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.875rem;
+  }
+
+  @media (min-width: 1024px) {
+    .trust-item {
+      padding: 0 1.5rem;
+      border-right: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .trust-strip--light .trust-item {
+      border-right-color: #D1D5DB;
+    }
+
+    .trust-item:first-child {
+      padding-left: 0;
+    }
+
+    .trust-item:last-child {
+      padding-right: 0;
+      border-right: none;
+    }
+  }
+
+  /* ── Icon ── */
+  .trust-icon {
+    flex-shrink: 0;
+    width: 2.25rem;
+    height: 2.25rem;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--teal-bright);
+    background: rgba(20, 184, 166, 0.12);
+    margin-top: 0.1rem;
+  }
+
+  .trust-strip--light .trust-icon {
+    color: var(--teal);
+    background: rgba(15, 118, 110, 0.1);
+  }
+
+  /* ── Text block ── */
+  .trust-text {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+  }
+
+  .trust-title {
+    font-size: 0.9375rem;
+    font-weight: 700;
+    line-height: 1.3;
+  }
+
+  .trust-strip--dark .trust-title {
+    color: #fff;
+  }
+
+  .trust-strip--light .trust-title {
+    color: var(--charcoal);
+  }
+
+  .trust-desc {
+    font-size: 0.8125rem;
+    line-height: 1.55;
+  }
+
+  .trust-strip--dark .trust-desc {
+    color: rgba(255, 255, 255, 0.65);
+  }
+
+  .trust-strip--light .trust-desc {
+    color: var(--text-soft);
+  }
+</style>
