@@ -1,0 +1,294 @@
+---
+import Base from "../layouts/Base.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import StickyMobileCTA from "../components/StickyMobileCTA.astro";
+import Breadcrumbs from "../components/Breadcrumbs.astro";
+import AnswerBlock from "../components/AnswerBlock.astro";
+import KeyTakeaway from "../components/KeyTakeaway.astro";
+import FAQ from "../components/FAQ.astro";
+import CTA from "../components/CTA.astro";
+
+const keyTakeaways = [
+  "Total kitchen refit cost (units, worktops, appliances, installation) typically runs £8,000–£25,000+ in Coventry and Warwickshire",
+  "Installation labour alone is £1,800–£7,500 — this is the Install My Kitchen scope",
+  "The biggest cost variables are kitchen brand, worktop material, and appliance specification",
+  "A pre-installation survey is essential — it confirms scope, prevents surprises, and produces an accurate fixed price",
+  "Phasing a refit across two stages (units now, worktops later) is possible but adds cost overall",
+];
+
+const faqItems = [
+  {
+    q: "What is the difference between a kitchen refit and a kitchen renovation?",
+    a: "The terms are used interchangeably but a refit generally implies a full replacement — new units, worktops and appliances — while renovation can include cosmetic updates to an existing kitchen (new doors, new worktops, repainted units). A full refit involves stripping out everything and starting from scratch. A renovation updates key elements while retaining the carcasses. Installation labour for a renovation is typically 30–50% less than a full refit of the same kitchen size.",
+  },
+  {
+    q: "Does Install My Kitchen supply the kitchen or just install it?",
+    a: "We are independent kitchen installers — we do not supply the kitchen. You purchase your units and appliances from a retailer of your choice (Wren, Howdens, B&Q, IKEA, John Lewis, or any independent supplier), and we carry out the professional installation. This means you benefit from our specialist fitting expertise without being tied to a particular brand's in-house fitting team.",
+  },
+  {
+    q: "How long does a full kitchen refit take?",
+    a: "A medium kitchen refit (13–20 units, standard appliances, laminate or composite worktop) typically takes five to seven days of installation time. Add time for the pre-installation survey, delivery scheduling, first-fix trades (plumber and electrician), stone worktop templating and fitting if applicable, and final snagging. From survey to handover, allow four to eight weeks to do the project properly.",
+  },
+  {
+    q: "Can I stay in the house during a kitchen refit?",
+    a: "Yes, most clients remain in the house during their refit. You will be without a functional kitchen for the duration — typically five to eight days — so arrange a temporary kettle and microwave setup in another room, and plan meals accordingly. We work standard daytime hours and leave the site secure each evening.",
+  },
+];
+---
+
+<Base
+  title="Kitchen Refit Cost Coventry | Install My Kitchen"
+  description="Full kitchen refit cost guide for Coventry and Warwickshire. Total cost £8,000–£25,000+. Installation labour £1,800–£7,500. What's included and how to budget."
+  canonical="https://www.installmykitchen.co.uk/refit/"
+>
+  <Header slot="header" />
+
+  <section class="page-header" aria-label="Page header">
+    <div class="container">
+      <Breadcrumbs items={[{ label: "Kitchen Refit Cost", href: "/refit/" }]} />
+      <h1 class="page-h1">Kitchen Refit Cost — Full Renovation Guide for Coventry &amp; Warwickshire</h1>
+      <p class="page-sub">A complete breakdown of what a kitchen refit costs — from units and worktops to installation labour, plumbing and flooring.</p>
+    </div>
+  </section>
+
+  <section class="section" style="background: #fff;" aria-labelledby="refit-intro">
+    <div class="container">
+      <div class="content-main">
+
+        <AnswerBlock answer="A full kitchen refit (new units, worktops, appliances and installation) typically costs £8,000–£25,000+ in total depending on kitchen brand and specification. Installation labour alone is £1,800–£7,500 — this is the scope covered by Install My Kitchen." />
+
+        <KeyTakeaway points={keyTakeaways} />
+
+        <h2 id="refit-intro" class="section-h2">What a Full Kitchen Refit Involves</h2>
+        <p class="body-copy">
+          A kitchen refit is the complete replacement of your kitchen — stripping out the old kitchen entirely and installing a new one from scratch. It is one of the most significant home improvements a homeowner undertakes, and when budgeting for it, many people underestimate the total scope.
+        </p>
+        <p class="body-copy">
+          A full refit involves: design and planning, supply of units, worktops and appliances, removal of the old kitchen, first-fix plumbing and electrics, installation of units and worktops, connection of appliances, tiling, and often flooring. Not all of these elements are provided by the same company — understanding which supplier covers which element is essential before you start.
+        </p>
+
+        <h2 class="section-h2">Cost Breakdown by Component</h2>
+
+        <h3 class="section-h3">Kitchen Units</h3>
+        <p class="body-copy">
+          Kitchen units (carcasses and doors) are typically the largest single cost in a refit. Budget-brand kitchens from B&Q or IKEA start from around £1,500–£4,000 for a medium kitchen's worth of units. Mid-range brands such as Wren, Magnet or Howdens run £3,000–£9,000. Premium and bespoke kitchens from independent suppliers or brands such as Neff or Siematic can exceed £15,000 for the units alone.
+        </p>
+
+        <h3 class="section-h3">Worktops</h3>
+        <p class="body-copy">
+          Worktop material is one of the most visible and cost-variable choices in a refit. Laminate worktops (the most common budget option) cost £300–£800 supplied and fitted for a medium kitchen. Solid wood costs £600–£1,500. Quartz or granite stone worktops cost £1,200–£3,500 depending on stone type and the number of cuts required — and add a templating visit and a two-to-four-week lead time between unit installation and worktop fitting.
+        </p>
+
+        <h3 class="section-h3">Appliances</h3>
+        <p class="body-copy">
+          Appliance costs vary enormously. A basic package (integrated oven, hob, hood, dishwasher and fridge-freezer) might be sourced for £1,500–£2,500. Mid-range appliances from AEG, Bosch or Zanussi cost £2,500–£5,000 for the same set. Premium appliances — Neff, Siemens, Miele — £4,000–£10,000+. Remember that integrated appliance doors are typically supplied with the kitchen rather than the appliance.
+        </p>
+
+        <h3 class="section-h3">Installation Labour</h3>
+        <p class="body-copy">
+          Installation labour — fitting units, worktops and appliances — is the scope we cover at Install My Kitchen. For a small kitchen (up to 12 units), expect £1,800–£2,800. Medium kitchen (13–20 units), £2,800–£4,500. Large or complex kitchen (21+ units, feature islands, complex corners), £4,500–£7,500. These figures include our standard scope of unit fitting, worktop and appliance fitting, and basic adjustment and snagging. They do not include plumbing, electrical work, tiling or flooring.
+        </p>
+
+        <h3 class="section-h3">Plumbing and Electrics (First Fix)</h3>
+        <p class="body-copy">
+          A qualified plumber is required to move or extend water supplies and waste connections before units go in (first fix), and to connect the sink and appliances after units are in (second fix). Budget £300–£600 for first-fix plumbing and £200–£400 for second-fix connections. A qualified electrician is required if new sockets, circuits or a new consumer unit are needed. Allow £300–£800 for electrical first fix depending on complexity.
+        </p>
+
+        <h3 class="section-h3">Tiling</h3>
+        <p class="body-copy">
+          Splashback tiling between worktop level and base of wall units adds £300–£700 for a medium kitchen, including tile supply and fitting. If you are tiling a full wall or using large-format tiles, costs increase. Tile removal from the previous kitchen's walls adds time and almost always requires replastering before new tiles go on.
+        </p>
+
+        <h3 class="section-h3">Flooring</h3>
+        <p class="body-copy">
+          Kitchen flooring is typically fitted after units are in but before appliances are connected. Budget £400–£1,200 for a medium kitchen depending on floor type: luxury vinyl tile (LVT) is the most practical choice for kitchens at £500–£900 fitted; ceramic or porcelain tile costs £600–£1,200 fitted; solid or engineered wood £700–£1,400 fitted.
+        </p>
+
+        <h2 class="section-h2">Total Budget Summary</h2>
+        <div class="cost-table">
+          <div class="cost-row cost-row--header">
+            <span>Component</span>
+            <span>Budget Range</span>
+            <span>Premium Range</span>
+          </div>
+          <div class="cost-row">
+            <span>Kitchen units</span>
+            <span>£1,500–£4,000</span>
+            <span>£6,000–£15,000+</span>
+          </div>
+          <div class="cost-row">
+            <span>Worktops</span>
+            <span>£300–£800</span>
+            <span>£1,500–£3,500</span>
+          </div>
+          <div class="cost-row">
+            <span>Appliances</span>
+            <span>£1,500–£2,500</span>
+            <span>£4,000–£10,000+</span>
+          </div>
+          <div class="cost-row">
+            <span>Installation labour</span>
+            <span>£1,800–£3,500</span>
+            <span>£4,500–£7,500</span>
+          </div>
+          <div class="cost-row">
+            <span>Plumbing &amp; electrics</span>
+            <span>£500–£900</span>
+            <span>£900–£1,800</span>
+          </div>
+          <div class="cost-row">
+            <span>Tiling &amp; flooring</span>
+            <span>£700–£1,400</span>
+            <span>£1,400–£2,500</span>
+          </div>
+          <div class="cost-row cost-row--total">
+            <span>Total typical range</span>
+            <span>£6,300–£13,100</span>
+            <span>£18,300–£40,300+</span>
+          </div>
+        </div>
+
+        <h2 class="section-h2">Budget vs Premium: What Changes</h2>
+        <p class="body-copy">
+          The biggest driver of overall cost is the kitchen brand and specification, not the installation labour. Moving from a budget kitchen to a premium one adds far more to the total than upgrading your fitter. That said, the fitter determines whether your expensive kitchen is installed correctly — it is not an area to economise on after spending £10,000+ on units and appliances.
+        </p>
+        <p class="body-copy">
+          For most homeowners in Coventry and Warwickshire, a mid-range refit — Wren or Magnet units, quartz worktops, Bosch appliances, professional installation — comes in at £12,000–£18,000 all-in. This is a realistic budget for a quality, lasting result in a medium kitchen.
+        </p>
+
+        <h2 class="section-h2">What We Cover vs What You Need to Source</h2>
+        <p class="body-copy">
+          Install My Kitchen is an independent installation specialist. Here is what falls within our scope and what you will need to arrange separately:
+        </p>
+        <ul class="body-list">
+          <li><strong>We cover:</strong> Pre-installation survey, unit fitting (base, wall, tall, island), worktop fitting and cutting (laminate, solid wood, composite), integrated appliance fitting, door and drawer alignment, plinth and cornice fitting, snagging and handover.</li>
+          <li><strong>You arrange separately:</strong> Kitchen purchase (units, worktops, appliances), delivery to site, first-fix plumbing (qualified plumber), first-fix electrics (qualified electrician), gas connection (Gas Safe engineer), tiling (tiler), flooring (flooring fitter), any plastering or making-good, and stone worktop templating and supply (stone fabricator).</li>
+        </ul>
+        <p class="body-copy">
+          We can advise on sequencing all of these trades during your survey visit, and many of our clients ask us to help coordinate the programme. We do not manage the other trades, but we know the right order and the right timings.
+        </p>
+
+        <h2 class="section-h2">How to Phase a Kitchen Refit</h2>
+        <p class="body-copy">
+          If budget is a constraint, it is possible to phase a refit. A common approach is to install new units and a laminate worktop now, then upgrade to stone worktops in twelve to eighteen months. This works because stone worktops are templated and fitted after units are in, so the unit installation does not need to be repeated.
+        </p>
+        <p class="body-copy">
+          Phasing appliances is also possible — fitting a new oven now and upgrading the dishwasher and fridge later. The important thing is to plan for the future appliance sizes at the design stage so that the spaces are the right size when you come to upgrade.
+        </p>
+
+        <h2 class="section-h2">Why a Survey Matters for a Refit</h2>
+        <p class="body-copy">
+          A pre-installation survey is particularly important for a full refit because the scope is complex and the cost of getting it wrong is high. During the survey we check the room against your designer's plan, identify service positions, confirm floor levels, assess access and delivery logistics, and agree the full scope of our installation in detail. This produces a fixed-price quote with no hidden extras — essential when you are already managing multiple suppliers and trades.
+        </p>
+
+        <h2 class="section-h2 mt-10 mb-6">Kitchen Refit Questions Answered</h2>
+        <FAQ items={faqItems} schemaId="refit-faq" />
+
+      </div>
+    </div>
+  </section>
+
+  <CTA
+    dark={true}
+    heading="Get a Fixed-Price Refit Quote"
+    subtext="Book a pre-installation survey in Coventry or Warwickshire. We check the room, review your plans, and give you a full, itemised installation quote."
+    primaryLabel="Book a Survey — £195"
+    primaryHref="/survey/"
+    secondaryLabel="Call 07399 651836"
+    secondaryHref="tel:07399651836"
+  />
+
+  <Footer slot="footer" />
+  <StickyMobileCTA slot="sticky-cta" />
+</Base>
+
+<style>
+  .page-header {
+    background: var(--hero-gradient);
+    padding: 3rem 0 3.5rem;
+  }
+  .page-h1 {
+    font-size: clamp(1.625rem, 3vw, 2.5rem);
+    font-weight: 800;
+    color: #fff;
+    letter-spacing: -0.02em;
+    margin-top: 0.75rem;
+    margin-bottom: 0.75rem;
+  }
+  .page-sub {
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 1.0625rem;
+    line-height: 1.6;
+    max-width: 560px;
+  }
+  .content-main {
+    max-width: 780px;
+  }
+  .section-h2 {
+    font-size: 1.375rem;
+    font-weight: 700;
+    color: var(--charcoal);
+    margin-top: 2rem;
+    margin-bottom: 0.875rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--teal);
+    display: inline-block;
+  }
+  .section-h3 {
+    font-size: 1.0625rem;
+    font-weight: 700;
+    color: var(--charcoal);
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+  .body-copy {
+    font-size: 0.9375rem;
+    line-height: 1.75;
+    color: var(--text-soft);
+    margin-bottom: 1rem;
+  }
+  .body-list {
+    font-size: 0.9375rem;
+    line-height: 1.75;
+    color: var(--text-soft);
+    padding-left: 1.5rem;
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .cost-table {
+    border: 1.5px solid #E5E7EB;
+    border-radius: 0.75rem;
+    overflow: hidden;
+    margin-bottom: 2rem;
+  }
+  .cost-row {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 1rem;
+    padding: 0.75rem 1.25rem;
+    font-size: 0.9375rem;
+    color: var(--text-soft);
+    border-bottom: 1px solid #F3F4F6;
+  }
+  .cost-row:last-child {
+    border-bottom: none;
+  }
+  .cost-row--header {
+    background: var(--bg-light);
+    font-weight: 700;
+    color: var(--charcoal);
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+  .cost-row--total {
+    background: rgba(15, 118, 110, 0.06);
+    font-weight: 700;
+    color: var(--charcoal);
+  }
+  .mt-10 { margin-top: 2.5rem; }
+  .mb-6 { margin-bottom: 1.5rem; }
+</style>

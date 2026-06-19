@@ -1,0 +1,233 @@
+---
+import Base from "../layouts/Base.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import StickyMobileCTA from "../components/StickyMobileCTA.astro";
+import Breadcrumbs from "../components/Breadcrumbs.astro";
+import AnswerBlock from "../components/AnswerBlock.astro";
+import KeyTakeaway from "../components/KeyTakeaway.astro";
+import FAQ from "../components/FAQ.astro";
+import CTA from "../components/CTA.astro";
+
+const keyTakeaways = [
+  "Strip-out typically costs £200–£600 in Coventry and Warwickshire — size and disposal method are the main variables",
+  "Disconnection of appliances should be done by qualified tradespeople before the fitter arrives",
+  "Disposal is the largest hidden cost — skip hire adds £150–£280, a clearance company £120–£250",
+  "Booking strip-out as part of your full installation programme is simpler and usually cheaper",
+  "Pre-1980s properties may contain asbestos in floor tiles or textured coatings — check before you rip anything out",
+];
+
+const faqItems = [
+  {
+    q: "Can I do my own kitchen strip-out to save money?",
+    a: "Yes, homeowners regularly carry out their own strip-out. You can save £150–£350 in labour this way. However, you must ensure gas appliances are disconnected by a Gas Safe engineer, electrics are isolated by a qualified electrician, and plumbing is capped off correctly before any removal begins. If you carry out DIY strip-out and damage something — particularly services — it can add cost and delay to your main installation.",
+  },
+  {
+    q: "How long does a kitchen strip-out take?",
+    a: "For a standard kitchen, a professional strip-out takes between half a day and a full day. A small galley kitchen may take three to four hours; a large open-plan kitchen with a utility room could take a full day. If asbestos testing or remediation is required, this adds further time and specialist cost.",
+  },
+  {
+    q: "Does Install My Kitchen handle the strip-out?",
+    a: "We can arrange strip-out as part of your installation programme. This is the most efficient approach as we can sequence the work correctly, confirm what is being removed, and ensure the room is properly prepared before units arrive. We discuss this during the survey visit and include it in your quote where required.",
+  },
+  {
+    q: "What happens to the old kitchen after removal?",
+    a: "Old kitchen units and worktops are not collected by standard household waste. Your options are: skip hire (£150–£280 in Coventry, depending on skip size and duration), a clearance company (£120–£250 for a full kitchen clearance), or self-transfer to your local household waste recycling centre. We can advise on local options and, where required, include disposal in our strip-out scope.",
+  },
+];
+---
+
+<Base
+  title="Kitchen Removal Cost Coventry | Install My Kitchen"
+  description="Kitchen removal and strip-out costs in Coventry and Warwickshire explained. Typical cost £200–£600. What's included, disposal options, and whether DIY is worth it."
+  canonical="https://www.installmykitchen.co.uk/removal/"
+>
+  <Header slot="header" />
+
+  <section class="page-header" aria-label="Page header">
+    <div class="container">
+      <Breadcrumbs items={[{ label: "Kitchen Removal Cost", href: "/removal/" }]} />
+      <h1 class="page-h1">Kitchen Removal &amp; Strip-Out Cost — Coventry &amp; Warwickshire</h1>
+      <p class="page-sub">What you can expect to pay for removing an old kitchen, and how the strip-out fits into your installation programme.</p>
+    </div>
+  </section>
+
+  <section class="section" style="background: #fff;" aria-labelledby="removal-intro">
+    <div class="container">
+      <div class="content-main">
+
+        <AnswerBlock answer="Kitchen removal (strip-out) typically costs £200–£600 in Coventry and Warwickshire, depending on kitchen size and whether disposal is included. Install My Kitchen can arrange strip-out as part of your new kitchen installation." />
+
+        <KeyTakeaway points={keyTakeaways} />
+
+        <h2 id="removal-intro" class="section-h2">What Kitchen Strip-Out Involves</h2>
+        <p class="body-copy">
+          A kitchen strip-out is the process of clearing the existing kitchen completely so that the new installation can begin with a clean room. It sounds simple, but there is more to it than lifting units off walls. Carried out correctly, a strip-out leaves the room safe, services capped and the room ready for first-fix work. Carried out carelessly, it can damage walls, leave live services exposed, or create disposal headaches you hadn't budgeted for.
+        </p>
+        <p class="body-copy">
+          The main elements of a professional strip-out are:
+        </p>
+
+        <h3 class="section-h3">Appliance Disconnection</h3>
+        <p class="body-copy">
+          Before any units are moved, appliances must be properly disconnected. The cooker or hob must be isolated by a qualified electrician or a Gas Safe registered engineer if it is gas. The dishwasher and washing machine need their water supply isolated and waste connections removed. The fridge and freezer need to be defrosted and emptied. None of this is the kitchen fitter's job — it should be arranged in advance. Failure to do this before the fitter arrives delays work and can result in a wasted day's labour charge.
+        </p>
+
+        <h3 class="section-h3">Unit Removal</h3>
+        <p class="body-copy">
+          Wall units are unscrewed from their wall fixings and lifted clear. Base units are disconnected from each other and lifted out. Larder and tall units often require two people due to their weight. Plinths, fillers and cornice mouldings are removed. If any units are tiled in (common in kitchens fitted more than fifteen years ago), tiles may need to be carefully cut or broken away to release the unit — this can damage the plasterwork underneath and may need making good before new units go in.
+        </p>
+
+        <h3 class="section-h3">Worktop and Upstand Removal</h3>
+        <p class="body-copy">
+          Laminate and solid wood worktops are generally straightforward to remove — they are usually screwed from below and siliconed at the wall. Stone worktops (granite, quartz, marble) are heavy and require careful handling; breakage during removal is a risk. If you are planning to reuse a stone worktop, advise whoever is carrying out the strip-out — it changes the approach significantly.
+        </p>
+
+        <h3 class="section-h3">Sink Disconnection</h3>
+        <p class="body-copy">
+          The sink requires its water supplies to be isolated and its waste disconnected from the soil stack or trap. If this has not been done by a plumber before the fitter arrives, it needs doing as part of the strip-out — which either means the fitter carries out basic isolation (acceptable for a temporary cap) or you arrange a plumber. The waste pipe will remain in place ready for the new installation unless it is being relocated.
+        </p>
+
+        <h3 class="section-h3">Tile Removal</h3>
+        <p class="body-copy">
+          Wall tiles between worktop level and the base of the wall units are often removed as part of a full refit. Tile removal is time-consuming, always damages the plasterboard or plaster behind, and almost always requires replastering before new tiles or a splashback can go in. Budget around £150–£300 for a plasterer to skim the walls after tile removal, on top of the tile removal cost itself.
+        </p>
+
+        <h2 class="section-h2">What Affects Kitchen Strip-Out Cost</h2>
+        <p class="body-copy">
+          The main factors that move the price up or down:
+        </p>
+        <ul class="body-list">
+          <li><strong>Kitchen size.</strong> More units means more time. A small galley kitchen of eight to ten units can be stripped in three hours. A large kitchen of twenty-plus units and a utility room may take a full day.</li>
+          <li><strong>Whether appliances are already disconnected.</strong> If the fitter arrives and appliances are still live, work stops. The cost of a wasted half-day is far more than arranging disconnection in advance.</li>
+          <li><strong>Stone vs laminate worktops.</strong> Stone worktops require careful removal and at least two people. If you are not keeping them, breakage is less of a concern — but the extra handling time still adds cost.</li>
+          <li><strong>Whether tiles need removing.</strong> Tile removal is sold separately and adds time; allow an extra half-day for a standard kitchen's worth of splashback tiles.</li>
+          <li><strong>Disposal.</strong> Whether waste is included in the strip-out price or separately arranged changes the total significantly. See below.</li>
+        </ul>
+
+        <h2 class="section-h2">Disposal Options and Costs</h2>
+        <p class="body-copy">
+          The old kitchen has to go somewhere. Your options in the Coventry area:
+        </p>
+        <ul class="body-list">
+          <li><strong>Skip hire.</strong> A 6-yard skip is sufficient for most kitchens. Expect to pay £150–£280 in Coventry and Warwickshire depending on location and hire period. You will need a permit if the skip goes on the public highway (£35–£75 from Coventry City Council or the relevant district council).</li>
+          <li><strong>Clearance company.</strong> A local clearance or house-clearance firm will load and remove the contents, typically for £120–£250 for a kitchen's worth of waste. Check they are registered waste carriers and will provide a transfer note.</li>
+          <li><strong>Household waste recycling centre.</strong> If you have a large vehicle or van, Coventry's tip at London Road accepts kitchen furniture free of charge for residents. This requires multiple trips for a large kitchen. Check current rules as permit requirements vary.</li>
+          <li><strong>Included in your fitter's scope.</strong> Some fitters include basic disposal in their strip-out price. We discuss this during the survey and can include it where practical.</li>
+        </ul>
+
+        <h2 class="section-h2">Asbestos Awareness in Pre-1980s Properties</h2>
+        <p class="body-copy">
+          If your property was built or last substantially refitted before 1980, be aware that asbestos-containing materials may be present in the kitchen. The most common locations are:
+        </p>
+        <ul class="body-list">
+          <li>Vinyl floor tiles (cushion vinyl from the 1960s–70s often contained chrysotile asbestos)</li>
+          <li>Textured coatings on ceilings (Artex-type products used before 1985)</li>
+          <li>Pipe lagging around older boiler connections</li>
+          <li>Some older soffit boards and ceiling tiles</li>
+        </ul>
+        <p class="body-copy">
+          If you have any doubt, commission an asbestos survey before any removal begins. A management survey for a kitchen costs approximately £150–£250. If asbestos is found in a low-risk, undamaged condition, it may simply be noted and left in place — the new kitchen can often be installed over it. If it needs removal, a licensed contractor is required, which adds cost and programme time.
+        </p>
+
+        <h2 class="section-h2">Should You Do Your Own Strip-Out?</h2>
+        <p class="body-copy">
+          DIY strip-out is a realistic option for many homeowners and can save £150–£350 in labour. Whether it is worth it depends on:
+        </p>
+        <ul class="body-list">
+          <li><strong>Your confidence with basic DIY.</strong> If you are comfortable using a screwdriver, drill and basic hand tools, and you can identify where services run, you can likely manage the unit removal yourself.</li>
+          <li><strong>Whether you have already arranged service disconnection.</strong> This is non-negotiable. Gas appliances must be disconnected by a Gas Safe engineer. Electrical circuits supplying appliances must be isolated. Plumbing must be capped. Do not attempt to disconnect these yourself without the relevant qualification.</li>
+          <li><strong>Disposal logistics.</strong> A DIY strip-out still leaves you with a full kitchen to dispose of. Factor in skip hire or multiple tip runs.</li>
+          <li><strong>Risk of damage.</strong> Damaging a plasterboard wall, exposing a live cable, or cracking a drainage pipe during DIY strip-out costs more to fix than it saved. If your house is older or you are unsure of what is behind the units, professional strip-out is safer.</li>
+        </ul>
+        <p class="body-copy">
+          Our recommendation: if you are confident and have services properly isolated, DIY strip-out makes sense for a straightforward modern kitchen in a post-1990 property. For older properties, complex layouts, or stone worktops, including strip-out in your professional installation programme is worth the cost.
+        </p>
+
+        <h2 class="section-h2">Strip-Out in the Installation Programme</h2>
+        <p class="body-copy">
+          When strip-out is arranged through us, it typically takes place on day one of your installation programme. The fitter arrives in the morning, carries out the strip-out, confirms the room is ready, and begins unpacking and checking deliveries in the afternoon. This keeps the programme tight and avoids the gap between strip-out and installation that can occur when the two are booked separately.
+        </p>
+        <p class="body-copy">
+          If you choose to carry out your own strip-out, it should be fully complete — including disposal from the room — before day one of the installation. Units stacked in the kitchen create a safety hazard and prevent the fitter from working efficiently.
+        </p>
+
+        <h2 class="section-h2 mt-10 mb-6">Strip-Out Questions Answered</h2>
+        <FAQ items={faqItems} schemaId="removal-faq" />
+
+      </div>
+    </div>
+  </section>
+
+  <CTA
+    dark={true}
+    heading="Include Strip-Out in Your Installation Quote"
+    subtext="We can arrange removal and disposal as part of your full kitchen installation. Book a survey to discuss scope and get a fixed price."
+    primaryLabel="Book a Survey"
+    primaryHref="/survey/"
+    secondaryLabel="Call 07399 651836"
+    secondaryHref="tel:07399651836"
+  />
+
+  <Footer slot="footer" />
+  <StickyMobileCTA slot="sticky-cta" />
+</Base>
+
+<style>
+  .page-header {
+    background: var(--hero-gradient);
+    padding: 3rem 0 3.5rem;
+  }
+  .page-h1 {
+    font-size: clamp(1.625rem, 3vw, 2.5rem);
+    font-weight: 800;
+    color: #fff;
+    letter-spacing: -0.02em;
+    margin-top: 0.75rem;
+    margin-bottom: 0.75rem;
+  }
+  .page-sub {
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 1.0625rem;
+    line-height: 1.6;
+    max-width: 560px;
+  }
+  .content-main {
+    max-width: 780px;
+  }
+  .section-h2 {
+    font-size: 1.375rem;
+    font-weight: 700;
+    color: var(--charcoal);
+    margin-top: 2rem;
+    margin-bottom: 0.875rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--teal);
+    display: inline-block;
+  }
+  .section-h3 {
+    font-size: 1.0625rem;
+    font-weight: 700;
+    color: var(--charcoal);
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+  .body-copy {
+    font-size: 0.9375rem;
+    line-height: 1.75;
+    color: var(--text-soft);
+    margin-bottom: 1rem;
+  }
+  .body-list {
+    font-size: 0.9375rem;
+    line-height: 1.75;
+    color: var(--text-soft);
+    padding-left: 1.5rem;
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .mt-10 { margin-top: 2.5rem; }
+  .mb-6 { margin-bottom: 1.5rem; }
+</style>

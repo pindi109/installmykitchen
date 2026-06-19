@@ -1,0 +1,208 @@
+---
+import Base from "../../layouts/Base.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import StickyMobileCTA from "../../components/StickyMobileCTA.astro";
+import Breadcrumbs from "../../components/Breadcrumbs.astro";
+import CTA from "../../components/CTA.astro";
+
+const title = "Kitchen Installation Questions — Answered | Install My Kitchen";
+const description = "Pindi Sahota answers the 50 most common kitchen installation questions — costs, timescales, retailers, trades, worktops and more. Direct, honest answers from 30 years of experience.";
+const canonical = "https://www.installmykitchen.co.uk/questions/";
+
+const questions = [
+  { slug: "do-wren-install-kitchens", title: "Do Wren Kitchens Install Their Own Kitchens?" },
+  { slug: "does-howdens-do-installation", title: "Does Howdens Do Kitchen Installation?" },
+  { slug: "does-magnet-do-installation", title: "Does Magnet Kitchens Do Installation?" },
+  { slug: "does-ikea-offer-kitchen-installation", title: "Does IKEA Do Kitchen Installation?" },
+  { slug: "can-i-install-a-kitchen-myself", title: "Can I Install a Kitchen Myself?" },
+  { slug: "what-does-a-kitchen-fitter-actually-do", title: "What Does a Kitchen Fitter Actually Do?" },
+  { slug: "is-wren-better-than-howdens", title: "Is Wren Better Than Howdens? A Kitchen Fitter's View" },
+  { slug: "how-long-does-kitchen-installation-take", title: "How Long Does Kitchen Installation Actually Take?" },
+  { slug: "how-much-should-kitchen-fitting-cost", title: "How Much Should Kitchen Fitting Cost in 2025?" },
+  { slug: "do-kitchen-fitters-remove-old-kitchen", title: "Do Kitchen Fitters Remove the Old Kitchen?" },
+  { slug: "do-kitchen-fitters-do-plumbing", title: "Do Kitchen Fitters Do Plumbing?" },
+  { slug: "do-kitchen-fitters-do-electrical", title: "Do Kitchen Fitters Do Electrical Work?" },
+  { slug: "do-you-need-planning-permission-for-new-kitchen", title: "Do You Need Planning Permission for a New Kitchen?" },
+  { slug: "what-qualifications-does-a-kitchen-fitter-need", title: "What Qualifications Does a Kitchen Fitter Need?" },
+  { slug: "what-is-a-kitchen-survey", title: "What Is a Kitchen Survey and Why Do You Need One?" },
+  { slug: "why-use-independent-kitchen-fitter", title: "Why Use an Independent Kitchen Fitter Instead of the Retailer?" },
+  { slug: "how-to-find-kitchen-fitter-near-me", title: "How to Find a Kitchen Fitter Near Me" },
+  { slug: "what-happens-after-kitchen-is-delivered", title: "What Happens After Your Kitchen Is Delivered?" },
+  { slug: "what-to-do-if-kitchen-units-damaged", title: "What to Do If Kitchen Units Are Damaged on Delivery" },
+  { slug: "do-kitchen-fitters-supply-worktops", title: "Do Kitchen Fitters Supply Worktops?" },
+  { slug: "is-it-worth-getting-a-kitchen-survey", title: "Is It Worth Getting a Kitchen Survey Before Installation?" },
+  { slug: "how-do-kitchen-fitters-level-units", title: "How Do Kitchen Fitters Level Kitchen Units?" },
+  { slug: "what-is-kitchen-snagging", title: "What Is Kitchen Snagging and What Should Be Checked?" },
+  { slug: "what-is-a-kitchen-plinth", title: "What Is a Kitchen Plinth?" },
+  { slug: "what-is-kitchen-carcass", title: "What Is a Kitchen Carcass?" },
+  { slug: "what-tools-does-a-kitchen-fitter-use", title: "What Tools Does a Professional Kitchen Fitter Use?" },
+  { slug: "how-are-stone-worktops-measured", title: "How Are Stone Worktops Measured and Fitted?" },
+  { slug: "what-is-soft-close-hinge", title: "What Is a Soft-Close Hinge on a Kitchen?" },
+  { slug: "in-frame-vs-shaker-kitchen-installation", title: "In-Frame vs Shaker Kitchen — Which Is Harder to Install?" },
+  { slug: "which-kitchen-retailers-use-independent-fitters", title: "Which Kitchen Retailers Allow Independent Fitters?" },
+  { slug: "what-is-supply-and-fit-kitchen", title: "What Is a Supply and Fit Kitchen?" },
+  { slug: "do-kitchen-fitters-do-tiling", title: "Do Kitchen Fitters Do Tiling?" },
+  { slug: "how-long-does-ikea-kitchen-installation-take", title: "How Long Does an IKEA Kitchen Take to Install?" },
+  { slug: "how-to-prepare-room-for-kitchen-installation", title: "How to Prepare Your Room for Kitchen Installation" },
+  { slug: "what-are-kitchen-filler-panels", title: "What Are Filler Panels in a Kitchen?" },
+  { slug: "what-are-kitchen-cornices", title: "What Are Kitchen Cornices and Pelmets?" },
+  { slug: "how-much-does-wren-kitchen-installation-cost", title: "How Much Does Wren Kitchen Installation Cost?" },
+  { slug: "how-much-does-howdens-kitchen-cost-to-fit", title: "How Much Does a Howdens Kitchen Cost to Fit?" },
+  { slug: "how-much-does-ikea-kitchen-cost-to-install", title: "How Much Does It Cost to Install an IKEA Kitchen in the UK?" },
+  { slug: "what-is-the-difference-between-kitchen-fitter-and-installer", title: "What's the Difference Between a Kitchen Fitter and Kitchen Installer?" },
+  { slug: "how-to-level-kitchen-units-on-uneven-floor", title: "How Do You Level Kitchen Units on an Uneven Floor?" },
+  { slug: "is-kitchen-installation-expensive", title: "Is Kitchen Installation Expensive? An Honest Answer" },
+  { slug: "can-i-use-any-fitter-for-wren-kitchen", title: "Can I Use Any Fitter for My Wren Kitchen?" },
+  { slug: "can-i-use-independent-fitter-for-howdens", title: "Can I Use an Independent Fitter for My Howdens Kitchen?" },
+  { slug: "what-does-kitchen-installation-include", title: "What Exactly Does Kitchen Installation Include?" },
+  { slug: "how-many-days-to-fit-a-kitchen", title: "How Many Days Does It Take to Fit a Kitchen?" },
+  { slug: "who-is-responsible-if-kitchen-installation-goes-wrong", title: "Who Is Responsible If Kitchen Installation Goes Wrong?" },
+  { slug: "do-i-need-to-move-out-during-kitchen-installation", title: "Do I Need to Move Out During Kitchen Installation?" },
+  { slug: "what-guarantee-does-kitchen-installation-come-with", title: "What Guarantee Does Kitchen Installation Come With?" },
+  { slug: "how-to-book-kitchen-fitter-coventry", title: "How to Book a Kitchen Fitter in Coventry" },
+];
+---
+
+<Base title={title} description={description} canonical={canonical}>
+  <Header slot="header" />
+
+  <div class="container py-6">
+    <Breadcrumbs items={[{ label: "Questions", href: "/questions/" }]} />
+  </div>
+
+  <!-- Hero -->
+  <section class="section" style="background: var(--bg-light);">
+    <div class="container">
+      <div class="max-w-3xl">
+        <h1 class="text-4xl md:text-5xl font-extrabold mb-5 leading-tight" style="color: var(--navy);">
+          Kitchen Installation Questions — Answered by a 30-Year Coventry Fitter
+        </h1>
+        <p class="text-lg leading-relaxed" style="color: var(--text-soft);">
+          Pindi Sahota has been installing kitchens across Coventry and Warwickshire for 30 years. These are the questions homeowners ask most — answered directly, honestly, and with no marketing fluff.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Questions grid -->
+  <section class="section">
+    <div class="container">
+      <div class="question-grid">
+        {questions.map((q, i) => (
+          <a href={`/questions/${q.slug}/`} class="question-card">
+            <div class="question-card-body">
+              <span class="question-number" aria-hidden="true">{String(i + 1).padStart(2, "0")}</span>
+              <h2 class="question-card-title">{q.title}</h2>
+            </div>
+            <span class="question-card-arrow" aria-hidden="true">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"/>
+                <polyline points="12 5 19 12 12 19"/>
+              </svg>
+            </span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <CTA
+    heading="Ready to Book Your Kitchen Installation?"
+    subtext="Book a £195 pre-installation survey and get a fixed-price quote within 24 hours. The survey fee is credited back in full when you proceed."
+    primaryLabel="Book Your Survey"
+    primaryHref="/survey/"
+    secondaryLabel="Call 07399 651836"
+    secondaryHref="tel:07399651836"
+    dark={true}
+  />
+
+  <Footer slot="footer" />
+  <StickyMobileCTA slot="sticky-cta" />
+</Base>
+
+<style>
+  .question-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.875rem;
+  }
+
+  @media (min-width: 640px) {
+    .question-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .question-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .question-card {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 1.25rem 1.25rem 1.25rem 1.5rem;
+    border-radius: 0.75rem;
+    border: 1.5px solid #E5E7EB;
+    background: #fff;
+    text-decoration: none;
+    transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
+  }
+
+  .question-card:hover {
+    border-color: var(--teal);
+    box-shadow: 0 4px 18px rgba(15, 118, 110, 0.12);
+    transform: translateY(-2px);
+  }
+
+  .question-card:focus-visible {
+    outline: 2px solid var(--teal);
+    outline-offset: 2px;
+  }
+
+  .question-card-body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    min-width: 0;
+  }
+
+  .question-number {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    color: var(--teal);
+    opacity: 0.6;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .question-card-title {
+    font-size: 0.9375rem;
+    font-weight: 700;
+    line-height: 1.4;
+    color: var(--navy);
+    margin: 0;
+    transition: color 0.15s;
+  }
+
+  .question-card:hover .question-card-title {
+    color: var(--teal);
+  }
+
+  .question-card-arrow {
+    flex-shrink: 0;
+    color: var(--teal);
+    opacity: 0.4;
+    margin-top: 0.25rem;
+    transition: opacity 0.2s, transform 0.2s;
+  }
+
+  .question-card:hover .question-card-arrow {
+    opacity: 1;
+    transform: translateX(3px);
+  }
+</style>

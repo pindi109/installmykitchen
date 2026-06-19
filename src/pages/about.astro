@@ -17,7 +17,24 @@ const personSchema = {
     "@type": "LocalBusiness",
     name: "Install My Kitchen",
     url: "https://www.installmykitchen.co.uk",
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: "242 Hollyfast Road",
+      addressLocality: "Coventry",
+      postalCode: "CV6 2AH",
+    },
   },
+  knowsAbout: [
+    "Kitchen Installation",
+    "Wren Kitchens",
+    "Howdens",
+    "IKEA Kitchen Installation",
+    "Coventry Kitchen Fitting",
+    "Häcker",
+    "Nobilia",
+    "Mereway",
+    "Neptune Kitchens",
+  ],
 };
 
 const keyTakeaways = [
@@ -85,13 +102,67 @@ const areas = [
           <!-- About Pindi Sahota -->
           <h2 class="section-h2" id="pindi-sahota">Meet Pindi Sahota</h2>
           <p class="body-copy">
-            Pindi Sahota is the kitchen installation specialist behind Install My Kitchen. With hands-on experience fitting kitchens of all sizes and layouts across Coventry and Warwickshire, Pindi brings a methodical approach and an eye for detail to every project. From single-wall galley kitchens to large open-plan installations, every job receives the same level of care and precision.
+            Pindi Sahota is the founder and lead fitter of Install My Kitchen. Based in Coventry, he has spent his career in kitchen installation, working across Coventry and Warwickshire for homeowners who want a reliable specialist rather than a retailer-employed fitter. Install My Kitchen was built on that distinction — a business answerable to its customers, not to a showroom.
           </p>
           <p class="body-copy">
-            Pindi's approach is straightforward: visit the home before giving a quote, take proper measurements, talk through the plan, and identify anything that could cause issues before work starts. This pre-installation survey process means that on installation day, the focus is entirely on delivering a first-class result rather than firefighting avoidable problems.
+            Over the course of his career, Pindi has fitted kitchens supplied by every major UK retailer: Wren, Howdens, Magnet, IKEA, Benchmarx, B&Q, Wickes and more. He has also worked extensively with premium brands including Häcker, Nobilia, Mereway and Neptune. Each of these manufacturers has its own unit system, cabinet depths, hinge tolerances and fitting requirements. Knowing how a Häcker Inframe cabinet behaves differently to a Wren carcass, or understanding the quirks of IKEA's SEKTION system, is the kind of practical knowledge that only comes from fitting a large number of kitchens across a wide range of brands. That experience is what Pindi brings to every project.
           </p>
           <p class="body-copy">
-            Quality and communication sit at the heart of everything Install My Kitchen does. Customers receive clear, itemised quotes with no hidden extras, realistic timelines, and a specialist who is reachable throughout the process.
+            Pindi's approach is survey-first, fixed-price, no surprises. He believes the pre-installation survey is the most important stage of any kitchen project — it is where problems are found before they become costly. A leaning wall, an out-of-square corner, a structural pipe in the wrong place: these are the details that turn a smooth installation into a difficult one if they are not identified in advance. Pindi takes time to get the details right: door alignment, consistent gap sizes, level plinths, tight worktop joints. None of it happens by accident.
+          </p>
+          <p class="body-copy">
+            Pindi is Coventry-based and serves the community he lives in. His reputation is built one kitchen at a time, and he is personally involved in every survey and takes responsibility for every installation his team carries out. When you book with Install My Kitchen, you deal with Pindi — not a call centre, not a subcontracted team booked at the last minute.
+          </p>
+
+          <!-- Our Approach -->
+          <h2 class="section-h2">Our Approach</h2>
+          <div class="approach-grid" role="list" aria-label="Our installation principles">
+
+            <div class="approach-card" role="listitem">
+              <h3 class="approach-title">Survey First</h3>
+              <p class="approach-body">We survey every kitchen before quoting. No exceptions. The survey is where we catch the details that determine whether your installation runs to plan — or doesn't.</p>
+            </div>
+
+            <div class="approach-card" role="listitem">
+              <h3 class="approach-title">Fixed Price</h3>
+              <p class="approach-body">Your quote is fixed. It will not change unless you change the scope. You know what you are paying before we start, and that figure does not move.</p>
+            </div>
+
+            <div class="approach-card" role="listitem">
+              <h3 class="approach-title">Retailer Independent</h3>
+              <p class="approach-body">We are not employed by or affiliated with any kitchen retailer. We work for you. The advice we give is based on what is right for your home, not what is right for a showroom's fitting schedule.</p>
+            </div>
+
+            <div class="approach-card" role="listitem">
+              <h3 class="approach-title">Local Accountability</h3>
+              <p class="approach-body">We are a Coventry business. Our reputation depends on every kitchen we fit in this community. When something is not right, we put it right — because our next job likely lives on the same street.</p>
+            </div>
+
+          </div>
+
+          <!-- What We Install -->
+          <h2 class="section-h2">What We Install</h2>
+          <p class="body-copy">
+            We fit kitchens supplied from across the market — from high-street retail to trade-only suppliers and premium luxury brands.
+          </p>
+
+          <h3 class="subsection-h3">Standard retail kitchens</h3>
+          <p class="body-copy">
+            Wren, Howdens, Magnet, IKEA, Wickes, B&Q, Benchmarx, DIY Kitchens
+          </p>
+
+          <h3 class="subsection-h3">Trade supply kitchens</h3>
+          <p class="body-copy">
+            Howdens trade accounts, Benchmarx, Symphony, Masterclass
+          </p>
+
+          <h3 class="subsection-h3">Premium and luxury brands</h3>
+          <p class="body-copy">
+            Häcker, Nobilia, Mereway, Neptune, deVOL, Harvey Jones, Tom Howley, Rotpunkt, Pronorm, Smallbone
+          </p>
+
+          <p class="body-copy">
+            If your kitchen is not listed here, <a href="/contact/" style="color: var(--teal);">get in touch</a> — we are likely able to help. We have fitting experience across a wide range of brands and are transparent if a job falls outside our scope.
           </p>
 
           <!-- What we do -->
@@ -353,5 +424,50 @@ const areas = [
     margin-left: auto;
     color: var(--teal);
     font-size: 0.875rem;
+  }
+
+  /* Our Approach grid */
+  .approach-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  @media (min-width: 640px) {
+    .approach-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  .approach-card {
+    background: var(--bg-light);
+    border: 1.5px solid var(--border);
+    border-left: 4px solid var(--teal);
+    border-radius: 0.625rem;
+    padding: 1.125rem 1.25rem;
+  }
+
+  .approach-title {
+    font-size: 0.9375rem;
+    font-weight: 700;
+    color: var(--charcoal);
+    margin-bottom: 0.375rem;
+  }
+
+  .approach-body {
+    font-size: 0.875rem;
+    line-height: 1.7;
+    color: var(--text-soft);
+    margin: 0;
+  }
+
+  /* What We Install sub-headings */
+  .subsection-h3 {
+    font-size: 0.9375rem;
+    font-weight: 700;
+    color: var(--charcoal);
+    margin-top: 1.25rem;
+    margin-bottom: 0.25rem;
   }
 </style>

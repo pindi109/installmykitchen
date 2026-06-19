@@ -8,6 +8,8 @@ import ProcessSteps from "../components/ProcessSteps.astro";
 import EnquiryForm from "../components/EnquiryForm.astro";
 import FAQ from "../components/FAQ.astro";
 import CTA from "../components/CTA.astro";
+import TrustStrip from "../components/TrustStrip.astro";
+import WhatHappensNext from "../components/WhatHappensNext.astro";
 
 const localBusinessSchema = {
   "@context": "https://schema.org",
@@ -217,6 +219,52 @@ const areas = [
   <!-- ═════════════════════════════════════ SUPPLIER LOGOS ════════ -->
   <SupplierLogos heading="We Install Kitchens From All Major Suppliers" />
 
+  <!-- ══════════════════════════════════ WHY CHOOSE US ══════════ -->
+  <section class="section" style="background: #fff;" aria-labelledby="why-choose-heading">
+    <div class="container">
+      <h2 id="why-choose-heading" class="text-center text-2xl md:text-3xl font-bold mb-3" style="color: var(--charcoal);">
+        Why Choose Install My Kitchen
+      </h2>
+      <p class="text-center text-sm mb-10 max-w-xl mx-auto" style="color: var(--text-soft);">
+        Four commitments that set us apart from retailer-tied installation teams.
+      </p>
+      <ul class="trust-pillars" role="list">
+        <li class="trust-card" role="listitem">
+          <span class="trust-icon" aria-hidden="true">
+            <!-- Clipboard check -->
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/><polyline points="9 12 11 14 15 10"/></svg>
+          </span>
+          <strong class="trust-title">Survey Before Every Installation</strong>
+          <p class="trust-desc">We never quote without seeing your room. Our £195 survey is credited back in full when you confirm your booking date.</p>
+        </li>
+        <li class="trust-card" role="listitem">
+          <span class="trust-icon" aria-hidden="true">
+            <!-- Shield with checkmark -->
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+          </span>
+          <strong class="trust-title">Fixed Price Guaranteed</strong>
+          <p class="trust-desc">Your quote doesn't change. No hidden extras, no surprises on completion day. What we quote is what you pay.</p>
+        </li>
+        <li class="trust-card" role="listitem">
+          <span class="trust-icon" aria-hidden="true">
+            <!-- Grid / retailers -->
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+          </span>
+          <strong class="trust-title">All Major Retailers</strong>
+          <p class="trust-desc">Wren, Howdens, Magnet, IKEA, Wickes, B&amp;Q, Benchmarx and more. If you've bought it, we'll fit it — no exclusions.</p>
+        </li>
+        <li class="trust-card" role="listitem">
+          <span class="trust-icon" aria-hidden="true">
+            <!-- Map pin -->
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </span>
+          <strong class="trust-title">Coventry &amp; Warwickshire Based</strong>
+          <p class="trust-desc">Local, independent, and accountable. Based in Coundon, Coventry — serving the whole region, not parachuted in from elsewhere.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
   <!-- ══════════════════════════════════════ "A BETTER WAY" ══════ -->
   <section class="section" style="background: var(--bg-light);" aria-labelledby="better-way-heading">
     <div class="container">
@@ -285,6 +333,97 @@ const areas = [
   <!-- ═══════════════════════════════════════ PROCESS STEPS ══════ -->
   <ProcessSteps />
 
+  <!-- ══════════════════════════════════════ ABOUT SECTION ══════ -->
+  <section class="section" style="background: #fff;" aria-labelledby="about-heading">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-copy fade-up">
+          <p class="section-eyebrow">About Install My Kitchen</p>
+          <h2 id="about-heading" class="text-2xl md:text-3xl lg:text-4xl font-bold mb-6" style="color: var(--charcoal);">
+            Coventry's Independent Kitchen Installation Specialist
+          </h2>
+          <p class="about-para">
+            Install My Kitchen is an independent kitchen installation service based in Coundon, Coventry. We work for homeowners — not retailers — fitting kitchens purchased from any major supplier across Coventry and Warwickshire. As an independent specialist, we have no commercial tie to any showroom or manufacturer, which means our only focus is the quality of your installation and the experience you have along the way.
+          </p>
+          <p class="about-para">
+            Every installation begins with a pre-visit survey. We take precise measurements, review your kitchen plan against the actual room, and identify any potential issues before a single cabinet is unpacked. It takes more time upfront, but it's the difference between an installation that goes smoothly and one that doesn't. We take the details seriously — because it's your home, and the finish matters.
+          </p>
+          <div class="about-stats" role="list" aria-label="Key service commitments">
+            <div class="about-stat" role="listitem">
+              <span class="about-stat-label">Survey Before Every Job</span>
+            </div>
+            <div class="about-stat" role="listitem">
+              <span class="about-stat-label">Fixed-Price Quotes</span>
+            </div>
+            <div class="about-stat" role="listitem">
+              <span class="about-stat-label">All Major Retailers</span>
+            </div>
+            <div class="about-stat" role="listitem">
+              <span class="about-stat-label">Coventry &amp; Warwickshire</span>
+            </div>
+          </div>
+          <a href="/survey/" class="btn-primary mt-8 inline-flex items-center gap-2">
+            Book Your Survey
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <line x1="5" y1="12" x2="19" y2="12"/>
+              <polyline points="12 5 19 12 12 19"/>
+            </svg>
+          </a>
+        </div>
+        <div class="about-aside fade-up" aria-hidden="true">
+          <div class="about-address-card">
+            <p class="about-address-label">Our Base</p>
+            <address class="about-address">
+              Install My Kitchen<br />
+              242 Hollyfast Road<br />
+              Coundon, Coventry<br />
+              CV6 2AH
+            </address>
+            <p class="about-address-note">Serving Coventry, Rugby, Nuneaton, Leamington Spa, Kenilworth, Warwick and the wider Warwickshire area.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════ CREDENTIALS ════════════ -->
+  <section class="section credentials-section" aria-labelledby="credentials-heading">
+    <div class="container">
+      <h2 id="credentials-heading" class="text-center text-2xl md:text-3xl font-bold mb-3" style="color: #fff;">
+        Why Homeowners Choose Independent Installation
+      </h2>
+      <p class="text-center text-sm mb-12 max-w-xl mx-auto" style="color: rgba(255,255,255,0.65);">
+        There's a real difference between a retailer's fitting team and an independent specialist who answers only to you.
+      </p>
+      <ul class="credentials-grid" role="list">
+        <li class="credential-card" role="listitem">
+          <span class="credential-icon" aria-hidden="true">
+            <!-- Person / user -->
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          </span>
+          <strong class="credential-title">We work for you, not the retailer</strong>
+          <p class="credential-desc">As an independent service, our only loyalty is to you and the quality of your installation. We have no incentive to cut corners or rush a job to meet a retailer's schedule.</p>
+        </li>
+        <li class="credential-card" role="listitem">
+          <span class="credential-icon" aria-hidden="true">
+            <!-- Magnifier / survey -->
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          </span>
+          <strong class="credential-title">Survey-protected pricing</strong>
+          <p class="credential-desc">Our pre-installation survey means no surprises. We identify issues before work begins — not during it. Your fixed-price quote is based on what we've actually seen, not an estimate from a floor plan.</p>
+        </li>
+        <li class="credential-card" role="listitem">
+          <span class="credential-icon" aria-hidden="true">
+            <!-- Map pin / location -->
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </span>
+          <strong class="credential-title">Local and accountable</strong>
+          <p class="credential-desc">Based in Coventry, serving Warwickshire. We're your neighbours — our reputation depends on every kitchen we fit. You know where to find us, and that matters.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
   <!-- ═══════════════════════════════════════════ AREAS ══════════ -->
   <section class="section" style="background: var(--bg-light);" aria-labelledby="areas-heading">
     <div class="container">
@@ -313,6 +452,9 @@ const areas = [
     </div>
   </section>
 
+  <!-- ═════════════════════════════════════════ TRUST STRIP ══════ -->
+  <TrustStrip />
+
   <!-- ═══════════════════════════════════════════ FAQ ═══════════ -->
   <section class="section" style="background: #fff;" aria-labelledby="faq-heading">
     <div class="container">
@@ -327,6 +469,9 @@ const areas = [
       </div>
     </div>
   </section>
+
+  <!-- ══════════════════════════════ WHAT HAPPENS NEXT ══════════ -->
+  <WhatHappensNext />
 
   <!-- ══════════════════════════════════════ DARK CTA ════════════ -->
   <CTA
@@ -704,5 +849,201 @@ const areas = [
   .area-card:hover .area-arrow {
     opacity: 1;
     transform: translateX(3px);
+  }
+
+  /* ── Trust pillars (Why Choose Us) ── */
+  .trust-pillars {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  @media (min-width: 1024px) {
+    .trust-pillars {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  .trust-card {
+    background: #fff;
+    border-left: 4px solid var(--teal);
+    border-radius: 0.75rem;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    padding: 1.5rem 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.625rem;
+  }
+
+  .trust-icon {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    background: rgba(15, 118, 110, 0.1);
+    color: var(--teal);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-bottom: 0.25rem;
+  }
+
+  .trust-title {
+    font-size: 0.9375rem;
+    font-weight: 700;
+    color: var(--charcoal);
+    line-height: 1.3;
+  }
+
+  .trust-desc {
+    font-size: 0.875rem;
+    color: var(--text-soft);
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  /* ── About section ── */
+  .section-eyebrow {
+    font-size: 0.8125rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--teal);
+    margin-bottom: 0.75rem;
+  }
+
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    align-items: start;
+  }
+
+  @media (min-width: 1024px) {
+    .about-grid {
+      grid-template-columns: 1fr 380px;
+    }
+  }
+
+  .about-para {
+    font-size: 1rem;
+    color: var(--text-soft);
+    line-height: 1.75;
+    margin-bottom: 1.25rem;
+  }
+
+  .about-stats {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+    margin-top: 1.75rem;
+    list-style: none;
+    padding: 0;
+  }
+
+  .about-stat {
+    background: rgba(15, 118, 110, 0.07);
+    border-radius: 0.625rem;
+    padding: 0.75rem 1rem;
+    display: flex;
+    align-items: center;
+  }
+
+  .about-stat-label {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--teal);
+    line-height: 1.3;
+  }
+
+  .about-address-card {
+    background: var(--bg-light);
+    border-radius: 1rem;
+    border: 1.5px solid var(--border);
+    padding: 1.75rem;
+  }
+
+  .about-address-label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    color: var(--teal);
+    margin-bottom: 0.75rem;
+  }
+
+  .about-address {
+    font-style: normal;
+    font-size: 0.9375rem;
+    color: var(--charcoal);
+    font-weight: 500;
+    line-height: 1.7;
+    margin-bottom: 1rem;
+  }
+
+  .about-address-note {
+    font-size: 0.875rem;
+    color: var(--text-soft);
+    line-height: 1.6;
+  }
+
+  /* ── Credentials section ── */
+  .credentials-section {
+    background: #0F172A;
+  }
+
+  .credentials-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  @media (min-width: 768px) {
+    .credentials-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .credential-card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    padding: 2rem 1.75rem;
+    border-radius: 1rem;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+  }
+
+  .credential-icon {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    background: rgba(15, 118, 110, 0.25);
+    color: var(--teal-bright, #2dd4bf);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-bottom: 0.25rem;
+  }
+
+  .credential-title {
+    font-size: 1.0625rem;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.3;
+  }
+
+  .credential-desc {
+    font-size: 0.9375rem;
+    color: rgba(255,255,255,0.65);
+    line-height: 1.7;
+    margin: 0;
   }
 </style>
