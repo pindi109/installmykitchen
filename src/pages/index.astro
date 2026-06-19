@@ -578,11 +578,11 @@ const areas = [
         <p style="color:rgba(255,255,255,0.6);max-width:500px;margin:0 auto;">Drag the slider to see the transformation. Replace placeholder images with your real before/after photos.</p>
       </div>
       <div class="ba-wrap" id="ba-slider" role="img" aria-label="Before and after kitchen transformation slider">
-        <!-- BEFORE image — replace src with real before photo -->
-        <img class="ba-img ba-before" src="/assets/heroes/areas/coventry/areas-coventry-hero.jpg" alt="Kitchen before installation" width="1834" height="1024" loading="lazy" />
-        <!-- AFTER image — replace src with real after photo -->
+        <!-- BEFORE image -->
+        <img class="ba-img ba-before" src="/assets/before-kitchen.webp" alt="Kitchen before installation by Install My Kitchen" width="1290" height="1720" loading="lazy" />
+        <!-- AFTER image -->
         <div class="ba-after-wrap">
-          <img class="ba-img ba-after" src="/assets/hero-home.webp" alt="Kitchen after installation by Install My Kitchen" width="1536" height="1024" loading="lazy" />
+          <img class="ba-img ba-after" src="/assets/after-kitchen.webp" alt="Luxury kitchen after installation by Install My Kitchen" width="1086" height="1448" loading="lazy" />
         </div>
         <!-- Divider -->
         <div class="ba-divider" id="ba-divider">
@@ -1295,7 +1295,8 @@ const areas = [
     user-select: none;
     touch-action: none;
     box-shadow: 0 24px 60px rgba(0,0,0,0.5);
-    aspect-ratio: 16/9;
+    aspect-ratio: 3/4;
+    max-height: 80vh;
   }
   .ba-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
   .ba-after-wrap { position: absolute; inset: 0; width: 50%; overflow: hidden; }
