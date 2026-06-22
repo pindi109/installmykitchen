@@ -21,19 +21,6 @@ const projectMeta = [
   { label: "Retailer", value: "Howdens Joinery" },
 ];
 
-const galleryImages = [
-  { src: "/assets/projects/howdens-earlsdon-coventry/howdens-earlsdon-kitchen-fitted-units-4284x5712.webp", alt: "Howdens Greenwich Shaker base units fitted in Earlsdon, Coventry", w: 4284, h: 5712 },
-  { src: "/assets/projects/howdens-earlsdon-coventry/howdens-earlsdon-kitchen-cabinet-installation-4284x5712.webp", alt: "Howdens kitchen cabinet installation in progress, Earlsdon", w: 4284, h: 5712 },
-  { src: "/assets/projects/howdens-earlsdon-coventry/howdens-earlsdon-kitchen-base-units-progress-4284x5712.webp", alt: "Howdens base unit run taking shape across U-shaped layout", w: 4284, h: 5712 },
-  { src: "/assets/projects/howdens-earlsdon-coventry/howdens-earlsdon-kitchen-wall-units-fitted-3024x4032.webp", alt: "Wall units fitted and levelled in Howdens Earlsdon kitchen", w: 3024, h: 4032 },
-  { src: "/assets/projects/howdens-earlsdon-coventry/howdens-earlsdon-kitchen-shaker-doors-hung-4284x5712.webp", alt: "Howdens Greenwich Shaker doors hung and aligned", w: 4284, h: 5712 },
-  { src: "/assets/projects/howdens-earlsdon-coventry/howdens-earlsdon-kitchen-layout-taking-shape-4284x5712.webp", alt: "Full U-shaped Howdens kitchen layout coming together", w: 4284, h: 5712 },
-  { src: "/assets/projects/howdens-earlsdon-coventry/howdens-earlsdon-kitchen-worktop-coordination-3024x4032.webp", alt: "Quartz worktop coordination stage — base units complete", w: 3024, h: 4032 },
-  { src: "/assets/projects/howdens-earlsdon-coventry/howdens-earlsdon-kitchen-integrated-appliances-4284x5712.webp", alt: "Integrated Bosch appliances installed in Howdens housing units", w: 4284, h: 5712 },
-  { src: "/assets/projects/howdens-earlsdon-coventry/howdens-earlsdon-kitchen-installation-complete-4284x5712.webp", alt: "Howdens kitchen installation complete before worktop arrival", w: 4284, h: 5712 },
-  { src: "/assets/projects/howdens-earlsdon-coventry/howdens-earlsdon-kitchen-finished-result-3024x4032.webp", alt: "Finished Howdens Greenwich Shaker kitchen in Earlsdon, Coventry", w: 3024, h: 4032 },
-];
-
 const faqs = [
   {
     q: "Can any fitter install a Howdens kitchen?",
@@ -96,31 +83,10 @@ const faqs = [
 
           <AnswerBlock answer="A 16-unit Howdens Greenwich Shaker kitchen installation in a 1930s semi-detached property in Earlsdon, Coventry. The project included pre-installation survey, full cabinet installation, quartz worktop co-ordination, integrated appliances, and sign-off snagging." />
 
-          <div class="project-gallery" id="gallery-howdens">
-            {galleryImages.map((img, i) => (
-              <button
-                class={`gallery-thumb${i === 0 ? " gallery-hero" : ""}`}
-                data-src={img.src}
-                data-alt={img.alt}
-                aria-label={`View photo: ${img.alt}`}
-              >
-                <img
-                  src={img.src}
-                  alt={img.alt}
-                  width={img.w}
-                  height={img.h}
-                  loading={i < 3 ? "eager" : "lazy"}
-                  decoding="async"
-                />
-              </button>
-            ))}
-          </div>
-
-          <dialog class="gallery-dialog" id="gallery-dialog-howdens" aria-label="Photo lightbox">
-            <button class="dialog-close" aria-label="Close photo">&#x2715;</button>
-            <img src="" alt="" class="dialog-img" />
-            <p class="dialog-caption"></p>
-          </dialog>
+          <a href="/gallery/" class="gallery-cta" aria-label="View kitchen installation photo gallery">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+            View Installation Photos
+          </a>
 
           <h2 class="section-h2">The Brief</h2>
           <p class="body-copy">
@@ -276,114 +242,23 @@ const faqs = [
     color: var(--charcoal);
   }
 
-  /* Gallery grid */
-  .project-gallery {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 0.375rem;
-    margin: 1.75rem 0;
-    border-radius: 0.625rem;
-    overflow: hidden;
-  }
-  .gallery-hero {
-    grid-column: span 3;
-  }
-  .gallery-thumb {
-    display: block;
-    padding: 0;
-    border: none;
-    background: #f3f4f6;
-    cursor: pointer;
-    overflow: hidden;
-    aspect-ratio: 4/3;
-  }
-  .gallery-hero {
-    aspect-ratio: 16/9;
-  }
-  .gallery-thumb img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-    transition: transform 0.25s ease;
-  }
-  .gallery-thumb:hover img {
-    transform: scale(1.04);
-  }
-  @media (max-width: 600px) {
-    .project-gallery {
-      grid-template-columns: repeat(2, 1fr);
-    }
-    .gallery-hero {
-      grid-column: span 2;
-    }
-  }
-
-  /* Lightbox dialog */
-  .gallery-dialog {
-    border: none;
-    border-radius: 0.75rem;
-    background: #111;
-    padding: 0;
-    max-width: min(95vw, 1200px);
-    max-height: 95vh;
-    overflow: hidden;
-    box-shadow: 0 25px 60px rgba(0,0,0,0.7);
-  }
-  .gallery-dialog::backdrop {
-    background: rgba(0, 0, 0, 0.85);
-    backdrop-filter: blur(4px);
-  }
-  .dialog-img {
-    display: block;
-    max-width: 100%;
-    max-height: 88vh;
-    object-fit: contain;
-  }
-  .dialog-caption {
-    color: #ccc;
-    font-size: 0.8125rem;
-    padding: 0.5rem 1rem 0.75rem;
-    margin: 0;
-    text-align: center;
-  }
-  .dialog-close {
-    position: absolute;
-    top: 0.5rem;
-    right: 0.625rem;
-    background: rgba(0,0,0,0.5);
-    border: none;
-    color: #fff;
-    font-size: 1.125rem;
-    width: 2rem;
-    height: 2rem;
-    border-radius: 50%;
-    cursor: pointer;
-    display: flex;
+  .gallery-cta {
+    display: inline-flex;
     align-items: center;
-    justify-content: center;
-    z-index: 10;
+    gap: 0.5rem;
+    margin: 1.25rem 0 0.25rem;
+    padding: 0.625rem 1.125rem;
+    background: rgba(20, 184, 166, 0.08);
+    border: 1.5px solid rgba(20, 184, 166, 0.3);
+    border-radius: 0.5rem;
+    color: var(--teal);
+    font-size: 0.9375rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background 0.15s, border-color 0.15s;
+  }
+  .gallery-cta:hover {
+    background: rgba(20, 184, 166, 0.15);
+    border-color: var(--teal);
   }
 </style>
-
-<script>
-  const gallery = document.getElementById("gallery-howdens");
-  const dialog = document.getElementById("gallery-dialog-howdens") as HTMLDialogElement;
-  if (gallery && dialog) {
-    const dialogImg = dialog.querySelector(".dialog-img") as HTMLImageElement;
-    const dialogCaption = dialog.querySelector(".dialog-caption") as HTMLElement;
-    const closeBtn = dialog.querySelector(".dialog-close") as HTMLButtonElement;
-    gallery.querySelectorAll(".gallery-thumb").forEach((btn) => {
-      btn.addEventListener("click", () => {
-        const src = (btn as HTMLElement).dataset.src || "";
-        const alt = (btn as HTMLElement).dataset.alt || "";
-        dialogImg.src = src;
-        dialogImg.alt = alt;
-        dialogCaption.textContent = alt;
-        dialog.showModal();
-      });
-    });
-    closeBtn.addEventListener("click", () => dialog.close());
-    dialog.addEventListener("click", (e) => { if (e.target === dialog) dialog.close(); });
-  }
-</script>
