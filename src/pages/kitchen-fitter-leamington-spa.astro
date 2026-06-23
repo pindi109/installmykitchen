@@ -1,0 +1,504 @@
+---
+import Base from "../layouts/Base.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import StickyMobileCTA from "../components/StickyMobileCTA.astro";
+import Breadcrumbs from "../components/Breadcrumbs.astro";
+import AnswerBlock from "../components/AnswerBlock.astro";
+import KeyTakeaway from "../components/KeyTakeaway.astro";
+import FAQ from "../components/FAQ.astro";
+import SupplierLogos from "../components/SupplierLogos.astro";
+import InternalLinks from "../components/InternalLinks.astro";
+import CTA from "../components/CTA.astro";
+import TrustStrip from "../components/TrustStrip.astro";
+
+const title = "Kitchen Fitter Leamington Spa | Install My Kitchen — Pindi Sahota";
+const metaDescription = "Independent kitchen fitter in Royal Leamington Spa. Pindi Sahota delivers expert kitchen installation across CV31, CV32 and CV33 with 30 years experience, fixed-price quotes, and a £195 survey credited back.";
+const canonical = "https://installmykitchen.co.uk/kitchen-fitter-leamington-spa/";
+
+const takeawayPoints = [
+  "Pindi Sahota is an independent kitchen fitter serving Royal Leamington Spa and the surrounding CV31, CV32 and CV33 postcode area.",
+  "30 years of professional kitchen fitting experience, including extensive work in Leamington's challenging period properties — Regency terraces, Victorian villas, and scullery-style kitchens.",
+  "Fits kitchens from IKEA, Wren, Howdens, Magnet, Wickes, B&Q, Benchmarx and all other major retailers.",
+  "Pre-installation survey at £195, credited back in full when you proceed — fixed-price quote guaranteed with no hidden charges.",
+];
+
+const faqItems = [
+  {
+    q: "What makes Leamington Spa period properties different for kitchen fitting?",
+    a: "Royal Leamington Spa has an unusually high concentration of Regency and Victorian period properties — terraces, villas, and sculleries — that present fitting challenges well outside the norm of a modern semi-detached. Walls in the conservation area can be 40mm or more out of plumb, meaning that base and wall units need individual adjustment rather than a simple straight run. Original stone or quarry tile floors under later kitchen tiles are common and can cause significant levelling issues when discovered only on installation day. Scullery-style kitchen spaces — narrow rooms with a single external wall, low ceiling heights, and limited natural light — require precise planning to make the most of every centimetre. Pindi has fitted multiple kitchens across Leamington's period housing stock, including an IKEA METOD installation in a Victorian mid-terrace in the town, and understands what to look for and how to plan around it. This local, practical knowledge is what the pre-installation survey is specifically designed to surface — before anything is ordered.",
+  },
+  {
+    q: "How much does kitchen fitting cost in Leamington Spa?",
+    a: "Kitchen fitting costs in Leamington Spa depend on the size of the kitchen, the layout complexity, the number of appliances, and whether any preparatory work is required — particularly in period properties where floor levelling or wall making-good is common. As a guide, a standard 10–15 unit kitchen in a typical Leamington semi or terrace typically costs between £1,300 and £2,600 for fitting labour alone. Period property projects with uneven floors, out-of-plumb walls, or scullery-style spaces will sit higher due to the additional time required. Pindi provides a fully itemised, fixed-price quote following a pre-installation survey, so there are no estimates or retrospective charges. For a detailed breakdown of what affects pricing, visit the kitchen fitting costs page.",
+  },
+  {
+    q: "Do you cover CV31, CV32 and CV33?",
+    a: "Yes. Pindi covers all Leamington Spa postcodes: CV31 (Leamington town centre and south), CV32 (north Leamington including Milverton and Lillington), and CV33 (the wider rural area to the east including Radford Semele and Cubbington). He also covers the immediately surrounding areas, including Warwick (CV34), Kenilworth (CV8), and villages within a reasonable radius. Call 07399 651836 to confirm coverage for your specific postcode.",
+  },
+  {
+    q: "How long does kitchen installation take in a Leamington Spa Victorian terrace?",
+    a: "In a standard Victorian terrace in Leamington Spa, kitchen installation typically takes between four and six working days for the fitting itself — one to two days longer than a modern semi of equivalent size. The additional time accounts for the out-of-plumb wall adjustment, floor levelling work where required, and the more careful setting-out needed in narrow scullery-style rooms. If the project includes trades co-ordination — a plumber for relocated pipework, or an electrician for a new circuit or extraction route — the overall project programme will be longer. During the pre-installation survey, Pindi will give you a realistic duration estimate based on your specific room, kitchen specification, and any work identified during the survey.",
+  },
+  {
+    q: "Which kitchen retailers do you fit in Leamington Spa?",
+    a: "Pindi fits kitchens from every major UK retailer and manufacturer. In Leamington Spa the most common brands he installs are IKEA (including the METOD system fitted in several Leamington terraces), Wren Kitchens, Howdens Joinery, Magnet, Wickes, and B&Q. He also regularly fits Benchmarx, DIY Kitchens, Kutchenhaus, Symphony, and Masterclass, as well as premium and German brands such as Häcker, Nobilia, Mereway, Neptune and deVOL. Because Pindi is fully independent — not contracted to any retailer — you are free to buy from whichever retailer suits your budget and style, and have the installation carried out to the same professional standard regardless of supplier.",
+  },
+];
+
+const internalLinks = [
+  {
+    label: "Book a pre-installation survey",
+    href: "/survey/",
+    description: "£195 survey credited back in full when you proceed — the essential first step",
+  },
+  {
+    label: "Kitchen fitting costs explained",
+    href: "/costs/",
+    description: "Fully itemised guide to what affects kitchen installation prices",
+  },
+  {
+    label: "Leamington Spa area page",
+    href: "/areas/leamington-spa/",
+    description: "Detailed installation information for CV31, CV32 and CV33",
+  },
+  {
+    label: "IKEA kitchen in Leamington Spa — project",
+    href: "/projects/ikea-kitchen-leamington-spa/",
+    description: "See the IKEA METOD installation Pindi completed in a Leamington Victorian terrace",
+  },
+  {
+    label: "About Pindi Sahota",
+    href: "/pindi-sahota/",
+    description: "Meet the independent kitchen fitter behind Install My Kitchen",
+  },
+  {
+    label: "IKEA kitchen installation",
+    href: "/retailers/ikea/",
+    description: "How Pindi fits IKEA METOD and SEKTION kitchens independently",
+  },
+  {
+    label: "Howdens kitchen installation",
+    href: "/retailers/howdens/",
+    description: "Why independent fitting is the right choice for your Howdens kitchen",
+  },
+  {
+    label: "Wren kitchen installation",
+    href: "/retailers/wren/",
+    description: "Fitting your Wren kitchen independently — what you need to know",
+  },
+];
+
+// LocalBusiness JSON-LD
+const localBusinessSchema = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  name: "Install My Kitchen",
+  url: "https://installmykitchen.co.uk",
+  telephone: "07399651836",
+  email: "info@installmykitchen.co.uk",
+  image: "https://installmykitchen.co.uk/images/pindi-sahota.jpg",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "242 Hollyfast Road, Coundon",
+    addressLocality: "Coventry",
+    postalCode: "CV6 2AH",
+    addressCountry: "GB",
+  },
+  geo: {
+    "@type": "GeoCoordinates",
+    latitude: 52.4197,
+    longitude: -1.5379,
+  },
+  areaServed: {
+    "@type": "City",
+    name: "Royal Leamington Spa",
+  },
+  description:
+    "Independent kitchen fitting service in Royal Leamington Spa. Pindi Sahota has 30 years of experience fitting kitchens across CV31, CV32 and CV33, specialising in period property installation including Regency and Victorian terraces. Fixed-price quotes following a £195 pre-installation survey.",
+  priceRange: "££",
+  openingHoursSpecification: [
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      opens: "08:00",
+      closes: "18:00",
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: "Saturday",
+      opens: "09:00",
+      closes: "13:00",
+    },
+  ],
+};
+
+// Service JSON-LD
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  name: "Kitchen Fitting in Royal Leamington Spa",
+  provider: {
+    "@type": "LocalBusiness",
+    name: "Install My Kitchen",
+    url: "https://installmykitchen.co.uk",
+    telephone: "07399651836",
+  },
+  areaServed: {
+    "@type": "City",
+    name: "Royal Leamington Spa",
+  },
+  description:
+    "Professional independent kitchen fitting and installation service across Royal Leamington Spa (CV31, CV32, CV33), fitting kitchens from all major UK retailers including IKEA, Wren, Howdens, Magnet and Wickes. Fixed-price quotes following a pre-installation survey. Specialist experience with Regency and Victorian period property kitchens.",
+  serviceType: "Kitchen Fitting",
+  offers: {
+    "@type": "Offer",
+    name: "Pre-installation Survey",
+    price: "195.00",
+    priceCurrency: "GBP",
+    description: "Pre-installation survey, fully credited back against the fitting quote when you proceed.",
+  },
+};
+---
+
+<Base
+  title={title}
+  description={metaDescription}
+  canonical={canonical}
+>
+  <script slot="schema" type="application/ld+json" set:html={JSON.stringify(localBusinessSchema)} />
+  <script slot="schema" type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
+
+  <Header slot="header" />
+
+  <div class="container py-6">
+    <Breadcrumbs
+      items={[
+        { label: "Kitchen Fitter Leamington Spa", href: "/kitchen-fitter-leamington-spa/" },
+      ]}
+    />
+  </div>
+
+  <!-- Hero -->
+  <section class="section" style="background: var(--bg-light);">
+    <div class="container">
+      <div class="max-w-3xl">
+        <h1 class="text-4xl md:text-5xl font-extrabold mb-5 leading-tight" style="color: var(--navy);">
+          Kitchen Fitter Leamington Spa — Independent Installation by Pindi Sahota
+        </h1>
+        <AnswerBlock
+          answer="Pindi Sahota is an independent kitchen fitter serving Royal Leamington Spa and the surrounding CV31, CV32 and CV33 postcode area. With 30 years of experience — including IKEA METOD installations in Leamington's Victorian terraces — he fits kitchens from every major retailer with a fixed-price quote guaranteed after a £195 pre-installation survey (credited back on booking)."
+        />
+        <KeyTakeaway points={takeawayPoints} />
+      </div>
+    </div>
+  </section>
+
+  <!-- Photo Gallery -->
+  <section class="section">
+    <div class="container">
+      <h2 class="text-3xl font-bold mb-6" style="color: var(--navy);">
+        Kitchens Installed in Leamington Spa
+      </h2>
+      <div class="gallery-leamington">
+        <div style="overflow: hidden; border-radius: 0.5rem;">
+          <img
+            src="/assets/kitchen-fitter/kitchen-fitter-leamington-spa-navy-kitchen-island-warwickshire-3024x4032.webp"
+            alt="Kitchen fitter Leamington Spa — navy blue island kitchen installed in Royal Leamington Spa, Warwickshire"
+            width="3024"
+            height="4032"
+            loading="lazy"
+            style="width: 100%; height: 100%; object-fit: cover; display: block;"
+          />
+        </div>
+        <div style="overflow: hidden; border-radius: 0.5rem;">
+          <img
+            src="/assets/kitchen-fitter/kitchen-fitter-leamington-spa-white-marble-island-kitchen-3024x4032.webp"
+            alt="Kitchen fitter Leamington Spa — white kitchen with marble island worktop fitted in Leamington Spa CV31"
+            width="3024"
+            height="4032"
+            loading="lazy"
+            style="width: 100%; height: 100%; object-fit: cover; display: block;"
+          />
+        </div>
+        <div style="overflow: hidden; border-radius: 0.5rem;">
+          <img
+            src="/assets/kitchen-fitter/kitchen-fitter-leamington-spa-gloss-kitchen-install-warwickshire-4032x3024.webp"
+            alt="Kitchen fitter Leamington Spa — gloss fitted kitchen installation in Royal Leamington Spa, Warwickshire"
+            width="4032"
+            height="3024"
+            loading="lazy"
+            style="width: 100%; height: 100%; object-fit: cover; display: block;"
+          />
+        </div>
+      </div>
+      <style>
+        .gallery-leamington {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 1rem;
+        }
+        @media (max-width: 640px) {
+          .gallery-leamington {
+            grid-template-columns: 1fr;
+          }
+        }
+      </style>
+    </div>
+  </section>
+
+  <!-- Section 1: Independent vs Retailer Fitters -->
+  <section class="section" style="background: var(--bg-light);">
+    <div class="container">
+      <div class="max-w-3xl fade-up">
+        <h2 class="text-3xl font-bold mb-4" style="color: var(--navy);">
+          Why Leamington Spa Homeowners Choose an Independent Kitchen Fitter
+        </h2>
+        <p class="text-lg leading-relaxed mb-4" style="color: var(--text-soft);">
+          When you order a kitchen from a retailer, installation is usually offered as an add-on. It sounds straightforward, but the fitters working under retailer schemes are contractors paid to work at pace and to the retailer's specification — not yours. If a wall turns out to be badly out of plumb, or the floor level under your kitchen tiles is uneven, the retailer's fitter does not have the time or incentive to manage it properly.
+        </p>
+        <p class="leading-relaxed mb-4" style="color: var(--text-soft);">
+          In Leamington Spa this matters more than in most towns. The Regency and Victorian housing stock means period property challenges are the norm, not the exception. A fitter who arrives without having surveyed the room, and without the experience to adapt, is unlikely to produce a result you will be happy with in a 180-year-old terrace.
+        </p>
+        <p class="leading-relaxed mb-4" style="color: var(--text-soft);">
+          Pindi Sahota works directly for you. He surveys your specific room before anything is ordered, builds a fixed-price quote based on actual conditions, and carries out the installation himself. There is no call-centre complaints process, no contractor chain, and no incentive to rush.
+        </p>
+        <p class="leading-relaxed" style="color: var(--text-soft);">
+          Independent fitting also means freedom of retailer choice. Pindi fits kitchens from every supplier, so you can buy from whoever suits your budget and style — whether that is IKEA, Wren, Howdens, or a premium brand — without any obligation to use a retailer's own installation service.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 2: Period Properties in Leamington Spa -->
+  <section class="section">
+    <div class="container">
+      <div class="max-w-3xl fade-up">
+        <h2 class="text-3xl font-bold mb-4" style="color: var(--navy);">
+          Fitting Kitchens in Leamington Spa's Period Housing Stock
+        </h2>
+        <p class="leading-relaxed mb-4" style="color: var(--text-soft);">
+          Royal Leamington Spa is one of the most architecturally intact Regency towns in England. The conservation area and the surrounding streets contain a concentration of period properties that is unusual even by Warwickshire standards — Regency terraces and villas from the 1820s to 1840s, large Victorian semi-detached properties on the Kenilworth Road side of the town, and densely built Victorian mid-terraces across Milverton and parts of Lillington.
+        </p>
+        <p class="leading-relaxed mb-4" style="color: var(--text-soft);">
+          Each of these property types presents fitting challenges that reward an experienced, prepared tradesperson. In Regency terraces, walls that were never intended to carry fitted furniture can be 40mm or more out of plumb from floor to ceiling — a fact that only becomes apparent once base units are being set out and the gap between cabinet top and wall begins to grow. Victorian kitchens, particularly those that were originally sculleries converted into modern kitchen spaces, often feature narrow room widths, low ceiling heights, and original stone or quarry tile floors beneath later kitchen tile layers that can cause levelling problems when the old kitchen is stripped.
+        </p>
+        <p class="leading-relaxed mb-4" style="color: var(--text-soft);">
+          Pindi has fitted kitchens across Leamington's period housing, including an IKEA METOD installation in a Victorian mid-terrace in the town — a project that required careful floor levelling and scribing to manage a significantly out-of-square room. That hands-on local experience is what the <a href="/projects/ikea-kitchen-leamington-spa/" class="font-semibold" style="color: var(--teal);">Leamington Spa IKEA project</a> demonstrates in practice.
+        </p>
+        <p class="leading-relaxed" style="color: var(--text-soft);">
+          Modern apartment blocks closer to the town centre present a different set of considerations: access, delivery logistics, and building regulations compliance for ventilation and electrics. Pindi has experience across all of Leamington's property types and plans for the specific constraints of each.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 3: The Survey-First Process -->
+  <section class="section" style="background: var(--bg-light);">
+    <div class="container">
+      <div class="max-w-3xl fade-up">
+        <h2 class="text-3xl font-bold mb-4" style="color: var(--navy);">
+          The Survey-First Process — Essential for Leamington Period Properties
+        </h2>
+        <p class="leading-relaxed mb-4" style="color: var(--text-soft);">
+          Every kitchen fitting project with Pindi begins with a pre-installation survey, carried out personally before anything is ordered. The survey costs £195 and is credited back in full if you proceed with the installation. In Leamington Spa — where period property complications are common — it is not an optional extra. It is how problems are identified and planned for before they become expensive surprises.
+        </p>
+        <p class="leading-relaxed mb-4" style="color: var(--text-soft);">
+          During the survey, Pindi takes precise room measurements, checks ceiling heights and wall plumb, inspects existing plumbing and electrical routes, reviews your kitchen plan and elevation drawings, and identifies any preparatory work required before or alongside the installation. In period properties this routinely includes checking floor levels, testing wall construction before hanging wall units, and assessing whether existing waste and supply pipework positions are compatible with the new kitchen layout.
+        </p>
+        <p class="leading-relaxed mb-4" style="color: var(--text-soft);">
+          After the survey you receive a written, fixed-price quote. The price does not change unless you change the scope of work. There are no surprises on completion day, no additional charges for complications that should have been spotted during planning, and no retrospective claims for extra time.
+        </p>
+        <p class="leading-relaxed" style="color: var(--text-soft);">
+          Survey appointments in Leamington Spa are typically available within two weeks. To book, call <a href="tel:07399651836" class="font-semibold" style="color: var(--teal);">07399 651836</a> or visit the <a href="/survey/" class="font-semibold" style="color: var(--teal);">survey booking page</a>.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 4: Retailers -->
+  <section class="section">
+    <div class="container">
+      <div class="max-w-3xl fade-up">
+        <h2 class="text-3xl font-bold mb-4" style="color: var(--navy);">
+          Which Kitchen Retailers Does Pindi Fit in Leamington Spa?
+        </h2>
+        <p class="leading-relaxed mb-4" style="color: var(--text-soft);">
+          Because Pindi is fully independent, he fits kitchens purchased from any retailer or manufacturer. The most common brands he installs in Leamington Spa include:
+        </p>
+        <ul class="space-y-2 mb-6 pl-1" style="color: var(--text-soft);">
+          <li class="flex items-start gap-2">
+            <span class="mt-1 flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center" style="background: var(--teal); color: white; font-size: 0.65rem;">✓</span>
+            <span><strong>IKEA</strong> — Pindi has direct experience fitting IKEA METOD kitchens in Leamington's Victorian terraces. See the <a href="/retailers/ikea/" style="color: var(--teal);">IKEA installation page</a> and the <a href="/projects/ikea-kitchen-leamington-spa/" style="color: var(--teal);">Leamington Spa project</a>.</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="mt-1 flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center" style="background: var(--teal); color: white; font-size: 0.65rem;">✓</span>
+            <span><strong>Wren Kitchens</strong> — one of the most popular choices across Warwickshire; Pindi fits Wren independently, without being tied to their installation scheme. See the <a href="/retailers/wren/" style="color: var(--teal);">Wren installation page</a>.</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="mt-1 flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center" style="background: var(--teal); color: white; font-size: 0.65rem;">✓</span>
+            <span><strong>Howdens Joinery</strong> — Pindi holds a trade account with Howdens, giving him direct depot access. See the <a href="/retailers/howdens/" style="color: var(--teal);">Howdens installation page</a>.</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="mt-1 flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center" style="background: var(--teal); color: white; font-size: 0.65rem;">✓</span>
+            <span><strong>Magnet</strong> — a common choice for Leamington homeowners seeking mid-range quality; all Magnet ranges are fully compatible with independent installation.</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="mt-1 flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center" style="background: var(--teal); color: white; font-size: 0.65rem;">✓</span>
+            <span><strong>Wickes and B&amp;Q</strong> — both popular at accessible price points; Pindi brings the same attention to detail regardless of the kitchen's price point.</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="mt-1 flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center" style="background: var(--teal); color: white; font-size: 0.65rem;">✓</span>
+            <span><strong>Benchmarx, DIY Kitchens, Kutchenhaus, Symphony, Masterclass</strong> — all covered as standard.</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="mt-1 flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center" style="background: var(--teal); color: white; font-size: 0.65rem;">✓</span>
+            <span><strong>Premium and German brands</strong> — including Häcker, Nobilia, Mereway, Neptune and deVOL, regularly fitted in the larger detached properties across CV32 and Warwick.</span>
+          </li>
+        </ul>
+        <p class="leading-relaxed" style="color: var(--text-soft);">
+          If your kitchen brand is not listed, call <a href="tel:07399651836" class="font-semibold" style="color: var(--teal);">07399 651836</a> — in almost every case it can be accommodated.
+        </p>
+      </div>
+      <div class="mt-10">
+        <SupplierLogos />
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 5: Areas Covered -->
+  <section class="section" style="background: var(--bg-light);">
+    <div class="container">
+      <div class="max-w-3xl fade-up">
+        <h2 class="text-3xl font-bold mb-4" style="color: var(--navy);">
+          Areas of Leamington Spa and South Warwickshire Covered
+        </h2>
+        <p class="leading-relaxed mb-4" style="color: var(--text-soft);">
+          Pindi covers the whole of Royal Leamington Spa and the surrounding south Warwickshire area. From his base in Coundon, Coventry, Leamington Spa is approximately 12 miles — a straightforward journey along the A45 or A46. He regularly works across:
+        </p>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+          <div class="card p-5">
+            <h3 class="font-bold mb-2" style="color: var(--navy);">Leamington Spa — CV31 &amp; CV32</h3>
+            <ul class="space-y-1 text-sm" style="color: var(--text-soft);">
+              <li><strong>Leamington town centre</strong> — Regency terraces, period conversions, and modern apartments</li>
+              <li><strong>Milverton</strong> — Victorian terraces and semis north of the town</li>
+              <li><strong>Lillington</strong> — post-war and inter-war residential, largely semi-detached</li>
+              <li><strong>Sydenham</strong> — mixed residential east of the centre</li>
+            </ul>
+          </div>
+          <div class="card p-5">
+            <h3 class="font-bold mb-2" style="color: var(--navy);">Wider CV33 and Surrounding Areas</h3>
+            <ul class="space-y-1 text-sm" style="color: var(--text-soft);">
+              <li><strong>Radford Semele</strong> — village properties on the eastern edge of Leamington</li>
+              <li><strong>Cubbington</strong> — traditional village housing north-east of the town</li>
+              <li><strong>Whitnash</strong> — residential area south of Leamington town centre</li>
+              <li><strong>Warwick</strong> — historic market town immediately adjacent, also covered</li>
+            </ul>
+          </div>
+        </div>
+        <p class="leading-relaxed" style="color: var(--text-soft);">
+          Visit the <a href="/areas/leamington-spa/" class="font-semibold" style="color: var(--teal);">Leamington Spa area page</a> for more detailed information, or call <a href="tel:07399651836" class="font-semibold" style="color: var(--teal);">07399 651836</a> to confirm your postcode is covered.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 6: What's Included & Pricing -->
+  <section class="section">
+    <div class="container">
+      <div class="max-w-3xl fade-up">
+        <h2 class="text-3xl font-bold mb-4" style="color: var(--navy);">
+          What's Included in a Kitchen Fit — and How Pricing Works in Leamington Spa
+        </h2>
+        <p class="leading-relaxed mb-4" style="color: var(--text-soft);">
+          A full kitchen fitting service from Pindi covers the complete installation from stripped room to finished kitchen. This includes:
+        </p>
+        <ul class="space-y-2 mb-6 pl-1" style="color: var(--text-soft);">
+          <li class="flex items-start gap-2">
+            <span class="mt-1 flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center" style="background: var(--teal); color: white; font-size: 0.65rem;">✓</span>
+            <span>Stripping out the existing kitchen, including disconnecting the sink and removing appliances</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="mt-1 flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center" style="background: var(--teal); color: white; font-size: 0.65rem;">✓</span>
+            <span>Levelling and setting out all base units to achieve a perfectly flat worktop run — including shimming and scribing for period property floor irregularities</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="mt-1 flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center" style="background: var(--teal); color: white; font-size: 0.65rem;">✓</span>
+            <span>Wall unit installation with individual plumb adjustment where walls are out of true — standard in Leamington's Regency and Victorian properties</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="mt-1 flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center" style="background: var(--teal); color: white; font-size: 0.65rem;">✓</span>
+            <span>Fitting all carcasses, doors, drawers, hinges, and soft-close mechanisms</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="mt-1 flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center" style="background: var(--teal); color: white; font-size: 0.65rem;">✓</span>
+            <span>Cutting and fitting laminate, solid timber, or stone worktops, including scribed end panels</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="mt-1 flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center" style="background: var(--teal); color: white; font-size: 0.65rem;">✓</span>
+            <span>Sink and tap installation, including connection to existing waste and supply pipework</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="mt-1 flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center" style="background: var(--teal); color: white; font-size: 0.65rem;">✓</span>
+            <span>Installation and connection of integrated appliances — dishwashers, fridges, ovens, hobs, and extractors</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="mt-1 flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center" style="background: var(--teal); color: white; font-size: 0.65rem;">✓</span>
+            <span>Fitting plinths, cornices, pelmet, end panels, and decorative finishing pieces</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="mt-1 flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center" style="background: var(--teal); color: white; font-size: 0.65rem;">✓</span>
+            <span>Final check, door adjustments, and snagging before handover</span>
+          </li>
+        </ul>
+        <p class="leading-relaxed mb-4" style="color: var(--text-soft);">
+          In Leamington Spa, pricing reflects the additional preparation time that period properties typically require. A standard 10–15 unit kitchen in a Leamington Victorian terrace typically costs between £1,300 and £2,600 for the fitting labour alone. Projects in Regency properties with significant wall plumb issues, or those requiring floor levelling, will sit higher. All pricing is established at the pre-installation survey stage and is fully fixed.
+        </p>
+        <p class="leading-relaxed" style="color: var(--text-soft);">
+          For a full explanation of what drives kitchen fitting prices, visit the <a href="/costs/" class="font-semibold" style="color: var(--teal);">kitchen fitting costs page</a>. For a quote specific to your home and kitchen, book a survey.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Internal Links -->
+  <section class="section" style="background: var(--bg-light);">
+    <div class="container">
+      <div class="fade-up">
+        <InternalLinks
+          links={internalLinks}
+          heading="Related Pages"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section">
+    <div class="container">
+      <div class="max-w-3xl fade-up">
+        <h2 class="text-3xl font-bold mb-8" style="color: var(--navy);">
+          Frequently Asked Questions — Kitchen Fitting in Leamington Spa
+        </h2>
+        <FAQ items={faqItems} schemaId="faq-kitchen-fitter-leamington-spa" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust Strip -->
+  <TrustStrip />
+
+  <!-- CTA -->
+  <CTA
+    heading="Book Your Kitchen Survey in Leamington Spa"
+    subtext="Start with a £195 pre-installation survey — credited back in full when you book your fit. Call Pindi on 07399 651836 or book online."
+    primaryLabel="Book Your Survey"
+    primaryHref="/survey/"
+    secondaryLabel="Call 07399 651836"
+    secondaryHref="tel:07399651836"
+    dark={true}
+  />
+
+  <Footer slot="footer" />
+  <StickyMobileCTA slot="sticky-cta" />
+</Base>

@@ -1,0 +1,523 @@
+---
+import Base from "../layouts/Base.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import StickyMobileCTA from "../components/StickyMobileCTA.astro";
+import Breadcrumbs from "../components/Breadcrumbs.astro";
+import AnswerBlock from "../components/AnswerBlock.astro";
+import KeyTakeaway from "../components/KeyTakeaway.astro";
+import FAQ from "../components/FAQ.astro";
+import SupplierLogos from "../components/SupplierLogos.astro";
+import InternalLinks from "../components/InternalLinks.astro";
+import CTA from "../components/CTA.astro";
+import TrustStrip from "../components/TrustStrip.astro";
+
+const title = "Kitchen Fitter Bedworth | Install My Kitchen — Pindi Sahota";
+const metaDescription = "Independent kitchen fitter in Bedworth, Warwickshire. Pindi Sahota provides expert kitchen installation in CV12 with 30 years experience, fixed-price quotes, and a £195 survey credited back on booking.";
+const canonical = "https://installmykitchen.co.uk/kitchen-fitter-bedworth/";
+
+const takeawayPoints = [
+  "Pindi Sahota is an independent kitchen fitter based in Coundon, Coventry — serving Bedworth, CV12, and all surrounding settlements including Exhall, Ash Green, and Bulkington.",
+  "30 years of professional kitchen fitting experience, including the compact galley layouts and restricted spaces typical of Bedworth's post-war housing stock.",
+  "Fits kitchens from Wren, Howdens, Magnet, IKEA, Wickes, B&Q, Benchmarx and all other major retailers.",
+  "Pre-installation survey at £195, credited back in full when you proceed — fixed-price quote guaranteed.",
+];
+
+const faqItems = [
+  {
+    q: "What does an independent kitchen fitter do in Bedworth?",
+    a: "An independent kitchen fitter manages the entire kitchen installation from stripped room to finished result — working directly for you, not for a retailer. In Bedworth, where many homes are 1950s and 1960s post-war semis and terraces with compact galley kitchens, this includes stripping out the existing kitchen, levelling uneven floors, cutting and fitting units to accommodate low ceilings and restricted ceiling heights above wall units, fitting carcasses, doors, drawers, and plinths, cutting worktops, installing sinks and taps, and connecting appliances. Because Pindi is independent, he is accountable only to you — not to a national retailer's call centre — so every decision is made in your interest.",
+  },
+  {
+    q: "How much does kitchen fitting cost in Bedworth?",
+    a: "Kitchen fitting costs in Bedworth depend on the size of the kitchen, the complexity of the layout, and the number of appliances. Bedworth's typical post-war semi-detached and terraced kitchens — often compact galley arrangements with 10–14 units — generally fall in the range of £1,100 to £2,000 for fitting labour. Projects that require additional work, such as floor levelling in older properties, extraction routing in restricted ceiling voids, or appliance integration, will sit at the higher end. Pindi provides a fully itemised, fixed-price quote following a pre-installation survey, so there are no hidden charges.",
+  },
+  {
+    q: "Do you cover the CV12 postcode?",
+    a: "Yes. Pindi covers the whole of the CV12 postcode area, including Bedworth town centre, Exhall, Ash Green, Bulkington, Goodyears End, Hawkesbury, and Longford. He is based at 242 Hollyfast Road, Coundon, Coventry CV6 2AH — approximately 8 miles from Bedworth town centre — and covers all surrounding areas routinely. If you are unsure whether your specific address is covered, call 07399 651836 and he will confirm.",
+  },
+  {
+    q: "How long does kitchen installation take?",
+    a: "Most standard kitchen installations in Bedworth take between three and five working days for the fitting work itself. Compact galley kitchens with straightforward layouts can sometimes be completed in three days. Larger kitchens, or those requiring additional preparation work — such as floor levelling in older post-war properties, replastering after removing a chimney breast, or re-routing extraction through restricted ceiling voids — will take longer. Pindi will give you a realistic duration estimate during the pre-installation survey, based on the actual conditions in your home.",
+  },
+  {
+    q: "Which kitchen retailers do you install in Bedworth?",
+    a: "Because Pindi is fully independent, he installs kitchens from any retailer or manufacturer. In Bedworth and the CV12 area, the most common kitchens he fits include Wren, Howdens, Magnet, IKEA, Wickes, B&Q, and Benchmarx. He also fits from DIY Kitchens, Kutchenhaus, Symphony, Masterclass, and premium brands such as Häcker, Nobilia, and Mereway. If your kitchen brand is not listed, call 07399 651836 — in almost every case it can be accommodated.",
+  },
+];
+
+const internalLinks = [
+  {
+    label: "Book a pre-installation survey",
+    href: "/survey/",
+    description: "£195 survey credited back in full when you proceed — the essential first step",
+  },
+  {
+    label: "Kitchen fitting costs explained",
+    href: "/costs/",
+    description: "Fully itemised guide to what affects kitchen installation prices",
+  },
+  {
+    label: "Bedworth area page",
+    href: "/areas/bedworth/",
+    description: "Detailed installation information for Bedworth and CV12",
+  },
+  {
+    label: "Completed kitchen projects",
+    href: "/projects/",
+    description: "Real installations by Pindi across Coventry and the Midlands",
+  },
+  {
+    label: "About Pindi Sahota",
+    href: "/pindi-sahota/",
+    description: "Meet the independent kitchen fitter behind Install My Kitchen",
+  },
+  {
+    label: "Howdens kitchen installation",
+    href: "/retailers/howdens/",
+    description: "Why independent fitting is the right choice for your Howdens kitchen",
+  },
+  {
+    label: "Wren kitchen installation",
+    href: "/retailers/wren/",
+    description: "Fitting your Wren kitchen independently — what you need to know",
+  },
+];
+
+// LocalBusiness JSON-LD
+const localBusinessSchema = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  name: "Install My Kitchen",
+  url: "https://installmykitchen.co.uk",
+  telephone: "07399651836",
+  email: "info@installmykitchen.co.uk",
+  image: "https://installmykitchen.co.uk/images/pindi-sahota.jpg",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "242 Hollyfast Road, Coundon",
+    addressLocality: "Coventry",
+    postalCode: "CV6 2AH",
+    addressCountry: "GB",
+  },
+  geo: {
+    "@type": "GeoCoordinates",
+    latitude: 52.4197,
+    longitude: -1.5379,
+  },
+  areaServed: {
+    "@type": "City",
+    name: "Bedworth",
+  },
+  description:
+    "Independent kitchen fitting service in Bedworth, Warwickshire. Pindi Sahota has 30 years of experience fitting kitchens from all major retailers including Wren, Howdens, Magnet and IKEA. Fixed-price quotes following a £195 pre-installation survey.",
+  priceRange: "££",
+  openingHoursSpecification: [
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      opens: "08:00",
+      closes: "18:00",
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: "Saturday",
+      opens: "09:00",
+      closes: "13:00",
+    },
+  ],
+};
+
+// Service JSON-LD
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  name: "Kitchen Fitting in Bedworth",
+  provider: {
+    "@type": "LocalBusiness",
+    name: "Install My Kitchen",
+    url: "https://installmykitchen.co.uk",
+    telephone: "07399651836",
+  },
+  areaServed: {
+    "@type": "City",
+    name: "Bedworth",
+  },
+  description:
+    "Professional independent kitchen fitting and installation service across Bedworth and CV12, fitting kitchens from all major UK retailers including Wren, Howdens, Magnet, IKEA, Wickes and B&Q. Fixed-price quotes following a pre-installation survey.",
+  serviceType: "Kitchen Fitting",
+  offers: {
+    "@type": "Offer",
+    name: "Pre-installation Survey",
+    price: "195.00",
+    priceCurrency: "GBP",
+    description: "Pre-installation survey, fully credited back against the fitting quote when you proceed.",
+  },
+};
+---
+
+<Base
+  title={title}
+  description={metaDescription}
+  canonical={canonical}
+>
+  <script slot="schema" type="application/ld+json" set:html={JSON.stringify(localBusinessSchema)} />
+  <script slot="schema" type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
+
+  <Header slot="header" />
+
+  <div class="container py-6">
+    <Breadcrumbs
+      items={[
+        { label: "Kitchen Fitter Bedworth", href: "/kitchen-fitter-bedworth/" },
+      ]}
+    />
+  </div>
+
+  <!-- Hero -->
+  <section class="section" style="background: var(--bg-light);">
+    <div class="container">
+      <div class="max-w-3xl">
+        <h1 class="text-4xl md:text-5xl font-extrabold mb-5 leading-tight" style="color: var(--navy);">
+          Kitchen Fitter Bedworth — Independent Kitchen Installation by Pindi Sahota
+        </h1>
+        <AnswerBlock
+          answer="Pindi Sahota is an independent kitchen fitter serving Bedworth and the CV12 postcode. With 30 years of experience — including the compact galley kitchens typical of Bedworth's post-war housing — he fits kitchens from Wren, Howdens, Magnet, IKEA and every major retailer. Fixed-price quotes guaranteed after a £195 pre-installation survey, credited back on booking."
+        />
+        <KeyTakeaway points={takeawayPoints} />
+      </div>
+    </div>
+  </section>
+
+  <!-- Photo Gallery -->
+  <section class="section">
+    <div class="container">
+      <h2 class="text-3xl font-bold mb-6" style="color: var(--navy);">
+        Kitchen Installations in Bedworth
+      </h2>
+      <div class="gallery-grid">
+        <figure class="gallery-item">
+          <img
+            src="/assets/kitchen-fitter/kitchen-fitter-bedworth-grey-shaker-granite-worktop-4032x3024.webp"
+            alt="Kitchen fitter Bedworth — grey shaker kitchen with black granite worktop installed in Bedworth, Warwickshire"
+            width="4032"
+            height="3024"
+            loading="lazy"
+            decoding="async"
+            class="gallery-img"
+          />
+        </figure>
+        <figure class="gallery-item">
+          <img
+            src="/assets/kitchen-fitter/kitchen-fitter-bedworth-white-kitchen-marble-island-warwickshire-3024x4032.webp"
+            alt="Kitchen fitter Bedworth — white kitchen with marble island fitted by Install My Kitchen, Warwickshire"
+            width="3024"
+            height="4032"
+            loading="lazy"
+            decoding="async"
+            class="gallery-img"
+          />
+        </figure>
+        <figure class="gallery-item">
+          <img
+            src="/assets/kitchen-fitter/kitchen-fitter-bedworth-white-handleless-black-granite-kitchen-2448x3264.webp"
+            alt="Kitchen fitter Bedworth — white handleless kitchen with black granite worktop installed in CV12"
+            width="2448"
+            height="3264"
+            loading="lazy"
+            decoding="async"
+            class="gallery-img"
+          />
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 1: Independent vs Retailer Fitters -->
+  <section class="section" style="background: var(--bg-light);">
+    <div class="container">
+      <div class="max-w-3xl fade-up">
+        <h2 class="text-3xl font-bold mb-4" style="color: var(--navy);">
+          Independent Kitchen Fitter vs Retailer Fitter — What's the Difference?
+        </h2>
+        <p class="text-lg leading-relaxed mb-4" style="color: var(--text-soft);">
+          When you buy a kitchen from a large retailer, they will often offer installation as part of the package. On paper this sounds simple — but the fitters working under retailer schemes are contractors incentivised to work quickly to the retailer's standard, not yours. If something goes wrong, you are caught between the retailer's customer service team and a fitter who is already on to the next job.
+        </p>
+        <p class="leading-relaxed mb-4" style="color: var(--text-soft);">
+          An independent fitter like Pindi Sahota works directly for you. There is no middleman, no call-centre complaints process, and no pressure to rush. He visits your home to carry out a full pre-installation survey, builds a fixed-price quote based on the actual conditions in your kitchen, and then carries out the work himself. If a problem arises — a wall that is not plumb, a floor that needs levelling, a cabinet that arrived with transit damage — he deals with it on the spot rather than logging it for a head office review that may come weeks later.
+        </p>
+        <p class="leading-relaxed mb-4" style="color: var(--text-soft);">
+          Independent fitting also means genuine flexibility. Pindi fits kitchens from every retailer and manufacturer. You are free to shop wherever offers the best kitchen for your budget — you do not need to buy from a retailer just to access their installation service.
+        </p>
+        <p class="leading-relaxed" style="color: var(--text-soft);">
+          For Bedworth homeowners who want the job done properly, by a single experienced tradesperson who is accountable to them, independent fitting is almost always the better choice.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 2: Why Bedworth Homeowners Choose Pindi -->
+  <section class="section">
+    <div class="container">
+      <div class="max-w-3xl fade-up">
+        <h2 class="text-3xl font-bold mb-4" style="color: var(--navy);">
+          Why Bedworth Homeowners Choose Pindi Sahota
+        </h2>
+        <p class="leading-relaxed mb-4" style="color: var(--text-soft);">
+          Pindi Sahota has been fitting kitchens professionally for 30 years. He is based at 242 Hollyfast Road, Coundon, Coventry CV6 2AH — approximately 8 miles south of Bedworth — and serves the whole of the CV12 postcode area as a matter of routine.
+        </p>
+        <p class="leading-relaxed mb-4" style="color: var(--text-soft);">
+          Bedworth's housing stock reflects the town's industrial history. Built largely during the colliery and ribbon-weaving era of the 1950s and 1970s, the majority of properties are post-war semi-detached and terraced houses with compact kitchen footprints. Galley layouts — where units run along one or both sides of a narrow room — are extremely common, and many have lower-than-average ceiling heights that present real technical challenges: wall units must be cut precisely to avoid conflicts with ceiling timbers, extraction routes need to be planned carefully in restricted ceiling voids, and tall larder towers require precise scribing to the room's geometry.
+        </p>
+        <p class="leading-relaxed mb-4" style="color: var(--text-soft);">
+          This is exactly the type of work where experience matters most. Fitting a 20-unit open-plan kitchen in a new-build is technically straightforward. Fitting a 12-unit galley in a 1960s Bedworth terrace, where the floor is not level, the ceiling is 2.1 metres at its lowest point, and the extraction must route through a void that was never designed for it, requires a different level of skill and problem-solving. Pindi has worked in these conditions throughout his career.
+        </p>
+        <p class="leading-relaxed" style="color: var(--text-soft);">
+          He covers the whole of Bedworth including Exhall, Ash Green, Bulkington, Goodyears End, Hawkesbury, and Longford, as well as the surrounding area across north Warwickshire. Call <a href="tel:07399651836" class="font-semibold" style="color: var(--teal);">07399 651836</a> to discuss your project.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 3: The Survey-First Process -->
+  <section class="section" style="background: var(--bg-light);">
+    <div class="container">
+      <div class="max-w-3xl fade-up">
+        <h2 class="text-3xl font-bold mb-4" style="color: var(--navy);">
+          The Survey-First Process — How It Works
+        </h2>
+        <p class="leading-relaxed mb-4" style="color: var(--text-soft);">
+          Every kitchen fitting project begins with a pre-installation survey, carried out by Pindi personally. The survey costs £195 and is credited back in full if you go ahead with the installation. It is not a sales visit — it is a working appointment that produces a detailed, accurate quote for the real job.
+        </p>
+        <p class="leading-relaxed mb-4" style="color: var(--text-soft);">
+          During the survey, Pindi takes precise room measurements, checks ceiling heights and wall angles, inspects existing plumbing and electrics routes, reviews your kitchen plan and elevation drawings, and identifies any work that will need to happen before or alongside the installation — plastering, floor levelling, electrics, gas, or tiling. In Bedworth's older properties, this step is particularly valuable: extraction routing in compact ceiling voids and levelling on uneven concrete floors are common requirements that must be planned for in advance, not discovered on installation day.
+        </p>
+        <p class="leading-relaxed mb-4" style="color: var(--text-soft);">
+          After the survey you receive a written, fixed-price quote. The price does not change unless you change the scope of work. There are no surprises on completion day, no additional charges for complications that should have been spotted in advance.
+        </p>
+        <p class="leading-relaxed" style="color: var(--text-soft);">
+          Survey appointments are typically available within two weeks. To book, call <a href="tel:07399651836" class="font-semibold" style="color: var(--teal);">07399 651836</a> or visit the <a href="/survey/" class="font-semibold" style="color: var(--teal);">survey booking page</a>.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 4: Retailers -->
+  <section class="section">
+    <div class="container">
+      <div class="max-w-3xl fade-up">
+        <h2 class="text-3xl font-bold mb-4" style="color: var(--navy);">
+          Which Kitchen Retailers Does Pindi Fit in Bedworth?
+        </h2>
+        <p class="leading-relaxed mb-4" style="color: var(--text-soft);">
+          Because Pindi is fully independent, he can fit kitchens purchased from any retailer or manufacturer. The most common kitchens he installs in Bedworth and CV12 include:
+        </p>
+        <ul class="space-y-2 mb-6 pl-1" style="color: var(--text-soft);">
+          <li class="flex items-start gap-2">
+            <span class="mt-1 flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center" style="background: var(--teal); color: white; font-size: 0.65rem;">✓</span>
+            <span><strong>Wren Kitchens</strong> — a popular choice across the Midlands; Pindi fits Wren independently, without being tied to their retailer installation scheme. See the <a href="/retailers/wren/" style="color: var(--teal);">Wren installation page</a>.</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="mt-1 flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center" style="background: var(--teal); color: white; font-size: 0.65rem;">✓</span>
+            <span><strong>Howdens Joinery</strong> — Pindi has a trade account with Howdens, giving him direct depot access. See the <a href="/retailers/howdens/" style="color: var(--teal);">Howdens installation page</a>.</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="mt-1 flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center" style="background: var(--teal); color: white; font-size: 0.65rem;">✓</span>
+            <span><strong>Magnet</strong> — a common choice for Bedworth homeowners seeking mid-range quality; all Magnet ranges are fully compatible with independent installation.</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="mt-1 flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center" style="background: var(--teal); color: white; font-size: 0.65rem;">✓</span>
+            <span><strong>IKEA</strong> — IKEA's METOD system is fitted regularly across the area; Pindi is well-versed in IKEA's assembly and installation method.</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="mt-1 flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center" style="background: var(--teal); color: white; font-size: 0.65rem;">✓</span>
+            <span><strong>Wickes and B&Q</strong> — both popular with homeowners fitting to a budget; Pindi brings the same attention to detail regardless of the kitchen's price point.</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="mt-1 flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center" style="background: var(--teal); color: white; font-size: 0.65rem;">✓</span>
+            <span><strong>Benchmarx, DIY Kitchens, Kutchenhaus, Symphony, Masterclass</strong> — all covered as standard.</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="mt-1 flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center" style="background: var(--teal); color: white; font-size: 0.65rem;">✓</span>
+            <span><strong>Premium brands</strong> — including Häcker, Nobilia, and Mereway, fitted to the highest standard wherever required across the area.</span>
+          </li>
+        </ul>
+        <p class="leading-relaxed" style="color: var(--text-soft);">
+          If your kitchen brand is not listed, call <a href="tel:07399651836" class="font-semibold" style="color: var(--teal);">07399 651836</a> — in almost every case it can be accommodated.
+        </p>
+      </div>
+      <div class="mt-10">
+        <SupplierLogos />
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 5: Areas Covered -->
+  <section class="section" style="background: var(--bg-light);">
+    <div class="container">
+      <div class="max-w-3xl fade-up">
+        <h2 class="text-3xl font-bold mb-4" style="color: var(--navy);">
+          Areas of Bedworth and CV12 Covered
+        </h2>
+        <p class="leading-relaxed mb-4" style="color: var(--text-soft);">
+          Pindi covers the whole of the Bedworth area within the CV12 postcode, as well as the adjacent settlements immediately south of Nuneaton. He regularly works across:
+        </p>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+          <div class="card p-5">
+            <h3 class="font-bold mb-2" style="color: var(--navy);">Bedworth Town &amp; Surrounds</h3>
+            <ul class="space-y-1 text-sm" style="color: var(--text-soft);">
+              <li><strong>Bedworth town centre</strong> — post-war terraces and semis, many in galley layouts</li>
+              <li><strong>Exhall</strong> — established residential estate, mixed post-war housing</li>
+              <li><strong>Ash Green</strong> — semi-rural village with varied property types</li>
+              <li><strong>Bulkington</strong> — village south-east of Bedworth, period and modern properties</li>
+            </ul>
+          </div>
+          <div class="card p-5">
+            <h3 class="font-bold mb-2" style="color: var(--navy);">Wider CV12 Coverage</h3>
+            <ul class="space-y-1 text-sm" style="color: var(--text-soft);">
+              <li><strong>Goodyears End</strong> — residential area on the south-west edge of Bedworth</li>
+              <li><strong>Hawkesbury</strong> — village settlement between Bedworth and Coventry</li>
+              <li><strong>Longford</strong> — north Coventry suburb close to the Bedworth border</li>
+              <li>All CV12 postcodes covered as standard</li>
+            </ul>
+          </div>
+        </div>
+        <p class="leading-relaxed" style="color: var(--text-soft);">
+          Visit the <a href="/areas/bedworth/" class="font-semibold" style="color: var(--teal);">Bedworth area page</a> for more detailed information, or call <a href="tel:07399651836" class="font-semibold" style="color: var(--teal);">07399 651836</a> to confirm your postcode is covered.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 6: What's Included & Pricing -->
+  <section class="section">
+    <div class="container">
+      <div class="max-w-3xl fade-up">
+        <h2 class="text-3xl font-bold mb-4" style="color: var(--navy);">
+          What's Included in a Kitchen Fit — and How Pricing Works
+        </h2>
+        <p class="leading-relaxed mb-4" style="color: var(--text-soft);">
+          A full kitchen fitting service from Pindi Sahota covers the complete installation from stripped room to finished kitchen. This includes:
+        </p>
+        <ul class="space-y-2 mb-6 pl-1" style="color: var(--text-soft);">
+          <li class="flex items-start gap-2">
+            <span class="mt-1 flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center" style="background: var(--teal); color: white; font-size: 0.65rem;">✓</span>
+            <span>Stripping out the existing kitchen, including disconnecting the sink and removing appliances</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="mt-1 flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center" style="background: var(--teal); color: white; font-size: 0.65rem;">✓</span>
+            <span>Levelling and setting out all base units to achieve a perfectly flat worktop run — critical in older Bedworth properties with uneven floors</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="mt-1 flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center" style="background: var(--teal); color: white; font-size: 0.65rem;">✓</span>
+            <span>Fitting all wall and base carcasses, doors, drawers, hinges, and soft-close mechanisms</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="mt-1 flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center" style="background: var(--teal); color: white; font-size: 0.65rem;">✓</span>
+            <span>Cutting wall units to height where ceiling clearances are restricted — a common requirement in Bedworth's lower-ceiling post-war properties</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="mt-1 flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center" style="background: var(--teal); color: white; font-size: 0.65rem;">✓</span>
+            <span>Cutting and fitting laminate, solid timber, or stone worktops, including scribed end panels</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="mt-1 flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center" style="background: var(--teal); color: white; font-size: 0.65rem;">✓</span>
+            <span>Sink and tap installation, including connection to existing waste and supply pipework</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="mt-1 flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center" style="background: var(--teal); color: white; font-size: 0.65rem;">✓</span>
+            <span>Installation and connection of integrated appliances — dishwashers, fridges, ovens, hobs, and extractors</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="mt-1 flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center" style="background: var(--teal); color: white; font-size: 0.65rem;">✓</span>
+            <span>Fitting plinths, cornices, pelmet, end panels, and any decorative finishing pieces supplied with the kitchen</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="mt-1 flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center" style="background: var(--teal); color: white; font-size: 0.65rem;">✓</span>
+            <span>Final check, door adjustments, and snagging before handover</span>
+          </li>
+        </ul>
+        <p class="leading-relaxed mb-4" style="color: var(--text-soft);">
+          For a typical Bedworth semi-detached with a 10–14 unit galley or L-shaped kitchen, fitting labour typically falls in the range of £1,100–£2,000. Projects with additional complexity — floor levelling, restricted extraction routes, or appliance integration — will sit higher. All prices are confirmed as fixed after the survey.
+        </p>
+        <p class="leading-relaxed" style="color: var(--text-soft);">
+          For a full explanation of what drives kitchen fitting prices, visit the <a href="/costs/" class="font-semibold" style="color: var(--teal);">kitchen fitting costs page</a>.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Internal Links -->
+  <section class="section" style="background: var(--bg-light);">
+    <div class="container">
+      <div class="fade-up">
+        <InternalLinks
+          links={internalLinks}
+          heading="Related Pages"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section">
+    <div class="container">
+      <div class="max-w-3xl fade-up">
+        <h2 class="text-3xl font-bold mb-8" style="color: var(--navy);">
+          Frequently Asked Questions — Kitchen Fitting in Bedworth
+        </h2>
+        <FAQ items={faqItems} schemaId="faq-kitchen-fitter-bedworth" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust Strip -->
+  <TrustStrip />
+
+  <!-- CTA -->
+  <CTA
+    heading="Book Your Kitchen Survey in Bedworth"
+    subtext="Start with a £195 pre-installation survey — credited back in full when you book your fit. Call Pindi on 07399 651836 or book online."
+    primaryLabel="Book Your Survey"
+    primaryHref="/survey/"
+    secondaryLabel="Call 07399 651836"
+    secondaryHref="tel:07399651836"
+    dark={true}
+  />
+
+  <Footer slot="footer" />
+  <StickyMobileCTA slot="sticky-cta" />
+</Base>
+
+<style>
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+
+  .gallery-item {
+    margin: 0;
+    overflow: hidden;
+    border-radius: 0.5rem;
+  }
+
+  .gallery-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: 0.5rem;
+    transition: transform 0.3s ease;
+  }
+
+  .gallery-img:hover {
+    transform: scale(1.02);
+  }
+
+  @media (max-width: 640px) {
+    .gallery-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

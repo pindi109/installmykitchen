@@ -468,6 +468,14 @@ export const GET = async (): Promise<Response> => {
   // Additional static pages
   lines.push(url("/gallery/", "monthly", "0.6"));
   lines.push(url("/kitchen-fitter-coventry/", "weekly", "0.9"));
+  lines.push(url("/kitchen-fitter-rugby/", "weekly", "0.9"));
+  lines.push(url("/kitchen-fitter-nuneaton/", "weekly", "0.9"));
+  lines.push(url("/kitchen-fitter-bedworth/", "weekly", "0.9"));
+  lines.push(url("/kitchen-fitter-kenilworth/", "weekly", "0.9"));
+  lines.push(url("/kitchen-fitter-leamington-spa/", "weekly", "0.9"));
+  lines.push(url("/kitchen-fitter-stratford-upon-avon/", "weekly", "0.9"));
+  lines.push(url("/kitchen-fitter-solihull/", "weekly", "0.9"));
+  lines.push(url("/kitchen-fitter-henley-in-arden/", "weekly", "0.9"));
 
   const xml = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">

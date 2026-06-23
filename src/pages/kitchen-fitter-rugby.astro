@@ -1,0 +1,543 @@
+---
+import Base from "../layouts/Base.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import StickyMobileCTA from "../components/StickyMobileCTA.astro";
+import Breadcrumbs from "../components/Breadcrumbs.astro";
+import AnswerBlock from "../components/AnswerBlock.astro";
+import KeyTakeaway from "../components/KeyTakeaway.astro";
+import FAQ from "../components/FAQ.astro";
+import SupplierLogos from "../components/SupplierLogos.astro";
+import InternalLinks from "../components/InternalLinks.astro";
+import CTA from "../components/CTA.astro";
+import TrustStrip from "../components/TrustStrip.astro";
+
+const title = "Kitchen Fitter Rugby | Install My Kitchen — Pindi Sahota";
+const metaDescription = "Expert independent kitchen fitter in Rugby. Pindi Sahota offers 30 years of installation experience, fixed-price quotes, and a £195 survey credited back on booking. Covering CV21, CV22 and surrounding areas.";
+const canonical = "https://installmykitchen.co.uk/kitchen-fitter-rugby/";
+
+const takeawayPoints = [
+  "Pindi Sahota is an independent kitchen fitter based in Coundon, Coventry — covering Rugby, CV21, CV22, and all surrounding Warwickshire postcodes.",
+  "30 years of professional kitchen fitting experience across Rugby's hugely varied housing stock, from Victorian town-centre terraces to modern new-build estates.",
+  "Fits kitchens from Wren, Howdens, Magnet, IKEA, Wickes, B&Q, Benchmarx and all other major retailers.",
+  "Pre-installation survey at £195, credited back in full when you proceed — fixed-price quote guaranteed.",
+];
+
+const faqItems = [
+  {
+    q: "What does a kitchen fitter do in Rugby?",
+    a: "A kitchen fitter manages the complete installation of a fitted kitchen from start to finish. This covers stripping out the existing kitchen, preparing the room — levelling uneven floors, making good walls, co-ordinating with plumbers and electricians — then fitting all carcasses, doors, drawers, and plinths. Worktops are cut and fitted to size, the sink and taps are installed and connected, appliances are integrated and connected, and the room is finished with pelmets, cornices, and lighting trim. In Rugby's older housing stock, where Victorian terraces and period semis frequently have chimney breasts, alcoves, and walls that are far from square, this work demands an experienced hand and precise scribing. Pindi carries out every stage himself rather than subcontracting, so the same person who surveyed your kitchen will be on site every day of the fit.",
+  },
+  {
+    q: "How much does kitchen fitting cost in Rugby?",
+    a: "Kitchen fitting costs in Rugby depend on the size and complexity of the kitchen, the number of appliances to be integrated, worktop type and linear metres, and whether any preparatory building work — floor levelling, plastering, or structural adjustments — is required. As a general guide, a standard 10–15 unit kitchen in a typical Rugby semi-detached or terrace typically costs between £1,200 and £2,500 for labour alone. More complex projects — open-plan kitchen-diners, rooms with chimney breasts or significant alcoves to build around, or kitchens with islands and multiple integrated appliances — will sit higher. Pindi provides a fully itemised, fixed-price quote after the pre-installation survey, so there are no estimates or surprises on completion day. For a full breakdown of what drives pricing, visit the kitchen fitting costs page.",
+  },
+  {
+    q: "Do you cover CV21 and CV22?",
+    a: "Yes. Pindi covers all Rugby postcodes including CV21, CV22, and the surrounding Warwickshire villages within the Rugby district. He regularly works in Hillmorton, Bilton, Brownsover, Newbold-on-Avon, Long Lawford, Dunchurch, and Clifton-upon-Dunsmore. Rugby is approximately 13 miles from Pindi's base in Coundon, Coventry, making it a straightforward regular coverage area. If you are unsure whether your specific postcode is covered, call 07399 651836 and Pindi will confirm directly.",
+  },
+  {
+    q: "How long does kitchen installation take in Rugby?",
+    a: "Most standard kitchen installations in Rugby take between three and five working days for the fitting itself. Kitchens in period properties — Victorian terraces near the town centre, or inter-war semis in Bilton and Hillmorton — can require additional time if floor levelling, scribing around chimney breasts, or significant making-good work is involved. Larger kitchens, open-plan layouts, or projects co-ordinating multiple trades will also take longer. During the pre-installation survey Pindi will give you a realistic programme estimate based on the actual conditions in your home, so you can plan your household routine around the work.",
+  },
+  {
+    q: "Which kitchen retailers do you fit in Rugby?",
+    a: "Pindi fits kitchens from every major UK retailer and manufacturer, regardless of where you purchased. In Rugby the most common brands are Wren Kitchens, Howdens Joinery, Magnet, IKEA, Wickes, B&Q, and Benchmarx. He also fits premium and German-manufactured brands including Häcker, Nobilia, Mereway, Neptune, and deVOL — brands that suit the larger detached properties in Dunchurch and Clifton-upon-Dunsmore particularly well. Because Pindi is fully independent he has no tie to any retailer, so you can buy from whichever supplier gives you the best kitchen for your budget and have it fitted to a consistent, professional standard. If your brand is not listed, call 07399 651836 to check — in almost every case it can be accommodated.",
+  },
+];
+
+const internalLinks = [
+  {
+    label: "Book a pre-installation survey",
+    href: "/survey/",
+    description: "£195 survey credited back in full when you proceed — the essential first step",
+  },
+  {
+    label: "Kitchen fitting costs explained",
+    href: "/costs/",
+    description: "Fully itemised guide to what affects kitchen installation prices",
+  },
+  {
+    label: "Rugby area page",
+    href: "/areas/rugby/",
+    description: "Detailed installation information for Rugby and surrounding CV21/CV22 postcodes",
+  },
+  {
+    label: "Completed kitchen projects",
+    href: "/projects/",
+    description: "Real installations by Pindi across Rugby, Coventry, and the Midlands",
+  },
+  {
+    label: "About Pindi Sahota",
+    href: "/pindi-sahota/",
+    description: "Meet the independent kitchen fitter behind Install My Kitchen",
+  },
+  {
+    label: "Howdens kitchen installation",
+    href: "/retailers/howdens/",
+    description: "Why independent fitting is the right choice for your Howdens kitchen",
+  },
+  {
+    label: "Wren kitchen installation",
+    href: "/retailers/wren/",
+    description: "Fitting your Wren kitchen independently — what you need to know",
+  },
+];
+
+// LocalBusiness JSON-LD
+const localBusinessSchema = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  name: "Install My Kitchen",
+  url: "https://installmykitchen.co.uk",
+  telephone: "07399651836",
+  email: "info@installmykitchen.co.uk",
+  image: "https://installmykitchen.co.uk/images/pindi-sahota.jpg",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "242 Hollyfast Road, Coundon",
+    addressLocality: "Coventry",
+    postalCode: "CV6 2AH",
+    addressCountry: "GB",
+  },
+  geo: {
+    "@type": "GeoCoordinates",
+    latitude: 52.4197,
+    longitude: -1.5379,
+  },
+  areaServed: {
+    "@type": "City",
+    name: "Rugby",
+  },
+  description:
+    "Independent kitchen fitting service in Rugby, Warwickshire. Pindi Sahota has 30 years of experience fitting kitchens from all major retailers including Wren, Howdens, Magnet and IKEA across CV21, CV22 and surrounding areas. Fixed-price quotes following a £195 pre-installation survey.",
+  priceRange: "££",
+  openingHoursSpecification: [
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      opens: "08:00",
+      closes: "18:00",
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: "Saturday",
+      opens: "09:00",
+      closes: "13:00",
+    },
+  ],
+};
+
+// Service JSON-LD
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  name: "Kitchen Fitting in Rugby",
+  provider: {
+    "@type": "LocalBusiness",
+    name: "Install My Kitchen",
+    url: "https://installmykitchen.co.uk",
+    telephone: "07399651836",
+  },
+  areaServed: {
+    "@type": "City",
+    name: "Rugby",
+  },
+  description:
+    "Professional independent kitchen fitting and installation service across Rugby and surrounding Warwickshire areas, covering CV21 and CV22. Fits kitchens from all major UK retailers including Wren, Howdens, Magnet, IKEA, Wickes and B&Q. Fixed-price quotes following a pre-installation survey.",
+  serviceType: "Kitchen Fitting",
+  offers: {
+    "@type": "Offer",
+    name: "Pre-installation Survey",
+    price: "195.00",
+    priceCurrency: "GBP",
+    description: "Pre-installation survey, fully credited back against the fitting quote when you proceed.",
+  },
+};
+---
+
+<Base
+  title={title}
+  description={metaDescription}
+  canonical={canonical}
+>
+  <script slot="schema" type="application/ld+json" set:html={JSON.stringify(localBusinessSchema)} />
+  <script slot="schema" type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
+
+  <Header slot="header" />
+
+  <div class="container py-6">
+    <Breadcrumbs
+      items={[
+        { label: "Kitchen Fitter Rugby", href: "/kitchen-fitter-rugby/" },
+      ]}
+    />
+  </div>
+
+  <!-- Hero -->
+  <section class="section" style="background: var(--bg-light);">
+    <div class="container">
+      <div class="max-w-3xl">
+        <h1 class="text-4xl md:text-5xl font-extrabold mb-5 leading-tight" style="color: var(--navy);">
+          Kitchen Fitter Rugby — Independent Installation by Pindi Sahota
+        </h1>
+        <AnswerBlock
+          answer="Pindi Sahota is an independent kitchen fitter serving Rugby and the surrounding Warwickshire area. With 30 years of experience across CV21, CV22, and neighbouring postcodes, he fits kitchens from Wren, Howdens, Magnet, IKEA and every major retailer — with a fixed-price quote guaranteed after a £195 pre-installation survey (credited back on booking)."
+        />
+        <KeyTakeaway points={takeawayPoints} />
+      </div>
+    </div>
+  </section>
+
+  <!-- Photo Gallery -->
+  <section class="section">
+    <div class="container">
+      <h2 class="text-3xl font-bold mb-6" style="color: var(--navy);">Kitchen Installations in Rugby</h2>
+      <div class="gallery-grid">
+        <figure class="gallery-figure">
+          <img
+            src="/assets/kitchen-fitter/kitchen-fitter-rugby-navy-island-kitchen-warwickshire-3024x4032.webp"
+            alt="Kitchen fitter Rugby — navy blue island kitchen installation by Install My Kitchen, Warwickshire"
+            width="3024"
+            height="4032"
+            loading="lazy"
+            class="gallery-img"
+          />
+        </figure>
+        <figure class="gallery-figure">
+          <img
+            src="/assets/kitchen-fitter/kitchen-fitter-rugby-grey-shaker-black-granite-installation-4032x3024.webp"
+            alt="Kitchen fitter Rugby — grey shaker kitchen with black granite worktop fitted in Rugby, Warwickshire"
+            width="4032"
+            height="3024"
+            loading="lazy"
+            class="gallery-img"
+          />
+        </figure>
+        <figure class="gallery-figure">
+          <img
+            src="/assets/kitchen-fitter/kitchen-fitter-rugby-sage-green-shaker-oak-worktop-4032x3024.webp"
+            alt="Kitchen fitter Rugby — sage green shaker kitchen with solid oak worktop, Rugby installation"
+            width="4032"
+            height="3024"
+            loading="lazy"
+            class="gallery-img"
+          />
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 1: Independent vs Retailer Fitters -->
+  <section class="section" style="background: var(--bg-light);">
+    <div class="container">
+      <div class="max-w-3xl fade-up">
+        <h2 class="text-3xl font-bold mb-4" style="color: var(--navy);">
+          Independent Kitchen Fitter vs Retailer Fitter — What's the Difference?
+        </h2>
+        <p class="text-lg leading-relaxed mb-4" style="color: var(--text-soft);">
+          When you buy a kitchen from a large retailer, installation is often available as an add-on. In practice, the fitters working under retailer schemes are contractors paid to work to the retailer's standard and schedule — not yours. If anything goes wrong, you are left navigating a call-centre complaints process between a head office and a fitter already on to the next job.
+        </p>
+        <p class="leading-relaxed mb-4" style="color: var(--text-soft);">
+          An independent kitchen fitter like Pindi Sahota works directly for you. There is no middleman, no conflicting incentive to rush, and no retailer standard that takes priority over your satisfaction. Pindi visits your home, surveys the room properly, builds a fixed-price quote based on actual conditions — and then carries out every stage of the installation himself.
+        </p>
+        <p class="leading-relaxed mb-4" style="color: var(--text-soft);">
+          This matters especially in Rugby, where the housing stock ranges from Victorian terraces with uneven floors, chimney breasts, and alcoves — all of which demand careful scribing and experienced problem-solving — through to modern new-build estates on the eastern fringe where tolerances are tighter and layouts are more standardised. Each property type brings its own challenges. An independent fitter with three decades of experience has encountered and resolved them all.
+        </p>
+        <p class="leading-relaxed" style="color: var(--text-soft);">
+          Independent fitting also means genuine retailer freedom. Pindi fits kitchens from every supplier, so you can shop wherever gives you the best kitchen for your budget — you are not locked in to a single retailer's installation scheme to access their fitters.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 2: Why Rugby Homeowners Choose Pindi -->
+  <section class="section">
+    <div class="container">
+      <div class="max-w-3xl fade-up">
+        <h2 class="text-3xl font-bold mb-4" style="color: var(--navy);">
+          Why Rugby Homeowners Choose Pindi Sahota
+        </h2>
+        <p class="leading-relaxed mb-4" style="color: var(--text-soft);">
+          Pindi Sahota has been fitting kitchens for 30 years and is based at 242 Hollyfast Road, Coundon, Coventry — approximately 13 miles from Rugby town centre. He is a local tradesperson, not a national franchise dispatching unknown contractors, and his knowledge of Warwickshire's housing stock extends across all of Rugby's property ages and types.
+        </p>
+        <p class="leading-relaxed mb-4" style="color: var(--text-soft);">
+          Rugby is a market town with significant industrial heritage — Rugby cement, engineering, and manufacturing — that has shaped a broad mix of housing across the decades. Near the town centre you find Victorian terraces with the hallmarks of period construction: chimney breasts that intrude into kitchen walls, floors that have settled unevenly over a century, and wall angles that are rarely perfectly square. These properties require skilled scribing, careful levelling, and the kind of adaptability that comes only with experience.
+        </p>
+        <p class="leading-relaxed mb-4" style="color: var(--text-soft);">
+          Moving outward, the 1930s semis of Hillmorton and Bilton offer more standard layouts but often have rear extensions added at various periods — each with its own floor level and structural quirks. Modern new-build estates on the eastern fringe of Rugby and in Brownsover present a different set of demands: tight tolerances, pre-fitted utilities in set positions, and little margin for adjustment if the kitchen plan does not land exactly as designed.
+        </p>
+        <p class="leading-relaxed" style="color: var(--text-soft);">
+          The larger detached properties of Clifton-upon-Dunsmore and Dunchurch frequently accommodate premium kitchens — islands, full-height larder towers, integrated appliance columns — where the quality of the fit is highly visible and matters enormously. Pindi has worked across all of these property types throughout his career. That experience translates directly into fewer complications, faster resolution when issues arise, and a finished kitchen that performs exactly as designed.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 3: The Survey-First Process -->
+  <section class="section" style="background: var(--bg-light);">
+    <div class="container">
+      <div class="max-w-3xl fade-up">
+        <h2 class="text-3xl font-bold mb-4" style="color: var(--navy);">
+          The Survey-First Process — How It Works
+        </h2>
+        <p class="leading-relaxed mb-4" style="color: var(--text-soft);">
+          Every kitchen fitting project begins with a pre-installation survey, carried out by Pindi personally at your Rugby home. The survey costs £195 and is credited back in full if you go ahead with the installation. It is not a sales visit — it is a working appointment that produces a detailed, accurate quote for the actual job in your actual room.
+        </p>
+        <p class="leading-relaxed mb-4" style="color: var(--text-soft);">
+          During the survey, Pindi takes precise measurements, checks ceiling heights and wall angles, inspects existing plumbing and electrical routes, reviews your kitchen plan and elevation drawings, and identifies any preparatory work required before or alongside the installation — floor levelling, plastering, chimney breast build-outs, electrics, gas connection, or tiling. He will advise clearly on what is included in the fitting quote and what specialist trades you may need to arrange separately.
+        </p>
+        <p class="leading-relaxed mb-4" style="color: var(--text-soft);">
+          After the survey you receive a written, fixed-price quote. The price does not change unless you change the scope of work. There are no hidden charges on completion day and no retrospective claims for complications that should have been identified in advance — because the survey process is specifically designed to find them first.
+        </p>
+        <p class="leading-relaxed" style="color: var(--text-soft);">
+          Survey appointments for Rugby are typically available within two weeks. Installation slots follow within four to eight weeks of the survey. To book, call <a href="tel:07399651836" class="font-semibold" style="color: var(--teal);">07399 651836</a> or visit the <a href="/survey/" class="font-semibold" style="color: var(--teal);">survey booking page</a>.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 4: Retailers -->
+  <section class="section">
+    <div class="container">
+      <div class="max-w-3xl fade-up">
+        <h2 class="text-3xl font-bold mb-4" style="color: var(--navy);">
+          Which Kitchen Retailers Does Pindi Fit in Rugby?
+        </h2>
+        <p class="leading-relaxed mb-4" style="color: var(--text-soft);">
+          Because Pindi is fully independent, he fits kitchens from any retailer or manufacturer. The most common brands he installs across Rugby and the surrounding CV21/CV22 area include:
+        </p>
+        <ul class="space-y-2 mb-6 pl-1" style="color: var(--text-soft);">
+          <li class="flex items-start gap-2">
+            <span class="mt-1 flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center" style="background: var(--teal); color: white; font-size: 0.65rem;">✓</span>
+            <span><strong>Wren Kitchens</strong> — one of the most popular choices among Rugby homeowners; Pindi fits Wren independently, without being tied to their retailer installation scheme. See the <a href="/retailers/wren/" style="color: var(--teal);">Wren installation page</a>.</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="mt-1 flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center" style="background: var(--teal); color: white; font-size: 0.65rem;">✓</span>
+            <span><strong>Howdens Joinery</strong> — Pindi holds a trade account with Howdens, giving him direct depot access and the ability to source components at trade price. See the <a href="/retailers/howdens/" style="color: var(--teal);">Howdens installation page</a>.</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="mt-1 flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center" style="background: var(--teal); color: white; font-size: 0.65rem;">✓</span>
+            <span><strong>Magnet</strong> — a popular mid-range choice across Warwickshire; all Magnet ranges are fully compatible with independent installation.</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="mt-1 flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center" style="background: var(--teal); color: white; font-size: 0.65rem;">✓</span>
+            <span><strong>IKEA</strong> — IKEA's SEKTION and METOD kitchen systems are fitted regularly. Pindi is well-versed in IKEA's assembly and installation methodology.</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="mt-1 flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center" style="background: var(--teal); color: white; font-size: 0.65rem;">✓</span>
+            <span><strong>Wickes and B&Q</strong> — both popular with homeowners fitting to a budget; Pindi brings the same precision and care regardless of the kitchen's price point.</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="mt-1 flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center" style="background: var(--teal); color: white; font-size: 0.65rem;">✓</span>
+            <span><strong>Benchmarx, DIY Kitchens, Kutchenhaus, Symphony, Masterclass</strong> — all covered as standard.</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="mt-1 flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center" style="background: var(--teal); color: white; font-size: 0.65rem;">✓</span>
+            <span><strong>Premium and German brands</strong> — including Häcker, Nobilia, Mereway, Neptune, and deVOL, particularly suited to the larger properties in Clifton-upon-Dunsmore and Dunchurch.</span>
+          </li>
+        </ul>
+        <p class="leading-relaxed" style="color: var(--text-soft);">
+          If your kitchen brand is not listed, call <a href="tel:07399651836" class="font-semibold" style="color: var(--teal);">07399 651836</a> — in almost every case it can be accommodated.
+        </p>
+      </div>
+      <div class="mt-10">
+        <SupplierLogos />
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 5: Areas Within Rugby -->
+  <section class="section" style="background: var(--bg-light);">
+    <div class="container">
+      <div class="max-w-3xl fade-up">
+        <h2 class="text-3xl font-bold mb-4" style="color: var(--navy);">
+          Areas of Rugby Covered
+        </h2>
+        <p class="leading-relaxed mb-4" style="color: var(--text-soft);">
+          Pindi covers the whole of Rugby and the wider district across CV21 and CV22 postcodes, as well as the surrounding Warwickshire villages. He regularly works across:
+        </p>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+          <div class="card p-5">
+            <h3 class="font-bold mb-2" style="color: var(--navy);">Rugby Town &amp; Inner Areas</h3>
+            <ul class="space-y-1 text-sm" style="color: var(--text-soft);">
+              <li><strong>Rugby town centre</strong> — Victorian terraces with chimney breasts, period wall configurations, and settled floors requiring careful levelling</li>
+              <li><strong>Newbold-on-Avon</strong> — Mixed housing close to the town centre, popular with young families</li>
+              <li><strong>Brownsover</strong> — Modern residential with straightforward layouts on the northern fringe</li>
+            </ul>
+          </div>
+          <div class="card p-5">
+            <h3 class="font-bold mb-2" style="color: var(--navy);">Hillmorton &amp; East Rugby</h3>
+            <ul class="space-y-1 text-sm" style="color: var(--text-soft);">
+              <li><strong>Hillmorton</strong> — 1930s semis and inter-war housing with varied rear extensions</li>
+              <li><strong>Bilton</strong> — Established residential area, mix of 1930s–1960s stock and later infill</li>
+              <li><strong>Long Lawford</strong> — Village properties and semi-rural homes on Rugby's western edge</li>
+            </ul>
+          </div>
+          <div class="card p-5">
+            <h3 class="font-bold mb-2" style="color: var(--navy);">South Rugby &amp; Villages</h3>
+            <ul class="space-y-1 text-sm" style="color: var(--text-soft);">
+              <li><strong>Dunchurch</strong> — Village setting with period and detached properties; premium installations common</li>
+              <li><strong>Clifton-upon-Dunsmore</strong> — Larger detached homes where quality of fit is highly visible</li>
+            </ul>
+          </div>
+          <div class="card p-5">
+            <h3 class="font-bold mb-2" style="color: var(--navy);">Coverage &amp; Postcodes</h3>
+            <ul class="space-y-1 text-sm" style="color: var(--text-soft);">
+              <li>All CV21 and CV22 postcodes covered</li>
+              <li>Surrounding Warwickshire villages within the Rugby district</li>
+              <li>Also covers nearby Coventry, Nuneaton, Leamington Spa, and Kenilworth</li>
+            </ul>
+          </div>
+        </div>
+        <p class="leading-relaxed" style="color: var(--text-soft);">
+          Visit the <a href="/areas/rugby/" class="font-semibold" style="color: var(--teal);">Rugby area page</a> for more detailed postcode information, or call <a href="tel:07399651836" class="font-semibold" style="color: var(--teal);">07399 651836</a> to confirm coverage for your address.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 6: What's Included & Pricing -->
+  <section class="section">
+    <div class="container">
+      <div class="max-w-3xl fade-up">
+        <h2 class="text-3xl font-bold mb-4" style="color: var(--navy);">
+          What's Included in a Kitchen Fit — and How Pricing Works
+        </h2>
+        <p class="leading-relaxed mb-4" style="color: var(--text-soft);">
+          A full kitchen fitting service from Pindi Sahota covers the complete installation from stripped room to finished kitchen. This includes:
+        </p>
+        <ul class="space-y-2 mb-6 pl-1" style="color: var(--text-soft);">
+          <li class="flex items-start gap-2">
+            <span class="mt-1 flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center" style="background: var(--teal); color: white; font-size: 0.65rem;">✓</span>
+            <span>Stripping out the existing kitchen, including disconnecting the sink and removing all appliances</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="mt-1 flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center" style="background: var(--teal); color: white; font-size: 0.65rem;">✓</span>
+            <span>Levelling and setting out all base units to achieve a perfectly flat worktop run</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="mt-1 flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center" style="background: var(--teal); color: white; font-size: 0.65rem;">✓</span>
+            <span>Fitting all wall and base carcasses, doors, drawers, hinges, and soft-close mechanisms</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="mt-1 flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center" style="background: var(--teal); color: white; font-size: 0.65rem;">✓</span>
+            <span>Cutting and fitting laminate, solid timber, or stone worktops, including scribed end panels and infill pieces</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="mt-1 flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center" style="background: var(--teal); color: white; font-size: 0.65rem;">✓</span>
+            <span>Sink and tap installation, including connection to existing waste and supply pipework</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="mt-1 flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center" style="background: var(--teal); color: white; font-size: 0.65rem;">✓</span>
+            <span>Installation and connection of integrated appliances — dishwashers, fridges, ovens, hobs, and extractors</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="mt-1 flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center" style="background: var(--teal); color: white; font-size: 0.65rem;">✓</span>
+            <span>Fitting plinths, cornices, pelmet, end panels, and all decorative finishing pieces supplied with the kitchen</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="mt-1 flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center" style="background: var(--teal); color: white; font-size: 0.65rem;">✓</span>
+            <span>Final check, door alignment adjustments, and full snagging before handover</span>
+          </li>
+        </ul>
+        <p class="leading-relaxed mb-4" style="color: var(--text-soft);">
+          Pricing is established during the pre-installation survey and is specific to your home and kitchen. Key variables include the number of carcasses, worktop type and linear metres, appliance count, floor condition (particularly relevant in Rugby's older terraced stock), whether an island is involved, and whether any preparatory building work is needed. For a typical Rugby semi with 12–15 units, fitting labour typically falls in the range of £1,300–£2,300. More complex projects will be higher.
+        </p>
+        <p class="leading-relaxed" style="color: var(--text-soft);">
+          For a full breakdown of what affects kitchen fitting prices, visit the <a href="/costs/" class="font-semibold" style="color: var(--teal);">kitchen fitting costs page</a>. For a quote specific to your home, book a survey.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Internal Links -->
+  <section class="section" style="background: var(--bg-light);">
+    <div class="container">
+      <div class="fade-up">
+        <InternalLinks
+          links={internalLinks}
+          heading="Related Pages"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section">
+    <div class="container">
+      <div class="max-w-3xl fade-up">
+        <h2 class="text-3xl font-bold mb-8" style="color: var(--navy);">
+          Frequently Asked Questions — Kitchen Fitting in Rugby
+        </h2>
+        <FAQ items={faqItems} schemaId="faq-kitchen-fitter-rugby" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust Strip -->
+  <TrustStrip />
+
+  <!-- CTA -->
+  <CTA
+    heading="Book Your Kitchen Survey in Rugby"
+    subtext="Start with a £195 pre-installation survey — credited back in full when you book your fit. Call Pindi on 07399 651836 or book online."
+    primaryLabel="Book Your Survey"
+    primaryHref="/survey/"
+    secondaryLabel="Call 07399 651836"
+    secondaryHref="tel:07399651836"
+    dark={true}
+  />
+
+  <Footer slot="footer" />
+  <StickyMobileCTA slot="sticky-cta" />
+</Base>
+
+<style>
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+
+  @media (max-width: 768px) {
+    .gallery-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (min-width: 769px) and (max-width: 1024px) {
+    .gallery-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .gallery-figure:last-child {
+      grid-column: 1 / -1;
+      max-width: 50%;
+      margin-inline: auto;
+    }
+  }
+
+  .gallery-figure {
+    margin: 0;
+    overflow: hidden;
+    border-radius: 0.5rem;
+  }
+
+  .gallery-img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    aspect-ratio: 4 / 3;
+    border-radius: 0.5rem;
+    transition: transform 0.3s ease;
+  }
+
+  .gallery-figure:first-child .gallery-img {
+    aspect-ratio: 3 / 4;
+  }
+
+  .gallery-figure:hover .gallery-img {
+    transform: scale(1.02);
+  }
+</style>
