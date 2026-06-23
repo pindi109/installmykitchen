@@ -11,7 +11,8 @@ export interface Props {
   ogTitle?: string;
   ogDescription?: string;
   ogImage?: string;
-  noHero?: boolean; // pass true on pages with their own custom hero section
+  noHero?: boolean;
+  lastUpdated?: string; // ISO date e.g. "2026-06-23"
 }
 
 const {
@@ -22,6 +23,7 @@ const {
   ogDescription,
   ogImage,
   noHero = false,
+  lastUpdated,
 } = Astro.props;
 
 const resolvedCanonical = canonical ?? Astro.url.href;
@@ -94,6 +96,10 @@ const resolvedOgImage =
     <!-- Global styles are injected by Astro via the frontmatter import below.
          DECISION: Imported in frontmatter (not <link>) so Astro/Vite bundles and
          fingerprints the CSS at build time. The <style> tag approach would scope it. -->
+
+    <!-- Freshness signals -->
+    {lastUpdated && <meta property="article:published_time" content={lastUpdated} />}
+    {lastUpdated && <meta property="article:modified_time" content={lastUpdated} />}
 
     <!-- Schema slot (FAQPage, BreadcrumbList, LocalBusiness, etc.) -->
     <slot name="schema" />
