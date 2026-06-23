@@ -84,8 +84,14 @@ const faqItems = [
   allFaqs[(faqOffset + 3) % allFaqs.length],
 ];
 
-// Nearby area links — 3 from nearby array
-const nearbyAreaSlugs = (nearby as string[]).slice(0, 3);
+// Nearby area links — only include slugs that have a generated style-location page
+const STYLE_LOCATION_SLUGS = [
+  "coventry", "earlsdon", "kenilworth", "leamington-spa", "warwick",
+  "rugby", "solihull", "nuneaton", "stratford-upon-avon", "hinckley",
+];
+const nearbyAreaSlugs = (nearby as string[])
+  .filter((s) => STYLE_LOCATION_SLUGS.includes(s))
+  .slice(0, 3);
 const nearbyLinks = nearbyAreaSlugs.map((nearbySlug) => {
   const nearbyLoc = locationsData.find((l) => l.slug === nearbySlug);
   return nearbyLoc

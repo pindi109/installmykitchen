@@ -1,0 +1,459 @@
+---
+import Base from "../layouts/Base.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import StickyMobileCTA from "../components/StickyMobileCTA.astro";
+import Breadcrumbs from "../components/Breadcrumbs.astro";
+import AnswerBlock from "../components/AnswerBlock.astro";
+import KeyTakeaway from "../components/KeyTakeaway.astro";
+import FAQ from "../components/FAQ.astro";
+import SupplierLogos from "../components/SupplierLogos.astro";
+import InternalLinks from "../components/InternalLinks.astro";
+import CTA from "../components/CTA.astro";
+import TrustStrip from "../components/TrustStrip.astro";
+
+const title = "Kitchen Fitter Coventry | Install My Kitchen — Pindi Sahota";
+const metaDescription = "Need a kitchen fitter in Coventry? Pindi Sahota offers 30 years of independent installation experience, fixed-price quotes, and a £195 survey credited back on booking.";
+const canonical = "https://installmykitchen.co.uk/kitchen-fitter-coventry/";
+
+const takeawayPoints = [
+  "Pindi Sahota is an independent kitchen fitter based in Coundon, Coventry — CV6 2AH — serving the whole city and surrounding areas.",
+  "30 years of professional kitchen fitting experience across Coventry's hugely varied housing stock.",
+  "Fits kitchens from Wren, Howdens, Magnet, IKEA, Wickes, B&Q, Benchmarx and all other major retailers.",
+  "Pre-installation survey at £195, credited back in full when you proceed — fixed-price quote guaranteed.",
+];
+
+const faqItems = [
+  {
+    q: "What does a kitchen fitter do?",
+    a: "A kitchen fitter manages the complete installation of a fitted kitchen. This includes stripping out the old kitchen, preparing the room (levelling floors, making good walls, adjusting plumbing and electrics in co-ordination with trades), fitting all carcasses, doors, drawers and plinths, cutting and fitting worktops, installing sinks and taps, connecting appliances, and finishing with pelmets, cornices and lighting. An independent fitter like Pindi works for you, not the retailer, so every decision is made in your interest rather than to minimise a retailer's cost.",
+  },
+  {
+    q: "How much does a kitchen fitter cost in Coventry?",
+    a: "Kitchen fitting costs in Coventry depend on the size of the kitchen, the complexity of the layout, the number of appliances, and whether any building work or trades co-ordination is required. As a guide, a standard 10–15 unit kitchen in a typical Coventry semi typically costs between £1,200 and £2,500 for the fitting labour alone. More complex projects — open-plan kitchen-diners, rooms requiring levelling or plastering, or kitchens with multiple integrated appliances — will sit higher. Pindi provides a fully itemised, fixed-price quote following a pre-installation survey, so there are no estimates or hidden charges.",
+  },
+  {
+    q: "Do you fit kitchens from all retailers?",
+    a: "Yes. Pindi fits kitchens from all major UK retailers and manufacturers including Wren Kitchens, Howdens Joinery, Magnet, IKEA, Wickes, B&Q, Benchmarx, DIY Kitchens, Kutchenhaus, Symphony, and Masterclass, as well as premium brands such as Häcker, Nobilia, Mereway, Neptune and deVOL. Because he is independent — not employed by any retailer — he can take on any brand without conflict of interest. If you are unsure whether your kitchen is covered, call 07399 651836 and ask.",
+  },
+  {
+    q: "How long does kitchen fitting take in Coventry?",
+    a: "Most standard kitchen installations in Coventry take between three and five working days for the fitting itself. Larger kitchens, projects that include a kitchen extension, or those requiring co-ordinated plumbing or electrical first-fix work may take longer. During the pre-installation survey Pindi will give you a realistic duration estimate based on your specific room and kitchen specification, so you can plan your household routine around the work.",
+  },
+  {
+    q: "What areas of Coventry do you cover?",
+    a: "Pindi covers the whole of Coventry city and the surrounding areas. Within the city, he regularly works across Earlsdon, Coundon, Stivichall, Finham, Tile Hill, Canley, Allesley, Radford, Wyken, Walsgrave, Binley, and the Kenilworth Road corridor. He also covers the wider West Midlands and Warwickshire area including Kenilworth, Leamington Spa, Rugby, Nuneaton, Solihull and beyond. Call 07399 651836 to confirm coverage for your postcode.",
+  },
+];
+
+const internalLinks = [
+  {
+    label: "Book a pre-installation survey",
+    href: "/survey/",
+    description: "£195 survey credited back in full when you proceed — the essential first step",
+  },
+  {
+    label: "Kitchen fitting costs explained",
+    href: "/costs/",
+    description: "Fully itemised guide to what affects kitchen installation prices",
+  },
+  {
+    label: "Coventry area page",
+    href: "/areas/coventry/",
+    description: "Detailed installation information for all Coventry postcodes",
+  },
+  {
+    label: "Completed kitchen projects",
+    href: "/projects/",
+    description: "Real installations by Pindi across Coventry and the Midlands",
+  },
+  {
+    label: "About Pindi Sahota",
+    href: "/pindi-sahota/",
+    description: "Meet the independent kitchen fitter behind Install My Kitchen",
+  },
+  {
+    label: "Howdens kitchen installation",
+    href: "/retailers/howdens/",
+    description: "Why independent fitting is the right choice for your Howdens kitchen",
+  },
+  {
+    label: "Wren kitchen installation",
+    href: "/retailers/wren/",
+    description: "Fitting your Wren kitchen independently — what you need to know",
+  },
+];
+
+// LocalBusiness JSON-LD
+const localBusinessSchema = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  name: "Install My Kitchen",
+  url: "https://installmykitchen.co.uk",
+  telephone: "07399651836",
+  email: "info@installmykitchen.co.uk",
+  image: "https://installmykitchen.co.uk/images/pindi-sahota.jpg",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "242 Hollyfast Road, Coundon",
+    addressLocality: "Coventry",
+    postalCode: "CV6 2AH",
+    addressCountry: "GB",
+  },
+  geo: {
+    "@type": "GeoCoordinates",
+    latitude: 52.4197,
+    longitude: -1.5379,
+  },
+  areaServed: {
+    "@type": "City",
+    name: "Coventry",
+  },
+  description:
+    "Independent kitchen fitting service in Coventry. Pindi Sahota has 30 years of experience fitting kitchens from all major retailers including Wren, Howdens, Magnet and IKEA. Fixed-price quotes following a £195 pre-installation survey.",
+  priceRange: "££",
+  openingHoursSpecification: [
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      opens: "08:00",
+      closes: "18:00",
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: "Saturday",
+      opens: "09:00",
+      closes: "13:00",
+    },
+  ],
+};
+
+// Service JSON-LD
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  name: "Kitchen Fitting in Coventry",
+  provider: {
+    "@type": "LocalBusiness",
+    name: "Install My Kitchen",
+    url: "https://installmykitchen.co.uk",
+    telephone: "07399651836",
+  },
+  areaServed: {
+    "@type": "City",
+    name: "Coventry",
+  },
+  description:
+    "Professional independent kitchen fitting and installation service across Coventry, fitting kitchens from all major UK retailers including Wren, Howdens, Magnet, IKEA, Wickes and B&Q. Fixed-price quotes following a pre-installation survey.",
+  serviceType: "Kitchen Fitting",
+  offers: {
+    "@type": "Offer",
+    name: "Pre-installation Survey",
+    price: "195.00",
+    priceCurrency: "GBP",
+    description: "Pre-installation survey, fully credited back against the fitting quote when you proceed.",
+  },
+};
+---
+
+<Base
+  title={title}
+  description={metaDescription}
+  canonical={canonical}
+>
+  <script slot="schema" type="application/ld+json" set:html={JSON.stringify(localBusinessSchema)} />
+  <script slot="schema" type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
+
+  <Header slot="header" />
+
+  <div class="container py-6">
+    <Breadcrumbs
+      items={[
+        { label: "Kitchen Fitter Coventry", href: "/kitchen-fitter-coventry/" },
+      ]}
+    />
+  </div>
+
+  <!-- Hero -->
+  <section class="section" style="background: var(--bg-light);">
+    <div class="container">
+      <div class="max-w-3xl">
+        <h1 class="text-4xl md:text-5xl font-extrabold mb-5 leading-tight" style="color: var(--navy);">
+          Kitchen Fitter Coventry — Independent Installation by Pindi Sahota
+        </h1>
+        <AnswerBlock
+          answer="Pindi Sahota is an independent kitchen fitter based in Coundon, Coventry. With 30 years of experience, he fits kitchens from Wren, Howdens, Magnet, IKEA and every major retailer — with a fixed-price quote guaranteed after a £195 pre-installation survey (credited back on booking)."
+        />
+        <KeyTakeaway points={takeawayPoints} />
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 1: Independent vs Retailer Fitters -->
+  <section class="section">
+    <div class="container">
+      <div class="max-w-3xl fade-up">
+        <h2 class="text-3xl font-bold mb-4" style="color: var(--navy);">
+          Independent Kitchen Fitter vs Retailer Fitter — What's the Difference?
+        </h2>
+        <p class="text-lg leading-relaxed mb-4" style="color: var(--text-soft);">
+          When you buy a kitchen from a large retailer, they will often offer installation as an add-on. On the surface this sounds convenient — one company handles everything. In practice, the fitters working under retailer schemes are contractors who are paid to work quickly and to the retailer's standard, not yours. If anything goes wrong, you are caught between the retailer's customer service department and a fitter who is already on to the next job.
+        </p>
+        <p class="leading-relaxed mb-4" style="color: var(--text-soft);">
+          An independent kitchen fitter like Pindi Sahota works directly for you. There is no middleman, no call-centre complaints process, and no incentive to rush. Pindi visits your home to carry out a full pre-installation survey, builds a fixed-price quote based on actual conditions in your kitchen, and then carries out the work himself. If a problem arises — a wall that is not plumb, a floor that needs levelling, a cabinet that arrived damaged — he deals with it on the spot rather than logging it for a head office to review weeks later.
+        </p>
+        <p class="leading-relaxed mb-4" style="color: var(--text-soft);">
+          Independent fitting also means genuine flexibility. Pindi fits kitchens from every retailer and manufacturer, so you are free to shop wherever gives you the best kitchen for your budget — you do not need to buy from a single retailer just to access their installation service. You can purchase from Wren and still have your kitchen fitted to the same standard as a Howdens customer, or vice versa.
+        </p>
+        <p class="leading-relaxed" style="color: var(--text-soft);">
+          For Coventry homeowners who want the job done properly, by a single experienced tradesperson who is accountable to them, independent fitting is almost always the better choice.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 2: Why Coventry Homeowners Choose Pindi -->
+  <section class="section" style="background: var(--bg-light);">
+    <div class="container">
+      <div class="max-w-3xl fade-up">
+        <h2 class="text-3xl font-bold mb-4" style="color: var(--navy);">
+          Why Coventry Homeowners Choose Pindi Sahota
+        </h2>
+        <p class="leading-relaxed mb-4" style="color: var(--text-soft);">
+          Pindi Sahota has been fitting kitchens professionally for 30 years. He is based at 242 Hollyfast Road, Coundon, Coventry CV6 2AH — not a national franchise dispatching unknown contractors from a central database, but a local tradesperson who knows Coventry's housing stock in detail.
+        </p>
+        <p class="leading-relaxed mb-4" style="color: var(--text-soft);">
+          Coventry's property landscape is unusually varied. In Earlsdon and Chapelfields you find Victorian and Edwardian terraces with chimney breasts, uneven floors, and walls that were never designed to carry modern fitted furniture. In Finham and Stivichall there are large detached homes from the 1930s and 1950s with kitchens big enough for islands and full-height larder towers. Tile Hill and Canley have post-war semis where the kitchen occupies a rear extension, often with concrete floors and lower ceiling heights. Wyken and Walsgrave have solid 1950s and 1960s construction where straightforward installations still reward an experienced eye.
+        </p>
+        <p class="leading-relaxed mb-4" style="color: var(--text-soft);">
+          Over 30 years Pindi has worked in all of these property types, across every area of the city. He knows what to look for, what to plan for, and how to adapt when reality differs slightly from the designer's plan. That accumulated local knowledge is something no national fitting scheme can replicate.
+        </p>
+        <p class="leading-relaxed" style="color: var(--text-soft);">
+          Pindi also holds trade accounts with Howdens and Benchmarx, which means he can source handles, fixings, and small components directly from local depots at trade price — saving you money and avoiding the delays that come with ordering through a retailer's customer service line.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 3: The Survey-First Process -->
+  <section class="section">
+    <div class="container">
+      <div class="max-w-3xl fade-up">
+        <h2 class="text-3xl font-bold mb-4" style="color: var(--navy);">
+          The Survey-First Process — How It Works
+        </h2>
+        <p class="leading-relaxed mb-4" style="color: var(--text-soft);">
+          Every kitchen fitting project begins with a pre-installation survey, carried out by Pindi personally. The survey costs £195 and is credited back in full if you go ahead with the installation. It is not a sales visit — it is a working appointment that produces a detailed, accurate quote for the real job.
+        </p>
+        <p class="leading-relaxed mb-4" style="color: var(--text-soft);">
+          During the survey, Pindi takes precise room measurements, checks ceiling heights and wall angles, inspects existing plumbing and electrics routes, reviews your kitchen plan and elevation drawings, and identifies any work that will need to be done before or alongside the installation — plastering, floor levelling, electrics, gas, or tiling. He will advise you honestly on what is included in the fitting quote and what trades you may need to book separately.
+        </p>
+        <p class="leading-relaxed mb-4" style="color: var(--text-soft);">
+          After the survey you receive a written, fixed-price quote. The price does not change unless you change the scope of work. There are no surprises on completion day, no additional charges for complications that should have been spotted in advance, and no retrospective claims for extra time.
+        </p>
+        <p class="leading-relaxed" style="color: var(--text-soft);">
+          Survey appointments in Coventry are typically available within two weeks. Installation slots follow within four to eight weeks of the survey, depending on your timeline and Pindi's schedule. To book, call <a href="tel:07399651836" class="font-semibold" style="color: var(--teal);">07399 651836</a> or visit the <a href="/survey/" class="font-semibold" style="color: var(--teal);">survey booking page</a>.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 4: Retailers -->
+  <section class="section" style="background: var(--bg-light);">
+    <div class="container">
+      <div class="max-w-3xl fade-up">
+        <h2 class="text-3xl font-bold mb-4" style="color: var(--navy);">
+          Which Kitchen Retailers Does Pindi Fit?
+        </h2>
+        <p class="leading-relaxed mb-4" style="color: var(--text-soft);">
+          Because Pindi is fully independent, he can fit kitchens purchased from any retailer or manufacturer. The most common kitchens he installs in Coventry come from:
+        </p>
+        <ul class="space-y-2 mb-6 pl-1" style="color: var(--text-soft);">
+          <li class="flex items-start gap-2">
+            <span class="mt-1 flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center" style="background: var(--teal); color: white; font-size: 0.65rem;">✓</span>
+            <span><strong>Wren Kitchens</strong> — one of the most popular choices in Coventry; Pindi fits Wren independently, without being tied to their retailer installation scheme. See the <a href="/retailers/wren/" style="color: var(--teal);">Wren installation page</a>.</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="mt-1 flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center" style="background: var(--teal); color: white; font-size: 0.65rem;">✓</span>
+            <span><strong>Howdens Joinery</strong> — Pindi has a trade account with Howdens, giving him direct depot access across Coventry. See the <a href="/retailers/howdens/" style="color: var(--teal);">Howdens installation page</a>.</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="mt-1 flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center" style="background: var(--teal); color: white; font-size: 0.65rem;">✓</span>
+            <span><strong>Magnet</strong> — a common choice for Coventry homeowners seeking mid-range quality; all Magnet ranges are fully compatible with independent installation.</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="mt-1 flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center" style="background: var(--teal); color: white; font-size: 0.65rem;">✓</span>
+            <span><strong>IKEA</strong> — IKEA's SEKTION and METOD kitchen systems are fitted regularly across Coventry. Pindi is well-versed in IKEA's assembly and installation method.</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="mt-1 flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center" style="background: var(--teal); color: white; font-size: 0.65rem;">✓</span>
+            <span><strong>Wickes and B&Q</strong> — both popular with homeowners fitting to a budget; Pindi brings the same attention to detail regardless of the kitchen's price point.</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="mt-1 flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center" style="background: var(--teal); color: white; font-size: 0.65rem;">✓</span>
+            <span><strong>Benchmarx, DIY Kitchens, Kutchenhaus, Symphony, Masterclass</strong> — all covered as standard.</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="mt-1 flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center" style="background: var(--teal); color: white; font-size: 0.65rem;">✓</span>
+            <span><strong>Premium and German brands</strong> — including Häcker, Nobilia, Mereway, Neptune and deVOL, regularly fitted in Coventry's larger detached properties in Finham, Stivichall, Allesley and Kenilworth Road areas.</span>
+          </li>
+        </ul>
+        <p class="leading-relaxed" style="color: var(--text-soft);">
+          If your kitchen brand is not listed, call <a href="tel:07399651836" class="font-semibold" style="color: var(--teal);">07399 651836</a> — in almost every case it can be accommodated.
+        </p>
+      </div>
+      <div class="mt-10">
+        <SupplierLogos />
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 5: Areas Within Coventry -->
+  <section class="section">
+    <div class="container">
+      <div class="max-w-3xl fade-up">
+        <h2 class="text-3xl font-bold mb-4" style="color: var(--navy);">
+          Areas of Coventry Covered
+        </h2>
+        <p class="leading-relaxed mb-4" style="color: var(--text-soft);">
+          Pindi covers the whole of Coventry city (CV1–CV8) and is based in Coundon (CV6), meaning he is on most Coventry doorsteps within 15 minutes. He regularly works across all areas of the city, including:
+        </p>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+          <div class="card p-5">
+            <h3 class="font-bold mb-2" style="color: var(--navy);">South &amp; South-West Coventry</h3>
+            <ul class="space-y-1 text-sm" style="color: var(--text-soft);">
+              <li><strong>Earlsdon</strong> — Victorian and Edwardian terraces, often with rear extensions and chimney breasts</li>
+              <li><strong>Stivichall</strong> — Large Edwardian semis with spacious kitchens and high ceilings</li>
+              <li><strong>Finham</strong> — Detached family homes, premium installations common</li>
+              <li><strong>Canley</strong> — 1950s and 1960s semis near University of Warwick</li>
+              <li><strong>Tile Hill</strong> — Inter-war and post-war housing with solid external walls</li>
+            </ul>
+          </div>
+          <div class="card p-5">
+            <h3 class="font-bold mb-2" style="color: var(--navy);">North &amp; North-West Coventry</h3>
+            <ul class="space-y-1 text-sm" style="color: var(--text-soft);">
+              <li><strong>Coundon</strong> — Pindi's home base; Victorian terraces, 1930s semis, varied layouts</li>
+              <li><strong>Allesley</strong> — Village properties and executive detached homes</li>
+              <li><strong>Radford</strong> — Dense Victorian and Edwardian terracing close to the city centre</li>
+              <li><strong>Kenilworth Road area</strong> — The prestigious corridor running south through CV5</li>
+            </ul>
+          </div>
+          <div class="card p-5">
+            <h3 class="font-bold mb-2" style="color: var(--navy);">East Coventry</h3>
+            <ul class="space-y-1 text-sm" style="color: var(--text-soft);">
+              <li><strong>Wyken</strong> — Post-war semis on established tree-lined streets</li>
+              <li><strong>Walsgrave</strong> — Mixed residential near the University Hospital</li>
+              <li><strong>Binley</strong> — Range of property ages from 1930s to modern new-build</li>
+            </ul>
+          </div>
+          <div class="card p-5">
+            <h3 class="font-bold mb-2" style="color: var(--navy);">City Centre &amp; Inner Areas</h3>
+            <ul class="space-y-1 text-sm" style="color: var(--text-soft);">
+              <li><strong>City centre</strong> — Apartments, conversions, and contemporary new-builds (CV1)</li>
+              <li>All Coventry postcodes covered: CV1 through CV8</li>
+              <li>Surrounding areas including Kenilworth, Rugby, Nuneaton and Leamington Spa also covered</li>
+            </ul>
+          </div>
+        </div>
+        <p class="leading-relaxed" style="color: var(--text-soft);">
+          Visit the <a href="/areas/coventry/" class="font-semibold" style="color: var(--teal);">Coventry area page</a> for more detailed information, or call <a href="tel:07399651836" class="font-semibold" style="color: var(--teal);">07399 651836</a> to confirm your postcode is covered.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 6: What's Included & Pricing -->
+  <section class="section" style="background: var(--bg-light);">
+    <div class="container">
+      <div class="max-w-3xl fade-up">
+        <h2 class="text-3xl font-bold mb-4" style="color: var(--navy);">
+          What's Included in a Kitchen Fit — and How Pricing Works
+        </h2>
+        <p class="leading-relaxed mb-4" style="color: var(--text-soft);">
+          A full kitchen fitting service from Pindi Sahota covers the complete installation from stripped room to finished kitchen. This includes:
+        </p>
+        <ul class="space-y-2 mb-6 pl-1" style="color: var(--text-soft);">
+          <li class="flex items-start gap-2">
+            <span class="mt-1 flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center" style="background: var(--teal); color: white; font-size: 0.65rem;">✓</span>
+            <span>Stripping out the existing kitchen, including disconnecting the sink and removing appliances</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="mt-1 flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center" style="background: var(--teal); color: white; font-size: 0.65rem;">✓</span>
+            <span>Levelling and setting out all base units to achieve a perfectly flat worktop run</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="mt-1 flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center" style="background: var(--teal); color: white; font-size: 0.65rem;">✓</span>
+            <span>Fitting all wall and base carcasses, doors, drawers, hinges, and soft-close mechanisms</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="mt-1 flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center" style="background: var(--teal); color: white; font-size: 0.65rem;">✓</span>
+            <span>Cutting and fitting laminate, solid timber, or stone worktops, including scribed end panels</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="mt-1 flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center" style="background: var(--teal); color: white; font-size: 0.65rem;">✓</span>
+            <span>Sink and tap installation, including connection to existing waste and supply pipework</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="mt-1 flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center" style="background: var(--teal); color: white; font-size: 0.65rem;">✓</span>
+            <span>Installation and connection of integrated appliances — dishwashers, fridges, ovens, hobs, and extractors</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="mt-1 flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center" style="background: var(--teal); color: white; font-size: 0.65rem;">✓</span>
+            <span>Fitting plinths, cornices, pelmet, end panels, and any decorative finishing pieces supplied with the kitchen</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="mt-1 flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center" style="background: var(--teal); color: white; font-size: 0.65rem;">✓</span>
+            <span>Final check, door adjustments, and snagging before handover</span>
+          </li>
+        </ul>
+        <p class="leading-relaxed mb-4" style="color: var(--text-soft);">
+          Pricing is based on the specifics of your project, established during the pre-installation survey. Variables that affect the total include the number of carcasses, worktop type and linear metres, appliance count, whether an island is included, floor condition, and whether any building preparation work is required. For a typical Coventry semi-detached with 12–15 units, fitting labour typically falls in the range of £1,400–£2,200. Larger or more complex projects will be higher.
+        </p>
+        <p class="leading-relaxed" style="color: var(--text-soft);">
+          For a full explanation of what drives kitchen fitting prices, visit the <a href="/costs/" class="font-semibold" style="color: var(--teal);">kitchen fitting costs page</a>. For a quote specific to your home and kitchen, book a survey.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Internal Links -->
+  <section class="section" style="background: var(--bg-light);">
+    <div class="container">
+      <div class="fade-up">
+        <InternalLinks
+          links={internalLinks}
+          heading="Related Pages"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section">
+    <div class="container">
+      <div class="max-w-3xl fade-up">
+        <h2 class="text-3xl font-bold mb-8" style="color: var(--navy);">
+          Frequently Asked Questions — Kitchen Fitting in Coventry
+        </h2>
+        <FAQ items={faqItems} schemaId="faq-kitchen-fitter-coventry" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust Strip -->
+  <TrustStrip />
+
+  <!-- CTA -->
+  <CTA
+    heading="Book Your Kitchen Survey in Coventry"
+    subtext="Start with a £195 pre-installation survey — credited back in full when you book your fit. Call Pindi on 07399 651836 or book online."
+    primaryLabel="Book Your Survey"
+    primaryHref="/survey/"
+    secondaryLabel="Call 07399 651836"
+    secondaryHref="tel:07399651836"
+    dark={true}
+  />
+
+  <Footer slot="footer" />
+  <StickyMobileCTA slot="sticky-cta" />
+</Base>

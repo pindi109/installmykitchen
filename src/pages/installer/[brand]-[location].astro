@@ -82,7 +82,7 @@ const title = rawTitle.length <= 60
   : `${displayName} Installer ${locationName} | Install My Kitchen`;
 
 // Meta 140-160 chars
-const metaDescription = `Independent ${displayName} kitchen installation in ${locationName}, ${county}. Expert fitters, not affiliated with ${displayName}. Free survey available — fixed-price quotes guaranteed.`;
+const metaDescription = `Independent ${displayName} kitchen installation in ${locationName}, ${county}. Expert fitters, not affiliated with ${displayName}. £195 survey credited back on booking — fixed-price quotes.`;
 
 // FAQ — offset by both retailer and location index for variety
 const allFaqs = [
@@ -99,8 +99,10 @@ const faqItems = [
   allFaqs[(faqOffset + 3) % allFaqs.length],
 ];
 
-// Nearby combos — pick 2 nearby areas paired with same retailer
-const nearbyAreaSlugs = (nearby as string[]).slice(0, 2);
+// Nearby combos — only include slugs that have a generated installer page
+const nearbyAreaSlugs = (nearby as string[])
+  .filter((s) => PRIORITY_LOCATION_SLUGS.includes(s))
+  .slice(0, 2);
 const nearbyComboLinks = nearbyAreaSlugs.map((nearbySlug) => {
   const nearbyLoc = locationsData.find((l) => l.slug === nearbySlug);
   return nearbyLoc

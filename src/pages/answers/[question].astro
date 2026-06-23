@@ -384,7 +384,7 @@ const faqSchema = {
 };
 ---
 
-<Base title={`${title} | Install My Kitchen`} description={metaDescription} canonical={canonical}>
+<Base title={`${title} | Install My Kitchen`} description={metaDescription} canonical={canonical} robots="noindex, follow">
   <script slot="schema" type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
 
   <Header slot="header" />

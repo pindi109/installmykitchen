@@ -262,6 +262,36 @@ export const GET = async (): Promise<Response> => {
     "who-is-the-best-kitchen-installer-in-coventry",
   ];
 
+  // ── Answer slugs (25) — /answers/[question]/ ────────────────────────────────
+  // Slugs sourced from src/data/questions-a.json
+  const answerSlugs = [
+    "do-wren-install-kitchens",
+    "does-howdens-do-installation",
+    "does-magnet-do-installation",
+    "does-ikea-offer-kitchen-installation",
+    "can-i-install-a-kitchen-myself",
+    "what-does-a-kitchen-fitter-actually-do",
+    "is-wren-better-than-howdens",
+    "how-long-does-kitchen-installation-take",
+    "how-much-should-kitchen-fitting-cost",
+    "do-kitchen-fitters-remove-old-kitchen",
+    "do-kitchen-fitters-do-plumbing",
+    "do-kitchen-fitters-do-electrical",
+    "do-you-need-planning-permission-for-new-kitchen",
+    "what-qualifications-does-a-kitchen-fitter-need",
+    "what-is-a-kitchen-survey",
+    "why-use-independent-kitchen-fitter",
+    "how-to-find-kitchen-fitter-near-me",
+    "what-happens-after-kitchen-is-delivered",
+    "what-to-do-if-kitchen-units-damaged",
+    "do-kitchen-fitters-supply-worktops",
+    "is-it-worth-getting-a-kitchen-survey",
+    "how-do-kitchen-fitters-level-units",
+    "what-is-kitchen-snagging",
+    "what-is-a-kitchen-plinth",
+    "what-is-kitchen-carcass",
+  ];
+
   // ── Project/case study pages (4) ────────────────────────────────────────────
   const projectPages = [
     "/projects/howdens-kitchen-earlsdon-coventry/",
@@ -429,6 +459,15 @@ export const GET = async (): Promise<Response> => {
   for (const slug of newComparisonSlugs) {
     lines.push(url(`/comparisons/${slug}/`, "monthly", "0.6"));
   }
+
+  // /answers/[slug]/  (25, from questions-a.json)
+  for (const slug of answerSlugs) {
+    lines.push(url(`/answers/${slug}/`, "monthly", "0.5"));
+  }
+
+  // Additional static pages
+  lines.push(url("/gallery/", "monthly", "0.6"));
+  lines.push(url("/kitchen-fitter-coventry/", "weekly", "0.9"));
 
   const xml = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
