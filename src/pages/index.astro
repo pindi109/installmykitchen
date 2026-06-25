@@ -179,46 +179,44 @@ const areas = [
     </div>
   </section>
 
-  <!-- ══════════════════════════════════════════ BENEFIT STRIP ═══ -->
-  <section class="section-sm" style="background: var(--bg-light);" aria-label="Key benefits">
+  <!-- ══════════════════════════════════════════ STATEMENT BAND ═══ -->
+  <section class="statement-band" aria-label="Why Install My Kitchen">
     <div class="container">
-      <ul class="benefit-strip" role="list">
-        <li class="benefit-item" role="listitem">
-          <span class="benefit-icon" aria-hidden="true">
-            <!-- Checkmark in circle -->
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="9 12 11 14 15 10"/></svg>
-          </span>
-          <span class="benefit-label">Independent &amp; Retailer Neutral</span>
-        </li>
-        <li class="benefit-item" role="listitem">
-          <span class="benefit-icon" aria-hidden="true">
-            <!-- Clock -->
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-          </span>
-          <span class="benefit-label">Fast Slots Available</span>
-        </li>
-        <li class="benefit-item" role="listitem">
-          <span class="benefit-icon" aria-hidden="true">
-            <!-- Clipboard -->
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/><line x1="9" y1="12" x2="15" y2="12"/><line x1="9" y1="16" x2="13" y2="16"/></svg>
-          </span>
-          <span class="benefit-label">Survey Before Installation</span>
-        </li>
-        <li class="benefit-item" role="listitem">
-          <span class="benefit-icon" aria-hidden="true">
-            <!-- Star -->
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          </span>
-          <span class="benefit-label">Experienced Specialists</span>
-        </li>
-        <li class="benefit-item" role="listitem">
-          <span class="benefit-icon" aria-hidden="true">
-            <!-- Map pin -->
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-          </span>
-          <span class="benefit-label">Coventry &amp; Warwickshire</span>
-        </li>
-      </ul>
+      <div class="statement-inner">
+        <div class="statement-copy">
+          <h2 class="statement-h2">
+            Independent Kitchen Installation Across Coventry &amp; Warwickshire.
+            <span class="statement-accent"> Survey First. Fixed Price. Done Right.</span>
+          </h2>
+          <p class="statement-sub">
+            You've bought your kitchen — from Wren, Howdens, Magnet, IKEA, or anywhere else. Our vetted installation team will fit it on a fixed price, with a pre-installation survey included. No retailer tie-ins. No hidden costs. No surprises.
+          </p>
+          <div class="statement-ctas">
+            <a href="/survey/" class="btn-primary">Book Your Survey — £195 Credited Back</a>
+            <a href="/kitchen-fitter-coventry/" class="statement-link">
+              Find your local kitchen fitter →
+            </a>
+          </div>
+        </div>
+        <ul class="statement-stats" role="list">
+          <li class="stat-card" role="listitem">
+            <span class="stat-number">30+</span>
+            <span class="stat-label">Years of professional kitchen installation experience on our team</span>
+          </li>
+          <li class="stat-card" role="listitem">
+            <span class="stat-number">£195</span>
+            <span class="stat-label">Pre-installation survey — credited back in full when you book</span>
+          </li>
+          <li class="stat-card" role="listitem">
+            <span class="stat-number">Fixed</span>
+            <span class="stat-label">Price guaranteed — what we quote is exactly what you pay</span>
+          </li>
+          <li class="stat-card" role="listitem">
+            <span class="stat-number">Any</span>
+            <span class="stat-label">Retailer fitted — we're independent of every showroom and brand</span>
+          </li>
+        </ul>
+      </div>
     </div>
   </section>
 
@@ -821,6 +819,83 @@ const areas = [
 </Base>
 
 <style>
+  /* ── Statement band ── */
+  .statement-band {
+    background: var(--navy);
+    padding: 4rem 0;
+  }
+  .statement-inner {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    align-items: center;
+  }
+  @media (min-width: 1024px) {
+    .statement-inner {
+      grid-template-columns: 1fr 380px;
+      gap: 5rem;
+    }
+  }
+  .statement-h2 {
+    font-size: clamp(1.75rem, 3.5vw, 2.75rem);
+    font-weight: 800;
+    color: #fff;
+    line-height: 1.15;
+    letter-spacing: -0.025em;
+    margin: 0 0 1.25rem;
+  }
+  .statement-accent { color: var(--teal-bright, #2dd4bf); }
+  .statement-sub {
+    font-size: 1.0625rem;
+    color: rgba(255,255,255,0.72);
+    line-height: 1.75;
+    margin: 0 0 2rem;
+    max-width: 56ch;
+  }
+  .statement-ctas {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1rem;
+  }
+  .statement-link {
+    font-size: 0.9375rem;
+    font-weight: 600;
+    color: rgba(255,255,255,0.7);
+    text-decoration: none;
+    transition: color 0.15s;
+  }
+  .statement-link:hover { color: #fff; }
+  .statement-stats {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .stat-card {
+    background: rgba(255,255,255,0.06);
+    border: 1.5px solid rgba(255,255,255,0.1);
+    border-radius: 0.875rem;
+    padding: 1.375rem 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+  .stat-number {
+    font-size: 2rem;
+    font-weight: 900;
+    color: var(--teal-bright, #2dd4bf);
+    line-height: 1;
+    letter-spacing: -0.03em;
+  }
+  .stat-label {
+    font-size: 0.8125rem;
+    color: rgba(255,255,255,0.65);
+    line-height: 1.45;
+  }
+
   /* ── Guarantees strip ── */
   .guarantees-grid {
     display: grid;

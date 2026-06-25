@@ -23,23 +23,33 @@ const retailers = [
 ];
 ---
 
-<section class="section" style="background: var(--bg-light);">
+<section class="supplier-section">
   <div class="container">
 
-    <h2 class="text-center text-2xl md:text-3xl font-bold mb-3" style="color: var(--charcoal);">
-      {heading}
-    </h2>
-    <p class="text-center text-sm mb-10 max-w-xl mx-auto" style="color: var(--text-soft);">
-      We work independently of all retailers — you buy, we install.
-    </p>
+    <div class="supplier-header">
+      <div class="supplier-header-copy">
+        <p class="supplier-eyebrow">Retailer Independent · Any Brand · Any Style</p>
+        <h2 class="supplier-h2">{heading}</h2>
+        <p class="supplier-sub">
+          Already bought your kitchen? We'll fit it — independently, on a fixed price, with a pre-installation survey included. We hold no commercial tie to any retailer, which means your installation is always done to <em>your</em> standard, not theirs.
+        </p>
+      </div>
+      <div class="supplier-header-cta">
+        <a href="/retailers/" class="btn-primary supplier-btn">
+          See All Retailers We Cover
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+        <a href="/survey/" class="supplier-survey-link">Book a survey — £195 credited back →</a>
+      </div>
+    </div>
 
-    <ul class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4" role="list" aria-label="Supported kitchen suppliers">
+    <ul class="logo-grid" role="list" aria-label="Kitchen retailers we install">
       {retailers.map((r) => (
         <li role="listitem">
           <a
             href={r.href}
             class="logo-card"
-            aria-label={`We install ${r.slug.replace(/-/g,' ')} kitchens`}
+            aria-label={`We install ${r.slug.replace(/-/g,' ')} kitchens independently`}
           >
             <RetailerLogo slug={r.slug} size="md" />
           </a>
@@ -47,11 +57,12 @@ const retailers = [
       ))}
     </ul>
 
-    <p class="text-center mt-6 text-sm font-medium" style="color: var(--teal);">
-      + many more — if you've bought it, we can install it.
+    <p class="supplier-more">
+      + Kutchenhaus, Symphony, Masterclass, DIY Kitchens, Häcker, Nobilia and many more —
+      <a href="/retailers/" style="color:var(--teal);font-weight:600;">if you've bought it, we can install it.</a>
     </p>
 
-    <p class="mt-10 pt-8 border-t border-gray-200 text-xs italic leading-relaxed text-center max-w-3xl mx-auto" style="color: #9CA3AF;">
+    <p class="supplier-disclaimer">
       Install My Kitchen is an independent kitchen installation service and is not affiliated with, endorsed by, or an official partner of Wren, Howdens, Magnet, IKEA, Wickes, B&amp;Q, Benchmarx or any other retailer. We install kitchens purchased from these suppliers.
     </p>
 
@@ -59,20 +70,117 @@ const retailers = [
 </section>
 
 <style>
+  .supplier-section {
+    background: var(--navy);
+    padding: 4rem 0 3rem;
+  }
+
+  .supplier-header {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-bottom: 2.5rem;
+  }
+  @media (min-width: 900px) {
+    .supplier-header {
+      flex-direction: row;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 3rem;
+    }
+    .supplier-header-copy { flex: 1; }
+    .supplier-header-cta { flex-shrink: 0; text-align: right; }
+  }
+
+  .supplier-eyebrow {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--teal-bright, #2dd4bf);
+    margin: 0 0 0.75rem;
+  }
+
+  .supplier-h2 {
+    font-size: clamp(1.625rem, 3vw, 2.5rem);
+    font-weight: 800;
+    color: #fff;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    margin: 0 0 1rem;
+  }
+
+  .supplier-sub {
+    font-size: 1rem;
+    color: rgba(255,255,255,0.7);
+    line-height: 1.7;
+    margin: 0;
+    max-width: 54ch;
+  }
+
+  .supplier-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    white-space: nowrap;
+    margin-bottom: 0.75rem;
+  }
+
+  .supplier-survey-link {
+    display: block;
+    font-size: 0.875rem;
+    color: rgba(255,255,255,0.6);
+    text-decoration: none;
+    transition: color 0.15s;
+  }
+  .supplier-survey-link:hover { color: #fff; }
+
+  .logo-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.75rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  @media (min-width: 480px) { .logo-grid { grid-template-columns: repeat(4, 1fr); } }
+  @media (min-width: 768px) { .logo-grid { grid-template-columns: repeat(6, 1fr); } }
+
   .logo-card {
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 0.75rem;
-    background: #fff;
-    border: 1.5px solid #E5E7EB;
-    padding: 0.625rem;
-    transition: box-shadow 0.2s, transform 0.2s;
+    background: rgba(255,255,255,0.07);
+    border: 1.5px solid rgba(255,255,255,0.12);
+    padding: 0.75rem 0.5rem;
+    transition: background 0.2s, border-color 0.2s, transform 0.2s;
     overflow: hidden;
   }
   .logo-card:hover {
-    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
-    transform: translateY(-3px);
-    border-color: #d1d5db;
+    background: rgba(255,255,255,0.13);
+    border-color: rgba(45,212,191,0.5);
+    transform: translateY(-2px);
+  }
+
+  .supplier-more {
+    margin-top: 1.25rem;
+    text-align: center;
+    font-size: 0.875rem;
+    color: rgba(255,255,255,0.5);
+  }
+
+  .supplier-disclaimer {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    font-size: 0.75rem;
+    font-style: italic;
+    color: rgba(255,255,255,0.3);
+    text-align: center;
+    max-width: 64ch;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
   }
 </style>
