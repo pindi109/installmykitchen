@@ -322,16 +322,21 @@ const areas = [
       <div class="split-grid">
         <!-- Left: copy -->
         <div class="split-left fade-up">
-          <h2 id="better-way-heading" class="text-2xl md:text-3xl lg:text-4xl font-bold mb-6" style="color: var(--charcoal);">
+          <p style="color:var(--teal);font-weight:700;font-size:0.8125rem;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:0.75rem;">Why Choose Independent</p>
+          <h2 id="better-way-heading" class="text-2xl md:text-3xl lg:text-4xl font-bold mb-4" style="color: var(--charcoal);">
             A Better Way to Get Your Kitchen Installed
           </h2>
+          <p style="color:var(--text-soft);line-height:1.75;margin-bottom:1.75rem;font-size:1rem;">
+            When you buy a kitchen from a retailer, the fitting is often an afterthought — rushed, subcontracted, and priced to a margin. We do things differently. Our installers work for you, not the showroom. Every project starts with a survey, ends with a snagging walkthrough, and is priced on a fixed basis from day one.
+          </p>
+
           <ul class="better-list" role="list">
             <li class="better-item" role="listitem">
               <span class="better-tick" aria-hidden="true">
                 <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
               </span>
               <span>
-                <strong>Truly independent</strong> — we're not employed by any retailer, so you get honest advice and quality work that's in your interest, not theirs.
+                <strong>Truly independent</strong> — we're not employed by any retailer, so every decision we make is in your interest, not a showroom's.
               </span>
             </li>
             <li class="better-item" role="listitem">
@@ -339,7 +344,7 @@ const areas = [
                 <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
               </span>
               <span>
-                <strong>Survey protects you</strong> — we visit before we quote, checking your room against the plan so there are no surprises on installation day.
+                <strong>Survey before we quote</strong> — we visit your home, check the room against your plan, and flag anything that needs resolving. No guesswork, no hidden surprises on day one.
               </span>
             </li>
             <li class="better-item" role="listitem">
@@ -347,12 +352,93 @@ const areas = [
                 <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
               </span>
               <span>
-                <strong>End-to-end fitting</strong> — we handle everything from cabinet assembly to worktop fitting, appliance integration, doors, handles, and final snagging.
+                <strong>Fixed price, always</strong> — your written quote is your final price. We don't add extras on completion day. What we quote is what you pay.
+              </span>
+            </li>
+            <li class="better-item" role="listitem">
+              <span class="better-tick" aria-hidden="true">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              </span>
+              <span>
+                <strong>End-to-end installation</strong> — from carcass assembly and wall unit hanging to worktop cutting, appliance integration, plinths, cornices, and final door alignment.
+              </span>
+            </li>
+            <li class="better-item" role="listitem">
+              <span class="better-tick" aria-hidden="true">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              </span>
+              <span>
+                <strong>Vetted, experienced installers</strong> — every installer on our team meets the quality standard set by our founder, who has over 30 years of professional kitchen installation experience.
+              </span>
+            </li>
+            <li class="better-item" role="listitem">
+              <span class="better-tick" aria-hidden="true">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              </span>
+              <span>
+                <strong>Snagging sign-off</strong> — every installation ends with a full walkthrough. We check every door gap, drawer alignment, and worktop joint before we consider the job complete.
               </span>
             </li>
           </ul>
+
+          <!-- What's included checklist -->
+          <div class="included-block">
+            <p class="included-heading">What's Included in Every Installation</p>
+            <ul class="included-grid" role="list">
+              {[
+                "Unit & carcass assembly",
+                "Base unit fitting & levelling",
+                "Wall unit installation",
+                "Worktop cutting & fitting",
+                "Door & drawer hanging",
+                "Full alignment & adjustment",
+                "Integrated appliance fitting",
+                "Sink & tap co-ordination",
+                "Plinth, cornice & pelmet",
+                "Snagging walkthrough",
+              ].map((item) => (
+                <li class="included-item" role="listitem">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <!-- Comparison strip -->
+          <div class="compare-strip">
+            <p class="compare-heading">How we compare</p>
+            <div class="compare-table" role="table" aria-label="Independent installer vs retailer fitter comparison">
+              <div class="compare-row compare-header" role="row">
+                <span role="columnheader"></span>
+                <span role="columnheader" style="color:var(--teal);font-weight:700;">Install My Kitchen</span>
+                <span role="columnheader" style="color:var(--text-soft);">Retailer's fitter</span>
+              </div>
+              {[
+                ["Works for you, not the retailer", true, false],
+                ["Pre-installation survey", true, "Rarely"],
+                ["Written fixed-price quote", true, "Often varies"],
+                ["Fits any retailer's kitchen", true, false],
+                ["Snagging walkthrough included", true, "Not guaranteed"],
+                ["Direct contact throughout", true, "Often call centre"],
+              ].map(([label, ours, theirs]) => (
+                <div class="compare-row" role="row">
+                  <span class="compare-label" role="cell">{label}</span>
+                  <span class="compare-yes" role="cell" aria-label="Yes">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                  </span>
+                  <span class={theirs === false ? "compare-no" : "compare-sometimes"} role="cell">
+                    {theirs === false
+                      ? <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                      : theirs}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </div>
+
           <a href="/survey/" class="btn-primary mt-8 inline-flex items-center gap-2">
-            Book Your Survey
+            Book Your Survey — £195 Credited Back
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
               <line x1="5" y1="12" x2="19" y2="12"/>
               <polyline points="12 5 19 12 12 19"/>
@@ -1447,6 +1533,100 @@ const areas = [
   }
   .est-divider::before, .est-divider::after {
     content: ''; flex: 1; height: 1px; background: var(--border);
+  }
+
+  /* ── What's included checklist ── */
+  .included-block {
+    margin-top: 1.75rem;
+    background: #fff;
+    border: 1.5px solid var(--border);
+    border-radius: 0.875rem;
+    padding: 1.25rem 1.5rem;
+  }
+  .included-heading {
+    font-size: 0.8125rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--teal);
+    margin: 0 0 0.875rem;
+  }
+  .included-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem 1.5rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .included-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.875rem;
+    color: var(--charcoal);
+    font-weight: 500;
+  }
+  .included-item svg {
+    color: var(--teal);
+    flex-shrink: 0;
+  }
+
+  /* ── Comparison strip ── */
+  .compare-strip {
+    margin-top: 1.75rem;
+    background: #fff;
+    border: 1.5px solid var(--border);
+    border-radius: 0.875rem;
+    padding: 1.25rem 1.5rem;
+    overflow-x: auto;
+  }
+  .compare-heading {
+    font-size: 0.8125rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--navy);
+    margin: 0 0 0.875rem;
+  }
+  .compare-table {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0;
+    min-width: 320px;
+  }
+  .compare-row {
+    display: grid;
+    grid-template-columns: 1fr 130px 130px;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 0.875rem;
+  }
+  .compare-row:last-child { border-bottom: none; }
+  .compare-header { padding-bottom: 0.625rem; font-size: 0.8125rem; }
+  .compare-label { color: var(--charcoal); font-weight: 500; }
+  .compare-yes {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--teal);
+    font-weight: 700;
+  }
+  .compare-no {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #dc2626;
+  }
+  .compare-sometimes {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-soft);
+    font-size: 0.8125rem;
+    text-align: center;
   }
 
   .last-updated-bar {
