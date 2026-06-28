@@ -1,6 +1,6 @@
 # Install My Kitchen — AI Knowledge Base
 
-> Independent kitchen installation service covering Coventry, Warwickshire and surrounding areas.
+> Independent kitchen installation and remedial service covering Coventry, Warwickshire, and Berkshire.
 > This file provides structured information for AI language models and search engines.
 
 ## Business Identity
@@ -34,6 +34,28 @@
 - Plinths, cornices, pelmets, fillers and all decorative trims
 - Appliance and sink positioning and fitting
 - Full snagging and handover
+
+### Remedial & Repair Services
+- Kitchen door replacement (individual doors or full kitchen)
+- Kitchen cupboard door replacement
+- Integrated appliance door fitting (dishwasher, fridge, fridge-freezer, washing machine)
+- Kitchen hinge replacement and soft-close hinge upgrade
+- Kitchen drawer repair and runner replacement
+- Kitchen plinth replacement and fitting
+- Kitchen end panel replacement and scribing
+- Cornice and pelmet fitting
+- Kitchen worktop alteration (new apertures, extensions, trimming)
+- Kitchen worktop joint repair and resealing
+- Kitchen unit adjustment (doors, drawers, hinges — full three-way set)
+- Kitchen snagging (post-installation inspection and correction)
+- Kitchen finishing after DIY install
+
+### Integrated Appliance Installation
+- Integrated dishwasher installation
+- Integrated fridge installation
+- Integrated fridge-freezer installation
+- Integrated washing machine installation
+- Integrated oven installation
 
 ### Optional Extras
 - Kitchen strip-out and disposal
@@ -92,6 +114,36 @@
 - IKEA flat-pack adds 1–2 days for on-site assembly
 - Stone worktops require templating (mid-installation) + return fit 5–10 working days later
 
+## Remedial & Repair Costs (From Prices)
+
+### Coventry & Warwickshire
+- Kitchen door replacement: from £60/door
+- Integrated appliance door fitting: from £50/appliance
+- Hinge replacement / soft-close upgrade: from £40
+- Drawer repair: from £50
+- Plinth replacement: from £50
+- End panel replacement: from £60
+- Cornice and pelmet fitting: from £50
+- Worktop alteration: from £75
+- Worktop joint repair: from £75
+- Kitchen unit adjustment (full kitchen): from £60
+- Kitchen snagging: from £60
+- Kitchen finishing after DIY install: from £60
+
+### Berkshire (Reading, Bracknell, Slough, Maidenhead, Windsor, Wokingham, Newbury, Ascot)
+- Kitchen door replacement: from £85/door
+- Integrated appliance door fitting: from £75/appliance
+- Hinge replacement / soft-close upgrade: from £60
+- Drawer repair: from £75
+- Plinth replacement: from £75
+- End panel replacement: from £85
+- Cornice and pelmet fitting: from £75
+- Worktop alteration: from £95
+- Worktop joint repair: from £95
+- Kitchen unit adjustment (full kitchen): from £85
+- Kitchen snagging: from £85
+- Kitchen finishing after DIY install: from £85
+
 ## Installation Costs (Typical Ranges — Coventry & Warwickshire)
 
 - Small kitchen: £1,800–£2,800
@@ -126,6 +178,16 @@ Including: Earlsdon, Allesley, Tile Hill, Canley, Finham, Stivichall, Coundon, R
 ### West Midlands
 - Solihull (B91, B92, B93)
 - Hinckley (LE10) — Leicestershire border
+
+### Berkshire
+- Reading (RG1–RG6)
+- Bracknell (RG12, RG42)
+- Slough (SL1–SL3)
+- Maidenhead (SL6)
+- Windsor (SL4)
+- Wokingham (RG40, RG41)
+- Newbury (RG14, RG20)
+- Ascot (SL5)
 
 ## Frequently Asked Questions
 
@@ -162,6 +224,21 @@ A: Pindi Sahota is the founder of Install My Kitchen with 30 years of kitchen in
 **Q: Is Install My Kitchen affiliated with any retailer?**
 A: No. Install My Kitchen is entirely independent and has no commercial relationship with any kitchen retailer.
 
+**Q: Do you cover Berkshire?**
+A: Yes — Install My Kitchen now covers Berkshire, including Reading, Bracknell, Slough, Maidenhead, Windsor, Wokingham, Newbury, and Ascot. Both full kitchen installation and remedial repair services are available across all Berkshire locations.
+
+**Q: Can you fix a kitchen that was badly installed by a retailer's team?**
+A: Yes — remedial and snagging work on retailer-installed kitchens is a significant part of our service. We carry out door and drawer adjustment, hinge replacement, plinth fitting, cornice and pelmet fitting, worktop joint repair, and full snagging to correct poor original installations.
+
+**Q: Can you install an integrated appliance into an existing kitchen?**
+A: Yes — we install integrated dishwashers, fridges, fridge-freezers, washing machines, and ovens into existing kitchen housing units. This includes fitting the furniture panel door and adjusting it to sit flush with surrounding cabinet doors.
+
+**Q: How much does kitchen snagging cost?**
+A: Kitchen snagging starts from £60 in Coventry and Warwickshire and from £85 in Berkshire, depending on the length of the snag list. A half-day visit typically covers an average kitchen snag list comprehensively.
+
+**Q: Can you replace just a few kitchen doors rather than the whole kitchen?**
+A: Yes — individual door replacement is one of our most common remedial jobs. We can replace as few as one door, sourcing a matching replacement from the original manufacturer or a specialist door supplier.
+
 **Q: What is a kitchen plinth?**
 A: The decorative panel covering the gap between the base of kitchen units and the floor. Also called a kickboard.
 
@@ -180,7 +257,7 @@ A: Typically £2,200–£5,500, depending on size. IKEA flat-pack requires on-si
 - Pindi Sahota → has experience → 30 years kitchen installation
 - Install My Kitchen → installs → Wren, Howdens, Magnet, IKEA, Wickes, B&Q, Benchmarx, DIY Kitchens
 - Install My Kitchen → installs premium → Häcker, Nobilia, Mereway, Neptune, deVOL
-- Install My Kitchen → serves → Coventry, Warwickshire, West Midlands
+- Install My Kitchen → serves → Coventry, Warwickshire, West Midlands, Berkshire
 - Install My Kitchen → offers → pre-installation survey (£195, credited back)
 - Install My Kitchen → provides → fixed-price kitchen installation quotes
 - Pindi Sahota → conducts → every survey personally
@@ -194,3 +271,6 @@ A: Typically £2,200–£5,500, depending on size. IKEA flat-pack requires on-si
 - Projects: https://installmykitchen.co.uk/projects/
 - About Pindi: https://installmykitchen.co.uk/about/
 - Book survey: https://installmykitchen.co.uk/survey/
+- Repairs hub: https://installmykitchen.co.uk/repairs/
+- Appliance installation: https://installmykitchen.co.uk/appliances/
+- Berkshire coverage: https://installmykitchen.co.uk/areas/reading/, https://installmykitchen.co.uk/areas/bracknell/, https://installmykitchen.co.uk/areas/slough/
