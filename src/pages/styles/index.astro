@@ -1,0 +1,246 @@
+---
+import Base from "../../layouts/Base.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import StickyMobileCTA from "../../components/StickyMobileCTA.astro";
+import Breadcrumbs from "../../components/Breadcrumbs.astro";
+import AnswerBlock from "../../components/AnswerBlock.astro";
+import FAQ from "../../components/FAQ.astro";
+import CTA from "../../components/CTA.astro";
+import InternalLinks from "../../components/InternalLinks.astro";
+
+import stylesData from "../../data/styles.json";
+
+const styles = stylesData.map((s) => ({
+  slug: s.slug,
+  name: s.name,
+  desc: s.description.split(".")[0] + ".",
+}));
+
+const faqItems = [
+  {
+    q: "What is the most popular kitchen style in the UK?",
+    a: "Shaker remains the single most popular kitchen style in the UK. Its recessed-panel doors suit both traditional and modern interiors and are available from virtually every major retailer. Handleless and contemporary designs are the next most requested styles we fit.",
+  },
+  {
+    q: "What is the difference between a shaker and an in-frame kitchen?",
+    a: "Both styles use recessed-panel doors, but the key difference is construction. In a standard shaker kitchen, the door overlays the carcass front. In an in-frame kitchen, the door sits within a solid timber face-frame that is fixed to the front of the carcass — a more complex, furniture-grade method that is considered the benchmark of traditional craftsmanship.",
+  },
+  {
+    q: "Does the kitchen style affect how long installation takes?",
+    a: "Yes, to a degree. Straightforward modern or handleless kitchens with slab doors are typically quicker to fit than in-frame or luxury kitchens, which require closer tolerances and more detailed finishing work. We survey every project before quoting so the timeline we give you reflects the actual complexity of your chosen style.",
+  },
+  {
+    q: "Can you install any kitchen style regardless of the retailer?",
+    a: "Yes — we are fully independent of all retailers and brands. Whether you have bought a shaker kitchen from Howdens, a handleless design from Wren, a painted in-frame from Neptune, or a German kitchen from Nolte, we install it. The style and the supplier are your choice; fitting is ours.",
+  },
+];
+
+const internalLinks = [
+  {
+    label: "Areas We Cover",
+    href: "/areas/",
+    description: "Coventry, Warwickshire, Berkshire and surrounding areas.",
+  },
+  {
+    label: "Retailers We Fit",
+    href: "/retailers/",
+    description: "Wren, Howdens, IKEA, Magnet, Wickes and all major suppliers.",
+  },
+  {
+    label: "Kitchen Fitting Costs",
+    href: "/costs/",
+    description: "Transparent pricing and what affects your quote.",
+  },
+  {
+    label: "Book a Survey",
+    href: "/survey/",
+    description: "£195 fixed-price survey with a full itemised quote.",
+  },
+  {
+    label: "Kitchen Repairs",
+    href: "/repairs/",
+    description: "Hinges, drawers, doors and worktop repairs.",
+  },
+];
+---
+
+<Base
+  title="Kitchen Styles We Install | Install My Kitchen"
+  description="Expert kitchen installation across all styles — shaker, handleless, modern, traditional, in-frame and more. Independent fitting for all major retailers across Coventry, Warwickshire and Berkshire."
+  canonical="https://installmykitchen.co.uk/styles/"
+>
+  <!-- Header -->
+  <Header slot="header" />
+
+  <!-- ══════════════════════════════ PAGE HEADER ══════════════════ -->
+  <section class="page-header" aria-label="Page header">
+    <div class="container">
+      <Breadcrumbs items={[{ label: "Kitchen Styles", href: "/styles/" }]} />
+      <h1 class="page-h1">Kitchen Styles We Install</h1>
+      <p class="page-sub">Shaker, handleless, in-frame, painted, modern and more — we fit every style, independently.</p>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════ MAIN CONTENT ════════════════ -->
+  <section class="section" style="background: #fff;" aria-labelledby="styles-heading">
+    <div class="container">
+
+      <AnswerBlock answer="Install My Kitchen fits every major kitchen style from shaker and handleless to painted, in-frame and luxury. Independent of all retailers — we install what you choose." />
+
+      <h2 id="styles-heading" class="section-h2 mb-8">All Kitchen Styles We Fit</h2>
+      <ul class="styles-grid" role="list" aria-label="Kitchen styles we install">
+        {styles.map((style) => (
+          <li role="listitem">
+            <a href={`/styles/${style.slug}/`} class="style-card">
+              <span class="style-name">{style.name}</span>
+              <span class="style-desc">{style.desc}</span>
+              <span class="style-link-label" aria-hidden="true">
+                Learn more
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+              </span>
+            </a>
+          </li>
+        ))}
+      </ul>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════ FAQ ═══════════ -->
+  <section class="section" style="background: var(--bg-light);" aria-labelledby="faq-heading">
+    <div class="container">
+      <div class="max-w-3xl mx-auto">
+        <h2 id="faq-heading" class="text-2xl md:text-3xl font-bold mb-2 text-center" style="color: var(--charcoal);">
+          Kitchen Styles FAQ
+        </h2>
+        <p class="text-center text-sm mb-10" style="color: var(--text-soft);">
+          Common questions about kitchen styles and what to expect from installation.
+        </p>
+        <FAQ items={faqItems} schemaId="styles-faq" />
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════ INTERNAL LINKS ═════════════ -->
+  <section class="section" style="background: #fff;" aria-label="Related pages">
+    <div class="container">
+      <InternalLinks links={internalLinks} heading="Explore More" />
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════ DARK CTA ═══════════ -->
+  <CTA
+    dark={true}
+    heading="Ready to Book Your Kitchen Installation?"
+    subtext="Whatever style you've chosen, we'll fit it properly. Book a survey and get a clear, itemised quote."
+    primaryLabel="Book a Survey — £195"
+    primaryHref="/survey/"
+    secondaryLabel="View All Areas"
+    secondaryHref="/areas/"
+  />
+
+  <!-- Footer -->
+  <Footer slot="footer" />
+  <StickyMobileCTA slot="sticky-cta" />
+</Base>
+
+<style>
+  /* Page header */
+  .page-header {
+    background: var(--hero-gradient);
+    padding: 3rem 0 3.5rem;
+  }
+
+  .page-h1 {
+    font-size: clamp(1.625rem, 3vw, 2.5rem);
+    font-weight: 800;
+    color: #fff;
+    letter-spacing: -0.02em;
+    margin-top: 0.75rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .page-sub {
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 1.0625rem;
+    line-height: 1.6;
+    max-width: 540px;
+  }
+
+  .section-h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--charcoal);
+  }
+
+  /* Styles grid */
+  .styles-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.125rem;
+    list-style: none;
+    padding: 0;
+    margin: 0 0 2rem;
+  }
+
+  @media (min-width: 640px) {
+    .styles-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .styles-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .style-card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.375rem;
+    padding: 1.25rem;
+    border-radius: 1rem;
+    border: 1.5px solid var(--border);
+    border-top: 4px solid var(--teal);
+    background: #fff;
+    text-decoration: none;
+    transition: box-shadow 0.2s, transform 0.2s, border-color 0.2s;
+    height: 100%;
+  }
+
+  .style-card:hover {
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    transform: translateY(-2px);
+    border-top-color: var(--teal-bright, var(--teal));
+  }
+
+  .style-name {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--charcoal);
+  }
+
+  .style-desc {
+    font-size: 0.8125rem;
+    color: var(--text-soft);
+    line-height: 1.55;
+    flex: 1;
+  }
+
+  .style-link-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    color: var(--teal);
+    margin-top: 0.5rem;
+    transition: gap 0.15s;
+  }
+
+  .style-card:hover .style-link-label {
+    gap: 0.5rem;
+  }
+</style>

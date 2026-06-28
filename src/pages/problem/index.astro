@@ -1,0 +1,309 @@
+---
+import Base from "../../layouts/Base.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import StickyMobileCTA from "../../components/StickyMobileCTA.astro";
+import Breadcrumbs from "../../components/Breadcrumbs.astro";
+import AnswerBlock from "../../components/AnswerBlock.astro";
+import FAQ from "../../components/FAQ.astro";
+import InternalLinks from "../../components/InternalLinks.astro";
+import CTA from "../../components/CTA.astro";
+
+const title = "Kitchen Installation Problems — Help & Solutions | Install My Kitchen";
+const metaDescription =
+  "Common kitchen installation problems explained and solved. Doors not aligned, worktop joint gaps, unit level issues, missing parts — expert advice from Install My Kitchen.";
+const canonical = "https://installmykitchen.co.uk/problem/";
+
+const problems = [
+  {
+    slug: "kitchen-units-not-level",
+    title: "Kitchen Units Not Level — How to Fix It",
+    summary:
+      "Unlevel units cause misaligned doors, drawers and worktops. Learn why it happens and how professional installation prevents it from day one.",
+  },
+  {
+    slug: "kitchen-gaps-between-units-and-wall",
+    title: "Gaps Between Kitchen Units and Wall — Causes and Solutions",
+    summary:
+      "Gaps between units and walls are common in UK homes with uneven plasterwork. Scribing filler panels to the wall profile eliminates them for a clean finish.",
+  },
+  {
+    slug: "kitchen-doors-not-aligned",
+    title: "Kitchen Doors Not Aligned — Why It Happens and How to Fix It",
+    summary:
+      "Doors at different heights, sticking out unevenly or swinging open are a common installation snag. Hinge adjustments and correct carcass levelling resolve this.",
+  },
+  {
+    slug: "kitchen-worktop-joint-problems",
+    title: "Kitchen Worktop Joint Problems — Gaps, Swelling and Leaks",
+    summary:
+      "Poorly fitted worktop joints allow moisture in, causing swelling and delamination. Correct jointing, sealing and bolt tension prevents this costly problem.",
+  },
+  {
+    slug: "kitchen-plinth-fitting-problems",
+    title: "Kitchen Plinth Fitting Problems — Gaps, Buckling and Uneven Floors",
+    summary:
+      "Plinths that gap at the floor or buckle after fitting are a finishing issue. Scribing or adjustable clips accommodate floor variation for a flush result.",
+  },
+  {
+    slug: "kitchen-delivery-missing-parts",
+    title: "Kitchen Delivery Missing Parts — What to Do",
+    summary:
+      "Missing components on delivery day can halt an installation for days. A pre-installation delivery check identifies shortfalls before the fitter arrives.",
+  },
+  {
+    slug: "kitchen-extractor-installation-problems",
+    title: "Kitchen Extractor Fan Installation Problems",
+    summary:
+      "Extractor installation involves ducting, electrical connection and unit integration. Incorrect ducting creates noise, poor extraction or a fire risk.",
+  },
+  {
+    slug: "kitchen-corner-unit-problems",
+    title: "Kitchen Corner Unit Problems — Carousels, Magic Corners and Access",
+    summary:
+      "Corner units are among the most complex to install. Carousels that bind and magic corners that stick are almost always caused by incorrect unit positioning.",
+  },
+  {
+    slug: "kitchen-sink-installation-problems",
+    title: "Kitchen Sink Installation Problems — Leaks, Alignment and Drainage",
+    summary:
+      "Incorrectly fitted sinks leak at the seal, drain poorly or sit unevenly in the worktop cutout. Precise cutting, correct clip tension and full sealing prevent this.",
+  },
+  {
+    slug: "retailer-installation-service-vs-independent",
+    title: "Retailer Installation vs Independent — Why We Recommend Independent",
+    summary:
+      "Retailer installation services sub-contract the work in most cases. An independent fitter works exclusively for you — no divided loyalties, full accountability.",
+  },
+];
+
+const problemFaqs = [
+  {
+    q: "Can you fix problems left by another kitchen fitter?",
+    a: "Yes. Remedial and snagging work is one of our core services. Whether a previous fitter left doors misaligned, units unlevel, worktop joints poorly sealed, or plinths gapping at the floor, we can attend and correct the work. We cover Coventry, Warwickshire and Berkshire — call us on 07399 651836 to describe the issue and we will advise on likely cost and timescale.",
+  },
+  {
+    q: "How do I know if my kitchen installation problems are covered under the retailer's guarantee?",
+    a: "Retailer guarantees typically cover product defects — such as a door delaminating or a hinge failing within a specified period — but not installation workmanship. If your problems stem from how the kitchen was fitted (unlevel units, poor joints, misaligned doors), the installation contractor is liable, not the retailer. If a retailer-contracted fitter carried out the work, the retailer's installation guarantee may apply — check your installation contract documentation.",
+  },
+  {
+    q: "How much does it cost to fix a kitchen installation problem?",
+    a: "Cost depends on the nature and extent of the problem. Our minimum call-out charge is £50 in Coventry and Warwickshire and £75 in Berkshire, after which we charge by the hour or agree a fixed price for a defined scope. Straightforward jobs — hinge adjustment, plinth refitting, plinth scribing — are typically completed in under two hours. More involved remedial work such as re-levelling a full run of units or replacing a worktop joint is quoted separately. We always agree the price before starting work.",
+  },
+  {
+    q: "Can kitchen installation problems be prevented entirely?",
+    a: "Most common installation problems are preventable with a thorough pre-installation survey and an experienced fitter. Our £195 survey maps floor levels, wall straightness, delivery completeness and design issues before the installation date. The survey cost is credited back in full when you proceed to installation — making it one of the most cost-effective steps you can take before your kitchen is fitted.",
+  },
+];
+
+const internalLinks = [
+  {
+    label: "Kitchen repairs & remedial work",
+    href: "/repairs/",
+    description: "Full repairs service covering drawers, hinges, doors, worktops and snagging",
+  },
+  {
+    label: "All service areas",
+    href: "/areas/",
+    description: "See every location we cover across the Midlands and Berkshire",
+  },
+  {
+    label: "Book a pre-installation survey",
+    href: "/survey/",
+    description: "£195 survey credited back when you proceed to installation",
+  },
+  {
+    label: "Contact us",
+    href: "/contact/",
+    description: "Call, email, or WhatsApp — we respond within one working day",
+  },
+  {
+    label: "Our installation services",
+    href: "/services/",
+    description: "Full independent kitchen installation from survey to snagging",
+  },
+];
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  name: "Kitchen Installation Problems — Help & Solutions",
+  description:
+    "Common kitchen installation problems explained and solved — including misaligned doors, worktop joint gaps, unlevel units and missing parts.",
+  url: canonical,
+  publisher: {
+    "@type": "LocalBusiness",
+    name: "Install My Kitchen",
+    url: "https://installmykitchen.co.uk",
+    telephone: "+447399651836",
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: "242 Hollyfast Road, Coundon",
+      addressLocality: "Coventry",
+      postalCode: "CV6 2AH",
+      addressCountry: "GB",
+    },
+  },
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://installmykitchen.co.uk/" },
+    { "@type": "ListItem", position: 2, name: "Kitchen Problems", item: canonical },
+  ],
+};
+---
+
+<Base
+  title={title}
+  description={metaDescription}
+  canonical={canonical}
+  noHero={true}
+>
+  <script slot="schema" type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
+  <script slot="schema" type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+
+  <Header slot="header" />
+
+  <!-- Breadcrumbs -->
+  <div class="container py-6">
+    <Breadcrumbs
+      items={[
+        { label: "Kitchen Problems", href: "/problem/" },
+      ]}
+    />
+  </div>
+
+  <!-- Hero -->
+  <section class="section" style="background: var(--bg-light);">
+    <div class="container">
+      <div class="max-w-3xl">
+        <h1 class="text-4xl md:text-5xl font-extrabold mb-5 leading-tight" style="color: var(--navy);">
+          Kitchen Installation Problems
+        </h1>
+        <AnswerBlock
+          answer="If something has gone wrong with your kitchen installation, Install My Kitchen can help. We carry out remedial and snagging work across Coventry, Warwickshire and Berkshire — fixing problems left by other fitters or from self-installation."
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- Problem grid -->
+  <section class="section">
+    <div class="container">
+      <div class="fade-up">
+        <h2 class="text-3xl font-bold mb-2" style="color: var(--navy);">
+          Common Kitchen Installation Problems
+        </h2>
+        <p class="mb-8 text-base" style="color: var(--text-soft);">
+          Select a problem below for a full explanation, the correct solution, and advice on how a pre-installation survey prevents it from occurring.
+        </p>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          {problems.map((p) => (
+            <a
+              href={`/problem/${p.slug}/`}
+              class="card p-6 flex flex-col gap-3 no-underline group"
+              style="border: 1.5px solid #E5E7EB; transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;"
+            >
+              <h3
+                class="font-bold text-base leading-snug"
+                style="color: var(--teal);"
+              >
+                {p.title}
+              </h3>
+              <p
+                class="text-sm leading-relaxed flex-1"
+                style="color: var(--text-soft);"
+              >
+                {p.summary}
+              </p>
+              <div class="flex items-center justify-end mt-auto pt-2" style="border-top: 1px solid #F3F4F6;">
+                <span
+                  class="text-xs font-semibold flex items-center gap-1"
+                  style="color: var(--teal);"
+                >
+                  Read more
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <line x1="5" y1="12" x2="19" y2="12"/>
+                    <polyline points="12 5 19 12 12 19"/>
+                  </svg>
+                </span>
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About remedial service -->
+  <section class="section" style="background: var(--bg-light);">
+    <div class="container">
+      <div class="max-w-3xl fade-up">
+        <h2 class="text-3xl font-bold mb-4" style="color: var(--navy);">
+          Remedial &amp; Snagging Work Across Coventry, Warwickshire and Berkshire
+        </h2>
+        <p class="text-lg leading-relaxed mb-4" style="color: var(--text-soft);">
+          Kitchen installation problems range from minor finishing issues — a plinth that gaps at one end, a door that drifts open — to more significant structural faults such as unlevel units or a worktop joint that is allowing moisture in. In almost every case, there is a correct fix, and most problems can be resolved in a single visit.
+        </p>
+        <p class="leading-relaxed mb-4" style="color: var(--text-soft);">
+          Because we are entirely independent, we can assess any kitchen honestly — regardless of who supplied it or who originally fitted it. We carry a wide stock of the most common replacement parts and can often supply and fit in the same visit. Where specialist parts are required, we will advise on sourcing before attending so we do not waste your time or ours.
+        </p>
+        <p class="leading-relaxed" style="color: var(--text-soft);">
+          All remedial work is agreed and priced before we begin. We will not start until you know what you are paying.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Internal links -->
+  <section class="section">
+    <div class="container">
+      <div class="fade-up">
+        <InternalLinks
+          links={internalLinks}
+          heading="Related Pages"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section" style="background: var(--bg-light);">
+    <div class="container">
+      <div class="max-w-3xl fade-up">
+        <h2 class="text-3xl font-bold mb-8" style="color: var(--navy);">
+          Frequently Asked Questions
+        </h2>
+        <FAQ items={problemFaqs} schemaId="faq-problems-hub" />
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <CTA
+    heading="Need a Kitchen Problem Fixed?"
+    subtext="We cover Coventry, Warwickshire and Berkshire. Describe your issue and we will confirm availability and a cost indication within one working day."
+    primaryLabel="Contact Us"
+    primaryHref="/contact/"
+    secondaryLabel="Call 07399 651836"
+    secondaryHref="tel:07399651836"
+    dark={true}
+  />
+
+  <Footer slot="footer" />
+  <StickyMobileCTA slot="sticky-cta" />
+</Base>
+
+<style>
+  .card {
+    transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
+  }
+  .card:hover {
+    border-color: var(--teal) !important;
+    box-shadow: 0 4px 14px rgba(15, 118, 110, 0.12);
+    transform: translateY(-1px);
+  }
+</style>

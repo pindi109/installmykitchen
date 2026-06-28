@@ -100,7 +100,7 @@ export const GET = async (): Promise<Response> => {
     "ascot",
   ];
 
-  // ── Retailer slugs (12) ──────────────────────────────────────────────────────
+  // ── Retailer slugs (13) ──────────────────────────────────────────────────────
   const retailerSlugs = [
     "wren",
     "howdens",
@@ -114,6 +114,7 @@ export const GET = async (): Promise<Response> => {
     "kutchenhaus",
     "symphony",
     "masterclass",
+    "nolte",
   ];
 
   // ── Style slugs (10) ────────────────────────────────────────────────────────
@@ -130,21 +131,26 @@ export const GET = async (): Promise<Response> => {
     "luxury",
   ];
 
-  // ── Installer location slugs (23) ───────────────────────────────────────────
+  // ── Installer location slugs (all 33) ──────────────────────────────────────
   const installerLocations = [
     "coventry", "canley", "tile-hill", "earlsdon", "allesley",
-    "rugby", "nuneaton", "bedworth", "leamington-spa", "kenilworth",
-    "warwick", "solihull", "stratford-upon-avon", "southam", "hinckley",
+    "binley", "wyken", "walsgrave", "finham", "stivichall",
+    "coundon", "radford", "rugby", "nuneaton", "bedworth",
+    "hinckley", "leamington-spa", "kenilworth", "warwick", "balsall-common",
+    "meriden", "solihull", "stratford-upon-avon", "southam", "atherstone",
     "reading", "bracknell", "slough", "maidenhead", "windsor",
     "wokingham", "newbury", "ascot",
   ];
 
-  // ── Style-location slugs (18) ────────────────────────────────────────────────
+  // ── Style-location slugs (all 33) ───────────────────────────────────────────
   const styleLocations = [
-    "coventry", "earlsdon", "kenilworth", "leamington-spa", "warwick",
-    "rugby", "solihull", "nuneaton", "stratford-upon-avon", "hinckley",
-    "reading", "bracknell", "maidenhead", "windsor", "wokingham",
-    "newbury", "ascot", "slough",
+    "coventry", "canley", "tile-hill", "earlsdon", "allesley",
+    "binley", "wyken", "walsgrave", "finham", "stivichall",
+    "coundon", "radford", "rugby", "nuneaton", "bedworth",
+    "hinckley", "leamington-spa", "kenilworth", "warwick", "balsall-common",
+    "meriden", "solihull", "stratford-upon-avon", "southam", "atherstone",
+    "reading", "bracknell", "slough", "maidenhead", "windsor",
+    "wokingham", "newbury", "ascot",
   ];
 
   // ── Fitter location slugs (all 33) ──────────────────────────────────────────

@@ -106,5 +106,14 @@
     "installNote": "Masterclass kitchens are delivered directly from the manufacturer via your chosen independent retailer; our team works closely with the retailer to confirm delivery schedules and ensure all components are on site before installation begins.",
     "logoText": "Masterclass",
     "color": "#2c3e50"
+  },
+  {
+    "slug": "nolte",
+    "name": "nolte",
+    "displayName": "Nolte Kitchens",
+    "description": "Nolte is a leading German kitchen manufacturer producing precision-engineered cabinetry across a wide range of contemporary, handleless, and traditional styles, sold through independent kitchen retailers and showrooms across the UK. Their kitchens are known for tight tolerances, durable finishes, and a comprehensive range of internal organisation systems.",
+    "installNote": "Nolte kitchens are supplied through independent retailers and delivered to site prior to installation; our team co-ordinates delivery timing with the retailer to ensure all components are on site and checked before installation begins.",
+    "logoText": "Nolte",
+    "color": "#1a1a2e"
   }
 ]
