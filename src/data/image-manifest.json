@@ -1,0 +1,434 @@
+{
+  "process/survey-measuring.webp": {
+    "path": "/assets/process/survey-measuring.webp",
+    "alt": "Professional kitchen installer measuring room with laser level for pre-installation survey"
+  },
+  "process/survey-planning.webp": {
+    "path": "/assets/process/survey-planning.webp",
+    "alt": "Kitchen installation professional reviewing plans and drawings against empty kitchen room"
+  },
+  "process/delivery-checking.webp": {
+    "path": "/assets/process/delivery-checking.webp",
+    "alt": "Kitchen units in boxes being carefully checked and unpacked before installation"
+  },
+  "process/base-units-levelling.webp": {
+    "path": "/assets/process/base-units-levelling.webp",
+    "alt": "Kitchen base cabinets being professionally installed and levelled with spirit level"
+  },
+  "process/wall-units-fitting.webp": {
+    "path": "/assets/process/wall-units-fitting.webp",
+    "alt": "Kitchen wall cabinets being lifted and secured to British kitchen wall by professional fitter"
+  },
+  "process/worktop-measuring.webp": {
+    "path": "/assets/process/worktop-measuring.webp",
+    "alt": "Kitchen worktop being carefully measured and marked for cutting"
+  },
+  "process/worktop-fitting.webp": {
+    "path": "/assets/process/worktop-fitting.webp",
+    "alt": "Kitchen worktop being professionally fitted onto base cabinets in British home"
+  },
+  "process/doors-hanging.webp": {
+    "path": "/assets/process/doors-hanging.webp",
+    "alt": "Kitchen cabinet doors being hung and adjusted on concealed Blum hinges by professional fitter"
+  },
+  "process/handles-fitting.webp": {
+    "path": "/assets/process/handles-fitting.webp",
+    "alt": "Brushed bar handles being fitted to kitchen cabinet doors using drill and template jig"
+  },
+  "process/plinth-fitting.webp": {
+    "path": "/assets/process/plinth-fitting.webp",
+    "alt": "Kitchen plinth panels being fitted at floor level beneath base units, clean professional finish"
+  },
+  "process/cornice-fitting.webp": {
+    "path": "/assets/process/cornice-fitting.webp",
+    "alt": "Kitchen cornice moulding being mitred and fitted to top of wall units, precision joints"
+  },
+  "process/snagging-inspection.webp": {
+    "path": "/assets/process/snagging-inspection.webp",
+    "alt": "Professional kitchen fitter doing final snagging inspection of completed British kitchen"
+  },
+  "process/finished-kitchen-neutral.webp": {
+    "path": "/assets/process/finished-kitchen-neutral.webp",
+    "alt": "Beautifully completed modern British kitchen with white shaker doors and quartz worktop"
+  },
+  "process/finished-kitchen-dark.webp": {
+    "path": "/assets/process/finished-kitchen-dark.webp",
+    "alt": "Completed charcoal grey handleless kitchen in real British home with integrated appliances"
+  },
+  "process/drawer-close-up.webp": {
+    "path": "/assets/process/drawer-close-up.webp",
+    "alt": "Kitchen drawer opening smoothly on Blum Tandem soft-close runners, premium quality detail"
+  },
+  "process/appliance-integration.webp": {
+    "path": "/assets/process/appliance-integration.webp",
+    "alt": "Integrated dishwasher fitted into kitchen cabinetry with matching furniture door panel flush"
+  },
+  "process/tall-units-fitting.webp": {
+    "path": "/assets/process/tall-units-fitting.webp",
+    "alt": "Kitchen fitter installing tall larder units in open plan British home kitchen"
+  },
+  "process/island-installation.webp": {
+    "path": "/assets/process/island-installation.webp",
+    "alt": "Large kitchen island being professionally installed in British detached home with stone worktop"
+  },
+  "brand/wren/wren-kitchen-overview.webp": {
+    "path": "/assets/brand/wren/wren-kitchen-overview.webp",
+    "alt": "Completed Wren contemporary kitchen with white gloss handleless doors and quartz worktop"
+  },
+  "brand/wren/wren-installation-progress.webp": {
+    "path": "/assets/brand/wren/wren-installation-progress.webp",
+    "alt": "Wren kitchen carcasses being assembled and installed in British home"
+  },
+  "brand/wren/wren-handleless-doors.webp": {
+    "path": "/assets/brand/wren/wren-handleless-doors.webp",
+    "alt": "Sleek handleless white Wren kitchen cabinet doors with J-pull profile, premium gloss finish"
+  },
+  "brand/wren/wren-finished-result.webp": {
+    "path": "/assets/brand/wren/wren-finished-result.webp",
+    "alt": "Completed Wren handleless kitchen with marble quartz island and integrated Siemens appliances"
+  },
+  "brand/howdens/howdens-kitchen-overview.webp": {
+    "path": "/assets/brand/howdens/howdens-kitchen-overview.webp",
+    "alt": "Completed Howdens Greenwich Shaker kitchen in sage green with brass handles and oak worktop"
+  },
+  "brand/howdens/howdens-rigid-units.webp": {
+    "path": "/assets/brand/howdens/howdens-rigid-units.webp",
+    "alt": "Rigid pre-assembled Howdens kitchen carcasses being professionally installed"
+  },
+  "brand/howdens/howdens-shaker-detail.webp": {
+    "path": "/assets/brand/howdens/howdens-shaker-detail.webp",
+    "alt": "Sage green Howdens shaker cabinet door with brushed brass cup handle, premium painted finish"
+  },
+  "brand/howdens/howdens-finished-result.webp": {
+    "path": "/assets/brand/howdens/howdens-finished-result.webp",
+    "alt": "Completed Howdens shaker kitchen with sage green doors, stone worktop and integrated appliances"
+  },
+  "brand/howdens/howdens-contemporary.webp": {
+    "path": "/assets/brand/howdens/howdens-contemporary.webp",
+    "alt": "Howdens contemporary handleless kitchen in stone grey with quartz island and open plan layout"
+  },
+  "brand/ikea/ikea-kitchen-overview.webp": {
+    "path": "/assets/brand/ikea/ikea-kitchen-overview.webp",
+    "alt": "Completed IKEA METOD kitchen with Voxtorp matt white doors and quartz worktop in Victorian terrace"
+  },
+  "brand/ikea/ikea-flatpack-assembly.webp": {
+    "path": "/assets/brand/ikea/ikea-flatpack-assembly.webp",
+    "alt": "IKEA METOD kitchen flat-pack carcasses being assembled on site in British home"
+  },
+  "brand/ikea/ikea-door-detail.webp": {
+    "path": "/assets/brand/ikea/ikea-door-detail.webp",
+    "alt": "IKEA METOD cabinet with Voxtorp matt white door, clean Scandinavian minimal design"
+  },
+  "brand/ikea/ikea-finished-result.webp": {
+    "path": "/assets/brand/ikea/ikea-finished-result.webp",
+    "alt": "Completed IKEA kitchen with Scandinavian minimal design, matt white doors and wood-effect worktop"
+  },
+  "brand/magnet/magnet-kitchen-overview.webp": {
+    "path": "/assets/brand/magnet/magnet-kitchen-overview.webp",
+    "alt": "Magnet Belgravia painted shaker kitchen in navy blue with brass hardware and quartz worktop"
+  },
+  "brand/magnet/magnet-installation.webp": {
+    "path": "/assets/brand/magnet/magnet-installation.webp",
+    "alt": "Magnet kitchen rigid units being professionally installed in British home"
+  },
+  "brand/magnet/magnet-door-detail.webp": {
+    "path": "/assets/brand/magnet/magnet-door-detail.webp",
+    "alt": "Magnet painted in-frame kitchen door in dark navy with brushed brass handle, premium finish"
+  },
+  "brand/magnet/magnet-finished-result.webp": {
+    "path": "/assets/brand/magnet/magnet-finished-result.webp",
+    "alt": "Completed Magnet navy painted shaker kitchen with island, quartz worktop and range cooker"
+  },
+  "brand/magnet/magnet-contemporary.webp": {
+    "path": "/assets/brand/magnet/magnet-contemporary.webp",
+    "alt": "Magnet kitchen in warm sage green with mixed handleless and shaker doors, quartz worktop"
+  },
+  "styles/german/german-overview.webp": {
+    "path": "/assets/styles/german/german-overview.webp",
+    "alt": "Premium German precision kitchen with handleless lacquer doors and natural stone worktop"
+  },
+  "styles/german/german-engineering-detail.webp": {
+    "path": "/assets/styles/german/german-engineering-detail.webp",
+    "alt": "Premium German kitchen Blum soft-close hinge and hardware, precision engineering detail"
+  },
+  "styles/german/german-finished-result.webp": {
+    "path": "/assets/styles/german/german-finished-result.webp",
+    "alt": "Completed premium German handleless kitchen with high gloss lacquer and stone worktop"
+  },
+  "styles/in-frame/in-frame-overview.webp": {
+    "path": "/assets/styles/in-frame/in-frame-overview.webp",
+    "alt": "Traditional British in-frame painted kitchen in sage green with solid timber face-frame"
+  },
+  "styles/in-frame/in-frame-construction-detail.webp": {
+    "path": "/assets/styles/in-frame/in-frame-construction-detail.webp",
+    "alt": "In-frame kitchen door set within solid timber face-frame, traditional British craftsmanship"
+  },
+  "styles/in-frame/in-frame-finished-result.webp": {
+    "path": "/assets/styles/in-frame/in-frame-finished-result.webp",
+    "alt": "Completed in-frame painted kitchen in British farmhouse with traditional proportions and stone worktop"
+  },
+  "styles/painted/painted-overview.webp": {
+    "path": "/assets/styles/painted/painted-overview.webp",
+    "alt": "Hand-painted navy kitchen with brass handles and marble quartz worktop in British period home"
+  },
+  "styles/painted/painted-door-detail.webp": {
+    "path": "/assets/styles/painted/painted-door-detail.webp",
+    "alt": "Hand-painted sage green kitchen cabinet door with smooth eggshell finish and brass knob handle"
+  },
+  "styles/painted/painted-finished-result.webp": {
+    "path": "/assets/styles/painted/painted-finished-result.webp",
+    "alt": "Completed two-tone painted kitchen with navy lower and cream upper units, marble worktop"
+  },
+  "styles/luxury/luxury-overview.webp": {
+    "path": "/assets/styles/luxury/luxury-overview.webp",
+    "alt": "High-end luxury British kitchen with hand-painted in-frame doors and marble Dekton worktop"
+  },
+  "styles/luxury/luxury-detail.webp": {
+    "path": "/assets/styles/luxury/luxury-detail.webp",
+    "alt": "Luxury kitchen bespoke cabinetry detail with fluted pilaster, brass hardware and marble edge"
+  },
+  "styles/luxury/luxury-finished-result.webp": {
+    "path": "/assets/styles/luxury/luxury-finished-result.webp",
+    "alt": "Completed luxury kitchen in large British home with bespoke painted cabinetry and marble island"
+  },
+  "styles/contemporary/contemporary-overview.webp": {
+    "path": "/assets/styles/contemporary/contemporary-overview.webp",
+    "alt": "Contemporary British kitchen with flat slab taupe doors and stone worktop"
+  },
+  "styles/traditional/traditional-overview.webp": {
+    "path": "/assets/styles/traditional/traditional-overview.webp",
+    "alt": "Traditional British kitchen with cream Shaker doors, wooden worktop and range cooker"
+  },
+  "styles/modern/modern-overview.webp": {
+    "path": "/assets/styles/modern/modern-overview.webp",
+    "alt": "Modern sleek British kitchen with gloss white slab doors and waterfall island"
+  },
+  "styles/solid-wood/solid-wood-door-detail.webp": {
+    "path": "/assets/styles/solid-wood/solid-wood-door-detail.webp",
+    "alt": "Premium solid wood kitchen cabinet door with natural oak grain, British kitchen"
+  },
+  "styles/solid-wood/solid-wood-kitchen.webp": {
+    "path": "/assets/styles/solid-wood/solid-wood-kitchen.webp",
+    "alt": "Solid wood kitchen in British period property with warm oak units and wooden worktop"
+  },
+  "styles/modern/modern-open-plan.webp": {
+    "path": "/assets/styles/modern/modern-open-plan.webp",
+    "alt": "Open-plan British kitchen-diner with large island and bifold doors to garden"
+  },
+  "repairs/door-replacement/door-before.webp": {
+    "path": "/assets/repairs/door-replacement/door-before.webp",
+    "alt": "Kitchen cabinet door hanging misaligned, warped and sagging on broken hinges — problem before repair"
+  },
+  "repairs/door-replacement/door-during.webp": {
+    "path": "/assets/repairs/door-replacement/door-during.webp",
+    "alt": "Professional kitchen fitter hanging new replacement door and adjusting on concealed hinges"
+  },
+  "repairs/door-replacement/door-after.webp": {
+    "path": "/assets/repairs/door-replacement/door-after.webp",
+    "alt": "Set of beautifully aligned new kitchen cabinet doors with perfect even gaps after professional repair"
+  },
+  "repairs/hinge-upgrade/hinge-close-up.webp": {
+    "path": "/assets/repairs/hinge-upgrade/hinge-close-up.webp",
+    "alt": "Blum kitchen cabinet hinge being adjusted with screwdriver, three-way adjustment technique"
+  },
+  "repairs/hinge-upgrade/softclose-hinge.webp": {
+    "path": "/assets/repairs/hinge-upgrade/softclose-hinge.webp",
+    "alt": "Modern Blum soft-close concealed hinge on kitchen cabinet door, premium engineering detail"
+  },
+  "repairs/drawer-repair/drawer-before.webp": {
+    "path": "/assets/repairs/drawer-repair/drawer-before.webp",
+    "alt": "Sticking kitchen drawer that won't close properly in British kitchen — problem before repair"
+  },
+  "repairs/drawer-repair/drawer-runner-fitting.webp": {
+    "path": "/assets/repairs/drawer-repair/drawer-runner-fitting.webp",
+    "alt": "Blum Tandem drawer runner being professionally installed inside kitchen cabinet"
+  },
+  "repairs/drawer-repair/drawer-after.webp": {
+    "path": "/assets/repairs/drawer-repair/drawer-after.webp",
+    "alt": "Kitchen drawers opening smoothly and fully on soft-close runners after professional repair"
+  },
+  "repairs/worktop-work/worktop-joint-repair.webp": {
+    "path": "/assets/repairs/worktop-work/worktop-joint-repair.webp",
+    "alt": "Kitchen worktop joint repair in progress with router cutting new precision joint"
+  },
+  "repairs/plinth-pelmet/plinth-fitting.webp": {
+    "path": "/assets/repairs/plinth-pelmet/plinth-fitting.webp",
+    "alt": "Kitchen plinth panels being fitted at floor level with plinth clips, clean professional finish"
+  },
+  "repairs/plinth-pelmet/cornice-fitting.webp": {
+    "path": "/assets/repairs/plinth-pelmet/cornice-fitting.webp",
+    "alt": "Kitchen cornice moulding being mitred and fitted to wall unit tops, precision professional finish"
+  },
+  "repairs/end-panel/end-panel-scribing.webp": {
+    "path": "/assets/repairs/end-panel/end-panel-scribing.webp",
+    "alt": "Kitchen end panel being scribed to uneven wall and professionally fitted"
+  },
+  "repairs/appliance-door/appliance-door-repair.webp": {
+    "path": "/assets/repairs/appliance-door/appliance-door-repair.webp",
+    "alt": "Integrated dishwasher furniture panel door being refitted and realigned, slider adjustment"
+  },
+  "repairs/adjustment-snag/snagging-before.webp": {
+    "path": "/assets/repairs/adjustment-snag/snagging-before.webp",
+    "alt": "Kitchen doors in poor alignment with uneven gaps, not closing flush — snagging problem before repair"
+  },
+  "repairs/adjustment-snag/snagging-after.webp": {
+    "path": "/assets/repairs/adjustment-snag/snagging-after.webp",
+    "alt": "Kitchen doors in perfect alignment after professional snagging — even gaps, flush close"
+  },
+  "repairs/worktop-work/worktop-after.webp": {
+    "path": "/assets/repairs/worktop-work/worktop-after.webp",
+    "alt": "Perfectly sealed flush kitchen worktop joint after professional repair, watertight finish"
+  },
+  "repairs/adjustment-snag/unit-adjustment.webp": {
+    "path": "/assets/repairs/adjustment-snag/unit-adjustment.webp",
+    "alt": "Professional kitchen fitter adjusting unit alignment during systematic snagging inspection"
+  },
+  "repairs/door-replacement/kitchen-repaired-result.webp": {
+    "path": "/assets/repairs/door-replacement/kitchen-repaired-result.webp",
+    "alt": "Completed British kitchen after professional snagging and repair, every element perfectly set"
+  },
+  "appliances/dishwasher/dishwasher-installation.webp": {
+    "path": "/assets/appliances/dishwasher/dishwasher-installation.webp",
+    "alt": "Integrated dishwasher being installed into kitchen cabinetry housing, fitter connecting supply lines"
+  },
+  "appliances/dishwasher/dishwasher-door-panel.webp": {
+    "path": "/assets/appliances/dishwasher/dishwasher-door-panel.webp",
+    "alt": "Integrated dishwasher with furniture panel door fitted flush with adjacent cabinet doors"
+  },
+  "appliances/fridge/fridge-installation.webp": {
+    "path": "/assets/appliances/fridge/fridge-installation.webp",
+    "alt": "Integrated fridge-freezer being slid into tall kitchen housing unit by professional fitter"
+  },
+  "appliances/fridge/fridge-panel-fitted.webp": {
+    "path": "/assets/appliances/fridge/fridge-panel-fitted.webp",
+    "alt": "Integrated fridge with tall decor panel door fitted, matching surrounding kitchen cabinets"
+  },
+  "appliances/washing-machine/washing-machine-installation.webp": {
+    "path": "/assets/appliances/washing-machine/washing-machine-installation.webp",
+    "alt": "Integrated washing machine being installed under kitchen worktop, connecting hoses"
+  },
+  "appliances/oven/oven-installation.webp": {
+    "path": "/assets/appliances/oven/oven-installation.webp",
+    "alt": "Integrated oven being installed into tall kitchen housing unit, fitter connecting power"
+  },
+  "appliances/appliances-overview.webp": {
+    "path": "/assets/appliances/appliances-overview.webp",
+    "alt": "Complete British kitchen with all integrated appliances fitted with matching furniture door panels"
+  },
+  "appliances/appliance-door-detail.webp": {
+    "path": "/assets/appliances/appliance-door-detail.webp",
+    "alt": "Appliance door panel slider mechanism being adjusted for precision flush fitting"
+  },
+  "appliances/appliances-testing.webp": {
+    "path": "/assets/appliances/appliances-testing.webp",
+    "alt": "Professional kitchen fitter testing integrated appliances after installation, quality check"
+  },
+  "services/cabinet-installation/cabinet-installation-overview.webp": {
+    "path": "/assets/services/cabinet-installation/cabinet-installation-overview.webp",
+    "alt": "Kitchen base and wall units being professionally installed and levelled in British home"
+  },
+  "services/cabinet-installation/cabinet-levelling.webp": {
+    "path": "/assets/services/cabinet-installation/cabinet-levelling.webp",
+    "alt": "Kitchen base unit being precisely levelled using adjustable feet and spirit level"
+  },
+  "services/worktop-fitting/worktop-cutting.webp": {
+    "path": "/assets/services/worktop-fitting/worktop-cutting.webp",
+    "alt": "Kitchen worktop being professionally measured, marked and cut to length"
+  },
+  "services/worktop-fitting/worktop-joint.webp": {
+    "path": "/assets/services/worktop-fitting/worktop-joint.webp",
+    "alt": "Precision router worktop joint — two laminate sections joined seamlessly at corner"
+  },
+  "services/appliance-installation/appliance-svc-overview.webp": {
+    "path": "/assets/services/appliance-installation/appliance-svc-overview.webp",
+    "alt": "Integrated kitchen appliances being professionally fitted in sequence"
+  },
+  "services/door-fitting/door-fitting-overview.webp": {
+    "path": "/assets/services/door-fitting/door-fitting-overview.webp",
+    "alt": "Complete set of kitchen doors being hung, adjusted and aligned by professional fitter"
+  },
+  "services/trims-and-plinths/trims-plinth-overview.webp": {
+    "path": "/assets/services/trims-and-plinths/trims-plinth-overview.webp",
+    "alt": "Kitchen plinth, cornice and pelmet being fitted to complete professional kitchen finish"
+  },
+  "services/handles-and-ironmongery/handles-fitting.webp": {
+    "path": "/assets/services/handles-and-ironmongery/handles-fitting.webp",
+    "alt": "Kitchen handles being systematically fitted using template, all perfectly aligned"
+  },
+  "services/flooring-tiling/flooring-tiling-overview.webp": {
+    "path": "/assets/services/flooring-tiling/flooring-tiling-overview.webp",
+    "alt": "Kitchen floor tiles being professionally laid in British home, perfectly level"
+  },
+  "property/victorian-terrace-kitchen.webp": {
+    "path": "/assets/property/victorian-terrace-kitchen.webp",
+    "alt": "Kitchen installed in Victorian British terraced house with period cornicing and sash windows"
+  },
+  "property/semi-detached-kitchen.webp": {
+    "path": "/assets/property/semi-detached-kitchen.webp",
+    "alt": "Fitted kitchen in typical British 1960s semi-detached home, modern kitchen in period property"
+  },
+  "property/new-build-kitchen.webp": {
+    "path": "/assets/property/new-build-kitchen.webp",
+    "alt": "Fitted kitchen in modern British new-build home with bright natural light and handleless design"
+  },
+  "property/detached-house-kitchen.webp": {
+    "path": "/assets/property/detached-house-kitchen.webp",
+    "alt": "Large kitchen in British detached house with open-plan kitchen-diner, island unit and bifold doors"
+  },
+  "property/period-property-kitchen.webp": {
+    "path": "/assets/property/period-property-kitchen.webp",
+    "alt": "Kitchen in British Edwardian period property with high ceilings, bay window and traditional painted kitchen"
+  },
+  "property/berkshire-executive-kitchen.webp": {
+    "path": "/assets/property/berkshire-executive-kitchen.webp",
+    "alt": "Premium kitchen in executive Berkshire home with high specification German cabinetry"
+  },
+  "property/cottage-kitchen.webp": {
+    "path": "/assets/property/cottage-kitchen.webp",
+    "alt": "Kitchen in British rural cottage with exposed beams, traditional painted kitchen and flagstone floor"
+  },
+  "property/apartment-kitchen.webp": {
+    "path": "/assets/property/apartment-kitchen.webp",
+    "alt": "Fitted kitchen in British city centre apartment with compact efficient layout and integrated appliances"
+  },
+  "services/snagging/snagging-overview.webp": {
+    "path": "/assets/services/snagging/snagging-overview.webp",
+    "alt": "Professional kitchen fitter doing systematic snagging inspection — checking every door and drawer"
+  },
+  "styles/shaker/shaker-overview.webp": {
+    "path": "/assets/styles/shaker/shaker-overview.webp",
+    "alt": "Classic cream shaker kitchen in real British home with recessed panel doors and wood worktop"
+  },
+  "styles/shaker/shaker-door-detail.webp": {
+    "path": "/assets/styles/shaker/shaker-door-detail.webp",
+    "alt": "White painted shaker kitchen door with recessed centre panel and brushed brass handle"
+  },
+  "styles/shaker/shaker-installation.webp": {
+    "path": "/assets/styles/shaker/shaker-installation.webp",
+    "alt": "Shaker kitchen cabinet units being professionally fitted in British home"
+  },
+  "styles/shaker/shaker-finished-result.webp": {
+    "path": "/assets/styles/shaker/shaker-finished-result.webp",
+    "alt": "Completed sage green shaker kitchen with painted doors, quartz worktop and brass fixtures"
+  },
+  "styles/shaker/shaker-in-period-home.webp": {
+    "path": "/assets/styles/shaker/shaker-in-period-home.webp",
+    "alt": "Shaker kitchen in Victorian British terrace with cream doors, butler's sink and period features"
+  },
+  "styles/handleless/handleless-overview.webp": {
+    "path": "/assets/styles/handleless/handleless-overview.webp",
+    "alt": "Sleek charcoal handleless kitchen in modern British home extension with quartz worktop"
+  },
+  "styles/handleless/handleless-door-detail.webp": {
+    "path": "/assets/styles/handleless/handleless-door-detail.webp",
+    "alt": "Dark grey handleless kitchen cabinet doors with J-pull profile, premium matt finish"
+  },
+  "styles/handleless/handleless-installation.webp": {
+    "path": "/assets/styles/handleless/handleless-installation.webp",
+    "alt": "Handleless kitchen cabinets being professionally installed in British home"
+  },
+  "styles/handleless/handleless-finished-result.webp": {
+    "path": "/assets/styles/handleless/handleless-finished-result.webp",
+    "alt": "Completed charcoal handleless kitchen with waterfall island and Dekton worktop"
+  }
+}
