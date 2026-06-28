@@ -300,6 +300,15 @@ const fromPrice = isBerks ? fromPriceBerks : fromPriceCW;
 
 const canonical = `https://installmykitchen.co.uk/appliances/${applianceSlug}-${locationSlug}/`;
 
+// Appliance image mapping
+const applianceImgDir = applianceSlug.includes("dishwasher") ? "appliances/dishwasher"
+  : applianceSlug.includes("fridge-freezer") || (applianceSlug.includes("fridge") && applianceSlug.includes("freezer")) ? "appliances/fridge"
+  : applianceSlug.includes("fridge") ? "appliances/fridge"
+  : applianceSlug.includes("washing") ? "appliances/washing-machine"
+  : applianceSlug.includes("oven") ? "appliances/oven"
+  : "appliances";
+const applianceImgBase = `/assets/${applianceImgDir}`;
+
 // Title ≤60 chars
 const rawTitle = `${applianceName} ${locationName} | Install My Kitchen`;
 const title = rawTitle.length <= 60
@@ -436,19 +445,24 @@ const serviceSchema = {
   <!-- What's involved -->
   <section class="section">
     <div class="container">
-      <div class="max-w-3xl fade-up">
-        <h2 class="text-3xl font-bold mb-4" style="color: var(--navy);">
-          What Does {applianceName} Involve?
-        </h2>
-        <p class="text-lg leading-relaxed mb-4" style="color: var(--text-soft);">
-          {applianceDescription}
-        </p>
-        <p class="leading-relaxed mb-4" style="color: var(--text-soft);">
-          Every installation we carry out in {locationName} begins with a check of the housing, supply points, and any existing appliance before we start work. This allows us to identify any additional requirements — such as a missing isolation valve or a non-standard housing depth — before the appliance is in position.
-        </p>
-        <p class="leading-relaxed" style="color: var(--text-soft);">
-          We carry the tools and fittings needed for a complete installation in a single visit. No return trips, no extra charges for standard connection work.
-        </p>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; align-items: start;" class="fade-up">
+        <div>
+          <h2 class="text-3xl font-bold mb-4" style="color: var(--navy);">
+            What Does {applianceName} Involve?
+          </h2>
+          <p class="text-lg leading-relaxed mb-4" style="color: var(--text-soft);">
+            {applianceDescription}
+          </p>
+          <p class="leading-relaxed mb-4" style="color: var(--text-soft);">
+            Every installation in {locationName} begins with a check of the housing, supply points, and any existing appliance before we start. This identifies any additional requirements before the appliance is in position.
+          </p>
+          <p class="leading-relaxed" style="color: var(--text-soft);">
+            We carry all tools and fittings for a complete installation in a single visit. No return trips, no extra charges for standard connection work.
+          </p>
+        </div>
+        <figure style="margin: 0;">
+          <img src={`${applianceImgBase}/installation.webp`} onerror="this.src='/assets/appliances/appliances-overview.webp'" alt={`${applianceName} being installed in ${locationName}`} width="680" height="510" loading="lazy" style="width: 100%; height: auto; border-radius: 0.75rem; display: block;" />
+        </figure>
       </div>
     </div>
   </section>
@@ -456,19 +470,24 @@ const serviceSchema = {
   <!-- Why professional fitting matters -->
   <section class="section" style="background: var(--bg-light);">
     <div class="container">
-      <div class="max-w-3xl fade-up">
-        <h2 class="text-3xl font-bold mb-4" style="color: var(--navy);">
-          Why Professional {applianceName} Matters
-        </h2>
-        <p class="leading-relaxed mb-4" style="color: var(--text-soft);">
-          Appliance manufacturers and many home insurers require that appliances are professionally installed to maintain warranty coverage and ensure compliance with water supply regulations. A poorly installed appliance can also cause water damage, inefficient operation, and premature failure — costs that far exceed a professional installation fee.
-        </p>
-        <p class="leading-relaxed mb-4" style="color: var(--text-soft);">
-          Our fitters carry out {h1Fragment} to the manufacturer's specification and to current UK building and water regulations. We test every connection and run a post-installation check before leaving your property.
-        </p>
-        <p class="leading-relaxed" style="color: var(--text-soft);">
-          {kitchenNotes ?? `${locationName} properties vary considerably in their plumbing layouts, and our fitters are experienced in adapting connections to suit the range of configurations found across ${county}.`}
-        </p>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; align-items: start;" class="fade-up">
+        <figure style="margin: 0;">
+          <img src={`${applianceImgBase}/panel-fitted.webp`} onerror="this.src='/assets/process/appliance-integration.webp'" alt={`${applianceName} door panel fitted flush in ${locationName} kitchen`} width="680" height="510" loading="lazy" style="width: 100%; height: auto; border-radius: 0.75rem; display: block;" />
+        </figure>
+        <div>
+          <h2 class="text-3xl font-bold mb-4" style="color: var(--navy);">
+            Why Professional {applianceName} Matters
+          </h2>
+          <p class="leading-relaxed mb-4" style="color: var(--text-soft);">
+            Appliance manufacturers and many home insurers require professional installation to maintain warranty coverage and comply with water supply regulations. A poorly installed appliance can cause water damage, inefficient operation, and premature failure.
+          </p>
+          <p class="leading-relaxed mb-4" style="color: var(--text-soft);">
+            Our fitters carry out {h1Fragment} to the manufacturer's specification and current UK building and water regulations. We test every connection and run a post-installation check before leaving.
+          </p>
+          <p class="leading-relaxed" style="color: var(--text-soft);">
+            {kitchenNotes ?? `${locationName} properties vary in their plumbing layouts — our fitters are experienced in adapting connections to suit the configurations found across ${county}.`}
+          </p>
+        </div>
       </div>
     </div>
   </section>
@@ -490,6 +509,9 @@ const serviceSchema = {
           <p class="font-semibold mb-1" style="color: var(--navy);">From £{fromPrice} — {locationName} area</p>
           <p class="text-sm" style="color: var(--text-soft);">Fixed-price quote provided before work starts. No call-out fee for combined visits with other installation work.</p>
         </div>
+        <figure style="margin: 1.5rem 0 0; padding: 0;">
+          <img src="/assets/process/survey-measuring.webp" alt={`${applianceName} assessed and quoted in ${locationName} before work begins`} width="900" height="506" loading="lazy" style="width: 100%; height: auto; border-radius: 0.75rem; display: block;" />
+        </figure>
       </div>
     </div>
   </section>
@@ -497,16 +519,21 @@ const serviceSchema = {
   <!-- Local context -->
   <section class="section" style="background: var(--bg-light);">
     <div class="container">
-      <div class="max-w-3xl fade-up">
-        <h2 class="text-3xl font-bold mb-4" style="color: var(--navy);">
-          {applianceName} Across {locationName}
-        </h2>
-        <p class="leading-relaxed mb-4" style="color: var(--text-soft);">
-          We cover {locationName} and the surrounding {county} area as part of our broader service territory. Our fitters are based locally and familiar with the property types and kitchen configurations commonly found across the area.
-        </p>
-        <p class="leading-relaxed" style="color: var(--text-soft);">
-          {localNote ?? `Whether you are in a new-build property or an older home with an existing kitchen that needs an appliance upgrade, our team brings the same level of care and expertise to every installation in ${locationName}.`}
-        </p>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; align-items: start;" class="fade-up">
+        <div>
+          <h2 class="text-3xl font-bold mb-4" style="color: var(--navy);">
+            {applianceName} Across {locationName}
+          </h2>
+          <p class="leading-relaxed mb-4" style="color: var(--text-soft);">
+            We cover {locationName} and the surrounding {county} area as part of our broader service territory. Our fitters are familiar with the property types and kitchen configurations commonly found across the area.
+          </p>
+          <p class="leading-relaxed" style="color: var(--text-soft);">
+            {localNote ?? `Whether you are in a new-build property or an older home with an existing kitchen that needs an appliance upgrade, our team brings the same level of care to every installation in ${locationName}.`}
+          </p>
+        </div>
+        <figure style="margin: 0;">
+          <img src="/assets/process/finished-kitchen-neutral.webp" alt={`Completed kitchen with integrated appliances in ${locationName}`} width="680" height="510" loading="lazy" style="width: 100%; height: auto; border-radius: 0.75rem; display: block;" />
+        </figure>
       </div>
     </div>
   </section>
@@ -519,6 +546,18 @@ const serviceSchema = {
           Get a Fixed-Price Quote for {applianceName} in {locationName}
         </p>
         <EnquiryForm formTitle={`Quote: ${applianceName} — ${locationName}`} showSurveyOption={false} />
+      </div>
+    </div>
+  </section>
+
+  <!-- Appliance image gallery before FAQ -->
+  <section class="section">
+    <div class="container">
+      <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem;">
+        <figure style="margin: 0;"><img src="/assets/appliances/appliances-overview.webp" alt={`Integrated appliances overview in ${locationName} kitchen`} width="300" height="225" loading="lazy" style="width: 100%; height: auto; border-radius: 0.625rem; display: block;" /></figure>
+        <figure style="margin: 0;"><img src="/assets/process/finished-kitchen-neutral.webp" alt={`Completed kitchen with integrated appliances in ${locationName}`} width="300" height="225" loading="lazy" style="width: 100%; height: auto; border-radius: 0.625rem; display: block;" /></figure>
+        <figure style="margin: 0;"><img src="/assets/process/appliance-integration.webp" alt={`Appliance being integrated into kitchen cabinets in ${locationName}`} width="300" height="225" loading="lazy" style="width: 100%; height: auto; border-radius: 0.625rem; display: block;" /></figure>
+        <figure style="margin: 0;"><img src="/assets/process/snagging-inspection.webp" alt={`Final check after ${applianceName} in ${locationName}`} width="300" height="225" loading="lazy" style="width: 100%; height: auto; border-radius: 0.625rem; display: block;" /></figure>
       </div>
     </div>
   </section>

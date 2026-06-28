@@ -71,6 +71,16 @@ const title = rawTitle.length <= 60
 // Meta 140-160 chars
 const metaDescription = `Expert ${styleName.toLowerCase()} kitchen installation in ${locationName}, ${county}. Independent fitting service for all major retailers. Fixed-price quotes from a £195 survey.`;
 
+// Style image set
+const styleImgBase = `/assets/styles/${styleSlug}`;
+const styleImgs = {
+  overview:     `${styleImgBase}/${styleSlug}-overview.webp`,
+  doorDetail:   `${styleImgBase}/${styleSlug}-door-detail.webp`,
+  installation: `${styleImgBase}/${styleSlug}-installation.webp`,
+  finished:     `${styleImgBase}/${styleSlug}-finished-result.webp`,
+  inProperty:   `${styleImgBase}/${styleSlug}-in-period-home.webp`,
+};
+
 // FAQ — offset by style and location index
 const allFaqs = [...faqsData.general, ...faqsData.process, ...faqsData.costs];
 const faqOffset = (styleIndex * 4 + locationIndex) % allFaqs.length;
@@ -173,19 +183,24 @@ const serviceSchema = {
   <!-- Section 1: What this style involves -->
   <section class="section">
     <div class="container">
-      <div class="max-w-3xl fade-up">
-        <h2 class="text-3xl font-bold mb-4" style="color: var(--navy);">
-          What {styleName} Kitchen Installation Involves
-        </h2>
-        <p class="text-lg leading-relaxed mb-4" style="color: var(--text-soft);">
-          {styleDescription}
-        </p>
-        <p class="leading-relaxed mb-4" style="color: var(--text-soft);">
-          Fitting a {styleName.toLowerCase()} kitchen requires a fitter who understands the design intent behind the style, not just the mechanics of assembling cabinetry. Our team is experienced in handling the specific requirements of this style — whether that means precise scribing to achieve clean runs along imperfect walls, careful alignment of inset details, or sympathetic integration of the kitchen into the character of your home.
-        </p>
-        <p class="leading-relaxed" style="color: var(--text-soft);">
-          Every {styleName.toLowerCase()} kitchen we install in {locationName} begins with a detailed pre-installation survey. This allows us to assess the room and review your chosen plan, identifying any potential issues before installation day. The result is a fixed-price quote with no hidden surprises.
-        </p>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; align-items: start;" class="fade-up">
+        <div>
+          <h2 class="text-3xl font-bold mb-4" style="color: var(--navy);">
+            What {styleName} Kitchen Installation Involves
+          </h2>
+          <p class="text-lg leading-relaxed mb-4" style="color: var(--text-soft);">
+            {styleDescription}
+          </p>
+          <p class="leading-relaxed mb-4" style="color: var(--text-soft);">
+            Fitting a {styleName.toLowerCase()} kitchen requires a fitter who understands the design intent, not just the mechanics of assembling cabinetry. Our team handles the specific requirements — precise scribing, careful alignment, and sympathetic integration into your home's character.
+          </p>
+          <p class="leading-relaxed" style="color: var(--text-soft);">
+            Every {styleName.toLowerCase()} kitchen we install in {locationName} begins with a detailed pre-installation survey — identifying any issues before installation day and delivering a fixed-price quote with no hidden surprises.
+          </p>
+        </div>
+        <figure style="margin: 0;">
+          <img src={styleImgs.overview} alt={`${styleName} kitchen installation in ${locationName} — finished result`} width="680" height="510" loading="lazy" style="width: 100%; height: auto; border-radius: 0.75rem; display: block;" />
+        </figure>
       </div>
     </div>
   </section>
@@ -193,42 +208,60 @@ const serviceSchema = {
   <!-- Section 2: Why this style suits the area -->
   <section class="section" style="background: var(--bg-light);">
     <div class="container">
-      <div class="max-w-3xl fade-up">
-        <h2 class="text-3xl font-bold mb-4" style="color: var(--navy);">
-          Why {styleName} Kitchens Work Well in {locationName}
-        </h2>
-        <p class="leading-relaxed mb-4" style="color: var(--text-soft);">
-          {locationDescription}
-        </p>
-        <p class="leading-relaxed mb-4" style="color: var(--text-soft);">
-          The property stock in {locationName} lends itself particularly well to {styleName.toLowerCase()} kitchen design. Whether you are renovating an older character property or updating a modern home, the {styleName.toLowerCase()} style offers the versatility to complement the architecture while delivering a genuinely practical, high-quality kitchen space.
-        </p>
-        <p class="leading-relaxed" style="color: var(--text-soft);">
-          Our installers regularly work throughout {locationName} and the surrounding {county} area, so we are well familiar with the layout characteristics and construction quirks of local properties. This local knowledge directly benefits the planning and execution of your installation, reducing the risk of unexpected complications on the day.
-        </p>
+      <div class="fade-up">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; align-items: start; margin-bottom: 2rem;">
+          <figure style="margin: 0;">
+            <img src={styleImgs.inProperty} alt={`${styleName} kitchen in a ${locationName} period property`} width="680" height="510" loading="lazy" style="width: 100%; height: auto; border-radius: 0.75rem; display: block;" />
+          </figure>
+          <div>
+            <h2 class="text-3xl font-bold mb-4" style="color: var(--navy);">
+              Why {styleName} Kitchens Work Well in {locationName}
+            </h2>
+            <p class="leading-relaxed mb-4" style="color: var(--text-soft);">
+              {locationDescription}
+            </p>
+            <p class="leading-relaxed" style="color: var(--text-soft);">
+              The property stock in {locationName} lends itself particularly well to {styleName.toLowerCase()} kitchen design. Whether renovating an older character property or updating a modern home, the {styleName.toLowerCase()} style offers versatility to complement the architecture while delivering a practical, high-quality result.
+            </p>
+          </div>
+        </div>
+        <!-- Full-width finished kitchen -->
+        <figure style="margin: 0; padding: 0;">
+          <img src={styleImgs.finished} alt={`Completed ${styleName} kitchen in ${locationName} by Install My Kitchen`} width="1200" height="506" loading="lazy" style="width: 100%; height: auto; border-radius: 0.75rem; display: block;" />
+        </figure>
       </div>
     </div>
   </section>
 
-  <!-- Feature Grid -->
+  <!-- Feature Grid with door detail image -->
   <section class="section">
     <div class="container">
-      <div class="fade-up">
-        <h2 class="text-3xl font-bold mb-8" style="color: var(--navy);">
-          Key Features of {styleName} Kitchens
-        </h2>
-        <ul class="grid grid-cols-1 sm:grid-cols-2 gap-4 list-none p-0 m-0 max-w-3xl">
-          {features.map((feature) => (
-            <li class="flex items-start gap-3 p-5 rounded-xl border" style="border-color: #E5E7EB; background: #fff;">
-              <span class="flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center mt-0.5" style="background: var(--teal);">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <polyline points="20 6 9 17 4 12"/>
-                </svg>
-              </span>
-              <span class="text-sm font-medium leading-relaxed" style="color: var(--charcoal);">{feature}</span>
-            </li>
-          ))}
-        </ul>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; align-items: start;" class="fade-up">
+        <div>
+          <h2 class="text-3xl font-bold mb-8" style="color: var(--navy);">
+            Key Features of {styleName} Kitchens
+          </h2>
+          <ul class="grid grid-cols-1 gap-4 list-none p-0 m-0">
+            {features.map((feature) => (
+              <li class="flex items-start gap-3 p-4 rounded-xl border" style="border-color: #E5E7EB; background: #fff;">
+                <span class="flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center mt-0.5" style="background: var(--teal);">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <polyline points="20 6 9 17 4 12"/>
+                  </svg>
+                </span>
+                <span class="text-sm font-medium leading-relaxed" style="color: var(--charcoal);">{feature}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div>
+          <figure style="margin: 0 0 1.5rem;">
+            <img src={styleImgs.doorDetail} alt={`${styleName} kitchen door detail — close-up of finish and hardware`} width="680" height="510" loading="lazy" style="width: 100%; height: auto; border-radius: 0.75rem; display: block;" />
+          </figure>
+          <figure style="margin: 0;">
+            <img src="/assets/process/drawer-close-up.webp" alt={`Soft-close drawer detail in a ${styleName} kitchen installation`} width="680" height="510" loading="lazy" style="width: 100%; height: auto; border-radius: 0.75rem; display: block;" />
+          </figure>
+        </div>
       </div>
     </div>
   </section>
@@ -236,19 +269,29 @@ const serviceSchema = {
   <!-- Section 3: Installation considerations -->
   <section class="section" style="background: var(--bg-light);">
     <div class="container">
-      <div class="max-w-3xl fade-up">
-        <h2 class="text-3xl font-bold mb-4" style="color: var(--navy);">
-          Installation Considerations in {locationName}
-        </h2>
-        <p class="leading-relaxed mb-4" style="color: var(--text-soft);">
-          No two kitchens or properties are identical, and {locationName} homes present their own specific considerations. Older properties may have uneven floors, out-of-plumb walls, or original features that need to be accommodated within the kitchen layout. Newer builds can present their own challenges, including tight tolerances where cabinets meet ceilings and underfloor heating considerations for certain worktop materials.
-        </p>
-        <p class="leading-relaxed mb-4" style="color: var(--text-soft);">
-          Our pre-installation survey addresses all of these factors before a single cabinet is fitted. We check floor levels across the entire kitchen footprint, assess wall straightness and any areas that may need scribing panels, and confirm that the planned appliance positions are compatible with the existing or planned service routes. This thorough approach means installation day runs smoothly, without the costly delays that arise from avoidable surprises.
-        </p>
-        <p class="leading-relaxed" style="color: var(--text-soft);">
-          We work alongside your independently appointed plumber and electrician, co-ordinating the sequence of works so that service connections are made at the right stage of the installation. If you need recommendations for reliable local tradespeople in {locationName}, we are happy to make introductions.
-        </p>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; align-items: start;" class="fade-up">
+        <div>
+          <h2 class="text-3xl font-bold mb-4" style="color: var(--navy);">
+            Installation Considerations in {locationName}
+          </h2>
+          <p class="leading-relaxed mb-4" style="color: var(--text-soft);">
+            No two kitchens are identical, and {locationName} homes present their own specific considerations. Older properties may have uneven floors or out-of-plumb walls; newer builds can have tight tolerances where cabinets meet ceilings.
+          </p>
+          <p class="leading-relaxed mb-4" style="color: var(--text-soft);">
+            Our pre-installation survey addresses all of these factors before a single cabinet is fitted — checking floor levels, assessing wall straightness, and confirming service positions. Installation day runs smoothly as a result.
+          </p>
+          <p class="leading-relaxed" style="color: var(--text-soft);">
+            We work alongside your plumber and electrician, co-ordinating the sequence so service connections are made at the right stage. If you need local tradespeople in {locationName}, we are happy to make introductions.
+          </p>
+        </div>
+        <div>
+          <figure style="margin: 0 0 1.5rem;">
+            <img src={styleImgs.installation} alt={`${styleName} kitchen installation in progress in ${locationName}`} width="680" height="510" loading="lazy" style="width: 100%; height: auto; border-radius: 0.75rem; display: block;" />
+          </figure>
+          <figure style="margin: 0;">
+            <img src="/assets/process/cornice-fitting.webp" alt={`Cornice and trim finishing for ${styleName} kitchen in ${locationName}`} width="680" height="510" loading="lazy" style="width: 100%; height: auto; border-radius: 0.75rem; display: block;" />
+          </figure>
+        </div>
       </div>
     </div>
   </section>

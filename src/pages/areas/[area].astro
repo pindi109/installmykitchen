@@ -186,19 +186,39 @@ const serviceSchema = {
   <!-- Section 1: Kitchen Installation in {name} -->
   <section class="section">
     <div class="container">
-      <div class="max-w-3xl fade-up">
-        <h2 class="text-3xl font-bold mb-4" style="color: var(--navy);">
-          Kitchen Installation in {name}
-        </h2>
-        <p class="text-lg leading-relaxed mb-4" style="color: var(--text-soft);">
-          {description}
-        </p>
-        <p class="leading-relaxed mb-4" style="color: var(--text-soft);">
-          Install My Kitchen is a fully independent fitting service based in Coundon, Coventry. We cover {name} and the surrounding {county} area, handling every aspect of your kitchen installation from initial survey through to final snagging. We work with you — not the retailer — to ensure the job is done to a standard you are happy with.
-        </p>
-        <p class="leading-relaxed" style="color: var(--text-soft);">
-          Whether you are replacing an existing kitchen or fitting one in a newly built or extended property, our team has the experience to manage your project efficiently. We carry out a thorough pre-installation survey before a single cabinet is ordered, so you receive a fixed-price quote with no hidden surprises on installation day.
-        </p>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; align-items: start;" class="fade-up">
+        <div>
+          <h2 class="text-3xl font-bold mb-4" style="color: var(--navy);">
+            Kitchen Installation in {name}
+          </h2>
+          <p class="text-lg leading-relaxed mb-4" style="color: var(--text-soft);">
+            {description}
+          </p>
+          <p class="leading-relaxed mb-4" style="color: var(--text-soft);">
+            Install My Kitchen is a fully independent fitting service. We cover {name} and the surrounding {county} area, handling every aspect from initial survey through to final snagging. We work with you — not the retailer.
+          </p>
+          <p class="leading-relaxed" style="color: var(--text-soft);">
+            We carry out a thorough pre-installation survey before a single cabinet is ordered, so you receive a fixed-price quote with no hidden surprises on installation day.
+          </p>
+        </div>
+        <figure style="margin: 0;">
+          <img src="/assets/process/finished-kitchen-neutral.webp" alt={`Kitchen installation in ${name} — finished result by Install My Kitchen`} width="680" height="510" loading="lazy" style="width: 100%; height: auto; border-radius: 0.75rem; display: block;" />
+        </figure>
+      </div>
+      <!-- Process image strip -->
+      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-top: 2.5rem;">
+        <figure style="margin: 0;">
+          <img src="/assets/process/survey-measuring.webp" alt={`Kitchen survey in ${name}`} width="420" height="315" loading="lazy" style="width: 100%; height: auto; border-radius: 0.625rem; display: block;" />
+          <figcaption style="font-size: 0.75rem; color: var(--text-soft); margin-top: 0.375rem; text-align: center;">1. Survey</figcaption>
+        </figure>
+        <figure style="margin: 0;">
+          <img src="/assets/process/base-units-levelling.webp" alt={`Kitchen units being installed in ${name}`} width="420" height="315" loading="lazy" style="width: 100%; height: auto; border-radius: 0.625rem; display: block;" />
+          <figcaption style="font-size: 0.75rem; color: var(--text-soft); margin-top: 0.375rem; text-align: center;">2. Installation</figcaption>
+        </figure>
+        <figure style="margin: 0;">
+          <img src="/assets/process/snagging-inspection.webp" alt={`Snagging and handover in ${name}`} width="420" height="315" loading="lazy" style="width: 100%; height: auto; border-radius: 0.625rem; display: block;" />
+          <figcaption style="font-size: 0.75rem; color: var(--text-soft); margin-top: 0.375rem; text-align: center;">3. Snagging &amp; Handover</figcaption>
+        </figure>
       </div>
     </div>
   </section>
@@ -206,19 +226,24 @@ const serviceSchema = {
   <!-- Section 2: Retailers We Cover -->
   <section class="section" style="background: var(--bg-light);">
     <div class="container">
-      <div class="max-w-3xl fade-up">
-        <h2 class="text-3xl font-bold mb-4" style="color: var(--navy);">
-          Retailers We Cover in {name}
-        </h2>
-        <p class="leading-relaxed mb-4" style="color: var(--text-soft);">
-          We install kitchens from every major UK retailer and manufacturer. Whether you have chosen a kitchen from Wren Kitchens, Howdens Joinery, Magnet, IKEA, Wickes, B&Q, Benchmarx, DIY Kitchens, Kutchenhaus, Symphony, or Masterclass, our {name} team can handle the installation.
-        </p>
-        <p class="leading-relaxed mb-4" style="color: var(--text-soft);">
-          We also fit kitchens from premium British and German brands including Mereway, Häcker, Nobilia, Neptune, and deVOL. If you are uncertain whether we cover your particular brand or product range, please get in touch — in most cases we can fit it.
-        </p>
-        <p class="leading-relaxed" style="color: var(--text-soft);">
-          Because we hold trade accounts with Howdens and Benchmarx, we can order and collect directly from the local depot, giving you a more streamlined supply chain and reducing the risk of delivery damage. For retail-supplied kitchens, we will co-ordinate the delivery schedule with you to ensure everything arrives on site before installation begins.
-        </p>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; align-items: start;" class="fade-up">
+        <figure style="margin: 0;">
+          <img src="/assets/process/worktop-fitting.webp" alt={`Worktop being fitted during kitchen installation in ${name}`} width="680" height="510" loading="lazy" style="width: 100%; height: auto; border-radius: 0.75rem; display: block;" />
+        </figure>
+        <div>
+          <h2 class="text-3xl font-bold mb-4" style="color: var(--navy);">
+            Retailers We Cover in {name}
+          </h2>
+          <p class="leading-relaxed mb-4" style="color: var(--text-soft);">
+            We install kitchens from every major UK retailer and manufacturer — Wren, Howdens, Magnet, IKEA, Wickes, B&Q, Benchmarx, DIY Kitchens, Kutchenhaus, Symphony, Masterclass and more.
+          </p>
+          <p class="leading-relaxed mb-4" style="color: var(--text-soft);">
+            We also fit premium British and German brands including Mereway, Häcker, Nobilia, Neptune, and deVOL.
+          </p>
+          <p class="leading-relaxed" style="color: var(--text-soft);">
+            We hold trade accounts with Howdens and Benchmarx — ordering and collecting directly from the local depot, giving you a more streamlined supply chain.
+          </p>
+        </div>
       </div>
       <div class="mt-10">
         <SupplierLogos />
@@ -305,6 +330,26 @@ const serviceSchema = {
             Book Survey in {location.name}
           </a>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Property type images before retailer grid -->
+  <section class="section">
+    <div class="container">
+      <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem;">
+        <figure style="margin: 0;">
+          <img src="/assets/process/finished-kitchen-dark.webp" alt={`Modern kitchen installation in ${name}`} width="300" height="225" loading="lazy" style="width: 100%; height: auto; border-radius: 0.625rem; display: block;" />
+        </figure>
+        <figure style="margin: 0;">
+          <img src="/assets/process/worktop-measuring.webp" alt={`Worktop being measured in ${name} home`} width="300" height="225" loading="lazy" style="width: 100%; height: auto; border-radius: 0.625rem; display: block;" />
+        </figure>
+        <figure style="margin: 0;">
+          <img src="/assets/process/handles-fitting.webp" alt={`Handles fitted during kitchen installation in ${name}`} width="300" height="225" loading="lazy" style="width: 100%; height: auto; border-radius: 0.625rem; display: block;" />
+        </figure>
+        <figure style="margin: 0;">
+          <img src="/assets/process/drawer-close-up.webp" alt={`Soft-close drawer detail in ${name} kitchen`} width="300" height="225" loading="lazy" style="width: 100%; height: auto; border-radius: 0.625rem; display: block;" />
+        </figure>
       </div>
     </div>
   </section>

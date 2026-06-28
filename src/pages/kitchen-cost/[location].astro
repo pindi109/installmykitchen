@@ -242,6 +242,18 @@ const serviceSchema = {
   <!-- Cost table -->
   <section class="section">
     <div class="container">
+      <!-- Image strip above pricing table -->
+      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-bottom: 2.5rem;">
+        <figure style="margin: 0;">
+          <img src="/assets/process/finished-kitchen-neutral.webp" alt={`Kitchen installation in ${name} — standard sized kitchen`} width="420" height="315" loading="lazy" style="width: 100%; height: auto; border-radius: 0.625rem; display: block;" />
+        </figure>
+        <figure style="margin: 0;">
+          <img src="/assets/process/finished-kitchen-dark.webp" alt={`Kitchen fitting in ${name} — large open plan`} width="420" height="315" loading="lazy" style="width: 100%; height: auto; border-radius: 0.625rem; display: block;" />
+        </figure>
+        <figure style="margin: 0;">
+          <img src="/assets/process/base-units-levelling.webp" alt={`Kitchen installation in progress in ${name}`} width="420" height="315" loading="lazy" style="width: 100%; height: auto; border-radius: 0.625rem; display: block;" />
+        </figure>
+      </div>
       <div class="max-w-3xl fade-up">
         <h2 class="text-3xl font-bold mb-4" style="color: var(--navy);">
           Kitchen Installation Prices in {name}
@@ -284,16 +296,26 @@ const serviceSchema = {
   <!-- What affects cost -->
   <section class="section" style="background: var(--bg-light);">
     <div class="container">
-      <div class="max-w-3xl fade-up">
-        <h2 class="text-3xl font-bold mb-4" style="color: var(--navy);">
-          What Affects Kitchen Installation Cost in {name}?
-        </h2>
-        <p class="leading-relaxed mb-4" style="color: var(--text-soft);">
-          {description} The most significant cost factor is kitchen size — the number of units directly determines how many days installation takes, and labour is our main variable. A small kitchen (8–12 units) is a 3–4 day project; a large kitchen of 21 or more units will take 6–10 days. The retailer you choose also has a modest effect: some ranges, such as IKEA and premium handmade kitchens, require more time to assemble and fit than standard flat-pack cabinets.
-        </p>
-        <p class="leading-relaxed" style="color: var(--text-soft);">
-          Complexity adds cost too. Integrated appliances, unusual worktop shapes, island units, and extensive cornice or lighting pelmet runs all extend the programme. Older properties in {county} sometimes have out-of-square walls or non-standard ceiling heights that require extra preparation time. We flag every potential complexity during our pre-installation survey, so your quote is fixed and comprehensive — not an estimate that creeps upwards once work begins.
-        </p>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; align-items: start;" class="fade-up">
+        <div>
+          <h2 class="text-3xl font-bold mb-4" style="color: var(--navy);">
+            What Affects Kitchen Installation Cost in {name}?
+          </h2>
+          <p class="leading-relaxed mb-4" style="color: var(--text-soft);">
+            {description} The most significant cost factor is kitchen size — the number of units directly determines how many days installation takes. A small kitchen (8–12 units) is a 3–4 day project; a large kitchen of 21+ units takes 6–10 days.
+          </p>
+          <p class="leading-relaxed" style="color: var(--text-soft);">
+            Complexity adds cost — integrated appliances, island units, and extensive cornice runs all extend the programme. Older properties in {county} sometimes have out-of-square walls requiring extra preparation. We flag every potential complexity during the survey, so your quote is fixed and comprehensive.
+          </p>
+        </div>
+        <div>
+          <figure style="margin: 0 0 1rem;">
+            <img src="/assets/process/worktop-measuring.webp" alt={`Worktop being measured during kitchen installation in ${name}`} width="680" height="510" loading="lazy" style="width: 100%; height: auto; border-radius: 0.75rem; display: block;" />
+          </figure>
+          <figure style="margin: 0;">
+            <img src="/assets/process/appliance-integration.webp" alt={`Integrated appliance installation in ${name} kitchen`} width="680" height="510" loading="lazy" style="width: 100%; height: auto; border-radius: 0.75rem; display: block;" />
+          </figure>
+        </div>
       </div>
     </div>
   </section>
@@ -301,10 +323,14 @@ const serviceSchema = {
   <!-- Survey & Quote -->
   <section class="section">
     <div class="container">
-      <div class="max-w-3xl fade-up">
-        <h2 class="text-3xl font-bold mb-4" style="color: var(--navy);">
-          Survey &amp; Quote for {name}
-        </h2>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; align-items: start;" class="fade-up">
+        <figure style="margin: 0;">
+          <img src="/assets/process/survey-planning.webp" alt={`Kitchen installation survey being carried out in ${name} — reviewing plans`} width="680" height="510" loading="lazy" style="width: 100%; height: auto; border-radius: 0.75rem; display: block;" />
+        </figure>
+        <div>
+          <h2 class="text-3xl font-bold mb-4" style="color: var(--navy);">
+            Survey &amp; Quote for {name}
+          </h2>
         <p class="leading-relaxed mb-4" style="color: var(--text-soft);">
           Every installation we carry out begins with a pre-installation survey priced at £{costs.surveyFee}. That fee is credited back in full when you proceed with the installation — so if you go ahead, the survey costs you nothing extra. During the visit, one of our experienced fitters reviews your kitchen plan, takes precise measurements, and checks the condition of your walls, floor, and existing services. You receive a fully itemised, fixed-price installation quote within 48 hours.
         </p>
@@ -316,6 +342,14 @@ const serviceSchema = {
           <a href="tel:07399651836" class="font-semibold" style="color: var(--teal);">07399 651836</a>{" "}
           or complete the enquiry form on our survey page. Survey appointments are typically available within two weeks, with installation slots following four to eight weeks after that.
         </p>
+        </div>
+      </div>
+      <!-- Gallery strip -->
+      <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin-top: 2.5rem;">
+        <figure style="margin: 0;"><img src="/assets/process/survey-measuring.webp" alt={`Survey in ${name}`} width="300" height="225" loading="lazy" style="width: 100%; height: auto; border-radius: 0.625rem; display: block;" /></figure>
+        <figure style="margin: 0;"><img src="/assets/process/wall-units-fitting.webp" alt={`Installation in ${name}`} width="300" height="225" loading="lazy" style="width: 100%; height: auto; border-radius: 0.625rem; display: block;" /></figure>
+        <figure style="margin: 0;"><img src="/assets/process/handles-fitting.webp" alt={`Handles fitted in ${name}`} width="300" height="225" loading="lazy" style="width: 100%; height: auto; border-radius: 0.625rem; display: block;" /></figure>
+        <figure style="margin: 0;"><img src="/assets/process/snagging-inspection.webp" alt={`Snagging in ${name}`} width="300" height="225" loading="lazy" style="width: 100%; height: auto; border-radius: 0.625rem; display: block;" /></figure>
       </div>
     </div>
   </section>

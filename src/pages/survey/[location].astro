@@ -242,12 +242,18 @@ const serviceSchema = {
 
           <!-- Why a Survey Matters in {name} -->
           <h2 class="section-h2">Why a Survey Matters in {name}</h2>
+          <figure style="margin: 1.5rem 0; padding: 0;">
+            <img src="/assets/process/survey-measuring.webp" alt={`Kitchen installation survey being carried out in ${name} by Install My Kitchen`} width="900" height="506" loading="lazy" style="width: 100%; height: auto; border-radius: 0.75rem; display: block;" />
+          </figure>
           <p class="body-copy">
             {description} The range of {housingStyle} found across {name} means that no two kitchen projects are identical. Ceiling heights vary between periods of construction, older properties may have walls that are not perfectly square, and plumbing or gas connections are not always in the positions a designer's plan assumes. A pre-installation survey is our way of catching these realities before work begins.
           </p>
           <p class="body-copy">
-            Carrying out a survey means the written quote we issue is based on what is actually in your kitchen, not what the retailer's plan suggests. This protects you from unexpected cost increases mid-project and gives our fitting team the information they need to plan the installation properly. Across {name}, we regularly find small discrepancies between plans and rooms that, left unaddressed, would cause problems on installation day — the survey ensures none of those issues reach you.
+            Carrying out a survey means the written quote we issue is based on what is actually in your kitchen, not what the retailer's plan suggests. This protects you from unexpected cost increases mid-project and gives our fitting team the information they need to plan the installation properly.
           </p>
+          <figure style="margin: 1.5rem 0; padding: 0;">
+            <img src="/assets/process/survey-planning.webp" alt={`Reviewing kitchen plans and measurements during survey in ${name}`} width="900" height="506" loading="lazy" style="width: 100%; height: auto; border-radius: 0.75rem; display: block;" />
+          </figure>
 
           <!-- What the Survey Covers -->
           <h2 class="section-h2">What the Survey Covers</h2>
@@ -268,6 +274,10 @@ const serviceSchema = {
           </ul>
 
           <!-- The Survey Fee — £195 Credited Back -->
+          <figure style="margin: 0 0 1.5rem; padding: 0;">
+            <img src="/assets/process/base-units-levelling.webp" alt={`Kitchen installation underway in ${name} following pre-installation survey`} width="900" height="506" loading="lazy" style="width: 100%; height: auto; border-radius: 0.75rem; display: block;" />
+            <figcaption style="font-size: 0.75rem; color: var(--text-soft); margin-top: 0.375rem;">A survey-first approach means installation day runs without surprises</figcaption>
+          </figure>
           <h2 class="section-h2">The Survey Fee — £195 Credited Back</h2>
           <div class="credit-box">
             <div class="credit-amount" aria-label="Survey fee: £195">
@@ -314,6 +324,30 @@ const serviceSchema = {
               heading={`Related Pages for ${name}`}
             />
           </div>
+
+          <!-- Process gallery before FAQ -->
+          <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-bottom: 2rem;">
+            <figure style="margin: 0;">
+              <img src="/assets/process/wall-units-fitting.webp" alt={`Kitchen wall units being fitted in ${name}`} width="420" height="315" loading="lazy" style="width: 100%; height: auto; border-radius: 0.625rem; display: block;" />
+            </figure>
+            <figure style="margin: 0;">
+              <img src="/assets/process/doors-hanging.webp" alt={`Kitchen doors being hung and aligned in ${name}`} width="420" height="315" loading="lazy" style="width: 100%; height: auto; border-radius: 0.625rem; display: block;" />
+            </figure>
+            <figure style="margin: 0;">
+              <img src="/assets/process/finished-kitchen-dark.webp" alt={`Completed kitchen installation in ${name}`} width="420" height="315" loading="lazy" style="width: 100%; height: auto; border-radius: 0.625rem; display: block;" />
+            </figure>
+          </div>
+          <!-- Delivery image -->
+          <figure style="margin: 0 0 1.5rem;">
+            <img src="/assets/process/delivery-checking.webp" alt={`Kitchen delivery being checked before installation in ${name}`} width="900" height="506" loading="lazy" style="width: 100%; height: auto; border-radius: 0.75rem; display: block;" />
+            <figcaption style="font-size: 0.75rem; color: var(--text-soft); margin-top: 0.375rem;">We check your delivery against your kitchen plan before installation begins</figcaption>
+          </figure>
+
+          <!-- Snagging image before FAQ -->
+          <figure style="margin: 0 0 1.5rem; padding: 0;">
+            <img src="/assets/process/snagging-inspection.webp" alt={`Snagging and final quality check on kitchen installation in ${name}`} width="900" height="506" loading="lazy" style="width: 100%; height: auto; border-radius: 0.75rem; display: block;" />
+            <figcaption style="font-size: 0.75rem; color: var(--text-soft); margin-top: 0.375rem;">Every installation ends with a thorough snagging walkthrough</figcaption>
+          </figure>
 
           <!-- FAQ -->
           <h2 class="section-h2 faq-heading">Frequently Asked Questions</h2>

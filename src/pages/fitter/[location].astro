@@ -232,16 +232,21 @@ const serviceSchema = {
   <!-- Section 1: Why Choose an Independent Kitchen Fitter -->
   <section class="section">
     <div class="container">
-      <div class="max-w-3xl fade-up">
-        <h2 class="text-3xl font-bold mb-4" style="color: var(--navy);">
-          Why Choose an Independent Kitchen Fitter in {name}?
-        </h2>
-        <p class="text-lg leading-relaxed mb-4" style="color: var(--text-soft);">
-          {description}
-        </p>
-        <p class="leading-relaxed" style="color: var(--text-soft);">
-          Choosing an independent kitchen fitter in {name} means your fitter has no commercial tie to the retailer you purchased from. Install My Kitchen works exclusively for the homeowner — we are not employed by Wren, Howdens, or any other supplier, which means our priority is the quality of your installation rather than throughput targets. Our fitters take the time to get the details right, from perfectly level cabinets to correctly routed pipework, delivering a finish that an in-house retail fitting team often cannot match. Based in Coundon, Coventry, we are well placed to serve {name} and can typically offer a survey appointment within a fortnight.
-        </p>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; align-items: start;" class="fade-up">
+        <div>
+          <h2 class="text-3xl font-bold mb-4" style="color: var(--navy);">
+            Why Choose an Independent Kitchen Fitter in {name}?
+          </h2>
+          <p class="text-lg leading-relaxed mb-4" style="color: var(--text-soft);">
+            {description}
+          </p>
+          <p class="leading-relaxed" style="color: var(--text-soft);">
+            Choosing an independent kitchen fitter in {name} means your fitter has no commercial tie to the retailer. Install My Kitchen works exclusively for the homeowner — not employed by Wren, Howdens, or any other supplier. Our priority is the quality of your installation, not throughput targets.
+          </p>
+        </div>
+        <figure style="margin: 0;">
+          <img src="/assets/process/finished-kitchen-neutral.webp" alt={`Completed kitchen installation in ${name} by independent fitter`} width="680" height="510" loading="lazy" style="width: 100%; height: auto; border-radius: 0.75rem; display: block;" />
+        </figure>
       </div>
     </div>
   </section>
@@ -249,22 +254,37 @@ const serviceSchema = {
   <!-- Section 2: Kitchens We Fit -->
   <section class="section" style="background: var(--bg-light);">
     <div class="container">
-      <div class="max-w-3xl fade-up">
-        <h2 class="text-3xl font-bold mb-4" style="color: var(--navy);">
-          Kitchens We Fit in {name}
-        </h2>
-        <p class="leading-relaxed mb-4" style="color: var(--text-soft);">
-          We fit kitchens from every major UK retailer across {name}. Whether you have chosen a range from <strong>Wren Kitchens</strong>, <strong>Howdens Joinery</strong>, <strong>Magnet</strong>, <strong>IKEA</strong>, <strong>Wickes</strong>, <strong>B&amp;Q</strong>, or <strong>Benchmarx</strong>, our team can handle the full installation — units, worktops, appliances, plinths, and cornices. We also install kitchens from DIY Kitchens, Kutchenhaus, Symphony, Masterclass, and a wide range of premium British and German brands.
-        </p>
-        <p class="leading-relaxed mb-4" style="color: var(--text-soft);">
-          Because we hold trade accounts with Howdens and Benchmarx, we can source and collect directly from the local depot where required — useful for fill-in items and remedial parts without you having to chase the supplier yourself. For retail-supplied kitchens from Wren, Magnet, IKEA, or similar, we co-ordinate the delivery schedule with you to make sure everything is on site and accounted for before we begin.
-        </p>
-        <p class="leading-relaxed" style="color: var(--text-soft);">
-          If you have already purchased your kitchen and are now looking for a reliable fitter in {name}, call us on <a href="tel:07399651836" class="font-semibold" style="color: var(--teal);">07399 651836</a> to discuss your project. If you are still in the planning stage, we are happy to advise on layout, worktop selection, and appliance choices before you commit to a retailer.
-        </p>
-      </div>
-      <div class="mt-10 fade-up">
-        <SupplierLogos />
+      <div class="fade-up">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; align-items: start; margin-bottom: 2rem;">
+          <figure style="margin: 0;">
+            <img src="/assets/process/wall-units-fitting.webp" alt={`Kitchen wall units being installed in ${name}`} width="680" height="510" loading="lazy" style="width: 100%; height: auto; border-radius: 0.75rem; display: block;" />
+          </figure>
+          <div>
+            <h2 class="text-3xl font-bold mb-4" style="color: var(--navy);">
+              Kitchens We Fit in {name}
+            </h2>
+            <p class="leading-relaxed mb-4" style="color: var(--text-soft);">
+              We fit kitchens from every major UK retailer across {name} — Wren, Howdens, Magnet, IKEA, Wickes, B&amp;Q, Benchmarx, DIY Kitchens, Kutchenhaus, Symphony, Masterclass and premium British and German brands.
+            </p>
+            <p class="leading-relaxed" style="color: var(--text-soft);">
+              If you have already purchased your kitchen and are looking for a reliable fitter in {name}, call us on <a href="tel:07399651836" class="font-semibold" style="color: var(--teal);">07399 651836</a> to discuss your project.
+            </p>
+          </div>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem;">
+          <figure style="margin: 0;">
+            <img src="/assets/process/base-units-levelling.webp" alt={`Base units levelled during kitchen fitting in ${name}`} width="420" height="315" loading="lazy" style="width: 100%; height: auto; border-radius: 0.625rem; display: block;" />
+          </figure>
+          <figure style="margin: 0;">
+            <img src="/assets/process/worktop-fitting.webp" alt={`Worktop being fitted in ${name} kitchen`} width="420" height="315" loading="lazy" style="width: 100%; height: auto; border-radius: 0.625rem; display: block;" />
+          </figure>
+          <figure style="margin: 0;">
+            <img src="/assets/process/doors-hanging.webp" alt={`Kitchen doors being hung in ${name}`} width="420" height="315" loading="lazy" style="width: 100%; height: auto; border-radius: 0.625rem; display: block;" />
+          </figure>
+        </div>
+        <div class="mt-8">
+          <SupplierLogos />
+        </div>
       </div>
     </div>
   </section>
@@ -272,19 +292,29 @@ const serviceSchema = {
   <!-- Section 3: The Survey Process -->
   <section class="section">
     <div class="container">
-      <div class="max-w-3xl fade-up">
-        <h2 class="text-3xl font-bold mb-4" style="color: var(--navy);">
-          The Survey Process
-        </h2>
-        <p class="leading-relaxed mb-4" style="color: var(--text-soft);">
-          Every kitchen fitting project we undertake in {name} starts with a pre-installation survey. The survey fee is <strong>£195</strong> and is credited back in full against your installation balance when you proceed with the booking — so if you go ahead, the survey costs you nothing.
-        </p>
-        <p class="leading-relaxed mb-4" style="color: var(--text-soft);">
-          During the survey, one of our experienced fitters visits your home in {name} to take precise measurements of the room, review your kitchen plan or retailer drawings, and assess the existing conditions — including wall straightness, floor levels, ceiling heights, existing pipework routes, and appliance positions. We identify any potential complications before they become expensive problems on installation day, and if the project requires input from a plumber, electrician, or plasterer, we flag this at the survey stage so you can arrange and budget for those trades in advance.
-        </p>
-        <p class="leading-relaxed" style="color: var(--text-soft);">
-          Following the survey you receive a fully itemised, fixed-price installation quote. No estimates, no day-rate surprises — just a clear figure covering everything we have agreed to do. To book your survey in {name}, call <a href="tel:07399651836" class="font-semibold" style="color: var(--teal);">07399 651836</a>, email <a href="mailto:info@installmykitchen.co.uk" class="font-semibold" style="color: var(--teal);">info@installmykitchen.co.uk</a>, or complete the enquiry form below.
-        </p>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; align-items: start;" class="fade-up">
+        <div>
+          <h2 class="text-3xl font-bold mb-4" style="color: var(--navy);">
+            The Survey Process
+          </h2>
+          <p class="leading-relaxed mb-4" style="color: var(--text-soft);">
+            Every kitchen fitting project in {name} starts with a pre-installation survey. The survey fee is <strong>£195</strong> — credited back in full when you proceed, so it costs you nothing if you go ahead.
+          </p>
+          <p class="leading-relaxed mb-4" style="color: var(--text-soft);">
+            During the survey, our experienced fitter visits your home to take precise measurements, review your kitchen plan, and assess existing conditions — wall straightness, floor levels, pipework routes, appliance positions. Any potential complications are identified before they become expensive problems.
+          </p>
+          <p class="leading-relaxed" style="color: var(--text-soft);">
+            You receive a fully itemised, fixed-price installation quote. No estimates, no day-rate surprises.
+          </p>
+        </div>
+        <div>
+          <figure style="margin: 0 0 1.5rem;">
+            <img src="/assets/process/survey-measuring.webp" alt={`Kitchen installation survey being carried out in ${name}`} width="680" height="510" loading="lazy" style="width: 100%; height: auto; border-radius: 0.75rem; display: block;" />
+          </figure>
+          <figure style="margin: 0;">
+            <img src="/assets/process/snagging-inspection.webp" alt={`Snagging and quality check during kitchen installation in ${name}`} width="680" height="510" loading="lazy" style="width: 100%; height: auto; border-radius: 0.75rem; display: block;" />
+          </figure>
+        </div>
       </div>
     </div>
   </section>

@@ -112,6 +112,29 @@ const takeawayPoolB = [
 const poolIndex = (jobIndex * 3 + locationIndex * 2) % 2;
 const takeawayPoints = poolIndex === 0 ? takeawayPoolA : takeawayPoolB;
 
+// Map job slug to repair image directory
+const repairImgDirMap: Record<string, string> = {
+  "kitchen-door-replacement":          "repairs/door-replacement",
+  "kitchen-cupboard-door-replacement": "repairs/door-replacement",
+  "kitchen-hinge-replacement":         "repairs/hinge-upgrade",
+  "soft-close-hinge-upgrade":          "repairs/hinge-upgrade",
+  "kitchen-drawer-repair":             "repairs/drawer-repair",
+  "kitchen-plinth-replacement":        "repairs/plinth-pelmet",
+  "cornice-and-pelmet-fitting":        "repairs/plinth-pelmet",
+  "kitchen-end-panel-replacement":     "repairs/end-panel",
+  "kitchen-worktop-alteration":        "repairs/worktop-work",
+  "kitchen-worktop-joint-repair":      "repairs/worktop-work",
+  "kitchen-unit-adjustment":           "repairs/adjustment-snag",
+  "kitchen-snagging":                  "repairs/adjustment-snag",
+  "kitchen-finishing-after-diy-install":"repairs/adjustment-snag",
+  "integrated-appliance-door-fitting": "repairs/appliance-door",
+  "washing-machine-door-fitting":      "repairs/appliance-door",
+  "dishwasher-door-fitting":           "repairs/appliance-door",
+  "fridge-freezer-door-fitting":       "repairs/appliance-door",
+};
+const repairImgDir = repairImgDirMap[job.slug] ?? "repairs/door-replacement";
+const repairImgBase = `/assets/${repairImgDir}`;
+
 // Internal links — 8 links as per spec
 // Get 2 other jobs in the same location for cross-linking
 const otherJobs = remedialData
@@ -262,54 +285,73 @@ const breadcrumbSchema = {
   <!-- Section 1: What this job involves -->
   <section class="section" style="background: var(--bg-light);">
     <div class="container">
-      <div class="max-w-3xl fade-up">
-        <h2 class="text-3xl font-bold mb-4" style="color: var(--navy);">
-          What {job.name} Involves
-        </h2>
-        <p class="text-lg leading-relaxed mb-6" style="color: var(--text-soft);">
-          {job.description}
-        </p>
-
-        {job.commonCauses && job.commonCauses.length > 0 && (
-          <>
-            <h3 class="text-xl font-bold mb-3" style="color: var(--navy);">
-              Common Reasons Customers Book This Service
-            </h3>
-            <ul class="space-y-2 mb-4">
-              {job.commonCauses.map((cause) => (
-                <li class="flex items-start gap-3">
-                  <span
-                    class="flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center mt-0.5"
-                    style="background: var(--teal); color: #fff;"
-                    aria-hidden="true"
-                  >
-                    <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">
-                      <polyline points="20 6 9 17 4 12"/>
-                    </svg>
-                  </span>
-                  <span class="text-sm leading-relaxed" style="color: var(--text-soft);">{cause}</span>
-                </li>
-              ))}
-            </ul>
-          </>
-        )}
-
-        {job.typicalTime && (
-          <p class="text-sm leading-relaxed" style="color: var(--text-soft);">
-            <strong style="color: var(--charcoal);">Typical time on site:</strong> {job.typicalTime}.
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; align-items: start;" class="fade-up">
+        <div>
+          <h2 class="text-3xl font-bold mb-4" style="color: var(--navy);">
+            What {job.name} Involves
+          </h2>
+          <p class="text-lg leading-relaxed mb-6" style="color: var(--text-soft);">
+            {job.description}
           </p>
-        )}
+
+          {job.commonCauses && job.commonCauses.length > 0 && (
+            <>
+              <h3 class="text-xl font-bold mb-3" style="color: var(--navy);">
+                Common Reasons Customers Book This Service
+              </h3>
+              <ul class="space-y-2 mb-4">
+                {job.commonCauses.map((cause) => (
+                  <li class="flex items-start gap-3">
+                    <span
+                      class="flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center mt-0.5"
+                      style="background: var(--teal); color: #fff;"
+                      aria-hidden="true"
+                    >
+                      <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="20 6 9 17 4 12"/>
+                      </svg>
+                    </span>
+                    <span class="text-sm leading-relaxed" style="color: var(--text-soft);">{cause}</span>
+                  </li>
+                ))}
+              </ul>
+            </>
+          )}
+
+          {job.typicalTime && (
+            <p class="text-sm leading-relaxed" style="color: var(--text-soft);">
+              <strong style="color: var(--charcoal);">Typical time on site:</strong> {job.typicalTime}.
+            </p>
+          )}
+        </div>
+        <!-- Before + during images -->
+        <div>
+          <figure style="margin: 0 0 1rem;">
+            <img src={`${repairImgBase}/door-before.webp`} onerror={`this.src='/assets/process/finished-kitchen-neutral.webp'`} alt={`${job.name} — the problem before repair in ${location.name}`} width="560" height="420" loading="lazy" style="width: 100%; height: auto; border-radius: 0.75rem; display: block;" />
+            <figcaption style="font-size: 0.75rem; color: var(--text-soft); margin-top: 0.375rem; text-align: center;">Before: the issue identified</figcaption>
+          </figure>
+          <figure style="margin: 0;">
+            <img src={`${repairImgBase}/door-during.webp`} onerror={`this.src='/assets/process/handles-fitting.webp'`} alt={`${job.name} in progress in ${location.name}`} width="560" height="420" loading="lazy" style="width: 100%; height: auto; border-radius: 0.75rem; display: block;" />
+            <figcaption style="font-size: 0.75rem; color: var(--text-soft); margin-top: 0.375rem; text-align: center;">During: repair in progress</figcaption>
+          </figure>
+        </div>
       </div>
+      <!-- Full-width after image -->
+      <figure style="margin: 2rem 0 0; padding: 0;">
+        <img src={`${repairImgBase}/door-after.webp`} onerror={`this.src='/assets/process/finished-kitchen-dark.webp'`} alt={`${job.name} completed in ${location.name} — after repair`} width="1200" height="506" loading="lazy" style="width: 100%; height: auto; border-radius: 0.75rem; display: block;" />
+        <figcaption style="font-size: 0.75rem; color: var(--text-soft); margin-top: 0.5rem; text-align: center;">After: professional finish on completion</figcaption>
+      </figure>
     </div>
   </section>
 
   <!-- Section 2: Pricing -->
   <section class="section">
     <div class="container">
-      <div class="max-w-3xl fade-up">
-        <h2 class="text-3xl font-bold mb-4" style="color: var(--navy);">
-          Pricing for {job.name} in {location.name}
-        </h2>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; align-items: start;" class="fade-up">
+        <div>
+          <h2 class="text-3xl font-bold mb-4" style="color: var(--navy);">
+            Pricing for {job.name} in {location.name}
+          </h2>
         <p class="text-lg leading-relaxed mb-4" style="color: var(--text-soft);">
           Our {job.name.toLowerCase()} service in {location.name} starts from <strong style="color: var(--charcoal);">£{fromPrice}</strong>. The final price depends on the scope of work — number of units affected, whether replacement parts are required, and access within the property.
         </p>
@@ -333,6 +375,11 @@ const breadcrumbSchema = {
         <p class="text-sm leading-relaxed" style="color: var(--text-soft);">
           Parts required for the repair are charged at cost plus a small handling margin. We will itemise any parts separately so you can see exactly what you are paying for.
         </p>
+        </div>
+        <!-- Pricing section image -->
+        <figure style="margin: 0;">
+          <img src="/assets/process/survey-planning.webp" alt={`${job.name} assessment and quote in ${location.name}`} width="680" height="510" loading="lazy" style="width: 100%; height: auto; border-radius: 0.75rem; display: block;" />
+        </figure>
       </div>
     </div>
   </section>
@@ -353,25 +400,30 @@ const breadcrumbSchema = {
   </section>
 
   <!-- Section 3: Local area context -->
-  <section class="section" style="background: var(--bg-light);">
+  <section class="section">
     <div class="container">
-      <div class="max-w-3xl fade-up">
-        <h2 class="text-3xl font-bold mb-4" style="color: var(--navy);">
-          Kitchen Repairs in {location.name}
-        </h2>
-        <p class="leading-relaxed mb-4" style="color: var(--text-soft);">
-          {location.housingStock}
-        </p>
-        {location.localNote && (
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; align-items: start;" class="fade-up">
+        <div>
+          <h2 class="text-3xl font-bold mb-4" style="color: var(--navy);">
+            Kitchen Repairs in {location.name}
+          </h2>
           <p class="leading-relaxed mb-4" style="color: var(--text-soft);">
-            {location.localNote}
+            {location.housingStock}
           </p>
-        )}
-        {(location as any).kitchenNotes && (
-          <p class="leading-relaxed" style="color: var(--text-soft);">
-            {(location as any).kitchenNotes}
-          </p>
-        )}
+          {location.localNote && (
+            <p class="leading-relaxed mb-4" style="color: var(--text-soft);">
+              {location.localNote}
+            </p>
+          )}
+          {(location as any).kitchenNotes && (
+            <p class="leading-relaxed" style="color: var(--text-soft);">
+              {(location as any).kitchenNotes}
+            </p>
+          )}
+        </div>
+        <figure style="margin: 0;">
+          <img src="/assets/process/finished-kitchen-neutral.webp" alt={`Kitchen repair completed in ${location.name} by Install My Kitchen`} width="680" height="510" loading="lazy" style="width: 100%; height: auto; border-radius: 0.75rem; display: block;" />
+        </figure>
       </div>
     </div>
   </section>
@@ -393,9 +445,21 @@ const breadcrumbSchema = {
     </div>
   </section>
 
-  <!-- FAQ -->
+  <!-- FAQ with process gallery -->
   <section class="section" style="background: var(--bg-light);">
     <div class="container">
+      <!-- 3-image process strip -->
+      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-bottom: 2.5rem;">
+        <figure style="margin: 0;">
+          <img src="/assets/process/plinth-fitting.webp" alt={`Kitchen plinth fitting during repair in ${location.name}`} width="420" height="315" loading="lazy" style="width: 100%; height: auto; border-radius: 0.625rem; display: block;" />
+        </figure>
+        <figure style="margin: 0;">
+          <img src="/assets/process/cornice-fitting.webp" alt={`Cornice and trim detail during kitchen repair in ${location.name}`} width="420" height="315" loading="lazy" style="width: 100%; height: auto; border-radius: 0.625rem; display: block;" />
+        </figure>
+        <figure style="margin: 0;">
+          <img src="/assets/process/appliance-integration.webp" alt={`Integrated appliance fitted during kitchen repair in ${location.name}`} width="420" height="315" loading="lazy" style="width: 100%; height: auto; border-radius: 0.625rem; display: block;" />
+        </figure>
+      </div>
       <div class="max-w-3xl fade-up">
         <h2 class="text-3xl font-bold mb-8" style="color: var(--navy);">
           Frequently Asked Questions

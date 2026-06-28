@@ -38,6 +38,20 @@ const metaDescription = `Independent ${displayName} kitchen installation across 
 // Retailer-specific FAQ — pull from retailers section, first 4
 const faqItems = faqsData.retailers.slice(0, 4);
 
+// Brand image set
+const brandImgMap: Record<string, { overview: string; process: string; detail: string; finished: string }> = {
+  wren:    { overview: "/assets/brand/wren/wren-kitchen-overview.webp",    process: "/assets/brand/wren/wren-installation-progress.webp",    detail: "/assets/brand/wren/wren-handleless-doors.webp",    finished: "/assets/brand/wren/wren-finished-result.webp"    },
+  howdens: { overview: "/assets/brand/howdens/howdens-kitchen-overview.webp", process: "/assets/brand/howdens/howdens-rigid-units.webp",       detail: "/assets/brand/howdens/howdens-shaker-detail.webp",  finished: "/assets/brand/howdens/howdens-finished-result.webp" },
+  ikea:    { overview: "/assets/brand/ikea/ikea-kitchen-overview.webp",    process: "/assets/brand/ikea/ikea-flatpack-assembly.webp",       detail: "/assets/brand/ikea/ikea-door-detail.webp",         finished: "/assets/brand/ikea/ikea-finished-result.webp"    },
+  magnet:  { overview: "/assets/brand/magnet/magnet-kitchen-overview.webp",process: "/assets/brand/magnet/magnet-installation.webp",        detail: "/assets/brand/magnet/magnet-door-detail.webp",      finished: "/assets/brand/magnet/magnet-finished-result.webp" },
+};
+const brandImgs = brandImgMap[slug] ?? {
+  overview: "/assets/process/finished-kitchen-neutral.webp",
+  process:  "/assets/process/base-units-levelling.webp",
+  detail:   "/assets/process/doors-hanging.webp",
+  finished: "/assets/process/finished-kitchen-dark.webp",
+};
+
 // Related retailer links — up to 4 other retailers
 const otherRetailers = retailersData
   .filter((r) => r.slug !== slug)
@@ -142,16 +156,21 @@ const serviceSchema = {
   <!-- About this retailer -->
   <section class="section">
     <div class="container">
-      <div class="max-w-3xl fade-up">
-        <h2 class="text-3xl font-bold mb-4" style="color: var(--navy);">
-          About {displayName} Kitchens
-        </h2>
-        <p class="text-lg leading-relaxed mb-4" style="color: var(--text-soft);">
-          {description}
-        </p>
-        <p class="leading-relaxed" style="color: var(--text-soft);">
-          Install My Kitchen is entirely independent of {displayName}. We do not sell kitchens; we install them. This means you benefit from impartial advice and a fitter whose sole focus is on achieving the best possible result — not on upselling you a more expensive product range.
-        </p>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; align-items: start;" class="fade-up">
+        <div>
+          <h2 class="text-3xl font-bold mb-4" style="color: var(--navy);">
+            About {displayName} Kitchens
+          </h2>
+          <p class="text-lg leading-relaxed mb-4" style="color: var(--text-soft);">
+            {description}
+          </p>
+          <p class="leading-relaxed" style="color: var(--text-soft);">
+            Install My Kitchen is entirely independent of {displayName}. We install kitchens — not sell them. You benefit from impartial advice and a fitter whose sole focus is the quality of your result.
+          </p>
+        </div>
+        <figure style="margin: 0;">
+          <img src={brandImgs.overview} alt={`${displayName} kitchen installed by Install My Kitchen`} width="680" height="510" loading="lazy" style="width: 100%; height: auto; border-radius: 0.75rem; display: block;" />
+        </figure>
       </div>
     </div>
   </section>
@@ -159,19 +178,28 @@ const serviceSchema = {
   <!-- Installation logistics -->
   <section class="section" style="background: var(--bg-light);">
     <div class="container">
-      <div class="max-w-3xl fade-up">
-        <h2 class="text-3xl font-bold mb-4" style="color: var(--navy);">
-          What to Expect When We Fit Your {displayName} Kitchen
-        </h2>
-        <p class="leading-relaxed mb-4" style="color: var(--text-soft);">
-          {installNote}
-        </p>
-        <p class="leading-relaxed mb-4" style="color: var(--text-soft);">
-          Before installation begins, we carry out a detailed pre-installation survey at your home. Our surveyor takes precise measurements of the kitchen space, reviews your {displayName} plan against the actual room dimensions, and identifies any potential issues — such as out-of-plumb walls, awkward pipework routes, or ceiling height variations — before they become problems on installation day.
-        </p>
-        <p class="leading-relaxed" style="color: var(--text-soft);">
-          On installation day, we begin with a full strip-out of the existing kitchen, included at no extra charge, before carrying out a dry fit of all new carcasses to confirm the layout before anything is permanently fixed. Every door, drawer, hinge, and fitting is adjusted until it is perfectly aligned, and we carry out a full snagging walk-round with you before we consider the job complete.
-        </p>
+      <div class="fade-up">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; align-items: start; margin-bottom: 2rem;">
+          <figure style="margin: 0;">
+            <img src={brandImgs.process} alt={`${displayName} kitchen installation in progress`} width="680" height="510" loading="lazy" style="width: 100%; height: auto; border-radius: 0.75rem; display: block;" />
+          </figure>
+          <div>
+            <h2 class="text-3xl font-bold mb-4" style="color: var(--navy);">
+              What to Expect When We Fit Your {displayName} Kitchen
+            </h2>
+            <p class="leading-relaxed mb-4" style="color: var(--text-soft);">
+              {installNote}
+            </p>
+            <p class="leading-relaxed" style="color: var(--text-soft);">
+              Before installation begins, we carry out a detailed pre-installation survey — taking precise measurements, reviewing your {displayName} plan against the actual room, and identifying any issues before they become problems on the day.
+            </p>
+          </div>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem;">
+          <figure style="margin: 0;"><img src="/assets/process/delivery-checking.webp" alt={`${displayName} delivery being checked`} width="420" height="315" loading="lazy" style="width: 100%; height: auto; border-radius: 0.625rem; display: block;" /></figure>
+          <figure style="margin: 0;"><img src={brandImgs.detail} alt={`${displayName} kitchen detail shot`} width="420" height="315" loading="lazy" style="width: 100%; height: auto; border-radius: 0.625rem; display: block;" /></figure>
+          <figure style="margin: 0;"><img src={brandImgs.finished} alt={`Completed ${displayName} kitchen`} width="420" height="315" loading="lazy" style="width: 100%; height: auto; border-radius: 0.625rem; display: block;" /></figure>
+        </div>
       </div>
     </div>
   </section>
@@ -226,6 +254,17 @@ const serviceSchema = {
 
   <!-- Supplier Logos -->
   <SupplierLogos />
+
+  <!-- Process gallery -->
+  <section class="section" style="background: var(--bg-light);">
+    <div class="container">
+      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem;">
+        <figure style="margin: 0;"><img src="/assets/process/worktop-fitting.webp" alt={`Worktop fitted during ${displayName} kitchen installation`} width="420" height="315" loading="lazy" style="width: 100%; height: auto; border-radius: 0.625rem; display: block;" /><figcaption style="font-size: 0.75rem; color: var(--text-soft); margin-top: 0.375rem; text-align: center;">Worktop Fitting</figcaption></figure>
+        <figure style="margin: 0;"><img src="/assets/process/handles-fitting.webp" alt={`Handles fitted during ${displayName} kitchen installation`} width="420" height="315" loading="lazy" style="width: 100%; height: auto; border-radius: 0.625rem; display: block;" /><figcaption style="font-size: 0.75rem; color: var(--text-soft); margin-top: 0.375rem; text-align: center;">Handles &amp; Ironmongery</figcaption></figure>
+        <figure style="margin: 0;"><img src="/assets/process/snagging-inspection.webp" alt={`Final snagging inspection on ${displayName} kitchen`} width="420" height="315" loading="lazy" style="width: 100%; height: auto; border-radius: 0.625rem; display: block;" /><figcaption style="font-size: 0.75rem; color: var(--text-soft); margin-top: 0.375rem; text-align: center;">Snagging &amp; Sign-Off</figcaption></figure>
+      </div>
+    </div>
+  </section>
 
   <!-- Trust Strip -->
   <TrustStrip />
