@@ -11,6 +11,7 @@ import CTA from "../../components/CTA.astro";
 
 import stylesData from "../../data/styles.json";
 import faqsData from "../../data/faqs.json";
+import locationsData from "../../data/locations.json";
 
 export function getStaticPaths() {
   return stylesData.map((style) => ({
@@ -177,6 +178,24 @@ const areasForStyle = popularAreas[slug] ?? ["Coventry", "Kenilworth", "Leamingt
           ))}
         </ul>
       </div>
+    </div>
+  </section>
+
+  <!-- All location variants for this style -->
+  <section class="section" style="background: #fff;">
+    <div class="container">
+      <h2 class="text-2xl font-bold mb-2" style="color: var(--navy);">{name} Kitchen Installation by Area</h2>
+      <p class="mb-6" style="color: var(--text-soft); font-size: 0.9375rem;">We fit {name.toLowerCase()} kitchens across all our service areas. Select your location for a local guide.</p>
+      <ul style="display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 0.625rem; list-style: none; padding: 0; margin: 0;">
+        {locationsData.map((loc) => (
+          <li>
+            <a href={`/styles/${slug}-${loc.slug}/`}
+               style="display: block; padding: 0.625rem 0.875rem; background: var(--bg-light); border: 1px solid #E5E7EB; border-radius: 0.5rem; font-size: 0.8125rem; font-weight: 600; color: var(--navy); text-decoration: none;">
+              {name} Kitchens — {loc.name}
+            </a>
+          </li>
+        ))}
+      </ul>
     </div>
   </section>
 

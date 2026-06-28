@@ -14,6 +14,7 @@ import WhatHappensNext from "../../components/WhatHappensNext.astro";
 
 import retailersData from "../../data/retailers.json";
 import faqsData from "../../data/faqs.json";
+import locationsData from "../../data/locations.json";
 
 export function getStaticPaths() {
   return retailersData.map((retailer) => ({
@@ -248,6 +249,24 @@ const serviceSchema = {
         links={internalLinks}
         heading="Related Pages"
       />
+    </div>
+  </section>
+
+  <!-- All locations for this retailer -->
+  <section class="section" style="background: var(--bg-light);">
+    <div class="container">
+      <h2 class="text-2xl font-bold mb-2" style="color: var(--navy);">{displayName} Kitchen Installation by Area</h2>
+      <p class="mb-6" style="color: var(--text-soft); font-size: 0.9375rem;">We install {displayName} kitchens across Coventry, Warwickshire and Berkshire. Select your area for full local details.</p>
+      <ul style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 0.625rem; list-style: none; padding: 0; margin: 0;">
+        {locationsData.map((loc) => (
+          <li>
+            <a href={`/installer/${slug}-${loc.slug}/`}
+               style="display: block; padding: 0.625rem 0.875rem; background: #fff; border: 1px solid #E5E7EB; border-radius: 0.5rem; font-size: 0.8125rem; font-weight: 600; color: var(--navy); text-decoration: none;">
+              {displayName} — {loc.name}
+            </a>
+          </li>
+        ))}
+      </ul>
     </div>
   </section>
 
