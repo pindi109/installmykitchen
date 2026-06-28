@@ -25,10 +25,10 @@ const { name, slug, description, features } = style;
 const canonical = `https://installmykitchen.co.uk/styles/${slug}/`;
 
 // Title — ≤60 chars
-const title = `${name} Kitchen Installation — Coventry & Warwickshire | Install My Kitchen`;
+const title = `${name} Kitchen Installation — Coventry, Warwickshire & Berkshire | Install My Kitchen`;
 
 // Meta description — 140–160 chars, unique per style
-const metaDescription = `Expert ${name.toLowerCase()} kitchen installation across Coventry & Warwickshire. Independent fitting for all major retailers. Survey from £195, credited on booking.`;
+const metaDescription = `Expert ${name.toLowerCase()} kitchen installation across Coventry, Warwickshire & Berkshire. Independent fitting for all major retailers. Survey from £195, credited on booking.`;
 
 // Style-specific FAQ — pull from general, offset to vary per style
 const faqStartIndex = stylesData.findIndex((s) => s.slug === slug);
@@ -77,7 +77,7 @@ const areasForStyle = popularAreas[slug] ?? ["Coventry", "Kenilworth", "Leamingt
     <div class="container">
       <div class="max-w-3xl">
         <h1 class="text-4xl md:text-5xl font-extrabold mb-5 leading-tight" style="color: var(--navy);">
-          {name} Kitchen Installation in Coventry &amp; Warwickshire
+          {name} Kitchen Installation in Coventry, Warwickshire &amp; Berkshire
         </h1>
         <AnswerBlock
           answer={description}
@@ -97,7 +97,7 @@ const areasForStyle = popularAreas[slug] ?? ["Coventry", "Kenilworth", "Leamingt
           {description}
         </p>
         <p class="leading-relaxed mb-4" style="color: var(--text-soft);">
-          This style has become a firm favourite with homeowners across Coventry and Warwickshire, and our installation teams have extensive experience fitting it across a wide range of property types — from Victorian terraces in Earlsdon to modern extensions in Balsall Common. The way a kitchen is designed and fitted has a significant impact on how well it suits the home's character, and our surveyors are well placed to advise on the considerations specific to this style.
+          This style has become a firm favourite with homeowners across Coventry, Warwickshire and Berkshire, and our installation teams have extensive experience fitting it across a wide range of property types — from Victorian terraces in Earlsdon to modern extensions in Balsall Common. The way a kitchen is designed and fitted has a significant impact on how well it suits the home's character, and our surveyors are well placed to advise on the considerations specific to this style.
         </p>
         <p class="leading-relaxed" style="color: var(--text-soft);">
           All major UK retailers and manufacturers offer {name.toLowerCase()} kitchen options, which means you have the freedom to choose the brand and price point that works for your budget while still achieving the look you want. Our installation service covers every major supplier, so whichever route you take, we can handle the fitting.

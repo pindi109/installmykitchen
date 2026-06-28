@@ -27,31 +27,39 @@ const areas = [
   { name: "Coundon", slug: "coundon", desc: "Coundon and north-west Coventry." },
   { name: "Binley", slug: "binley", desc: "Binley and south-east Coventry." },
   { name: "Southam", slug: "southam", desc: "Southam and south Warwickshire." },
+  { name: "Reading", slug: "reading", desc: "Reading and surrounding Berkshire areas. RG1–RG6 postcodes." },
+  { name: "Bracknell", slug: "bracknell", desc: "Bracknell and east Berkshire. RG12, RG42 postcodes." },
+  { name: "Slough", slug: "slough", desc: "Slough and surrounding areas. SL1–SL3 postcodes." },
+  { name: "Maidenhead", slug: "maidenhead", desc: "Maidenhead and the Thames Valley. SL6 postcode." },
+  { name: "Windsor", slug: "windsor", desc: "Windsor and surrounding villages. SL4 postcode." },
+  { name: "Wokingham", slug: "wokingham", desc: "Wokingham and surrounding areas. RG40, RG41 postcodes." },
+  { name: "Newbury", slug: "newbury", desc: "Newbury and west Berkshire. RG14, RG20 postcodes." },
+  { name: "Ascot", slug: "ascot", desc: "Ascot and surrounding Berkshire villages. SL5 postcode." },
 ];
 
 const faqItems = [
   {
-    q: "How far from Coventry do you travel for kitchen installations?",
-    a: "We cover the whole of Coventry and the wider Warwickshire area, including Rugby, Nuneaton, Leamington Spa, Kenilworth, Warwick, Stratford-upon-Avon, Bedworth and many more towns and villages. If you're unsure whether we cover your area, get in touch and we'll confirm.",
+    q: "What areas do you cover?",
+    a: "We cover Coventry, Warwickshire and Berkshire. In the Midlands: Rugby, Nuneaton, Leamington Spa, Kenilworth, Warwick, Stratford-upon-Avon, Bedworth, Solihull and surrounding towns. In Berkshire: Reading, Bracknell, Slough, Maidenhead, Windsor, Wokingham, Newbury and Ascot.",
   },
   {
-    q: "Do you charge a travel fee for installations outside Coventry?",
-    a: "For most of our service area there is no additional travel charge. For locations at the edge of our coverage area, any travel costs will be clearly stated in your written quote before you commit.",
+    q: "Do you cover Berkshire as well as Coventry?",
+    a: "Yes — Install My Kitchen covers both the Coventry and Warwickshire area and all eight main Berkshire locations: Reading, Bracknell, Slough, Maidenhead, Windsor, Wokingham, Newbury and Ascot. The same survey-first, fixed-price service applies across both regions.",
   },
   {
     q: "Can you install a kitchen in a rural village outside of the listed areas?",
-    a: "Quite possibly, yes. If your location isn't listed, please contact us with your postcode and we'll let you know. We serve a wide area across Warwickshire and consider enquiries from the surrounding region.",
+    a: "Quite possibly, yes. If your location isn't listed, please contact us with your postcode and we'll let you know. We serve a wide area across Warwickshire, Berkshire and the surrounding region.",
   },
   {
-    q: "Are your prices the same regardless of location?",
-    a: "Our installation pricing is based on the scope and complexity of the job rather than the location within our service area. Your itemised quote will be the same price whether you're in central Coventry or a Warwickshire village.",
+    q: "Are your prices the same in Berkshire as in Coventry?",
+    a: "Installation pricing is based on the scope and complexity of the job. Berkshire pricing may carry a small travel supplement, but the day rate and process are identical. Your itemised quote will state all costs clearly before you commit.",
   },
 ];
 ---
 
 <Base
-  title="Kitchen Installation Areas | Coventry & Warwickshire"
-  description="Install My Kitchen covers Coventry and 24 areas across Warwickshire including Rugby, Nuneaton, Leamington Spa, Kenilworth, Warwick and more. View all areas."
+  title="Kitchen Installation Areas | Coventry, Warwickshire & Berkshire"
+  description="Install My Kitchen covers Coventry, Warwickshire and Berkshire. View all 27 service areas including Rugby, Leamington Spa, Reading, Bracknell, Windsor, Maidenhead and more."
   canonical="https://installmykitchen.co.uk/areas/"
 >
   <!-- Header -->
@@ -61,7 +69,7 @@ const faqItems = [
   <section class="page-header" aria-label="Page header">
     <div class="container">
       <Breadcrumbs items={[{ label: "Areas", href: "/areas/" }]} />
-      <h1 class="page-h1">Kitchen Installation Across Coventry &amp; Warwickshire</h1>
+      <h1 class="page-h1">Kitchen Installation Across Coventry, Warwickshire &amp; Berkshire</h1>
       <p class="page-sub">Based in Coventry, we fit kitchens across the region — from Rugby to Stratford, Nuneaton to Kenilworth.</p>
     </div>
   </section>

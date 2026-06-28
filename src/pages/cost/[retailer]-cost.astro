@@ -32,7 +32,7 @@ const title = rawTitle.length <= 60
   : `${displayName} Kitchen Cost | Install My Kitchen`;
 
 // Meta 140-160 chars
-const metaDescription = `Typical ${displayName} kitchen installation costs explained. Find out what affects price, what's included, and how to get a fixed-price quote in Coventry & Warwickshire.`;
+const metaDescription = `Typical ${displayName} kitchen installation costs explained. Find out what affects price, what's included, and how to get a fixed-price quote in Coventry, Warwickshire & Berkshire.`;
 
 // Modifier for this retailer
 const modifier = (costsData.modifiers as Record<string, { multiplier: number }>)[slug]?.multiplier ?? 1.0;
@@ -127,7 +127,7 @@ const internalLinks = [
           How Much Does {displayName} Kitchen Installation Cost?
         </h1>
         <AnswerBlock
-          answer={`${displayName} kitchen installation typically costs between ${fmt(smallLow)} and ${fmt(largeLow)}+ depending on kitchen size and complexity. These are labour-only figures for Coventry and Warwickshire — they do not include the cost of the kitchen itself. All prices are indicative; we provide fixed-price quotes following a survey.`}
+          answer={`${displayName} kitchen installation typically costs between ${fmt(smallLow)} and ${fmt(largeLow)}+ depending on kitchen size and complexity. These are labour-only figures for Coventry, Warwickshire and Berkshire — they do not include the cost of the kitchen itself. All prices are indicative; we provide fixed-price quotes following a survey.`}
         />
       </div>
     </div>
@@ -141,7 +141,7 @@ const internalLinks = [
           Typical {displayName} Installation Cost Ranges
         </h2>
         <p class="leading-relaxed mb-6" style="color: var(--text-soft);">
-          {modifierNote} The figures below are typical installation-only ranges for {displayName} kitchens in the Coventry and Warwickshire area. All costs are inclusive of VAT.
+          {modifierNote} The figures below are typical installation-only ranges for {displayName} kitchens in the Coventry, Warwickshire and Berkshire area. All costs are inclusive of VAT.
         </p>
 
         <!-- Cost table -->

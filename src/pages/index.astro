@@ -18,7 +18,7 @@ const siteSchema = {
       "@type": "LocalBusiness",
       "@id": "https://installmykitchen.co.uk/#business",
       "name": "Install My Kitchen",
-      "description": "Independent kitchen installation service covering Coventry and Warwickshire. Founded by Pindi Sahota with 30 years of kitchen fitting experience. Survey-first, fixed-price installation for all major retailers.",
+      "description": "Independent kitchen installation service covering Coventry, Warwickshire and Berkshire. Founded by Pindi Sahota with 30 years of kitchen fitting experience. Survey-first, fixed-price installation for all major retailers.",
       "url": "https://installmykitchen.co.uk",
       "telephone": "+447399651836",
       "email": "info@installmykitchen.co.uk",
@@ -48,14 +48,14 @@ const siteSchema = {
         "name": "Pindi Sahota",
         "jobTitle": "Kitchen Installation Specialist"
       },
-      "areaServed": ["Coventry","Rugby","Nuneaton","Bedworth","Leamington Spa","Kenilworth","Warwick","Solihull","Stratford-upon-Avon","Southam","Atherstone","Hinckley","Balsall Common","Meriden","Earlsdon","Canley","Tile Hill","Allesley","Finham","Stivichall","Coundon","Radford","Binley","Wyken","Walsgrave"],
+      "areaServed": ["Coventry","Rugby","Nuneaton","Bedworth","Leamington Spa","Kenilworth","Warwick","Solihull","Stratford-upon-Avon","Southam","Atherstone","Hinckley","Balsall Common","Meriden","Earlsdon","Canley","Tile Hill","Allesley","Finham","Stivichall","Coundon","Radford","Binley","Wyken","Walsgrave","Reading","Bracknell","Slough","Maidenhead","Windsor","Wokingham","Newbury","Ascot"],
       "knowsAbout": ["Kitchen Installation","Wren Kitchens","Howdens","Magnet Kitchens","IKEA Kitchen Fitting","German Kitchen Installation","In-Frame Kitchen Installation","Shaker Kitchen Fitting","Worktop Fitting","Kitchen Survey Coventry"],
       "hasOfferCatalog": {
         "@type": "OfferCatalog",
         "name": "Kitchen Installation Services",
         "itemListElement": [
           { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Kitchen Installation Survey", "description": "Pre-installation survey by Pindi Sahota. Fixed-price quote within 24 hours.", "offers": { "@type": "Offer", "price": "195", "priceCurrency": "GBP", "description": "Survey fee credited back against installation balance on booking" } } },
-          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Full Kitchen Installation", "description": "Complete kitchen installation including cabinets, worktops, doors, handles, plinths, appliances and snagging.", "areaServed": "Coventry and Warwickshire" } }
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Full Kitchen Installation", "description": "Complete kitchen installation including cabinets, worktops, doors, handles, plinths, appliances and snagging.", "areaServed": "Coventry, Warwickshire and Berkshire" } }
         ]
       },
       "sameAs": ["https://installmykitchen.co.uk"]
@@ -65,7 +65,7 @@ const siteSchema = {
       "@id": "https://installmykitchen.co.uk/#website",
       "url": "https://installmykitchen.co.uk",
       "name": "Install My Kitchen",
-      "description": "Independent kitchen installation across Coventry and Warwickshire",
+      "description": "Independent kitchen installation across Coventry, Warwickshire and Berkshire",
       "publisher": { "@id": "https://installmykitchen.co.uk/#business" }
     },
     {
@@ -86,7 +86,7 @@ const faqItems = [
   },
   {
     q: "What areas do you cover?",
-    a: "We cover Coventry and the wider Warwickshire area, including Rugby, Nuneaton, Leamington Spa, Kenilworth, Warwick, Stratford-upon-Avon, Bedworth and surrounding towns.",
+    a: "We cover Coventry, Warwickshire and Berkshire. In the Midlands: Rugby, Nuneaton, Leamington Spa, Kenilworth, Warwick, Stratford-upon-Avon, Bedworth, Solihull and surrounding towns. In Berkshire: Reading, Bracknell, Slough, Maidenhead, Windsor, Wokingham, Newbury and Ascot.",
   },
   {
     q: "What does the £195 survey fee include?",
@@ -109,18 +109,22 @@ const faqItems = [
 const areas = [
   { name: "Coventry", slug: "coventry" },
   { name: "Rugby", slug: "rugby" },
-  { name: "Nuneaton", slug: "nuneaton" },
   { name: "Leamington Spa", slug: "leamington-spa" },
   { name: "Kenilworth", slug: "kenilworth" },
+  { name: "Solihull", slug: "solihull" },
   { name: "Warwick", slug: "warwick" },
-  { name: "Bedworth", slug: "bedworth" },
-  { name: "Stratford-upon-Avon", slug: "stratford-upon-avon" },
+  { name: "Reading", slug: "reading" },
+  { name: "Bracknell", slug: "bracknell" },
+  { name: "Windsor", slug: "windsor" },
+  { name: "Maidenhead", slug: "maidenhead" },
+  { name: "Wokingham", slug: "wokingham" },
+  { name: "Ascot", slug: "ascot" },
 ];
 ---
 
 <Base
-  title="Kitchen Installation Coventry & Warwickshire | Install My Kitchen"
-  description="Expert independent kitchen installation across Coventry and Warwickshire. We fit kitchens from Wren, Howdens, IKEA and more. Survey from £195."
+  title="Kitchen Installation Coventry, Warwickshire & Berkshire | Install My Kitchen"
+  description="Expert independent kitchen installation across Coventry, Warwickshire and Berkshire. We fit kitchens from Wren, Howdens, IKEA and more. Survey from £195."
   canonical="https://installmykitchen.co.uk/"
   noHero={true}
 >
@@ -135,11 +139,11 @@ const areas = [
     <!-- Left gradient panel -->
     <div class="hero-left">
       <div class="hero-content">
-        <p class="hero-eyebrow">Independent Kitchen Installation · Coventry &amp; Warwickshire</p>
+        <p class="hero-eyebrow">Independent Kitchen Installation · Coventry, Warwickshire &amp; Berkshire</p>
         <h1 class="hero-h1">Already Bought Your Kitchen? <span style="color: var(--teal-bright)">We'll Install It.</span></h1>
         <p class="hero-sub">
           Expert independent installation for kitchens purchased from Wren, Howdens, Magnet,
-          IKEA, Wickes and more across Coventry and Warwickshire.
+          IKEA, Wickes and more across Coventry, Warwickshire and Berkshire.
         </p>
         <div class="hero-buttons">
           <a href="/survey/" class="btn-primary hero-btn">
@@ -215,7 +219,7 @@ const areas = [
             <!-- Map pin -->
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
           </span>
-          <span class="benefit-label">Coventry &amp; Warwickshire</span>
+          <span class="benefit-label">Coventry, Warwickshire &amp; Berkshire</span>
         </li>
       </ul>
     </div>
@@ -231,7 +235,7 @@ const areas = [
         <div>
           <p style="color: var(--teal); font-weight: 600; font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.75rem;">Your Installer</p>
           <h2 style="font-size: clamp(1.75rem, 3vw, 2.5rem); font-weight: 800; color: var(--navy); margin-bottom: 1.25rem; line-height: 1.2;">Pindi Sahota — 30 Years on the Tools</h2>
-          <p style="color: var(--text-soft); line-height: 1.75; margin-bottom: 1rem; font-size: 1.0625rem;">Pindi Sahota founded Install My Kitchen after three decades fitting kitchens across Coventry and Warwickshire. He surveys every project personally, provides a fixed price, and doesn't leave until the job is right.</p>
+          <p style="color: var(--text-soft); line-height: 1.75; margin-bottom: 1rem; font-size: 1.0625rem;">Pindi Sahota founded Install My Kitchen after three decades fitting kitchens across Coventry, Warwickshire and Berkshire. He surveys every project personally, provides a fixed price, and doesn't leave until the job is right.</p>
           <p style="color: var(--text-soft); line-height: 1.75; margin-bottom: 1.5rem;">Every survey is conducted by Pindi himself — not a salesperson, not a subcontractor. He assesses your room, checks your plans against reality, and provides a fixed installation quote within 24 hours. You deal with Pindi from survey to sign-off.</p>
           <div style="display: flex; flex-wrap: wrap; gap: 1rem; margin-bottom: 1.5rem;">
             <div style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.875rem; font-weight: 600; color: var(--charcoal);">
@@ -310,7 +314,7 @@ const areas = [
             <!-- Map pin -->
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
           </span>
-          <strong class="trust-title">Coventry &amp; Warwickshire Based</strong>
+          <strong class="trust-title">Coventry, Warwickshire &amp; Berkshire Based</strong>
           <p class="trust-desc">Local, independent, and accountable. Based in Coundon, Coventry — serving the whole region, not parachuted in from elsewhere.</p>
         </li>
       </ul>
@@ -374,7 +378,7 @@ const areas = [
     <div class="container urgency-inner">
       <p class="urgency-text">
         Installation Slots Are Filling Fast —
-        <span class="urgency-highlight">Coventry &amp; Warwickshire's Premier Independent Kitchen Fitter</span>
+        <span class="urgency-highlight">Coventry, Warwickshire &amp; Berkshire's Premier Independent Kitchen Fitter</span>
       </p>
       <a href="/contact/" class="btn-white urgency-btn">
         Check Available Dates →
@@ -395,7 +399,7 @@ const areas = [
             Coventry's Independent Kitchen Installation Specialist
           </h2>
           <p class="about-para">
-            Install My Kitchen is an independent kitchen installation service based in Coundon, Coventry. We work for homeowners — not retailers — fitting kitchens purchased from any major supplier across Coventry and Warwickshire. As an independent specialist, we have no commercial tie to any showroom or manufacturer, which means our only focus is the quality of your installation and the experience you have along the way.
+            Install My Kitchen is an independent kitchen installation service based in Coundon, Coventry. We work for homeowners — not retailers — fitting kitchens purchased from any major supplier across Coventry, Warwickshire and Berkshire. As an independent specialist, we have no commercial tie to any showroom or manufacturer, which means our only focus is the quality of your installation and the experience you have along the way.
           </p>
           <p class="about-para">
             Every installation begins with a pre-visit survey. We take precise measurements, review your kitchen plan against the actual room, and identify any potential issues before a single cabinet is unpacked. It takes more time upfront, but it's the difference between an installation that goes smoothly and one that doesn't. We take the details seriously — because it's your home, and the finish matters.
@@ -411,7 +415,7 @@ const areas = [
               <span class="about-stat-label">All Major Retailers</span>
             </div>
             <div class="about-stat" role="listitem">
-              <span class="about-stat-label">Coventry &amp; Warwickshire</span>
+              <span class="about-stat-label">Coventry, Warwickshire &amp; Berkshire</span>
             </div>
           </div>
           <a href="/survey/" class="btn-primary mt-8 inline-flex items-center gap-2">

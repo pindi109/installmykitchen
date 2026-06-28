@@ -83,7 +83,7 @@ const { job, location, jobIndex, locationIndex } = Astro.props;
 const isBerkshire = (location as any).isBerkshire === true;
 const fromPrice = isBerkshire ? job.fromPriceBerks : job.fromPriceCW;
 const minCallout = isBerkshire ? 75 : 50;
-const pricingTierLabel = isBerkshire ? "Berkshire" : "Coventry & Warwickshire";
+const pricingTierLabel = isBerkshire ? "Berkshire" : "Coventry, Warwickshire & Berkshire";
 
 // Canonical
 const canonical = `https://installmykitchen.co.uk/repairs/${job.slug}-${location.slug}/`;
