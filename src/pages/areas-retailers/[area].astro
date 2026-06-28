@@ -22,15 +22,6 @@ export function getStaticPaths() {
 const { location } = Astro.props;
 const { name, slug, county } = location;
 
-// Installer pages are only generated for priority locations; fall back to the
-// retailer brand page for any area not in this list.
-const INSTALLER_LOCATION_SLUGS = [
-  "coventry", "canley", "tile-hill", "earlsdon", "allesley",
-  "rugby", "nuneaton", "bedworth", "leamington-spa", "kenilworth",
-  "warwick", "solihull", "stratford-upon-avon", "southam", "hinckley",
-];
-const hasInstallerPages = INSTALLER_LOCATION_SLUGS.includes(slug);
-
 // Title — kept ≤60 chars
 const title = `Retailers We Fit in ${name} | Install My Kitchen`;
 
@@ -172,7 +163,7 @@ const relatedLinks = [
           {retailersData.map((retailer) => (
             <li role="listitem">
               <a
-                href={hasInstallerPages ? `/installer/${retailer.slug}-${slug}/` : `/retailers/${retailer.slug}/`}
+                href={`/installer/${retailer.slug}-${slug}/`}
                 class="retailer-card"
                 aria-label={`${retailer.displayName} kitchen installation in ${name}`}
               >

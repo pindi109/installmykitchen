@@ -11,11 +11,12 @@ const metaDescription = "Privacy policy for Install My Kitchen. How we collect, 
 ---
 
 <Base
-  robots="noindex, follow"
-    title={title}
+  title={title}
   description={metaDescription}
   canonical={canonical}
 >
+  <!-- Override robots to noindex for policy pages -->
+  <meta slot="schema" name="robots" content="noindex, follow" />
 
   <Header slot="header" />
 

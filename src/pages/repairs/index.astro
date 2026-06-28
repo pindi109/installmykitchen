@@ -1,0 +1,346 @@
+---
+import Base from "../../layouts/Base.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import StickyMobileCTA from "../../components/StickyMobileCTA.astro";
+import Breadcrumbs from "../../components/Breadcrumbs.astro";
+import AnswerBlock from "../../components/AnswerBlock.astro";
+import FAQ from "../../components/FAQ.astro";
+import EnquiryForm from "../../components/EnquiryForm.astro";
+import InternalLinks from "../../components/InternalLinks.astro";
+import CTA from "../../components/CTA.astro";
+
+import remedialData from "../../data/remedial.json";
+import faqsData from "../../data/faqs.json";
+
+const title = "Kitchen Repairs & Remedial Work | Install My Kitchen";
+const metaDescription =
+  "Independent kitchen repair and remedial service covering Coventry & Warwickshire and Berkshire. Drawer runners, hinges, doors, worktops, snagging and more — from £40. No call-out until you confirm.";
+const canonical = "https://installmykitchen.co.uk/repairs/";
+
+// 4 general FAQs about the repairs service
+const repairFaqs = [
+  {
+    q: "What types of kitchen repair do you carry out?",
+    a: "We handle all common kitchen remedial jobs including door and drawer replacements, hinge adjustment and replacement, drawer runner repair, worktop repair and replacement, soft-close upgrades, handle fitting, cabinet carcass repair, new cabinet installation, splashback fitting, end panel work, integrated appliance fitting, plinth and cornice replacement, kitchen snagging, and full refits. If your issue is not listed, get in touch — we almost certainly cover it.",
+  },
+  {
+    q: "Do you carry out one-off repair callouts or only full refits?",
+    a: "We are happy to visit for a single repair — whether that is a stiff drawer, a fallen plinth, or a misaligned door. We operate a minimum call-out charge (£50 in Coventry and Warwickshire; £75 in Berkshire) and then charge by the hour or agree a fixed price for larger remedial scopes before we begin.",
+  },
+  {
+    q: "How quickly can you attend a repair callout?",
+    a: "For straightforward repairs, we typically offer appointments within one to two weeks. For urgent issues such as a collapsed under-sink cabinet causing a water risk, we will endeavour to attend sooner. Please call us directly on 07399 651836 if speed is critical.",
+  },
+  {
+    q: "Do I need to supply replacement parts, or can you bring them?",
+    a: "For common components — hinges, plinth clips, drawer runners, and handles — we carry stock and can often supply and fit in a single visit. For less common items such as matched door fronts, specific worktop materials, or appliance-specific door kits, we will advise on sourcing before the visit to avoid a second trip.",
+  },
+];
+
+// 8 contextual internal links
+const internalLinks = [
+  {
+    label: "All service areas",
+    href: "/areas/",
+    description: "See the full list of locations we cover across the Midlands and Berkshire",
+  },
+  {
+    label: "Kitchen installation costs",
+    href: "/costs/",
+    description: "Detailed cost guide covering every element of a kitchen installation",
+  },
+  {
+    label: "Book a pre-installation survey",
+    href: "/survey/",
+    description: "£195 survey credited back when you proceed to installation",
+  },
+  {
+    label: "Contact us",
+    href: "/contact/",
+    description: "Call, email, or WhatsApp — we respond within one working day",
+  },
+  {
+    label: "Our installation services",
+    href: "/services/",
+    description: "Full independent kitchen installation from survey to snagging",
+  },
+  {
+    label: "Kitchen door replacement",
+    href: "/repairs/kitchen-door-replacement-coventry/",
+    description: "Replace worn or outdated doors without a full kitchen refit",
+  },
+  {
+    label: "Drawer runner repair",
+    href: "/repairs/drawer-runner-repair-coventry/",
+    description: "Restore smooth, quiet drawers with replacement Blum or Hettich runners",
+  },
+  {
+    label: "Kitchen snagging service",
+    href: "/repairs/kitchen-snagging-coventry/",
+    description: "Fix defects left by a previous fitter — aligned doors, sealed edges, complete trim",
+  },
+];
+
+// Service JSON-LD
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  name: "Kitchen Repairs & Remedial Work",
+  provider: {
+    "@type": "LocalBusiness",
+    name: "Install My Kitchen",
+    url: "https://installmykitchen.co.uk",
+    telephone: "+447399651836",
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: "242 Hollyfast Road, Coundon",
+      addressLocality: "Coventry",
+      postalCode: "CV6 2AH",
+      addressCountry: "GB",
+    },
+  },
+  areaServed: [
+    { "@type": "Place", name: "Coventry & Warwickshire" },
+    { "@type": "Place", name: "Berkshire" },
+  ],
+  description:
+    "Independent kitchen repair and remedial service covering Coventry, Warwickshire, and Berkshire. Covering doors, drawers, hinges, worktops, splashbacks, snagging, and full refits.",
+  serviceType: "Kitchen Repair",
+  offers: {
+    "@type": "Offer",
+    priceCurrency: "GBP",
+    price: "40",
+    description: "Repairs from £40 — minimum call-out £50 (CW) / £75 (Berkshire)",
+  },
+};
+
+// BreadcrumbList JSON-LD
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://installmykitchen.co.uk/" },
+    { "@type": "ListItem", position: 2, name: "Repairs", item: "https://installmykitchen.co.uk/repairs/" },
+  ],
+};
+---
+
+<Base
+  title={title}
+  description={metaDescription}
+  canonical={canonical}
+  noHero={true}
+>
+  <script slot="schema" type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
+  <script slot="schema" type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+
+  <Header slot="header" />
+
+  <!-- Breadcrumbs -->
+  <div class="container py-6">
+    <Breadcrumbs
+      items={[
+        { label: "Repairs", href: "/repairs/" },
+      ]}
+    />
+  </div>
+
+  <!-- Hero -->
+  <section class="section" style="background: var(--bg-light);">
+    <div class="container">
+      <div class="max-w-3xl">
+        <h1 class="text-4xl md:text-5xl font-extrabold mb-5 leading-tight" style="color: var(--navy);">
+          Kitchen Repairs &amp; Remedial Work
+        </h1>
+        <AnswerBlock
+          answer="Install My Kitchen carries out independent kitchen repairs and remedial work across Coventry, Warwickshire, and Berkshire. From a single stiff drawer to a full snagging visit, we attend, assess, and fix — no work begins without your confirmation of price."
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- About the service -->
+  <section class="section">
+    <div class="container">
+      <div class="max-w-3xl fade-up">
+        <h2 class="text-3xl font-bold mb-4" style="color: var(--navy);">
+          An Independent Repairs Service You Can Rely On
+        </h2>
+        <p class="text-lg leading-relaxed mb-4" style="color: var(--text-soft);">
+          Whether your kitchen is brand new and has been left with outstanding snag items, or it is a few years old and has developed the usual collection of stiff drawers, dropping doors, and worn plinth clips, our remedial service is designed to sort the issue efficiently and without fuss.
+        </p>
+        <p class="leading-relaxed mb-4" style="color: var(--text-soft);">
+          Because we are entirely independent — not tied to any retailer or manufacturer — we can assess the problem honestly and recommend the most cost-effective fix rather than the most profitable one. We carry a wide stock of the most common replacement parts including Blum and Hettich runners, Clip Top hinges, plinth clips, and matching edging tape, so most standard repairs can be completed in a single visit.
+        </p>
+        <p class="leading-relaxed" style="color: var(--text-soft);">
+          All repair work is agreed and priced before we begin. We quote a fixed price where the scope is clear, or provide an hourly rate with a maximum ceiling where the extent of work is uncertain. Either way, you will know what you are paying before any tools come out.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Job type grid -->
+  <section class="section" style="background: var(--bg-light);">
+    <div class="container">
+      <div class="fade-up">
+        <h2 class="text-3xl font-bold mb-2" style="color: var(--navy);">
+          Repair &amp; Remedial Services We Offer
+        </h2>
+        <p class="mb-8 text-base" style="color: var(--text-soft);">
+          Select a service below to see pricing, typical timescales, and location-specific information.
+        </p>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          {remedialData.map((job) => (
+            <a
+              href={`/repairs/${job.slug}-coventry/`}
+              class="card p-6 flex flex-col gap-3 no-underline group"
+              style="border: 1.5px solid #E5E7EB; transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;"
+            >
+              <h3
+                class="font-bold text-base leading-snug"
+                style="color: var(--teal);"
+              >
+                {job.name}
+              </h3>
+              <p
+                class="text-sm leading-relaxed flex-1"
+                style="color: var(--text-soft);"
+              >
+                {job.description.substring(0, 120).trimEnd()}&hellip;
+              </p>
+              <div class="flex items-center justify-between mt-auto pt-2" style="border-top: 1px solid #F3F4F6;">
+                <span class="text-xs font-semibold" style="color: var(--teal);">
+                  From £{job.fromPriceCW}
+                </span>
+                <span
+                  class="text-xs font-semibold flex items-center gap-1"
+                  style="color: var(--teal);"
+                >
+                  See details
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <line x1="5" y1="12" x2="19" y2="12"/>
+                    <polyline points="12 5 19 12 12 19"/>
+                  </svg>
+                </span>
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Service areas -->
+  <section class="section">
+    <div class="container">
+      <div class="max-w-3xl fade-up">
+        <h2 class="text-3xl font-bold mb-4" style="color: var(--navy);">
+          Service Areas
+        </h2>
+        <p class="leading-relaxed mb-4" style="color: var(--text-soft);">
+          Our kitchen repairs service operates across two main regions. In the Midlands, we cover Coventry, Solihull, Leamington Spa, Warwick, Kenilworth, Nuneaton, and Rugby, with a minimum call-out charge of £50.
+        </p>
+        <p class="leading-relaxed mb-4" style="color: var(--text-soft);">
+          In Berkshire, we cover Reading, Bracknell, Slough, Maidenhead, Windsor, Wokingham, Newbury, and Ascot, with a minimum call-out charge of £75 to reflect the additional travel time from our Coventry base.
+        </p>
+        <p class="leading-relaxed" style="color: var(--text-soft);">
+          If your property is outside these areas but nearby, please contact us — we assess out-of-area requests on a case-by-case basis and will advise on whether we can assist and what the travel supplement would be.
+        </p>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-8">
+          <div class="card p-6">
+            <h3 class="font-bold text-base mb-3" style="color: var(--navy);">
+              Coventry &amp; Warwickshire
+            </h3>
+            <ul class="space-y-1 text-sm" style="color: var(--text-soft);">
+              <li>Coventry · Solihull</li>
+              <li>Leamington Spa · Warwick</li>
+              <li>Kenilworth · Nuneaton · Rugby</li>
+            </ul>
+            <p class="text-xs mt-3 font-semibold" style="color: var(--teal);">
+              Minimum call-out: £50
+            </p>
+          </div>
+          <div class="card p-6">
+            <h3 class="font-bold text-base mb-3" style="color: var(--navy);">
+              Berkshire
+            </h3>
+            <ul class="space-y-1 text-sm" style="color: var(--text-soft);">
+              <li>Reading · Bracknell · Slough</li>
+              <li>Maidenhead · Windsor · Wokingham</li>
+              <li>Newbury · Ascot</li>
+            </ul>
+            <p class="text-xs mt-3 font-semibold" style="color: var(--teal);">
+              Minimum call-out: £75
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Enquiry form -->
+  <section class="section" style="background: var(--bg-light);">
+    <div class="container">
+      <div class="max-w-2xl mx-auto fade-up">
+        <h2 class="text-2xl font-bold mb-2 text-center" style="color: var(--navy);">
+          Book a Repair Callout
+        </h2>
+        <p class="text-center text-sm mb-8" style="color: var(--text-soft);">
+          Describe your issue and we will respond within one working day with availability and a cost indication.
+        </p>
+        <EnquiryForm formTitle="Request a Repair" showSurveyOption={false} />
+      </div>
+    </div>
+  </section>
+
+  <!-- Internal links -->
+  <section class="section">
+    <div class="container">
+      <div class="fade-up">
+        <InternalLinks
+          links={internalLinks}
+          heading="Related Pages"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section" style="background: var(--bg-light);">
+    <div class="container">
+      <div class="max-w-3xl fade-up">
+        <h2 class="text-3xl font-bold mb-8" style="color: var(--navy);">
+          Frequently Asked Questions
+        </h2>
+        <FAQ items={repairFaqs} schemaId="faq-repairs-hub" />
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <CTA
+    heading="Ready to Book a Kitchen Repair?"
+    subtext="We cover Coventry, Warwickshire, and Berkshire. Call us or send an enquiry and we will confirm availability and pricing within one working day."
+    primaryLabel="Send an Enquiry"
+    primaryHref="/contact/"
+    secondaryLabel="Call 07399 651836"
+    secondaryHref="tel:07399651836"
+    dark={true}
+  />
+
+  <Footer slot="footer" />
+  <StickyMobileCTA slot="sticky-cta" />
+</Base>
+
+<style>
+  .card {
+    transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
+  }
+  .card:hover {
+    border-color: var(--teal) !important;
+    box-shadow: 0 4px 14px rgba(15, 118, 110, 0.12);
+    transform: translateY(-1px);
+  }
+</style>

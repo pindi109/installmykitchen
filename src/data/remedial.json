@@ -1,0 +1,580 @@
+[
+  {
+    "slug": "kitchen-door-replacement",
+    "name": "Kitchen Door Replacement",
+    "h1Fragment": "kitchen door replacement",
+    "description": "We supply and fit replacement kitchen doors to your existing carcasses, refreshing the look of your kitchen without the cost or disruption of a full replacement. Whether your doors are warped, damaged, or simply dated, we will measure, source, and fit doors in your chosen style and finish.",
+    "commonCauses": [
+      "Doors swollen, warped, or cracked due to moisture or age",
+      "Hinges failed causing misalignment or sagging",
+      "Style refresh without replacing the whole kitchen",
+      "Previous owner's taste not matching your own"
+    ],
+    "typicalTime": "Half day to full day depending on door count",
+    "fromPriceCW": 60,
+    "fromPriceBerks": 85,
+    "upsellLine": "While fitting your new doors we can also carry out a full hinge and drawer adjustment to bring the whole kitchen into perfect alignment — often included at no extra charge.",
+    "faqs": [
+      {
+        "q": "Can you replace just a few kitchen doors rather than all of them?",
+        "a": "Yes — we replace as many or as few doors as needed. If you have one or two damaged doors we can often source a matching replacement from the original manufacturer or a close equivalent. We will advise you honestly at the survey stage on whether a partial replacement will look seamless or whether a full door change would give a better result."
+      },
+      {
+        "q": "Do I need to buy the doors myself or can you supply them?",
+        "a": "We can supply doors from a range of manufacturers, or we can fit doors you have already purchased yourself. If you would like us to supply, we will measure the existing carcases and source the correct sizes. If you are supplying your own, please share the specification with us beforehand so we can confirm fitment before installation day."
+      },
+      {
+        "q": "How do you match replacement doors to existing ones?",
+        "a": "We use the door style, colour code, and manufacturer details — usually printed on a sticker inside an existing door or on your original kitchen paperwork. For discontinued ranges we can often find a close match from a specialist door supplier. We will show you samples before ordering to ensure you are happy with the result."
+      },
+      {
+        "q": "Is a survey required for door replacement?",
+        "a": "For a full door replacement across the whole kitchen we recommend a survey so we can confirm exact sizes, hinge positions, and any special door types such as end panels or appliance doors. For a small number of like-for-like replacements we can sometimes work from measurements you supply by phone or email. Call us to discuss your specific situation."
+      }
+    ]
+  },
+  {
+    "slug": "kitchen-cupboard-door-replacement",
+    "name": "Kitchen Cupboard Door Replacement",
+    "h1Fragment": "kitchen cupboard door replacement",
+    "description": "Replacing individual cupboard doors is one of the most cost-effective ways to transform the look of your kitchen. We fit replacement cupboard doors to your existing carcasses, matching the original hinge positions and ensuring every door hangs level and closes smoothly.",
+    "commonCauses": [
+      "Single cupboard door damaged beyond adjustment",
+      "Cupboard door finish peeling or delaminating",
+      "New door style required after kitchen renovation",
+      "Child or pet damage to low-level cupboard doors"
+    ],
+    "typicalTime": "Two to four hours for a small number of doors",
+    "fromPriceCW": 60,
+    "fromPriceBerks": 85,
+    "upsellLine": "We can also replace your soft-close hinges at the same visit — upgrading older spring hinges to quiet soft-close mechanisms for a fraction of the cost of new doors.",
+    "faqs": [
+      {
+        "q": "Can you replace a single damaged cupboard door?",
+        "a": "Yes — a single door replacement is one of our most common call-outs. We will assess whether the original door can be sourced from the manufacturer or whether a compatible replacement from a door specialist will be needed. In most cases we can have a replacement fitted within a week of your initial enquiry."
+      },
+      {
+        "q": "What if the original door style has been discontinued?",
+        "a": "Discontinued kitchen door styles are a common challenge. We work with specialist door suppliers who hold large ranges of replacement doors in popular finishes. Where an exact match is not available we can often find a very close equivalent, and we will always show you samples before ordering anything."
+      },
+      {
+        "q": "Can you replace cupboard doors on any kitchen brand?",
+        "a": "Yes — we work with all major kitchen brands including Wren, Howdens, Magnet, IKEA, Wickes, B&Q, and all others. Different brands use different hinge systems and door thicknesses, and our experience with a wide range of kitchen brands means we know the most common variants and can source accordingly."
+      },
+      {
+        "q": "Do cupboard door replacements need to be the same size as the originals?",
+        "a": "In most cases yes — replacement doors should match the original dimensions so they sit correctly in the cabinet frame and align with adjacent doors. We will always measure the existing doors and carcass openings before sourcing replacements. If you want to change the door size as part of a layout modification, we can discuss that at the survey stage."
+      }
+    ]
+  },
+  {
+    "slug": "integrated-appliance-door-fitting",
+    "name": "Integrated Appliance Door Fitting",
+    "h1Fragment": "integrated appliance door fitting",
+    "description": "We fit, refit, and adjust furniture panel doors onto integrated kitchen appliances including dishwashers, fridges, fridge-freezers, and washing machines. Whether your appliance door is misaligned, rattling, or completely detached, we will diagnose the cause and carry out a lasting repair.",
+    "commonCauses": [
+      "Door slider or fixing bracket broken or missing",
+      "Door no longer aligning with adjacent cabinet doors",
+      "Appliance replaced without re-attaching the furniture panel",
+      "Original fitting done incorrectly by retailer installation team"
+    ],
+    "typicalTime": "One to two hours per appliance",
+    "fromPriceCW": 50,
+    "fromPriceBerks": 75,
+    "upsellLine": "If your appliance itself needs repositioning in the cabinet housing, we can carry out a full integrated appliance installation as part of the same visit.",
+    "faqs": [
+      {
+        "q": "My integrated appliance door is hanging at an angle — can you fix it?",
+        "a": "Yes — a misaligned integrated appliance door is almost always fixable. The most common causes are worn or broken door sliders, loose fixing brackets, or the door panel having been knocked out of position. We will identify the cause, replace any broken parts if needed, and reset the door to sit flush and level with the surrounding cabinet doors."
+      },
+      {
+        "q": "Can you fit an integrated door to a new appliance I am replacing myself?",
+        "a": "Yes — fitting a furniture panel door to a new appliance is a common job for us. We will need to check that the existing door mounting hardware is compatible with the new appliance model, and in some cases the slider kit or hinge arm will need to be replaced or adjusted. We can advise on compatibility before the visit if you share the appliance make and model with us."
+      },
+      {
+        "q": "What brands of integrated appliance can you fit doors to?",
+        "a": "We work with all major integrated appliance brands including Bosch, Siemens, Neff, AEG, Miele, Hotpoint, Zanussi, Samsung, and others. We are also familiar with the door-mounting systems used by all major kitchen retailers. If you are unsure whether your appliance or kitchen brand is covered, please call us and we will confirm."
+      },
+      {
+        "q": "My appliance door panel fell off and I have lost the fixings — can you still help?",
+        "a": "In most cases yes. We carry a range of common door slider kits, mounting brackets, and fixings, and can often carry out the repair in a single visit. If your specific appliance requires a proprietary part we will source it and return to complete the fitting — we will advise you on lead times when we assess the job."
+      }
+    ]
+  },
+  {
+    "slug": "washing-machine-door-fitting",
+    "name": "Integrated Washing Machine Door Fitting",
+    "h1Fragment": "integrated washing machine door fitting",
+    "description": "We fit and refit furniture panel doors onto integrated washing machines, ensuring the door panel sits flush with adjacent cabinet doors and the door slider mechanism operates smoothly. Whether fitting a new panel to a replacement machine or repairing a detached panel, we carry out the work cleanly and correctly.",
+    "commonCauses": [
+      "Washing machine replaced and door panel not transferred to new unit",
+      "Door slider kit broken due to repeated use",
+      "Panel knocked off during a delivery or plumbing visit",
+      "Original installation carried out without fitting the furniture panel"
+    ],
+    "typicalTime": "One to two hours",
+    "fromPriceCW": 50,
+    "fromPriceBerks": 75,
+    "upsellLine": "If your washing machine needs repositioning in the housing unit or the plinth needs refitting after the machine was moved, we can carry out both jobs in the same visit.",
+    "faqs": [
+      {
+        "q": "My washing machine door panel keeps falling off — what is causing it?",
+        "a": "The most common cause is a worn or broken door slider kit — the plastic mechanism that allows the furniture panel to open with the appliance door. Over time these can crack or lose their grip, particularly on frequently used appliances. We will replace the slider kit and check all fixings to ensure the panel is securely attached."
+      },
+      {
+        "q": "I have just had a new washing machine delivered and the door panel is not fitted — can you help?",
+        "a": "Yes — this is one of our most common integrated appliance jobs. Delivery drivers and basic installation services often leave the furniture panel unattached. We will fit the panel, adjust the slider mechanism, and set the door so it sits flush and aligned with your other cabinet doors."
+      },
+      {
+        "q": "Will the original door panel fit my new washing machine?",
+        "a": "In most cases yes, provided the new machine is the same width as the original and uses a standard slider fitting system. However, some machines require a specific door adapter kit. We recommend sharing the make and model of both the old and new machine with us before the visit so we can confirm compatibility."
+      },
+      {
+        "q": "Is this job something I could do myself?",
+        "a": "It is possible to refit an integrated washing machine door panel yourself if you have the correct slider kit and basic DIY confidence. However, incorrect fitting can result in the panel falling and causing damage, or the door failing to open freely. Given the low cost of a professional fitting, most customers prefer to have the job done correctly and durably."
+      }
+    ]
+  },
+  {
+    "slug": "dishwasher-door-fitting",
+    "name": "Integrated Dishwasher Door Fitting",
+    "h1Fragment": "integrated dishwasher door fitting",
+    "description": "We fit and realign furniture panel doors on integrated dishwashers, addressing common problems including doors that will not stay closed, panels that have detached, and door sliders that have worn out. Our service covers all major dishwasher brands and all standard slider fitting systems.",
+    "commonCauses": [
+      "Door slider kit cracked or worn from repeated opening",
+      "Panel detached when dishwasher was pulled out for maintenance",
+      "New dishwasher installed without the furniture panel being fitted",
+      "Door spring tension changed when appliance was replaced"
+    ],
+    "typicalTime": "One to two hours",
+    "fromPriceCW": 50,
+    "fromPriceBerks": 75,
+    "upsellLine": "We can also adjust the dishwasher itself — levelling feet, door spring tension, and height — at the same visit to ensure it sits correctly in the housing unit.",
+    "faqs": [
+      {
+        "q": "My integrated dishwasher door panel is not closing flush — what is the problem?",
+        "a": "A door panel that will not close flush is usually caused by a misaligned or broken door slider, or by the dishwasher not sitting level in its housing. We will check both the slider mechanism and the appliance position, adjust or replace whichever is at fault, and set the door so it closes cleanly and sits flush with the adjacent cabinet doors."
+      },
+      {
+        "q": "Can you fit a dishwasher door panel to any brand of dishwasher?",
+        "a": "Yes — we work with all major integrated dishwasher brands including Bosch, Siemens, Neff, AEG, Hotpoint, Samsung, Miele, and others. We are familiar with the door slider systems used by each brand and carry commonly needed replacement parts on our vans."
+      },
+      {
+        "q": "The door panel fell off my dishwasher and broke — can you supply a new one?",
+        "a": "We can fit a door panel you have purchased yourself, but we do not supply replacement furniture panels as these need to match your specific kitchen door style and finish. Your kitchen retailer or a specialist door supplier should be able to provide a matching replacement; we will then fit it for you at your convenience."
+      },
+      {
+        "q": "Will fitting a new dishwasher door panel require removing the dishwasher from the housing?",
+        "a": "In most cases the dishwasher does not need to be removed from its housing to refit or adjust the door panel. However, if the appliance has been pulled out and needs repositioning, or if the slider kit has been damaged in a way that requires access from behind, we may need to partially slide the unit forward to complete the work safely."
+      }
+    ]
+  },
+  {
+    "slug": "fridge-freezer-door-fitting",
+    "name": "Integrated Fridge-Freezer Door Fitting",
+    "h1Fragment": "integrated fridge-freezer door fitting",
+    "description": "We fit and realign furniture panel doors on integrated fridge-freezers, including both single-door and twin-door configurations. Whether the door panel has detached, the hinge arm has worn out, or the door is no longer hanging true, we diagnose and fix the problem in a single visit.",
+    "commonCauses": [
+      "Hinge arm worn or broken on tall integrated unit",
+      "Door panel pulled off when appliance was accessed behind",
+      "Slider kit failed on frequently opened fridge door",
+      "New appliance installed without the furniture panel being rehung"
+    ],
+    "typicalTime": "One to two hours",
+    "fromPriceCW": 50,
+    "fromPriceBerks": 75,
+    "upsellLine": "If your fridge-freezer is also running noisily or not cooling efficiently, we can advise on whether the issue is installation-related — such as inadequate ventilation — as part of our visit.",
+    "faqs": [
+      {
+        "q": "My integrated fridge-freezer door panel hangs lower on one side — can you fix this?",
+        "a": "Yes — a door panel that hangs unevenly is almost always fixable. Common causes include a worn hinge arm, a loose mounting bracket, or the appliance itself not sitting level in the housing. We will check all components and adjust or replace as necessary to get the panel hanging perfectly level."
+      },
+      {
+        "q": "Can you fit door panels to both a fridge and a freezer in the same unit?",
+        "a": "Yes — we regularly work on twin-door tall integrated units where both the fridge and freezer sections have separate furniture panel doors. We will set both doors to the correct height, ensuring they align with each other and with the surrounding cabinet doors."
+      },
+      {
+        "q": "The hinge arm on my integrated fridge door has snapped — where do I get a replacement?",
+        "a": "Replacement hinge arms are available from the appliance manufacturer or from specialist kitchen hardware suppliers. If you can share the make, model, and year of your appliance, we can often source the correct part before the visit and carry out the repair in a single call-out."
+      },
+      {
+        "q": "My fridge-freezer door panel was not fitted by the installation team — is this a common problem?",
+        "a": "Unfortunately yes — it is common for retailer installation teams to leave furniture panels unfitted, especially on tall integrated units where the door mounting requires careful adjustment. We specialise in exactly this type of remedial work and can usually complete the fitting within a day or two of your enquiry."
+      }
+    ]
+  },
+  {
+    "slug": "kitchen-hinge-replacement",
+    "name": "Kitchen Hinge Replacement",
+    "h1Fragment": "kitchen hinge replacement",
+    "description": "We replace worn, broken, or misaligned cabinet hinges across your whole kitchen or on individual doors. Modern concealed hinges are adjustable in three planes, and correct installation ensures every door hangs straight, closes flush, and opens without catching adjacent doors or cabinets.",
+    "commonCauses": [
+      "Hinge arm snapped or deformed from heavy use",
+      "Door falling or drooping because mounting plate screws have pulled out",
+      "Hinge mechanism stiff or no longer springing closed",
+      "Old-style hinges replaced as part of kitchen refresh"
+    ],
+    "typicalTime": "Half a day for a full kitchen; under two hours for a few doors",
+    "fromPriceCW": 40,
+    "fromPriceBerks": 60,
+    "upsellLine": "Once hinges are replaced we carry out a full three-way adjustment across the whole kitchen as standard, ensuring every door is perfectly aligned — no extra charge.",
+    "faqs": [
+      {
+        "q": "How do I know if my kitchen hinges need replacing or just adjusting?",
+        "a": "If a door droops, swings open on its own, or will not stay closed, the issue is usually adjustment rather than replacement. If a hinge arm is visibly bent, cracked, or the spring has lost its tension entirely, replacement is needed. We will assess all of your hinges during the visit and advise which need replacing and which simply need adjustment — we will never replace a hinge that only needs setting."
+      },
+      {
+        "q": "Can you replace hinges on any kitchen brand?",
+        "a": "Yes — we work with all major kitchen brands. Most modern kitchen cabinets use standard 35mm concealed hinges from manufacturers such as Blum, Hettich, or Grass, which are widely available. Older or budget kitchen ranges sometimes use non-standard hinge systems; we will identify your hinge type before sourcing replacements."
+      },
+      {
+        "q": "Do you supply the replacement hinges or do I need to buy them myself?",
+        "a": "We carry a range of standard replacement hinges on our vans, and for most common kitchen brands we will have the right hinge with us on the day. If you have a less common kitchen range or a specific requirement, we may need to source the hinges in advance — we will confirm this when you book."
+      },
+      {
+        "q": "How long does a full kitchen hinge replacement take?",
+        "a": "A full kitchen hinge replacement — fitting new hinges to every door in an average 15–20 door kitchen — typically takes half a day. We also carry out a full alignment check and adjustment on every door as we go, so the kitchen is fully set up and looking its best by the time we leave."
+      }
+    ]
+  },
+  {
+    "slug": "soft-close-hinge-upgrade",
+    "name": "Soft-Close Hinge Upgrade",
+    "h1Fragment": "soft-close hinge upgrade",
+    "description": "We upgrade spring-loaded or standard hinges to modern soft-close damped hinges, eliminating door slamming and giving your kitchen a noticeably more premium feel. Soft-close hinges are a direct drop-in replacement for standard 35mm concealed hinges and work with all major cabinet carcass brands.",
+    "commonCauses": [
+      "Standard hinges slamming in a household with young children",
+      "Old spring hinges losing tension and doors falling open",
+      "Noise reduction required in open-plan kitchen-diner",
+      "Premium finish desired as part of kitchen refresh"
+    ],
+    "typicalTime": "Half a day for a full kitchen",
+    "fromPriceCW": 40,
+    "fromPriceBerks": 60,
+    "upsellLine": "At the same visit we can also upgrade your drawer runners to full-extension soft-close runners, completing the premium feel across the whole kitchen.",
+    "faqs": [
+      {
+        "q": "Will soft-close hinges fit my existing kitchen cabinets?",
+        "a": "In almost all cases yes — modern soft-close hinges use the same 35mm cup hole as standard concealed hinges, making them a direct swap. The only exception is if your cabinets use a non-standard hinge system, which is rare. We will confirm compatibility with your kitchen brand before the visit."
+      },
+      {
+        "q": "How long does a soft-close hinge upgrade take?",
+        "a": "Upgrading a full kitchen of 15–20 doors typically takes half a day. We replace every hinge and carry out a full alignment check and adjustment on each door as part of the same visit, so every door is hanging perfectly when we finish."
+      },
+      {
+        "q": "Can I buy soft-close hinges myself and have you fit them?",
+        "a": "Yes — if you would like to source your own hinges to save cost, we are happy to fit them. We recommend Blum Clip Top Blumotion or Hettich Intermat hinges as reliable, long-lasting options available from Screwfix or Toolstation. Please confirm the overlay dimension (full, half, or inset) before purchasing."
+      },
+      {
+        "q": "Are soft-close hinges worth the upgrade cost?",
+        "a": "Most customers tell us the difference is immediately noticeable and that they wished they had done it sooner. Beyond the noise reduction, soft-close hinges also extend the life of the door and cabinet face frame by eliminating the repeated impact of slamming. For a kitchen you use every day, the upgrade is very cost-effective."
+      }
+    ]
+  },
+  {
+    "slug": "kitchen-drawer-repair",
+    "name": "Kitchen Drawer Repair",
+    "h1Fragment": "kitchen drawer repair",
+    "description": "We repair and replace drawer runners, soft-close mechanisms, and drawer boxes across all major kitchen brands. From a single stiff drawer to a full kitchen drawer overhaul, we diagnose the problem, source the correct parts, and carry out a lasting repair.",
+    "commonCauses": [
+      "Drawer runner worn out and no longer extending smoothly",
+      "Soft-close mechanism failed — drawer slamming or not closing fully",
+      "Drawer box damaged or delaminating",
+      "Runner screws pulled out of cabinet side due to overloading"
+    ],
+    "typicalTime": "One to three hours depending on drawer count",
+    "fromPriceCW": 50,
+    "fromPriceBerks": 75,
+    "upsellLine": "If your drawers have been repaired, we can also carry out a soft-close runner upgrade across the kitchen in the same visit — often at a significantly reduced cost.",
+    "faqs": [
+      {
+        "q": "My kitchen drawer will not close fully — what is the likely cause?",
+        "a": "A drawer that will not close fully is usually caused by a worn or misaligned runner, a soft-close damper that has failed, or an obstruction inside the cabinet preventing the drawer from seating. We will identify the exact cause on the visit and carry out the appropriate repair — adjustment, replacement, or a combination."
+      },
+      {
+        "q": "Can you replace drawer runners on any kitchen brand?",
+        "a": "Yes — we work with all major kitchen brands. Drawer runners are broadly standardised across the industry, with most kitchen brands using Blum Tandem, Hettich InnoTech, or Grass Nova Pro systems. We carry a range of common sizes and will source specific parts in advance if you can share your drawer box dimensions or kitchen brand."
+      },
+      {
+        "q": "My drawer box is damaged and looks unsightly — can you replace it?",
+        "a": "Yes — drawer box replacement is a job we carry out regularly. Replacement drawer boxes are available in standard widths and depths from kitchen hardware suppliers, and in most cases a replacement can be sourced and fitted within a week. We will match the material finish (white, grey, or birch) to your existing drawers."
+      },
+      {
+        "q": "Is a stiff drawer always a runner problem?",
+        "a": "Not always — sometimes a drawer sticks because the cabinet carcass has moved slightly out of square, because the drawer box has swollen due to moisture, or because items inside the drawer are catching on the cabinet. We will check all possible causes before concluding that a runner replacement is needed."
+      }
+    ]
+  },
+  {
+    "slug": "kitchen-plinth-replacement",
+    "name": "Kitchen Plinth Replacement",
+    "h1Fragment": "kitchen plinth replacement",
+    "description": "We supply and fit replacement kitchen plinths — the decorative panels that run along the bottom of base units. Whether your plinths are damaged, missing, or need to be fitted for the first time, we will cut them to length, attach the plinth clips, and leave a clean, professional finish at floor level.",
+    "commonCauses": [
+      "Plinth panels damaged or cracked during kitchen cleaning",
+      "Plinths missing or never fitted after original installation",
+      "New flooring fitted and plinths need replacing at new height",
+      "Plinth colour or finish no longer matching refreshed kitchen"
+    ],
+    "typicalTime": "Two to four hours for an average kitchen",
+    "fromPriceCW": 50,
+    "fromPriceBerks": 75,
+    "upsellLine": "If you are having plinths replaced, we can also check and adjust all base unit levels at the same visit — ensuring a consistent reveal between the plinth and the floor across the whole kitchen.",
+    "faqs": [
+      {
+        "q": "My kitchen plinths were never fitted — can you come and fit them now?",
+        "a": "Yes — fitting plinths that were left uninstalled is one of our most common call-outs. We will assess the floor level, cut the plinths to the correct height, fit the plinth clips to the base units, and install the panels with a clean, consistent reveal. If you have the plinths already, we can usually complete the job within a day of booking."
+      },
+      {
+        "q": "Can you source replacement plinths or do I need to supply them?",
+        "a": "We can sometimes source plinths from the original kitchen manufacturer or from a specialist supplier if you can share the kitchen brand and colour code. In many cases it is quicker and cheaper for you to order directly from the manufacturer — we will advise on the best route when you contact us."
+      },
+      {
+        "q": "My floor has been raised since the kitchen was fitted and the plinths no longer fit — what can you do?",
+        "a": "This is a common situation after new flooring is laid. We will measure the new gap between the floor and the bottom of the base units and either refit the existing plinths at the new height or supply and cut new ones if the gap has changed significantly. We carry out this work cleanly, leaving no visible clips or fixings."
+      },
+      {
+        "q": "Do plinths need to be the same brand as my kitchen?",
+        "a": "Not necessarily — plinths are essentially flat panels and as long as the colour and finish match your existing kitchen doors and base units, a plinth from a compatible supplier will look identical. We will advise on matching options if the original manufacturer's plinth is unavailable."
+      }
+    ]
+  },
+  {
+    "slug": "kitchen-end-panel-replacement",
+    "name": "Kitchen End Panel Replacement",
+    "h1Fragment": "kitchen end panel replacement",
+    "description": "End panels finish the exposed sides of kitchen units where they meet a wall, window, or open area. We supply and fit replacement end panels, scribing them to uneven walls or floors for a seamless, built-in appearance.",
+    "commonCauses": [
+      "End panel damaged during a move or kitchen modification",
+      "Original end panel never fitted — raw carcass side exposed",
+      "Moisture or heat damage to an end panel near the hob or sink",
+      "Extension or renovation requiring a new end panel to complete the run"
+    ],
+    "typicalTime": "Two to four hours per panel",
+    "fromPriceCW": 60,
+    "fromPriceBerks": 85,
+    "upsellLine": "If the wall behind the end panel is uneven, we will scribe the panel to a perfect fit as part of the same job — giving a built-in, furniture-quality finish with no visible gaps.",
+    "faqs": [
+      {
+        "q": "The side of my kitchen unit is exposed and unfinished — can you fit an end panel?",
+        "a": "Yes — an exposed carcass side is quickly resolved by fitting a matching end panel, which is then scribed to the wall to close any gap. We can source panels to match most kitchen brands, or fit a panel you have already purchased. The result is a finished, furniture-quality appearance on all visible faces of your kitchen."
+      },
+      {
+        "q": "What is scribing and why does an end panel need it?",
+        "a": "Scribing is the process of trimming an end panel to follow the exact profile of an uneven wall or floor, so the panel sits flush without any visible gap. Almost all walls have slight irregularities, and scribing is what distinguishes a professional installation from one that leaves a visible gap at the edge. All our end panel fittings include scribing as standard."
+      },
+      {
+        "q": "Can end panels be fitted after the kitchen is fully installed?",
+        "a": "Yes — end panels are often fitted after the main installation, and in some cases are added during later modifications or extensions. The process is straightforward and does not usually require any dismantling of the surrounding kitchen. We will assess the position and scribe the panel to fit the specific wall profile."
+      },
+      {
+        "q": "Can you match an end panel to a kitchen that was fitted several years ago?",
+        "a": "We will do our best to source a matching panel from the original manufacturer. If the range has been discontinued, we can recommend specialist suppliers who carry a wide range of replacement panels. In some cases an exact match is not possible, and we will discuss the closest available alternative with you before ordering."
+      }
+    ]
+  },
+  {
+    "slug": "cornice-and-pelmet-fitting",
+    "name": "Cornice & Pelmet Fitting",
+    "h1Fragment": "cornice and pelmet fitting",
+    "description": "Cornice runs along the top of wall cabinets and pelmet runs along the bottom, giving kitchen wall units a finished, furniture-grade appearance. We supply and fit cornice and pelmet to match your existing kitchen, mitring internal and external corners precisely for a seamless result.",
+    "commonCauses": [
+      "Cornice or pelmet never fitted after original installation",
+      "Section of cornice damaged or missing",
+      "Additional wall unit added requiring cornice extension",
+      "Cornice style changed as part of kitchen refresh"
+    ],
+    "typicalTime": "Two to four hours for an average kitchen run",
+    "fromPriceCW": 50,
+    "fromPriceBerks": 75,
+    "upsellLine": "If pelmet lighting has been planned, we can also fit LED strip lighting behind the pelmet at the same visit, using the pelmet as a light diffuser for an integrated look.",
+    "faqs": [
+      {
+        "q": "My kitchen was fitted without cornice — can it be added now?",
+        "a": "Yes — cornice and pelmet are almost always added after the main kitchen installation rather than during it, and fitting them to an existing kitchen is a straightforward job. We will match the profile to your kitchen's existing moulding range or source a close equivalent if the original is discontinued."
+      },
+      {
+        "q": "How do you deal with corners when fitting cornice?",
+        "a": "Internal and external corners are cut at 45 degree mitre angles using a mitre saw, then glued and pinned in place. Getting the mitre angles right is the key to a seamless result — poorly cut mitres leave visible gaps or overhangs that spoil the finish. We always test fit pieces before final fixing to ensure a perfect joint."
+      },
+      {
+        "q": "Can you match cornice to a kitchen that was fitted several years ago?",
+        "a": "We will attempt to source the original cornice profile from the manufacturer. For older or discontinued ranges, specialist kitchen trim suppliers often hold compatible profiles in similar styles. If an exact match is not available we will show you alternatives before ordering — a close match in the same sheen level and colour will look seamless in most cases."
+      },
+      {
+        "q": "What is the difference between cornice and pelmet?",
+        "a": "Cornice is the decorative moulding fixed to the top of wall units, hiding the gap between the cabinet top and the ceiling. Pelmet is the equivalent moulding fixed to the underside of wall units, creating a tidy edge and often concealing under-cabinet lighting. Both serve the same purpose of finishing the cabinet run and are usually fitted in the same material and profile."
+      }
+    ]
+  },
+  {
+    "slug": "kitchen-worktop-alteration",
+    "name": "Kitchen Worktop Alteration",
+    "h1Fragment": "kitchen worktop alteration",
+    "description": "We carry out alterations to existing worktops including cutting new appliance apertures, extending existing runs, and trimming or reshaping laminate and solid wood surfaces. Our work is clean and precise, using the correct tooling for each worktop material to avoid chipping or delamination.",
+    "commonCauses": [
+      "New appliance requires a different size aperture than the original",
+      "Worktop extended as part of kitchen modification",
+      "Section of worktop trimmed after room layout changed",
+      "New sink or hob positioned differently from original installation"
+    ],
+    "typicalTime": "Half a day to full day depending on alteration type",
+    "fromPriceCW": 75,
+    "fromPriceBerks": 95,
+    "upsellLine": "If your alteration requires a new section of worktop to be joined to the existing run, we can carry out a precision router joint at the same visit for a seamless, watertight finish.",
+    "faqs": [
+      {
+        "q": "Can you cut a new hob aperture in my existing worktop?",
+        "a": "Yes — cutting a new hob aperture in an existing laminate or solid wood worktop is a routine job for us. We use a jigsaw and router with the correct template for your hob model. For stone or quartz worktops, cutting an aperture requires specialist diamond tooling and we would recommend using a stone fabricator for this work."
+      },
+      {
+        "q": "Can you extend my worktop run to cover a new base unit?",
+        "a": "Yes — extending a worktop run typically involves cutting a new section to length and joining it to the existing surface using a precision router joint. We can match the laminate pattern direction and colour code to source a matching worktop section. For solid wood, we will match the timber species and thickness."
+      },
+      {
+        "q": "My worktop has been cut too short — can it be salvaged?",
+        "a": "Depending on the extent of the error and the worktop material, a worktop that has been cut too short can sometimes be salvaged by fitting a matching end section and joining it seamlessly. In other cases replacement is the more practical option. We will assess the situation on the visit and give you an honest recommendation."
+      },
+      {
+        "q": "Do worktop alterations void a manufacturer's warranty?",
+        "a": "Alterations carried out by a competent fitter using the correct tools and sealants will not normally cause any warranty issues. We always seal cut edges and joints correctly to prevent moisture ingress, which is the primary cause of laminate worktop failure. If you have a specific manufacturer warranty concern, we are happy to advise on the correct approach."
+      }
+    ]
+  },
+  {
+    "slug": "kitchen-worktop-joint-repair",
+    "name": "Kitchen Worktop Joint Repair",
+    "h1Fragment": "kitchen worktop joint repair",
+    "description": "We repair and reseal worktop joints that have opened, lifted, or allowed moisture ingress. A failed worktop joint is a common source of swelling and cabinet damage, and early intervention can prevent a more expensive worktop replacement.",
+    "commonCauses": [
+      "Joint sealant dried out and cracked over time",
+      "Moisture getting into the joint causing swelling",
+      "Joint poorly made at original installation — not flush",
+      "Joint screws worked loose allowing movement between sections"
+    ],
+    "typicalTime": "Two to four hours",
+    "fromPriceCW": 75,
+    "fromPriceBerks": 95,
+    "upsellLine": "If we find the worktop has swollen beyond repair, we can advise on worktop replacement options and carry out a new precision joint as part of the replacement service.",
+    "faqs": [
+      {
+        "q": "My worktop joint has a visible gap — is it possible to repair it?",
+        "a": "In many cases yes. A joint that has simply dried out and cracked can be cleaned out, recut if necessary, and resealed with the correct waterproof sealant. A joint that has caused significant swelling to the surrounding worktop surface may require a section replacement. We will assess the extent of the damage on the visit before recommending a repair or replacement."
+      },
+      {
+        "q": "Water has been getting into my worktop joint — how bad is the damage likely to be?",
+        "a": "The severity depends on how long the joint has been allowing water ingress and the material. Laminate worktops swell quickly when water penetrates the substrate; solid wood is more resistant but can also stain and crack over time. We will check the condition of the joint and the surrounding worktop and cabinet tops for any moisture damage before carrying out the repair."
+      },
+      {
+        "q": "Can a worktop joint be repaired without replacing the whole worktop?",
+        "a": "Often yes — if the swelling is limited to the area immediately around the joint, we can sometimes trim back the damaged material, cut a fresh joint, and refit the sections with a new precision router joint. This is significantly cheaper than a full replacement and in most cases gives an excellent result."
+      },
+      {
+        "q": "What sealant do you use on worktop joints?",
+        "a": "We use colour-matched silicone sealant or specialist worktop joint compound depending on the material and joint type. For laminate worktops we use a colour-matched compound applied to the screw-and-bolt joint before the sections are drawn together. For solid wood we use a clear waterproof sealant that allows the wood to move naturally."
+      }
+    ]
+  },
+  {
+    "slug": "kitchen-unit-adjustment",
+    "name": "Kitchen Unit Adjustment",
+    "h1Fragment": "kitchen unit adjustment",
+    "description": "We carry out comprehensive alignment and adjustment of kitchen doors, drawers, and cabinets — setting every hinge in three planes and adjusting every drawer runner to give a perfectly even reveal and smooth operation across the whole kitchen.",
+    "commonCauses": [
+      "Original installation carried out to a poor standard",
+      "Doors and drawers knocked out of alignment over time",
+      "House settling causing cabinets to move slightly",
+      "New appliances or worktops fitted without realigning adjacent units"
+    ],
+    "typicalTime": "Half a day for an average kitchen",
+    "fromPriceCW": 60,
+    "fromPriceBerks": 85,
+    "upsellLine": "If any hinges are beyond adjustment and need replacing, we can carry out the replacement at the same visit — saving you a second call-out charge.",
+    "faqs": [
+      {
+        "q": "All my kitchen doors seem out of line — is this worth having adjusted professionally?",
+        "a": "Absolutely — a professionally adjusted kitchen looks and feels significantly better than one where doors and drawers are even slightly misaligned. Modern concealed hinges are adjustable in three planes (up/down, side to side, and depth), and a systematic adjustment across the whole kitchen typically takes half a day. The cost is a fraction of a new kitchen and most customers are surprised by the transformation."
+      },
+      {
+        "q": "How do I know if my kitchen doors just need adjusting rather than replacing?",
+        "a": "If the doors look straight and undamaged but are hanging unevenly or not closing flush, they almost certainly just need adjustment. If a door is visibly warped, cracked, or the hinge itself is broken, adjustment will not fully resolve the issue and replacement may be needed. We will assess each door and hinge on the visit and give you an honest recommendation."
+      },
+      {
+        "q": "My kitchen was installed by the retailer's team and the doors were never set correctly — can you fix this?",
+        "a": "Yes — poor retailer installation is one of the most common reasons customers contact us. We regularly carry out adjustment work on kitchens installed by retailer teams where the job was rushed or not completed to a professional standard. We will systematically work through every door and drawer in the kitchen and leave it properly set."
+      },
+      {
+        "q": "How long does a full kitchen door and drawer adjustment take?",
+        "a": "An average kitchen of 20–25 doors and 6–10 drawers typically takes around four hours to adjust fully. We work through every component systematically, adjusting hinges and runners, setting door gaps, and checking operation before moving on. By the time we leave every door and drawer should operate perfectly."
+      }
+    ]
+  },
+  {
+    "slug": "kitchen-snagging",
+    "name": "Kitchen Snagging",
+    "h1Fragment": "kitchen snagging",
+    "description": "We carry out kitchen snagging — a systematic check and correction of all items that were not completed or were done incorrectly during the original installation. Whether you have a list of issues or want us to carry out a full inspection, we will work through every problem methodically and leave the kitchen in the condition it should have been from the start.",
+    "commonCauses": [
+      "Retailer installation team left the job incomplete",
+      "Doors, drawers, and plinths not properly adjusted at installation",
+      "Small items — handles, fixings, fillers — not finished",
+      "Customer noticed issues after installation team had left"
+    ],
+    "typicalTime": "Half a day to full day depending on snag list length",
+    "fromPriceCW": 60,
+    "fromPriceBerks": 85,
+    "upsellLine": "If our snagging inspection reveals any missing parts — hinges, drawer runners, plinths — that the retailer should have supplied, we can source and fit them at the same visit to avoid a further delay.",
+    "faqs": [
+      {
+        "q": "What does kitchen snagging involve?",
+        "a": "Kitchen snagging involves a systematic inspection of everything in the kitchen that was part of the installation — doors, drawers, hinges, plinths, cornice, pelmet, handles, worktop joints, scribing, and appliance integration. We check each item against a standard of professional finish and correct anything that falls short, producing a brief written record of what we have done."
+      },
+      {
+        "q": "Can you snag a kitchen that was installed by a retailer's team?",
+        "a": "Yes — snagging work on retailer-installed kitchens is the majority of our remedial business. Retailer installation teams are often under time pressure to complete jobs quickly, and the resulting work can fall short of what the customer paid for. We will work through any issues professionally and without comment on the original installation team."
+      },
+      {
+        "q": "Should I contact the retailer or an independent fitter for snagging?",
+        "a": "If the kitchen was recently installed and is within the retailer's workmanship guarantee period, you should first contact them to request remedial work at no charge. If they are unresponsive, you have waited too long, or you would simply prefer a faster and more reliable outcome, we can carry out the snagging on a paid basis. We work to a professional standard regardless of who fitted the kitchen originally."
+      },
+      {
+        "q": "How do I prepare a snag list for my kitchen?",
+        "a": "Walk through the kitchen systematically, opening every door and drawer, checking that plinths are fitted and level, that cornice and pelmet are complete, and that all handles and hinges are present. Note anything that does not look, open, or close as you would expect. You do not need to diagnose the problem — just describe what you observe — and we will identify the cause and fix it."
+      }
+    ]
+  },
+  {
+    "slug": "kitchen-finishing-after-diy-install",
+    "name": "Kitchen Finishing After DIY Install",
+    "h1Fragment": "kitchen finishing after diy installation",
+    "description": "We complete kitchens that have been partially or improperly self-installed — setting doors and drawers, scribing fillers and end panels, fitting plinths and cornice, and correcting any levelling or alignment issues left over from the DIY build. We work without judgement and focus entirely on getting the kitchen to a professional finish.",
+    "commonCauses": [
+      "Self-installation reached a point requiring specialist knowledge",
+      "Scribing, mitring, and filler fitting proving difficult",
+      "Doors and drawers not hanging correctly after self-assembly",
+      "Worktop cut or joined incorrectly and needing correction"
+    ],
+    "typicalTime": "Full day, sometimes two days depending on how far the DIY reached",
+    "fromPriceCW": 60,
+    "fromPriceBerks": 85,
+    "upsellLine": "If any components need replacing due to damage during the DIY process, we can advise on sourcing and will fit them as part of the same visit.",
+    "faqs": [
+      {
+        "q": "I have got partway through fitting my kitchen and am stuck — can you take over?",
+        "a": "Yes — taking over mid-installation is something we do regularly. We will assess where you have reached, identify what needs to be corrected or undone, and complete the rest of the installation to a professional standard. We do not make customers feel bad for attempting the work themselves — we simply focus on getting the kitchen finished correctly."
+      },
+      {
+        "q": "What parts of a kitchen installation are hardest to do yourself?",
+        "a": "The most common areas where DIY installations run into problems are scribing end panels and fillers to uneven walls, cutting and joining worktops, setting soft-close hinges and drawer runners, and fitting integrated appliances correctly. These are exactly the areas we specialise in — so if you have managed everything else and hit a wall on one of these, we can step in and complete just that part."
+      },
+      {
+        "q": "Will you be able to use the kitchen units I have already assembled?",
+        "a": "In most cases yes — flat-pack carcasses assembled correctly are perfectly usable even if the installation itself needs work. If any carcasses have been assembled incorrectly or damaged during the process, we will advise you honestly on whether they need replacing before we can complete the installation."
+      },
+      {
+        "q": "I have fitted my kitchen but it does not look professional — can you make it right?",
+        "a": "Yes — a kitchen that is structurally installed but lacks a professional finish is exactly the sort of project we take on regularly. Common issues include uneven gaps between doors, plinths fitted at inconsistent heights, unsightly gaps at wall junctions, and exposed raw edges. We will work through every visible imperfection and leave the kitchen looking as if a professional fitted it from day one."
+      }
+    ]
+  }
+]

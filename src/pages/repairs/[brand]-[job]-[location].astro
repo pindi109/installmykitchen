@@ -1,0 +1,371 @@
+---
+import Base from "../../layouts/Base.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import StickyMobileCTA from "../../components/StickyMobileCTA.astro";
+import Breadcrumbs from "../../components/Breadcrumbs.astro";
+import AnswerBlock from "../../components/AnswerBlock.astro";
+import RetailerLogo from "../../components/RetailerLogo.astro";
+import EnquiryForm from "../../components/EnquiryForm.astro";
+import FAQ from "../../components/FAQ.astro";
+import InternalLinks from "../../components/InternalLinks.astro";
+import CTA from "../../components/CTA.astro";
+
+import retailersData from "../../data/retailers.json";
+import locationsData from "../../data/locations.json";
+import remedialData from "../../data/remedial.json";
+
+const BRAND_SLUGS = ["wren", "howdens", "magnet", "ikea", "wickes"];
+const JOB_SLUGS = [
+  "kitchen-door-replacement",
+  "kitchen-hinge-replacement",
+  "kitchen-unit-adjustment",
+  "kitchen-plinth-replacement",
+];
+const REMEDIAL_LOCATION_SLUGS = [
+  "coventry",
+  "solihull",
+  "leamington-spa",
+  "warwick",
+  "kenilworth",
+  "nuneaton",
+  "rugby",
+  "reading",
+  "bracknell",
+  "slough",
+  "maidenhead",
+  "windsor",
+  "wokingham",
+  "newbury",
+  "ascot",
+];
+
+export function getStaticPaths() {
+  const BRAND_SLUGS = ["wren", "howdens", "magnet", "ikea", "wickes"];
+  const JOB_SLUGS = [
+    "kitchen-door-replacement",
+    "kitchen-hinge-replacement",
+    "kitchen-unit-adjustment",
+    "kitchen-plinth-replacement",
+  ];
+  const REMEDIAL_LOCATION_SLUGS = [
+    "coventry",
+    "solihull",
+    "leamington-spa",
+    "warwick",
+    "kenilworth",
+    "nuneaton",
+    "rugby",
+    "reading",
+    "bracknell",
+    "slough",
+    "maidenhead",
+    "windsor",
+    "wokingham",
+    "newbury",
+    "ascot",
+  ];
+
+  const brands = BRAND_SLUGS
+    .map((slug) => retailersData.find((r) => r.slug === slug))
+    .filter(Boolean) as typeof retailersData;
+
+  const jobs = JOB_SLUGS
+    .map((slug) => remedialData.find((j) => j.slug === slug))
+    .filter(Boolean) as typeof remedialData;
+
+  const locations = REMEDIAL_LOCATION_SLUGS
+    .map((slug) => locationsData.find((l) => l.slug === slug))
+    .filter(Boolean) as typeof locationsData;
+
+  const paths: {
+    params: { brand: string; job: string; location: string };
+    props: {
+      retailer: typeof retailersData[0];
+      job: typeof remedialData[0];
+      location: typeof locationsData[0];
+      brandIndex: number;
+      jobIndex: number;
+      locationIndex: number;
+    };
+  }[] = [];
+
+  brands.forEach((retailer, brandIndex) => {
+    jobs.forEach((job, jobIndex) => {
+      locations.forEach((location, locationIndex) => {
+        paths.push({
+          params: {
+            brand: retailer.slug,
+            job: job.slug,
+            location: location.slug,
+          },
+          props: { retailer, job, location, brandIndex, jobIndex, locationIndex },
+        });
+      });
+    });
+  });
+
+  return paths;
+}
+
+const { retailer, job, location, brandIndex, jobIndex, locationIndex } = Astro.props;
+const { displayName, slug: brandSlug } = retailer;
+const { name: jobName, slug: jobSlug, h1Fragment, description: jobDescription, fromPriceCW, fromPriceBerks, upsellLine, faqs: jobFaqs } = job;
+const { name: locationName, slug: locationSlug, county, localNote, kitchenNotes } = location;
+
+// Is this a Berkshire/southern location?
+const BERKS_SLUGS = ["reading", "bracknell", "slough", "maidenhead", "windsor", "wokingham", "newbury", "ascot"];
+const isBerks = BERKS_SLUGS.includes(locationSlug);
+const fromPrice = isBerks ? fromPriceBerks : fromPriceCW;
+
+const canonical = `https://installmykitchen.co.uk/repairs/${brandSlug}-${jobSlug}-${locationSlug}/`;
+
+// Title ≤60 chars
+const rawTitle = `${displayName} ${jobName} ${locationName} | Install My Kitchen`;
+const title = rawTitle.length <= 60
+  ? rawTitle
+  : `${displayName} ${jobName} ${locationName} | IMK`.length <= 60
+    ? `${displayName} ${jobName} ${locationName} | IMK`
+    : `${displayName} ${jobName} in ${locationName}`.slice(0, 47) + " | IMK";
+
+// Meta desc 140–160 chars
+const metaDescription = `Independent ${displayName} ${h1Fragment} in ${locationName}, ${county}. Expert remedial fitting, not affiliated with ${displayName}. From £${fromPrice} — free enquiry, fixed-price quote.`;
+
+// FAQ — offset by brandIndex + locationIndex for variety
+const faqOffset = (brandIndex + locationIndex) % jobFaqs.length;
+const faqItems = [
+  jobFaqs[faqOffset % jobFaqs.length],
+  jobFaqs[(faqOffset + 1) % jobFaqs.length],
+  jobFaqs[(faqOffset + 2) % jobFaqs.length],
+  jobFaqs[(faqOffset + 3) % jobFaqs.length],
+];
+
+// Internal links — 8 links as specified
+const internalLinks = [
+  {
+    label: `${jobName} in ${locationName}`,
+    href: `/repairs/${jobSlug}-${locationSlug}/`,
+    description: `All brands — independent ${h1Fragment} in ${locationName}`,
+  },
+  {
+    label: "Repairs & Remedial Hub",
+    href: "/repairs/",
+    description: "All remedial kitchen fitting services",
+  },
+  {
+    label: `${displayName} Installer in ${locationName}`,
+    href: `/installer/${brandSlug}-${locationSlug}/`,
+    description: `Independent ${displayName} installation across ${locationName}`,
+  },
+  {
+    label: `${displayName} Kitchens`,
+    href: `/retailers/${brandSlug}/`,
+    description: `Our full independent fitting service for ${displayName}`,
+  },
+  {
+    label: `Kitchen Services in ${locationName}`,
+    href: `/areas/${locationSlug}/`,
+    description: `All kitchen fitting services available in ${locationName}`,
+  },
+  {
+    label: `Book a Survey in ${locationName}`,
+    href: `/survey/${locationSlug}/`,
+    description: `Home survey and fixed-price quote for ${locationName}`,
+  },
+  {
+    label: `Kitchen Cost in ${locationName}`,
+    href: `/kitchen-cost/${locationSlug}/`,
+    description: `Installation pricing guide for ${locationName} homeowners`,
+  },
+  {
+    label: "Contact Us",
+    href: "/contact/",
+    description: "Get in touch to discuss your kitchen project",
+  },
+];
+
+// Service JSON-LD
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  name: `${jobName} ${displayName} in ${locationName}`,
+  provider: {
+    "@type": "LocalBusiness",
+    name: "Install My Kitchen",
+    url: "https://installmykitchen.co.uk",
+    telephone: "07399651836",
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: "242 Hollyfast Road, Coundon",
+      addressLocality: "Coventry",
+      postalCode: "CV6 2AH",
+      addressCountry: "GB",
+    },
+  },
+  areaServed: {
+    "@type": "Place",
+    name: locationName,
+  },
+  description: `Independent ${displayName} ${h1Fragment} in ${locationName}, ${county}. Install My Kitchen is not affiliated with ${displayName}.`,
+  serviceType: `${jobName} ${displayName}`,
+  offers: {
+    "@type": "Offer",
+    priceCurrency: "GBP",
+    price: String(fromPrice),
+    description: `From £${fromPrice} — fixed-price quote provided after survey`,
+  },
+};
+---
+
+<Base
+  title={title}
+  description={metaDescription}
+  canonical={canonical}
+  noHero={true}
+>
+  <script slot="schema" type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
+
+  <Header slot="header" />
+
+  <!-- Breadcrumbs -->
+  <div class="container py-6">
+    <Breadcrumbs
+      items={[
+        { label: "Repairs", href: "/repairs/" },
+        { label: `${displayName} ${jobName} in ${locationName}`, href: canonical },
+      ]}
+    />
+  </div>
+
+  <!-- Hero / H1 -->
+  <section class="section" style="background: var(--bg-light);">
+    <div class="container">
+      <div class="max-w-3xl">
+        <!-- Retailer logo + disclaimer -->
+        <div class="mb-5 flex flex-col gap-2">
+          <RetailerLogo slug={brandSlug} size="md" />
+          <p class="text-xs" style="color: var(--text-soft);">
+            Install My Kitchen is an independent fitting service. We are not affiliated with, endorsed by, or a trading partner of {displayName}.
+          </p>
+        </div>
+
+        <h1 class="text-4xl md:text-5xl font-extrabold mb-5 leading-tight" style="color: var(--navy);">
+          Independent {displayName} {jobName} in {locationName}
+        </h1>
+
+        <AnswerBlock
+          answer={`Install My Kitchen carries out independent ${displayName} ${h1Fragment} in ${locationName}. We work directly for you, not for ${displayName} — providing expert remedial fitting with no retailer affiliation and a fixed-price quote guaranteed before any work begins.`}
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- What the job involves -->
+  <section class="section">
+    <div class="container">
+      <div class="max-w-3xl fade-up">
+        <h2 class="text-3xl font-bold mb-4" style="color: var(--navy);">
+          What Does {jobName} Involve on a {displayName} Kitchen?
+        </h2>
+        <p class="text-lg leading-relaxed mb-4" style="color: var(--text-soft);">
+          {jobDescription}
+        </p>
+        <p class="leading-relaxed mb-4" style="color: var(--text-soft);">
+          {displayName} kitchens use their own cabinet and hardware formats that our fitters know in detail. Whether that means working with {displayName}'s own hinge system, matching their door profiles precisely, or understanding how their carcasses are constructed, our team brings specific experience to every {displayName} remedial job in {locationName}.
+        </p>
+        <p class="leading-relaxed" style="color: var(--text-soft);">
+          {kitchenNotes ?? `${locationName} homes present a variety of installation challenges, and our fitters adapt their approach to suit the specific requirements of each property.`}
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why independent fitter vs retailer -->
+  <section class="section" style="background: var(--bg-light);">
+    <div class="container">
+      <div class="max-w-3xl fade-up">
+        <h2 class="text-3xl font-bold mb-4" style="color: var(--navy);">
+          Why Use an Independent Fitter for {displayName} Remedial Work?
+        </h2>
+        <p class="leading-relaxed mb-4" style="color: var(--text-soft);">
+          {displayName}'s own installation or aftercare service is tied to their commercial relationship with you as a customer. An independent fitter like Install My Kitchen has no such tie — we assess the work objectively, quote a fixed price for exactly what is needed, and carry it out without upselling you on products or services you do not require.
+        </p>
+        <p class="leading-relaxed mb-4" style="color: var(--text-soft);">
+          Remedial jobs such as {h1Fragment} are often quicker and more cost-effective when handled by an experienced independent fitter who is familiar with {displayName}'s product range. We can often diagnose the root cause of a problem on site and carry out the repair in a single visit, without waiting for retailer-scheduled appointments.
+        </p>
+        <p class="leading-relaxed" style="color: var(--text-soft);">
+          Our service in {locationName} covers the full {county} area and surrounding postcodes. {localNote ?? `We are familiar with the property types and kitchen layouts commonly found in ${locationName}, which helps us plan and execute every remedial visit efficiently.`}
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing section -->
+  <section class="section">
+    <div class="container">
+      <div class="max-w-3xl fade-up">
+        <h2 class="text-3xl font-bold mb-4" style="color: var(--navy);">
+          {jobName} Pricing in {locationName}
+        </h2>
+        <p class="leading-relaxed mb-4" style="color: var(--text-soft);">
+          Our {h1Fragment} service in {locationName} starts from <strong>£{fromPrice}</strong>. The final price depends on the number of units or components involved, access requirements, and whether any additional hardware is needed. We provide a full fixed-price quote before any work begins — no surprises on the invoice.
+        </p>
+        <p class="leading-relaxed mb-4" style="color: var(--text-soft);">
+          {upsellLine}
+        </p>
+        <div class="card p-6 border-l-4 mt-4" style="border-left-color: var(--teal); background: rgba(15,118,110,0.05);">
+          <p class="font-semibold mb-1" style="color: var(--navy);">From £{fromPrice} — {locationName} area</p>
+          <p class="text-sm" style="color: var(--text-soft);">Fixed-price quote provided after a brief on-site assessment. No call-out fee for combined visits.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Enquiry Form mid-page -->
+  <section class="section" style="background: var(--bg-light);">
+    <div class="container">
+      <div class="max-w-2xl mx-auto fade-up">
+        <p class="text-center text-sm mb-6 font-medium" style="color: var(--teal);">
+          Get a Fixed-Price Quote for {displayName} {jobName} in {locationName}
+        </p>
+        <EnquiryForm formTitle={`Quote: ${displayName} ${jobName} — ${locationName}`} showSurveyOption={false} />
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section">
+    <div class="container">
+      <div class="max-w-3xl fade-up">
+        <h2 class="text-3xl font-bold mb-8" style="color: var(--navy);">
+          Frequently Asked Questions
+        </h2>
+        <FAQ items={faqItems} schemaId={`faq-repairs-${brandSlug}-${jobSlug}-${locationSlug}`} />
+      </div>
+    </div>
+  </section>
+
+  <!-- Internal Links -->
+  <section class="section" style="background: var(--bg-light);">
+    <div class="container fade-up">
+      <InternalLinks
+        links={internalLinks}
+        heading="Related Services"
+      />
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <CTA
+    heading={`Book Your ${displayName} ${jobName} in ${locationName}`}
+    subtext={`Fixed-price quotes, no retailer affiliation, expert independent fitting in ${locationName} and across ${county}. Call us or send an enquiry today.`}
+    primaryLabel="Get a Free Quote"
+    primaryHref="/contact/"
+    secondaryLabel="Call 07399 651836"
+    secondaryHref="tel:+447399651836"
+    dark={true}
+  />
+
+  <Footer slot="footer" />
+  <StickyMobileCTA slot="sticky-cta" />
+</Base>

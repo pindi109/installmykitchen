@@ -123,7 +123,6 @@ const areas = [
   description="Expert independent kitchen installation across Coventry and Warwickshire. We fit kitchens from Wren, Howdens, IKEA and more. Survey from £195."
   canonical="https://installmykitchen.co.uk/"
   noHero={true}
-  lastUpdated="2026-06-23"
 >
   <!-- Schema -->
   <script slot="schema" type="application/ld+json" set:html={JSON.stringify(siteSchema)} />
@@ -155,7 +154,7 @@ const areas = [
           </a>
         </div>
         <p style="font-size:0.8rem; color:rgba(255,255,255,0.5); margin-top:1rem;">
-          Vetted professional installers · Fixed price guaranteed · All major retailers
+          30 years experience · Fixed price guaranteed · All major retailers
         </p>
       </div>
     </div>
@@ -179,91 +178,95 @@ const areas = [
     </div>
   </section>
 
-  <!-- ══════════════════════════════════════════ STATEMENT BAND ═══ -->
-  <section class="statement-band" aria-label="Why Install My Kitchen">
+  <!-- ══════════════════════════════════════════ BENEFIT STRIP ═══ -->
+  <section class="section-sm" style="background: var(--bg-light);" aria-label="Key benefits">
     <div class="container">
-      <div class="statement-inner">
-        <div class="statement-copy">
-          <h2 class="statement-h2">
-            Independent Kitchen Installation Across Coventry &amp; Warwickshire.
-            <span class="statement-accent"> Survey First. Fixed Price. Done Right.</span>
-          </h2>
-          <p class="statement-sub">
-            You've bought your kitchen — from Wren, Howdens, Magnet, IKEA, or anywhere else. Our vetted installation team will fit it on a fixed price, with a pre-installation survey included. No retailer tie-ins. No hidden costs. No surprises.
-          </p>
-          <div class="statement-ctas">
-            <a href="/survey/" class="btn-primary">Book Your Survey — £195 Credited Back</a>
-            <a href="/kitchen-fitter-coventry/" class="statement-link">
-              Find your local kitchen fitter →
-            </a>
-          </div>
-        </div>
-        <ul class="statement-stats" role="list">
-          <li class="stat-card" role="listitem">
-            <span class="stat-number">30+</span>
-            <span class="stat-label">Years of professional kitchen installation experience on our team</span>
-          </li>
-          <li class="stat-card" role="listitem">
-            <span class="stat-number">£195</span>
-            <span class="stat-label">Pre-installation survey — credited back in full when you book</span>
-          </li>
-          <li class="stat-card" role="listitem">
-            <span class="stat-number">Fixed</span>
-            <span class="stat-label">Price guaranteed — what we quote is exactly what you pay</span>
-          </li>
-          <li class="stat-card" role="listitem">
-            <span class="stat-number">Any</span>
-            <span class="stat-label">Retailer fitted — we're independent of every showroom and brand</span>
-          </li>
-        </ul>
-      </div>
+      <ul class="benefit-strip" role="list">
+        <li class="benefit-item" role="listitem">
+          <span class="benefit-icon" aria-hidden="true">
+            <!-- Checkmark in circle -->
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="9 12 11 14 15 10"/></svg>
+          </span>
+          <span class="benefit-label">Independent &amp; Retailer Neutral</span>
+        </li>
+        <li class="benefit-item" role="listitem">
+          <span class="benefit-icon" aria-hidden="true">
+            <!-- Clock -->
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </span>
+          <span class="benefit-label">Fast Slots Available</span>
+        </li>
+        <li class="benefit-item" role="listitem">
+          <span class="benefit-icon" aria-hidden="true">
+            <!-- Clipboard -->
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/><line x1="9" y1="12" x2="15" y2="12"/><line x1="9" y1="16" x2="13" y2="16"/></svg>
+          </span>
+          <span class="benefit-label">Survey Before Installation</span>
+        </li>
+        <li class="benefit-item" role="listitem">
+          <span class="benefit-icon" aria-hidden="true">
+            <!-- Star -->
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          </span>
+          <span class="benefit-label">Experienced Specialists</span>
+        </li>
+        <li class="benefit-item" role="listitem">
+          <span class="benefit-icon" aria-hidden="true">
+            <!-- Map pin -->
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </span>
+          <span class="benefit-label">Coventry &amp; Warwickshire</span>
+        </li>
+      </ul>
     </div>
   </section>
 
   <!-- ═════════════════════════════════════ SUPPLIER LOGOS ════════ -->
   <SupplierLogos heading="We Install Kitchens From All Major Suppliers" />
 
-  <!-- ══════════════════════════════════ GUARANTEES STRIP ══════ -->
-  <section style="padding: 48px 0; background: var(--bg-light);">
+  <!-- ══════════════════════════════════ PINDI SAHOTA ══════════ -->
+  <section style="padding: 60px 0; background: var(--bg-light);">
     <div class="container">
-      <div class="guarantees-grid">
-        <div class="guarantee-item">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--teal);flex-shrink:0;" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
-          <div>
-            <strong style="display:block;font-size:0.9375rem;color:var(--navy);margin-bottom:0.2rem;">Fixed-Price Guarantee</strong>
-            <span style="font-size:0.875rem;color:var(--text-soft);">Your quote never changes — no hidden extras on completion day.</span>
+      <div class="pindi-grid">
+        <div>
+          <p style="color: var(--teal); font-weight: 600; font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.75rem;">Your Installer</p>
+          <h2 style="font-size: clamp(1.75rem, 3vw, 2.5rem); font-weight: 800; color: var(--navy); margin-bottom: 1.25rem; line-height: 1.2;">Pindi Sahota — 30 Years on the Tools</h2>
+          <p style="color: var(--text-soft); line-height: 1.75; margin-bottom: 1rem; font-size: 1.0625rem;">Pindi Sahota founded Install My Kitchen after three decades fitting kitchens across Coventry and Warwickshire. He surveys every project personally, provides a fixed price, and doesn't leave until the job is right.</p>
+          <p style="color: var(--text-soft); line-height: 1.75; margin-bottom: 1.5rem;">Every survey is conducted by Pindi himself — not a salesperson, not a subcontractor. He assesses your room, checks your plans against reality, and provides a fixed installation quote within 24 hours. You deal with Pindi from survey to sign-off.</p>
+          <div style="display: flex; flex-wrap: wrap; gap: 1rem; margin-bottom: 1.5rem;">
+            <div style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.875rem; font-weight: 600; color: var(--charcoal);">
+              <span style="width: 8px; height: 8px; border-radius: 50%; background: var(--teal); display: inline-block;"></span>
+              30 years experience
+            </div>
+            <div style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.875rem; font-weight: 600; color: var(--charcoal);">
+              <span style="width: 8px; height: 8px; border-radius: 50%; background: var(--teal); display: inline-block;"></span>
+              Personal survey every time
+            </div>
+            <div style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.875rem; font-weight: 600; color: var(--charcoal);">
+              <span style="width: 8px; height: 8px; border-radius: 50%; background: var(--teal); display: inline-block;"></span>
+              Fixed price guaranteed
+            </div>
+            <div style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.875rem; font-weight: 600; color: var(--charcoal);">
+              <span style="width: 8px; height: 8px; border-radius: 50%; background: var(--teal); display: inline-block;"></span>
+              All major retailers
+            </div>
+          </div>
+          <a href="/pindi-sahota/" style="display: inline-flex; align-items: center; gap: 0.5rem; color: var(--teal); font-weight: 600; font-size: 0.9375rem;">
+            Meet Pindi →
+          </a>
+        </div>
+        <div class="card" style="padding: 2rem; border-left: 4px solid var(--teal);">
+          <p style="font-size: 1.125rem; color: var(--charcoal); line-height: 1.7; font-style: italic; margin-bottom: 1.25rem;">"The thing that separates a good kitchen installation from an average one is almost always in the detail — the consistency of door gaps, the tightness of a worktop joint, the alignment of a plinth on an uneven floor. These are the details I have spent 30 years refining."</p>
+          <div style="display: flex; align-items: center; gap: 0.75rem;">
+            <div style="width: 48px; height: 48px; border-radius: 50%; background: var(--teal); display: flex; align-items: center; justify-content: center;">
+              <span style="color: white; font-weight: 800; font-size: 1.125rem;">P</span>
+            </div>
+            <div>
+              <div style="font-weight: 700; color: var(--navy);">Pindi Sahota</div>
+              <div style="font-size: 0.8125rem; color: var(--text-soft);">Founder, Install My Kitchen</div>
+            </div>
           </div>
         </div>
-        <div class="guarantee-item">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--teal);flex-shrink:0;" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-          <div>
-            <strong style="display:block;font-size:0.9375rem;color:var(--navy);margin-bottom:0.2rem;">Survey Before We Quote</strong>
-            <span style="font-size:0.875rem;color:var(--text-soft);">We visit every home before pricing — no guesswork, no surprises.</span>
-          </div>
-        </div>
-        <div class="guarantee-item">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--teal);flex-shrink:0;" aria-hidden="true"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
-          <div>
-            <strong style="display:block;font-size:0.9375rem;color:var(--navy);margin-bottom:0.2rem;">Snagging Sign-Off</strong>
-            <span style="font-size:0.875rem;color:var(--text-soft);">Every installation ends with a walkthrough — we don't leave until it's right.</span>
-          </div>
-        </div>
-        <div class="guarantee-item">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--teal);flex-shrink:0;" aria-hidden="true"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
-          <div>
-            <strong style="display:block;font-size:0.9375rem;color:var(--navy);margin-bottom:0.2rem;">All Major Retailers</strong>
-            <span style="font-size:0.875rem;color:var(--text-soft);">Wren, Howdens, Magnet, IKEA, Wickes, B&Q and more — we fit any brand.</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Quality assurance credit -->
-      <div class="installer-credit">
-        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--teal);flex-shrink:0;" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
-        <p style="margin:0;font-size:0.9375rem;color:var(--charcoal);line-height:1.6;">
-          <strong>Every installer on our team is personally vetted by Pindi Sahota</strong>, who has over 30 years of professional kitchen installation experience. Your kitchen is never handed to an unknown subcontractor.
-          <a href="/pindi-sahota/" style="color:var(--teal);font-weight:600;margin-left:0.375rem;">Our standards →</a>
-        </p>
       </div>
     </div>
   </section>
@@ -308,7 +311,7 @@ const areas = [
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
           </span>
           <strong class="trust-title">Coventry &amp; Warwickshire Based</strong>
-          <p class="trust-desc">Our team is local, independent, and accountable — based in Coventry, serving the whole region. Not a national franchise, not a call centre. Real people, real kitchens.</p>
+          <p class="trust-desc">Local, independent, and accountable. Based in Coundon, Coventry — serving the whole region, not parachuted in from elsewhere.</p>
         </li>
       </ul>
     </div>
@@ -320,21 +323,16 @@ const areas = [
       <div class="split-grid">
         <!-- Left: copy -->
         <div class="split-left fade-up">
-          <p style="color:var(--teal);font-weight:700;font-size:0.8125rem;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:0.75rem;">Why Choose Independent</p>
-          <h2 id="better-way-heading" class="text-2xl md:text-3xl lg:text-4xl font-bold mb-4" style="color: var(--charcoal);">
+          <h2 id="better-way-heading" class="text-2xl md:text-3xl lg:text-4xl font-bold mb-6" style="color: var(--charcoal);">
             A Better Way to Get Your Kitchen Installed
           </h2>
-          <p style="color:var(--text-soft);line-height:1.75;margin-bottom:1.75rem;font-size:1rem;">
-            When you buy a kitchen from a retailer, the fitting is often an afterthought — rushed, subcontracted, and priced to a margin. We do things differently. Our installers work for you, not the showroom. Every project starts with a survey, ends with a snagging walkthrough, and is priced on a fixed basis from day one.
-          </p>
-
           <ul class="better-list" role="list">
             <li class="better-item" role="listitem">
               <span class="better-tick" aria-hidden="true">
                 <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
               </span>
               <span>
-                <strong>Truly independent</strong> — we're not employed by any retailer, so every decision we make is in your interest, not a showroom's.
+                <strong>Truly independent</strong> — we're not employed by any retailer, so you get honest advice and quality work that's in your interest, not theirs.
               </span>
             </li>
             <li class="better-item" role="listitem">
@@ -342,7 +340,7 @@ const areas = [
                 <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
               </span>
               <span>
-                <strong>Survey before we quote</strong> — we visit your home, check the room against your plan, and flag anything that needs resolving. No guesswork, no hidden surprises on day one.
+                <strong>Survey protects you</strong> — we visit before we quote, checking your room against the plan so there are no surprises on installation day.
               </span>
             </li>
             <li class="better-item" role="listitem">
@@ -350,93 +348,12 @@ const areas = [
                 <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
               </span>
               <span>
-                <strong>Fixed price, always</strong> — your written quote is your final price. We don't add extras on completion day. What we quote is what you pay.
-              </span>
-            </li>
-            <li class="better-item" role="listitem">
-              <span class="better-tick" aria-hidden="true">
-                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-              </span>
-              <span>
-                <strong>End-to-end installation</strong> — from carcass assembly and wall unit hanging to worktop cutting, appliance integration, plinths, cornices, and final door alignment.
-              </span>
-            </li>
-            <li class="better-item" role="listitem">
-              <span class="better-tick" aria-hidden="true">
-                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-              </span>
-              <span>
-                <strong>Vetted, experienced installers</strong> — every installer on our team meets the quality standard set by our founder, who has over 30 years of professional kitchen installation experience.
-              </span>
-            </li>
-            <li class="better-item" role="listitem">
-              <span class="better-tick" aria-hidden="true">
-                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-              </span>
-              <span>
-                <strong>Snagging sign-off</strong> — every installation ends with a full walkthrough. We check every door gap, drawer alignment, and worktop joint before we consider the job complete.
+                <strong>End-to-end fitting</strong> — we handle everything from cabinet assembly to worktop fitting, appliance integration, doors, handles, and final snagging.
               </span>
             </li>
           </ul>
-
-          <!-- What's included checklist -->
-          <div class="included-block">
-            <p class="included-heading">What's Included in Every Installation</p>
-            <ul class="included-grid" role="list">
-              {[
-                "Unit & carcass assembly",
-                "Base unit fitting & levelling",
-                "Wall unit installation",
-                "Worktop cutting & fitting",
-                "Door & drawer hanging",
-                "Full alignment & adjustment",
-                "Integrated appliance fitting",
-                "Sink & tap co-ordination",
-                "Plinth, cornice & pelmet",
-                "Snagging walkthrough",
-              ].map((item) => (
-                <li class="included-item" role="listitem">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-                  {item}
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <!-- Comparison strip -->
-          <div class="compare-strip">
-            <p class="compare-heading">How we compare</p>
-            <div class="compare-table" role="table" aria-label="Independent installer vs retailer fitter comparison">
-              <div class="compare-row compare-header" role="row">
-                <span role="columnheader"></span>
-                <span role="columnheader" style="color:var(--teal);font-weight:700;">Install My Kitchen</span>
-                <span role="columnheader" style="color:var(--text-soft);">Retailer's fitter</span>
-              </div>
-              {[
-                ["Works for you, not the retailer", true, false],
-                ["Pre-installation survey", true, "Rarely"],
-                ["Written fixed-price quote", true, "Often varies"],
-                ["Fits any retailer's kitchen", true, false],
-                ["Snagging walkthrough included", true, "Not guaranteed"],
-                ["Direct contact throughout", true, "Often call centre"],
-              ].map(([label, ours, theirs]) => (
-                <div class="compare-row" role="row">
-                  <span class="compare-label" role="cell">{label}</span>
-                  <span class="compare-yes" role="cell" aria-label="Yes">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-                  </span>
-                  <span class={theirs === false ? "compare-no" : "compare-sometimes"} role="cell">
-                    {theirs === false
-                      ? <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-                      : theirs}
-                  </span>
-                </div>
-              ))}
-            </div>
-          </div>
-
           <a href="/survey/" class="btn-primary mt-8 inline-flex items-center gap-2">
-            Book Your Survey — £195 Credited Back
+            Book Your Survey
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
               <line x1="5" y1="12" x2="19" y2="12"/>
               <polyline points="12 5 19 12 12 19"/>
@@ -457,7 +374,7 @@ const areas = [
     <div class="container urgency-inner">
       <p class="urgency-text">
         Installation Slots Are Filling Fast —
-        <span class="urgency-highlight">Coventry &amp; Warwickshire's Independent Kitchen Installation Team</span>
+        <span class="urgency-highlight">Coventry &amp; Warwickshire's Premier Independent Kitchen Fitter</span>
       </p>
       <a href="/contact/" class="btn-white urgency-btn">
         Check Available Dates →
@@ -475,13 +392,13 @@ const areas = [
         <div class="about-copy fade-up">
           <p class="section-eyebrow">About Install My Kitchen</p>
           <h2 id="about-heading" class="text-2xl md:text-3xl lg:text-4xl font-bold mb-6" style="color: var(--charcoal);">
-            Independent Kitchen Installation Specialists
+            Coventry's Independent Kitchen Installation Specialist
           </h2>
           <p class="about-para">
-            Install My Kitchen is an independent kitchen installation service based in Coventry. Our team works for homeowners — not retailers — fitting kitchens from any major supplier across Coventry and Warwickshire. We have no commercial tie to any showroom or manufacturer, which means every decision we make is in your interest, not a retailer's.
+            Install My Kitchen is an independent kitchen installation service based in Coundon, Coventry. We work for homeowners — not retailers — fitting kitchens purchased from any major supplier across Coventry and Warwickshire. As an independent specialist, we have no commercial tie to any showroom or manufacturer, which means our only focus is the quality of your installation and the experience you have along the way.
           </p>
           <p class="about-para">
-            Every installation starts with a pre-visit survey. Our installers take precise measurements, check your kitchen plan against the actual room, and identify anything that needs resolving before a single cabinet is unpacked. That upfront care is what separates a smooth installation from a stressful one — and it's why every customer gets a fixed price, not an estimate.
+            Every installation begins with a pre-visit survey. We take precise measurements, review your kitchen plan against the actual room, and identify any potential issues before a single cabinet is unpacked. It takes more time upfront, but it's the difference between an installation that goes smoothly and one that doesn't. We take the details seriously — because it's your home, and the finish matters.
           </p>
           <div class="about-stats" role="list" aria-label="Key service commitments">
             <div class="about-stat" role="listitem">
@@ -528,7 +445,7 @@ const areas = [
         Why Homeowners Choose Independent Installation
       </h2>
       <p class="text-center text-sm mb-12 max-w-xl mx-auto" style="color: rgba(255,255,255,0.65);">
-        There's a real difference between a retailer's fitting team and independent specialists who answer only to you.
+        There's a real difference between a retailer's fitting team and an independent specialist who answers only to you.
       </p>
       <ul class="credentials-grid" role="list">
         <li class="credential-card" role="listitem">
@@ -553,7 +470,7 @@ const areas = [
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
           </span>
           <strong class="credential-title">Local and accountable</strong>
-          <p class="credential-desc">Our team is based in Coventry and serves the wider Warwickshire area. We're local — our reputation is built kitchen by kitchen in the communities we work in. You always know who to call.</p>
+          <p class="credential-desc">Based in Coventry, serving Warwickshire. We're your neighbours — our reputation depends on every kitchen we fit. You know where to find us, and that matters.</p>
         </li>
       </ul>
     </div>
@@ -652,127 +569,6 @@ const areas = [
     </div>
   </section>
 
-  <!-- ══════════════════════════════ BEFORE / AFTER SLIDER ═══════ -->
-  <section class="section" style="background: var(--navy);" aria-label="Kitchen transformation">
-    <div class="container">
-      <div class="text-center mb-10">
-        <p style="color:var(--teal-bright);font-weight:700;font-size:0.8125rem;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:0.5rem;">The Transformation</p>
-        <h2 class="text-3xl md:text-4xl font-bold mb-3" style="color:#fff;">Before & After — Real Kitchens</h2>
-        <p style="color:rgba(255,255,255,0.6);max-width:500px;margin:0 auto;">Real kitchens installed by Pindi Sahota across Coventry and Warwickshire — drag to compare.</p>
-      </div>
-      <div class="ba-wrap" id="ba-slider" role="img" aria-label="Before and after kitchen transformation slider">
-        <!-- BEFORE image -->
-        <img class="ba-img ba-before" src="/assets/before-kitchen.webp" alt="Kitchen before installation by Install My Kitchen" width="1290" height="1720" loading="lazy" />
-        <!-- AFTER image -->
-        <div class="ba-after-wrap">
-          <img class="ba-img ba-after" src="/assets/after-kitchen.webp" alt="Luxury kitchen after installation by Install My Kitchen" width="1086" height="1448" loading="lazy" />
-        </div>
-        <!-- Divider -->
-        <div class="ba-divider" id="ba-divider">
-          <div class="ba-handle" aria-hidden="true">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <polyline points="15 18 9 12 15 6"/></svg>
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <polyline points="9 18 15 12 9 6"/></svg>
-          </div>
-        </div>
-        <span class="ba-label ba-label-before">Before</span>
-        <span class="ba-label ba-label-after">After</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- ════════════════════════════ INSTANT PRICE ESTIMATOR ═════════ -->
-  <section class="section" style="background: var(--bg-light);" aria-labelledby="estimator-heading">
-    <div class="container" style="max-width:860px;">
-      <div class="text-center mb-10">
-        <p style="color:var(--teal);font-weight:700;font-size:0.8125rem;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:0.5rem;">Instant Estimate</p>
-        <h2 id="estimator-heading" class="text-3xl md:text-4xl font-bold mb-3" style="color:var(--navy);">How Much Will Your Kitchen Cost?</h2>
-        <p style="color:var(--text-soft);max-width:500px;margin:0 auto;">Get an instant price range in seconds. No forms, no waiting — just honest numbers based on real installation costs.</p>
-      </div>
-
-      <div class="est-card">
-
-        <!-- AI Plan Upload -->
-        <div class="est-step">
-          <p class="est-label">Got a plan or photo? Let AI count the units for you</p>
-          <label class="est-upload" id="est-upload-label">
-            <input type="file" id="est-file" accept="image/*,.pdf" style="display:none;">
-            <span class="est-upload-icon" aria-hidden="true">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
-                <polyline points="17 8 12 3 7 8"/>
-                <line x1="12" y1="3" x2="12" y2="15"/>
-              </svg>
-            </span>
-            <span class="est-upload-text" id="est-upload-text">Upload kitchen plan or photo</span>
-            <span class="est-upload-sub">JPG, PNG — we count the units instantly using AI</span>
-          </label>
-          <div class="est-ai-result" id="est-ai-result" style="display:none;">
-            <span class="est-ai-icon" aria-hidden="true">✦</span>
-            <div>
-              <p class="est-ai-count" id="est-ai-count"></p>
-              <p class="est-ai-notes" id="est-ai-notes"></p>
-            </div>
-          </div>
-          <div class="est-ai-error" id="est-ai-error" style="display:none;"></div>
-        </div>
-
-        <div class="est-divider"><span>or select manually</span></div>
-
-        <!-- Step 1: Size -->
-        <div class="est-step">
-          <p class="est-label">1. How big is your kitchen?</p>
-          <div class="est-options" id="est-size">
-            <button class="est-btn est-btn-active" data-size="small">
-              <span class="est-btn-title">Small</span>
-              <span class="est-btn-sub">8–12 units · 3–4 days</span>
-            </button>
-            <button class="est-btn" data-size="medium">
-              <span class="est-btn-title">Medium</span>
-              <span class="est-btn-sub">13–20 units · 4–6 days</span>
-            </button>
-            <button class="est-btn" data-size="large">
-              <span class="est-btn-title">Large</span>
-              <span class="est-btn-sub">21+ units · 6–10 days</span>
-            </button>
-          </div>
-        </div>
-
-        <!-- Step 2: Retailer -->
-        <div class="est-step">
-          <p class="est-label">2. Which retailer did you buy from?</p>
-          <div class="est-options est-options-retailer" id="est-retailer">
-            <button class="est-btn est-btn-active" data-retailer="1.0">Wren / Howdens / Magnet</button>
-            <button class="est-btn" data-retailer="1.05">Wickes / B&Q</button>
-            <button class="est-btn" data-retailer="1.15">IKEA / Flat-pack</button>
-            <button class="est-btn" data-retailer="1.3">Premium brand</button>
-          </div>
-        </div>
-
-        <!-- Step 3: Extras -->
-        <div class="est-step">
-          <p class="est-label">3. Any extras? <span style="font-weight:400;color:var(--text-soft);">(optional)</span></p>
-          <div class="est-extras" id="est-extras">
-            <label class="est-extra"><input type="checkbox" value="300"> <span>Strip-out old kitchen <em>+£200–400</em></span></label>
-            <label class="est-extra"><input type="checkbox" value="400"> <span>Stone worktop (quartz/granite) <em>+£300–500</em></span></label>
-            <label class="est-extra"><input type="checkbox" value="200"> <span>Flooring <em>+£150–300</em></span></label>
-          </div>
-        </div>
-
-        <!-- Result -->
-        <div class="est-result" id="est-result">
-          <div>
-            <p class="est-result-label">Estimated installation cost</p>
-            <p class="est-result-range" id="est-range">£1,800 – £2,800</p>
-            <p class="est-result-note">Survey gives your exact fixed price — £195 credited back on booking.</p>
-          </div>
-          <a href="/survey/" class="btn-primary est-cta">Book a Survey →</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- ═════════════════════════════════════════ TRUST STRIP ══════ -->
   <TrustStrip />
 
@@ -794,14 +590,6 @@ const areas = [
   <!-- ══════════════════════════════ WHAT HAPPENS NEXT ══════════ -->
   <WhatHappensNext />
 
-  <!-- Last updated (freshness signal) -->
-  <div class="last-updated-bar">
-    <p>
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-      Page last updated: <time datetime="2026-06-23">23 June 2026</time>
-    </p>
-  </div>
-
   <!-- ══════════════════════════════════════ DARK CTA ════════════ -->
   <CTA
     dark={true}
@@ -819,116 +607,20 @@ const areas = [
 </Base>
 
 <style>
-  /* ── Statement band ── */
-  .statement-band {
-    background: var(--navy);
-    padding: 4rem 0;
-  }
-  .statement-inner {
+  /* ── Pindi section responsive grid ── */
+  .pindi-grid {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 3rem;
-    align-items: center;
-  }
-  @media (min-width: 1024px) {
-    .statement-inner {
-      grid-template-columns: 1fr 380px;
-      gap: 5rem;
-    }
-  }
-  .statement-h2 {
-    font-size: clamp(1.75rem, 3.5vw, 2.75rem);
-    font-weight: 800;
-    color: #fff;
-    line-height: 1.15;
-    letter-spacing: -0.025em;
-    margin: 0 0 1.25rem;
-  }
-  .statement-accent { color: var(--teal-bright, #2dd4bf); }
-  .statement-sub {
-    font-size: 1.0625rem;
-    color: rgba(255,255,255,0.72);
-    line-height: 1.75;
-    margin: 0 0 2rem;
-    max-width: 56ch;
-  }
-  .statement-ctas {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 1rem;
-  }
-  .statement-link {
-    font-size: 0.9375rem;
-    font-weight: 600;
-    color: rgba(255,255,255,0.7);
-    text-decoration: none;
-    transition: color 0.15s;
-  }
-  .statement-link:hover { color: #fff; }
-  .statement-stats {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-  .stat-card {
-    background: rgba(255,255,255,0.06);
-    border: 1.5px solid rgba(255,255,255,0.1);
-    border-radius: 0.875rem;
-    padding: 1.375rem 1.25rem;
-    display: flex;
-    flex-direction: column;
-    gap: 0.4rem;
-  }
-  .stat-number {
-    font-size: 2rem;
-    font-weight: 900;
-    color: var(--teal-bright, #2dd4bf);
-    line-height: 1;
-    letter-spacing: -0.03em;
-  }
-  .stat-label {
-    font-size: 0.8125rem;
-    color: rgba(255,255,255,0.65);
-    line-height: 1.45;
-  }
-
-  /* ── Guarantees strip ── */
-  .guarantees-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1.25rem;
-    max-width: 1100px;
-    margin: 0 auto 2rem;
-  }
-  @media (min-width: 640px) {
-    .guarantees-grid { grid-template-columns: repeat(2, 1fr); }
-  }
-  @media (min-width: 1024px) {
-    .guarantees-grid { grid-template-columns: repeat(4, 1fr); }
-  }
-  .guarantee-item {
-    display: flex;
-    align-items: flex-start;
-    gap: 0.875rem;
-    background: #fff;
-    border: 1.5px solid var(--border);
-    border-radius: 0.75rem;
-    padding: 1.25rem 1rem;
-  }
-  .installer-credit {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
+    gap: 2rem;
     max-width: 1100px;
     margin: 0 auto;
-    background: #fff;
-    border: 1.5px solid var(--border);
-    border-radius: 0.75rem;
-    padding: 1rem 1.25rem;
+  }
+  @media (min-width: 768px) {
+    .pindi-grid {
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
   }
 
   /* ── Hero ── */
@@ -1497,392 +1189,4 @@ const areas = [
     line-height: 1.7;
     margin: 0;
   }
-
-  /* ── Before / After Slider ── */
-  .ba-wrap {
-    position: relative;
-    width: 100%;
-    max-width: 900px;
-    margin: 0 auto;
-    border-radius: 1.25rem;
-    overflow: hidden;
-    cursor: ew-resize;
-    user-select: none;
-    touch-action: none;
-    box-shadow: 0 24px 60px rgba(0,0,0,0.5);
-    aspect-ratio: 3/4;
-    max-height: 80vh;
-  }
-  .ba-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
-  .ba-after-wrap { position: absolute; inset: 0; width: 50%; overflow: hidden; }
-  .ba-after { width: 900px; max-width: none; }
-  @media (max-width: 900px) { .ba-after { width: 100vw; } }
-  .ba-divider {
-    position: absolute; top: 0; left: 50%; width: 3px;
-    height: 100%; background: #fff; transform: translateX(-50%);
-    z-index: 10;
-  }
-  .ba-handle {
-    position: absolute; top: 50%; left: 50%;
-    transform: translate(-50%, -50%);
-    width: 48px; height: 48px; border-radius: 50%;
-    background: #fff; display: flex; align-items: center; justify-content: center;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.4);
-    color: var(--teal); gap: 2px;
-  }
-  .ba-label {
-    position: absolute; bottom: 1rem; font-size: 0.8125rem;
-    font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em;
-    color: #fff; background: rgba(0,0,0,0.45); padding: 0.3rem 0.75rem;
-    border-radius: 50px; pointer-events: none; z-index: 11;
-  }
-  .ba-label-before { left: 1rem; }
-  .ba-label-after  { right: 1rem; }
-
-  /* ── Price Estimator ── */
-  .est-card {
-    background: #fff; border-radius: 1.5rem;
-    box-shadow: 0 16px 48px rgba(0,0,0,0.08);
-    padding: 2.5rem; display: flex; flex-direction: column; gap: 2rem;
-  }
-  .est-step { display: flex; flex-direction: column; gap: 0.875rem; }
-  .est-label { font-weight: 700; color: var(--navy); font-size: 1rem; margin: 0; }
-  .est-options { display: flex; gap: 0.75rem; flex-wrap: wrap; }
-  .est-btn {
-    flex: 1; min-width: 120px;
-    background: var(--bg-light); border: 2px solid var(--border);
-    border-radius: 0.875rem; padding: 0.875rem 1rem;
-    cursor: pointer; text-align: center; transition: all 0.2s;
-    display: flex; flex-direction: column; gap: 0.2rem;
-  }
-  .est-btn:hover { border-color: var(--teal); }
-  .est-btn-active { border-color: var(--teal); background: rgba(15,118,110,0.06); }
-  .est-btn-title { font-weight: 700; color: var(--navy); font-size: 0.9375rem; }
-  .est-btn-sub { font-size: 0.75rem; color: var(--text-soft); }
-  .est-options-retailer .est-btn { min-width: 140px; }
-  .est-extras { display: flex; flex-direction: column; gap: 0.6rem; }
-  .est-extra {
-    display: flex; align-items: center; gap: 0.75rem;
-    font-size: 0.9375rem; color: var(--text); cursor: pointer; padding: 0.5rem 0;
-  }
-  .est-extra input { accent-color: var(--teal); width: 18px; height: 18px; cursor: pointer; }
-  .est-extra em { color: var(--text-soft); font-style: normal; font-size: 0.875rem; }
-  .est-result {
-    display: flex; align-items: center; justify-content: space-between;
-    flex-wrap: wrap; gap: 1.5rem;
-    background: var(--navy); border-radius: 1rem; padding: 1.75rem 2rem;
-  }
-  .est-result-label { font-size: 0.8125rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: rgba(255,255,255,0.6); margin: 0 0 0.4rem; }
-  .est-result-range { font-size: clamp(1.75rem, 4vw, 2.5rem); font-weight: 800; color: var(--gold); margin: 0 0 0.4rem; line-height: 1; }
-  .est-result-note { font-size: 0.8125rem; color: rgba(255,255,255,0.55); margin: 0; }
-  .est-cta { white-space: nowrap; flex-shrink: 0; }
-
-  /* Upload UI */
-  .est-upload {
-    display: flex; flex-direction: column; align-items: center; gap: 0.5rem;
-    border: 2px dashed var(--border); border-radius: 1rem; padding: 1.75rem;
-    cursor: pointer; transition: border-color 0.2s, background 0.2s;
-    text-align: center;
-  }
-  .est-upload:hover { border-color: var(--teal); background: rgba(15,118,110,0.04); }
-  .est-upload.uploading { border-color: var(--gold); background: rgba(212,160,23,0.05); }
-  .est-upload-icon { color: var(--teal); }
-  .est-upload-text { font-weight: 600; color: var(--navy); font-size: 0.9375rem; }
-  .est-upload-sub { font-size: 0.8125rem; color: var(--text-soft); }
-  .est-ai-result {
-    display: flex; align-items: flex-start; gap: 0.875rem;
-    background: rgba(15,118,110,0.06); border: 1.5px solid var(--teal);
-    border-radius: 0.875rem; padding: 1rem 1.25rem;
-  }
-  .est-ai-icon { font-size: 1.25rem; color: var(--teal); flex-shrink: 0; }
-  .est-ai-count { font-weight: 700; color: var(--navy); margin: 0 0 0.2rem; }
-  .est-ai-notes { font-size: 0.8125rem; color: var(--text-soft); margin: 0; }
-  .est-ai-error {
-    background: rgba(192,57,43,0.06); border: 1.5px solid #c0392b;
-    border-radius: 0.875rem; padding: 0.875rem 1.125rem;
-    font-size: 0.875rem; color: #c0392b;
-  }
-  .est-divider {
-    display: flex; align-items: center; gap: 1rem;
-    color: var(--text-soft); font-size: 0.8125rem;
-  }
-  .est-divider::before, .est-divider::after {
-    content: ''; flex: 1; height: 1px; background: var(--border);
-  }
-
-  /* ── What's included checklist ── */
-  .included-block {
-    margin-top: 1.75rem;
-    background: #fff;
-    border: 1.5px solid var(--border);
-    border-radius: 0.875rem;
-    padding: 1.25rem 1.5rem;
-  }
-  .included-heading {
-    font-size: 0.8125rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-    color: var(--teal);
-    margin: 0 0 0.875rem;
-  }
-  .included-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 0.5rem 1.5rem;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-  .included-item {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    font-size: 0.875rem;
-    color: var(--charcoal);
-    font-weight: 500;
-  }
-  .included-item svg {
-    color: var(--teal);
-    flex-shrink: 0;
-  }
-
-  /* ── Comparison strip ── */
-  .compare-strip {
-    margin-top: 1.75rem;
-    background: #fff;
-    border: 1.5px solid var(--border);
-    border-radius: 0.875rem;
-    padding: 1.25rem 1.5rem;
-    overflow-x: auto;
-  }
-  .compare-heading {
-    font-size: 0.8125rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-    color: var(--navy);
-    margin: 0 0 0.875rem;
-  }
-  .compare-table {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 0;
-    min-width: 320px;
-  }
-  .compare-row {
-    display: grid;
-    grid-template-columns: 1fr 130px 130px;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 0.5rem 0;
-    border-bottom: 1px solid var(--border);
-    font-size: 0.875rem;
-  }
-  .compare-row:last-child { border-bottom: none; }
-  .compare-header { padding-bottom: 0.625rem; font-size: 0.8125rem; }
-  .compare-label { color: var(--charcoal); font-weight: 500; }
-  .compare-yes {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--teal);
-    font-weight: 700;
-  }
-  .compare-no {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #dc2626;
-  }
-  .compare-sometimes {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--text-soft);
-    font-size: 0.8125rem;
-    text-align: center;
-  }
-
-  .last-updated-bar {
-    background: var(--bg-light);
-    border-top: 1px solid var(--border);
-    padding: 0.625rem 0;
-    text-align: center;
-  }
-  .last-updated-bar p {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.375rem;
-    font-size: 0.8125rem;
-    color: var(--text-soft);
-    margin: 0;
-  }
-  .last-updated-bar svg {
-    color: var(--teal);
-    flex-shrink: 0;
-  }
 </style>
-
-<script>
-  // ── Before/After Slider ──────────────────────────────────────────
-  (function () {
-    const wrap = document.getElementById('ba-slider');
-    const afterWrap = wrap?.querySelector('.ba-after-wrap');
-    const divider  = document.getElementById('ba-divider');
-    const afterImg = wrap?.querySelector('.ba-after');
-    if (!wrap || !afterWrap || !divider) return;
-
-    let dragging = false;
-
-    function setPos(x) {
-      const rect = wrap.getBoundingClientRect();
-      let pct = Math.min(Math.max((x - rect.left) / rect.width, 0.02), 0.98);
-      afterWrap.style.width = (pct * 100) + '%';
-      divider.style.left    = (pct * 100) + '%';
-      // Keep after image full-width inside clipped container
-      if (afterImg) afterImg.style.width = (1 / pct * 100) + '%';
-    }
-
-    wrap.addEventListener('mousedown',  e => { dragging = true; setPos(e.clientX); });
-    window.addEventListener('mouseup',  () => { dragging = false; });
-    window.addEventListener('mousemove',e => { if (dragging) setPos(e.clientX); });
-    wrap.addEventListener('touchstart', e => { dragging = true; setPos(e.touches[0].clientX); }, { passive: true });
-    window.addEventListener('touchend', () => { dragging = false; });
-    window.addEventListener('touchmove',e => { if (dragging) setPos(e.touches[0].clientX); }, { passive: true });
-  })();
-
-  // ── AI Plan Upload ──────────────────────────────────────────────
-  (function () {
-    const fileInput  = document.getElementById('est-file');
-    const label      = document.getElementById('est-upload-label');
-    const uploadText = document.getElementById('est-upload-text');
-    const aiResult   = document.getElementById('est-ai-result');
-    const aiCount    = document.getElementById('est-ai-count');
-    const aiNotes    = document.getElementById('est-ai-notes');
-    const aiError    = document.getElementById('est-ai-error');
-    if (!fileInput) return;
-
-    function resizeImage(file, maxPx = 1200) {
-      return new Promise(resolve => {
-        const reader = new FileReader();
-        reader.onload = e => {
-          const img = new Image();
-          img.onload = () => {
-            const scale = Math.min(1, maxPx / Math.max(img.width, img.height));
-            const canvas = document.createElement('canvas');
-            canvas.width  = Math.round(img.width  * scale);
-            canvas.height = Math.round(img.height * scale);
-            canvas.getContext('2d').drawImage(img, 0, 0, canvas.width, canvas.height);
-            // Strip base64 prefix → data only
-            resolve(canvas.toDataURL('image/jpeg', 0.85).split(',')[1]);
-          };
-          img.src = e.target.result;
-        };
-        reader.readAsDataURL(file);
-      });
-    }
-
-    fileInput.addEventListener('change', async () => {
-      const file = fileInput.files[0];
-      if (!file) return;
-
-      // Reset UI
-      aiResult.style.display = 'none';
-      aiError.style.display  = 'none';
-      label.classList.add('uploading');
-      uploadText.textContent = 'Analysing your kitchen plan…';
-
-      try {
-        const base64 = await resizeImage(file);
-
-        const res = await fetch('/.netlify/functions/count-units', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ image: base64, mediaType: 'image/jpeg' }),
-        });
-
-        const data = await res.json();
-
-        if (!res.ok || data.error) throw new Error(data.error || 'Analysis failed');
-        if (data.units === 0) throw new Error(data.notes || 'Could not count units — try a clearer image');
-
-        // Show result
-        aiCount.textContent = `AI counted ${data.units} units → ${data.size.charAt(0).toUpperCase() + data.size.slice(1)} kitchen (${data.confidence} confidence)`;
-        aiNotes.textContent = data.notes;
-        aiResult.style.display = 'flex';
-        uploadText.textContent = file.name;
-        label.classList.remove('uploading');
-
-        // Auto-select the size button
-        document.getElementById('est-size')?.querySelectorAll('.est-btn').forEach(btn => {
-          btn.classList.toggle('est-btn-active', btn.dataset.size === data.size);
-        });
-
-        // Trigger price update by dispatching click on the matched button
-        const matched = document.querySelector(`#est-size [data-size="${data.size}"]`);
-        if (matched) matched.click();
-
-      } catch (err) {
-        aiError.textContent  = '⚠ ' + err.message;
-        aiError.style.display = 'block';
-        label.classList.remove('uploading');
-        uploadText.textContent = 'Upload kitchen plan or photo';
-      }
-    });
-  })();
-
-  // ── Instant Price Estimator ─────────────────────────────────────
-  (function () {
-    const costs = {
-      small:  { low: 1800, high: 2800 },
-      medium: { low: 2800, high: 4200 },
-      large:  { low: 4200, high: 7500 },
-    };
-
-    let size = 'small', retailer = 1.0, extras = 0;
-
-    function fmt(n) { return '£' + Math.round(n).toLocaleString('en-GB'); }
-
-    function update() {
-      const base = costs[size];
-      const low  = Math.round(base.low  * retailer) + extras;
-      const high = Math.round(base.high * retailer) + Math.round(extras * 1.5);
-      const el = document.getElementById('est-range');
-      if (el) el.textContent = fmt(low) + ' – ' + fmt(high);
-    }
-
-    // Size buttons
-    document.getElementById('est-size')?.querySelectorAll('.est-btn').forEach(btn => {
-      btn.addEventListener('click', () => {
-        document.getElementById('est-size').querySelectorAll('.est-btn').forEach(b => b.classList.remove('est-btn-active'));
-        btn.classList.add('est-btn-active');
-        size = btn.dataset.size;
-        update();
-      });
-    });
-
-    // Retailer buttons
-    document.getElementById('est-retailer')?.querySelectorAll('.est-btn').forEach(btn => {
-      btn.addEventListener('click', () => {
-        document.getElementById('est-retailer').querySelectorAll('.est-btn').forEach(b => b.classList.remove('est-btn-active'));
-        btn.classList.add('est-btn-active');
-        retailer = parseFloat(btn.dataset.retailer);
-        update();
-      });
-    });
-
-    // Extras checkboxes
-    document.getElementById('est-extras')?.querySelectorAll('input').forEach(cb => {
-      cb.addEventListener('change', () => {
-        extras = 0;
-        document.getElementById('est-extras').querySelectorAll('input:checked').forEach(c => {
-          extras += parseInt(c.value);
-        });
-        update();
-      });
-    });
-
-    update();
-  })();
-</script>
