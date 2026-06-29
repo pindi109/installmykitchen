@@ -291,6 +291,26 @@ const serviceSchema = {
     </div>
   </section>
 
+  <!-- Areas-retailers cross-links -->
+  <section class="section">
+    <div class="container">
+      <h2 class="text-2xl font-bold mb-2" style="color: var(--navy);">Kitchen Fitting in {displayName} — By Area</h2>
+      <p class="mb-6 max-w-2xl" style="color: var(--text-soft); font-size: 0.9375rem;">
+        We install {displayName} kitchens across all 33 of our service areas. Select your area to see the full list of retailers we fit in that location — including {displayName}.
+      </p>
+      <ul style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 0.625rem; list-style: none; padding: 0; margin: 0;">
+        {locationsData.map((loc) => (
+          <li>
+            <a href={`/areas-retailers/${loc.slug}/`}
+               style="display: block; padding: 0.625rem 0.875rem; background: var(--bg-light); border: 1px solid #E5E7EB; border-radius: 0.5rem; font-size: 0.8125rem; font-weight: 600; color: var(--navy); text-decoration: none;">
+              Kitchen fitting in {loc.name}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
   <!-- All locations for this retailer -->
   <section class="section" style="background: var(--bg-light);">
     <div class="container">
