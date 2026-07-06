@@ -26,13 +26,14 @@ const { displayName, slug } = retailer;
 const canonical = `https://installmykitchen.co.uk/cost/${slug}-cost/`;
 
 // Title ≤60 chars
+const shortBrand = displayName.replace(/ (?:Kitchens?|Joinery)$/i, "");
 const rawTitle = `${displayName} Kitchen Installation Cost | Install My Kitchen`;
 const title = rawTitle.length <= 60
   ? rawTitle
   : `${displayName} Kitchen Cost | Install My Kitchen`;
 
-// Meta 140-160 chars
-const metaDescription = `Typical ${displayName} kitchen installation costs explained. Find out what affects price, what's included, and how to get a fixed-price quote in Coventry, Warwickshire & Berkshire.`;
+// Meta ≤160 chars
+const metaDescription = `${shortBrand} kitchen installation costs — what affects price, what's included, and how to get a fixed-price quote. Covering Coventry, Warwickshire and Berkshire.`;
 
 // Modifier for this retailer
 const modifier = (costsData.modifiers as Record<string, { multiplier: number }>)[slug]?.multiplier ?? 1.0;

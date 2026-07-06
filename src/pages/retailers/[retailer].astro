@@ -29,11 +29,12 @@ const { slug, displayName, description, installNote } = retailer;
 const canonical = `https://installmykitchen.co.uk/retailers/${slug}/`;
 
 // Title — ≤60 chars, abbreviated where necessary
+const shortBrand = displayName.replace(/ (?:Kitchens?|Joinery)$/i, "");
 const rawTitle = `${displayName} Kitchen Installation | Install My Kitchen`;
 const title = rawTitle.length <= 60 ? rawTitle : `${displayName} Kitchen Fitting | Install My Kitchen`;
 
-// Meta description — 140–160 chars, unique per retailer
-const metaDescription = `Independent ${displayName} kitchen installation across Coventry, Warwickshire & Berkshire. We are not affiliated with ${displayName} — we install kitchens you've purchased from them.`;
+// Meta description — ≤160 chars, unique per retailer
+const metaDescription = `Expert ${displayName} fitting — independent, not affiliated with ${shortBrand}. Fixed-price installation with a pre-survey. Call 07399 651836.`;
 
 // Retailer-specific FAQ — pull from retailers section, first 4
 const faqItems = faqsData.retailers.slice(0, 4);

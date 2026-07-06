@@ -318,7 +318,7 @@ const title = rawTitle.length <= 60
     : `${applianceName.slice(0, 30)} ${locationName} | IMK`;
 
 // Meta desc 140–160 chars
-const metaDescription = `Professional ${h1Fragment} in ${locationName}, ${county}. Expert independent appliance fitting — from £${fromPrice}. Fixed-price quote, no call-out fee. Call Install My Kitchen today.`;
+const metaDescription = `${h1Fragment.charAt(0).toUpperCase() + h1Fragment.slice(1)} in ${locationName} — independent, from £${fromPrice}. Fixed-price quote. Call Install My Kitchen today.`;
 
 // Key takeaway points
 const takeawayPoints = [

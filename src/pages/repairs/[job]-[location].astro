@@ -89,10 +89,16 @@ const pricingTierLabel = isBerkshire ? "Berkshire" : "Coventry, Warwickshire & B
 const canonical = `https://installmykitchen.co.uk/repairs/${job.slug}-${location.slug}/`;
 
 // Title (≤60ch)
-const title = `${job.name} in ${location.name} | Install My Kitchen`;
+const shortJobName = job.name.replace(/^(?:Kitchen |Integrated )/i, "");
+const rawJobTitle = `${job.name} in ${location.name} | Install My Kitchen`;
+const title = rawJobTitle.length <= 60
+  ? rawJobTitle
+  : `${shortJobName} in ${location.name} | Install My Kitchen`.length <= 60
+    ? `${shortJobName} in ${location.name} | Install My Kitchen`
+    : `${shortJobName} ${location.name} | Install My Kitchen`;
 
-// Meta description (140–160ch)
-const metaDescription = `${job.name} in ${location.name} by an independent kitchen specialist. Covering ${location.county} — from £${fromPrice}. Agree price first, no obligation callout. Call 07399 651836.`;
+// Meta description (≤160ch)
+const metaDescription = `${shortJobName} in ${location.name} — independent kitchen specialist covering ${location.county}. Fixed price agreed first. No obligation. Call 07399 651836.`;
 
 // KeyTakeaway pools — genuinely varied content between them
 const takeawayPoolA = [

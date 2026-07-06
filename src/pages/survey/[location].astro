@@ -26,16 +26,17 @@ const { name, slug, county, description, nearby } = location;
 // Index of this location in the array — used for FAQ variant selection
 const locationIndex = locationsData.findIndex((l) => l.slug === slug);
 
-// ── Title (≤68 chars) ──────────────────────────────────────────────────────
-// Full form: "Kitchen Installation Survey {name} — £195 | Install My Kitchen"
-// Short form used when full is >68 chars: "Kitchen Survey {name} — £195 | IMK"
+// ── Title (≤60 chars) ──────────────────────────────────────────────────────
 const titleFull = `Kitchen Installation Survey ${name} — £195 | Install My Kitchen`;
-const title = titleFull.length <= 68
+const titleMid = `Kitchen Survey ${name} — £195 | Install My Kitchen`;
+const title = titleFull.length <= 60
   ? titleFull
-  : `Kitchen Survey ${name} — £195 | IMK`;
+  : titleMid.length <= 60
+    ? titleMid
+    : `Kitchen Survey ${name} | Install My Kitchen`;
 
-// ── Meta description (140–160 chars) ──────────────────────────────────────
-const metaDescription = `Book a pre-installation kitchen survey in ${name}, ${county}. The £195 fee is credited back on booking. We check your plans, room dimensions and services before we quote.`;
+// ── Meta description (≤160 chars) ──────────────────────────────────────────
+const metaDescription = `Kitchen survey in ${name} — £195, credited against your installation. We check plans, dimensions and services before giving you a fixed quote.`;
 
 const canonical = `https://installmykitchen.co.uk/survey/${slug}/`;
 

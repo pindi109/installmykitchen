@@ -32,10 +32,10 @@ const title = `Kitchen Fitter ${name} | Install My Kitchen`;
 
 // Meta description — 140–160 chars, "kitchen fitter" intent
 // Stratford-upon-Avon + county pushes past 160 chars, so county is omitted for that entry
-const metaDescriptionBase = `Independent kitchen fitter in ${name}, ${county}. We fit Wren, Howdens, Magnet, IKEA & all retailers. Survey £195, credited back. Call 07399 651836.`;
+const metaDescriptionBase = `Independent kitchen fitter in ${name}, ${county}. We fit Wren, Howdens, Magnet, IKEA and all major retailers. Survey from £195, credited back.`;
 const metaDescription = metaDescriptionBase.length <= 160
   ? metaDescriptionBase
-  : `Independent kitchen fitter in ${name}. We fit Wren, Howdens, Magnet, IKEA & all major retailers. Survey £195, credited back. Call 07399 651836.`;
+  : `Independent kitchen fitter in ${name}. We fit Wren, Howdens, Magnet and all major retailers. Survey from £195, credited back.`;
 
 // KeyTakeaway points — 4 points relevant to finding a fitter in this area
 const takeawayPoints = [
@@ -173,6 +173,7 @@ const localBusinessSchema = {
     name: name,
   },
   description: `Independent kitchen fitting service covering ${name} and the wider ${county} area.`,
+  sameAs: ["https://facebook.com/installmykitchenuk"],
 };
 
 const serviceSchema = {

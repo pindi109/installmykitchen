@@ -76,13 +76,16 @@ const { name: locationName, slug: locationSlug, county, description: locationDes
 const canonical = `https://installmykitchen.co.uk/installer/${brandSlug}-${locationSlug}/`;
 
 // Title ≤60 chars
+const shortBrand = displayName.replace(/ (?:Kitchens?|Joinery)$/i, "");
 const rawTitle = `${displayName} Kitchen Installer in ${locationName} | Install My Kitchen`;
 const title = rawTitle.length <= 60
   ? rawTitle
-  : `${displayName} Installer ${locationName} | Install My Kitchen`;
+  : `${displayName} Installer ${locationName} | Install My Kitchen`.length <= 60
+    ? `${displayName} Installer ${locationName} | Install My Kitchen`
+    : `${shortBrand} Installer ${locationName} | Install My Kitchen`;
 
-// Meta 140-160 chars
-const metaDescription = `Independent ${displayName} kitchen installation in ${locationName}, ${county}. Expert fitters, not affiliated with ${displayName}. Free survey available — fixed-price quotes guaranteed.`;
+// Meta ≤160 chars
+const metaDescription = `Independent ${displayName} installation in ${locationName} — not affiliated with ${shortBrand}. Expert fitting, fixed-price quotes. Survey from £195.`;
 
 // Brand-specific image set — falls back to shared process images
 const brandImgMap: Record<string, { overview: string; process: string; detail: string; finished: string }> = {

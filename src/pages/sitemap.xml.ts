@@ -382,6 +382,9 @@ export const GET = async (): Promise<Response> => {
     lines.push(url(`/retailers/${slug}/`, "weekly", "0.7"));
   }
 
+  // /styles/ hub
+  lines.push(url("/styles/", "monthly", "0.6"));
+
   // /styles/[slug]/
   for (const slug of styleSlugs) {
     lines.push(url(`/styles/${slug}/`, "weekly", "0.7"));
@@ -429,6 +432,9 @@ export const GET = async (): Promise<Response> => {
   for (const slug of fitterLocations) {
     lines.push(url(`/survey/${slug}/`, "weekly", "0.7"));
   }
+
+  // /areas-retailers/ hub
+  lines.push(url("/areas-retailers/", "monthly", "0.5"));
 
   // /areas-retailers/[area]/  (25)
   for (const slug of fitterLocations) {

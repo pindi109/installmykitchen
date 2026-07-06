@@ -128,8 +128,9 @@ const title = rawTitle.length <= 60
     ? `${displayName} ${jobName} ${locationName} | IMK`
     : `${displayName} ${jobName} in ${locationName}`.slice(0, 47) + " | IMK";
 
-// Meta desc 140–160 chars
-const metaDescription = `Independent ${displayName} ${h1Fragment} in ${locationName}, ${county}. Expert remedial fitting, not affiliated with ${displayName}. From £${fromPrice} — free enquiry, fixed-price quote.`;
+// Meta desc ≤160 chars
+const shortBrand = displayName.replace(/ (?:Kitchens?|Joinery)$/i, "");
+const metaDescription = `${shortBrand} ${h1Fragment} in ${locationName} — independent, not affiliated with ${displayName}. From £${fromPrice}, fixed-price quote.`;
 
 // FAQ — offset by brandIndex + locationIndex for variety
 const faqOffset = (brandIndex + locationIndex) % jobFaqs.length;

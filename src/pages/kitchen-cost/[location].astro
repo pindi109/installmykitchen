@@ -27,11 +27,14 @@ const { name, slug, county, description, nearby } = location;
 
 const canonical = `https://installmykitchen.co.uk/kitchen-cost/${slug}/`;
 
-// Title ≤ 65 chars
-const title = `Kitchen Installation Cost ${name} 2025 | Install My Kitchen`;
+// Title ≤60 chars
+const rawCostTitle = `Kitchen Installation Cost ${name} 2025 | Install My Kitchen`;
+const title = rawCostTitle.length <= 60
+  ? rawCostTitle
+  : `Kitchen Fitting Cost ${name} | Install My Kitchen`;
 
-// Meta description 140–160 chars, cost intent, location-specific
-const metaDescription = `Find out how much kitchen installation costs in ${name} in 2025. Prices from £1,800 for small kitchens to £7,500 for large. Get a fixed quote from Install My Kitchen.`;
+// Meta description ≤160 chars, cost intent, location-specific
+const metaDescription = `Kitchen installation costs in ${name} — from £1,800 for a small kitchen to £7,500 for large. Get a fixed-price quote from Install My Kitchen.`;
 
 // ── Key Takeaways — vary by location index ────────────────────────────────────
 
