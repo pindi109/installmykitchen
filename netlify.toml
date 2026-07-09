@@ -1,5 +1,6 @@
 [build]
-  command = "npm run build"
+  # Disabled: deploying pre-built SEO-optimized dist from pagerank-seo run
+  # command = "npm run build"
   publish = "dist"
 
 [build.environment]
