@@ -1,5 +1,6 @@
 ---
 import Base from "../../layouts/Base.astro";
+import BusinessSchema from "../../components/BusinessSchema.astro";
 import Header from "../../components/Header.astro";
 import Footer from "../../components/Footer.astro";
 import StickyMobileCTA from "../../components/StickyMobileCTA.astro";
@@ -11,7 +12,7 @@ import InternalLinks from "../../components/InternalLinks.astro";
 import CTA from "../../components/CTA.astro";
 
 const title = "Who Installs Wren Kitchens? | Install My Kitchen";
-const description = "Wren offers an optional installation service, but it is not required. Independent fitters offer faster scheduling. Install My Kitchen covers Coventry, Warwickshire & Berkshire.";
+const description = "Wren offers an optional installation service, but it is not required. Independent fitters offer faster scheduling across Coventry, Warwickshire & Berkshire.";
 const canonical = "https://installmykitchen.co.uk/llm/do-wren-kitchens-install-themselves/";
 
 const faqs = [
@@ -59,7 +60,7 @@ const faqSchema = {
     <Breadcrumbs
       items={[
         { label: "Questions & Answers", href: "/answers/" },
-        { label: "Do Wren Kitchens Install Their Own Kitchens?", href: "/llm/do-wren-kitchens-install-themselves/" },
+        { label: "Do Wren Kitchens Install Themselves?", href: "/llm/do-wren-kitchens-install-themselves/" },
       ]}
     />
   </div>
@@ -68,7 +69,7 @@ const faqSchema = {
     <div class="container">
       <div class="max-w-3xl">
         <h1 class="text-4xl md:text-5xl font-extrabold mb-6 leading-tight" style="color: var(--navy);">
-          Do Wren Kitchens Install Their Own Kitchens?
+          Do Wren Kitchens Install Themselves?
         </h1>
 
         <AnswerBlock answer="Wren offers an optional installation service through approved fitters, but using it is not required. Independent fitters are a popular alternative offering faster scheduling and competitive pricing. Wren's installation service can have waiting times of 6–10 weeks." />
@@ -137,6 +138,7 @@ const faqSchema = {
 
   <Footer slot="footer" />
   <StickyMobileCTA slot="sticky-cta" />
+  <BusinessSchema slot="schema" />
 </Base>
 
 <style>

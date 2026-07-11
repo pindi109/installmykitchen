@@ -1,5 +1,6 @@
 ---
 import Base from "../../layouts/Base.astro";
+import BusinessSchema from "../../components/BusinessSchema.astro";
 import Header from "../../components/Header.astro";
 import Footer from "../../components/Footer.astro";
 import StickyMobileCTA from "../../components/StickyMobileCTA.astro";
@@ -13,12 +14,23 @@ export async function getStaticPaths() {
   const { default: questions } = await import("../../data/llm-questions.json");
   return questions.map((q: any, i: number) => ({
     params: { slug: q.slug },
-    props: { ...q, index: i },
+    props: {
+      ...q,
+      index: i,
+      // rotate through siblings so every page receives ~5 inbound contextual links
+      related: Array.from({ length: 5 }, (_, k) => questions[(i + k + 1) % questions.length])
+        .map((r: any) => ({ label: r.title, href: `/llm/${r.slug}/` })),
+    },
   }));
 }
 
-const { slug, title, metaDescription, answer, bodyHtml, faqs, index } = Astro.props;
+const { slug, title, shortTitle, metaDescription, answer, bodyHtml, faqs, index, related = [] } = Astro.props;
 const canonical = `https://installmykitchen.co.uk/llm/${slug}/`;
+
+// Keep <title> within 60 chars: drop the brand suffix on long question titles,
+// falling back to a shortTitle override from the data where even that is too long.
+const branded = `${title} | Install My Kitchen`;
+const pageTitle = branded.length <= 60 ? branded : (shortTitle ?? title);
 
 const faqSchema = {
   "@context": "https://schema.org",
@@ -32,7 +44,7 @@ const faqSchema = {
 ---
 
 <Base
-  title={`${title} | Install My Kitchen`}
+  title={pageTitle}
   description={metaDescription}
   canonical={canonical}
 >
@@ -72,6 +84,9 @@ const faqSchema = {
 
   <section style="padding: 2rem 0;">
     <div class="container" style="max-width: 860px;">
+      {related.length > 0 && (
+        <InternalLinks heading="Related Questions" links={related} />
+      )}
       <InternalLinks
         heading="Explore More"
         links={[
@@ -96,6 +111,7 @@ const faqSchema = {
 
   <Footer slot="footer" />
   <StickyMobileCTA slot="sticky-cta" />
+  <BusinessSchema slot="schema" />
 </Base>
 
 <style>

@@ -75,14 +75,17 @@ const { name: locationName, slug: locationSlug, county, description: locationDes
 
 const canonical = `https://installmykitchen.co.uk/installer/${brandSlug}-${locationSlug}/`;
 
-// Title ≤60 chars
+// Title ≤65 chars, leading with "<brand> Kitchen Installation" — the phrase
+// people actually search — rather than "Installer".
 const shortBrand = displayName.replace(/ (?:Kitchens?|Joinery)$/i, "");
-const rawTitle = `${displayName} Kitchen Installer in ${locationName} | Install My Kitchen`;
-const title = rawTitle.length <= 60
+// "DIY" alone reads as do-it-yourself, so that brand keeps its full name
+// (without repeating the word Kitchen)
+const rawTitle = brandSlug === "diy-kitchens"
+  ? `${displayName} Installation ${locationName} | Install My Kitchen`
+  : `${shortBrand} Kitchen Installation ${locationName} | Install My Kitchen`;
+const title = rawTitle.length <= 65
   ? rawTitle
-  : `${displayName} Installer ${locationName} | Install My Kitchen`.length <= 60
-    ? `${displayName} Installer ${locationName} | Install My Kitchen`
-    : `${shortBrand} Installer ${locationName} | Install My Kitchen`;
+  : rawTitle.replace(" | Install My Kitchen", "");
 
 // Meta ≤160 chars
 const metaDescription = `Independent ${displayName} installation in ${locationName} — not affiliated with ${shortBrand}. Expert fitting, fixed-price quotes. Survey from £195.`;

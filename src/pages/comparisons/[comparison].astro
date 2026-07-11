@@ -1,5 +1,6 @@
 ---
 import Base from "../../layouts/Base.astro";
+import BusinessSchema from "../../components/BusinessSchema.astro";
 import Header from "../../components/Header.astro";
 import Footer from "../../components/Footer.astro";
 import StickyMobileCTA from "../../components/StickyMobileCTA.astro";
@@ -11,7 +12,7 @@ import InternalLinks from "../../components/InternalLinks.astro";
 import CTA from "../../components/CTA.astro";
 
 export function getStaticPaths() {
-  return [
+  const comparisons = [
     // ── 1. Wren vs Howdens ─────────────────────────────────────────────────
     {
       params: { comparison: "wren-vs-howdens-kitchen-installation" },
@@ -1142,6 +1143,15 @@ export function getStaticPaths() {
       },
     },
   ];
+  return comparisons.map((c, i) => ({
+    ...c,
+    props: {
+      ...c.props,
+      // rotate through siblings so every comparison receives inbound contextual links
+      related: Array.from({ length: 4 }, (_, k) => comparisons[(i + k + 1) % comparisons.length].props)
+        .map((r) => ({ label: r.title, href: `/comparisons/${r.slug}/` })),
+    },
+  }));
 }
 
 // ── Page rendering ────────────────────────────────────────────────────────────
@@ -1160,6 +1170,7 @@ const {
   bodyHtml,
   takeaways,
   faqs,
+  related = [],
 } = Astro.props;
 
 const canonical = `https://installmykitchen.co.uk/comparisons/${slug}/`;
@@ -1260,6 +1271,7 @@ const internalLinks = [
 
         <!-- Internal Links -->
         <div class="mt-10 fade-up">
+          {related.length > 0 && <InternalLinks links={related} heading="Related Comparisons" />}
           <InternalLinks links={internalLinks} heading="Related Pages" />
         </div>
 
@@ -1280,6 +1292,7 @@ const internalLinks = [
 
   <Footer slot="footer" />
   <StickyMobileCTA slot="sticky-cta" />
+  <BusinessSchema slot="schema" />
 </Base>
 
 <style>

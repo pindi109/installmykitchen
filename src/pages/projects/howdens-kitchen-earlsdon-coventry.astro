@@ -1,5 +1,6 @@
 ---
 import Base from "../../layouts/Base.astro";
+import BusinessSchema from "../../components/BusinessSchema.astro";
 import Header from "../../components/Header.astro";
 import Footer from "../../components/Footer.astro";
 import StickyMobileCTA from "../../components/StickyMobileCTA.astro";
@@ -149,6 +150,9 @@ const faqs = [
           <InternalLinks
             heading="Related Pages"
             links={[
+              { label: "IKEA Kitchen in Leamington Spa", href: "/projects/ikea-kitchen-leamington-spa/", description: "METOD flat-pack assembly and installation." },
+              { label: "Magnet Kitchen in Solihull", href: "/projects/magnet-kitchen-solihull/", description: "Rigid-unit Magnet installation in Solihull." },
+              { label: "Wren Kitchen in Kenilworth", href: "/projects/wren-kitchen-kenilworth/", description: "Complete Wren installation in Kenilworth." },
               { label: "Howdens Kitchen Installation", href: "/retailers/howdens/", description: "Our independent Howdens fitting service across Coventry, Warwickshire and Berkshire." },
               { label: "Earlsdon, Coventry", href: "/areas/earlsdon/", description: "Kitchen installation in Earlsdon and the CV5 postcode area." },
               { label: "Book a Pre-Installation Survey", href: "/survey/", description: "£195 survey with Pindi Sahota, credited back in full when you proceed." },
@@ -175,6 +179,7 @@ const faqs = [
 
   <Footer slot="footer" />
   <StickyMobileCTA slot="sticky-cta" />
+  <BusinessSchema slot="schema" />
 </Base>
 
 <style>

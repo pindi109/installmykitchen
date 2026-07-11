@@ -1,5 +1,6 @@
 ---
 import Base from "../../layouts/Base.astro";
+import BusinessSchema from "../../components/BusinessSchema.astro";
 import Header from "../../components/Header.astro";
 import Footer from "../../components/Footer.astro";
 import StickyMobileCTA from "../../components/StickyMobileCTA.astro";
@@ -154,7 +155,7 @@ export function getStaticPaths() {
     },
     {
       slug: "how-do-i-prepare-for-kitchen-installation",
-      title: "How to Prepare for Kitchen Installation",
+      title: "How Do I Prepare for Kitchen Installation?",
       metaDescription: "Prepare for kitchen installation by confirming delivery, booking trades, clearing the room and checking services are ready.",
       answer: "Before your installation date: confirm your kitchen delivery is complete and undamaged, ensure first-fix plumbing, electrical and gas work is done, clear the room and access routes, and confirm worktop measurements. Our survey covers all of this in advance.",
       takeaways: ["Check your full delivery before installation day", "First-fix plumbing and electrical must be complete before we start", "Clear the room and all access routes on installation day", "Stone worktop templating must happen before the installation completes"],
@@ -210,7 +211,7 @@ export function getStaticPaths() {
     },
     {
       slug: "kitchen-fitter-coventry",
-      title: "Kitchen Fitter Coventry",
+      title: "Kitchen Fitter Coventry FAQs",
       metaDescription: "Expert independent kitchen fitter in Coventry. We fit kitchens from Wren, Howdens, Magnet, IKEA and all major retailers. Survey £195, credited back.",
       answer: "Install My Kitchen is a specialist independent kitchen fitter based in Coventry, serving all Coventry postcodes and surrounding Warwickshire. We install kitchens from all major retailers including Wren, Howdens, Magnet and IKEA.",
       takeaways: ["Independent kitchen fitter based in Coventry", "All CV postcodes covered", "We fit all major retailer brands", "Call 07399 651836 to book your survey"],
@@ -336,7 +337,7 @@ export function getStaticPaths() {
     },
     {
       slug: "shaker-kitchen-installation-coventry",
-      title: "Shaker Kitchen Installation Coventry",
+      title: "Shaker Kitchen Fitting Coventry FAQs",
       metaDescription: "Shaker kitchen installation in Coventry by Install My Kitchen — expert fitting from Wren, Howdens, Magnet and all major retailers. Survey from £195.",
       answer: "Shaker kitchens are one of the most popular styles in Coventry, Warwickshire and Berkshire. Install My Kitchen installs shaker kitchens from Wren, Howdens, Magnet, IKEA and all major retailers. We handle the full installation including frames, doors, plinths and cornices.",
       takeaways: ["Shaker is the most popular kitchen style in the UK", "We fit shaker kitchens from all major retailers", "Painted shaker requires particular care with door alignment", "Available in all Coventry postcodes and across Warwickshire"],
@@ -366,11 +367,17 @@ export function getStaticPaths() {
 
   return questions.map((q, i) => ({
     params: { question: q.slug },
-    props: { ...q, index: i },
+    props: {
+      ...q,
+      index: i,
+      // rotate through siblings so every page receives ~5 inbound contextual links
+      related: Array.from({ length: 5 }, (_, k) => questions[(i + k + 1) % questions.length])
+        .map((r) => ({ label: r.title, href: `/answers/${r.slug}/` })),
+    },
   }));
 }
 
-const { slug, title, metaDescription, answer, takeaways, body, faqs, index } = Astro.props;
+const { slug, title, metaDescription, answer, takeaways, body, faqs, index, related = [] } = Astro.props;
 const canonical = `https://installmykitchen.co.uk/answers/${slug}/`;
 
 const faqSchema = {
@@ -418,6 +425,9 @@ const faqSchema = {
 
   <section class="section-sm">
     <div class="container max-w-3xl">
+      {related.length > 0 && (
+        <InternalLinks heading="Related Questions" links={related} />
+      )}
       <InternalLinks
         heading="Explore More"
         links={[
@@ -438,6 +448,7 @@ const faqSchema = {
 
   <Footer slot="footer" />
   <StickyMobileCTA slot="sticky-cta" />
+  <BusinessSchema slot="schema" />
 </Base>
 
 <style>

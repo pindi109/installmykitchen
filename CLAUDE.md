@@ -97,7 +97,7 @@ A separate keyword detection run was completed 2026-06-29 using the tool at `/ho
 
 ## Architecture notes
 
-- No shared LocalBusiness schema component — each page template defines its own JSON-LD in frontmatter
+- Shared `src/components/BusinessSchema.astro` provides a compact LocalBusiness JSON-LD (`@id: …#business`, merges with the homepage's full node) — included via `<BusinessSchema slot="schema" />` in ~50 templates. Location/brand templates additionally define their own richer JSON-LD in frontmatter
 - Footer and Header are shared components (`src/components/`)
 - Base layout at `src/layouts/Base.astro` — has a `<slot name="schema" />` that pages use to inject JSON-LD
 - All URLs are non-www, trailing slash everywhere

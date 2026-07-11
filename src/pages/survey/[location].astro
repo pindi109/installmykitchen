@@ -26,14 +26,12 @@ const { name, slug, county, description, nearby } = location;
 // Index of this location in the array — used for FAQ variant selection
 const locationIndex = locationsData.findIndex((l) => l.slug === slug);
 
-// ── Title (≤60 chars) ──────────────────────────────────────────────────────
+// ── Title (≤65 chars) — always keep "Kitchen Installation Survey", drop the
+// brand suffix rather than the keyword when the location name is long ────────
 const titleFull = `Kitchen Installation Survey ${name} — £195 | Install My Kitchen`;
-const titleMid = `Kitchen Survey ${name} — £195 | Install My Kitchen`;
-const title = titleFull.length <= 60
+const title = titleFull.length <= 65
   ? titleFull
-  : titleMid.length <= 60
-    ? titleMid
-    : `Kitchen Survey ${name} | Install My Kitchen`;
+  : `Kitchen Installation Survey ${name} — £195`;
 
 // ── Meta description (≤160 chars) ──────────────────────────────────────────
 const metaDescription = `Kitchen survey in ${name} — £195, credited against your installation. We check plans, dimensions and services before giving you a fixed quote.`;

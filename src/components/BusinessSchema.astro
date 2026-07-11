@@ -1,0 +1,31 @@
+---
+// Site-wide LocalBusiness identity. @id matches the full node on the homepage
+// so Google merges them into one entity rather than seeing two businesses.
+const business = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "@id": "https://installmykitchen.co.uk/#business",
+  "name": "Install My Kitchen",
+  "url": "https://installmykitchen.co.uk",
+  "telephone": "+447399651836",
+  "email": "info@installmykitchen.co.uk",
+  "priceRange": "££",
+  "image": "https://installmykitchen.co.uk/assets/logo.png",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "242 Hollyfast Road",
+    "addressLocality": "Coundon",
+    "addressRegion": "Coventry",
+    "postalCode": "CV6 2AH",
+    "addressCountry": "GB"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "52.4252",
+    "longitude": "-1.5371"
+  },
+  "areaServed": "Coventry, Warwickshire and Berkshire",
+  "sameAs": ["https://facebook.com/installmykitchenuk"]
+};
+---
+<script type="application/ld+json" set:html={JSON.stringify(business)} />

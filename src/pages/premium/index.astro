@@ -1,5 +1,6 @@
 ---
 import Base from "../../layouts/Base.astro";
+import BusinessSchema from "../../components/BusinessSchema.astro";
 import Header from "../../components/Header.astro";
 import Footer from "../../components/Footer.astro";
 import StickyMobileCTA from "../../components/StickyMobileCTA.astro";
@@ -13,7 +14,7 @@ import RetailerLogo from "../../components/RetailerLogo.astro";
 
 const canonical = "https://installmykitchen.co.uk/premium/";
 const title = "Premium Kitchen Installation — Mereway, Häcker, Nobilia & More";
-const metaDescription = "Expert installation for premium & luxury kitchen brands including Mereway, Häcker, Nobilia, Neptune, deVOL & more. Independent fitting across Coventry, Warwickshire & Berkshire.";
+const metaDescription = "Expert installation for premium kitchen brands — Mereway, Häcker, Nobilia, Neptune & deVOL. Independent fitting in Coventry, Warwickshire & Berkshire.";
 ---
 
 <Base
@@ -144,4 +145,5 @@ const metaDescription = "Expert installation for premium & luxury kitchen brands
 
   <Footer slot="footer" />
   <StickyMobileCTA slot="sticky-cta" />
+  <BusinessSchema slot="schema" />
 </Base>

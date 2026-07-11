@@ -104,6 +104,19 @@ const nearbyLinks = nearbyAreaSlugs.map((nearbySlug) => {
     : null;
 }).filter(Boolean) as { label: string; href: string; description: string }[];
 
+// Other styles in the same location, rotated by style index so inbound links
+// spread evenly — guarantees every style-location page gets sibling inlinks
+// even for locations that rarely appear in other locations' nearby lists.
+const styleIdx = stylesData.findIndex((s) => s.slug === styleSlug);
+const sameLocationStyleLinks = Array.from(
+  { length: 3 },
+  (_, k) => stylesData[(styleIdx + k + 1) % stylesData.length],
+).map((s) => ({
+  label: `${s.name} Kitchens in ${locationName}`,
+  href: `/styles/${s.slug}-${locationSlug}/`,
+  description: `${s.name} kitchen installation in ${locationName}`,
+}));
+
 const internalLinks = [
   {
     label: `${styleName} Kitchen Style Guide`,
@@ -315,7 +328,7 @@ const serviceSchema = {
   <section class="section" style="background: var(--bg-light);">
     <div class="container fade-up">
       <InternalLinks
-        links={internalLinks}
+        links={[...sameLocationStyleLinks, ...internalLinks]}
         heading="Related Pages"
       />
     </div>

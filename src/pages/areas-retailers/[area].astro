@@ -22,8 +22,9 @@ export function getStaticPaths() {
 const { location } = Astro.props;
 const { name, slug, county } = location;
 
-// Title — kept ≤60 chars
-const title = `Retailers We Fit in ${name} | Install My Kitchen`;
+// Title — kept ≤65 chars, brand suffix dropped for long location names
+const titleFull = `Kitchen Retailers We Fit in ${name} | Install My Kitchen`;
+const title = titleFull.length <= 65 ? titleFull : `Kitchen Retailers We Fit in ${name}`;
 
 // Meta description — 140–160 chars (verified across all 25 location names)
 const metaDescription = `We install kitchens from Wren, Howdens, Magnet, IKEA, Wickes and all major retailers in ${name}, ${county}. Independent — no retailer tie-in.`;

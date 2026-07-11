@@ -15,7 +15,7 @@ import CTA from "../../components/CTA.astro";
 // DECISION: Meta descriptions are 140–160 chars per guide; checked individually below.
 
 export function getStaticPaths() {
-  return [
+  const guides = [
     // ─── Guide 1 ─────────────────────────────────────────────────────────────
     {
       params: { guide: "how-to-prepare-for-kitchen-installation" },
@@ -593,7 +593,7 @@ export function getStaticPaths() {
       params: { guide: "kitchen-installation-timeline" },
       props: {
         slug: "kitchen-installation-timeline",
-        title: "Kitchen Installation Timeline",
+        title: "Kitchen Installation Timeline Guide",
         metaDescription:
           "A day-by-day guide to what happens during a typical kitchen installation — strip-out, units, worktops, appliances, snagging and second-fix trades.",
         intro:
@@ -720,10 +720,19 @@ export function getStaticPaths() {
       },
     },
   ];
+  return guides.map((g, i) => ({
+    ...g,
+    props: {
+      ...g.props,
+      // rotate through siblings so every guide receives inbound contextual links
+      related: Array.from({ length: 4 }, (_, k) => guides[(i + k + 1) % guides.length].props)
+        .map((r) => ({ label: r.title, href: `/guides/${r.slug}/` })),
+    },
+  }));
 }
 
 const guide = Astro.props;
-const { slug, title, metaDescription, intro, takeaways, faqs, body } = guide;
+const { slug, title, metaDescription, intro, takeaways, faqs, body, related = [] } = guide;
 
 const canonical = `https://installmykitchen.co.uk/guides/${slug}/`;
 const pageTitle = `${title} | Install My Kitchen`;
@@ -816,6 +825,7 @@ const articleSchema = {
 
         <!-- Internal Links -->
         <div class="mt-10 fade-up">
+          {related.length > 0 && <InternalLinks heading="Related Guides" links={related} />}
           <InternalLinks
             heading="Related Pages"
             links={[

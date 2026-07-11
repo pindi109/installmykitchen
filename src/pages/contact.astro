@@ -5,6 +5,7 @@ import Footer from "../components/Footer.astro";
 import StickyMobileCTA from "../components/StickyMobileCTA.astro";
 import Breadcrumbs from "../components/Breadcrumbs.astro";
 import EnquiryForm from "../components/EnquiryForm.astro";
+import WhatHappensNext from "../components/WhatHappensNext.astro";
 
 const localBusinessSchema = {
   "@context": "https://schema.org",
@@ -153,6 +154,40 @@ const localBusinessSchema = {
           <EnquiryForm formTitle="Send Us a Message" showSurveyOption={true} />
         </div>
 
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════ WHAT HAPPENS NEXT ═══════════ -->
+  <WhatHappensNext />
+
+  <!-- ══════════════════════════════ COVERAGE ════════════════════ -->
+  <section class="section" style="background: var(--bg-light);" aria-label="Areas we cover">
+    <div class="container">
+      <div class="max-w-3xl">
+        <h2 class="text-2xl font-bold mb-4" style="color: var(--navy);">Where We Work</h2>
+        <p class="mb-4" style="color: var(--charcoal); line-height: 1.75;">
+          Install My Kitchen is based in Coundon, Coventry, and covers the whole of
+          <a href="/areas/" class="nap-link">Coventry and Warwickshire</a> — including Rugby, Nuneaton,
+          Leamington Spa, Kenilworth, Warwick, Solihull and Stratford-upon-Avon — as well as
+          Berkshire towns including Reading, Bracknell, Slough, Maidenhead, Windsor, Wokingham,
+          Newbury and Ascot. If you are unsure whether we cover your area, just ask — we regularly
+          take on installations a short distance beyond these areas.
+        </p>
+        <p class="mb-4" style="color: var(--charcoal); line-height: 1.75;">
+          We fit kitchens from every major retailer — Wren, Howdens, Magnet, IKEA, B&amp;Q, Wickes,
+          Benchmarx and <a href="/retailers/" class="nap-link">more</a> — and also handle
+          <a href="/repairs/" class="nap-link">repairs and remedial work</a> such as hinge, door and
+          worktop replacements. For anything installation-related, the quickest route is a
+          <a href="/survey/" class="nap-link">£195 pre-installation survey</a>, credited back in full
+          when you book your installation.
+        </p>
+        <p style="color: var(--charcoal); line-height: 1.75;">
+          Phone is the fastest way to reach us — call <a href="tel:07399651836" class="nap-link">07399 651836</a>
+          between 8am and 6pm, Monday to Saturday. Emails and form enquiries are answered within one
+          working day. If you already have a kitchen delivery date booked, let us know in your message
+          so we can prioritise available installation slots around it.
+        </p>
       </div>
     </div>
   </section>

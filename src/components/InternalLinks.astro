@@ -13,7 +13,9 @@ export interface Props {
 const { links, heading = "Explore More" } = Astro.props;
 ---
 
-<nav aria-label={heading} class="internal-links-section">
+<!-- section, not nav: these are content-related links; crawlers treat nav
+     containers as boilerplate when weighing internal links -->
+<section aria-label={heading} class="internal-links-section">
   <h2 class="internal-links-heading">{heading}</h2>
 
   <ul class="internal-links-grid" role="list">
@@ -37,7 +39,7 @@ const { links, heading = "Explore More" } = Astro.props;
       </li>
     ))}
   </ul>
-</nav>
+</section>
 
 <style>
   .internal-links-section {

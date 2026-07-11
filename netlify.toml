@@ -1,6 +1,7 @@
 [build]
-  # Disabled: deploying pre-built SEO-optimized dist from pagerank-seo run
-  # command = "npm run build"
+  # Netlify builds from source on every push. All SEO fixes live in src/ —
+  # never patch dist/ directly, a rebuild will overwrite it.
+  command = "npm run build"
   publish = "dist"
 
 [build.environment]

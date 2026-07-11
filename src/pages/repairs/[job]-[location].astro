@@ -143,9 +143,13 @@ const repairImgBase = `/assets/${repairImgDir}`;
 
 // Internal links — 8 links as per spec
 // Get 2 other jobs in the same location for cross-linking
-const otherJobs = remedialData
-  .filter((j) => j.slug !== job.slug)
-  .slice(0, 2);
+// Rotate by job index so inbound links spread across all 17 jobs instead of
+// every page linking the same first two.
+const jobIdx = remedialData.findIndex((j) => j.slug === job.slug);
+const otherJobs = Array.from(
+  { length: 3 },
+  (_, k) => remedialData[(jobIdx + k + 1) % remedialData.length],
+);
 
 const internalLinks = [
   {
@@ -161,6 +165,11 @@ const internalLinks = [
   {
     label: `${otherJobs[1]?.name ?? "Drawer runner repair"} in ${location.name}`,
     href: `/repairs/${otherJobs[1]?.slug ?? "drawer-runner-repair"}-${location.slug}/`,
+    description: `Related remedial work in ${location.name}`,
+  },
+  {
+    label: `${otherJobs[2]?.name ?? "Kitchen unit adjustment"} in ${location.name}`,
+    href: `/repairs/${otherJobs[2]?.slug ?? "kitchen-unit-adjustment"}-${location.slug}/`,
     description: `Related remedial work in ${location.name}`,
   },
   {
