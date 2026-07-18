@@ -328,8 +328,28 @@ const takeawayPoints = [
   "Experienced independent fitters — no retailer affiliation",
 ];
 
+// Other appliances in the same location, rotated by appliance index so inbound
+// links spread evenly — keeps every appliance-location page from being starved.
+const APPLIANCE_STUBS = [
+  { slug: "integrated-dishwasher-installation", name: "Integrated Dishwasher Installation" },
+  { slug: "integrated-fridge-installation", name: "Integrated Fridge Installation" },
+  { slug: "integrated-fridge-freezer-installation", name: "Integrated Fridge-Freezer Installation" },
+  { slug: "integrated-oven-installation", name: "Integrated Oven Installation" },
+  { slug: "washing-machine-installation", name: "Washing Machine Installation" },
+];
+const applIdx = APPLIANCE_STUBS.findIndex((a) => a.slug === applianceSlug);
+const sameLocationApplianceLinks = Array.from(
+  { length: 3 },
+  (_, k) => APPLIANCE_STUBS[((applIdx < 0 ? 0 : applIdx) + k + 1) % APPLIANCE_STUBS.length],
+).map((a) => ({
+  label: `${a.name} in ${locationName}`,
+  href: `/appliances/${a.slug}-${locationSlug}/`,
+  description: `Fixed-price ${a.name.toLowerCase()} in ${locationName}`,
+}));
+
 // Internal links — 8 links as specified
 const internalLinks = [
+  ...sameLocationApplianceLinks,
   {
     label: "Repairs & Remedial Services",
     href: "/repairs/",

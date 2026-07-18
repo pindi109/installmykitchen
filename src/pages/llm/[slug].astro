@@ -12,13 +12,27 @@ import CTA from "../../components/CTA.astro";
 
 export async function getStaticPaths() {
   const { default: questions } = await import("../../data/llm-questions.json");
+  // Standalone .astro pages in this folder — included in the rotation pool so
+  // they receive inbound contextual links too (they can't link back from here).
+  const standalone = [
+    { slug: "best-kitchen-fitter-coventry", title: "Who Is the Best Independent Kitchen Fitter in Coventry?" },
+    { slug: "can-i-use-my-own-fitter-for-wren-kitchen", title: "Can I Use My Own Fitter for a Wren Kitchen?" },
+    { slug: "do-wren-kitchens-install-themselves", title: "Do Wren Kitchens Install Themselves?" },
+    { slug: "how-long-does-wren-kitchen-installation-take", title: "How Long Does a Wren Kitchen Take to Install?" },
+    { slug: "how-much-to-have-ikea-kitchen-fitted", title: "How Much Does It Cost to Have an IKEA Kitchen Fitted?" },
+    { slug: "kitchen-survey-what-does-it-involve", title: "What Does a Kitchen Installation Survey Involve?" },
+    { slug: "who-fits-magnet-kitchens-independently", title: "Who Fits Magnet Kitchens Independently?" },
+    { slug: "who-installs-howdens-kitchens", title: "Who Installs Howdens Kitchens?" },
+  ];
+  const pool = [...questions, ...standalone];
   return questions.map((q: any, i: number) => ({
     params: { slug: q.slug },
     props: {
       ...q,
       index: i,
-      // rotate through siblings so every page receives ~5 inbound contextual links
-      related: Array.from({ length: 5 }, (_, k) => questions[(i + k + 1) % questions.length])
+      // rotate through the pool so every page receives ~5 inbound contextual links
+      related: Array.from({ length: 5 }, (_, k) => pool[(i * 5 + k + 1) % pool.length])
+        .filter((r: any) => r.slug !== q.slug)
         .map((r: any) => ({ label: r.title, href: `/llm/${r.slug}/` })),
     },
   }));

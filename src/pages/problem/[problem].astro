@@ -449,13 +449,18 @@ export function getStaticPaths() {
     },
   ];
 
-  return problems.map((p) => ({
+  return problems.map((p, i) => ({
     params: { problem: p.slug },
-    props: { data: p },
+    props: {
+      data: p,
+      // rotate through siblings so every problem page receives inbound contextual links
+      related: Array.from({ length: 3 }, (_, k) => problems[(i + k + 1) % problems.length])
+        .map((r) => ({ label: r.title, href: `/problem/${r.slug}/` })),
+    },
   }));
 }
 
-const { data } = Astro.props;
+const { data, related = [] } = Astro.props;
 
 const {
   slug,
@@ -475,6 +480,7 @@ const {
 const canonical = `https://installmykitchen.co.uk/problem/${slug}/`;
 
 const internalLinks = [
+  ...related,
   {
     label: "Book a survey — avoid these problems",
     href: "/survey/",
