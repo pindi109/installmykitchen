@@ -1,0 +1,118 @@
+---
+import Base from "../layouts/Base.astro";
+import BusinessSchema from "../components/BusinessSchema.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import StickyMobileCTA from "../components/StickyMobileCTA.astro";
+import Breadcrumbs from "../components/Breadcrumbs.astro";
+
+const canonical = "https://installmykitchen.co.uk/cookie-policy/";
+const title = "Cookie Policy | Install My Kitchen";
+const metaDescription = "Cookie policy for installmykitchen.co.uk — which cookies we use, what they do, and how to accept, reject or change your choice at any time.";
+---
+
+<Base
+  title={title}
+  description={metaDescription}
+  canonical={canonical}
+>
+  <Header slot="header" />
+
+  <div class="container py-6">
+    <Breadcrumbs
+      items={[
+        { label: "Cookie Policy", href: "/cookie-policy/" },
+      ]}
+    />
+  </div>
+
+  <section class="section">
+    <div class="container">
+      <div class="max-w-3xl prose-page">
+
+        <h1 class="text-4xl font-extrabold mb-6" style="color: var(--navy);">Cookie Policy</h1>
+        <p class="text-sm mb-10" style="color: var(--text-soft);">Last updated: July 2026</p>
+
+        <h2 class="text-2xl font-bold mt-8 mb-3" style="color: var(--navy);">1. What Cookies Are</h2>
+        <p style="color: var(--text-soft);">
+          Cookies are small text files that a website stores on your device. Some are essential for a site to work; others help site owners understand how the site is used. Similar technologies, such as browser local storage, are covered by this policy too.
+        </p>
+
+        <h2 class="text-2xl font-bold mt-8 mb-3" style="color: var(--navy);">2. How We Use Cookies</h2>
+        <p style="color: var(--text-soft);">
+          When you first visit installmykitchen.co.uk you are shown a banner asking whether you accept analytics cookies. No analytics cookies are set until you choose <strong>Accept analytics</strong>. If you choose <strong>Essential only</strong>, Google Analytics runs in cookieless mode and stores nothing on your device.
+        </p>
+
+        <h2 class="text-2xl font-bold mt-8 mb-3" style="color: var(--navy);">3. Cookies and Storage We Use</h2>
+        <div class="mt-4 overflow-x-auto">
+          <table class="w-full text-sm" style="color: var(--text-soft); border-collapse: collapse;">
+            <thead>
+              <tr style="border-bottom: 2px solid var(--border); text-align: left;">
+                <th class="py-2 pr-4">Name</th>
+                <th class="py-2 pr-4">Type</th>
+                <th class="py-2 pr-4">Purpose</th>
+                <th class="py-2">Duration</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="border-bottom: 1px solid var(--border);">
+                <td class="py-2 pr-4"><code>imk-cookie-consent</code></td>
+                <td class="py-2 pr-4">Essential (local storage)</td>
+                <td class="py-2 pr-4">Records your cookie choice so we do not ask again</td>
+                <td class="py-2">Until cleared</td>
+              </tr>
+              <tr style="border-bottom: 1px solid var(--border);">
+                <td class="py-2 pr-4"><code>_ga</code></td>
+                <td class="py-2 pr-4">Analytics (Google)</td>
+                <td class="py-2 pr-4">Distinguishes visitors for anonymous usage statistics. Only set if you accept analytics</td>
+                <td class="py-2">2 years</td>
+              </tr>
+              <tr style="border-bottom: 1px solid var(--border);">
+                <td class="py-2 pr-4"><code>_ga_28PG5XP2T5</code></td>
+                <td class="py-2 pr-4">Analytics (Google)</td>
+                <td class="py-2 pr-4">Maintains session state for Google Analytics. Only set if you accept analytics</td>
+                <td class="py-2">2 years</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="mt-4" style="color: var(--text-soft);">
+          We also use Ahrefs Analytics, a privacy-friendly analytics service that does not set cookies and does not track you across websites. Our enquiry forms are processed by Netlify, which does not set cookies on this site.
+        </p>
+
+        <h2 class="text-2xl font-bold mt-8 mb-3" style="color: var(--navy);">4. Changing Your Choice</h2>
+        <p style="color: var(--text-soft);">
+          You can change your mind at any time. Click the button below to clear your saved choice — the cookie banner will be shown again.
+        </p>
+        <button
+          type="button"
+          id="reset-cookie-choice"
+          class="mt-4 font-semibold px-5 py-2.5 rounded-lg"
+          style="background: var(--teal); color: #fff; cursor: pointer; border: none;"
+        >
+          Change my cookie choice
+        </button>
+        <p class="mt-4" style="color: var(--text-soft);">
+          You can also delete cookies through your browser settings. If you previously accepted analytics, deleting the <code>_ga</code> cookies removes Google's identifier from your device.
+        </p>
+
+        <h2 class="text-2xl font-bold mt-8 mb-3" style="color: var(--navy);">5. More Information</h2>
+        <p style="color: var(--text-soft);">
+          For how we handle personal data more generally, see our <a href="/privacy/" style="color: var(--teal);">privacy policy</a>. Questions about this policy can be sent to <a href="mailto:info@installmykitchen.co.uk" style="color: var(--teal);">info@installmykitchen.co.uk</a> or call 07399 651836.
+        </p>
+
+      </div>
+    </div>
+  </section>
+
+  <script>
+    document.getElementById("reset-cookie-choice")?.addEventListener("click", function () {
+      try { localStorage.removeItem("imk-cookie-consent"); } catch (e) {}
+      location.reload();
+    });
+  </script>
+
+  <BusinessSchema slot="schema" />
+  <Footer slot="footer" />
+  <StickyMobileCTA slot="sticky-cta" />
+</Base>

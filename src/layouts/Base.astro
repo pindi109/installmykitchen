@@ -3,6 +3,7 @@ import "../styles/global.css";
 import heroManifest from "../../public/hero-manifest.json";
 import altTagsData from "../data/alt-tags.json";
 import WhatsAppButton from "../components/WhatsAppButton.astro";
+import CookieConsent from "../components/CookieConsent.astro";
 
 export interface Props {
   title: string;
@@ -56,11 +57,24 @@ const resolvedOgImage =
     <!-- Ahrefs Analytics -->
     <script src="https://analytics.ahrefs.com/analytics.js" data-key="6WgdWBMB9uW2I8MMQbOqkQ" async></script>
 
-    <!-- Google Analytics -->
+    <!-- Google Analytics — Consent Mode v2. Analytics cookies stay denied
+         until the visitor accepts via the cookie banner (CookieConsent.astro);
+         GA then runs cookieless pings only. Ad signals are always denied. -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-28PG5XP2T5"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
+      gtag('consent', 'default', {
+        analytics_storage: 'denied',
+        ad_storage: 'denied',
+        ad_user_data: 'denied',
+        ad_personalization: 'denied',
+      });
+      try {
+        if (localStorage.getItem('imk-cookie-consent') === 'granted') {
+          gtag('consent', 'update', { analytics_storage: 'granted' });
+        }
+      } catch (e) {}
       gtag('js', new Date());
       gtag('config', 'G-28PG5XP2T5');
     </script>
@@ -137,6 +151,9 @@ const resolvedOgImage =
 
     <!-- WhatsApp floating button — visible on all pages -->
     <WhatsAppButton />
+
+    <!-- Cookie consent banner — UK GDPR/PECR -->
+    <CookieConsent />
 
     <!-- Gold glow cursor + stardust trail -->
     <canvas id="fx-canvas" aria-hidden="true" style="position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:9999;"></canvas>
