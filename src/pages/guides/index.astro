@@ -7,12 +7,12 @@ import StickyMobileCTA from "../../components/StickyMobileCTA.astro";
 import Breadcrumbs from "../../components/Breadcrumbs.astro";
 import CTA from "../../components/CTA.astro";
 
-const title = "Kitchen Installation Guides | Install My Kitchen";
+const title = "Homeowner Kitchen Installation Guides | Install My Kitchen";
 const description =
   "Expert guides on kitchen installation — costs, preparation, choosing a fitter, worktops and more. Written for homeowners across Coventry, Warwickshire and Berkshire.";
 const canonical = "https://installmykitchen.co.uk/guides/";
 
-// DECISION: Title is 48 chars and meta is 154 chars — both within specified targets.
+// DECISION: Title updated to 58 chars to include "Homeowner" keyword — still within the ≤60 char target. Meta is 154 chars — within specified targets.
 
 const guides = [
   {
@@ -130,8 +130,23 @@ const guides = [
     </div>
   </section>
 
-  <!-- Guide Cards -->
+  <!-- Why these guides help -->
   <section class="section">
+    <div class="container">
+      <div class="max-w-4xl">
+        <h2 class="guides-heading">Why These Guides Help</h2>
+        <p class="guides-copy">
+          Most people fit a new kitchen once every ten or fifteen years, which means the process is unfamiliar almost every time it happens. There is a lot to get right before a fitter even arrives — booking the right trades in the right order, checking a delivery against the order sheet, knowing what a survey should actually cover — and getting any of it wrong tends to cost time rather than money. A missing unit can halt a job for days. An electrician booked too late can push a completion date back by a week. A worktop templated before the doors are hung can come back the wrong size.
+        </p>
+        <p class="guides-copy">
+          These guides exist to close that knowledge gap before it becomes a problem on your installation. They are written from the fitting side rather than the retail side, which means they cover the practical detail that a showroom visit usually will not: how a survey identifies an out-of-plumb wall before it becomes a scribing job, why a Gas Safe engineer needs to be booked weeks in advance for a range cooker, or what actually happens to a flat-pack IKEA kitchen on day one versus a rigid Wren or Howdens delivery. Whether you are comparing retailers, working out your budget, or trying to understand what your fitter is telling you about your walls and floors, the aim is the same — straightforward, accurate information that helps you plan with confidence.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Guide Cards -->
+  <section class="section" style="background: var(--bg-light);">
     <div class="container">
       <div class="max-w-4xl">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -187,6 +202,26 @@ const guides = [
             </article>
           ))}
         </div>
+
+        <!-- Guide categories -->
+        <div class="mt-12">
+          <h2 class="guides-heading">Guide Categories</h2>
+          <p class="guides-copy">
+            The ten guides above fall into four natural groups, depending on where you are in the process.
+          </p>
+          <p class="guides-copy">
+            <strong>Planning and preparation</strong> — <em>How to Prepare for Kitchen Installation</em>, <em>The Kitchen Installation Survey</em>, and <em>Kitchen Installation Timeline</em> — cover the run-up to installation day: what to book, what a survey checks, and how a typical job unfolds day by day so you know what to expect and can plan around it.
+          </p>
+          <p class="guides-copy">
+            <strong>Choosing who to work with</strong> — <em>How to Choose a Kitchen Fitter</em> and <em>Working with Wren, Howdens & Magnet</em> — help if you have not yet settled on a retailer or fitter, or if you have bought a kitchen from a major retailer and want to know what changes when an independent fitter installs it rather than the retailer's own team.
+          </p>
+          <p class="guides-copy">
+            <strong>Materials and systems</strong> — <em>Kitchen Worktop Guide</em>, <em>Kitchen Appliance Installation Guide</em>, <em>Plumbing and Electrical Preparation</em>, and the <em>IKEA Kitchen Installation Guide</em> — go into the detail of the components themselves: what worktop materials cost and how they are fitted, which appliances need a qualified tradesperson, and what is different about installing a flat-pack METOD kitchen compared with a rigid one.
+          </p>
+          <p class="guides-copy">
+            <strong>Aftercare</strong> — <em>Kitchen Snagging</em> — covers what happens once the units are in: how to check the finished job properly and what should be put right before you sign off.
+          </p>
+        </div>
       </div>
     </div>
   </section>
@@ -205,3 +240,26 @@ const guides = [
   <StickyMobileCTA slot="sticky-cta" />
   <BusinessSchema slot="schema" />
 </Base>
+
+<style>
+  .guides-heading {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--charcoal);
+    margin-bottom: 0.875rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--teal);
+    display: inline-block;
+  }
+
+  .guides-copy {
+    font-size: 0.9375rem;
+    line-height: 1.75;
+    color: var(--text-soft);
+    margin-bottom: 1rem;
+  }
+
+  .guides-copy strong {
+    color: var(--charcoal);
+  }
+</style>

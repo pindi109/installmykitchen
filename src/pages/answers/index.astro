@@ -7,7 +7,10 @@ import StickyMobileCTA from "../../components/StickyMobileCTA.astro";
 import Breadcrumbs from "../../components/Breadcrumbs.astro";
 import CTA from "../../components/CTA.astro";
 
-const title = "Kitchen Installation Questions Answered | Install My Kitchen";
+// Title matches the H1 ("Questions & Answers") so the literal word "Answers"
+// appears, not just "Answered" — kept ≤60 chars by dropping the leading
+// "Kitchen" (brand suffix already supplies it via "Install My Kitchen").
+const title = "Installation Questions & Answers | Install My Kitchen";
 const description = "Find clear answers to all your kitchen installation questions — costs, timescales, what's included, retailer fitting and more.";
 const canonical = "https://installmykitchen.co.uk/answers/";
 

@@ -72,6 +72,66 @@ const comparisons = [
     description: "German kitchens (Häcker, Nobilia, Schuller) demand tighter tolerances than British brands. Compare installation requirements and complexity.",
     tags: ["German", "Premium"],
   },
+  {
+    slug: "wren-vs-magnet-which-is-better",
+    title: "Wren vs Magnet Kitchens — Which Is Better?",
+    description: "A fitter's view after 30 years fitting both. Unit quality, range and delivery are close — the better choice often comes down to style and showroom experience.",
+    tags: ["Retailers", "Advice"],
+  },
+  {
+    slug: "ikea-vs-howdens-which-is-better",
+    title: "IKEA vs Howdens Kitchen — Which Is the Better Buy?",
+    description: "Flat-pack and consumer-facing versus rigid and trade-only. Honest comparison of availability, installation time, quality and cost.",
+    tags: ["Retailers", "Cost"],
+  },
+  {
+    slug: "magnet-vs-howdens-which-is-better",
+    title: "Magnet vs Howdens — Which Kitchen Should You Choose?",
+    description: "Consumer showroom access versus trade-only supply. Both are rigid, quality units — compare accessibility, installation and value.",
+    tags: ["Retailers", "Trade"],
+  },
+  {
+    slug: "benchmarx-vs-howdens-which-is-better",
+    title: "Benchmarx vs Howdens — Which Trade Kitchen Is Better?",
+    description: "Two trade-only suppliers compared. Howdens has wider depot coverage and range; Benchmarx via Travis Perkins can be more competitive on price.",
+    tags: ["Trade", "Cost"],
+  },
+  {
+    slug: "diy-kitchens-vs-wren",
+    title: "DIY Kitchens vs Wren — Which Offers Better Value?",
+    description: "Factory-direct DIY Kitchens versus wide-range Wren. Compare unit quality, value per unit, and installation speed.",
+    tags: ["Retailers", "Cost"],
+  },
+  {
+    slug: "shaker-vs-handleless-which-is-better",
+    title: "Shaker vs Handleless Kitchen — Which Style Is Right for You?",
+    description: "The UK's two most popular door styles compared. Shaker is timeless and forgiving; handleless is cleaner but demands tighter installation tolerances.",
+    tags: ["Style", "Advice"],
+  },
+  {
+    slug: "in-frame-vs-shaker-which-is-better",
+    title: "In-Frame vs Shaker Kitchen — What's the Difference?",
+    description: "In-frame doors sit within a solid timber frame; shaker doors hang on the carcass face. Compare cost, installation time and appearance.",
+    tags: ["Style", "Premium"],
+  },
+  {
+    slug: "local-kitchen-fitter-vs-national-installer",
+    title: "Local Kitchen Fitter vs National Installation Company",
+    description: "Personalised local service versus national overheads. Compare pricing, accountability, scheduling and service quality.",
+    tags: ["Fitters", "Advice"],
+  },
+  {
+    slug: "kitchen-renovation-vs-new-kitchen",
+    title: "Kitchen Renovation vs Full Replacement — Which Is Worth It?",
+    description: "Refresh existing carcasses with new doors and worktops, or replace everything. Compare cost, disruption and when each makes sense.",
+    tags: ["Renovation", "Cost"],
+  },
+  {
+    slug: "rigid-kitchen-vs-flatpack-which-is-better",
+    title: "Rigid vs Flat-Pack Kitchen — Which Is Better?",
+    description: "Pre-assembled rigid units versus flat-pack self-build. Compare strength, installation time, cost and long-term durability.",
+    tags: ["Installation", "Cost"],
+  },
 ];
 
 const tagColours: Record<string, string> = {
@@ -85,6 +145,8 @@ const tagColours: Record<string, string> = {
   DIY: "bg-red-50 text-red-700",
   German: "bg-gray-100 text-gray-700",
   Premium: "bg-yellow-50 text-yellow-700",
+  Style: "bg-pink-50 text-pink-700",
+  Renovation: "bg-lime-50 text-lime-700",
 };
 ---
 
@@ -101,6 +163,20 @@ const tagColours: Record<string, string> = {
       <Breadcrumbs items={[{ label: "Comparisons", href: "/comparisons/" }]} />
       <h1 class="page-h1">Kitchen Installation Comparisons — Make the Right Choice</h1>
       <p class="page-sub">Side-by-side comparisons of retailers, fitters, formats and installation routes. No fluff — just the information you need to choose well.</p>
+    </div>
+  </section>
+
+  <!-- Intro -->
+  <section class="section" style="background: #fff; padding-bottom: 0;">
+    <div class="container">
+      <div class="comparisons-intro">
+        <p>
+          Choosing a kitchen means choosing between a lot of things that all sound similar on paper — Wren or Howdens, rigid or flat-pack, an independent fitter or a retailer's own installation team. The specification sheets rarely tell you what actually differs in practice: who you deal with during ordering, how long installation realistically takes, where the hidden costs sit, and which combination suits your particular property and budget. These comparisons are written from the fitting side of that decision, based on installing kitchens from most of the major UK retailers across Coventry, Warwickshire and Berkshire.
+        </p>
+        <p>
+          Below are twenty side-by-side comparisons split across four broad areas: retailer against retailer, fitter type and installation route, door style and unit format, and cost and value. Each one gives a straight answer rather than a sales pitch — where two options are genuinely close, we say so, and where one clearly suits a particular situation better, we explain why.
+        </p>
+      </div>
     </div>
   </section>
 
@@ -134,6 +210,27 @@ const tagColours: Record<string, string> = {
           </li>
         ))}
       </ul>
+    </div>
+  </section>
+
+  <!-- Comparison categories -->
+  <section class="section" style="background: var(--bg-light);">
+    <div class="container">
+      <div class="comparisons-intro">
+        <h2 class="categories-heading">Comparison Categories</h2>
+        <p>
+          <strong>Retailer vs retailer.</strong> The largest group compares named suppliers directly — Wren vs Howdens, Magnet vs Wren, IKEA vs Wren, Howdens vs Benchmarx, Wickes vs B&amp;Q, Wren vs Magnet, IKEA vs Howdens, Magnet vs Howdens, Benchmarx vs Howdens, and DIY Kitchens vs Wren. Each one focuses on the practical differences that actually affect an installation — supply route, unit construction, delivery process, and typical fitting time — rather than marketing claims.
+        </p>
+        <p>
+          <strong>Fitter type and installation route.</strong> Independent Fitter vs Retailer Fitter, Local Kitchen Fitter vs National Installation Company, and Supply Only vs Supply and Fit all address who actually installs your kitchen and how that choice affects price, flexibility and accountability if something goes wrong.
+        </p>
+        <p>
+          <strong>Style and format.</strong> Shaker vs Handleless, In-Frame vs Shaker, Rigid vs Flat-Pack, and German Kitchen vs British Kitchen Installation compare the physical construction of the kitchen itself — door style, carcass format, and the tolerances each demands from whoever fits it.
+        </p>
+        <p>
+          <strong>Cost and value.</strong> Fitted Kitchen Cost Comparison, Professional Fitter vs DIY Installation, and Kitchen Renovation vs Full Replacement help with the budgeting side of the decision — what a realistic total spend looks like, and when a full new kitchen is worth it against a lighter refresh of what you already have.
+        </p>
+      </div>
     </div>
   </section>
 
@@ -173,6 +270,31 @@ const tagColours: Record<string, string> = {
     font-size: 1.0625rem;
     line-height: 1.6;
     max-width: 560px;
+  }
+
+  .comparisons-intro {
+    max-width: 48rem;
+  }
+
+  .comparisons-intro p {
+    font-size: 0.9375rem;
+    line-height: 1.75;
+    color: var(--text-soft);
+    margin: 0 0 1rem;
+  }
+
+  .comparisons-intro strong {
+    color: var(--charcoal);
+  }
+
+  .categories-heading {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--charcoal);
+    margin-bottom: 0.875rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--teal);
+    display: inline-block;
   }
 
   .comparisons-grid {

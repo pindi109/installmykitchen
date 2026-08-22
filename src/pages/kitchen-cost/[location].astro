@@ -27,11 +27,18 @@ const { name, slug, county, description, nearby } = location;
 
 const canonical = `https://installmykitchen.co.uk/kitchen-cost/${slug}/`;
 
-// Title ≤60 chars
-const rawCostTitle = `Kitchen Installation Cost ${name} 2025 | Install My Kitchen`;
-const title = rawCostTitle.length <= 60
-  ? rawCostTitle
-  : `Kitchen Fitting Cost ${name} | Install My Kitchen`;
+// Title ≤60 chars — always keep "Kitchen", "Installation", "Cost" and the
+// location name as literal words; drop lower-value parts (year, then the
+// "| Install My Kitchen" suffix) before ever dropping "Installation".
+const fullTitle = `Kitchen Installation Cost ${name} 2025 | Install My Kitchen`;
+const noYearTitle = `Kitchen Installation Cost ${name} | Install My Kitchen`;
+const noSuffixTitle = `Kitchen Installation Cost ${name}`;
+const title =
+  fullTitle.length <= 60
+    ? fullTitle
+    : noYearTitle.length <= 60
+      ? noYearTitle
+      : noSuffixTitle;
 
 // Meta description ≤160 chars, cost intent, location-specific
 const metaDescription = `Kitchen installation costs in ${name} — from £1,800 for a small kitchen to £7,500 for large. Get a fixed-price quote from Install My Kitchen.`;

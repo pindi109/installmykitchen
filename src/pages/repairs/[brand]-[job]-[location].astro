@@ -120,13 +120,21 @@ const fromPrice = isBerks ? fromPriceBerks : fromPriceCW;
 
 const canonical = `https://installmykitchen.co.uk/repairs/${brandSlug}-${jobSlug}-${locationSlug}/`;
 
-// Title ≤60 chars
-const rawTitle = `${displayName} ${jobName} ${locationName} | Install My Kitchen`;
-const title = rawTitle.length <= 60
+// Title — the H1 below leads with "Independent", which is part of the page's
+// target keyword, so the title must keep that word too. Try progressively
+// shorter forms (dropping the site-name suffix, then "Install My Kitchen"
+// for the shorter "IMK") before ever dropping "Independent" itself — the
+// worst-case combination (longest brand + job + location) is 69 chars with
+// no suffix at all, so a 70-char final tier always fits without needing any
+// mid-word truncation.
+const rawTitle = `Independent ${displayName} ${jobName} ${locationName} | Install My Kitchen`;
+const titleImk = `Independent ${displayName} ${jobName} ${locationName} | IMK`;
+const titleNoSuffix = `Independent ${displayName} ${jobName} ${locationName}`;
+const title = rawTitle.length <= 65
   ? rawTitle
-  : `${displayName} ${jobName} ${locationName} | IMK`.length <= 60
-    ? `${displayName} ${jobName} ${locationName} | IMK`
-    : `${displayName} ${jobName} in ${locationName}`.slice(0, 47) + " | IMK";
+  : titleImk.length <= 65
+    ? titleImk
+    : titleNoSuffix;
 
 // Meta desc ≤160 chars
 const shortBrand = displayName.replace(/ (?:Kitchens?|Joinery)$/i, "");

@@ -76,16 +76,29 @@ const { name: locationName, slug: locationSlug, county, description: locationDes
 const canonical = `https://installmykitchen.co.uk/installer/${brandSlug}-${locationSlug}/`;
 
 // Title ≤65 chars, leading with "<brand> Kitchen Installation" — the phrase
-// people actually search — rather than "Installer".
+// people actually search — rather than "Installer". Prefer the full
+// displayName (e.g. "Howdens Joinery") so the title matches the H1's target
+// keyword; only fall back to the shortened brand, then to dropping the
+// site-name suffix, if the longer forms don't fit the length budget.
 const shortBrand = displayName.replace(/ (?:Kitchens?|Joinery)$/i, "");
 // "DIY" alone reads as do-it-yourself, so that brand keeps its full name
 // (without repeating the word Kitchen)
+const fullTitle = `${displayName} Kitchen Installation ${locationName} | Install My Kitchen`;
+const fullTitleNoSuffix = `${displayName} Kitchen Installation ${locationName}`;
+const shortTitle = `${shortBrand} Kitchen Installation ${locationName} | Install My Kitchen`;
 const rawTitle = brandSlug === "diy-kitchens"
   ? `${displayName} Installation ${locationName} | Install My Kitchen`
-  : `${shortBrand} Kitchen Installation ${locationName} | Install My Kitchen`;
+  : fullTitle;
 const title = rawTitle.length <= 65
   ? rawTitle
-  : rawTitle.replace(" | Install My Kitchen", "");
+  // Prefer dropping the "| Install My Kitchen" suffix over shortening the
+  // brand name — for brands like "Howdens Joinery" the shortened form drops
+  // "Joinery", which is part of the page's target keyword.
+  : fullTitleNoSuffix.length <= 65
+    ? fullTitleNoSuffix
+    : shortTitle.length <= 65
+      ? shortTitle
+      : rawTitle.replace(" | Install My Kitchen", "");
 
 // Meta ≤160 chars
 const metaDescription = `Independent ${displayName} installation in ${locationName} — not affiliated with ${shortBrand}. Expert fitting, fixed-price quotes. Survey from £195.`;

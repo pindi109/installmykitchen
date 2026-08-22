@@ -88,14 +88,20 @@ const pricingTierLabel = isBerkshire ? "Berkshire" : "Coventry, Warwickshire & B
 // Canonical
 const canonical = `https://installmykitchen.co.uk/repairs/${job.slug}-${location.slug}/`;
 
-// Title (≤60ch)
+// Title (target ≤60ch, allow up to 65ch so "Integrated" is never dropped
+// from appliance-door job titles — it must match the H1/keyword)
 const shortJobName = job.name.replace(/^(?:Kitchen |Integrated )/i, "");
-const rawJobTitle = `${job.name} in ${location.name} | Install My Kitchen`;
-const title = rawJobTitle.length <= 60
-  ? rawJobTitle
-  : `${shortJobName} in ${location.name} | Install My Kitchen`.length <= 60
-    ? `${shortJobName} in ${location.name} | Install My Kitchen`
-    : `${shortJobName} ${location.name} | Install My Kitchen`;
+const titleJobName = job.name.replace(/^Kitchen /i, "");
+const titleTier1 = `${titleJobName} in ${location.name} | Install My Kitchen`;
+const titleTier2 = `${titleJobName} ${location.name} | Install My Kitchen`;
+const titleTier3 = `${titleJobName} in ${location.name} | IMK`;
+const titleTier4 = `${titleJobName} ${location.name} | IMK`;
+const title =
+  titleTier1.length <= 60 ? titleTier1
+  : titleTier2.length <= 60 ? titleTier2
+  : titleTier2.length <= 65 ? titleTier2
+  : titleTier3.length <= 65 ? titleTier3
+  : titleTier4;
 
 // Meta description (≤160ch)
 const metaDescription = `${shortJobName} in ${location.name} — independent kitchen specialist covering ${location.county}. Fixed price agreed first. No obligation. Call 07399 651836.`;

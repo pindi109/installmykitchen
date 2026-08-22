@@ -81,6 +81,22 @@ const faqItems = [
 
       <AnswerBlock answer="Install My Kitchen covers Coventry and 24 areas across Warwickshire and the surrounding region. We carry out pre-installation surveys and kitchen installations across the full area, fitting kitchens purchased from any retailer." />
 
+      <div class="areas-overview">
+        <h2 class="section-h2 mb-4">A Region of Very Different Housing Stock</h2>
+        <p class="overview-copy">
+          Coventry, Warwickshire and Berkshire between them cover a huge range of property types and ages, from Victorian terraces to executive new-builds — and the age and construction of a property has a real effect on how a kitchen installation is planned and priced.
+        </p>
+        <p class="overview-copy">
+          Coventry itself has one of the most varied housing stocks we cover — Victorian and Edwardian terraces in Earlsdon and Chapelfields, 1950s and 1960s semis across Tile Hill and Canley, and newer executive homes around Finham and Stivichall. Our home base of Coundon reflects the same mix, with Victorian terraces sitting alongside 1930s semis. Further out, Solihull and Balsall Common bring some of the region's most affluent housing — large Edwardian villas and executive new builds with open-plan extensions that regularly call for German handleless kitchens and island units — while Meriden and Allesley offer period cottages and inter-war detached homes with the uneven floors and irregular wall surfaces typical of older village properties.
+        </p>
+        <p class="overview-copy">
+          Warwickshire's towns each have a distinct character. Royal Leamington Spa's Regency townhouses and Victorian semis suit painted in-frame and shaker kitchens that complement the period architecture, while neighbouring Warwick has its own mix of Georgian and Victorian properties, some within conservation areas where structural changes need particular care. Kenilworth's inter-war and 1960s detached homes are among the most likely in the region to have space for an island, and Stratford-upon-Avon's Tudor, Georgian and Victorian buildings mean listed-building consent sometimes needs checking before work begins. Further north, Rugby and Nuneaton combine Victorian terraces with large stretches of post-war and modern estate housing, and market towns such as Southam and Atherstone add a mix of older stone-built centres and newer developments on their outskirts.
+        </p>
+        <p class="overview-copy">
+          Berkshire's housing stock is just as varied. Reading combines Victorian and Edwardian terraces near the centre with modern riverside apartments and the more affluent inter-war properties of Caversham. Bracknell's identity as a post-war new town means a high proportion of 1960s and 1970s semis, alongside newer executive estates at Sandhurst and Warfield. Maidenhead and Windsor both mix substantial 1920s and 1930s detached houses with Georgian and Victorian townhouses in their historic centres — Windsor's conservation area calls for particular care during survey. At the premium end, Ascot and its neighbouring villages of Sunningdale and Sunninghill feature some of the county's largest properties, with kitchen projects there regularly involving islands, breakfast bars and separate utility rooms.
+        </p>
+      </div>
+
       <h2 id="areas-intro" class="section-h2 mb-8">All Areas We Cover</h2>
       <ul class="areas-grid" role="list" aria-label="Service areas">
         {areas.map((area) => (
@@ -171,6 +187,19 @@ const faqItems = [
     font-size: 1.5rem;
     font-weight: 700;
     color: var(--charcoal);
+  }
+
+  /* Areas overview */
+  .areas-overview {
+    max-width: 780px;
+    margin-bottom: 2.5rem;
+  }
+
+  .overview-copy {
+    font-size: 0.9375rem;
+    line-height: 1.75;
+    color: var(--text-soft);
+    margin-bottom: 1.125rem;
   }
 
   /* Areas grid */

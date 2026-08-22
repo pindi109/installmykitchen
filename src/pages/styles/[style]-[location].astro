@@ -58,15 +58,42 @@ export function getStaticPaths() {
 
 const { style, location, styleIndex, locationIndex } = Astro.props;
 const { name: styleName, slug: styleSlug, description: styleDescription, features } = style;
-const { name: locationName, slug: locationSlug, county, description: locationDescription, nearby } = location;
+const {
+  name: locationName,
+  slug: locationSlug,
+  county,
+  description: locationDescription,
+  nearby,
+  housingStock,
+  kitchenNotes,
+  localNote,
+  typicalKitchenStyles,
+} = location;
 
 const canonical = `https://installmykitchen.co.uk/styles/${styleSlug}-${locationSlug}/`;
 
-// Title ≤60 chars
-const rawTitle = `${styleName} Kitchen Installation ${locationName} | Install My Kitchen`;
-const title = rawTitle.length <= 60
-  ? rawTitle
-  : `${styleName} Kitchens ${locationName} | Install My Kitchen`;
+// Title — try to keep "Installation" as a literal word since our keyword
+// inference targets "{style} kitchen installation {location}". Longer
+// style/location combos push the full title (with the "| Install My
+// Kitchen" suffix) past 60 chars, so the first fallback drops the suffix
+// rather than the word "Installation". Verified against every style name in
+// styles.json (max 12 chars, "Contemporary") and every location name in
+// locations.json (max 19 chars, "Stratford-upon-Avon"): the no-suffix form
+// tops out at 53 chars, comfortably under the 65-char ceiling.
+const titleWithSuffix = `${styleName} Kitchen Installation ${locationName} | Install My Kitchen`;
+const titleNoSuffix = `${styleName} Kitchen Installation ${locationName}`;
+const title = titleWithSuffix.length <= 60 ? titleWithSuffix : titleNoSuffix;
+
+// Popular-locally check for the hyper-local content section below — purely
+// factual, derived from the location's own typicalKitchenStyles list (no
+// fabricated claims).
+const stylePopularLocally = ((typicalKitchenStyles as string[] | undefined) ?? []).some((s) =>
+  s.toLowerCase().includes(styleName.toLowerCase())
+);
+const localPopularityNote = stylePopularLocally
+  ? `A ${styleName.toLowerCase()} kitchen is already a popular choice among ${locationName} homeowners, so our fitters are well versed in matching the style to the property types found here.`
+  : `${styleName} isn't the most common style we fit in ${locationName}, but it suits the area's property types well and we install it here regularly.`;
+const styleFittingNote = `For a ${styleName.toLowerCase()} kitchen specifically, getting a good result depends on ${features[0].toLowerCase()}${features[1] ? ` and ${features[1].toLowerCase()}` : ""} — both of which rely on accurate survey measurements and careful on-site fitting.`;
 
 // Meta 140-160 chars
 const metaDescription = `${styleName} kitchen installation in ${locationName} — independent fitting from any retailer. Fixed-price quotes, survey from £195.`;
@@ -279,8 +306,28 @@ const serviceSchema = {
     </div>
   </section>
 
-  <!-- Section 3: Installation considerations -->
+  <!-- Section 2b: What to expect locally — hyper-local, non-duplicated content -->
   <section class="section" style="background: var(--bg-light);">
+    <div class="container">
+      <div class="max-w-3xl fade-up">
+        <h2 class="text-3xl font-bold mb-4" style="color: var(--navy);">
+          {styleName} Kitchens in {locationName}: What to Expect
+        </h2>
+        <p class="leading-relaxed mb-4" style="color: var(--text-soft);">
+          {housingStock} {localPopularityNote}
+        </p>
+        <p class="leading-relaxed mb-4" style="color: var(--text-soft);">
+          {kitchenNotes}
+        </p>
+        <p class="leading-relaxed" style="color: var(--text-soft);">
+          {localNote} {styleFittingNote}
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 3: Installation considerations -->
+  <section class="section">
     <div class="container">
       <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; align-items: start;" class="fade-up">
         <div>

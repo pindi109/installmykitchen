@@ -20,11 +20,69 @@ export function getStaticPaths() {
 }
 
 const { location } = Astro.props;
-const { name, slug, county } = location;
+const { name, slug, county, housingStock, kitchenNotes, localNote, typicalKitchenStyles } = location;
 
-// Title — kept ≤65 chars, brand suffix dropped for long location names
+// Turns a list like ["Shaker", "German handleless"] into "shaker and german
+// handleless" for use mid-sentence, lower-casing the first letter of each
+// item (demonyms such as "German" are left capitalised).
+function joinStyleList(styles: string[]): string {
+  if (!styles || styles.length === 0) return "";
+  const cased = styles.map((s) =>
+    /^German\b/.test(s) ? s : s.charAt(0).toLowerCase() + s.slice(1)
+  );
+  if (cased.length === 1) return cased[0];
+  if (cased.length === 2) return `${cased[0]} and ${cased[1]}`;
+  return `${cased.slice(0, -1).join(", ")} and ${cased[cased.length - 1]}`;
+}
+
+const stylesSentence = typicalKitchenStyles && typicalKitchenStyles.length > 0
+  ? `Given this, the kitchen styles we fit most often in ${name} are ${joinStyleList(typicalKitchenStyles)}.`
+  : "";
+
+// Pick a retailer whose product line matches the styles most requested
+// locally, to sit alongside Wren and Howdens (relevant everywhere) in the
+// "Retailer Delivery & Fitting Notes" section below.
+const retailerBySlug = Object.fromEntries(retailersData.map((r) => [r.slug, r]));
+const styleText = (typicalKitchenStyles || []).join(" ").toLowerCase();
+let localStyleRetailerSlug = "symphony";
+if (styleText.includes("german")) {
+  localStyleRetailerSlug = "kutchenhaus";
+} else if (styleText.includes("in-frame") || styleText.includes("handcrafted") || styleText.includes("traditional")) {
+  localStyleRetailerSlug = "masterclass";
+} else if (styleText.includes("gloss")) {
+  localStyleRetailerSlug = "wickes";
+}
+
+// Varied closing line for each featured retailer block so the section
+// doesn't read as several identical templated sentences.
+const retailerTieIns = [
+  `Our ${name} fitters factor this into scheduling for every order booked in the area.`,
+  `This is something our ${name}-based team plans for as standard.`,
+  `We coordinate this directly for customers across ${name} and the wider ${county} area.`,
+  `Fitters covering ${name} build this into the installation day plan as a matter of course.`,
+];
+
+// The description field is otherwise unused on this page — the card grid
+// above only shows installNote — so we surface it in full here rather than
+// re-printing the same clipped sentence readers have already seen.
+const featuredRetailers = ["wren", "howdens", localStyleRetailerSlug]
+  .map((retailerSlug, i) => {
+    const retailer = retailerBySlug[retailerSlug];
+    if (!retailer) return null;
+    return {
+      displayName: retailer.displayName,
+      body: `${retailer.description} ${retailer.installNote} ${retailerTieIns[i % retailerTieIns.length]}`,
+    };
+  })
+  .filter(Boolean);
+
+// Title — kept ≤65 chars, brand suffix dropped for long location names.
+// When the suffix is dropped, the fallback also loses the literal word
+// "Install" (it only appears in "| Install My Kitchen"), so the fallback
+// uses "We Install" instead of "We Fit" — matching the H1 below — to keep
+// that keyword in the title even without the brand suffix.
 const titleFull = `Kitchen Retailers We Fit in ${name} | Install My Kitchen`;
-const title = titleFull.length <= 65 ? titleFull : `Kitchen Retailers We Fit in ${name}`;
+const title = titleFull.length <= 65 ? titleFull : `Kitchen Retailers We Install in ${name}`;
 
 // Meta description — 140–160 chars (verified across all 25 location names)
 const metaDescription = `We install kitchens from Wren, Howdens, Magnet, IKEA, Wickes and all major retailers in ${name}, ${county}. Independent — no retailer tie-in.`;
@@ -193,6 +251,40 @@ const relatedLinks = [
             </li>
           ))}
         </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Retailer delivery & fitting notes, tied to local housing stock -->
+  <section class="section">
+    <div class="container">
+      <div class="max-w-3xl fade-up">
+        <h2 class="text-3xl font-bold mb-4" style="color: var(--navy);">
+          Retailer Delivery &amp; Fitting Notes for {name}
+        </h2>
+        <p class="leading-relaxed mb-5" style="color: var(--text-soft);">
+          {housingStock} {kitchenNotes}
+        </p>
+        <p class="leading-relaxed mb-8" style="color: var(--text-soft);">
+          {localNote} {stylesSentence}
+        </p>
+
+        <p class="mb-6 leading-relaxed" style="color: var(--text-soft);">
+          Delivery and fitting logistics vary quite a bit between retailers — here's what to expect from a few of the options we install regularly in {name}:
+        </p>
+
+        <div class="space-y-6">
+          {featuredRetailers.map((retailer) => (
+            <div>
+              <h3 class="text-lg font-bold mb-1" style="color: var(--charcoal);">
+                {retailer.displayName}
+              </h3>
+              <p class="leading-relaxed" style="color: var(--text-soft);">
+                {retailer.body}
+              </p>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   </section>

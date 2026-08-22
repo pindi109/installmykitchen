@@ -30,8 +30,8 @@ const canonical = `https://installmykitchen.co.uk/retailers/${slug}/`;
 
 // Title — ≤60 chars, abbreviated where necessary
 const shortBrand = displayName.replace(/ (?:Kitchens?|Joinery)$/i, "");
-const rawTitle = `${displayName} Kitchen Installation | Install My Kitchen`;
-const title = rawTitle.length <= 60 ? rawTitle : `${displayName} Kitchen Fitting | Install My Kitchen`;
+const fullTitle = `${displayName} Kitchen Installation | Install My Kitchen`;
+const title = fullTitle.length <= 60 ? fullTitle : `${displayName} Kitchen Installation`;
 
 // Meta description — ≤160 chars, unique per retailer
 const metaDescription = `Expert ${displayName} fitting — independent, not affiliated with ${shortBrand}. Fixed-price installation with a pre-survey. Call 07399 651836.`;

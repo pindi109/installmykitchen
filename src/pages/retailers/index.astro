@@ -9,6 +9,7 @@ import AnswerBlock from "../../components/AnswerBlock.astro";
 import SupplierLogos from "../../components/SupplierLogos.astro";
 import FAQ from "../../components/FAQ.astro";
 import CTA from "../../components/CTA.astro";
+import retailerData from "../../data/retailers.json";
 
 const retailers = [
   {
@@ -137,6 +138,16 @@ const faqItems = [
 
       <AnswerBlock answer="Install My Kitchen is a fully independent kitchen installation service in Coventry. We install kitchens purchased from any UK retailer including Wren, Howdens, Magnet, IKEA, Wickes, B&Q, Benchmarx and all other suppliers. We are not affiliated with any retailer." />
 
+      <div class="retailer-intro">
+        <h2 class="section-h2 mb-4">Why Retailer Choice Affects Your Installation</h2>
+        <p class="intro-copy">
+          Every kitchen retailer supplies and delivers its units differently, and that has a direct effect on how your installation is planned. Rigid, pre-assembled cabinets from retailers such as Wren, Magnet and Benchmarx arrive largely ready to fix in place, while flat-pack systems from IKEA, Wickes and B&amp;Q need to be built up from panels on site before a single unit goes on the wall — adding time to the job and calling for fitters experienced with that specific assembly process. Trade-only suppliers including Howdens, Benchmarx and Magnet Trade are ordered and collected directly from a local depot or trade counter by our team, which removes the need for a separate delivery to your home and reduces the risk of damage in transit.
+        </p>
+        <p class="intro-copy">
+          German-engineered ranges from Kutchenhaus and Nolte are built to tighter tolerances and can carry longer lead times than UK high-street brands, while kitchens from independent-retailer manufacturers such as Symphony and Masterclass are delivered in co-ordination with the specific showroom you ordered from. None of this changes how we approach the fitting itself — we are independent of every retailer we work with — but it does change the logistics we plan for at your survey. The notes below cover what to expect from each retailer we regularly install for.
+        </p>
+      </div>
+
       <h2 id="retailers-heading" class="section-h2 mb-8">Retailer Kitchens We Install</h2>
       <ul class="retailers-grid" role="list" aria-label="Retailers we install kitchens from">
         {retailers.map((retailer) => (
@@ -173,6 +184,22 @@ const faqItems = [
             </li>
           ))}
         </ul>
+      </div>
+
+      <!-- Delivery & installation notes, per retailer -->
+      <div class="notes-section">
+        <h2 class="section-h2 mb-4">Delivery &amp; Installation Notes, Retailer by Retailer</h2>
+        <p class="notes-intro">
+          Every retailer sources and delivers kitchens differently, which affects how we plan your installation during the survey. Here is what to expect from each of the retailers we regularly install for:
+        </p>
+        <dl class="notes-list">
+          {retailerData.map((r) => (
+            <div class="notes-row">
+              <dt class="notes-name">{r.displayName}</dt>
+              <dd class="notes-text">{r.installNote}</dd>
+            </div>
+          ))}
+        </dl>
       </div>
 
     </div>
@@ -309,6 +336,68 @@ const faqItems = [
 
   .retailer-card:hover .retailer-link-label {
     gap: 0.5rem;
+  }
+
+  /* Retailer intro */
+  .retailer-intro {
+    max-width: 780px;
+    margin-bottom: 2.5rem;
+  }
+
+  .intro-copy {
+    font-size: 0.9375rem;
+    line-height: 1.75;
+    color: var(--text-soft);
+    margin-bottom: 1.125rem;
+  }
+
+  /* Delivery & installation notes */
+  .notes-section {
+    margin-top: 2.5rem;
+  }
+
+  .notes-intro {
+    font-size: 0.9375rem;
+    color: var(--text-soft);
+    line-height: 1.7;
+    margin-bottom: 1.25rem;
+    max-width: 720px;
+  }
+
+  .notes-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin: 0;
+    border-top: 1px solid var(--border);
+  }
+
+  .notes-row {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.25rem;
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  @media (min-width: 640px) {
+    .notes-row {
+      grid-template-columns: 180px 1fr;
+      gap: 1.25rem;
+    }
+  }
+
+  .notes-name {
+    font-size: 0.9375rem;
+    font-weight: 700;
+    color: var(--charcoal);
+  }
+
+  .notes-text {
+    font-size: 0.875rem;
+    line-height: 1.65;
+    color: var(--text-soft);
+    margin: 0;
   }
 
   /* Premium section */

@@ -31,7 +31,7 @@ const shortBrand = displayName.replace(/ (?:Kitchens?|Joinery)$/i, "");
 const rawTitle = `${displayName} Kitchen Installation Cost | Install My Kitchen`;
 const title = rawTitle.length <= 60
   ? rawTitle
-  : `${displayName} Kitchen Cost | Install My Kitchen`;
+  : `${shortBrand} Kitchen Installation Cost | Install My Kitchen`;
 
 // Meta ≤160 chars
 const metaDescription = `${shortBrand} kitchen installation costs — what affects price, what's included, and how to get a fixed-price quote. Covering Coventry, Warwickshire and Berkshire.`;
@@ -126,7 +126,7 @@ const internalLinks = [
     <div class="container">
       <div class="max-w-3xl">
         <h1 class="text-4xl md:text-5xl font-extrabold mb-5 leading-tight" style="color: var(--navy);">
-          How Much Does {displayName} Kitchen Installation Cost?
+          {displayName} Kitchen Installation Cost — How Much Does It Cost?
         </h1>
         <AnswerBlock
           answer={`${displayName} kitchen installation typically costs between ${fmt(smallLow)} and ${fmt(largeLow)}+ depending on kitchen size and complexity. These are labour-only figures for Coventry, Warwickshire and Berkshire — they do not include the cost of the kitchen itself. All prices are indicative; we provide fixed-price quotes following a survey.`}
