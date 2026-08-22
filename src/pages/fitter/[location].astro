@@ -14,6 +14,7 @@ import WhatHappensNext from "../../components/WhatHappensNext.astro";
 import EnquiryForm from "../../components/EnquiryForm.astro";
 
 import locationsData from "../../data/locations.json";
+import retailersData from "../../data/retailers.json";
 
 export function getStaticPaths() {
   return locationsData.map((loc, index) => ({
@@ -152,6 +153,17 @@ const allNearbyLinks: { label: string; href: string; description: string }[] = [
     description: `Everything that affects kitchen fitting prices explained`,
   },
 ].slice(0, 10);
+
+// Retailer installer links — one per retailer, pointing to the /installer/{brand}-{location}/
+// pages. These pages are badly under-linked internally (averaging ~5 inbound links vs 30-50+
+// elsewhere), so surfacing them here from a genuinely relevant, location-matched page helps
+// both users and internal link equity.
+const retailerInstallerLinks: { label: string; href: string; description: string }[] =
+  retailersData.map((retailer) => ({
+    label: `${retailer.displayName} Installation in ${name}`,
+    href: `/installer/${retailer.slug}-${slug}/`,
+    description: `Independent ${retailer.displayName} kitchen fitting in ${name} — fixed-price quote.`,
+  }));
 
 // LocalBusiness + Service JSON-LD
 const localBusinessSchema = {
@@ -328,6 +340,20 @@ const serviceSchema = {
           <InternalLinks
             links={allNearbyLinks}
             heading={`Related Pages for ${name}`}
+          />
+        </div>
+      </div>
+    </section>
+  )}
+
+  <!-- Retailer Installer Links -->
+  {retailerInstallerLinks.length > 0 && (
+    <section class="section">
+      <div class="container">
+        <div class="fade-up">
+          <InternalLinks
+            links={retailerInstallerLinks}
+            heading={`Get a Quote From These Retailers in ${name}`}
           />
         </div>
       </div>

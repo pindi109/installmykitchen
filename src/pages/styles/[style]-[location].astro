@@ -13,6 +13,7 @@ import CTA from "../../components/CTA.astro";
 import stylesData from "../../data/styles.json";
 import locationsData from "../../data/locations.json";
 import faqsData from "../../data/faqs.json";
+import retailersData from "../../data/retailers.json";
 
 const STYLE_LOCATION_SLUGS = [
   "coventry",
@@ -157,6 +158,23 @@ const internalLinks = [
   },
   ...nearbyLinks,
 ];
+
+// Popular retailers for this style/location — deliberately just 3, not the
+// full 13, so this stays a genuinely useful pointer rather than a link farm
+// bolted onto a style page. Rotated by both styleIndex and locationIndex
+// (multiplier 5 is coprime with the 13-retailer list) so link volume spreads
+// evenly across all 13 retailers across the 330 style/location combinations,
+// rather than the same 3 retailers appearing on every page.
+const retailerBase = (styleIndex * 5 + locationIndex) % retailersData.length;
+const popularRetailers = Array.from(
+  { length: 3 },
+  (_, k) => retailersData[(retailerBase + k) % retailersData.length],
+);
+const retailerLinks = popularRetailers.map((retailer) => ({
+  label: `${retailer.displayName} Kitchen Installation in ${locationName}`,
+  href: `/installer/${retailer.slug}-${locationSlug}/`,
+  description: `Independent installation of your ${styleName.toLowerCase()} kitchen if you're buying from ${retailer.displayName} in ${locationName}.`,
+}));
 
 // Breadcrumb JSON-LD is emitted once by the <Breadcrumbs> component below.
 
@@ -377,6 +395,16 @@ const serviceSchema = {
       <InternalLinks
         links={[...sameLocationStyleLinks, ...internalLinks]}
         heading="Related Pages"
+      />
+    </div>
+  </section>
+
+  <!-- Popular Retailers -->
+  <section class="section">
+    <div class="container fade-up">
+      <InternalLinks
+        links={retailerLinks}
+        heading={`Popular Retailers for ${styleName} Kitchens in ${locationName}`}
       />
     </div>
   </section>

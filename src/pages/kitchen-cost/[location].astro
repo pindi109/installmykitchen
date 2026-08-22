@@ -12,6 +12,7 @@ import CTA from "../../components/CTA.astro";
 
 import locationsData from "../../data/locations.json";
 import costsData from "../../data/costs.json";
+import retailersData from "../../data/retailers.json";
 
 export function getStaticPaths() {
   return locationsData.map((location, index) => ({
@@ -140,6 +141,15 @@ const semanticLinks = [
 ];
 
 const internalLinks = [...nearbyLinks, areaLink, ...semanticLinks];
+
+// Retailer-specific installer pages for this location — one per retailer,
+// so a reader pricing up their kitchen can jump straight to the installer
+// page for the specific brand they've chosen in their own area.
+const retailerLinks = retailersData.map((retailer) => ({
+  label: `${retailer.displayName} Installation in ${name}`,
+  href: `/installer/${retailer.slug}-${slug}/`,
+  description: `Independent ${retailer.displayName} kitchen fitting in ${name} — fixed-price quote.`,
+}));
 
 // ── Cost table data ───────────────────────────────────────────────────────────
 
@@ -373,6 +383,20 @@ const serviceSchema = {
           <InternalLinks
             links={internalLinks}
             heading="Related Cost Guides &amp; Pages"
+          />
+        </div>
+      </div>
+    </section>
+  )}
+
+  <!-- Retailer-specific installer pages for this location -->
+  {retailerLinks.length > 0 && (
+    <section class="section">
+      <div class="container">
+        <div class="fade-up">
+          <InternalLinks
+            links={retailerLinks}
+            heading={`Get a Quote From These Retailers in ${name}`}
           />
         </div>
       </div>

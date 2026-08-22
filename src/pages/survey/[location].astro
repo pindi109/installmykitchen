@@ -12,6 +12,7 @@ import EnquiryForm from "../../components/EnquiryForm.astro";
 import CTA from "../../components/CTA.astro";
 
 import locationsData from "../../data/locations.json";
+import retailersData from "../../data/retailers.json";
 
 export function getStaticPaths() {
   return locationsData.map((location) => ({
@@ -163,6 +164,16 @@ const allLinks: { label: string; href: string; description: string }[] = [
     description: `Real kitchens fitted across the Midlands — before and after`,
   },
 ].slice(0, 10);
+
+// ── Retailer installer links — one per retailer for this location ──────────
+// Surfaces the /installer/{brand}-{location}/ pages from location-based
+// content so a visitor booking a survey can jump straight to their retailer's
+// installer page for the same area.
+const retailerLinks: { label: string; href: string; description: string }[] = retailersData.map((retailer) => ({
+  label: `${retailer.displayName} Installation in ${name}`,
+  href: `/installer/${retailer.slug}-${slug}/`,
+  description: `Independent ${retailer.displayName} kitchen fitting in ${name} — fixed-price quote.`,
+}));
 
 // ── Service JSON-LD ────────────────────────────────────────────────────────
 const serviceSchema = {
@@ -321,6 +332,14 @@ const serviceSchema = {
             <InternalLinks
               links={allLinks}
               heading={`Related Pages for ${name}`}
+            />
+          </div>
+
+          <!-- Retailer Installer Links -->
+          <div class="links-block">
+            <InternalLinks
+              links={retailerLinks}
+              heading={`Get a Quote From These Retailers in ${name}`}
             />
           </div>
 
