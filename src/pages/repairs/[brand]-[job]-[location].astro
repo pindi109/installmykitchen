@@ -116,9 +116,20 @@ const { name: locationName, slug: locationSlug, county, localNote, kitchenNotes 
 // Is this a Berkshire/southern location?
 const BERKS_SLUGS = ["reading", "bracknell", "slough", "maidenhead", "windsor", "wokingham", "newbury", "ascot"];
 const isBerks = BERKS_SLUGS.includes(locationSlug);
-const fromPrice = isBerks ? fromPriceBerks : fromPriceCW;
+const rawFromPrice = isBerks ? fromPriceBerks : fromPriceCW;
+const minCalloutGuard = isBerks ? 75 : 50;
+// Same guard as the non-branded repair template — hinge replacement's listed
+// "from" price sits below the minimum call-out for some tiers; never display
+// a price the minimum call-out would contradict.
+const fromPrice = Math.max(rawFromPrice, minCalloutGuard);
 
 const canonical = `https://installmykitchen.co.uk/repairs/${brandSlug}-${jobSlug}-${locationSlug}/`;
+
+// Most brand display names already end in "Kitchen(s)"/"Joinery" (e.g. "IKEA
+// Kitchens"), and every job name here starts with "Kitchen" — concatenating
+// them raw produces doubled text like "IKEA Kitchens Kitchen Plinth
+// Replacement". Strip that trailing word before combining with job text.
+const shortBrand = displayName.replace(/ (?:Kitchens?|Joinery)$/i, "");
 
 // Title — the H1 below leads with "Independent", which is part of the page's
 // target keyword, so the title must keep that word too. Try progressively
@@ -127,9 +138,9 @@ const canonical = `https://installmykitchen.co.uk/repairs/${brandSlug}-${jobSlug
 // worst-case combination (longest brand + job + location) is 69 chars with
 // no suffix at all, so a 70-char final tier always fits without needing any
 // mid-word truncation.
-const rawTitle = `Independent ${displayName} ${jobName} ${locationName} | Install My Kitchen`;
-const titleImk = `Independent ${displayName} ${jobName} ${locationName} | IMK`;
-const titleNoSuffix = `Independent ${displayName} ${jobName} ${locationName}`;
+const rawTitle = `Independent ${shortBrand} ${jobName} ${locationName} | Install My Kitchen`;
+const titleImk = `Independent ${shortBrand} ${jobName} ${locationName} | IMK`;
+const titleNoSuffix = `Independent ${shortBrand} ${jobName} ${locationName}`;
 const title = rawTitle.length <= 65
   ? rawTitle
   : titleImk.length <= 65
@@ -137,7 +148,6 @@ const title = rawTitle.length <= 65
     : titleNoSuffix;
 
 // Meta desc ≤160 chars
-const shortBrand = displayName.replace(/ (?:Kitchens?|Joinery)$/i, "");
 const metaDescription = `${shortBrand} ${h1Fragment} in ${locationName} — independent, not affiliated with ${displayName}. From £${fromPrice}, fixed-price quote.`;
 
 // FAQ — offset by brandIndex + locationIndex for variety
@@ -167,7 +177,7 @@ const internalLinks = [
     description: `Independent ${displayName} installation across ${locationName}`,
   },
   {
-    label: `${displayName} Kitchens`,
+    label: displayName,
     href: `/retailers/${brandSlug}/`,
     description: `Our full independent fitting service for ${displayName}`,
   },
@@ -205,7 +215,6 @@ const serviceSchema = {
     telephone: "07399651836",
     address: {
       "@type": "PostalAddress",
-      streetAddress: "242 Hollyfast Road, Coundon",
       addressLocality: "Coventry",
       postalCode: "CV6 2AH",
       addressCountry: "GB",
@@ -241,7 +250,7 @@ const serviceSchema = {
     <Breadcrumbs
       items={[
         { label: "Repairs", href: "/repairs/" },
-        { label: `${displayName} ${jobName} in ${locationName}`, href: canonical },
+        { label: `${shortBrand} ${jobName} in ${locationName}`, href: canonical },
       ]}
     />
   </div>
@@ -259,11 +268,11 @@ const serviceSchema = {
         </div>
 
         <h1 class="text-4xl md:text-5xl font-extrabold mb-5 leading-tight" style="color: var(--navy);">
-          Independent {displayName} {jobName} in {locationName}
+          Independent {shortBrand} {jobName} in {locationName}
         </h1>
 
         <AnswerBlock
-          answer={`Install My Kitchen carries out independent ${displayName} ${h1Fragment} in ${locationName}. We work directly for you, not for ${displayName} — providing expert remedial fitting with no retailer affiliation and a fixed-price quote guaranteed before any work begins.`}
+          answer={`Install My Kitchen carries out independent ${shortBrand} ${h1Fragment} in ${locationName}. We work directly for you, not for ${displayName} — providing expert remedial fitting with no retailer affiliation and a fixed-price quote guaranteed before any work begins.`}
         />
       </div>
     </div>
@@ -274,13 +283,13 @@ const serviceSchema = {
     <div class="container">
       <div class="max-w-3xl fade-up">
         <h2 class="text-3xl font-bold mb-4" style="color: var(--navy);">
-          What Does {jobName} Involve on a {displayName} Kitchen?
+          What Does {jobName} Involve on a {shortBrand} Kitchen?
         </h2>
         <p class="text-lg leading-relaxed mb-4" style="color: var(--text-soft);">
           {jobDescription}
         </p>
         <p class="leading-relaxed mb-4" style="color: var(--text-soft);">
-          {displayName} kitchens use their own cabinet and hardware formats that our fitters know in detail. Whether that means working with {displayName}'s own hinge system, matching their door profiles precisely, or understanding how their carcasses are constructed, our team brings specific experience to every {displayName} remedial job in {locationName}.
+          {shortBrand} kitchens use their own cabinet and hardware formats that our fitters know in detail. Whether that means working with {shortBrand}'s own hinge system, matching their door profiles precisely, or understanding how their carcasses are constructed, our team brings specific experience to every {shortBrand} remedial job in {locationName}.
         </p>
         <p class="leading-relaxed" style="color: var(--text-soft);">
           {kitchenNotes ?? `${locationName} homes present a variety of installation challenges, and our fitters adapt their approach to suit the specific requirements of each property.`}
@@ -297,10 +306,10 @@ const serviceSchema = {
           Why Use an Independent Fitter for {displayName} Remedial Work?
         </h2>
         <p class="leading-relaxed mb-4" style="color: var(--text-soft);">
-          {displayName}'s own installation or aftercare service is tied to their commercial relationship with you as a customer. An independent fitter like Install My Kitchen has no such tie — we assess the work objectively, quote a fixed price for exactly what is needed, and carry it out without upselling you on products or services you do not require.
+          {shortBrand}'s own installation or aftercare service is tied to their commercial relationship with you as a customer. An independent fitter like Install My Kitchen has no such tie — we assess the work objectively, quote a fixed price for exactly what is needed, and carry it out without upselling you on products or services you do not require.
         </p>
         <p class="leading-relaxed mb-4" style="color: var(--text-soft);">
-          Remedial jobs such as {h1Fragment} are often quicker and more cost-effective when handled by an experienced independent fitter who is familiar with {displayName}'s product range. We can often diagnose the root cause of a problem on site and carry out the repair in a single visit, without waiting for retailer-scheduled appointments.
+          Remedial jobs such as {h1Fragment} are often quicker and more cost-effective when handled by an experienced independent fitter who is familiar with {shortBrand}'s product range. We can often diagnose the root cause of a problem on site and carry out the repair in a single visit, without waiting for retailer-scheduled appointments.
         </p>
         <p class="leading-relaxed" style="color: var(--text-soft);">
           Our service in {locationName} covers the full {county} area and surrounding postcodes. {localNote ?? `We are familiar with the property types and kitchen layouts commonly found in ${locationName}, which helps us plan and execute every remedial visit efficiently.`}
@@ -335,9 +344,9 @@ const serviceSchema = {
     <div class="container">
       <div class="max-w-2xl mx-auto fade-up">
         <p class="text-center text-sm mb-6 font-medium" style="color: var(--teal);">
-          Get a Fixed-Price Quote for {displayName} {jobName} in {locationName}
+          Get a Fixed-Price Quote for {shortBrand} {jobName} in {locationName}
         </p>
-        <EnquiryForm formTitle={`Quote: ${displayName} ${jobName} — ${locationName}`} showSurveyOption={false} />
+        <EnquiryForm formTitle={`Quote: ${shortBrand} ${jobName} — ${locationName}`} showSurveyOption={false} />
       </div>
     </div>
   </section>
@@ -366,7 +375,7 @@ const serviceSchema = {
 
   <!-- CTA -->
   <CTA
-    heading={`Book Your ${displayName} ${jobName} in ${locationName}`}
+    heading={`Book Your ${shortBrand} ${jobName} in ${locationName}`}
     subtext={`Fixed-price quotes, no retailer affiliation, expert independent fitting in ${locationName} and across ${county}. Call us or send an enquiry today.`}
     primaryLabel="Get a Free Quote"
     primaryHref="/contact/"

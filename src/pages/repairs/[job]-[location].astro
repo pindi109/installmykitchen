@@ -81,8 +81,12 @@ const { job, location, jobIndex, locationIndex } = Astro.props;
 
 // Pricing — Berkshire locations pay fromPriceBerks, CW locations pay fromPriceCW
 const isBerkshire = (location as any).isBerkshire === true;
-const fromPrice = isBerkshire ? job.fromPriceBerks : job.fromPriceCW;
+const rawFromPrice = isBerkshire ? job.fromPriceBerks : job.fromPriceCW;
 const minCallout = isBerkshire ? 75 : 50;
+// A couple of job types' "from" price predates a later increase to the minimum
+// call-out and now sits below it (e.g. hinge replacement at £60 vs a £75 min
+// call-out) — never display a price the minimum call-out would contradict.
+const fromPrice = Math.max(rawFromPrice, minCallout);
 const pricingTierLabel = isBerkshire ? "Berkshire" : "Coventry, Warwickshire & Berkshire";
 
 // Canonical
@@ -115,7 +119,7 @@ const takeawayPoolA = [
 ];
 
 const takeawayPoolB = [
-  `${job.name} carried out by an experienced kitchen fitter based in Coventry.`,
+  `${job.name} carried out by an experienced, fully independent kitchen fitter.`,
   `We assess the problem on site and confirm the price before we begin — no surprises.`,
   `From £${fromPrice} in ${location.name}, with a minimum call-out of £${minCallout}.`,
   `We carry standard replacement parts, so most jobs need just one visit.`,
@@ -217,7 +221,6 @@ const serviceSchema = {
     telephone: "+447399651836",
     address: {
       "@type": "PostalAddress",
-      streetAddress: "242 Hollyfast Road, Coundon",
       addressLocality: "Coventry",
       postalCode: "CV6 2AH",
       addressCountry: "GB",
@@ -392,6 +395,10 @@ const breadcrumbSchema = {
             <p class="text-sm" style="color: var(--text-soft);">{pricingTierLabel} area</p>
           </div>
         </div>
+
+        <p class="text-sm leading-relaxed mb-4" style="color: var(--text-soft);">
+          £{minCallout} is the minimum charge for any visit — {job.name.toLowerCase()} typically starts from the £{fromPrice} shown above once the work is confirmed on site.
+        </p>
 
         <p class="text-sm leading-relaxed" style="color: var(--text-soft);">
           Parts required for the repair are charged at cost plus a small handling margin. We will itemise any parts separately so you can see exactly what you are paying for.

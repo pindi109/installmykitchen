@@ -181,7 +181,7 @@ const REMEDIAL_LOCATION_SLUGS = [
 ];
 
 export function getStaticPaths() {
-  const APPLIANCES_LOCAL: { slug: string; name: string; h1Fragment: string; description: string; fromPriceCW: number; fromPriceBerks: number; faqs: { q: string; a: string }[] }[] = [
+  const APPLIANCES_LOCAL: { slug: string; name: string; h1Fragment: string; description: string; fromPriceCW: number; fromPriceBerks: number; hasWaterConnection: boolean; faqs: { q: string; a: string }[] }[] = [
     {
       slug: "integrated-dishwasher-installation",
       name: "Integrated Dishwasher Installation",
@@ -189,6 +189,7 @@ export function getStaticPaths() {
       description: "Installing an integrated dishwasher requires correctly positioning the appliance within its housing, making the water supply and waste connections, fitting or rehinging the door panel, and testing every cycle before handover.",
       fromPriceCW: 75,
       fromPriceBerks: 95,
+      hasWaterConnection: true,
       faqs: [
         { q: "Do I need a plumber as well as a fitter for a dishwasher installation?", a: "No — our kitchen fitters are experienced in making the standard hot or cold water supply and waste connections required for a dishwasher installation. A separate plumber is not normally needed." },
         { q: "Can you fit any brand of integrated dishwasher?", a: "Yes — we work with all major brands including Bosch, Siemens, AEG, Miele, Neff, Hotpoint, and Beko. We confirm appliance dimensions against the housing cabinet before installation day." },
@@ -203,6 +204,7 @@ export function getStaticPaths() {
       description: "An integrated fridge must sit level, be correctly ventilated according to the manufacturer's requirements, and have its door panel and hinges set up to match your kitchen doors.",
       fromPriceCW: 65,
       fromPriceBerks: 85,
+      hasWaterConnection: false,
       faqs: [
         { q: "Does an integrated fridge need any special electrical work?", a: "Integrated fridges simply plug into a standard 13-amp socket within the housing cabinet. If no socket is present inside the unit, an electrician will need to add one before we install the appliance." },
         { q: "How important is ventilation for an integrated fridge?", a: "Ventilation is critical for efficiency and appliance longevity. We fit the manufacturer-specified ventilation grilles and ensure adequate airflow clearances are maintained within the housing." },
@@ -217,6 +219,7 @@ export function getStaticPaths() {
       description: "Integrated fridge freezers require careful positioning within a tall housing, correct levelling to prevent door misalignment, and precise fitting of the door panels across both compartments.",
       fromPriceCW: 85,
       fromPriceBerks: 110,
+      hasWaterConnection: false,
       faqs: [
         { q: "Why is levelling particularly important for a fridge freezer?", a: "A fridge freezer that is not level will not drain condensation correctly and its doors may not seal properly, leading to reduced efficiency. We always level the appliance precisely before fitting the door panels." },
         { q: "Can you fit door panels that match my existing kitchen doors?", a: "Yes — we fit door panels supplied by you or your kitchen retailer. The panels are attached to the appliance door using a fixing kit and aligned to match the rest of your kitchen." },
@@ -231,6 +234,7 @@ export function getStaticPaths() {
       description: "Whether freestanding or integrated, washing machine installation involves connecting the machine to hot and cold water supplies and a suitable waste outlet, levelling the appliance, removing transit bolts, and running a test wash before handover.",
       fromPriceCW: 65,
       fromPriceBerks: 85,
+      hasWaterConnection: true,
       faqs: [
         { q: "Do you remove transit bolts and run a test wash?", a: "Yes — removing transit bolts before use is essential, and we always carry this out as part of the installation. We then run a short test cycle to confirm the machine is operating and draining correctly." },
         { q: "Can you disconnect and remove my old washing machine?", a: "Yes — old appliance disconnection and removal can be added to the installation visit. Please let us know when enquiring so we can allow extra time." },
@@ -245,6 +249,7 @@ export function getStaticPaths() {
       description: "Fitting an integrated oven into a housing column requires correct electrical connection by a Part P-qualified installer, precise positioning within the housing, and careful testing of all functions.",
       fromPriceCW: 95,
       fromPriceBerks: 120,
+      hasWaterConnection: false,
       faqs: [
         { q: "Do you carry out the electrical connection for an oven?", a: "Oven electrical connections must be made by a Part P-registered electrician. We work alongside a qualified electrician and coordinate the connection as part of our installation service — this is included in the price we quote." },
         { q: "What type of electrical supply does an integrated oven need?", a: "Most integrated ovens require a dedicated 13-amp or 16-amp circuit, depending on the appliance rating. We confirm the supply requirements with you before installation and arrange any necessary electrical work." },
@@ -290,7 +295,7 @@ export function getStaticPaths() {
 }
 
 const { appliance, location, applianceIndex, locationIndex } = Astro.props;
-const { name: applianceName, slug: applianceSlug, h1Fragment, description: applianceDescription, fromPriceCW, fromPriceBerks, faqs: applianceFaqs } = appliance;
+const { name: applianceName, slug: applianceSlug, h1Fragment, description: applianceDescription, fromPriceCW, fromPriceBerks, hasWaterConnection, faqs: applianceFaqs } = appliance;
 const { name: locationName, slug: locationSlug, county, localNote, kitchenNotes } = location;
 
 // Is this a Berkshire/southern location?
@@ -404,7 +409,6 @@ const serviceSchema = {
     telephone: "07399651836",
     address: {
       "@type": "PostalAddress",
-      streetAddress: "242 Hollyfast Road, Coundon",
       addressLocality: "Coventry",
       postalCode: "CV6 2AH",
       addressCountry: "GB",
@@ -499,13 +503,19 @@ const serviceSchema = {
             Why Professional {applianceName} Matters
           </h2>
           <p class="leading-relaxed mb-4" style="color: var(--text-soft);">
-            Appliance manufacturers and many home insurers require professional installation to maintain warranty coverage and comply with water supply regulations. A poorly installed appliance can cause water damage, inefficient operation, and premature failure.
+            {hasWaterConnection
+              ? "Appliance manufacturers and many home insurers require professional installation to maintain warranty coverage and comply with water supply regulations. A poorly installed appliance can cause water damage, inefficient operation, and premature failure."
+              : "Appliance manufacturers and many home insurers require professional installation to maintain warranty coverage. A poorly fitted appliance can cause misalignment, ventilation problems, and premature failure."}
           </p>
           <p class="leading-relaxed mb-4" style="color: var(--text-soft);">
-            Our fitters carry out {h1Fragment} to the manufacturer's specification and current UK building and water regulations. We test every connection and run a post-installation check before leaving.
+            {hasWaterConnection
+              ? <>Our fitters carry out {h1Fragment} to the manufacturer's specification and current UK building and water regulations. We test every connection and run a post-installation check before leaving.</>
+              : <>Our fitters carry out {h1Fragment} to the manufacturer's specification and current UK building regulations. We test every function and run a post-installation check before leaving.</>}
           </p>
           <p class="leading-relaxed" style="color: var(--text-soft);">
-            {kitchenNotes ?? `${locationName} properties vary in their plumbing layouts — our fitters are experienced in adapting connections to suit the configurations found across ${county}.`}
+            {kitchenNotes ?? (hasWaterConnection
+              ? `${locationName} properties vary in their plumbing layouts — our fitters are experienced in adapting connections to suit the configurations found across ${county}.`
+              : `${locationName} properties vary in their housing and cabinetry layouts — our fitters are experienced in adapting installations to suit the configurations found across ${county}.`)}
           </p>
         </div>
       </div>

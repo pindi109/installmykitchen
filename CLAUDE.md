@@ -77,6 +77,15 @@ Added 2026-06-29: **https://facebook.com/installmykitchenuk** (no www — consis
 - Footer link: `src/components/Footer.astro` — live on every page
 - Schema `sameAs`: added to all 14 files that have a top-level `LocalBusiness` JSON-LD object
 
+## Instagram
+
+Added 2026-09-13: **https://www.instagram.com/installmykitchenuk/** (kept www — this is the URL as provided; Facebook entry uses no-www)
+
+- Footer link: `src/components/Footer.astro` — real href replacing the old `#` placeholder, `target="_blank" rel="noopener noreferrer"` added to match the Facebook anchor
+- Schema `sameAs`: appended alongside the Facebook URL in all 16 files that have a `sameAs` array (`BusinessSchema.astro`, `index.astro`, `contact.astro`, 9× `kitchen-fitter-*.astro`, `areas/[area].astro`, `areas-retailers/[area].astro`, `fitter/[location].astro`)
+- No live feed/widget — link only, per explicit decision (revisit only if the link alone doesn't move SEO)
+- Note: NAP/social data has no central config file — it's duplicated literal-by-literal across these ~16 files. Any future social link change means repeating this file list.
+
 ## What's still pending (as of 2026-06-29)
 
 - **Hero images** for new pages — currently using `/assets/hero-placeholder.svg`. Need fal.ai key to generate. Once done: update `hero-manifest.json` and `alt-tags-remedial.json`.
@@ -85,7 +94,6 @@ Added 2026-06-29: **https://facebook.com/installmykitchenuk** (no www — consis
 - **GSC sitemap resubmission** — after deploy, resubmit `https://installmykitchen.co.uk/sitemap.xml`
 - **Cookie consent + GA Consent Mode v2** — compliance gap, not yet built
 - **Wave 2** — more brand × repair combinations, more Berkshire locations (sandhurst, thatcham, fleet, camberley, etc.)
-- **Instagram link** in footer — currently `href="#"` placeholder until account exists
 
 ## SEO keyword detection (PageRank SEO tool)
 

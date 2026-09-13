@@ -70,8 +70,9 @@ export function getStaticPaths() {
 }
 
 const { retailer, location, retailerIndex, locationIndex } = Astro.props;
-const { displayName, slug: brandSlug, description: retailerDescription, installNote } = retailer;
+const { displayName, slug: brandSlug, description: retailerDescription, installNote, tradeAccount } = retailer;
 const { name: locationName, slug: locationSlug, county, description: locationDescription, nearby } = location;
+const isBerkshireLocation = (location as any).isBerkshire === true;
 
 const canonical = `https://installmykitchen.co.uk/installer/${brandSlug}-${locationSlug}/`;
 
@@ -83,8 +84,8 @@ const canonical = `https://installmykitchen.co.uk/installer/${brandSlug}-${locat
 const shortBrand = displayName.replace(/ (?:Kitchens?|Joinery)$/i, "");
 // "DIY" alone reads as do-it-yourself, so that brand keeps its full name
 // (without repeating the word Kitchen)
-const fullTitle = `${displayName} Kitchen Installation ${locationName} | Install My Kitchen`;
-const fullTitleNoSuffix = `${displayName} Kitchen Installation ${locationName}`;
+const fullTitle = `${shortBrand} Kitchen Installation ${locationName} | Install My Kitchen`;
+const fullTitleNoSuffix = `${shortBrand} Kitchen Installation ${locationName}`;
 const shortTitle = `${shortBrand} Kitchen Installation ${locationName} | Install My Kitchen`;
 const rawTitle = brandSlug === "diy-kitchens"
   ? `${displayName} Installation ${locationName} | Install My Kitchen`
@@ -101,7 +102,7 @@ const title = rawTitle.length <= 65
       : rawTitle.replace(" | Install My Kitchen", "");
 
 // Meta ≤160 chars
-const metaDescription = `Independent ${displayName} installation in ${locationName} — not affiliated with ${shortBrand}. Expert fitting, fixed-price quotes. Survey from £195.`;
+const metaDescription = `Independent ${shortBrand} installation in ${locationName} — not affiliated with ${shortBrand}. Expert fitting, fixed-price quotes. Survey from £195.`;
 
 // Brand-specific image set — falls back to shared process images
 const brandImgMap: Record<string, { overview: string; process: string; detail: string; finished: string }> = {
@@ -138,9 +139,9 @@ const nearbyComboLinks = nearbyAreaSlugs.map((nearbySlug) => {
   const nearbyLoc = locationsData.find((l) => l.slug === nearbySlug);
   return nearbyLoc
     ? {
-        label: `${displayName} Installation in ${nearbyLoc.name}`,
+        label: `${shortBrand} Installation in ${nearbyLoc.name}`,
         href: `/installer/${brandSlug}-${nearbySlug}/`,
-        description: `${nearbyLoc.county} — independent ${displayName} fitting`,
+        description: `${nearbyLoc.county} — independent ${shortBrand} fitting`,
       }
     : null;
 }).filter(Boolean) as { label: string; href: string; description: string }[];
@@ -148,9 +149,9 @@ const nearbyComboLinks = nearbyAreaSlugs.map((nearbySlug) => {
 // Internal links
 const internalLinks = [
   {
-    label: `${displayName} Kitchen Installation`,
+    label: `${shortBrand} Kitchen Installation`,
     href: `/retailers/${brandSlug}/`,
-    description: `Our full independent fitting service for ${displayName} kitchens`,
+    description: `Our full independent fitting service for ${shortBrand} kitchens`,
   },
   {
     label: `Kitchen Installation in ${locationName}`,
@@ -159,9 +160,9 @@ const internalLinks = [
   },
   ...nearbyComboLinks,
   {
-    label: `${displayName} Kitchen Installation Cost`,
+    label: `${shortBrand} Kitchen Installation Cost`,
     href: `/cost/${brandSlug}-cost/`,
-    description: `What to budget for fitting your ${displayName} kitchen`,
+    description: `What to budget for fitting your ${shortBrand} kitchen`,
   },
   {
     label: `Kitchen Installation Cost in ${locationName}`,
@@ -206,7 +207,7 @@ const internalLinks = [
 const serviceSchema = {
   "@context": "https://schema.org",
   "@type": "Service",
-  name: `${displayName} Kitchen Installation in ${locationName}`,
+  name: `${shortBrand} Kitchen Installation in ${locationName}`,
   provider: {
     "@type": "LocalBusiness",
     name: "Install My Kitchen",
@@ -214,7 +215,6 @@ const serviceSchema = {
     telephone: "07399651836",
     address: {
       "@type": "PostalAddress",
-      streetAddress: "242 Hollyfast Road, Coundon",
       addressLocality: "Coventry",
       postalCode: "CV6 2AH",
       addressCountry: "GB",
@@ -224,7 +224,7 @@ const serviceSchema = {
     "@type": "Place",
     name: locationName,
   },
-  description: `Independent installation service for ${displayName} kitchens in ${locationName}, ${county}. Install My Kitchen is not affiliated with ${displayName}.`,
+  description: `Independent installation service for ${shortBrand} kitchens in ${locationName}, ${county}. Install My Kitchen is not affiliated with ${shortBrand}.`,
   serviceType: "Kitchen Installation",
 };
 ---
@@ -243,7 +243,7 @@ const serviceSchema = {
       items={[
         { label: "Areas", href: "/areas/" },
         { label: locationName, href: `/areas/${locationSlug}/` },
-        { label: `${displayName} Installation`, href: canonical },
+        { label: `${shortBrand} Installation`, href: canonical },
       ]}
     />
   </div>
@@ -253,10 +253,12 @@ const serviceSchema = {
     <div class="container">
       <div class="max-w-3xl">
         <h1 class="text-4xl md:text-5xl font-extrabold mb-5 leading-tight" style="color: var(--navy);">
-          {displayName} Kitchen Installation in {locationName}
+          {shortBrand} Kitchen Installation in {locationName}
         </h1>
         <AnswerBlock
-          answer={`Install My Kitchen provides independent ${displayName} kitchen installation across ${locationName}. We fit kitchens purchased from ${displayName} — we are not affiliated with them.`}
+          answer={tradeAccount
+            ? `Install My Kitchen provides independent ${shortBrand} kitchen installation across ${locationName}. As ${shortBrand} supplies through trade accounts rather than directly to the public, we order and collect your kitchen on your behalf — we are not affiliated with them.`
+            : `Install My Kitchen provides independent ${shortBrand} kitchen installation across ${locationName}. We fit kitchens purchased from ${shortBrand} — we are not affiliated with them.`}
         />
       </div>
     </div>
@@ -268,7 +270,7 @@ const serviceSchema = {
       <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; align-items: start;" class="fade-up">
         <div>
           <h2 class="text-3xl font-bold mb-4" style="color: var(--navy);">
-            Fitting {displayName} Kitchens in {locationName}
+            Fitting {shortBrand} Kitchens in {locationName}
           </h2>
           <p class="text-lg leading-relaxed mb-4" style="color: var(--text-soft);">
             {retailerDescription}
@@ -277,16 +279,16 @@ const serviceSchema = {
             {locationDescription}
           </p>
           <p class="leading-relaxed" style="color: var(--text-soft);">
-            Install My Kitchen is a fully independent fitting service. We install {displayName} kitchens throughout {locationName} and the wider {county} area, working solely for you rather than the retailer.
+            Install My Kitchen is a fully independent fitting service. We install {shortBrand} kitchens throughout {locationName} and the wider {county} area, working solely for you rather than the retailer.
           </p>
         </div>
         <figure style="margin: 0;">
-          <img src={brandImgs.overview} alt={`${displayName} kitchen installation in ${locationName}`} width="680" height="510" loading="lazy" style="width: 100%; height: auto; border-radius: 0.75rem; display: block;" />
+          <img src={brandImgs.overview} alt={`${shortBrand} kitchen installation in ${locationName}`} width="680" height="510" loading="lazy" style="width: 100%; height: auto; border-radius: 0.75rem; display: block;" />
         </figure>
       </div>
       <!-- Full-width installation image -->
       <figure style="margin: 2.5rem 0 0; padding: 0;">
-        <img src="/assets/process/base-units-levelling.webp" alt={`Kitchen base units being levelled during ${displayName} installation in ${locationName}`} width="1200" height="506" loading="lazy" style="width: 100%; height: auto; border-radius: 0.75rem; display: block;" />
+        <img src="/assets/process/base-units-levelling.webp" alt={`Kitchen base units being levelled during ${shortBrand} installation in ${locationName}`} width="1200" height="506" loading="lazy" style="width: 100%; height: auto; border-radius: 0.75rem; display: block;" />
       </figure>
     </div>
   </section>
@@ -296,25 +298,25 @@ const serviceSchema = {
     <div class="container">
       <div class="fade-up">
         <h2 class="text-3xl font-bold mb-6" style="color: var(--navy);">
-          What to Expect: {displayName} Installation in {locationName}
+          What to Expect: {shortBrand} Installation in {locationName}
         </h2>
         <!-- Image + text -->
         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; align-items: start; margin-bottom: 2rem;">
           <figure style="margin: 0;">
-            <img src="/assets/process/delivery-checking.webp" alt={`${displayName} kitchen delivery being checked before installation in ${locationName}`} width="680" height="510" loading="lazy" style="width: 100%; height: auto; border-radius: 0.75rem; display: block;" />
+            <img src="/assets/process/delivery-checking.webp" alt={`${shortBrand} kitchen delivery being checked before installation in ${locationName}`} width="680" height="510" loading="lazy" style="width: 100%; height: auto; border-radius: 0.75rem; display: block;" />
           </figure>
           <div>
             <p class="leading-relaxed mb-4" style="color: var(--text-soft);">
               {installNote}
             </p>
             <p class="leading-relaxed" style="color: var(--text-soft);">
-              Every {displayName} kitchen installation we carry out in {locationName} begins with a pre-installation survey at your home. Our experienced fitters visit to take detailed measurements, check your {displayName} kitchen plan against the actual room, and identify any issues before they become problems on installation day.
+              Every {shortBrand} kitchen installation we carry out in {locationName} begins with a pre-installation survey at your home. Our experienced fitters visit to take detailed measurements, check your {shortBrand} kitchen plan against the actual room, and identify any issues before they become problems on installation day.
             </p>
           </div>
         </div>
         <!-- Full-width worktop image -->
         <figure style="margin: 0 0 2rem; padding: 0;">
-          <img src="/assets/process/worktop-fitting.webp" alt={`Worktop being professionally fitted as part of ${displayName} kitchen installation in ${locationName}`} width="1200" height="506" loading="lazy" style="width: 100%; height: auto; border-radius: 0.75rem; display: block;" />
+          <img src="/assets/process/worktop-fitting.webp" alt={`Worktop being professionally fitted as part of ${shortBrand} kitchen installation in ${locationName}`} width="1200" height="506" loading="lazy" style="width: 100%; height: auto; border-radius: 0.75rem; display: block;" />
         </figure>
         <!-- Text + image -->
         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; align-items: start;">
@@ -327,7 +329,7 @@ const serviceSchema = {
             </p>
           </div>
           <figure style="margin: 0;">
-            <img src="/assets/process/snagging-inspection.webp" alt={`Snagging inspection on completion of ${displayName} kitchen in ${locationName}`} width="680" height="510" loading="lazy" style="width: 100%; height: auto; border-radius: 0.75rem; display: block;" />
+            <img src="/assets/process/snagging-inspection.webp" alt={`Snagging inspection on completion of ${shortBrand} kitchen in ${locationName}`} width="680" height="510" loading="lazy" style="width: 100%; height: auto; border-radius: 0.75rem; display: block;" />
           </figure>
         </div>
       </div>
@@ -340,39 +342,41 @@ const serviceSchema = {
       <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; align-items: start;" class="fade-up">
         <div>
           <h2 class="text-3xl font-bold mb-4" style="color: var(--navy);">
-            Why Choose an Independent Fitter for Your {displayName} Kitchen?
+            Why Choose an Independent Fitter for Your {shortBrand} Kitchen?
           </h2>
           <p class="leading-relaxed mb-4" style="color: var(--text-soft);">
             Many homeowners in {locationName} choose to separate the supply of their kitchen from the installation, and for good reason. An independent fitter works solely to your brief — no upsell, no retailer margin, just a fixed-price installation based on the actual work.
           </p>
           <p class="leading-relaxed mb-4" style="color: var(--text-soft);">
-            Our fitters are experienced across the full {displayName} product range and understand the specific requirements of fitting their cabinetry to a professional standard.
+            Our fitters are experienced across the full {shortBrand} product range and understand the specific requirements of fitting their cabinetry to a professional standard.
           </p>
           <p class="leading-relaxed" style="color: var(--text-soft);">
-            We cover {locationName} as part of our broader service across Coventry, Warwickshire and Berkshire. Our local knowledge of {locationName}'s property types means we can plan and execute your installation efficiently.
+            {isBerkshireLocation
+              ? <>We cover {locationName} as part of our broader service across Berkshire and the surrounding area. Our local knowledge of {locationName}'s property types means we can plan and execute your installation efficiently.</>
+              : <>We cover {locationName} as part of our broader service across Coventry and Warwickshire. Our local knowledge of {locationName}'s property types means we can plan and execute your installation efficiently.</>}
           </p>
         </div>
         <div>
           <figure style="margin: 0 0 1.5rem;">
-            <img src={brandImgs.finished} alt={`Completed ${displayName} kitchen installation in ${locationName}`} width="680" height="510" loading="lazy" style="width: 100%; height: auto; border-radius: 0.75rem; display: block;" />
+            <img src={brandImgs.finished} alt={`Completed ${shortBrand} kitchen installation in ${locationName}`} width="680" height="510" loading="lazy" style="width: 100%; height: auto; border-radius: 0.75rem; display: block;" />
           </figure>
           <figure style="margin: 0;">
-            <img src="/assets/process/handles-fitting.webp" alt={`Handles being fitted during ${displayName} kitchen installation in ${locationName}`} width="680" height="510" loading="lazy" style="width: 100%; height: auto; border-radius: 0.75rem; display: block;" />
+            <img src="/assets/process/handles-fitting.webp" alt={`Handles being fitted during ${shortBrand} kitchen installation in ${locationName}`} width="680" height="510" loading="lazy" style="width: 100%; height: auto; border-radius: 0.75rem; display: block;" />
           </figure>
         </div>
       </div>
       <!-- Process gallery strip -->
       <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-top: 2.5rem;">
         <figure style="margin: 0;">
-          <img src="/assets/process/survey-measuring.webp" alt={`Pre-installation survey for ${displayName} kitchen in ${locationName}`} width="420" height="315" loading="lazy" style="width: 100%; height: auto; border-radius: 0.625rem; display: block;" />
+          <img src="/assets/process/survey-measuring.webp" alt={`Pre-installation survey for ${shortBrand} kitchen in ${locationName}`} width="420" height="315" loading="lazy" style="width: 100%; height: auto; border-radius: 0.625rem; display: block;" />
           <figcaption style="font-size: 0.75rem; color: var(--text-soft); margin-top: 0.5rem; text-align: center;">1. Survey &amp; Planning</figcaption>
         </figure>
         <figure style="margin: 0;">
-          <img src={brandImgs.process} alt={`${displayName} kitchen installation in progress in ${locationName}`} width="420" height="315" loading="lazy" style="width: 100%; height: auto; border-radius: 0.625rem; display: block;" />
+          <img src={brandImgs.process} alt={`${shortBrand} kitchen installation in progress in ${locationName}`} width="420" height="315" loading="lazy" style="width: 100%; height: auto; border-radius: 0.625rem; display: block;" />
           <figcaption style="font-size: 0.75rem; color: var(--text-soft); margin-top: 0.5rem; text-align: center;">2. Installation</figcaption>
         </figure>
         <figure style="margin: 0;">
-          <img src={brandImgs.overview} alt={`Finished ${displayName} kitchen in ${locationName}`} width="420" height="315" loading="lazy" style="width: 100%; height: auto; border-radius: 0.625rem; display: block;" />
+          <img src={brandImgs.overview} alt={`Finished ${shortBrand} kitchen in ${locationName}`} width="420" height="315" loading="lazy" style="width: 100%; height: auto; border-radius: 0.625rem; display: block;" />
           <figcaption style="font-size: 0.75rem; color: var(--text-soft); margin-top: 0.5rem; text-align: center;">3. Completed Kitchen</figcaption>
         </figure>
       </div>
@@ -413,8 +417,8 @@ const serviceSchema = {
 
   <!-- CTA -->
   <CTA
-    heading={`Book Your ${displayName} Installation Survey in ${locationName}`}
-    subtext={`Our £195 pre-installation survey gives you a fixed-price quote for your ${displayName} kitchen in ${locationName}. The fee is credited back in full when you proceed.`}
+    heading={`Book Your ${shortBrand} Installation Survey in ${locationName}`}
+    subtext={`Our £195 pre-installation survey gives you a fixed-price quote for your ${shortBrand} kitchen in ${locationName}. The fee is credited back in full when you proceed.`}
     primaryLabel="Book Your Survey"
     primaryHref="/survey/"
     secondaryLabel="Call 07399 651836"

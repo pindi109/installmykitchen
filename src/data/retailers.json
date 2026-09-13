@@ -4,7 +4,7 @@
     "name": "wren",
     "displayName": "Wren Kitchens",
     "description": "Wren Kitchens offers a vast range of styles from affordable modern handleless designs through to traditional shaker units, all manufactured in their East Yorkshire factory with a focus on rigid cabinet construction. Their product line covers every budget tier, making them one of the most popular choices for UK homeowners undertaking a full kitchen replacement.",
-    "installNote": "Wren kitchens are delivered flat-packed directly to your home on a scheduled delivery date, so it is important to have adequate storage space available before the installation begins.",
+    "installNote": "Wren kitchens are delivered as rigid, pre-built cabinets directly to your home on a scheduled delivery date, so it is important to have adequate storage space and clear access available before the installation begins.",
     "logoText": "Wren",
     "color": "#c8102e"
   },
@@ -14,6 +14,7 @@
     "displayName": "Howdens Joinery",
     "description": "Howdens Joinery is a trade-only supplier offering a broad range of cabinetry from the entry-level Clerkenwell range to the premium Greenwich and Tewkesbury collections, all built to a consistent rigid-cabinet standard. Their trade model means you benefit from our direct account relationship, ensuring accurate ordering and swift resolution of any product issues.",
     "installNote": "As a trade-only supplier, Howdens kitchens are ordered and collected by our fitting team directly from the local depot, eliminating the need for a separate customer delivery and reducing the risk of damage in transit.",
+    "tradeAccount": true,
     "logoText": "Howdens",
     "color": "#003087"
   },
@@ -32,6 +33,7 @@
     "displayName": "Magnet Trade",
     "description": "Magnet Trade is the professional trade arm of Magnet, supplying cabinetry directly to fitters and builders at trade pricing through dedicated trade counters within Magnet showrooms. The trade range mirrors the full retail collection, giving clients access to the same high-quality product while benefiting from the efficiency and cost savings of the trade supply chain.",
     "installNote": "When supplying through Magnet Trade, our team orders and collects directly from the trade counter, which typically allows for more flexible scheduling and faster resolution of any missing or damaged items.",
+    "tradeAccount": true,
     "logoText": "Magnet Trade",
     "color": "#c8102e"
   },
@@ -41,6 +43,7 @@
     "displayName": "Benchmarx Kitchens",
     "description": "Benchmarx is a trade-focused kitchen supplier operating alongside Travis Perkins builders' merchants, offering a competitively priced range of rigid cabinetry in both contemporary and traditional styles. Their trade supply model and close integration with a builders' merchant network make them a practical choice for projects where speed and value are the primary considerations.",
     "installNote": "Benchmarx kitchens are ordered through our trade account and collected from the local branch, making them particularly well-suited to projects with tight timelines where waiting for a retail delivery is not practical.",
+    "tradeAccount": true,
     "logoText": "Benchmarx",
     "color": "#00529b"
   },
@@ -66,7 +69,7 @@
     "slug": "ikea",
     "name": "ikea",
     "displayName": "IKEA Kitchens",
-    "description": "IKEA's SEKTION and METOD kitchen systems are among the most widely sold in the world, offering a modular flat-pack format with a broad selection of door fronts, worktop options, and interior fittings at highly competitive prices. The system's flexibility and strong resale familiarity make it a popular choice, though the flat-pack assembly process requires experienced fitters to achieve a professional finish.",
+    "description": "IKEA's METOD kitchen system is among the most widely sold in the UK, offering a modular flat-pack format with a broad selection of door fronts, worktop options, and interior fittings at highly competitive prices. The system's flexibility and strong resale familiarity make it a popular choice, though the flat-pack assembly process requires experienced fitters to achieve a professional finish.",
     "installNote": "IKEA kitchens require full assembly from flat-pack, which adds time to the installation compared to pre-built carcasses; our IKEA-experienced fitters build the carcasses on site and allow for this in their scheduling.",
     "logoText": "IKEA",
     "color": "#0058a3"

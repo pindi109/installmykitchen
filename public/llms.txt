@@ -9,7 +9,7 @@
 - **Type**: Independent kitchen installation company
 - **Founded by**: Pindi Sahota
 - **Founder experience**: 30 years of kitchen installation
-- **Base**: 242 Hollyfast Road, Coundon, Coventry, CV6 2AH
+- **Base**: Coundon, Coventry, CV6 2AH
 - **Phone**: 07399 651836
 - **Email**: info@installmykitchen.co.uk
 - **Website**: https://installmykitchen.co.uk
@@ -274,3 +274,11 @@ A: Typically £2,200–£5,500, depending on size. IKEA flat-pack requires on-si
 - Repairs hub: https://installmykitchen.co.uk/repairs/
 - Appliance installation: https://installmykitchen.co.uk/appliances/
 - Berkshire coverage: https://installmykitchen.co.uk/areas/reading/, https://installmykitchen.co.uk/areas/bracknell/, https://installmykitchen.co.uk/areas/slough/
+- Retailer installer pages (independent fitting for every major brand, by location — example): https://installmykitchen.co.uk/installer/howdens-coventry/
+- Retailers directory: https://installmykitchen.co.uk/retailers/
+- Kitchen styles (shaker, handleless, German, in-frame, and more, by location): https://installmykitchen.co.uk/styles/
+- Kitchen fitting costs by location (example): https://installmykitchen.co.uk/kitchen-cost/coventry/
+- Local kitchen fitter pages by location (example): https://installmykitchen.co.uk/fitter/coventry/
+- Retailers we install in each area: https://installmykitchen.co.uk/areas-retailers/
+- Answers (short-form Q&A): https://installmykitchen.co.uk/answers/
+- LLM-oriented Q&A pages: https://installmykitchen.co.uk/llm/
