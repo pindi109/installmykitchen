@@ -438,16 +438,9 @@ const breadcrumbSchema = {
           <p class="leading-relaxed mb-4" style="color: var(--text-soft);">
             {location.housingStock}
           </p>
-          {location.localNote && (
-            <p class="leading-relaxed mb-4" style="color: var(--text-soft);">
-              {location.localNote}
-            </p>
-          )}
-          {(location as any).kitchenNotes && (
-            <p class="leading-relaxed" style="color: var(--text-soft);">
-              {(location as any).kitchenNotes}
-            </p>
-          )}
+          <p class="leading-relaxed" style="color: var(--text-soft);">
+            Whether your kitchen is a recent installation or one that's been in place for years, our fitters carry a wide range of standard fixings and hardware to match existing units — so a repair blends in rather than looking bolted on. If we need a part we don't carry as standard, we'll source the exact match before booking the visit rather than turning up and guessing.
+          </p>
         </div>
         <figure style="margin: 0;">
           <img src="/assets/process/finished-kitchen-neutral.webp" alt={`Kitchen repair completed in ${location.name} by Install My Kitchen`} width="680" height="510" loading="lazy" style="width: 100%; height: auto; border-radius: 0.75rem; display: block;" />

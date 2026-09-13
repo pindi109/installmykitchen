@@ -9,7 +9,8 @@
       "Suits both traditional and contemporary interiors",
       "Wide range of colour options across all retailers"
     ],
-    "popular": true
+    "popular": true,
+    "compatibleRetailers": ["wren", "howdens", "magnet", "benchmarx", "bq", "wickes", "diy-kitchens", "symphony"]
   },
   {
     "slug": "handleless",
@@ -21,7 +22,8 @@
       "Ideal for open-plan kitchen-diners",
       "Low maintenance with no handle hardware to clean"
     ],
-    "popular": true
+    "popular": true,
+    "compatibleRetailers": ["wren", "ikea", "kutchenhaus", "nolte", "magnet", "howdens"]
   },
   {
     "slug": "modern",
@@ -33,7 +35,8 @@
       "Neutral colour palettes in gloss or matt finishes",
       "Emphasis on ergonomic layout and storage efficiency"
     ],
-    "popular": true
+    "popular": true,
+    "compatibleRetailers": ["wren", "ikea", "kutchenhaus", "nolte", "magnet", "howdens", "diy-kitchens"]
   },
   {
     "slug": "traditional",
@@ -45,7 +48,8 @@
       "Classic ceramic or cup-pull hardware",
       "Suits Victorian, Edwardian, and period properties"
     ],
-    "popular": false
+    "popular": false,
+    "compatibleRetailers": ["howdens", "symphony", "masterclass", "diy-kitchens", "magnet", "benchmarx"]
   },
   {
     "slug": "contemporary",
@@ -57,19 +61,21 @@
       "Warmer tones including sage, navy, and warm white",
       "Suits new-build and extended properties"
     ],
-    "popular": true
+    "popular": true,
+    "compatibleRetailers": ["wren", "magnet", "diy-kitchens", "symphony", "howdens", "kutchenhaus"]
   },
   {
     "slug": "german",
     "name": "German",
-    "description": "German kitchens are manufactured to exacting engineering tolerances and typically feature precision-fit carcasses, soft-close hardware throughout, and advanced internal storage systems. Brands such as Häcker, Nobia, and Rotpunkt set the benchmark for quality in this segment, offering handleless and contemporary styles built to last decades.",
+    "description": "German kitchens are manufactured to exacting engineering tolerances and typically feature precision-fit carcasses, soft-close hardware throughout, and advanced internal storage systems. Brands such as Häcker, Nobilia, and Rotpunkt set the benchmark for quality in this segment, offering handleless and contemporary styles built to last decades.",
     "features": [
       "Precision-engineered rigid carcasses",
       "Comprehensive soft-close and full-extension drawer hardware",
       "Advanced internal organisation systems",
       "Long manufacturer warranties typically 10–25 years"
     ],
-    "popular": false
+    "popular": false,
+    "compatibleRetailers": ["kutchenhaus", "nolte"]
   },
   {
     "slug": "painted",
@@ -81,7 +87,8 @@
       "Popular in shaker and in-frame profiles",
       "Easily refreshed with a repaint over time"
     ],
-    "popular": true
+    "popular": true,
+    "compatibleRetailers": ["howdens", "symphony", "masterclass", "diy-kitchens", "wren", "magnet"]
   },
   {
     "slug": "solid-wood",
@@ -93,7 +100,8 @@
       "Available in oak, walnut, ash, and other species",
       "Can be sanded and refinished if damaged"
     ],
-    "popular": false
+    "popular": false,
+    "compatibleRetailers": ["masterclass", "diy-kitchens", "symphony"]
   },
   {
     "slug": "in-frame",
@@ -105,7 +113,8 @@
       "Available in painted or natural wood finishes",
       "Popular with Farrow & Ball and heritage colour palettes"
     ],
-    "popular": false
+    "popular": false,
+    "compatibleRetailers": ["masterclass", "symphony", "diy-kitchens"]
   },
   {
     "slug": "luxury",
@@ -117,6 +126,7 @@
       "Personalised design and project management service",
       "Long lead times with meticulous on-site installation"
     ],
-    "popular": false
+    "popular": false,
+    "compatibleRetailers": ["masterclass", "kutchenhaus", "diy-kitchens"]
   }
 ]

@@ -58,7 +58,12 @@ export function getStaticPaths() {
 }
 
 const { style, location, styleIndex, locationIndex } = Astro.props;
-const { name: styleName, slug: styleSlug, description: styleDescription, features } = style;
+const { name: styleName, slug: styleSlug, description: styleDescription, features, compatibleRetailers } = style;
+
+// "a" vs "an" — every style name is either a plain word ("Shaker") or starts
+// with a vowel-sound letter ("In-Frame"); a simple vowel check is sufficient
+// for this fixed list of 10 style names.
+const styleArticle = /^[aeiou]/i.test(styleName) ? "an" : "a";
 const {
   name: locationName,
   slug: locationSlug,
@@ -94,7 +99,7 @@ const stylePopularLocally = ((typicalKitchenStyles as string[] | undefined) ?? [
 const localPopularityNote = stylePopularLocally
   ? `A ${styleName.toLowerCase()} kitchen is already a popular choice among ${locationName} homeowners, so our fitters are well versed in matching the style to the property types found here.`
   : `${styleName} isn't the most common style we fit in ${locationName}, but it suits the area's property types well and we install it here regularly.`;
-const styleFittingNote = `For a ${styleName.toLowerCase()} kitchen specifically, getting a good result depends on ${features[0].toLowerCase()}${features[1] ? ` and ${features[1].toLowerCase()}` : ""} — both of which rely on accurate survey measurements and careful on-site fitting.`;
+const styleFittingNote = `For ${styleArticle} ${styleName.toLowerCase()} kitchen specifically, getting a good result depends on ${features[0].toLowerCase()}${features[1] ? ` and ${features[1].toLowerCase()}` : ""} — both of which rely on accurate survey measurements and careful on-site fitting.`;
 
 // Meta 140-160 chars
 const metaDescription = `${styleName} kitchen installation in ${locationName} — independent fitting from any retailer. Fixed-price quotes, survey from £195.`;
@@ -161,20 +166,38 @@ const internalLinks = [
 
 // Popular retailers for this style/location — deliberately just 3, not the
 // full 13, so this stays a genuinely useful pointer rather than a link farm
-// bolted onto a style page. Rotated by both styleIndex and locationIndex
-// (multiplier 5 is coprime with the 13-retailer list) so link volume spreads
-// evenly across all 13 retailers across the 330 style/location combinations,
-// rather than the same 3 retailers appearing on every page.
-const retailerBase = (styleIndex * 5 + locationIndex) % retailersData.length;
+// bolted onto a style page. Restricted to retailers whose actual product
+// range suits this style first (e.g. only Kutchenhaus/Nolte are genuinely
+// German-manufactured; only Masterclass/Symphony/DIY Kitchens offer true
+// in-frame ranges) — showing Howdens or Wren as a "luxury" or "German"
+// retailer was a real factual-accuracy bug, not just a style choice.
+// Rotated by both styleIndex and locationIndex so link volume still spreads
+// evenly across the compatible subset rather than the same 3 every time.
+const eligibleRetailers = compatibleRetailers && compatibleRetailers.length > 0
+  ? compatibleRetailers.map((slug: string) => retailersData.find((r) => r.slug === slug)).filter(Boolean) as typeof retailersData
+  : retailersData;
+const retailerBase = (styleIndex * 5 + locationIndex) % eligibleRetailers.length;
 const popularRetailers = Array.from(
-  { length: 3 },
-  (_, k) => retailersData[(retailerBase + k) % retailersData.length],
+  { length: Math.min(3, eligibleRetailers.length) },
+  (_, k) => eligibleRetailers[(retailerBase + k) % eligibleRetailers.length],
 );
-const retailerLinks = popularRetailers.map((retailer) => ({
-  label: `${retailer.displayName} Kitchen Installation in ${locationName}`,
-  href: `/installer/${retailer.slug}-${locationSlug}/`,
-  description: `Independent installation of your ${styleName.toLowerCase()} kitchen if you're buying from ${retailer.displayName} in ${locationName}.`,
-}));
+// Most brand display names already end in "Kitchen(s)"/"Joinery" (e.g. "Wren
+// Kitchens"), and this label always appends "Kitchen Installation" — strip
+// that trailing word first so the link doesn't read "Wren Kitchens Kitchen
+// Installation" (same fix already applied on the installer template). "DIY"
+// alone reads as do-it-yourself, so that brand keeps its full name.
+const retailerLinks = popularRetailers.map((retailer) => {
+  const isDiy = retailer.slug === "diy-kitchens";
+  const shortRetailerName = isDiy
+    ? retailer.displayName
+    : retailer.displayName.replace(/ (?:Kitchens?|Joinery)$/i, "");
+  const labelSuffix = isDiy ? "Installation" : "Kitchen Installation";
+  return {
+    label: `${shortRetailerName} ${labelSuffix} in ${locationName}`,
+    href: `/installer/${retailer.slug}-${locationSlug}/`,
+    description: `Independent installation of your ${styleName.toLowerCase()} kitchen if you're buying from ${shortRetailerName} in ${locationName}.`,
+  };
+});
 
 // Breadcrumb JSON-LD is emitted once by the <Breadcrumbs> component below.
 
@@ -249,7 +272,7 @@ const serviceSchema = {
             {styleDescription}
           </p>
           <p class="leading-relaxed mb-4" style="color: var(--text-soft);">
-            Fitting a {styleName.toLowerCase()} kitchen requires a fitter who understands the design intent, not just the mechanics of assembling cabinetry. Our team handles the specific requirements — precise scribing, careful alignment, and sympathetic integration into your home's character.
+            Fitting {styleArticle} {styleName.toLowerCase()} kitchen requires a fitter who understands the design intent, not just the mechanics of assembling cabinetry. Our team handles the specific requirements — precise scribing, careful alignment, and sympathetic integration into your home's character.
           </p>
           <p class="leading-relaxed" style="color: var(--text-soft);">
             Every {styleName.toLowerCase()} kitchen we install in {locationName} begins with a detailed pre-installation survey — identifying any issues before installation day and delivering a fixed-price quote with no hidden surprises.

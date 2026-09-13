@@ -111,7 +111,7 @@ export function getStaticPaths() {
 const { retailer, job, location, brandIndex, jobIndex, locationIndex } = Astro.props;
 const { displayName, slug: brandSlug } = retailer;
 const { name: jobName, slug: jobSlug, h1Fragment, description: jobDescription, fromPriceCW, fromPriceBerks, upsellLine, faqs: jobFaqs } = job;
-const { name: locationName, slug: locationSlug, county, localNote, kitchenNotes } = location;
+const { name: locationName, slug: locationSlug, county } = location;
 
 // Is this a Berkshire/southern location?
 const BERKS_SLUGS = ["reading", "bracknell", "slough", "maidenhead", "windsor", "wokingham", "newbury", "ascot"];
@@ -292,7 +292,7 @@ const serviceSchema = {
           {shortBrand} kitchens use their own cabinet and hardware formats that our fitters know in detail. Whether that means working with {shortBrand}'s own hinge system, matching their door profiles precisely, or understanding how their carcasses are constructed, our team brings specific experience to every {shortBrand} remedial job in {locationName}.
         </p>
         <p class="leading-relaxed" style="color: var(--text-soft);">
-          {kitchenNotes ?? `${locationName} homes present a variety of installation challenges, and our fitters adapt their approach to suit the specific requirements of each property.`}
+          {locationName} homes present a variety of layouts and ages of {shortBrand} kitchen, and our fitters adapt their approach to suit the specific requirements of each property and the job in front of them.
         </p>
       </div>
     </div>
@@ -312,7 +312,7 @@ const serviceSchema = {
           Remedial jobs such as {h1Fragment} are often quicker and more cost-effective when handled by an experienced independent fitter who is familiar with {shortBrand}'s product range. We can often diagnose the root cause of a problem on site and carry out the repair in a single visit, without waiting for retailer-scheduled appointments.
         </p>
         <p class="leading-relaxed" style="color: var(--text-soft);">
-          Our service in {locationName} covers the full {county} area and surrounding postcodes. {localNote ?? `We are familiar with the property types and kitchen layouts commonly found in ${locationName}, which helps us plan and execute every remedial visit efficiently.`}
+          Our service in {locationName} covers the full {county} area and surrounding postcodes. We are familiar with the property types and kitchen layouts commonly found in {locationName}, which helps us plan and execute every remedial visit efficiently.
         </p>
       </div>
     </div>
@@ -326,14 +326,14 @@ const serviceSchema = {
           {jobName} Pricing in {locationName}
         </h2>
         <p class="leading-relaxed mb-4" style="color: var(--text-soft);">
-          Our {h1Fragment} service in {locationName} starts from <strong>£{fromPrice}</strong>. The final price depends on the number of units or components involved, access requirements, and whether any additional hardware is needed. We provide a full fixed-price quote before any work begins — no surprises on the invoice.
+          Our {h1Fragment} service in {locationName} starts from <strong>£{fromPrice}</strong>, with a £{minCalloutGuard} minimum call-out. The final price depends on the number of units or components involved, access requirements, and whether any additional hardware is needed. We provide a full fixed-price quote before any work begins — no surprises on the invoice.
         </p>
         <p class="leading-relaxed mb-4" style="color: var(--text-soft);">
           {upsellLine}
         </p>
         <div class="card p-6 border-l-4 mt-4" style="border-left-color: var(--teal); background: rgba(15,118,110,0.05);">
-          <p class="font-semibold mb-1" style="color: var(--navy);">From £{fromPrice} — {locationName} area</p>
-          <p class="text-sm" style="color: var(--text-soft);">Fixed-price quote provided after a brief on-site assessment. No call-out fee for combined visits.</p>
+          <p class="font-semibold mb-1" style="color: var(--navy);">£{minCalloutGuard} minimum call-out — {locationName} area</p>
+          <p class="text-sm" style="color: var(--text-soft);">{jobName} typically starts from the £{fromPrice} shown above once the work is confirmed on site — assessment and quote included in that price, no separate call-out charge added on top. Note: this is a different fee to the £195 pre-installation survey for a full kitchen replacement.</p>
         </div>
       </div>
     </div>
