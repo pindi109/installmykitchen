@@ -88,6 +88,11 @@ const minCallout = isBerkshire ? 75 : 50;
 // call-out) — never display a price the minimum call-out would contradict.
 const fromPrice = Math.max(rawFromPrice, minCallout);
 const pricingTierLabel = isBerkshire ? "Berkshire" : "Coventry, Warwickshire & Berkshire";
+// When the job's price sits exactly at the call-out floor (common for quick
+// jobs like appliance-door fitting), "the minimum charge is £X — this job
+// starts from the £X shown above" is circular and reads as a template bug.
+// Use a distinct sentence for that case instead of repeating the same figure.
+const priceAboveCallout = fromPrice > minCallout;
 
 // Canonical
 const canonical = `https://installmykitchen.co.uk/repairs/${job.slug}-${location.slug}/`;
@@ -397,7 +402,9 @@ const breadcrumbSchema = {
         </div>
 
         <p class="text-sm leading-relaxed mb-4" style="color: var(--text-soft);">
-          £{minCallout} is the minimum charge for any visit — {job.name.toLowerCase()} typically starts from the £{fromPrice} shown above once the work is confirmed on site.
+          {priceAboveCallout
+            ? `£${minCallout} is the minimum charge for any visit — ${job.name.toLowerCase()} typically starts from the £${fromPrice} shown above once the work is confirmed on site.`
+            : `£${minCallout} covers the call-out and the job itself for straightforward ${job.name.toLowerCase()} — most visits like this are completed for that single price, with any extra cost only if the scope turns out larger once we're on site.`}
         </p>
 
         <p class="text-sm leading-relaxed" style="color: var(--text-soft);">

@@ -191,7 +191,7 @@ export function getStaticPaths() {
       fromPriceBerks: 95,
       hasWaterConnection: true,
       faqs: [
-        { q: "Do I need a plumber as well as a fitter for a dishwasher installation?", a: "No — our kitchen fitters are experienced in making the standard hot or cold water supply and waste connections required for a dishwasher installation. A separate plumber is not normally needed." },
+        { q: "Do I need a plumber as well as a fitter for a dishwasher installation?", a: "No — our kitchen fitters are experienced in making the cold water supply and waste connections required for a dishwasher installation (modern dishwashers are cold-fill only). A separate plumber is not normally needed." },
         { q: "Can you fit any brand of integrated dishwasher?", a: "Yes — we work with all major brands including Bosch, Siemens, AEG, Miele, Neff, Hotpoint, and Beko. We confirm appliance dimensions against the housing cabinet before installation day." },
         { q: "Do I need to supply the appliance or can you source it?", a: "We fit appliances supplied by you. We recommend purchasing from a reputable retailer and having the appliance on site before our arrival." },
         { q: "How long does an integrated dishwasher installation take?", a: "A straightforward installation into an existing housing with existing supply points typically takes 1.5–2.5 hours. Installations requiring new supply or waste routing take longer and will be quoted accordingly." }
@@ -504,8 +504,8 @@ const serviceSchema = {
           </h2>
           <p class="leading-relaxed mb-4" style="color: var(--text-soft);">
             {hasWaterConnection
-              ? "Appliance manufacturers and many home insurers require professional installation to maintain warranty coverage and comply with water supply regulations. A poorly installed appliance can cause water damage, inefficient operation, and premature failure."
-              : "Appliance manufacturers and many home insurers require professional installation to maintain warranty coverage. A poorly fitted appliance can cause misalignment, ventilation problems, and premature failure."}
+              ? "Many manufacturers specify professional installation to keep an integrated appliance's warranty valid, since correct fitting affects the water and waste connections as well as the cabinetry integration. A poorly installed appliance can cause leaks, inefficient operation, and premature failure."
+              : "Many manufacturers specify professional installation to keep an integrated appliance's warranty valid, since correct fitting affects ventilation and cabinetry alignment as well as the appliance itself. A poorly fitted appliance can cause misalignment, ventilation problems, and premature failure."}
           </p>
           <p class="leading-relaxed mb-4" style="color: var(--text-soft);">
             {hasWaterConnection

@@ -317,8 +317,8 @@
       "Plinth colour or finish no longer matching refreshed kitchen"
     ],
     "typicalTime": "Two to four hours for an average kitchen",
-    "fromPriceCW": 50,
-    "fromPriceBerks": 75,
+    "fromPriceCW": 75,
+    "fromPriceBerks": 95,
     "upsellLine": "If you are having plinths replaced, we can also check and adjust all base unit levels at the same visit — ensuring a consistent reveal between the plinth and the floor across the whole kitchen.",
     "faqs": [
       {
@@ -385,9 +385,9 @@
       "Cornice style changed as part of kitchen refresh"
     ],
     "typicalTime": "Two to four hours for an average kitchen run",
-    "fromPriceCW": 50,
-    "fromPriceBerks": 75,
-    "upsellLine": "If pelmet lighting has been planned, we can also fit LED strip lighting behind the pelmet at the same visit, using the pelmet as a light diffuser for an integrated look.",
+    "fromPriceCW": 75,
+    "fromPriceBerks": 95,
+    "upsellLine": "If pelmet lighting has been planned and the wiring is already first-fixed, we can fit LED strip lighting behind the pelmet at the same visit — connection of mains-voltage lighting is carried out by a qualified electrician as part of the job, not by our fitters.",
     "faqs": [
       {
         "q": "My kitchen was fitted without cornice — can it be added now?",

@@ -122,6 +122,10 @@ const minCalloutGuard = isBerks ? 75 : 50;
 // "from" price sits below the minimum call-out for some tiers; never display
 // a price the minimum call-out would contradict.
 const fromPrice = Math.max(rawFromPrice, minCalloutGuard);
+// Same as the non-branded repair template: when price sits exactly at the
+// call-out floor (e.g. hinge replacement), avoid the circular "minimum is
+// £X — starts from the £X shown above" sentence.
+const priceAboveCallout = fromPrice > minCalloutGuard;
 
 const canonical = `https://installmykitchen.co.uk/repairs/${brandSlug}-${jobSlug}-${locationSlug}/`;
 
@@ -333,7 +337,12 @@ const serviceSchema = {
         </p>
         <div class="card p-6 border-l-4 mt-4" style="border-left-color: var(--teal); background: rgba(15,118,110,0.05);">
           <p class="font-semibold mb-1" style="color: var(--navy);">£{minCalloutGuard} minimum call-out — {locationName} area</p>
-          <p class="text-sm" style="color: var(--text-soft);">{jobName} typically starts from the £{fromPrice} shown above once the work is confirmed on site — assessment and quote included in that price, no separate call-out charge added on top. Note: this is a different fee to the £195 pre-installation survey for a full kitchen replacement.</p>
+          <p class="text-sm" style="color: var(--text-soft);">
+            {priceAboveCallout
+              ? `${jobName} typically starts from the £${fromPrice} shown above once the work is confirmed on site — assessment and quote included in that price, no separate call-out charge added on top.`
+              : `£${minCalloutGuard} covers the call-out and the job itself for a straightforward ${jobName.toLowerCase()} — most visits like this are completed for that single price.`}
+            {" "}Note: this is a different fee to the £195 pre-installation survey for a full kitchen replacement.
+          </p>
         </div>
       </div>
     </div>
