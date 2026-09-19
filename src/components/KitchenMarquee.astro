@@ -1,0 +1,108 @@
+---
+// Right-to-left scrolling image banner shown on the homepage, just before the
+// "Your Installer" section. 13 magazine-quality AI-generated luxury kitchens
+// (from the sitewide hero-generation batch) + 2 shots of Pindi at work on the
+// Wren install guide's AI-generated stage photos.
+const images = [
+  { src: "/assets/heroes/styles/luxury-reading/styles-luxury-reading-hero.webp", alt: "Luxury navy kitchen with marble worktops and brass fittings" },
+  { src: "/assets/guides/wren-kitchen-install/stage-09-worktops.webp", alt: "Pindi Sahota checking a marble worktop installation" },
+  { src: "/assets/heroes/styles/luxury-ascot/styles-luxury-ascot-hero.webp", alt: "Luxury kitchen extension with skylight and brass pendant lights" },
+  { src: "/assets/heroes/styles/luxury-maidenhead/styles-luxury-maidenhead-hero.webp", alt: "Luxury kitchen with exposed brick splashback and marble island" },
+  { src: "/assets/heroes/styles/luxury-newbury/styles-luxury-newbury-hero.webp", alt: "Luxury kitchen with crittall doors and marble worktops" },
+  { src: "/assets/heroes/styles/luxury-slough/styles-luxury-slough-hero.webp", alt: "Luxury kitchen with brass pendant lighting over marble island" },
+  { src: "/assets/guides/wren-kitchen-install/stage-12-finished.webp", alt: "Pindi Sahota standing in a finished navy blue kitchen installation" },
+  { src: "/assets/heroes/styles/luxury-wokingham/styles-luxury-wokingham-hero.webp", alt: "Luxury navy kitchen with oak beams and brass pendants" },
+  { src: "/assets/heroes/styles/luxury-bracknell/styles-luxury-bracknell-hero.webp", alt: "Luxury kitchen with stone flooring and copper pans on display" },
+  { src: "/assets/heroes/styles/luxury-tile-hill/styles-luxury-tile-hill-hero.webp", alt: "Luxury kitchen with marble island and brass pendant lighting" },
+  { src: "/assets/heroes/styles/luxury-wyken/styles-luxury-wyken-hero.webp", alt: "Luxury kitchen with stone walls and copper pan rail" },
+  { src: "/assets/heroes/styles/luxury-windsor/styles-luxury-windsor-hero.webp", alt: "Luxury galley kitchen with marble worktops and garden view" },
+  { src: "/assets/heroes/styles/luxury-meriden/styles-luxury-meriden-hero.webp", alt: "Luxury kitchen with vaulted ceiling and brass pendant lights" },
+  { src: "/assets/heroes/styles/luxury-walsgrave/styles-luxury-walsgrave-hero.webp", alt: "Luxury kitchen with marble island and bifold doors to garden" },
+  { src: "/assets/heroes/styles/luxury-coundon/styles-luxury-coundon-hero.webp", alt: "Luxury kitchen with brick splashback and copper kettle" },
+];
+---
+
+<section class="kitchen-marquee" aria-label="Kitchen inspiration gallery">
+  <p class="kitchen-marquee-heading">This is what your kitchen could look like.</p>
+  <div class="kitchen-marquee-track-wrap">
+    <div class="kitchen-marquee-track">
+      {images.map((img) => (
+        <div class="kitchen-marquee-tile">
+          <img src={img.src} alt={img.alt} loading="lazy" decoding="async" width="400" height="300" />
+        </div>
+      ))}
+      {images.map((img) => (
+        <div class="kitchen-marquee-tile" aria-hidden="true">
+          <img src={img.src} alt="" loading="lazy" decoding="async" width="400" height="300" />
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .kitchen-marquee {
+    padding: 52px 0 60px;
+    background: #fff;
+    overflow: hidden;
+  }
+
+  .kitchen-marquee-heading {
+    font-size: clamp(1.375rem, 2.6vw, 2rem);
+    font-weight: 800;
+    color: var(--navy);
+    text-align: center;
+    margin: 0 0 1.75rem;
+    padding: 0 1.25rem;
+  }
+
+  .kitchen-marquee-track-wrap {
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .kitchen-marquee-track {
+    display: flex;
+    gap: 1.25rem;
+    width: max-content;
+    animation: kitchen-marquee-scroll 55s linear infinite;
+  }
+
+  .kitchen-marquee-track-wrap:hover .kitchen-marquee-track {
+    animation-play-state: paused;
+  }
+
+  .kitchen-marquee-tile {
+    flex-shrink: 0;
+    width: 300px;
+    height: 220px;
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 4px 22px rgba(15, 23, 42, 0.15);
+  }
+
+  .kitchen-marquee-tile img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  @media (max-width: 640px) {
+    .kitchen-marquee-tile {
+      width: 220px;
+      height: 165px;
+    }
+  }
+
+  @keyframes kitchen-marquee-scroll {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .kitchen-marquee-track {
+      animation: none;
+    }
+  }
+</style>
