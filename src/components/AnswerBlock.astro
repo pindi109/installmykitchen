@@ -1,17 +1,20 @@
 ---
 export interface Props {
   answer: string;
+  dark?: boolean;
 }
 
-const { answer } = Astro.props;
+const { answer, dark = false } = Astro.props;
 ---
 
 <!--
   AnswerBlock — "Quick Answer" for AEO/featured-snippet targeting.
   Structured for AI overview pickup: concise, direct, semantically clear.
+  Pass dark={true} when placed on a dark hero-gradient background — the
+  default styling assumes a white/light section and is unreadable on navy.
 -->
 <div
-  class="answer-block"
+  class={dark ? "answer-block answer-block--dark" : "answer-block"}
   role="note"
   aria-label="Quick answer"
   itemscope
@@ -61,5 +64,19 @@ const { answer } = Astro.props;
     color: var(--charcoal);
     font-weight: 500;
     margin: 0;
+  }
+
+  /* Dark variant — for placement on a dark hero-gradient background */
+  .answer-block--dark {
+    border-left-color: var(--teal-bright);
+    background: rgba(255, 255, 255, 0.08);
+  }
+
+  .answer-block--dark .answer-label {
+    color: var(--teal-bright);
+  }
+
+  .answer-block--dark .answer-text {
+    color: rgba(255, 255, 255, 0.92);
   }
 </style>

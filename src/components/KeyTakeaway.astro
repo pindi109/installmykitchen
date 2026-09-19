@@ -2,12 +2,13 @@
 export interface Props {
   points: string[];
   heading?: string;
+  dark?: boolean;
 }
 
-const { points, heading = "Key Takeaways" } = Astro.props;
+const { points, heading = "Key Takeaways", dark = false } = Astro.props;
 ---
 
-<div class="takeaway-box" role="note" aria-label="Key takeaways">
+<div class={dark ? "takeaway-box takeaway-box--dark" : "takeaway-box"} role="note" aria-label="Key takeaways">
   <!-- Header bar -->
   <div class="takeaway-header">
     <!-- Gold bookmark icon -->
@@ -92,5 +93,24 @@ const { points, heading = "Key Takeaways" } = Astro.props;
     font-size: 0.9375rem;
     line-height: 1.6;
     color: var(--charcoal);
+  }
+
+  /* Dark variant — for placement on a dark hero-gradient background */
+  .takeaway-box--dark {
+    border-color: rgba(212, 160, 23, 0.5);
+    background: rgba(255, 255, 255, 0.06);
+  }
+
+  .takeaway-box--dark .takeaway-header {
+    background: rgba(255, 255, 255, 0.08);
+    border-bottom-color: rgba(212, 160, 23, 0.35);
+  }
+
+  .takeaway-box--dark .takeaway-heading {
+    color: var(--gold);
+  }
+
+  .takeaway-box--dark .takeaway-text {
+    color: rgba(255, 255, 255, 0.92);
   }
 </style>
