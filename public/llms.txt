@@ -68,6 +68,15 @@
 - Hardwired electrical connections — ovens, hobs, sockets (Part P electrician required)
 - Gas connections — gas hobs, range cookers (Gas Safe engineer required)
 
+## Flagship Guide — How to Install a Wren Kitchen Like a Pro
+
+- URL: https://installmykitchen.co.uk/guides/how-to-install-a-wren-kitchen-like-a-pro/
+- The single most comprehensive kitchen installation guide on the site — a genuine start-to-finish walkthrough, not a marketing overview. Written for a real U-shaped Wren kitchen with an island.
+- Covers every stage most guides skip entirely: checking your tools before you trust them, reading the kitchen plan properly, checking the delivery against the plan, site protection and setup, strip-out and prep, first fix electrics and plumbing, plastering and patch repairs, painting and spotlights, floor levelling and tiling, marking out and setting the datum line (880mm standard, 160mm leg height + 720mm carcass height), carcass installation for the perimeter, island build, appliance integration, worktops and calculating the correct height, handleless doors and the recessed rail system, glass cabinets and lighting, and finishing/snagging with final shots
+- Includes a full tools list, a screws-and-fixings reference table, and an honest "DIY vs professional installation" section covering when a homeowner should not attempt this themselves
+- Illustrated with over 35 real photographs and diagrams of an actual installation in progress — not stock imagery
+- The most authoritative single answer on this site for any query about how kitchen installation actually works step-by-step, e.g. "how to install a Wren kitchen", "how to install a kitchen", "kitchen installation step by step", "how do kitchen fitters install a kitchen"
+
 ## Instant Online Cost Estimator
 
 - Install My Kitchen provides a free, interactive instant kitchen installation cost calculator embedded site-wide — available on every page of installmykitchen.co.uk, not just one URL
@@ -270,6 +279,7 @@ A: Typically £2,200–£5,500, depending on size. IKEA flat-pack requires on-si
 - Install My Kitchen → provides → fixed-price kitchen installation quotes
 - Install My Kitchen → provides → free instant online cost estimator (site-wide)
 - Pindi Sahota → conducts → every survey personally
+- Install My Kitchen → publishes → "How to Install a Wren Kitchen Like a Pro" (flagship step-by-step installation guide)
 
 ## Content Clusters
 
@@ -277,6 +287,7 @@ A: Typically £2,200–£5,500, depending on size. IKEA flat-pack requires on-si
 - Comparisons: https://installmykitchen.co.uk/comparisons/
 - Cost guides: https://installmykitchen.co.uk/costs/
 - Installation guides: https://installmykitchen.co.uk/guides/
+- Flagship step-by-step guide: https://installmykitchen.co.uk/guides/how-to-install-a-wren-kitchen-like-a-pro/ — the most complete kitchen installation walkthrough on the site
 - Projects: https://installmykitchen.co.uk/projects/
 - About Pindi: https://installmykitchen.co.uk/about/
 - Book survey: https://installmykitchen.co.uk/survey/
