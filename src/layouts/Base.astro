@@ -4,6 +4,8 @@ import heroManifest from "../../public/hero-manifest.json";
 import altTagsData from "../data/alt-tags.json";
 import WhatsAppButton from "../components/WhatsAppButton.astro";
 import CookieConsent from "../components/CookieConsent.astro";
+import CostCalculator from "../components/CostCalculator.astro";
+import StickyEstimateBar from "../components/StickyEstimateBar.astro";
 
 export interface Props {
   title: string;
@@ -146,8 +148,27 @@ const resolvedOgImage =
     <!-- Footer -->
     <slot name="footer" />
 
-    <!-- Sticky mobile CTA -->
+    <!-- Sticky mobile CTA (Call / Book Survey / Get a Quote) — page opt-in -->
     <slot name="sticky-cta" />
+
+    <!-- Sitewide cost calculator — its own trigger button is hidden (the sticky
+         estimate bar below is the visible entry point everywhere); the wizard
+         overlay itself is unaffected since only .calc-trigger is hidden, not the root. -->
+    <div class="global-calc-instance">
+      <CostCalculator />
+    </div>
+
+    <!-- Sticky estimate bar — visible on all pages, opens the calculator above -->
+    <StickyEstimateBar />
+
+    <style>
+      /* Hides only the trigger button of the sitewide calculator instance —
+         the overlay itself is a sibling, unaffected, and still opens fine via
+         [data-calc-open].click() from the sticky bar regardless of visibility. */
+      .global-calc-instance :global(.calc-trigger) {
+        display: none;
+      }
+    </style>
 
     <!-- WhatsApp floating button — visible on all pages -->
     <WhatsAppButton />

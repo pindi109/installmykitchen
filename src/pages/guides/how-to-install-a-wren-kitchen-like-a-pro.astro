@@ -3,12 +3,10 @@ import Base from "../../layouts/Base.astro";
 import Header from "../../components/Header.astro";
 import Footer from "../../components/Footer.astro";
 import StickyMobileCTA from "../../components/StickyMobileCTA.astro";
-import StickyEstimateBar from "../../components/StickyEstimateBar.astro";
 import Breadcrumbs from "../../components/Breadcrumbs.astro";
 import AnswerBlock from "../../components/AnswerBlock.astro";
 import InternalLinks from "../../components/InternalLinks.astro";
 import CTA from "../../components/CTA.astro";
-import CostCalculator from "../../components/CostCalculator.astro";
 
 const title = "How to Install a Wren Kitchen Like a Pro";
 const slug = "how-to-install-a-wren-kitchen-like-a-pro";
@@ -364,8 +362,19 @@ const blocks = [
             <p class="calc-cta-heading">Wondering what a kitchen like this actually costs to install?</p>
             <p class="calc-cta-sub">Answer a few quick questions and get an instant estimate — no obligation.</p>
           </div>
-          <CostCalculator />
+          <button type="button" class="calc-cta-trigger" data-global-calc-open>
+            Get an Instant Estimate
+          </button>
         </div>
+
+        <script>
+          document.querySelectorAll("[data-global-calc-open]").forEach((btn) => {
+            btn.addEventListener("click", () => {
+              const opener = document.querySelector("[data-calc-open]");
+              if (opener instanceof HTMLElement) opener.click();
+            });
+          });
+        </script>
 
         <div class="tool-list-box fade-up">
           <h2>Tools You'll Need Before You Start</h2>
@@ -428,7 +437,6 @@ const blocks = [
 
   <Footer slot="footer" />
   <StickyMobileCTA slot="sticky-cta" />
-  <StickyEstimateBar slot="sticky-cta" />
 </Base>
 
 <style>
@@ -535,6 +543,27 @@ const blocks = [
   .calc-cta-sub {
     font-size: 0.875rem;
     color: rgba(255, 255, 255, 0.75);
+  }
+
+  .calc-cta-trigger {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--teal);
+    color: #fff;
+    font-weight: 700;
+    font-size: 0.9375rem;
+    padding: 0.875rem 1.5rem;
+    border-radius: 0.75rem;
+    border: none;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: background 0.2s ease, transform 0.2s ease;
+  }
+
+  .calc-cta-trigger:hover {
+    background: var(--teal-hover);
+    transform: translateY(-1px);
   }
 
   @media (min-width: 640px) {
