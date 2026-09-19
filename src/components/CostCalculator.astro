@@ -148,15 +148,111 @@ const { buttonLabel = "Get an Instant Estimate" } = Astro.props;
         <p class="calc-note" data-note="worktopMaterialNote" hidden>Compact laminate, solid wood and stone/quartz worktops are templated and fitted by a specialist supplier — the figure shown is indicative until they've quoted.</p>
       </section>
 
-      <!-- Step 5: Finishing items -->
+      <!-- Step 5: Doors & Handles -->
       <section class="calc-step" data-step="5" hidden>
+        <h2>Doors &amp; handles</h2>
+        <div class="calc-checks calc-radio-group">
+          <label class="calc-check"><input type="radio" name="calc-door-style" data-radio-group="doorStyle" value="handleless" /> Handleless</label>
+          <label class="calc-check"><input type="radio" name="calc-door-style" data-radio-group="doorStyle" value="handled" /> With handles</label>
+        </div>
+
+        <div data-show-block="doorStyle-handleless" hidden>
+          <div class="calc-checks calc-radio-group">
+            <label class="calc-check"><input type="radio" name="calc-handleless-type" data-radio-group="handlelessType" value="jpull" /> J-pull doors</label>
+            <label class="calc-check"><input type="radio" name="calc-handleless-type" data-radio-group="handlelessType" value="true" /> True handleless (recessed rail/profiles)</label>
+          </div>
+
+          <div data-show-block="handlelessType-true" hidden>
+            <div class="calc-stepper-row">
+              <span>Vertical profile (metres)</span>
+              <div class="calc-stepper">
+                <button type="button" data-stepper-minus="profileVerticalM">−</button>
+                <span data-stepper-value="profileVerticalM">0</span>
+                <button type="button" data-stepper-plus="profileVerticalM">+</button>
+              </div>
+            </div>
+            <div class="calc-stepper-row">
+              <span>Horizontal under-worktop profile (metres)</span>
+              <div class="calc-stepper">
+                <button type="button" data-stepper-minus="profileHorizontalM">−</button>
+                <span data-stepper-value="profileHorizontalM">0</span>
+                <button type="button" data-stepper-plus="profileHorizontalM">+</button>
+              </div>
+            </div>
+            <div class="calc-stepper-row">
+              <span>Drawer profile (metres)</span>
+              <div class="calc-stepper">
+                <button type="button" data-stepper-minus="profileDrawerM">−</button>
+                <span data-stepper-value="profileDrawerM">0</span>
+                <button type="button" data-stepper-plus="profileDrawerM">+</button>
+              </div>
+            </div>
+            <div class="calc-stepper-row">
+              <span>Internal corners</span>
+              <div class="calc-stepper">
+                <button type="button" data-stepper-minus="cornersInternal">−</button>
+                <span data-stepper-value="cornersInternal">0</span>
+                <button type="button" data-stepper-plus="cornersInternal">+</button>
+              </div>
+            </div>
+            <div class="calc-stepper-row">
+              <span>External corners</span>
+              <div class="calc-stepper">
+                <button type="button" data-stepper-minus="cornersExternal">−</button>
+                <span data-stepper-value="cornersExternal">0</span>
+                <button type="button" data-stepper-plus="cornersExternal">+</button>
+              </div>
+            </div>
+            <label class="calc-check"><input type="checkbox" data-field="hasUnderPanels" data-toggles="underPanelsRow" /> Any under panels?</label>
+            <div class="calc-stepper-row" data-row="underPanelsRow" hidden>
+              <span>Number of under panels</span>
+              <div class="calc-stepper">
+                <button type="button" data-stepper-minus="underPanels">−</button>
+                <span data-stepper-value="underPanels">0</span>
+                <button type="button" data-stepper-plus="underPanels">+</button>
+              </div>
+            </div>
+            <p class="calc-note">Profile and corner-fitting labour rates are indicative — confirm exact figures with Pindi.</p>
+          </div>
+        </div>
+
+        <div data-show-block="doorStyle-handled" hidden>
+          <div class="calc-stepper-row">
+            <span>Number of handles</span>
+            <div class="calc-stepper">
+              <button type="button" data-stepper-minus="handleCount">−</button>
+              <span data-stepper-value="handleCount">0</span>
+              <button type="button" data-stepper-plus="handleCount">+</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Step 6: Finishing items -->
+      <section class="calc-step" data-step="6" hidden>
         <h2>Finishing items</h2>
         <div class="calc-stepper-row">
-          <span>End panels</span>
+          <span>Wall end panels</span>
           <div class="calc-stepper">
-            <button type="button" data-stepper-minus="endPanels">−</button>
-            <span data-stepper-value="endPanels">0</span>
-            <button type="button" data-stepper-plus="endPanels">+</button>
+            <button type="button" data-stepper-minus="wallEndPanels">−</button>
+            <span data-stepper-value="wallEndPanels">0</span>
+            <button type="button" data-stepper-plus="wallEndPanels">+</button>
+          </div>
+        </div>
+        <div class="calc-stepper-row">
+          <span>Base end panels</span>
+          <div class="calc-stepper">
+            <button type="button" data-stepper-minus="baseEndPanels">−</button>
+            <span data-stepper-value="baseEndPanels">0</span>
+            <button type="button" data-stepper-plus="baseEndPanels">+</button>
+          </div>
+        </div>
+        <div class="calc-stepper-row">
+          <span>Larder end panels</span>
+          <div class="calc-stepper">
+            <button type="button" data-stepper-minus="larderEndPanels">−</button>
+            <span data-stepper-value="larderEndPanels">0</span>
+            <button type="button" data-stepper-plus="larderEndPanels">+</button>
           </div>
         </div>
         <div class="calc-stepper-row">
@@ -193,8 +289,8 @@ const { buttonLabel = "Get an Instant Estimate" } = Astro.props;
         </div>
       </section>
 
-      <!-- Step 6: Existing kitchen -->
-      <section class="calc-step" data-step="6" hidden>
+      <!-- Step 7: Existing kitchen -->
+      <section class="calc-step" data-step="7" hidden>
         <h2>Existing kitchen</h2>
         <div class="calc-checks calc-radio-group">
           <label class="calc-check"><input type="radio" name="calc-removal" data-field="kitchenAlreadyRemoved" /> Kitchen already removed</label>
@@ -203,8 +299,8 @@ const { buttonLabel = "Get an Instant Estimate" } = Astro.props;
         <label class="calc-check"><input type="checkbox" data-field="wasteDisposal" /> Waste disposal required</label>
       </section>
 
-      <!-- Step 7: Estimate -->
-      <section class="calc-step" data-step="7" hidden>
+      <!-- Step 8: Estimate -->
+      <section class="calc-step" data-step="8" hidden>
         <h2>Your estimate</h2>
         <div class="calc-estimate-box">
           <p class="calc-estimate-range" data-estimate-range>£0–£0</p>
@@ -251,6 +347,15 @@ const { buttonLabel = "Get an Instant Estimate" } = Astro.props;
     microwave: 75,
     kitchenRemoval: 375,
     wasteRemoval: 225,
+    wallEndPanel: 55,
+    baseEndPanel: 65,
+    larderEndPanel: 85,
+    profileVerticalMetre: 35,
+    profileHorizontalMetre: 30,
+    profileDrawerMetre: 25,
+    cornerFitting: 45,
+    underPanel: 40,
+    handle: 8,
   };
 
   function initCalculator(root) {
@@ -272,7 +377,12 @@ const { buttonLabel = "Get an Instant Estimate" } = Astro.props;
       applianceFridgeFreezer: false, applianceMicrowave: false,
       sink: false, tap: false, sinkCutout: false, sinkType: "inset",
       worktopMaterial: "laminate", worktopLengths: 1, worktopJoints: 0, breakfastBar: false,
-      endPanels: 0, decorPanels: 0, fillers: 0, plinthMetres: 0, corniceMetres: 0,
+      doorStyle: "", handlelessType: "",
+      profileVerticalM: 0, profileHorizontalM: 0, profileDrawerM: 0,
+      cornersInternal: 0, cornersExternal: 0, hasUnderPanels: false, underPanels: 0,
+      handleCount: 0,
+      wallEndPanels: 0, baseEndPanels: 0, larderEndPanels: 0,
+      decorPanels: 0, fillers: 0, plinthMetres: 0, corniceMetres: 0,
       kitchenAlreadyRemoved: false, imkToRemove: false, wasteDisposal: false,
     };
 
@@ -340,7 +450,17 @@ const { buttonLabel = "Get an Instant Estimate" } = Astro.props;
       total += state.worktopLengths * worktopRate();
       total += state.worktopJoints * RATES.worktopJoint;
       if (state.breakfastBar) total += RATES.breakfastBar;
-      total += state.endPanels * RATES.endDecorPanel;
+      if (state.doorStyle === "handleless" && state.handlelessType === "true") {
+        total += state.profileVerticalM * RATES.profileVerticalMetre;
+        total += state.profileHorizontalM * RATES.profileHorizontalMetre;
+        total += state.profileDrawerM * RATES.profileDrawerMetre;
+        total += (state.cornersInternal + state.cornersExternal) * RATES.cornerFitting;
+        if (state.hasUnderPanels) total += state.underPanels * RATES.underPanel;
+      }
+      if (state.doorStyle === "handled") total += state.handleCount * RATES.handle;
+      total += state.wallEndPanels * RATES.wallEndPanel;
+      total += state.baseEndPanels * RATES.baseEndPanel;
+      total += state.larderEndPanels * RATES.larderEndPanel;
       total += state.decorPanels * RATES.endDecorPanel;
       total += state.fillers * RATES.endDecorPanel;
       total += state.plinthMetres * RATES.plinthMetre;
@@ -365,6 +485,11 @@ const { buttonLabel = "Get an Instant Estimate" } = Astro.props;
       basisParts.push(`${materialLabel} worktop${state.worktopLengths === 1 ? "" : "s"}`);
       if (state.worktopJoints) basisParts.push(`${state.worktopJoints} joint${state.worktopJoints === 1 ? "" : "s"}`);
       if (state.sink || state.sinkCutout) basisParts.push("sink installation");
+      if (state.doorStyle === "handleless") {
+        basisParts.push(state.handlelessType === "true" ? "true handleless profiles" : "J-pull doors");
+      } else if (state.doorStyle === "handled" && state.handleCount) {
+        basisParts.push(`${state.handleCount} handle${state.handleCount === 1 ? "" : "s"}`);
+      }
       if (state.imkToRemove) basisParts.push("kitchen removal");
 
       root.querySelector("[data-estimate-range]").textContent = `${fmt(low)}–${fmt(high)}`;
@@ -419,6 +544,18 @@ const { buttonLabel = "Get an Instant Estimate" } = Astro.props;
       };
       el.addEventListener("input", sync);
       el.addEventListener("change", sync);
+    });
+
+    // Radio-group bindings — each group shows/hides a matching [data-show-block="group-value"]
+    root.querySelectorAll("[data-radio-group]").forEach((el) => {
+      const group = el.dataset.radioGroup;
+      el.addEventListener("change", () => {
+        if (!el.checked) return;
+        state[group] = el.value;
+        root.querySelectorAll(`[data-show-block^="${group}-"]`).forEach((block) => {
+          block.hidden = block.dataset.showBlock !== `${group}-${el.value}`;
+        });
+      });
     });
 
     // Stepper bindings
