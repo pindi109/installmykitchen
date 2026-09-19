@@ -1,0 +1,360 @@
+---
+import Base from "../../layouts/Base.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import StickyMobileCTA from "../../components/StickyMobileCTA.astro";
+import Breadcrumbs from "../../components/Breadcrumbs.astro";
+import AnswerBlock from "../../components/AnswerBlock.astro";
+import InternalLinks from "../../components/InternalLinks.astro";
+import CTA from "../../components/CTA.astro";
+
+const title = "How to Install a Wren Kitchen Like a Pro";
+const slug = "how-to-install-a-wren-kitchen-like-a-pro";
+const canonical = `https://installmykitchen.co.uk/guides/${slug}/`;
+const metaDescription =
+  "The full, honest sequence behind a real Wren kitchen installation — reading the plan, checking delivery, marking out, first fix, corner units, worktop height and more.";
+
+const intro =
+  "Most “kitchen installation” guides online only show you the bit that photographs well — cabinets going up, a finished shot at the end. That's maybe a third of the actual job. This is the full sequence for a real U-shaped Wren kitchen with an island: reading the plan, checking the delivery, marking out, first fix, plastering, tiling, carcasses, the island build, appliances, worktops, the handleless rail, lighting, and the finishing snag list — including the parts every other guide skips.";
+
+const toolList = [
+  "Cordless combi drill", "Cordless impact driver", "SDS drill", "Chop saw", "Track saw",
+  "6ft spirit level", "2ft spirit level", "Laser level (for setting out initial levels)",
+  "F-clamps / cabinet clamps", "Jigsaw with downcutting blades", "Holesaw set", "Flat bits",
+  "Scribing kit", "Silicone gun", "Multitool", "Phillips PH2 screwdriver",
+  "Long-shaft screwdriver (for wall cabinet hanging brackets)", "2x foldable saw horses", "Stanley knife",
+  "Adjustable square", "Fixed square", "Mitre adhesive (for joining cornice)",
+];
+
+const fixingsList = [
+  { size: "30mm x4", use: "Joining cabinets together" },
+  { size: "80mm x5", use: "Hanging plates (wall cabinet brackets)" },
+  { size: "16mm x4", use: "Hinges to the back of doors" },
+  { size: "100mm x5", use: "Fixing into drylined (plasterboard) walls" },
+  { size: "7mm brown wall plugs", use: "Paired with the above for masonry fixings" },
+];
+
+// Article JSON-LD, same pattern as [guide].astro
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  headline: title,
+  description: metaDescription,
+  author: { "@type": "Organization", name: "Install My Kitchen", url: "https://installmykitchen.co.uk" },
+  publisher: {
+    "@type": "Organization",
+    name: "Install My Kitchen",
+    url: "https://installmykitchen.co.uk",
+    logo: { "@type": "ImageObject", url: "https://installmykitchen.co.uk/favicon.png" },
+  },
+  mainEntityOfPage: { "@type": "WebPage", "@id": canonical },
+  url: canonical,
+};
+
+const IMG = "/assets/guides/wren-kitchen-install";
+
+// Content blocks, in document order. Images sit inline within their stage, not in a gallery.
+const blocks = [
+  { kind: "html", html: `<h2>Reading Your Kitchen Plan Properly</h2>
+<p>Before anything else happens, sit down with the full plan set — not just the pretty 3D render, but the elevations and the technical drawing with the cabinet codes on it. Every major retailer, Wren included, numbers or codes every cabinet on the plan, and that code maps to a specific width, height and internal configuration in the order. Get this wrong at the reading stage and you'll spend the whole job fighting a layout that doesn't match what's in the boxes.</p>
+<p>Start with the floor plan, which shows the layout from above — where every cabinet sits relative to the walls, the island, and each other. Then move to the elevations — the flat, front-on view of each wall — which show you height information the floor plan can't: where the wall cabinets sit relative to the worktop, where the extractor sits above the hob, where the window interrupts a run of wall units. A plan without elevations is only telling you half the story.</p>
+<p>Every plan has a key or legend, usually in a corner of the drawing, explaining what each symbol and abbreviation means. Built-in appliances are typically marked with a dotted outline or an “X” to show they're integrated behind a door rather than a standalone item. A centreline mark through a sink or hob symbol shows you the exact midpoint the plumber or electrician needs to work to — this is the single most useful mark on the whole plan when it comes to first fix, because it tells your trades exactly where the supply needs to land, not just roughly where.</p>
+<p>Cross-reference every cabinet code on the plan against your delivery note before you start. On a kitchen like this one — U-shaped with a bank of larder units on one wall, base and wall units either side of a window on another, and a centre island with a lower seating section — it's easy for a corner unit code or a specific appliance housing width to get missed in the picking process. Catching a mismatch on the plan, before the delivery even arrives, costs you nothing. Catching it once the wall units are already up costs you a day.</p>
+<p>Finally, read the plan for what it doesn't show. A 2D elevation won't tell you that a wall is out of true, that a floor drops 15mm across the run, or that a pipe sits somewhere the drawing didn't account for. That's what the physical survey and the marking-out stage are for — the plan is your starting point, not your guarantee.</p>` },
+
+  { kind: "html", html: `<h2>Checking Your Delivery Properly</h2>
+<p>Under the Consumer Rights Act 2015, your contract is with the retailer, not the delivery courier, and the retailer is responsible for the goods until they're safely and correctly in your hands. That matters, because it means the responsibility for a damaged or incorrect delivery sits with them — but only if you report it properly and within the window they give you. Most major retailers, Wren included, give you 48 hours from delivery to report any damage or shortfall. Miss that window and you may be stuck covering the cost of a replacement yourself.</p>
+<p>Before you sign for anything, you're entitled to inspect it. Don't let a driver rush you into signing a delivery note you haven't actually checked — politely but firmly take the few minutes you need. Look over the packaging first: tears, punctures, crushed corners and water staining are all signs the item inside may be damaged, even if the box looks intact from a distance.</p>
+<p>Once the delivery is inside, group everything by category before you open a single box: base cabinets, wall cabinets, tower and larder units, appliances, worktop, sink and taps, and accessories (hinges, legs, handles or — on a handleless kitchen like this one — rail sections and end caps). Leave the packaging on until you actually need each item; it protects the piece from the inevitable bumps and scrapes of a busy site, and it's far easier to spot a damaged item while it's still boxed and labelled than once everything is stacked in a pile.</p>
+<p>Check every item against your order and the plan's cabinet schedule, not just against the delivery note — a delivery note can be correct on paper while the actual cabinet in the box is the wrong width or the wrong internal configuration. Pay particular attention to end panels and fillers (routinely missed in picking), internal accessories like drawer inserts and corner solutions, and — critically for this kitchen — every component of the recessed rail system, since a handleless rail sold as one continuous run is only as good as its weakest joining section.</p>
+<p>If you find damage or a shortfall, photograph it immediately, before you move or unpack anything further, and report it the same day with your order number, the delivery date and a precise description of what's wrong. Don't wait for it to become a problem on installation day — a missing base unit found three weeks out is a manageable inconvenience; the same unit missing on the morning you were due to fit it is a real delay.</p>` },
+
+  { kind: "html", html: `<h2>Strip-Out &amp; Prep</h2>
+<p>With the delivery checked, grouped and safely out of the way, the old kitchen comes out — units, worktop, appliances, sink, the lot — back to bare walls and subfloor. This is also your last real chance to sense-check the survey against reality: confirm the services (existing supply pipework, any visible cabling, the position of the soil stack if it's relevant to a new sink location) are genuinely where the plan assumes they are, before you commit to setting out the new layout around them.</p>
+<p>Strip-out looks like brute-force work but it isn't — a badly handled strip-out damages walls, floors and services that then cost time to make good. Disconnect appliances and isolate water and electrics properly before anything gets physically removed, not after. Take units out in a sensible order (wall units before base units, so nothing gets dropped on something below it) and clear debris as you go rather than letting it pile up and become a hazard.</p>
+<p>By the end of this stage you should have a genuinely empty shell: bare walls, bare subfloor, and a clear view of every existing service position, ready for first fix.</p>` },
+  { kind: "image", src: `${IMG}/stage-01-strip-out.jpg`, alt: "Kitchen fitter removing an old kitchen unit during strip-out, room stripped back to bare subfloor" },
+
+  { kind: "html", html: `<h2>First Fix — Electrics &amp; Plumbing</h2>
+<p>First fix happens before any plastering, because every cable run and pipe route needs to be chased into a wall or run through a stud void while it's still open and accessible. On this kitchen, first fix has one job the average kitchen doesn't: the island carries an induction hob and a downdraft extractor, both of which need power and — for the extractor — ducting run in the floor before a single cabinet sits down on top of it. Get the floor duct position wrong at this stage and you're either lifting tiles later or living with an extractor that isn't where the plan says it should be.</p>
+<p>The electrician's first-fix scope on a kitchen like this covers: a dedicated high-amperage circuit for the induction hob (the exact rating — typically 32A or 45A — depends entirely on the specific hob's rated load, so confirm the figure against the manufacturer's spec sheet rather than assuming), a circuit for the downdraft extractor, back boxes for every socket and switch, cabling for spotlights that will be cut in during the painting stage, and containment for anything running under the island floor. The plumber's first-fix scope covers supply and waste runs to the sink and any plumbed appliances (dishwasher, washing machine), positioned to the centreline marks you identified on the plan.</p>
+<p><strong>All electrical work here — the hob circuit, the extractor circuit, the socket and spotlight wiring — is Part P notifiable work and must be carried out and certified by a registered electrician, not the kitchen fitter.</strong> This isn't a formality: Part P covers exactly this kind of kitchen electrical work, and a job that isn't properly certified can cause real problems later, from insurance issues to problems at the point of sale.</p>
+<p>Once first fix is signed off, get pressure and continuity tested before you move on. A leak or a fault found now, with the walls still open, is an afternoon's work. The same fault found after plastering, tiling and cabinets are in is a very different job.</p>` },
+  { kind: "image", src: `${IMG}/stage-02-first-fix.jpg`, alt: "Kitchen fitter wiring an electrical back box in an exposed stud wall during first fix, before plastering" },
+
+  { kind: "html", html: `<h2>Plastering &amp; Patch Repairs</h2>
+<p>Every chase cut for a cable or a pipe run needs to be made good before it disappears behind a cabinet for the next fifteen years. Patch each chase back flush, then skim the affected walls properly rather than just filling the cuts — a lumpy, unskimmed patch behind a wall cabinet won't be visible once the units are up, but it will telegraph through paint on any exposed section, and more importantly, an improperly dried patch traps moisture that has nowhere to go once it's sealed in behind a cabinet back.</p>
+<p>Let plaster dry fully before sanding and moving to paint — this sounds obvious, but it's the single most common stage to see rushed on a tight installation timeline, and rushing it here creates problems (cracking, shadowing through paint, damp patches) that only show up weeks later when the kitchen's already finished.</p>` },
+
+  { kind: "html", html: `<h2>Painting &amp; Spotlights</h2>
+<p>With the room still empty and every wall fully accessible, this is the easiest point in the whole job to paint properly — mist coat first to seal the fresh plaster, then full top coats once that's dry. Painting after cabinets are installed means cutting in awkwardly around units and taping off finished surfaces; painting now means a roller and a straightforward, unobstructed room.</p>
+<p>Spotlight positions get cut and wired at this stage too, connecting back to the circuit the electrician ran during first fix. Do this before wall units go up — once a bank of wall cabinets or the larder run is fixed in place, the ceiling directly above it becomes far more awkward to reach safely.</p>` },
+
+  { kind: "html", html: `<h2>Floor Levelling &amp; Tiling</h2>
+<p>Large-format tiles — and Carrara-white in particular, because the reflective, uniform surface shows up every dip and lip mercilessly — demand a genuinely flat substrate. Check the subfloor with a long spirit level or laser level before doing anything else; any variation of more than a few millimetres across the run needs addressing with self-levelling compound (and a damp-proof membrane first, if the subfloor or its history calls for one) before a single tile goes down.</p>
+<p>Setting out matters more on this kitchen than most, because the island's floor duct — the one first fix ran for the downdraft extractor — has to land cleanly within a tile joint or a deliberately planned cut, not awkwardly under the middle of a full tile. Dry-lay the first few rows around the island position before committing any adhesive, and adjust your setting-out line rather than your duct position if the two don't line up.</p>
+<p>Lay working outward from your most visible sightline (typically the view from the bifold doors or the main entrance to the kitchen) so that any necessary small cuts end up against a wall or under a cabinet line, not in the middle of open floor. Grout only once the adhesive has properly cured, and protect the finished floor immediately with board — you've got a lot of cabinet, appliance and worktop movement still to come across this surface.</p>` },
+  { kind: "image", src: `${IMG}/stage-05-floor-tiling.jpg`, alt: "Kitchen fitter laying a large-format Carrara-white floor tile with spirit level and tile spacers" },
+
+  { kind: "html", html: `<h2>Marking Out &amp; Setting the Datum Line</h2>
+<p>This is the stage that decides whether the rest of the kitchen goes together cleanly or fights you at every step, and it's worth doing properly rather than quickly.</p>
+<p>Find the highest point on the kitchen floor, where wall meets floor, using a long spirit level or — far more accurately — a laser level swept around the full perimeter and across the island position. Working from the highest point matters: base units have adjustable legs with roughly 100–150mm of travel, so you can always raise a unit sitting on a low spot, but you can't lower one that's already sitting on the high point without cutting it down.</p>
+<p>From that highest point, mark a horizontal datum line 150mm above it, right around the walls — this is your plinth line, and it's the line every base unit's bottom edge references via its adjustable legs. Then mark a second line 720mm above the first. That second line is the top of your base cabinet carcasses, and 150mm plus 720mm gives you the standard 870mm worktop-height reference point before the worktop thickness itself is added on top. Every base unit in the room gets levelled to that 720mm line, not to the floor beneath it — this is what makes an uneven floor invisible in the finished kitchen.</p>
+<p>Check every corner for square before you commit — a corner that's genuinely 90° behaves completely differently to one that's a few degrees out once you start fitting corner base units and their void panels, and it's far cheaper to know that now than to discover it mid-carcass-run. Use the plan to mark the approximate width of each cabinet onto the wall at this point too, so you can double-check service positions (socket, isolation valve, the extractor duct) land where the plan says they should before you're committed.</p>` },
+
+  { kind: "html", html: `<h2>Carcass Install — Perimeter</h2>
+<p>Start a run wherever it includes a corner unit, since everything else on that wall references off it. Fit the adjustable legs to each cabinet before it goes into position — four legs for cabinets up to 600mm wide, six for 800–1000mm cabinets, eight for a full L-shaped corner unit — using whichever of the two pre-drilled leg positions suits the cabinet's depth and the load it'll carry.</p>
+<p>Position each cabinet, then level it to your 720mm datum line by adjusting the legs individually rather than packing underneath — packing is a last resort for genuinely awkward floor conditions, not the default method. Once a cabinet is level and correctly positioned relative to its neighbour, brace the two together with a cabinet clamp and join them with a self-tapping screw no longer than 30mm, driven just behind the hinge plate, with a second screw at the rear of the unit for extra strength on anything that'll carry real weight.</p>
+<h3>Corner Units: The Part Nobody Explains Properly</h3>
+<p>Corner base units need particular care, and this is worth understanding properly rather than guessing at on site. Wren's standard corner base has a depth of 570mm, but the two carcasses that meet at the corner don't actually touch — each is set back from the true corner by a 48mm void, left deliberately open to carry pipework or cabling that needs to turn the corner without a carcass wall in the way. Picture it as two rectangles, one against each wall, each stopping 48mm short of where the walls actually meet.</p>
+<p>A corner post — a vertical trim piece, roughly 70mm wide on a standard setup — sits at the front of that void on one of the two carcasses, and its job is twofold: it gives the corner door the correct, square opening to hang from, and it visually closes off the gap at the front of the unit. Behind it, further back where the void isn't visible from the front, a blanking panel closes off the remainder of the internal void — the part that ends up hidden behind the return unit on the adjoining wall once both runs are in place. Fit the blanking panel first, screwed into the top and bottom panels of the main carcass, then offer the corner post up against the two adjoining units once they're actually in position — the post gets cut to its exact final size on site, against the real gap, not to a fixed dimension from the plan, because small variations in wall-to-wall square accumulate by the time you reach the corner.</p>
+<p>The alternative is a 972mm L-shaped corner unit, which needs no void at all — its side panels fix directly to both walls, and its corner post attaches to the door itself rather than to the carcass. Check which system your plan actually specifies before you start the corner, because the fitting sequence is different for each, and unpicking an already-braced standard-void corner to convert it to an L-shaped approach (or vice versa) costs you real time.</p>
+<p>Work the perimeter in both directions from your starting corner: base units round to the window (leaving the marked gaps for the sink run and its wall units above), and the tall larder bank built up on the end wall, checked for vertical plumb as carefully as the base run is checked for level — a tower unit that's out of plumb front-to-back or side-to-side will visibly lean once it's finished, and there's no adjustable-leg equivalent to fix that after the fact.</p>` },
+  { kind: "image", src: `${IMG}/stage-06-carcass-install.jpg`, alt: "Kitchen fitter levelling a dark blue base cabinet carcass with a spirit level during perimeter installation" },
+
+  { kind: "html", html: `<h2>Island Build</h2>
+<p>Treat the island as a distinct sub-project rather than an extension of the perimeter run, because it's carrying more than cabinetry: the downdraft extractor and its ducting, the power run for the induction hob, and — on this kitchen — a lower-level L-shaped seating section with its own, contrasting worktop.</p>
+<p>Position the island carcasses directly over the first-fix power and the floor duct, checking the duct lines up exactly with the cut-out position before anything is fixed down permanently. Connect the downdraft extractor's ducting run before the surrounding cabinets close it in — this is much harder to correct once the carcasses either side are fixed in place. Route the hob's power connection up through the same service void, ready for second fix once the worktop is on.</p>
+<p><strong>The socket and switch positions on the island also fall under Part P — the electrician signs this off, not the fitter.</strong></p>
+<p>The lower seating section is structurally its own build: since it sits at a different height and carries a different, contrasting worktop, it needs its own bracing back to the main island carcass rather than relying on the main run for support. Check this junction is genuinely rigid before moving on — a seating overhang that flexes is both a finish problem and, with people sitting on it, a safety one.</p>` },
+
+  { kind: "html", html: `<h2>Appliance Integration</h2>
+<p>Fridge freezer, oven, microwave, dishwasher and washing machine all go into their prepared housings at this stage — but “prepared” is doing some work in that sentence. An integrated fridge freezer needs its housing to match the appliance's dimensions exactly, because the door transfers from cabinet to appliance via a door-on-door or hinge-on-hinge mechanism that has almost no tolerance for a housing that's a few millimetres out. Check this alignment before you fix anything permanently, not after the door fronts are hung.</p>
+<p>Connection types vary and matter here. A plug-in oven under roughly 3kW can be connected by the fitter; anything hardwired — most double ovens, and the induction hob on this island — needs the qualified electrician back for second fix, connecting into the circuit that was run and certified during first fix. Dishwasher and washing machine connections need the plumber back for the same reason, joining the appliance to the supply and waste that was run early in the job.</p>
+<p>Fit each appliance, check its door front sits flush and square with the surrounding cabinet doors, and leave final trimming and alignment for the snagging pass at the very end — appliances get nudged during worktop fitting and cabinet door hanging, so a perfect alignment now isn't guaranteed to still be perfect two stages later.</p>` },
+  { kind: "image", src: `${IMG}/stage-08-appliance-integration.jpg`, alt: "Kitchen fitter sliding an integrated dishwasher into its housing and checking alignment with cabinet fronts" },
+
+  { kind: "html", html: `<h2>Worktops &amp; Calculating the Right Height</h2>
+<p>Once every carcass is fixed, level and true, bring the templater in — not before, because a template taken against carcasses that later shift is a worktop that won't fit. On this kitchen there are three separate worktop measurements to take, not one: the main perimeter run, the island's main (hob and prep) surface, and the lower seating section, which is a different height and a genuinely different, contrasting material. We're deliberately not specifying a worktop material here — that's a conversation to have directly with a reputable worktop supplier, who can advise on the right material for your budget, the specific span and cut-outs involved, and how the contrasting seating-area top should be specified alongside the main run so the two are templated and fitted as a coordinated pair, not as two unrelated orders.</p>
+<p>The standard 870mm reference line is a sound default, but it isn't universal, and a kitchen used daily by one household benefits from being set to the people actually using it. The trade method for this is the elbow rule: stand upright in bare feet, relax your shoulders, bend your forearm to a right angle, and measure from the floor to the underside of your elbow. Subtract roughly 100mm from that figure, and you have a worktop height that sits comfortably below elbow height for genuinely comfortable everyday use — for most adults this lands close to, but not always exactly at, the standard 870–900mm figure. Where a household is notably tall, short, or includes a primary cook whose comfort matters more than the standard figure, adjust the leg heights earlier in the carcass stage to suit rather than defaulting blindly.</p>
+<p>Confirm the sink and tap position against the plan's centreline mark at template stage, not from the original drawing — the templater is measuring the room as it actually exists, and this is your last chance to catch a discrepancy before a stone or solid worktop is cut. Once the worktops are fitted, seal every joint properly (especially around the sink cut-out, which sees the most water exposure of any joint in the kitchen) and fit upstands before appliances go back against the wall.</p>` },
+  { kind: "image", src: `${IMG}/stage-09-worktops.jpg`, alt: "Kitchen fitter fitting a white worktop with rose gold trim edge onto island cabinets, checking the seam joint" },
+
+  { kind: "html", html: `<h2>Handleless Doors &amp; the Recessed Rail</h2>
+<p>A true handleless kitchen using a recessed rail system — rose gold, in this case — is fitted in a different order to a standard handled kitchen, and getting that order wrong is expensive to fix. The rail goes on first, before a single door is hung, because every door in that run registers its position off the rail. A rail that's fractionally out of true doesn't just look wrong itself — every door hung against it inherits the same error, compounding down the run.</p>
+<p>Fit and align the rail section by section, checking it's dead straight and at a consistent height along its full length before fixing it permanently — small errors are easy to correct now and very difficult to correct once eight or ten doors are hung against a rail that turns out to be slightly off. Only once the rail for a given run is confirmed straight should doors go on.</p>
+<p>Hang doors working from one end of each run to the other, setting gaps evenly as you go rather than hanging every door first and adjusting gaps afterwards — consistent 2–3mm gaps between doors, checked with a set of spacers rather than by eye, are what make a handleless kitchen look genuinely considered rather than approximately even. This is also the point to check every drawer front sits flush with its neighbouring door fronts, since a handleless system has nothing — no handle, no visible fixing — to distract the eye from even a small misalignment.</p>` },
+  { kind: "image", src: `${IMG}/stage-10-handleless-rail.jpg`, alt: "Kitchen fitter fitting a rose gold recessed handleless rail to a dark blue cabinet door" },
+
+  { kind: "html", html: `<h2>Glass Cabinets &amp; Lighting</h2>
+<p>Glass-fronted cabinets with internal lighting get wired and tested at this stage, checking the light genuinely illuminates the shelving evenly rather than creating hot spots or shadowed corners — reposition the fitting now if it doesn't, since a glass door makes any lighting fault immediately visible in a way a solid door never would.</p>
+<p>Run the continuous LED strip under the back wall units as a single, unbroken line rather than a series of shorter sections — the joins between separate LED runs are exactly what create the visible “puck light” hotspots this kind of continuous lighting is meant to avoid. Leave island pendants until last, once the ceiling above them is fully painted and finished — hanging a pendant early just means working around it, and risking marking it, for every stage that follows.</p>` },
+
+  { kind: "html", html: `<h2>Finishing, Snagging &amp; Final Shots</h2>
+<p>Run a genuine snagging checklist before calling the job finished, not a casual walk-through. Check: every door and drawer gap is even along its full run; every appliance door front is flush with its neighbours; the worktop joints are sealed and the sink cut-out is properly sealed against water ingress; every socket, switch and spotlight actually works; the extractor and hob both function correctly on their dedicated circuits; and every cabinet is genuinely fixed to the wall, not just resting against it. A proper snag list, worked through methodically, is what separates a kitchen that looks finished from one that actually is.</p>
+<p>Seal around the worktop-to-wall junction and any other exposed joints, then do a full clean-down — sawdust and adhesive residue in the corners of a “finished” kitchen undermine the whole result. Only then take the styled final shots: bifold doors open, natural light flooding in, the kitchen photographed as it's actually meant to be lived in, not as a construction site with the tools tidied away.</p>` },
+  { kind: "image", src: `${IMG}/stage-12-finished.jpg`, alt: "Finished U-shaped Wren kitchen with island, dark blue handleless cabinets and rose gold rail, bifold doors open" },
+
+  { kind: "html", html: `<h2>A Real Note on DIY vs Professional Installation</h2>
+<p>After 25 years of doing this, the single habit that prevents more expensive mistakes than any tool or technique is simple: always double-check that everything lines up before you cut or drill anything. Check it, then check it again, then check it a third time. Dry-fit components before committing to a cut or a fixing wherever you possibly can — it costs you a few minutes and it catches the errors that a single confident measurement won't.</p>
+<p>If you're genuinely unsure about any stage in this guide — the marking-out, a corner unit, the electrics — the honest answer is to get a professional survey done, or have an installer come out and mark the room up for you even if you're planning to fit the rest yourself. That's a normal, sensible thing to do, not an admission of defeat.</p>
+<p>And if you don't already own most of the tools listed at the top of this guide, that's a genuine signal that a professional installation is the better call — not because the techniques here are complicated, but because the margin for error on a kitchen is small and expensive to get wrong. If you do go down that route, vet whoever you hire properly. A lot of people will tell you they can fit a kitchen. Not all of them actually can, and the ones who can't rarely find out until you're the one living with the result.</p>` },
+];
+---
+
+<Base title={`${title} | Install My Kitchen`} description={metaDescription} canonical={canonical}>
+  <script slot="schema" type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+
+  <Header slot="header" />
+
+  <div class="container py-6">
+    <Breadcrumbs items={[{ label: "Guides", href: "/guides/" }, { label: title, href: `/guides/${slug}/` }]} />
+  </div>
+
+  <section class="section">
+    <div class="container">
+      <div class="max-w-3xl mx-auto">
+        <h1 class="text-3xl md:text-4xl font-extrabold mb-6 leading-tight" style="color: var(--navy);">{title}</h1>
+
+        <AnswerBlock answer={intro} />
+
+        <div class="tool-list-box fade-up">
+          <h2>Tools You'll Need Before You Start</h2>
+          <p>Before any of this makes sense, here's what's actually in a fitter's van for a job like this — not a generic hardware-store list, but the kit used at every stage below. If you don't already own most of it, that's worth factoring into whether this is a DIY job or a professional one.</p>
+          <ul class="tool-list-grid" role="list">
+            {toolList.map((t) => <li>{t}</li>)}
+          </ul>
+
+          <h2 class="fixings-heading">Screws &amp; Fixings Reference</h2>
+          <ul class="fixings-list" role="list">
+            {fixingsList.map((f) => (
+              <li><span class="fixing-size">{f.size}</span><span class="fixing-use">{f.use}</span></li>
+            ))}
+          </ul>
+        </div>
+
+        <div class="prose-guide">
+          {blocks.map((block) =>
+            block.kind === "html" ? (
+              <Fragment set:html={block.html} />
+            ) : (
+              <figure class="guide-inline-image">
+                <img src={block.src} alt={block.alt} loading="lazy" width="1600" height="1067" />
+              </figure>
+            )
+          )}
+        </div>
+
+        <div class="mt-10 fade-up">
+          <InternalLinks
+            heading="Related Pages"
+            links={[
+              { label: "Book a survey", href: "/survey/", description: "£195 pre-installation survey, credited back on booking." },
+              { label: "Working with Wren, Howdens & Magnet", href: "/guides/working-with-wren-howdens-magnet/", description: "What to expect using an independent fitter with a major retailer kitchen." },
+              { label: "Kitchen worktop guide", href: "/guides/kitchen-worktop-guide/", description: "Materials, costs and the templating process explained." },
+              { label: "Kitchen appliance installation guide", href: "/guides/kitchen-appliance-installation-guide/", description: "What needs an electrician, a plumber, or the fitter." },
+              { label: "The kitchen installation survey", href: "/guides/kitchen-installation-survey-guide/", description: "What a surveyor checks before any work begins." },
+              { label: "All kitchen installation questions", href: "/questions/", description: "Straight answers to common kitchen fitting questions." },
+            ]}
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <CTA
+    heading="Rather Have a Professional Handle It?"
+    subtext="Book a pre-installation survey from £195 — credited back in full when you proceed. Covering Coventry, Warwickshire and Berkshire."
+    primaryLabel="Book Your Survey"
+    primaryHref="/survey/"
+    secondaryLabel="Call 07399 651836"
+    secondaryHref="tel:07399651836"
+    dark={true}
+  />
+
+  <Footer slot="footer" />
+  <StickyMobileCTA slot="sticky-cta" />
+</Base>
+
+<style>
+  .prose-guide :global(h2) {
+    font-size: 1.375rem;
+    font-weight: 700;
+    color: var(--navy);
+    margin-top: 2rem;
+    margin-bottom: 0.875rem;
+    line-height: 1.3;
+  }
+
+  .prose-guide :global(h3) {
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: var(--navy);
+    margin-top: 1.5rem;
+    margin-bottom: 0.625rem;
+  }
+
+  .prose-guide :global(p) {
+    font-size: 1rem;
+    line-height: 1.75;
+    color: var(--charcoal);
+    margin-bottom: 1.125rem;
+  }
+
+  .prose-guide :global(strong) {
+    font-weight: 700;
+    color: var(--charcoal);
+  }
+
+  .guide-inline-image {
+    margin: 1.75rem 0 2rem;
+  }
+
+  .guide-inline-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 0.75rem;
+    display: block;
+  }
+
+  .tool-list-box {
+    background: var(--bg-light);
+    border: 1.5px solid var(--border);
+    border-radius: 1rem;
+    padding: 1.5rem 1.75rem;
+    margin: 1.5rem 0 2rem;
+  }
+
+  .tool-list-box h2 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 0.625rem;
+  }
+
+  .tool-list-box p {
+    font-size: 0.9375rem;
+    line-height: 1.65;
+    color: var(--text-soft);
+    margin-bottom: 1rem;
+  }
+
+  .tool-list-grid {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem 1.5rem;
+  }
+
+  @media (min-width: 640px) {
+    .tool-list-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .tool-list-grid li {
+    font-size: 0.875rem;
+    color: var(--charcoal);
+    font-weight: 500;
+    position: relative;
+    padding-left: 1rem;
+  }
+
+  .tool-list-grid li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.5em;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--teal);
+  }
+
+  .fixings-heading {
+    font-size: 1.0625rem;
+    font-weight: 700;
+    color: var(--navy);
+    margin-top: 1.5rem;
+    margin-bottom: 0.625rem;
+  }
+
+  .fixings-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .fixings-list li {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem 0.75rem;
+    font-size: 0.875rem;
+    line-height: 1.5;
+  }
+
+  .fixing-size {
+    font-weight: 700;
+    color: var(--charcoal);
+    min-width: 9.5rem;
+  }
+
+  .fixing-use {
+    color: var(--text-soft);
+  }
+</style>
