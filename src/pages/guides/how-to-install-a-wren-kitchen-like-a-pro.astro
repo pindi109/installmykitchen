@@ -3,6 +3,7 @@ import Base from "../../layouts/Base.astro";
 import Header from "../../components/Header.astro";
 import Footer from "../../components/Footer.astro";
 import StickyMobileCTA from "../../components/StickyMobileCTA.astro";
+import StickyEstimateBar from "../../components/StickyEstimateBar.astro";
 import Breadcrumbs from "../../components/Breadcrumbs.astro";
 import AnswerBlock from "../../components/AnswerBlock.astro";
 import InternalLinks from "../../components/InternalLinks.astro";
@@ -427,6 +428,7 @@ const blocks = [
 
   <Footer slot="footer" />
   <StickyMobileCTA slot="sticky-cta" />
+  <StickyEstimateBar slot="sticky-cta" />
 </Base>
 
 <style>

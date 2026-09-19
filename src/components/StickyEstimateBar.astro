@@ -1,0 +1,79 @@
+---
+// Sticky marquee footer bar prompting the cost calculator. Clicking it opens
+// the CostCalculator modal already on the page via its [data-calc-open] trigger —
+// this component doesn't own any calculator logic itself.
+export interface Props {
+  text?: string;
+}
+
+const { text = "Wondering How Much it Costs to Install Your Kitchen? Click Here for an Instant Estimate." } = Astro.props;
+---
+
+<button type="button" class="sticky-estimate-bar" data-sticky-estimate-bar aria-label={text}>
+  <div class="sticky-estimate-track">
+    <span class="sticky-estimate-text">{text}</span>
+    <span class="sticky-estimate-text" aria-hidden="true">{text}</span>
+  </div>
+</button>
+
+<script>
+  document.body.classList.add("has-sticky-estimate-bar");
+  document.querySelectorAll("[data-sticky-estimate-bar]").forEach((bar) => {
+    bar.addEventListener("click", () => {
+      const opener = document.querySelector("[data-calc-open]");
+      if (opener instanceof HTMLElement) opener.click();
+    });
+  });
+</script>
+
+<style>
+  .sticky-estimate-bar {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 4rem;
+    z-index: 30;
+    width: 100%;
+    background: var(--teal);
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    padding: 0.625rem 0;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+
+  @media (min-width: 768px) {
+    .sticky-estimate-bar {
+      bottom: 0;
+    }
+  }
+
+  .sticky-estimate-track {
+    display: inline-flex;
+    gap: 3rem;
+    animation: sticky-estimate-scroll 18s linear infinite;
+  }
+
+  .sticky-estimate-bar:hover .sticky-estimate-track {
+    animation-play-state: paused;
+  }
+
+  .sticky-estimate-text {
+    font-size: 0.875rem;
+    font-weight: 700;
+    letter-spacing: 0.01em;
+    padding-right: 3rem;
+  }
+
+  @keyframes sticky-estimate-scroll {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .sticky-estimate-track {
+      animation: none;
+    }
+  }
+</style>

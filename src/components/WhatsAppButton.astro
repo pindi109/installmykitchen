@@ -49,6 +49,12 @@
     text-decoration: none;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
     animation: wa-bounce-in 1.6s ease both;
+    transition: bottom 0.2s ease;
+  }
+
+  /* When the sticky estimate marquee bar is present, sit above it too */
+  :global(body.has-sticky-estimate-bar) .whatsapp-fab {
+    bottom: 128px;
   }
 
   /* Desktop: move above viewport floor, not above mobile bar */
@@ -58,6 +64,10 @@
       right: 24px;
       width: 60px;
       height: 60px;
+    }
+
+    :global(body.has-sticky-estimate-bar) .whatsapp-fab {
+      bottom: 64px;
     }
   }
 
