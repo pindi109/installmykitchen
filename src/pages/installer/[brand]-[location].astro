@@ -120,10 +120,20 @@ const brandImgs = brandImgMap[brandSlug] ?? {
 };
 
 // FAQ — offset by both retailer and location index for variety
+// The shared "costs" FAQ pool has one entry hardcoded to Coventry pricing —
+// swap it for a location-accurate version rather than showing Coventry
+// figures/wording on every other town's page.
+const localCostFaq = {
+  q: `How much does kitchen installation cost in ${locationName}?`,
+  a: `Installation costs in ${locationName} and the surrounding ${county} area typically range from around £1,800–£2,800 for a small kitchen of 8–12 units, £2,800–£4,200 for a medium kitchen of 13–20 units, and £4,200–£7,500 for a large kitchen of 21 or more units. These figures represent labour and fitting only and do not include the cost of the kitchen itself, worktops, appliances, plumbing, or electrical work. We provide a fixed price quote following your survey so you will know the exact cost before committing.`,
+};
+const costsFaqs = faqsData.costs.map((f) =>
+  f.q === "How much does kitchen installation cost in Coventry?" ? localCostFaq : f
+);
 const allFaqs = [
   ...faqsData.general,
   ...faqsData.retailers,
-  ...faqsData.costs,
+  ...costsFaqs,
   ...faqsData.survey,
 ];
 const faqOffset = (retailerIndex * 3 + locationIndex * 2) % allFaqs.length;
