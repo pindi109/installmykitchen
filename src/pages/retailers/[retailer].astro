@@ -1,5 +1,6 @@
 ---
 import Base from "../../layouts/Base.astro";
+import BusinessSchema from "../../components/BusinessSchema.astro";
 import Header from "../../components/Header.astro";
 import Footer from "../../components/Footer.astro";
 import StickyMobileCTA from "../../components/StickyMobileCTA.astro";
@@ -108,11 +109,7 @@ const serviceSchema = {
   "@context": "https://schema.org",
   "@type": "Service",
   name: `${displayName} Kitchen Installation`,
-  provider: {
-    "@type": "LocalBusiness",
-    name: "Install My Kitchen",
-    url: "https://installmykitchen.co.uk",
-  },
+  provider: { "@id": "https://installmykitchen.co.uk/#business" },
   areaServed: {
     "@type": "Place",
     name: "Coventry, Warwickshire and Berkshire",
@@ -127,6 +124,7 @@ const serviceSchema = {
   description={metaDescription}
   canonical={canonical}
 >
+  <BusinessSchema slot="schema" />
   <script slot="schema" type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
 
   <Header slot="header" />

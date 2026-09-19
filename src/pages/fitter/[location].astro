@@ -169,6 +169,7 @@ const retailerInstallerLinks: { label: string; href: string; description: string
 const localBusinessSchema = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
+  "@id": "https://installmykitchen.co.uk/#business",
   name: "Install My Kitchen",
   url: "https://installmykitchen.co.uk",
   telephone: "07399651836",
@@ -191,11 +192,7 @@ const serviceSchema = {
   "@context": "https://schema.org",
   "@type": "Service",
   name: `Kitchen Fitter in ${name}`,
-  provider: {
-    "@type": "LocalBusiness",
-    name: "Install My Kitchen",
-    url: "https://installmykitchen.co.uk",
-  },
+  provider: { "@id": "https://installmykitchen.co.uk/#business" },
   areaServed: {
     "@type": "Place",
     name: name,
