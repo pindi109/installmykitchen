@@ -134,6 +134,7 @@ const canonical = `https://installmykitchen.co.uk/repairs/${brandSlug}-${jobSlug
 // them raw produces doubled text like "IKEA Kitchens Kitchen Plinth
 // Replacement". Strip that trailing word before combining with job text.
 const shortBrand = displayName.replace(/ (?:Kitchens?|Joinery)$/i, "");
+const brandArticle = /^[aeiou]/i.test(shortBrand) ? "an" : "a";
 
 // Title — the H1 below leads with "Independent", which is part of the page's
 // target keyword, so the title must keep that word too. Try progressively
@@ -287,7 +288,7 @@ const serviceSchema = {
     <div class="container">
       <div class="max-w-3xl fade-up">
         <h2 class="text-3xl font-bold mb-4" style="color: var(--navy);">
-          What Does {jobName} Involve on a {shortBrand} Kitchen?
+          What Does {jobName} Involve on {brandArticle} {shortBrand} Kitchen?
         </h2>
         <p class="text-lg leading-relaxed mb-4" style="color: var(--text-soft);">
           {jobDescription}
