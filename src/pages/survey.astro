@@ -47,6 +47,18 @@ const surveyCovers = [
   },
 ];
 
+const surveyServiceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "@id": "https://installmykitchen.co.uk/survey/#service",
+  "name": "Kitchen Installation Survey",
+  "description": "Pre-installation survey assessing room dimensions, service positions, floor levels, and wall conditions. Provides a fixed installation quote.",
+  "provider": { "@type": "LocalBusiness", "@id": "https://installmykitchen.co.uk/#business", "name": "Install My Kitchen" },
+  "areaServed": "Coventry, Warwickshire and Berkshire",
+  "offers": { "@type": "Offer", "price": "195", "priceCurrency": "GBP", "description": "£195 survey fee credited back against installation balance on booking confirmation" },
+  "performer": { "@type": "Person", "name": "Pindi Sahota", "description": "30 years kitchen installation experience" },
+};
+
 const faqItems = [
   {
     q: "Is a survey compulsory?",
@@ -81,17 +93,7 @@ const faqItems = [
   canonical="https://installmykitchen.co.uk/survey/"
 >
   <!-- Schema -->
-  <script slot="schema" type="application/ld+json">{JSON.stringify({
-    "@context": "https://schema.org",
-    "@type": "Service",
-    "@id": "https://installmykitchen.co.uk/survey/#service",
-    "name": "Kitchen Installation Survey",
-    "description": "Pre-installation survey assessing room dimensions, service positions, floor levels, and wall conditions. Provides a fixed installation quote. Conducted personally by Pindi Sahota.",
-    "provider": { "@type": "LocalBusiness", "@id": "https://installmykitchen.co.uk/#business", "name": "Install My Kitchen" },
-    "areaServed": "Coventry, Warwickshire and Berkshire",
-    "offers": { "@type": "Offer", "price": "195", "priceCurrency": "GBP", "description": "£195 survey fee credited back against installation balance on booking confirmation" },
-    "performer": { "@type": "Person", "name": "Pindi Sahota", "description": "30 years kitchen installation experience" }
-  })}</script>
+  <script slot="schema" type="application/ld+json" set:html={JSON.stringify(surveyServiceSchema)} />
 
   <!-- Header -->
   <Header slot="header" />
