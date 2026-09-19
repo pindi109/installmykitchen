@@ -154,6 +154,11 @@ const internalLinks = [
     href: `/retailers/${brandSlug}/`,
     description: `Our full independent fitting service for ${shortBrand} kitchens`,
   },
+  ...(brandSlug === "wren" ? [{
+    label: "How to Install a Wren Kitchen Like a Pro",
+    href: "/guides/how-to-install-a-wren-kitchen-like-a-pro/",
+    description: "Our complete step-by-step guide to a real Wren installation, start to finish",
+  }] : []),
   {
     label: `Kitchen Installation in ${locationName}`,
     href: `/areas/${locationSlug}/`,
