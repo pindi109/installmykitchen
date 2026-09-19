@@ -321,13 +321,16 @@ const applianceImgDir = applianceSlug.includes("dishwasher") ? "appliances/dishw
   : "appliances";
 const applianceImgBase = `/assets/${applianceImgDir}`;
 
-// Title ≤60 chars
+// Title ≤60 chars. Drop the "| Install My Kitchen" suffix rather than
+// shorten it to a bare "IMK" — Google shows the site name in SERPs from
+// og:site_name regardless, and an unexplained acronym reads as inconsistent
+// branding.
 const rawTitle = `${applianceName} ${locationName} | Install My Kitchen`;
 const title = rawTitle.length <= 60
   ? rawTitle
-  : `${applianceName} in ${locationName} | IMK`.length <= 60
-    ? `${applianceName} in ${locationName} | IMK`
-    : `${applianceName.slice(0, 30)} ${locationName} | IMK`;
+  : `${applianceName} in ${locationName}`.length <= 60
+    ? `${applianceName} in ${locationName}`
+    : `${applianceName} ${locationName}`;
 
 // Meta desc 140–160 chars
 const metaDescription = `${h1Fragment.charAt(0).toUpperCase() + h1Fragment.slice(1)} in ${locationName} — independent, from £${fromPrice}. Fixed-price quote. Call Install My Kitchen today.`;

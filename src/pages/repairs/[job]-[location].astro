@@ -103,8 +103,12 @@ const shortJobName = job.name.replace(/^(?:Kitchen |Integrated )/i, "");
 const titleJobName = job.name.replace(/^Kitchen /i, "");
 const titleTier1 = `${titleJobName} in ${location.name} | Install My Kitchen`;
 const titleTier2 = `${titleJobName} ${location.name} | Install My Kitchen`;
-const titleTier3 = `${titleJobName} in ${location.name} | IMK`;
-const titleTier4 = `${titleJobName} ${location.name} | IMK`;
+// No room left for "| Install My Kitchen" — drop the suffix rather than fall
+// back to a bare "IMK" abbreviation (inconsistent branding, means nothing to
+// a searcher). Google displays the site name in SERPs from og:site_name
+// regardless of what the <title> itself contains.
+const titleTier3 = `${titleJobName} in ${location.name}`;
+const titleTier4 = `${shortJobName} ${location.name}`;
 const title =
   titleTier1.length <= 60 ? titleTier1
   : titleTier2.length <= 60 ? titleTier2

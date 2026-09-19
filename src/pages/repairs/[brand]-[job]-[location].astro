@@ -137,20 +137,18 @@ const shortBrand = displayName.replace(/ (?:Kitchens?|Joinery)$/i, "");
 const brandArticle = /^[aeiou]/i.test(shortBrand) ? "an" : "a";
 
 // Title — the H1 below leads with "Independent", which is part of the page's
-// target keyword, so the title must keep that word too. Try progressively
-// shorter forms (dropping the site-name suffix, then "Install My Kitchen"
-// for the shorter "IMK") before ever dropping "Independent" itself — the
-// worst-case combination (longest brand + job + location) is 69 chars with
-// no suffix at all, so a 70-char final tier always fits without needing any
-// mid-word truncation.
+// target keyword, so the title must keep that word too. If the full branded
+// title is too long, drop the "| Install My Kitchen" suffix entirely rather
+// than shorten it to a bare "IMK" — Google shows the site name in SERPs from
+// og:site_name regardless, and an unexplained acronym reads as inconsistent
+// branding. The worst-case combination (longest brand + job + location) is
+// 69 chars with no suffix at all, so a 70-char final tier always fits
+// without needing any mid-word truncation.
 const rawTitle = `Independent ${shortBrand} ${jobName} ${locationName} | Install My Kitchen`;
-const titleImk = `Independent ${shortBrand} ${jobName} ${locationName} | IMK`;
 const titleNoSuffix = `Independent ${shortBrand} ${jobName} ${locationName}`;
 const title = rawTitle.length <= 65
   ? rawTitle
-  : titleImk.length <= 65
-    ? titleImk
-    : titleNoSuffix;
+  : titleNoSuffix;
 
 // Meta desc ≤160 chars
 const metaDescription = `${shortBrand} ${h1Fragment} in ${locationName} — independent, not affiliated with ${displayName}. From £${fromPrice}, fixed-price quote.`;
