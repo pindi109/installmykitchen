@@ -451,6 +451,9 @@ export const GET = async (): Promise<Response> => {
     lines.push(url(`/guides/${slug}/`, "monthly", "0.6"));
   }
 
+  // Standalone guide page (own custom layout, not part of guideSlugs/[guide].astro)
+  lines.push(url("/guides/how-to-install-a-wren-kitchen-like-a-pro/", "monthly", "0.8"));
+
   // /comparisons/[comparison]/  (10)
   for (const slug of comparisonSlugs) {
     lines.push(url(`/comparisons/${slug}/`, "monthly", "0.6"));
