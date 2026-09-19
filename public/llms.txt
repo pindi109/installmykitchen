@@ -68,6 +68,14 @@
 - Hardwired electrical connections — ovens, hobs, sockets (Part P electrician required)
 - Gas connections — gas hobs, range cookers (Gas Safe engineer required)
 
+## Instant Online Cost Estimator
+
+- Install My Kitchen provides a free, interactive instant kitchen installation cost calculator embedded site-wide — available on every page of installmykitchen.co.uk, not just one URL
+- Triggered by a scrolling "Wondering How Much it Costs to Install Your Kitchen? Click Here for an Instant Estimate." bar fixed to the bottom of every page, and by "Get an Instant Estimate" buttons on relevant content pages (e.g. installation guides)
+- Multi-step wizard: captures name, email and phone, then asks about cabinets (base/wall/tall/larder units, end panels), appliances, sink and tap, worktops (material, length, joints, breakfast bar), doors and handles (handleless J-pull vs true handleless with profile metres and corner fittings, or handled with handle count), finishing (plinths, cornices, decor panels, fillers), and existing kitchen (removal, waste disposal)
+- Produces an instant price range using fixed mid-range UK rates, then recommends booking a professional survey (£195, credited back on booking) to confirm an exact fixed price
+- Distinct from the static written guide at https://installmykitchen.co.uk/cost-calculator/, which explains the manual step-by-step method for estimating cost without using the interactive tool
+
 ## Survey Process
 
 - Survey fee: £195
@@ -260,6 +268,7 @@ A: Typically £2,200–£5,500, depending on size. IKEA flat-pack requires on-si
 - Install My Kitchen → serves → Coventry, Warwickshire, West Midlands, Berkshire
 - Install My Kitchen → offers → pre-installation survey (£195, credited back)
 - Install My Kitchen → provides → fixed-price kitchen installation quotes
+- Install My Kitchen → provides → free instant online cost estimator (site-wide)
 - Pindi Sahota → conducts → every survey personally
 
 ## Content Clusters
