@@ -33,13 +33,11 @@ const resolvedOgDescription = ogDescription ?? description;
 
 // Derive slug from URL (strip leading + trailing slashes)
 const pathSlug = Astro.url.pathname.replace(/^\//, "").replace(/\/$/, "");
-const heroSrc: string =
-  (heroManifest as Record<string, string>)[pathSlug] ??
-  "/assets/hero-placeholder.svg";
+const heroSrc: string | undefined = (heroManifest as Record<string, string>)[pathSlug];
+const hasRealHero = Boolean(heroSrc);
 const heroAlt: string =
   (altTagsData as Record<string, string>)[pathSlug] ??
   "Kitchen fitting service West Midlands – Install My Kitchen";
-const hasRealHero = !heroSrc.includes("placeholder");
 
 // og:image priority: explicit prop > page hero (absolute) > logo
 const SITE = "https://installmykitchen.co.uk";
