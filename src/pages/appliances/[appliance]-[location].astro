@@ -298,6 +298,13 @@ const { appliance, location, applianceIndex, locationIndex } = Astro.props;
 const { name: applianceName, slug: applianceSlug, h1Fragment, description: applianceDescription, fromPriceCW, fromPriceBerks, hasWaterConnection, faqs: applianceFaqs } = appliance;
 const { name: locationName, slug: locationSlug, county, localNote, kitchenNotes } = location;
 
+// A few locations' kitchenNotes reference plumbing/pipework/drainage specifically
+// (e.g. Rugby's "pre-routed plumbing") — fine for water-connected appliances, but
+// nonsensical on an oven/hob/extractor page. Fall back to the generic sentence
+// for those combinations rather than showing a plumbing note on a non-plumbed job.
+const kitchenNotesMentionsPlumbing = kitchenNotes != null && /plumbing|pipework|drainage|waste connection/i.test(kitchenNotes);
+const kitchenNotesApplicable = (!hasWaterConnection && kitchenNotesMentionsPlumbing) ? null : kitchenNotes;
+
 // Is this a Berkshire/southern location?
 const BERKS_SLUGS = ["reading", "bracknell", "slough", "maidenhead", "windsor", "wokingham", "newbury", "ascot"];
 const isBerks = BERKS_SLUGS.includes(locationSlug);
@@ -513,7 +520,7 @@ const serviceSchema = {
               : <>Our fitters carry out {h1Fragment} to the manufacturer's specification and current UK building regulations. We test every function and run a post-installation check before leaving.</>}
           </p>
           <p class="leading-relaxed" style="color: var(--text-soft);">
-            {kitchenNotes ?? (hasWaterConnection
+            {kitchenNotesApplicable ?? (hasWaterConnection
               ? `${locationName} properties vary in their plumbing layouts — our fitters are experienced in adapting connections to suit the configurations found across ${county}.`
               : `${locationName} properties vary in their housing and cabinetry layouts — our fitters are experienced in adapting installations to suit the configurations found across ${county}.`)}
           </p>
