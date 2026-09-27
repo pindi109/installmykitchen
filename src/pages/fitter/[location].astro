@@ -137,6 +137,15 @@ const allNearbyLinks: { label: string; href: string; description: string }[] = [
     description: `Wren, Howdens, Magnet, IKEA and more across ${name}`,
   },
   ...nearbyFitterLinks,
+  // Henley-in-Arden has no entry in locationsData (no /fitter/, /areas/, or
+  // /kitchen-cost/ page of its own) — it's a standalone legacy page, unlike
+  // the other 8 which duplicated this template and were redirected here.
+  // Stratford is its nearest covered market town, so link it from here only.
+  ...(slug === "stratford-upon-avon" ? [{
+    label: "Kitchen Fitter in Henley-in-Arden",
+    href: "/kitchen-fitter-henley-in-arden/",
+    description: "North Warwickshire market town — also covered",
+  }] : []),
   {
     label: `About your installer — Pindi Sahota`,
     href: `/pindi-sahota/`,

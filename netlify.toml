@@ -25,3 +25,47 @@
 
 [context.branch-deploy]
   command = "npm run build"
+
+# Legacy standalone kitchen-fitter-{location} pages from the original build
+# superseded by the templated /fitter/{location}/ route — same target keyword,
+# same content angle. Consolidate into the templated page rather than leave
+# both live and competing for the same query.
+[[redirects]]
+  from = "/kitchen-fitter-bedworth/"
+  to = "/fitter/bedworth/"
+  status = 301
+
+[[redirects]]
+  from = "/kitchen-fitter-coventry/"
+  to = "/fitter/coventry/"
+  status = 301
+
+[[redirects]]
+  from = "/kitchen-fitter-kenilworth/"
+  to = "/fitter/kenilworth/"
+  status = 301
+
+[[redirects]]
+  from = "/kitchen-fitter-leamington-spa/"
+  to = "/fitter/leamington-spa/"
+  status = 301
+
+[[redirects]]
+  from = "/kitchen-fitter-nuneaton/"
+  to = "/fitter/nuneaton/"
+  status = 301
+
+[[redirects]]
+  from = "/kitchen-fitter-rugby/"
+  to = "/fitter/rugby/"
+  status = 301
+
+[[redirects]]
+  from = "/kitchen-fitter-solihull/"
+  to = "/fitter/solihull/"
+  status = 301
+
+[[redirects]]
+  from = "/kitchen-fitter-stratford-upon-avon/"
+  to = "/fitter/stratford-upon-avon/"
+  status = 301
