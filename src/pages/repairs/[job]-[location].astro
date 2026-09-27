@@ -13,6 +13,7 @@ import CTA from "../../components/CTA.astro";
 
 import locationsData from "../../data/locations.json";
 import remedialData from "../../data/remedial.json";
+import retailersData from "../../data/retailers.json";
 
 const PRIORITY_REMEDIAL_SLUGS = [
   "coventry",
@@ -217,6 +218,31 @@ const internalLinks = [
     description: "Everything that affects kitchen fitting and repair prices explained",
   },
 ];
+
+// Brand-specific variants of this job/location exist only for 4 job types
+// (see BRAND_SLUGS/JOB_SLUGS in [brand]-[job]-[location].astro) — this is the
+// only place on the site that links into those 300 branded pages, so it must
+// cover all 5 brands whenever the job type has them, or the branded pages are
+// orphaned (unreachable except via sitemap).
+const BRAND_SLUGS = ["wren", "howdens", "magnet", "ikea", "wickes"];
+const BRANDED_JOB_SLUGS = [
+  "kitchen-door-replacement",
+  "kitchen-hinge-replacement",
+  "kitchen-unit-adjustment",
+  "kitchen-plinth-replacement",
+];
+const hasBrandedVariants = BRANDED_JOB_SLUGS.includes(job.slug);
+const brandLinks = hasBrandedVariants
+  ? BRAND_SLUGS.map((brandSlug) => {
+      const retailer = retailersData.find((r) => r.slug === brandSlug)!;
+      const shortBrand = retailer.displayName.replace(/ (?:Kitchens?|Joinery)$/i, "");
+      return {
+        label: `${shortBrand} ${job.name} in ${location.name}`,
+        href: `/repairs/${brandSlug}-${job.slug}-${location.slug}/`,
+        description: `Independent ${shortBrand} ${job.name.toLowerCase()} in ${location.name}`,
+      };
+    })
+  : [];
 
 // JSON-LD — Service schema
 const serviceSchema = {
@@ -473,6 +499,12 @@ const breadcrumbSchema = {
           links={internalLinks}
           heading={`Related Pages for ${location.name}`}
         />
+        {hasBrandedVariants && (
+          <InternalLinks
+            links={brandLinks}
+            heading={`${job.name} By Retailer in ${location.name}`}
+          />
+        )}
       </div>
     </div>
   </section>
